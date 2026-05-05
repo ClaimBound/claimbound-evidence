@@ -11,11 +11,12 @@ possible.
 | Field | Purpose |
 | --- | --- |
 | `evidence_id` | Stable ID for this evidence record. |
+| `record_type` | Required record category: `evidence_result`, `source_audit`, `protocol_registration` or `reproduction_attempt`. |
 | `protocol_id` | ID of the frozen protocol. |
 | `protocol_version` | Version or commit-bound protocol reference. |
 | `domain` | Public domain under test, such as energy or air quality. |
 | `claim_type` | Type of claim: forecast, signal, source audit, reproduction or blocked-source record. |
-| `execution_mode` | Required provenance mode: `MANUAL_NO_AI`, `MANUAL_AI_ASSISTED`, `AUTOMATED_NO_AI`, `AUTOMATED_AI_ASSISTED` or `HYBRID_AI_ASSISTED`. |
+| `execution_mode` | Required provenance mode: `MANUAL_NO_AI` or `AUTOMATED_AI_ASSISTED`. |
 | `result_status` | Exact status from `docs/RESULT_STATUS.md`. |
 | `claim_boundary` | Plain-language limit on what the result does and does not show. |
 | `official_source_name` | Human-readable source name. |
@@ -57,11 +58,8 @@ Use one exact mode:
 
 | Mode | Meaning |
 | --- | --- |
-| `MANUAL_NO_AI` | Human operator performed the track without AI assistance. |
-| `MANUAL_AI_ASSISTED` | Human operator performed the track and used AI only within `docs/AI_OPERATOR_PROTOCOL.md`. |
-| `AUTOMATED_NO_AI` | Deterministic automation performed the run without AI assistance. |
-| `AUTOMATED_AI_ASSISTED` | Automation used AI assistance, but deterministic validation produced the status. |
-| `HYBRID_AI_ASSISTED` | Manual and automated steps were combined, with AI assistance disclosed. |
+| `MANUAL_NO_AI` | Human operator performed the reproducible manual track without AI assistance. |
+| `AUTOMATED_AI_ASSISTED` | An AI coding agent executed or prepared the AI track, with deterministic validation producing the status. |
 
 The execution mode is provenance metadata. It does not make a result more or
 less valid by itself. A result is valid only when the protocol, source boundary,
@@ -102,6 +100,7 @@ It contains placeholder fields and should be filled from validated card JSON.
 ```json
 {
   "evidence_id": "CLAIMBOUND-NASA-POWER-D103-2026-04-29",
+  "record_type": "evidence_result",
   "protocol_id": "NASA_POWER_D103",
   "protocol_version": "1.0.143",
   "domain": "renewable-energy-resource",
@@ -136,6 +135,7 @@ It contains placeholder fields and should be filled from validated card JSON.
 
 Evidence cards should fail validation when:
 
+- `record_type` is missing or outside the allowed record categories;
 - `execution_mode` is missing or outside the allowed modes;
 - `result_status` is not one of the documented statuses;
 - `claim_boundary` is missing;

@@ -1,14 +1,14 @@
 # EEA AQ D-001 AI-Assisted Autonomous Prompt
 
 This document is the autonomous AI-assisted version of the EEA AQ D-001 track.
-It intentionally contains one operator prompt instead of a long hybrid runbook.
+It intentionally contains one operator prompt instead of a long manual runbook.
 
 Use this file when you want an AI coding agent to execute the track end to end
 under ClaimBound rules, while preserving honesty, reproducibility, source
 boundaries, raw-payload separation, and exact result-status reporting.
 
-The more detailed human-plus-AI workflow is kept separately in
-[docs/manual_audit/EEA_AQ_D001_HYBRID_AI_ASSISTED_TRACK.md](EEA_AQ_D001_HYBRID_AI_ASSISTED_TRACK.md).
+If an operator wants a step-by-step human workflow, use
+[docs/manual_audit/EEA_AQ_D001_MANUAL_TRACK.md](EEA_AQ_D001_MANUAL_TRACK.md).
 
 ## When To Use This File
 
@@ -77,8 +77,7 @@ Fixed scope:
 - Raw payload policy: raw files stay outside the repository
 - Public output policy: commit only sanitized summary, evidence card JSON,
   evidence card SVG, registry updates, and documentation changes
-- Execution mode: AUTOMATED_AI_ASSISTED if you execute the run end to end;
-  HYBRID_AI_ASSISTED if a human must perform source download steps manually
+- Execution mode: AUTOMATED_AI_ASSISTED
 
 Official source references to use:
 
@@ -167,10 +166,11 @@ Required workflow:
     checks, not from AI opinion.
 22. Copy only the sanitized summary JSON into the repository under artifacts/.
 23. Create a ClaimBound evidence card JSON under docs/evidence_cards/.
-24. Set `execution_mode` honestly:
-    - `AUTOMATED_AI_ASSISTED` if you completed the whole run as an AI agent;
-    - `HYBRID_AI_ASSISTED` if a human had to perform download or source-access
-      steps manually.
+24. Set `execution_mode` to `AUTOMATED_AI_ASSISTED` only if you completed or
+    prepared the AI track under this protocol and deterministic validation
+    produced the status. If a human must perform source-download or source-access
+    steps manually, stop with a blocker or switch to the manual track instead of
+    creating a third execution mode.
 25. The evidence card must disclose that AI assistance was used.
 26. The evidence card must state that AI did not have authority to change the
     gate, select favorable stations, fabricate hashes, or broaden the claim.
