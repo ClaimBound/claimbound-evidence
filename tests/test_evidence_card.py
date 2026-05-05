@@ -17,6 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 def _valid_card() -> dict[str, object]:
     return {
         "evidence_id": "CLAIMBOUND-EXAMPLE-001",
+        "record_type": "evidence_result",
         "protocol_id": "EXAMPLE_D001",
         "protocol_version": "0.1.0",
         "domain": "example-public-source",
@@ -72,6 +73,15 @@ def test_evidence_card_requires_execution_mode() -> None:
     violations = validate_evidence_card(card)
 
     assert "missing required field: execution_mode" in violations
+
+
+def test_evidence_card_requires_record_type() -> None:
+    card = _valid_card()
+    card.pop("record_type")
+
+    violations = validate_evidence_card(card)
+
+    assert "missing required field: record_type" in violations
 
 
 def test_evidence_card_rejects_raw_payload_committed() -> None:

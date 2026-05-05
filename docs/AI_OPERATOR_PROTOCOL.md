@@ -88,10 +88,14 @@ Every evidence card must include `execution_mode`.
 Allowed values are:
 
 - `MANUAL_NO_AI`;
-- `MANUAL_AI_ASSISTED`;
-- `AUTOMATED_NO_AI`;
-- `AUTOMATED_AI_ASSISTED`;
-- `HYBRID_AI_ASSISTED`.
+- `AUTOMATED_AI_ASSISTED`.
+
+Use `MANUAL_NO_AI` for the reproducible manual track. Use
+`AUTOMATED_AI_ASSISTED` only when an AI coding agent executes or prepares the
+track under this protocol and deterministic validation produces the public
+status. If a required source-access step cannot be completed by the AI agent,
+stop with a blocker or switch to the manual track instead of creating a third
+execution mode.
 
 This is a self-declared provenance field, but it is not trusted alone. The
 project relies on deterministic validation, frozen protocols, hashes, command

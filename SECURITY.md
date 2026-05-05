@@ -14,7 +14,7 @@ ClaimBound Public Benchmarks is currently pre-1.0 public research tooling. Secur
 
 Please report suspected vulnerabilities privately through GitHub Security Advisories:
 
-<https://github.com/NeoZorK/claimbound-public-benchmarks/security/advisories/new>
+<https://github.com/ClaimBound/claimbound-public-benchmarks/security/advisories/new>
 
 Do not open a public issue for vulnerabilities involving:
 

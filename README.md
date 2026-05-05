@@ -99,7 +99,6 @@ Future public-domain track runbooks are included for European air quality data:
 
 - [No-AI manual track](docs/manual_audit/EEA_AQ_D001_MANUAL_TRACK.md)
 - [AI-assisted autonomous prompt](docs/manual_audit/EEA_AQ_D001_AI_ASSISTED_TRACK.md)
-- [Hybrid human-plus-AI track](docs/manual_audit/EEA_AQ_D001_HYBRID_AI_ASSISTED_TRACK.md)
 
 These runbooks are designed for operator audits: rules first, then source
 download, then run, then publish the exact result status.
@@ -133,7 +132,7 @@ not include, import, or require private background technology.
 - [Contributing guide](CONTRIBUTING.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [Security policy](SECURITY.md)
-- [Discussions — maintainer announcements and community Q&A](https://github.com/NeoZorK/claimbound-public-benchmarks/discussions)
+- [Discussions — maintainer announcements and community Q&A](https://github.com/ClaimBound/claimbound-public-benchmarks/discussions)
 
 ## License
 

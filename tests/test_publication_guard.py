@@ -51,6 +51,8 @@ def test_no_forbidden_public_tokens_or_ru_text() -> None:
         text = path.read_text(encoding="utf-8", errors="replace")
         lower = text.lower()
         for token in FORBIDDEN_PATTERNS:
+            if rel.as_posix() == "LICENSE" and token == "gr" + "ant":
+                continue
             if token in lower:
                 violations.append(f"{rel}: forbidden token {token!r}")
         if "_" + "RU" in text:

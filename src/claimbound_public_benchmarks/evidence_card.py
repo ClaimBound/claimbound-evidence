@@ -9,10 +9,7 @@ from typing import Any
 
 ALLOWED_EXECUTION_MODES = {
     "MANUAL_NO_AI",
-    "MANUAL_AI_ASSISTED",
-    "AUTOMATED_NO_AI",
     "AUTOMATED_AI_ASSISTED",
-    "HYBRID_AI_ASSISTED",
 }
 
 ALLOWED_RESULT_STATUSES = {
@@ -24,8 +21,16 @@ ALLOWED_RESULT_STATUSES = {
     "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT",
 }
 
+ALLOWED_RECORD_TYPES = {
+    "evidence_result",
+    "source_audit",
+    "protocol_registration",
+    "reproduction_attempt",
+}
+
 REQUIRED_FIELDS = {
     "evidence_id",
+    "record_type",
     "protocol_id",
     "protocol_version",
     "domain",
@@ -102,6 +107,13 @@ def validate_evidence_card(card: dict[str, Any]) -> list[str]:
             + ", ".join(sorted(ALLOWED_RESULT_STATUSES))
         )
 
+    record_type = card.get("record_type")
+    if record_type not in ALLOWED_RECORD_TYPES:
+        violations.append(
+            "record_type must be one of: "
+            + ", ".join(sorted(ALLOWED_RECORD_TYPES))
+        )
+
     if card.get("raw_payload_committed") is not False:
         violations.append("raw_payload_committed must be false")
 
@@ -146,4 +158,3 @@ def _is_missing(value: object) -> bool:
     if isinstance(value, (list, tuple, dict, set)) and len(value) == 0:
         return True
     return False
-
