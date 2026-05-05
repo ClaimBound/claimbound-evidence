@@ -62,6 +62,9 @@ official public source
 
 ## Core Documents
 
+- Start here: [getting started](docs/GETTING_STARTED.md),
+  [audience and value](docs/AUDIENCE_AND_VALUE.md) and
+  [current evidence tracks](docs/CURRENT_EVIDENCE_TRACKS.md).
 - Evidence rules: [result statuses](docs/RESULT_STATUS.md),
   [claim boundaries](docs/CLAIMS.md) and
   [evidence cards](docs/EVIDENCE_CARD.md).
@@ -70,6 +73,7 @@ official public source
 - Project direction: [positioning](docs/PROJECT_POSITIONING.md),
   [honesty manifesto](docs/HONESTY_MANIFESTO.md) and
   [use cases](docs/USE_CASES.md).
+- Automation direction: [scaffold automation plan](docs/SCAFFOLD_AUTOMATION_PLAN.md).
 - Registry direction: [global evidence registry](docs/GLOBAL_EVIDENCE_REGISTRY.md).
 
 ## Install
