@@ -12,8 +12,8 @@ from xml.sax.saxutils import escape
 
 
 DEFAULT_TEMPLATE = Path("docs/assets/claimbound_evidence_card.svg")
-WIDTH = 2200
-HEIGHT = 1660
+WIDTH = 2000
+HEIGHT = 1320
 
 
 def render_svg(card_path: Path, template_path: Path = DEFAULT_TEMPLATE) -> str:
@@ -90,20 +90,17 @@ def _render_card(values: dict[str, Any]) -> str:
         ),
         "  <defs>",
         "    <style>",
-        "      .title{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:66px;font-weight:700;fill:#0d1736}",
-        "      .subtitle{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:30px;font-weight:400;fill:#55627a}",
-        "      .wordmark{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:52px;font-weight:800;fill:#082f59}",
-        "      .wordmark2{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:52px;font-weight:800;fill:#117fc5}",
-        "      .smallcaps{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:22px;font-weight:700;fill:#55627a}",
-        "      .chipLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:600;fill:#536174;text-transform:uppercase}",
-        "      .chipText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:25px;font-weight:800;fill:#ffffff}",
-        "      .claimLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:24px;font-weight:700;fill:#1758d6}",
-        "      .claimText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:50px;font-weight:800;fill:#0d1736}",
-        "      .fieldLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:24px;font-weight:700;fill:#1758d6}",
-        "      .fieldText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:28px;font-weight:600;fill:#111827}",
-        "      .mono{font-family:SFMono-Regular,Consolas,'Liberation Mono',monospace;font-size:23px;font-weight:600;fill:#111827}",
-        "      .bodyText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:25px;font-weight:500;fill:#1f2937}",
-        "      .muted{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:22px;font-weight:500;fill:#55627a}",
+        "      .title{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:54px;font-weight:750;fill:#0d1736}",
+        "      .subtitle{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:25px;font-weight:400;fill:#55627a}",
+        "      .chipLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:17px;font-weight:650;fill:#536174;text-transform:uppercase}",
+        "      .chipText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:22px;font-weight:800;fill:#ffffff}",
+        "      .claimLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:21px;font-weight:750;fill:#1758d6}",
+        "      .claimText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:42px;font-weight:800;fill:#0d1736}",
+        "      .fieldLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:21px;font-weight:750;fill:#1758d6}",
+        "      .fieldText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:24px;font-weight:600;fill:#111827}",
+        "      .mono{font-family:SFMono-Regular,Consolas,'Liberation Mono',monospace;font-size:20px;font-weight:600;fill:#111827}",
+        "      .bodyText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:22px;font-weight:500;fill:#1f2937}",
+        "      .muted{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:19px;font-weight:500;fill:#55627a}",
         "    </style>",
         '    <linearGradient id="okGrad" x1="0" y1="0" x2="1" y2="0">',
         '      <stop offset="0%" stop-color="#0fbaaa"/>',
@@ -113,48 +110,66 @@ def _render_card(values: dict[str, Any]) -> str:
         '      <stop offset="0%" stop-color="#1f64f2"/>',
         '      <stop offset="100%" stop-color="#1758d6"/>',
         "    </linearGradient>",
+        '    <linearGradient id="logoRingBlue" x1="73" y1="453" x2="348" y2="793" gradientUnits="userSpaceOnUse">',
+        '      <stop offset="0" stop-color="#1E64BA"/>',
+        '      <stop offset="0.55" stop-color="#0C75C8"/>',
+        '      <stop offset="1" stop-color="#0A5FAB"/>',
+        "    </linearGradient>",
+        '    <linearGradient id="logoRingTeal" x1="221" y1="792" x2="403" y2="594" gradientUnits="userSpaceOnUse">',
+        '      <stop offset="0" stop-color="#18B7A3"/>',
+        '      <stop offset="1" stop-color="#089EBC"/>',
+        "    </linearGradient>",
+        '    <linearGradient id="logoSignalGradient" x1="61" y1="628" x2="404" y2="628" gradientUnits="userSpaceOnUse">',
+        '      <stop offset="0" stop-color="#1E64BA"/>',
+        '      <stop offset="0.43" stop-color="#0877C4"/>',
+        '      <stop offset="0.72" stop-color="#0A97BB"/>',
+        '      <stop offset="1" stop-color="#14B69E"/>',
+        "    </linearGradient>",
+        '    <linearGradient id="logoWaveText" x1="806" y1="520" x2="1198" y2="632" gradientUnits="userSpaceOnUse">',
+        '      <stop offset="0" stop-color="#0E73CC"/>',
+        '      <stop offset="0.55" stop-color="#1687D9"/>',
+        '      <stop offset="1" stop-color="#0D77CD"/>',
+        "    </linearGradient>",
         "  </defs>",
         f'  <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" fill="#eef3f8"/>',
         f'  <rect x="44" y="44" width="{WIDTH - 88}" height="{HEIGHT - 88}" rx="34" fill="#ffffff" stroke="#cfd7e3" stroke-width="3"/>',
-        '  <path d="M80 191 H2120" stroke="#d7dde7" stroke-width="3"/>',
-        '  <text x="86" y="103" class="wordmark">Claim</text>',
-        '  <text x="228" y="103" class="wordmark2">Bound</text>',
-        '  <text x="88" y="142" class="smallcaps">PUBLIC BENCHMARKS</text>',
-        '  <text x="620" y="111" class="title">ClaimBound Evidence Card</text>',
-        '  <text x="624" y="157" class="subtitle">Protocol-bound, reproducible evidence summary</text>',
+        '  <path d="M70 176 H1930" stroke="#d7dde7" stroke-width="3"/>',
+        *(_logo_lockup(72, 58, 0.38)),
+        '  <text x="660" y="106" class="title">ClaimBound Evidence Card</text>',
+        '  <text x="663" y="143" class="subtitle">Protocol-bound, reproducible evidence summary</text>',
     ]
 
     out.extend(
-        _chip(86, 225, 470, "Result status", values["result_status"], "okGrad")
+        _chip(70, 205, 430, "Result status", values["result_status"], "okGrad")
     )
     out.extend(
-        _chip(586, 225, 430, "Validity", values["card_validity_level"], "okGrad")
+        _chip(520, 205, 370, "Validity", values["card_validity_level"], "okGrad")
     )
     out.extend(
-        _chip(1046, 225, 440, "Reproduction", values["reproduction_level"], "blueGrad")
+        _chip(910, 205, 480, "Reproduction", values["reproduction_level"], "blueGrad")
     )
     out.extend(
-        _chip(1516, 225, 570, "Record type", values["record_type"], "blueGrad")
+        _chip(1410, 205, 520, "Record type", values["record_type"], "blueGrad")
     )
 
-    out.extend(_claim_box(86, 335, 2028, values["allowed_claim_sentence"]))
+    out.extend(_claim_box(70, 300, 1860, values["allowed_claim_sentence"]))
 
-    x1, x2 = 86, 1104
-    w = 982
-    out.extend(_field_box(x1, 540, w, 150, "Evidence ID", values["evidence_id"], mono=True))
-    out.extend(_field_box(x2, 540, w, 150, "Protocol", values["protocol_id"], mono=True))
-    out.extend(_field_box(x1, 720, w, 170, "Official Source", values["source"]))
-    out.extend(_field_box(x2, 720, w, 170, "Target / Candidate", f"{values['target_definition']}\n{values['candidate_definition']}"))
-    out.extend(_field_box(x1, 920, w, 170, "Controls / Gate", values["controls_and_gate"]))
-    out.extend(_field_box(x2, 920, w, 170, "Period / Scope / Date", f"{values['period_scope']}\nAccess date: {values['access_date']}"))
-    out.extend(_field_box(x1, 1120, w, 170, "Artifact / Report", f"{values['artifact_ref']}\n{values['sanitized_report_path']}"))
-    out.extend(_field_box(x2, 1120, w, 170, "Evidence URL", values["evidence_url"], mono=True))
+    x1, x2 = 70, 1010
+    w = 920
+    out.extend(_field_box(x1, 455, w, 125, "Evidence ID", values["evidence_id"], mono=True))
+    out.extend(_field_box(x2, 455, w, 125, "Protocol", values["protocol_id"], mono=True))
+    out.extend(_field_box(x1, 600, w, 130, "Official Source", values["source"]))
+    out.extend(_field_box(x2, 600, w, 130, "Target / Candidate", f"{values['target_definition']}\n{values['candidate_definition']}"))
+    out.extend(_field_box(x1, 750, w, 130, "Controls / Gate", values["controls_and_gate"]))
+    out.extend(_field_box(x2, 750, w, 130, "Period / Scope / Date", f"{values['period_scope']}\nAccess date: {values['access_date']}"))
+    out.extend(_field_box(x1, 900, w, 130, "Artifact / Report", f"{values['artifact_ref']}\n{values['sanitized_report_path']}"))
+    out.extend(_field_box(x2, 900, w, 130, "Evidence URL", values["evidence_url"], mono=True))
 
     out.extend(
         _wide_note(
-            86,
-            1310,
-            2028,
+            70,
+            1055,
+            1860,
             "Claim boundary",
             values["claim_boundary"],
             values["known_limitations"],
@@ -168,21 +183,21 @@ def _render_card(values: dict[str, Any]) -> str:
 def _chip(x: int, y: int, w: int, label: str, value: str, gradient_id: str) -> list[str]:
     lines = [
         f'  <text x="{x}" y="{y - 18}" class="chipLabel">{_e(label)}</text>',
-        f'  <rect x="{x}" y="{y}" width="{w}" height="70" rx="24" fill="url(#{gradient_id})"/>',
+        f'  <rect x="{x}" y="{y}" width="{w}" height="58" rx="19" fill="url(#{gradient_id})"/>',
     ]
-    text_lines = _wrap(value, _chars_for_width(w - 54, 25), max_lines=2)
-    start_y = y + 31 if len(text_lines) == 2 else y + 44
-    lines.extend(_text_lines(x + 27, start_y, text_lines, "chipText", 30))
+    text_lines = _wrap(value, _chars_for_width(w - 44, 22), max_lines=2)
+    start_y = y + 25 if len(text_lines) == 2 else y + 37
+    lines.extend(_text_lines(x + 22, start_y, text_lines, "chipText", 26))
     return lines
 
 
 def _claim_box(x: int, y: int, w: int, claim: str) -> list[str]:
     lines = [
-        f'  <rect x="{x}" y="{y}" width="{w}" height="155" rx="22" fill="#f8fbff" stroke="#1758d6" stroke-width="4"/>',
-        f'  <text x="{x + 34}" y="{y + 44}" class="claimLabel">Allowed narrow claim</text>',
+        f'  <rect x="{x}" y="{y}" width="{w}" height="110" rx="18" fill="#f8fbff" stroke="#1758d6" stroke-width="4"/>',
+        f'  <text x="{x + 28}" y="{y + 34}" class="claimLabel">Allowed narrow claim</text>',
     ]
-    wrapped = _wrap(claim, _chars_for_width(w - 68, 50), max_lines=2)
-    lines.extend(_text_lines(x + 34, y + 103, wrapped, "claimText", 57))
+    wrapped = _wrap(claim, _chars_for_width(w - 56, 42), max_lines=2)
+    lines.extend(_text_lines(x + 28, y + 82, wrapped, "claimText", 47))
     return lines
 
 
@@ -197,16 +212,16 @@ def _field_box(
     mono: bool = False,
 ) -> list[str]:
     text_class = "mono" if mono else "fieldText"
-    font_size = 23 if mono else 28
-    line_height = 31 if mono else 34
-    max_lines = max(1, (h - 64) // line_height)
+    font_size = 20 if mono else 24
+    line_height = 26 if mono else 29
+    max_lines = max(1, (h - 54) // line_height)
     wrapped = _wrap(value, _chars_for_width(w - 52, font_size), max_lines=max_lines)
 
     lines = [
         f'  <rect x="{x}" y="{y}" width="{w}" height="{h}" rx="14" fill="#ffffff" stroke="#d8dee9" stroke-width="3"/>',
-        f'  <text x="{x + 26}" y="{y + 37}" class="fieldLabel">{_e(label)}</text>',
+        f'  <text x="{x + 24}" y="{y + 32}" class="fieldLabel">{_e(label)}</text>',
     ]
-    lines.extend(_text_lines(x + 26, y + 76, wrapped, text_class, line_height))
+    lines.extend(_text_lines(x + 24, y + 66, wrapped, text_class, line_height))
     return lines
 
 
@@ -219,18 +234,47 @@ def _wide_note(
     limitations: list[str],
 ) -> list[str]:
     h = 0
-    boundary_lines = _wrap(boundary, _chars_for_width(w - 60, 25), max_lines=3)
+    boundary_lines = _wrap(boundary, _chars_for_width(w - 52, 22), max_lines=3)
     limitation_text = " Limitations: " + " ".join(f"{idx + 1}. {item}" for idx, item in enumerate(limitations))
-    limitation_lines = _wrap(limitation_text, _chars_for_width(w - 60, 22), max_lines=2)
-    h = 58 + (len(boundary_lines) * 31) + 18 + (len(limitation_lines) * 27) + 34
+    limitation_lines = _wrap(limitation_text, _chars_for_width(w - 52, 19), max_lines=2)
+    h = 48 + (len(boundary_lines) * 27) + 14 + (len(limitation_lines) * 23) + 26
 
     lines = [
         f'  <rect x="{x}" y="{y - 2}" width="{w}" height="{h}" rx="14" fill="#fbfcfe" stroke="#d8dee9" stroke-width="3"/>',
-        f'  <text x="{x + 28}" y="{y + 33}" class="fieldLabel">{_e(label)}</text>',
+        f'  <text x="{x + 24}" y="{y + 31}" class="fieldLabel">{_e(label)}</text>',
     ]
-    lines.extend(_text_lines(x + 28, y + 70, boundary_lines, "bodyText", 31))
-    lines.extend(_text_lines(x + 28, y + 70 + len(boundary_lines) * 31 + 15, limitation_lines, "muted", 27))
+    lines.extend(_text_lines(x + 24, y + 62, boundary_lines, "bodyText", 27))
+    lines.extend(_text_lines(x + 24, y + 62 + len(boundary_lines) * 27 + 14, limitation_lines, "muted", 23))
     return lines
+
+
+def _logo_lockup(x: int, y: int, scale: float) -> list[str]:
+    return [
+        f'  <g aria-label="ClaimBound public benchmarks logo" transform="translate({x},{y}) scale({scale}) translate(-40,-478)">',
+        '    <g stroke-linecap="butt" stroke-linejoin="round">',
+        '      <g stroke="#CBD3DC" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="10 12" opacity="0.72">',
+        '        <path d="M130 507V714"/>',
+        '        <path d="M162 490V719"/>',
+        '        <path d="M199 491V719"/>',
+        '        <path d="M230 471V726"/>',
+        '        <path d="M276 521V690"/>',
+        '        <path d="M327 508V650"/>',
+        '        <path d="M128 520H277"/>',
+        '        <path d="M128 595H327"/>',
+        '        <path d="M128 672H355"/>',
+        "      </g>",
+        '      <path d="M342.6 514.3A160 160 0 1 0 230 787" fill="none" stroke="url(#logoRingBlue)" stroke-width="23"/>',
+        '      <path d="M230 787A160 160 0 0 0 388.4 649.3" fill="none" stroke="url(#logoRingTeal)" stroke-width="23"/>',
+        '      <path d="M63 629.5C87 616.4 104.3 613.6 121.2 632.2C140.7 653.8 153.4 651.6 162.1 616.2C173.8 568.5 182.5 527.5 198.9 527.5C217.5 527.5 228.4 590.6 240.3 630.8C253.4 675.4 268.6 682.8 284.6 641.5C303.5 592.9 315.2 567.6 333.7 574.7C352.6 582 355.7 635.1 376.6 634.9C386.2 634.8 394 630.4 402 626.8" fill="none" stroke="url(#logoSignalGradient)" stroke-width="11.5" stroke-linecap="round"/>',
+        '      <path d="M284 684.5L307.5 707.7L353 657" fill="none" stroke="#12B4A4" stroke-width="10.5" stroke-linecap="square"/>',
+        "    </g>",
+        '    <text x="428" y="633" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="124" font-weight="700" fill="#082F59">Claim</text>',
+        '    <text x="792" y="633" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="124" font-weight="700" fill="url(#logoWaveText)">Bound</text>',
+        '    <line x1="436" y1="700" x2="514" y2="700" stroke="#11AFA9" stroke-width="4"/>',
+        '    <text x="542" y="717" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="13" fill="#082F59">public benchmarks</text>',
+        '    <line x1="1120" y1="700" x2="1194" y2="700" stroke="#11AFA9" stroke-width="4"/>',
+        "  </g>",
+    ]
 
 
 def _text_lines(x: int, y: int, lines: list[str], class_name: str, line_height: int) -> list[str]:
