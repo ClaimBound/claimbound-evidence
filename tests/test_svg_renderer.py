@@ -31,6 +31,10 @@ def test_grok_card_renders_svg_without_placeholders() -> None:
     svg = renderer.render_svg(card_path, REPO_ROOT / "docs" / "assets" / "claimbound_evidence_card.svg")
 
     assert "{{" not in svg
+    assert "..." not in svg
     assert "Grok prompt repo passed source audit" in svg
     assert "PASSED_UNDER_PROTOCOL" in svg
-    assert "NOT INDEPENDENT" in svg
+    assert "not independently reproduced" in svg
+    assert "GROK_PROMPTS_SOURCE_AUDIT_D001" in svg
+    assert "docs/evidence_cards/" in svg
+    assert "CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json" in svg
