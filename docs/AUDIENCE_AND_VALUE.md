@@ -12,12 +12,18 @@ paper index, experiment database, archive service or certification authority.
 | --- | --- |
 | AI and LLM evaluation teams | Converts model, RAG, agent and benchmark claims into timestamped, source-bound evidence records. |
 | Open-science researchers | Makes negative, blocked and reproduced outcomes publishable. |
-| Public-data maintainers | Makes source boundary, rights notes and coverage limits visible. |
-| Program reviewers | Provides a compact trail from protocol to source to status to limitation. |
-| Civic-tech projects | Supports transparent public-data checks without deployment claims. |
+| Funding reviewers and program evaluators | Provides a compact trail from protocol to source to status to limitation. |
+| Data stewards and public-data teams | Makes source boundary, rights notes and coverage limits visible. |
+| Civic-tech, journalism and watchdog projects | Supports transparent public-data checks without deployment claims. |
 | ML researchers | Separates narrow evidence from broad model-superiority claims. |
 | Educators | Teaches protocol discipline, baselines, controls and honest failure reporting. |
-| Independent operators | Gives a clear path to rerun or challenge a result. |
+| Companies with AI products | Supports narrow customer-facing evidence cards instead of broad trust claims. |
+| Independent verifiers, procurement teams and public buyers | Gives a clear path to request, rerun or challenge a result before adoption. |
+
+Detailed manual and AI-assisted workflow examples for all nine audiences are in
+[audience demonstration workflows](AUDIENCE_TESTIMONIAL_WORKFLOWS.md). The path
+from those scenarios to real cards is defined in
+[demo tracks to evidence cards](DEMO_TRACKS_TO_EVIDENCE_CARDS.md).
 
 ## Problem ClaimBound Solves
 
@@ -32,6 +38,20 @@ Many public AI/ML claims are hard to inspect because:
 - reproduction level is not explicit.
 
 ClaimBound makes these points visible in a compact evidence card.
+
+## Flagship Workflow
+
+The public habit ClaimBound wants to support is simple:
+
+```text
+Where is the evidence?
+```
+
+For example, a public model announcement can be turned into a narrow protocol:
+claim source, model/API metadata, prompt hash, transcript hashes, scoring rule,
+result status, limitations and rerun path. See the
+[Grok claim workflow](FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md) for a concrete worked
+example.
 
 ## What ClaimBound Adds
 

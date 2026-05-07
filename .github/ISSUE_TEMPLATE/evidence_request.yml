@@ -1,0 +1,94 @@
+name: Evidence request
+description: Request a ClaimBound evidence card for a narrow public claim.
+title: "[Evidence request]: "
+labels:
+  - evidence-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this only for a narrow public claim that could become a ClaimBound
+        protocol, runbook, checklist and evidence card.
+
+        A request is not evidence. It starts as `GRAY_DRAFT_NOT_EXECUTED` until
+        a protocol is frozen, artifacts are produced and the card validates.
+  - type: input
+    id: claim
+    attributes:
+      label: Public claim
+      description: Write the exact claim to check. Keep it narrow.
+      placeholder: "Example: Provider X reports model Y reached score Z on benchmark B."
+    validations:
+      required: true
+  - type: input
+    id: claim_source
+    attributes:
+      label: Claim source URL
+      description: Link to the public source for the claim.
+      placeholder: "https://example.org/model-announcement"
+    validations:
+      required: true
+  - type: textarea
+    id: narrow_question
+    attributes:
+      label: Narrow ClaimBound question
+      description: What exact protocol-bound question should ClaimBound answer?
+      placeholder: "Can this claim be rerun under fixed source, prompt, scoring and status rules?"
+    validations:
+      required: true
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Main audience
+      options:
+        - AI and LLM evaluation teams
+        - Open-science and reproducibility researchers
+        - Funding reviewers and program evaluators
+        - Data stewards and public-data teams
+        - Civic-tech, journalism and watchdog projects
+        - ML researchers
+        - Educators
+        - Companies with AI products
+        - Independent verifiers, procurement teams and public buyers
+    validations:
+      required: true
+  - type: dropdown
+    id: preferred_track
+    attributes:
+      label: Preferred track
+      options:
+        - MANUAL_NO_AI
+        - AUTOMATED_AI_ASSISTED
+        - Either track is acceptable
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Proposed official or public sources
+      description: List source docs, benchmark docs, datasets, model docs or resolution sources.
+    validations:
+      required: true
+  - type: textarea
+    id: scoring
+    attributes:
+      label: Proposed scoring or resolution rule
+      description: Explain how the result should be decided before seeing outcomes.
+    validations:
+      required: true
+  - type: textarea
+    id: reproducibility_risks
+    attributes:
+      label: Known reproducibility risks
+      description: Note proprietary APIs, unavailable prompts, private benchmarks, source rights, cost or access limits.
+      placeholder: "Example: benchmark questions may not be redistributable; model API may drift."
+    validations:
+      required: true
+  - type: textarea
+    id: forbidden_claims
+    attributes:
+      label: Claims this card must not make
+      description: List broad claims to avoid.
+      placeholder: "Example: do not claim this proves global model superiority or deployment readiness."
+    validations:
+      required: true
