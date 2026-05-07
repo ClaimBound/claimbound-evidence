@@ -38,5 +38,5 @@ def test_grok_card_renders_svg_without_placeholders() -> None:
     assert "GROK_PROMPTS_SOURCE_AUDIT_D001" in svg
     assert "docs/evidence_cards/" in svg
     assert "CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json" in svg
-    assert 'width="2000" height="1320"' in svg
+    assert 'width="2000" height="1190"' in svg
     assert "ClaimBound public benchmarks logo" in svg

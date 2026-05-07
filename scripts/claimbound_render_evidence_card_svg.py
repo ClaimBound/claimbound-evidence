@@ -13,7 +13,7 @@ from xml.sax.saxutils import escape
 
 DEFAULT_TEMPLATE = Path("docs/assets/claimbound_evidence_card.svg")
 WIDTH = 2000
-HEIGHT = 1320
+HEIGHT = 1190
 
 
 def render_svg(card_path: Path, template_path: Path = DEFAULT_TEMPLATE) -> str:
@@ -90,17 +90,17 @@ def _render_card(values: dict[str, Any]) -> str:
         ),
         "  <defs>",
         "    <style>",
-        "      .title{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:54px;font-weight:750;fill:#0d1736}",
-        "      .subtitle{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:25px;font-weight:400;fill:#55627a}",
-        "      .chipLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:17px;font-weight:650;fill:#536174;text-transform:uppercase}",
-        "      .chipText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:22px;font-weight:800;fill:#ffffff}",
-        "      .claimLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:21px;font-weight:750;fill:#1758d6}",
-        "      .claimText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:42px;font-weight:800;fill:#0d1736}",
-        "      .fieldLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:21px;font-weight:750;fill:#1758d6}",
-        "      .fieldText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:24px;font-weight:600;fill:#111827}",
-        "      .mono{font-family:SFMono-Regular,Consolas,'Liberation Mono',monospace;font-size:20px;font-weight:600;fill:#111827}",
-        "      .bodyText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:22px;font-weight:500;fill:#1f2937}",
-        "      .muted{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:19px;font-weight:500;fill:#55627a}",
+        "      .title{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:50px;font-weight:750;fill:#0d1736}",
+        "      .subtitle{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:23px;font-weight:400;fill:#55627a}",
+        "      .chipLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:650;fill:#536174;text-transform:uppercase}",
+        "      .chipText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:21px;font-weight:800;fill:#ffffff}",
+        "      .claimLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:750;fill:#1758d6}",
+        "      .claimText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:39px;font-weight:800;fill:#0d1736}",
+        "      .fieldLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:19px;font-weight:750;fill:#1758d6}",
+        "      .fieldText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:22px;font-weight:600;fill:#111827}",
+        "      .mono{font-family:SFMono-Regular,Consolas,'Liberation Mono',monospace;font-size:18px;font-weight:600;fill:#111827}",
+        "      .bodyText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:500;fill:#1f2937}",
+        "      .muted{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:17px;font-weight:500;fill:#55627a}",
         "    </style>",
         '    <linearGradient id="okGrad" x1="0" y1="0" x2="1" y2="0">',
         '      <stop offset="0%" stop-color="#0fbaaa"/>',
@@ -133,42 +133,42 @@ def _render_card(values: dict[str, Any]) -> str:
         "  </defs>",
         f'  <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" fill="#eef3f8"/>',
         f'  <rect x="44" y="44" width="{WIDTH - 88}" height="{HEIGHT - 88}" rx="34" fill="#ffffff" stroke="#cfd7e3" stroke-width="3"/>',
-        '  <path d="M70 176 H1930" stroke="#d7dde7" stroke-width="3"/>',
-        *(_logo_lockup(72, 58, 0.38)),
-        '  <text x="660" y="106" class="title">ClaimBound Evidence Card</text>',
-        '  <text x="663" y="143" class="subtitle">Protocol-bound, reproducible evidence summary</text>',
+        '  <path d="M70 158 H1930" stroke="#d7dde7" stroke-width="3"/>',
+        '  <text x="70" y="93" class="title">ClaimBound Evidence Card</text>',
+        '  <text x="73" y="129" class="subtitle">Protocol-bound, reproducible evidence summary</text>',
+        *(_logo_lockup(1415, 52, 0.33)),
     ]
 
     out.extend(
-        _chip(70, 205, 430, "Result status", values["result_status"], "okGrad")
+        _chip(70, 193, 430, "Result status", values["result_status"], "okGrad")
     )
     out.extend(
-        _chip(520, 205, 370, "Validity", values["card_validity_level"], "okGrad")
+        _chip(520, 193, 370, "Validity", values["card_validity_level"], "okGrad")
     )
     out.extend(
-        _chip(910, 205, 480, "Reproduction", values["reproduction_level"], "blueGrad")
+        _chip(910, 193, 480, "Reproduction", values["reproduction_level"], "blueGrad")
     )
     out.extend(
-        _chip(1410, 205, 520, "Record type", values["record_type"], "blueGrad")
+        _chip(1410, 193, 520, "Record type", values["record_type"], "blueGrad")
     )
 
-    out.extend(_claim_box(70, 300, 1860, values["allowed_claim_sentence"]))
+    out.extend(_claim_box(70, 278, 1860, values["allowed_claim_sentence"]))
 
     x1, x2 = 70, 1010
     w = 920
-    out.extend(_field_box(x1, 455, w, 125, "Evidence ID", values["evidence_id"], mono=True))
-    out.extend(_field_box(x2, 455, w, 125, "Protocol", values["protocol_id"], mono=True))
-    out.extend(_field_box(x1, 600, w, 130, "Official Source", values["source"]))
-    out.extend(_field_box(x2, 600, w, 130, "Target / Candidate", f"{values['target_definition']}\n{values['candidate_definition']}"))
-    out.extend(_field_box(x1, 750, w, 130, "Controls / Gate", values["controls_and_gate"]))
-    out.extend(_field_box(x2, 750, w, 130, "Period / Scope / Date", f"{values['period_scope']}\nAccess date: {values['access_date']}"))
-    out.extend(_field_box(x1, 900, w, 130, "Artifact / Report", f"{values['artifact_ref']}\n{values['sanitized_report_path']}"))
-    out.extend(_field_box(x2, 900, w, 130, "Evidence URL", values["evidence_url"], mono=True))
+    out.extend(_field_box(x1, 420, w, 106, "Evidence ID", values["evidence_id"], mono=True))
+    out.extend(_field_box(x2, 420, w, 106, "Protocol", values["protocol_id"], mono=True))
+    out.extend(_field_box(x1, 542, w, 114, "Official Source", values["source"]))
+    out.extend(_field_box(x2, 542, w, 114, "Target / Candidate", f"{values['target_definition']}\n{values['candidate_definition']}"))
+    out.extend(_field_box(x1, 672, w, 114, "Controls / Gate", values["controls_and_gate"]))
+    out.extend(_field_box(x2, 672, w, 114, "Period / Scope / Date", f"{values['period_scope']}\nAccess date: {values['access_date']}"))
+    out.extend(_field_box(x1, 802, w, 114, "Artifact / Report", f"{values['artifact_ref']}\n{values['sanitized_report_path']}"))
+    out.extend(_field_box(x2, 802, w, 114, "Evidence URL", values["evidence_url"], mono=True))
 
     out.extend(
         _wide_note(
             70,
-            1055,
+            938,
             1860,
             "Claim boundary",
             values["claim_boundary"],
@@ -183,21 +183,21 @@ def _render_card(values: dict[str, Any]) -> str:
 def _chip(x: int, y: int, w: int, label: str, value: str, gradient_id: str) -> list[str]:
     lines = [
         f'  <text x="{x}" y="{y - 18}" class="chipLabel">{_e(label)}</text>',
-        f'  <rect x="{x}" y="{y}" width="{w}" height="58" rx="19" fill="url(#{gradient_id})"/>',
+        f'  <rect x="{x}" y="{y}" width="{w}" height="52" rx="17" fill="url(#{gradient_id})"/>',
     ]
-    text_lines = _wrap(value, _chars_for_width(w - 44, 22), max_lines=2)
-    start_y = y + 25 if len(text_lines) == 2 else y + 37
-    lines.extend(_text_lines(x + 22, start_y, text_lines, "chipText", 26))
+    text_lines = _wrap(value, _chars_for_width(w - 42, 21), max_lines=2)
+    start_y = y + 23 if len(text_lines) == 2 else y + 34
+    lines.extend(_text_lines(x + 21, start_y, text_lines, "chipText", 24))
     return lines
 
 
 def _claim_box(x: int, y: int, w: int, claim: str) -> list[str]:
     lines = [
-        f'  <rect x="{x}" y="{y}" width="{w}" height="110" rx="18" fill="#f8fbff" stroke="#1758d6" stroke-width="4"/>',
-        f'  <text x="{x + 28}" y="{y + 34}" class="claimLabel">Allowed narrow claim</text>',
+        f'  <rect x="{x}" y="{y}" width="{w}" height="96" rx="16" fill="#f8fbff" stroke="#1758d6" stroke-width="4"/>',
+        f'  <text x="{x + 26}" y="{y + 31}" class="claimLabel">Allowed narrow claim</text>',
     ]
-    wrapped = _wrap(claim, _chars_for_width(w - 56, 42), max_lines=2)
-    lines.extend(_text_lines(x + 28, y + 82, wrapped, "claimText", 47))
+    wrapped = _wrap(claim, _chars_for_width(w - 52, 39), max_lines=2)
+    lines.extend(_text_lines(x + 26, y + 73, wrapped, "claimText", 42))
     return lines
 
 
@@ -212,16 +212,16 @@ def _field_box(
     mono: bool = False,
 ) -> list[str]:
     text_class = "mono" if mono else "fieldText"
-    font_size = 20 if mono else 24
-    line_height = 26 if mono else 29
-    max_lines = max(1, (h - 54) // line_height)
+    font_size = 18 if mono else 22
+    line_height = 23 if mono else 26
+    max_lines = max(1, (h - 48) // line_height)
     wrapped = _wrap(value, _chars_for_width(w - 52, font_size), max_lines=max_lines)
 
     lines = [
         f'  <rect x="{x}" y="{y}" width="{w}" height="{h}" rx="14" fill="#ffffff" stroke="#d8dee9" stroke-width="3"/>',
-        f'  <text x="{x + 24}" y="{y + 32}" class="fieldLabel">{_e(label)}</text>',
+        f'  <text x="{x + 22}" y="{y + 29}" class="fieldLabel">{_e(label)}</text>',
     ]
-    lines.extend(_text_lines(x + 24, y + 66, wrapped, text_class, line_height))
+    lines.extend(_text_lines(x + 22, y + 58, wrapped, text_class, line_height))
     return lines
 
 
@@ -234,17 +234,17 @@ def _wide_note(
     limitations: list[str],
 ) -> list[str]:
     h = 0
-    boundary_lines = _wrap(boundary, _chars_for_width(w - 52, 22), max_lines=3)
+    boundary_lines = _wrap(boundary, _chars_for_width(w - 48, 20), max_lines=3)
     limitation_text = " Limitations: " + " ".join(f"{idx + 1}. {item}" for idx, item in enumerate(limitations))
-    limitation_lines = _wrap(limitation_text, _chars_for_width(w - 52, 19), max_lines=2)
-    h = 48 + (len(boundary_lines) * 27) + 14 + (len(limitation_lines) * 23) + 26
+    limitation_lines = _wrap(limitation_text, _chars_for_width(w - 48, 17), max_lines=2)
+    h = 42 + (len(boundary_lines) * 24) + 10 + (len(limitation_lines) * 20) + 22
 
     lines = [
         f'  <rect x="{x}" y="{y - 2}" width="{w}" height="{h}" rx="14" fill="#fbfcfe" stroke="#d8dee9" stroke-width="3"/>',
-        f'  <text x="{x + 24}" y="{y + 31}" class="fieldLabel">{_e(label)}</text>',
+        f'  <text x="{x + 22}" y="{y + 28}" class="fieldLabel">{_e(label)}</text>',
     ]
-    lines.extend(_text_lines(x + 24, y + 62, boundary_lines, "bodyText", 27))
-    lines.extend(_text_lines(x + 24, y + 62 + len(boundary_lines) * 27 + 14, limitation_lines, "muted", 23))
+    lines.extend(_text_lines(x + 22, y + 55, boundary_lines, "bodyText", 24))
+    lines.extend(_text_lines(x + 22, y + 55 + len(boundary_lines) * 24 + 10, limitation_lines, "muted", 20))
     return lines
 
 
