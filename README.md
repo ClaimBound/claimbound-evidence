@@ -14,6 +14,72 @@ public-source evidence records for narrow AI/ML claims.
 It is not a production forecasting service. It is a public toolkit for checking
 whether a narrow claim was tested under rules fixed before the run.
 
+The short version:
+
+```text
+Where is the evidence?
+```
+
+ClaimBound turns a narrow public AI, ML or data claim into a reproducible
+evidence card with protocol, source lineage, hashes, result status, claim
+boundary and reproduction level.
+
+## Flagship Workflow: Public AI Transparency Claim To Evidence Card
+
+Example public claim:
+
+```text
+xAI publishes system prompts for Grok chat assistant and product features in
+the public xai-org/grok-prompts repository.
+```
+
+ClaimBound does not turn this into a broad claim that Grok is safer, better or
+fully reproducible at runtime. It asks a narrower question:
+
+```text
+Can the public prompt-disclosure source boundary be verified with repository
+commit, README/license presence, prompt file list and SHA-256 hashes without
+copying prompt text into this repository?
+```
+
+Current ClaimBound status for this repository:
+
+```text
+PASSED_UNDER_PROTOCOL / GREEN_VALIDATED
+```
+
+This green card proves only the narrow prompt-source audit. It does not prove
+that the free Grok chat runtime uses these exact prompts, does not prove hidden
+server-side layers are absent, and does not prove model superiority.
+
+See the full worked example:
+[Where is the evidence? Grok claim workflow](docs/FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md).
+
+## Demo Track Cards
+
+The first ten demonstration tracks have been scaffolded and locally assessed.
+The Grok prompt-transparency track has a green source-audit card. The other
+cards currently publish honest blocked-readiness records, not success claims.
+Each blocked card says what is missing before a real pass/fail empirical result
+can be claimed.
+
+| Track | Audience | Current status | Card |
+| --- | --- | --- | --- |
+| Grok prompt transparency | Public AI transparency verification | `PASSED_UNDER_PROTOCOL` | [JSON](docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json) |
+| Model evaluation | AI and LLM evaluation teams | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-MODEL_EVAL_D001-2026-05-07.json) |
+| Reproduction appendix | Open-science reproducibility | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-REPRO_APPENDIX_D001-2026-05-07.json) |
+| Funding review appendix | Funding reviewers and program evaluators | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-FUNDING_REVIEW_D001-2026-05-07.json) |
+| Source audit | Data stewards and public-data teams | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-07.json) |
+| Civic claim | Civic-tech, journalism and watchdog projects | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-CIVIC_CLAIM_D001-2026-05-07.json) |
+| ML appendix | ML researchers | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-ML_APPENDIX_D001-2026-05-07.json) |
+| Education reproduction | Educators | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-EDU_REPRO_D001-2026-05-07.json) |
+| AI product claim | Companies with AI products | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-AI_PRODUCT_CLAIM_D001-2026-05-07.json) |
+| Procurement claim | Independent verifiers and public buyers | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-PROCUREMENT_AI_D001-2026-05-07.json) |
+
+Blocked cards are useful: they show that the project refused to convert a
+request or scaffold into a positive result without source access, hashes,
+scoring and rerun evidence.
+
 The project focuses on reproducibility discipline:
 
 - source eligibility is checked before a real run;
@@ -73,6 +139,9 @@ official public source
 - Project direction: [positioning](docs/PROJECT_POSITIONING.md),
   [honesty manifesto](docs/HONESTY_MANIFESTO.md) and
   [use cases](docs/USE_CASES.md).
+- Public workflows: [audience demonstration workflows](docs/AUDIENCE_TESTIMONIAL_WORKFLOWS.md),
+  [demo tracks to evidence cards](docs/DEMO_TRACKS_TO_EVIDENCE_CARDS.md) and
+  [Grok claim evidence workflow](docs/FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md).
 - Automation direction: [scaffold automation plan](docs/SCAFFOLD_AUTOMATION_PLAN.md).
 - Registry direction: [global evidence registry](docs/GLOBAL_EVIDENCE_REGISTRY.md).
 
