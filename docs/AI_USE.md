@@ -3,8 +3,7 @@
 Operational rules for future AI-assisted work are defined in
 [docs/AI_OPERATOR_PROTOCOL.md](AI_OPERATOR_PROTOCOL.md).
 
-OpenAI Codex was used during April and May 2026 as a coding and writing
-assistant to inspect repository documentation, draft public documentation,
+Interactive development tooling was used during April and May 2026 to inspect repository documentation, draft public documentation,
 organize public work plans, implement validation helpers and check consistency
 with claim boundaries.
 
