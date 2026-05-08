@@ -98,6 +98,9 @@ scoring and rerun evidence.
 | NASA POWER D-103 | A narrow positive public-source result reproduced at outcome/gate level with source-byte drift. | [JSON](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg) |
 | NOAA CO-OPS D-131 | A negative result under a frozen official-source protocol. | [JSON](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg) |
 | EEA source audit D-001 | A green public-data source-boundary card that does not claim dataset coverage or legal approval. | [JSON](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.svg) |
+| OpenAI GPT-5 system card | A public-document source audit for an official system-card PDF, with no model-quality claim. | [JSON](docs/evidence_cards/CLAIMBOUND-OPENAI_GPT5_SYSTEM_CARD_SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-OPENAI_GPT5_SYSTEM_CARD_SOURCE_AUDIT_D001-2026-05-08.svg) |
+| Anthropic system cards | A public-document source audit for the official model system-card index. | [JSON](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg) |
+| Google DeepMind model cards | A public-document source audit for the official model-card index. | [JSON](docs/evidence_cards/CLAIMBOUND-GOOGLE_DEEPMIND_MODEL_CARDS_SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-GOOGLE_DEEPMIND_MODEL_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg) |
 
 The project focuses on reproducibility discipline:
 
@@ -166,6 +169,7 @@ official public source
 - Public workflows: [audience demonstration workflows](docs/AUDIENCE_TESTIMONIAL_WORKFLOWS.md),
   [demo tracks to evidence cards](docs/DEMO_TRACKS_TO_EVIDENCE_CARDS.md) and
   [Grok claim evidence workflow](docs/FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md).
+- Reproduction: [independent rerun workflow](docs/INDEPENDENT_RERUN_WORKFLOW.md).
 - Automation direction: [scaffold automation plan](docs/SCAFFOLD_AUTOMATION_PLAN.md).
 - Registry direction: [global evidence registry](docs/GLOBAL_EVIDENCE_REGISTRY.md).
 - Next steps: [public, near-term and later scope](docs/PROJECT_NEXT_STEPS.md).
@@ -181,6 +185,8 @@ uv run --extra dev python -m pytest -n auto
 
 ```bash
 uv run claimbound new
+uv run claimbound new-track
+uv run claimbound run-root --protocol-id EXAMPLE_D001 --source-url https://example.org/source
 uv run claimbound demo eea-source-audit
 uv run claimbound demo grok-source-audit
 uv run claimbound validate-all

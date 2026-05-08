@@ -13,6 +13,7 @@ from claimbound_public_benchmarks.evidence_card import (
     validate_evidence_card,
 )
 from claimbound_public_benchmarks.registry import load_registry, validate_registry
+from claimbound_public_benchmarks.run_root import RunRootRequest, prepare_run_root
 from claimbound_public_benchmarks.scaffold import ScaffoldRequest, build_scaffold
 
 
@@ -83,6 +84,21 @@ def build_parser() -> argparse.ArgumentParser:
         default=REPO_ROOT / "docs" / "registry" / "evidence_index.json",
     )
     validate_parser.set_defaults(func=_cmd_validate_all)
+
+    run_root_parser = subparsers.add_parser(
+        "run-root",
+        description="Create a local-only run root with standard raw/log/hash/report folders.",
+    )
+    run_root_parser.add_argument("--protocol-id", required=True)
+    run_root_parser.add_argument("--source-url", required=True)
+    run_root_parser.add_argument("--operator", default="local operator")
+    run_root_parser.add_argument(
+        "--root",
+        type=Path,
+        default=Path.home() / "claimbound_runs",
+        help="Local-only parent directory. Defaults to ~/claimbound_runs.",
+    )
+    run_root_parser.set_defaults(func=_cmd_run_root)
 
     return parser
 
@@ -167,6 +183,21 @@ def _cmd_validate_all(args: argparse.Namespace, parser: argparse.ArgumentParser)
 
     print(f"valid_cards={len(card_paths)}")
     print(f"valid_registry={args.registry.relative_to(REPO_ROOT)}")
+    return 0
+
+
+def _cmd_run_root(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    paths = prepare_run_root(
+        RunRootRequest(
+            protocol_id=args.protocol_id,
+            operator=args.operator,
+            source_url=args.source_url,
+            root=args.root,
+        )
+    )
+    for path in paths:
+        print(path.as_posix())
     return 0
 
 

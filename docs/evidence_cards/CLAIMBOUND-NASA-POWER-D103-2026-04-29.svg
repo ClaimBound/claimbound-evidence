@@ -1,19 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1731" height="909" viewBox="0 0 1731 909" role="img" aria-label="ClaimBound Evidence Card">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1190" viewBox="0 0 2000 1190" role="img" aria-label="ClaimBound Evidence Card">
   <defs>
     <style>
-      .title{font: 700 64px 'Inter', 'Segoe UI', Arial, sans-serif; fill:#0d1736}
-      .subtitle{font: 400 28px 'Inter', 'Segoe UI', Arial, sans-serif; fill:#55627a}
-      .hlabel{font: 400 34px 'Inter', 'Segoe UI', Arial, sans-serif; fill:#111827}
-      .badge{font: 700 34px 'Inter', 'Segoe UI', Arial, sans-serif; fill:#ffffff}
-      .field-label{font: 400 26px 'Inter', 'Segoe UI', Arial, sans-serif; fill:#1f2937}
-      .field-value{font: 700 28px 'Inter', 'Segoe UI', Arial, sans-serif; fill:#111827}
-      .claim-header{font: 700 34px 'Inter', 'Segoe UI', Arial, sans-serif; fill:#1758d6}
-      .claim-text{font: 700 64px 'Inter', 'Segoe UI', Arial, sans-serif; fill:#0d1736}
-      .footer{font: 400 26px 'Inter', 'Segoe UI', Arial, sans-serif; fill:#24324b}
-      .wordmark{font: 700 60px 'Inter', 'Segoe UI', Arial, sans-serif; fill:#0d1736}
-      .smallcaps{font: 600 21px 'Inter', 'Segoe UI', Arial, sans-serif; fill:#23314a; letter-spacing:4px}
+      .title{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:50px;font-weight:750;fill:#0d1736}
+      .subtitle{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:23px;font-weight:400;fill:#55627a}
+      .chipLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:16px;font-weight:650;fill:#536174;text-transform:uppercase}
+      .chipText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:21px;font-weight:800;fill:#ffffff}
+      .claimLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:750;fill:#1758d6}
+      .claimText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:39px;font-weight:800;fill:#0d1736}
+      .fieldLabel{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:19px;font-weight:750;fill:#1758d6}
+      .fieldText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:22px;font-weight:600;fill:#111827}
+      .mono{font-family:SFMono-Regular,Consolas,'Liberation Mono',monospace;font-size:18px;font-weight:600;fill:#111827}
+      .bodyText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:500;fill:#1f2937}
+      .muted{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:17px;font-weight:500;fill:#55627a}
     </style>
-    <linearGradient id="tealGrad" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="okGrad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#0fbaaa"/>
       <stop offset="100%" stop-color="#0a9f93"/>
     </linearGradient>
@@ -21,37 +22,29 @@
       <stop offset="0%" stop-color="#1f64f2"/>
       <stop offset="100%" stop-color="#1758d6"/>
     </linearGradient>
-  </defs>
-
-  <!-- Background -->
-  <rect x="20" y="20" width="1691" height="869" rx="28" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
-
-  <!-- Logo: ClaimBound (embedded safely, without external dependency or problematic background/filter) -->
-  <defs>
-    <linearGradient id="cb_ringBlue" x1="73" y1="453" x2="348" y2="793" gradientUnits="userSpaceOnUse">
+    <linearGradient id="logoRingBlue" x1="73" y1="453" x2="348" y2="793" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#1E64BA"/>
       <stop offset="0.55" stop-color="#0C75C8"/>
       <stop offset="1" stop-color="#0A5FAB"/>
     </linearGradient>
-    <linearGradient id="cb_ringTeal" x1="221" y1="792" x2="403" y2="594" gradientUnits="userSpaceOnUse">
+    <linearGradient id="logoRingTeal" x1="221" y1="792" x2="403" y2="594" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#18B7A3"/>
       <stop offset="1" stop-color="#089EBC"/>
     </linearGradient>
-    <linearGradient id="cb_signalGradient" x1="61" y1="628" x2="404" y2="628" gradientUnits="userSpaceOnUse">
+    <linearGradient id="logoSignalGradient" x1="61" y1="628" x2="404" y2="628" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#1E64BA"/>
       <stop offset="0.43" stop-color="#0877C4"/>
       <stop offset="0.72" stop-color="#0A97BB"/>
       <stop offset="1" stop-color="#14B69E"/>
     </linearGradient>
-    <linearGradient id="cb_waveText" x1="806" y1="520" x2="1198" y2="632" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0E73CC"/>
-      <stop offset="0.55" stop-color="#1687D9"/>
-      <stop offset="1" stop-color="#0D77CD"/>
-    </linearGradient>
   </defs>
-
-  <g aria-label="ClaimBound public benchmarks logo" transform="translate(42,23) scale(0.355) translate(-30,-430)">
-    <g id="claimbound-icon" stroke-linecap="butt" stroke-linejoin="round">
+  <rect x="0" y="0" width="2000" height="1190" fill="#eef3f8"/>
+  <rect x="44" y="44" width="1912" height="1102" rx="34" fill="#ffffff" stroke="#cfd7e3" stroke-width="3"/>
+  <path d="M70 158 H1930" stroke="#d7dde7" stroke-width="3"/>
+  <text x="70" y="93" class="title">ClaimBound Evidence Card</text>
+  <text x="73" y="129" class="subtitle">Protocol-bound, reproducible evidence summary</text>
+  <g aria-label="ClaimBound public benchmarks logo" transform="translate(1415,52) scale(0.33) translate(-40,-478)">
+    <g stroke-linecap="butt" stroke-linejoin="round">
       <g stroke="#CBD3DC" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="10 12" opacity="0.72">
         <path d="M130 507V714"/>
         <path d="M162 490V719"/>
@@ -63,164 +56,64 @@
         <path d="M128 595H327"/>
         <path d="M128 672H355"/>
       </g>
-      <path d="M342.6 514.3A160 160 0 1 0 230 787" fill="none" stroke="url(#cb_ringBlue)" stroke-width="23"/>
-      <path d="M230 787A160 160 0 0 0 388.4 649.3" fill="none" stroke="url(#cb_ringTeal)" stroke-width="23"/>
-      <path d="M63 629.5C87 616.4 104.3 613.6 121.2 632.2C140.7 653.8 153.4 651.6 162.1 616.2C173.8 568.5 182.5 527.5 198.9 527.5C217.5 527.5 228.4 590.6 240.3 630.8C253.4 675.4 268.6 682.8 284.6 641.5C303.5 592.9 315.2 567.6 333.7 574.7C352.6 582 355.7 635.1 376.6 634.9C386.2 634.8 394 630.4 402 626.8" fill="none" stroke="url(#cb_signalGradient)" stroke-width="11.5" stroke-linecap="round"/>
+      <path d="M342.6 514.3A160 160 0 1 0 230 787" fill="none" stroke="url(#logoRingBlue)" stroke-width="23"/>
+      <path d="M230 787A160 160 0 0 0 388.4 649.3" fill="none" stroke="url(#logoRingTeal)" stroke-width="23"/>
+      <path d="M63 629.5C87 616.4 104.3 613.6 121.2 632.2C140.7 653.8 153.4 651.6 162.1 616.2C173.8 568.5 182.5 527.5 198.9 527.5C217.5 527.5 228.4 590.6 240.3 630.8C253.4 675.4 268.6 682.8 284.6 641.5C303.5 592.9 315.2 567.6 333.7 574.7C352.6 582 355.7 635.1 376.6 634.9C386.2 634.8 394 630.4 402 626.8" fill="none" stroke="url(#logoSignalGradient)" stroke-width="11.5" stroke-linecap="round"/>
       <path d="M284 684.5L307.5 707.7L353 657" fill="none" stroke="#12B4A4" stroke-width="10.5" stroke-linecap="square"/>
     </g>
-
-    <g id="claimbound-wordmark">
-      <text x="428" y="633" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="124" font-weight="700" letter-spacing="-2" fill="#082F59">Claim</text>
-      <text x="792" y="633" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="124" font-weight="700" letter-spacing="-2" fill="url(#cb_waveText)">Bound</text>
-      <line x1="436" y1="700" x2="514" y2="700" stroke="#11AFA9" stroke-width="4"/>
-      <text x="542" y="717" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="13" fill="#082F59">public benchmarks</text>
-      <line x1="1120" y1="700" x2="1194" y2="700" stroke="#11AFA9" stroke-width="4"/>
-    </g>
+    <text x="428" y="633" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="124" font-weight="750" fill="#082F59" text-rendering="geometricPrecision">Claim</text>
+    <text x="792" y="633" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="124" font-weight="750" fill="#0E73CC" text-rendering="geometricPrecision">Bound</text>
+    <line x1="436" y1="700" x2="514" y2="700" stroke="#11AFA9" stroke-width="4"/>
+    <text x="542" y="717" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="13" fill="#082F59">public benchmarks</text>
+    <line x1="1120" y1="700" x2="1194" y2="700" stroke="#11AFA9" stroke-width="4"/>
   </g>
-
-  <!-- Divider -->
-  <line x1="523" y1="43" x2="523" y2="171" stroke="#b9bec8" stroke-width="2"/>
-
-  <!-- Main title -->
-  <text x="575" y="89" class="title">ClaimBound Evidence Card</text>
-  <text x="575" y="150" class="subtitle">Protocol-bound, reproducible evidence summary</text>
-
-  <!-- Left status area -->
-  <text x="63" y="235" class="hlabel">Result status</text>
-  <rect x="59" y="252" width="388" height="63" rx="22" fill="url(#tealGrad)"/>
-  <circle cx="98" cy="283.5" r="19" fill="#ffffff" opacity="0.95"/>
-  <path d="M89 284 l7 7 l12 -16" fill="none" stroke="#0aa79b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="138" y="294" class="badge">PASSED_UNDER_PROTOCOL</text>
-  <line x1="72" y1="334" x2="447" y2="334" stroke="#c9ced6" stroke-width="2"/>
-
-  <text x="63" y="374" class="hlabel">Reproduction</text>
-  <rect x="59" y="390" width="388" height="63" rx="22" fill="url(#blueGrad)"/>
-  <g transform="translate(78,407)" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M18 3 l14 5 v11 c0 9 -6 15 -14 19 c-8 -4 -14 -10 -14 -19 V8 Z"/>
-    <path d="M13 17 l4 4 l7 -9"/>
-  </g>
-  <text x="116" y="432" class="badge">OUTCOME + DRIFT</text>
-
-  <!-- Claim box -->
-  <rect x="502" y="200" width="1172" height="254" rx="20" fill="#ffffff" stroke="#1758d6" stroke-width="4"/>
-  <line x1="553" y1="253" x2="838" y2="253" stroke="#1758d6" stroke-width="4"/>
-  <line x1="1269" y1="253" x2="1604" y2="253" stroke="#1758d6" stroke-width="4"/>
-  <text x="1069" y="267" class="claim-header" text-anchor="middle">Allowed narrow claim</text>
-  <text x="1088" y="367" class="claim-text" text-anchor="middle">NASA POWER D-103 passed its frozen gate</text>
-
-  <!-- Grid lines -->
-  <line x1="39" y1="481" x2="1684" y2="481" stroke="#c9ced6" stroke-width="2"/>
-  <line x1="39" y1="593" x2="1684" y2="593" stroke="#c9ced6" stroke-width="2"/>
-  <line x1="39" y1="695" x2="1684" y2="695" stroke="#c9ced6" stroke-width="2"/>
-  <line x1="39" y1="801" x2="1684" y2="801" stroke="#c9ced6" stroke-width="2"/>
-  <line x1="447" y1="481" x2="447" y2="802" stroke="#c9ced6" stroke-width="2"/>
-  <line x1="877" y1="481" x2="877" y2="695" stroke="#c9ced6" stroke-width="2"/>
-  <line x1="1288" y1="481" x2="1288" y2="695" stroke="#c9ced6" stroke-width="2"/>
-
-  <!-- Row 1 -->
-  <!-- Record ID -->
-  <g transform="translate(60,506)">
-    <rect x="0" y="0" width="55" height="41" rx="3" fill="none" stroke="#1758d6" stroke-width="4"/>
-    <circle cx="16" cy="15" r="6" fill="none" stroke="#1758d6" stroke-width="4"/>
-    <path d="M8 30 q8 -9 16 0" fill="none" stroke="#1758d6" stroke-width="4"/>
-    <line x1="31" y1="12" x2="44" y2="12" stroke="#1758d6" stroke-width="4"/>
-    <line x1="31" y1="21" x2="44" y2="21" stroke="#1758d6" stroke-width="4"/>
-  </g>
-  <text x="144" y="524" class="field-label">Record ID</text>
-  <text x="144" y="560" class="field-value">NASA-POWER-D103</text>
-
-  <!-- Protocol -->
-  <g transform="translate(478,503)" fill="none" stroke="#1758d6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="0" y="8" width="28" height="43" rx="3"/>
-    <line x1="7" y1="24" x2="21" y2="24"/>
-    <line x1="7" y1="34" x2="21" y2="34"/>
-    <path d="M10 8 v-5 h8 v5"/>
-  </g>
-  <text x="548" y="524" class="field-label">Protocol</text>
-  <text x="548" y="560" class="field-value">NASA_POWER_D103 v1.0.143</text>
-
-  <!-- Target -->
-  <g transform="translate(914,521)" fill="none" stroke="#1758d6" stroke-width="4" stroke-linecap="round">
-    <circle cx="20" cy="20" r="18"/>
-    <circle cx="20" cy="20" r="5"/>
-    <line x1="20" y1="-3" x2="20" y2="7"/>
-    <line x1="20" y1="33" x2="20" y2="43"/>
-    <line x1="-3" y1="20" x2="7" y2="20"/>
-    <line x1="33" y1="20" x2="43" y2="20"/>
-  </g>
-  <text x="983" y="524" class="field-label">Target</text>
-  <text x="983" y="560" class="field-value">solar resource shortfall</text>
-
-  <!-- Candidate -->
-  <g transform="translate(1319,518)" fill="none" stroke="#0aa79b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="23" cy="8" r="10"/>
-    <path d="M2 41 q21 -18 42 0"/>
-  </g>
-  <text x="1394" y="524" class="field-label">Candidate</text>
-  <text x="1394" y="560" class="field-value">solar 7d z-score</text>
-
-  <!-- Row 2 -->
-  <!-- Controls/gate -->
-  <g transform="translate(63,613)" fill="none" stroke="#0aa79b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
-    <path d="M0 0 H48 L29 23 V43 L19 49 V23 Z"/>
-  </g>
-  <text x="144" y="632" class="field-label">Controls / gate</text>
-  <text x="144" y="668" class="field-value">baseline pool + fixed gate</text>
-
-  <!-- Source -->
-  <g transform="translate(479,611)" fill="none" stroke="#1758d6" stroke-width="4">
-    <ellipse cx="17" cy="5" rx="16" ry="5"/>
-    <path d="M1 5 v25 c0 3 7 6 16 6 s16 -3 16 -6 V5"/>
-    <path d="M1 17 c0 3 7 6 16 6 s16 -3 16 -6"/>
-  </g>
-  <text x="548" y="632" class="field-label">Source</text>
-  <text x="548" y="668" class="field-value">NASA POWER</text>
-
-  <!-- Period / scope -->
-  <g transform="translate(912,612)" fill="none" stroke="#0aa79b" stroke-width="4" stroke-linecap="round">
-    <circle cx="20" cy="20" r="20"/>
-    <ellipse cx="20" cy="20" rx="9" ry="20"/>
-    <line x1="0" y1="20" x2="40" y2="20"/>
-    <path d="M4 11 H36"/>
-    <path d="M4 29 H36"/>
-  </g>
-  <text x="983" y="632" class="field-label">Period / scope</text>
-  <text x="983" y="668" class="field-value">2015-2024, 3 public points</text>
-
-  <!-- Evidence date -->
-  <g transform="translate(1319,611)" fill="none" stroke="#1758d6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="1" y="8" width="36" height="34" rx="3"/>
-    <line x1="1" y1="18" x2="37" y2="18"/>
-    <line x1="11" y1="0" x2="11" y2="10"/>
-    <line x1="27" y1="0" x2="27" y2="10"/>
-    <circle cx="19" cy="29" r="1.8" fill="#1758d6"/>
-  </g>
-  <text x="1394" y="632" class="field-label">Evidence date</text>
-  <text x="1394" y="668" class="field-value">2026-04-29</text>
-
-  <!-- Row 3 -->
-  <!-- Artifact / commit -->
-  <g transform="translate(58,726)" fill="none" stroke="#1758d6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20 0 L0 20 L20 40"/>
-    <path d="M34 0 L20 40"/>
-    <path d="M42 0 L62 20 L42 40"/>
-  </g>
-  <text x="144" y="732" class="field-label">Artifact / commit</text>
-  <text x="144" y="768" class="field-value">1f91f1c, sanitized summary</text>
-
-  <!-- Evidence URL -->
-  <g transform="translate(479,727)" fill="none" stroke="#0aa79b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M15 27 l-8 8 a13 13 0 0 1 -18 -18 l11 -11 a13 13 0 0 1 18 0"/>
-    <path d="M26 13 l8 -8 a13 13 0 0 1 18 18 l-11 11 a13 13 0 0 1 -18 0"/>
-    <path d="M18 24 l16 -16"/>
-  </g>
-  <text x="548" y="732" class="field-label">Evidence URL</text>
-  <text x="548" y="768" class="field-value">docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json</text>
-
-  <!-- Footer -->
-  <rect x="39" y="822" width="1645" height="59" rx="8" fill="#fbfcfe" stroke="#c9ced6" stroke-width="2"/>
-  <g transform="translate(58,835)" fill="none" stroke="#1758d6" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
-    <path d="M14 2 l17 6 v14 c0 12 -8 20 -17 24 c-9 -4 -17 -12 -17 -24 V8 Z"/>
-  </g>
-  <text x="133" y="860" class="footer">Claim boundary: no universal edge, deployment readiness, or superiority claim. Negative and blocked outcomes are valid evidence.</text>
+  <text x="70" y="175" class="chipLabel">Result status</text>
+  <rect x="70" y="193" width="430" height="52" rx="17" fill="url(#okGrad)"/>
+  <text x="91" y="227" class="chipText">PASSED_UNDER_PROTOCOL</text>
+  <text x="520" y="175" class="chipLabel">Validity</text>
+  <rect x="520" y="193" width="370" height="52" rx="17" fill="url(#okGrad)"/>
+  <text x="541" y="227" class="chipText">VALIDATED</text>
+  <text x="910" y="175" class="chipLabel">Reproduction</text>
+  <rect x="910" y="193" width="480" height="52" rx="17" fill="url(#blueGrad)"/>
+  <text x="931" y="216" class="chipText">REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_D</text>
+  <text x="931" y="240" class="chipText">RIFT</text>
+  <text x="1410" y="175" class="chipLabel">Record type</text>
+  <rect x="1410" y="193" width="520" height="52" rx="17" fill="url(#blueGrad)"/>
+  <text x="1431" y="227" class="chipText">evidence_result</text>
+  <rect x="70" y="278" width="1860" height="96" rx="16" fill="#f8fbff" stroke="#1758d6" stroke-width="4"/>
+  <text x="96" y="309" class="claimLabel">Allowed narrow claim</text>
+  <text x="96" y="351" class="claimText">signal</text>
+  <rect x="70" y="420" width="920" height="106" rx="14" fill="#ffffff" stroke="#d8dee9" stroke-width="3"/>
+  <text x="92" y="449" class="fieldLabel">Evidence ID</text>
+  <text x="92" y="478" class="mono">CLAIMBOUND-NASA-POWER-D103-2026-04-29</text>
+  <rect x="1010" y="420" width="920" height="106" rx="14" fill="#ffffff" stroke="#d8dee9" stroke-width="3"/>
+  <text x="1032" y="449" class="fieldLabel">Protocol</text>
+  <text x="1032" y="478" class="mono">NASA_POWER_D103</text>
+  <rect x="70" y="542" width="920" height="114" rx="14" fill="#ffffff" stroke="#d8dee9" stroke-width="3"/>
+  <text x="92" y="571" class="fieldLabel">Official Source</text>
+  <text x="92" y="600" class="fieldText">NASA POWER Daily point API</text>
+  <text x="92" y="626" class="fieldText">https://power.larc.nasa.gov/docs/services/api/temporal/daily/</text>
+  <rect x="1010" y="542" width="920" height="114" rx="14" fill="#ffffff" stroke="#d8dee9" stroke-width="3"/>
+  <text x="1032" y="571" class="fieldLabel">Target / Candidate</text>
+  <text x="1032" y="600" class="fieldText">renewable-energy-resource</text>
+  <text x="1032" y="626" class="fieldText">NASA POWER Daily point API</text>
+  <rect x="70" y="672" width="920" height="114" rx="14" fill="#ffffff" stroke="#d8dee9" stroke-width="3"/>
+  <text x="92" y="701" class="fieldLabel">Controls / Gate</text>
+  <text x="92" y="730" class="fieldText">Candidate was compared with persistence, seasonal, meteorological</text>
+  <text x="92" y="756" class="fieldText">anomaly, shuffled, reversed and no-solar-context controls under the</text>
+  <rect x="1010" y="672" width="920" height="114" rx="14" fill="#ffffff" stroke="#d8dee9" stroke-width="3"/>
+  <text x="1032" y="701" class="fieldLabel">Period / Scope / Date</text>
+  <text x="1032" y="730" class="fieldText">2026-04-29</text>
+  <text x="1032" y="756" class="fieldText">Access date: 2026-04-29</text>
+  <rect x="70" y="802" width="920" height="114" rx="14" fill="#ffffff" stroke="#d8dee9" stroke-width="3"/>
+  <text x="92" y="831" class="fieldLabel">Artifact / Report</text>
+  <text x="92" y="860" class="fieldText">artifacts/nasa_power_d103_real_run_summary.json</text>
+  <text x="92" y="886" class="fieldText">artifacts/nasa_power_d103_real_run_summary.json</text>
+  <rect x="1010" y="802" width="920" height="114" rx="14" fill="#ffffff" stroke="#d8dee9" stroke-width="3"/>
+  <text x="1032" y="831" class="fieldLabel">Evidence URL</text>
+  <text x="1032" y="860" class="mono">docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json</text>
+  <rect x="70" y="936" width="1860" height="118" rx="14" fill="#fbfcfe" stroke="#d8dee9" stroke-width="3"/>
+  <text x="92" y="966" class="fieldLabel">Claim boundary</text>
+  <text x="92" y="993" class="bodyText">NASA POWER D-103 passed the frozen gate only for the documented source, period, target, candidate, controls and acceptance rule.</text>
+  <text x="92" y="1027" class="muted">Limitations: 1. Single domain and one frozen task only. 2. Daily NASA POWER data product only. 3. No operational deployment claim is made. 4. No broad model comparison is made.</text>
 </svg>

@@ -10,6 +10,7 @@ def test_cli_parser_has_public_workflow_commands() -> None:
     assert "new" in help_text
     assert "new-track" in help_text
     assert "demo" in help_text
+    assert "run-root" in help_text
     assert "validate-all" in help_text
 
 

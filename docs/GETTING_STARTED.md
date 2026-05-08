@@ -97,6 +97,21 @@ checklist, operator declaration, draft card and source-probe summary so an
 operator can freeze the real protocol and run the track without missing common
 steps.
 
+## Prepare A Local Run Root
+
+Manual and AI-assisted runs should keep raw payloads outside this repository:
+
+```bash
+uv run claimbound run-root \
+  --protocol-id "EXAMPLE_D001" \
+  --source-url "https://example.org/source-docs" \
+  --operator "your-name-or-handle"
+```
+
+This creates a local-only directory under `$HOME/claimbound_runs/` with standard
+`raw/`, `logs/`, `hashes/`, `reports/` and `transcripts/` folders, plus
+`RUN_CONTEXT.md`, `DEVIATIONS.md` and `LOCAL_MANIFEST.md`.
+
 ## Read Next
 
 - [ClaimBound in 5 minutes](CLAIMBOUND_IN_5_MINUTES.md)

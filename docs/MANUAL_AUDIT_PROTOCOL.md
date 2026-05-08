@@ -18,17 +18,19 @@ Manual judgment after scoring is a deviation.
 ## Required Manual Steps
 
 1. Identify the official source.
-2. Read source rights and attribution requirements.
-3. Decide raw payload handling.
-4. Fix domain, period, target, candidate, baselines and controls.
-5. Fix coverage rules.
-6. Fix acceptance gate.
-7. Write forbidden after-result changes.
-8. Download or access source data.
-9. Hash raw payloads when possible.
-10. Run the parser, runner or manual scoring sheet.
-11. Record deviations.
-12. Publish exact result status.
+2. Create a local run root:
+   `uv run claimbound run-root --protocol-id <ID> --source-url <URL>`.
+3. Read source rights and attribution requirements.
+4. Decide raw payload handling.
+5. Fix domain, period, target, candidate, baselines and controls.
+6. Fix coverage rules.
+7. Fix acceptance gate.
+8. Write forbidden after-result changes.
+9. Download or access source data into the local run root, not the repository.
+10. Hash raw payloads when possible.
+11. Run the parser, runner or manual scoring sheet.
+12. Record deviations in `DEVIATIONS.md`.
+13. Publish exact result status.
 
 ## Manual Operator Declaration
 
@@ -58,6 +60,7 @@ Any status is acceptable when honestly recorded.
 ## Manual Review Checklist
 
 - [ ] Official source is identified.
+- [ ] Local run root exists outside the repository.
 - [ ] Source rights are recorded.
 - [ ] Raw payload policy is recorded.
 - [ ] Source access date is recorded.
@@ -67,7 +70,7 @@ Any status is acceptable when honestly recorded.
 - [ ] Baselines and controls are fixed before scoring.
 - [ ] Acceptance gate is fixed before scoring.
 - [ ] Raw hashes or block reason are recorded.
-- [ ] Deviations are recorded.
+- [ ] Deviations are recorded in the deviation log.
 - [ ] Result status is exact.
 - [ ] Claim boundary is narrow.
 - [ ] Evidence card is complete.
@@ -82,4 +85,3 @@ Stop and record a blocked or insufficient-coverage outcome when:
 - coverage is too weak for the frozen gate;
 - raw payloads cannot be handled under repository policy;
 - the operator cannot reconstruct the exact selection rule.
-

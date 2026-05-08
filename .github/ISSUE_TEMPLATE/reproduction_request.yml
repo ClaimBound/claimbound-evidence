@@ -1,0 +1,55 @@
+name: Reproduction request
+description: Ask for an independent rerun of an existing ClaimBound evidence card.
+title: "[Reproduction request]: "
+labels:
+  - reproduction-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when an existing ClaimBound card should be rerun by another
+        operator. A request is not reproduction evidence until a rerun PR adds
+        sanitized artifacts, a reproduction card and registry update.
+  - type: input
+    id: evidence_card
+    attributes:
+      label: Evidence card URL
+      description: Link to the existing card to reproduce.
+      placeholder: "https://github.com/ClaimBound/claimbound-public-benchmarks/blob/main/docs/evidence_cards/..."
+    validations:
+      required: true
+  - type: input
+    id: protocol
+    attributes:
+      label: Protocol or playbook URL
+      description: Link to the original protocol, playbook or reproduction instructions.
+    validations:
+      required: true
+  - type: dropdown
+    id: expected_outcome
+    attributes:
+      label: Expected reproduction outcome
+      options:
+        - Same result status
+        - Same gate-level outcome with source-byte drift
+        - Negative rerun
+        - Blocked source
+        - Insufficient coverage
+        - Unknown
+    validations:
+      required: true
+  - type: textarea
+    id: source_notes
+    attributes:
+      label: Source access notes
+      description: Note API keys, rate limits, source drift, rights notes or data availability concerns.
+    validations:
+      required: true
+  - type: textarea
+    id: forbidden_claims
+    attributes:
+      label: Claims the rerun must not make
+      description: List broad claims to avoid in the reproduction card.
+      placeholder: "Example: do not claim model superiority or deployment readiness."
+    validations:
+      required: true
