@@ -48,7 +48,7 @@ request example
 | `MODEL_EVAL_D001` | AI and LLM evaluation teams | Public model-card or benchmark-claim readiness audit: are model id, prompt set, scoring rule and transcript hashes available? | Show only after prompt manifest, transcript hashes and score report validate. |
 | `REPRO_APPENDIX_D001` | Open science / reproducibility | Independent rerun of an existing public ClaimBound card, starting with NASA POWER D-103. | Show reproduced, negative or source-byte-drift status honestly. |
 | `FUNDING_REVIEW_D001` | Funding reviewers | Evidence appendix audit for a public report: promised protocol, source, result status and forbidden claims. | Show source/status/limitations trail, not funding strategy. |
-| `SOURCE_AUDIT_D001` | Data stewards | EEA Air Quality source-readiness audit: official source, rights, coverage, raw payload policy. | Show `source_audit`, blocked or source-ready status. |
+| `SOURCE_AUDIT_D001` | Data stewards | EEA Air Quality source audit: official download page reachability, current download-service link, rights notice link and raw payload policy. | Show the green source-audit card only for the narrow source-page claim; do not imply dataset coverage or legal approval. |
 | `CIVIC_CLAIM_D001` | Civic tech / journalism | NYC TLC public-data claim readiness: can a civic mobility claim be resolved from official data without raw redistribution? | Show pass/negative/blocked only. |
 | `ML_APPENDIX_D001` | ML researchers | NASA POWER method-appendix card: fixed source, baselines, controls and claim boundary. | Show narrow result, not broad superiority. |
 | `EDU_REPRO_D001` | Educators | Classroom reproducibility exercise using public NASA POWER source and an honest checklist. | Show as classroom reproducibility example. |
