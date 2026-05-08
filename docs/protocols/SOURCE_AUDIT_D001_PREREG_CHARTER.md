@@ -1,14 +1,16 @@
 # SOURCE_AUDIT_D001 Pre-Registration Charter
 
-Status: draft scaffold. This file is not a completed evidence record.
+Status: frozen source-audit protocol for the 2026-05-08 EEA source-boundary run.
 
 Created: 2026-05-07
 
 ## Claim Boundary
 
-This track may check only a narrow `source_audit` claim for the source
-listed below. It must not claim broad model superiority, deployment readiness,
-legal certification, or correctness outside this protocol.
+This track checks only a narrow `source_audit` claim for the source listed
+below: whether the EEA Air Quality Portal download page is reachable and exposes
+expected download-service and rights links. It must not claim dataset coverage,
+legal certification, pollutant/time completeness, broad model superiority,
+deployment readiness, or correctness outside this protocol.
 
 ## Source
 
@@ -18,20 +20,16 @@ legal certification, or correctness outside this protocol.
 - Audience: Data stewards and public-data teams
 - Execution mode: MANUAL_NO_AI
 
-## Fields To Freeze Before Execution
+## Frozen Pass Gate
 
-- exact public claim;
-- official or public source boundary;
-- source rights note;
-- raw payload or transcript policy;
-- target or question set;
-- prompt set and prompt hash, when applicable;
-- model or method identifier, when applicable;
-- baselines and controls, when applicable;
-- scoring or resolution rule;
-- pass, negative, blocked and insufficient-coverage decision rules;
-- stop conditions;
-- forbidden after-result changes.
+The source audit passes only when all of these are true:
+
+- source URL returns HTTP 200;
+- content type is HTML;
+- page title contains `Download data`;
+- page exposes the current Air Quality Download Service direct link;
+- page exposes the EEA copyright notice link;
+- raw HTML and downloadable datasets are not committed to this repository.
 
 ## Stop Conditions
 

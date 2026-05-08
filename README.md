@@ -60,10 +60,10 @@ The rendered share card is available as
 ## Demo Track Cards
 
 The first ten demonstration tracks have been scaffolded and locally assessed.
-The Grok prompt-transparency track has a green source-audit card. The other
-cards currently publish honest blocked-readiness records, not success claims.
-Each blocked card says what is missing before a real pass/fail empirical result
-can be claimed.
+The Grok prompt-transparency and EEA public-data source-audit tracks have green
+source-audit cards. The other cards currently publish honest blocked-readiness
+records, not success claims. Each blocked card says what is missing before a
+real pass/fail empirical result can be claimed.
 
 | Track | Audience | Current status | Card |
 | --- | --- | --- | --- |
@@ -71,7 +71,7 @@ can be claimed.
 | Model evaluation | AI and LLM evaluation teams | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-MODEL_EVAL_D001-2026-05-07.json) |
 | Reproduction appendix | Open-science reproducibility | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-REPRO_APPENDIX_D001-2026-05-07.json) |
 | Funding review appendix | Funding reviewers and program evaluators | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-FUNDING_REVIEW_D001-2026-05-07.json) |
-| Source audit | Data stewards and public-data teams | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-07.json) |
+| Source audit | Data stewards and public-data teams | `PASSED_UNDER_PROTOCOL` | [JSON](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.svg) |
 | Civic claim | Civic-tech, journalism and watchdog projects | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-CIVIC_CLAIM_D001-2026-05-07.json) |
 | ML appendix | ML researchers | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-ML_APPENDIX_D001-2026-05-07.json) |
 | Education reproduction | Educators | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-EDU_REPRO_D001-2026-05-07.json) |
@@ -102,6 +102,9 @@ independently reproduced at outcome/gate level on 2026-04-29.
 
 Additional records show source lineage and negative/blocked outcomes:
 
+- EEA Air Quality Download Service D-001: source-audit completed; the public
+  download page exposed expected service and rights links. See the
+  [EEA source-audit card](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json).
 - NOAA CO-OPS D-131: official-source run completed; statistical acceptance did
   not pass. See the
   [NOAA evidence card](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json).
