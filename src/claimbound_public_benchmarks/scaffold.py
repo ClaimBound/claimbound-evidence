@@ -257,6 +257,7 @@ def _render_draft_card(
     return {
         "evidence_id": f"CLAIMBOUND-{protocol_id}-DRAFT",
         "draft_status": "GRAY_DRAFT_NOT_EXECUTED",
+        "registry_sequence": 0,
         "record_type": "protocol_registration",
         "protocol_id": protocol_id,
         "protocol_version": "DRAFT",
@@ -279,6 +280,9 @@ def _render_draft_card(
         "runner_command": "NOT_EXECUTED_YET",
         "operator": "NOT_RECORDED_YET",
         "created_at": created_at,
+        "last_verified_date": "NOT_VERIFIED_YET",
+        "verification_count": 0,
+        "verification_level": "NOT_EXECUTED",
         "reproduction_level": "not executed",
         "ai_assistance": "not used for outcome selection or gate changes",
         "manual_review": "required before execution",

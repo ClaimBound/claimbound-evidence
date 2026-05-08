@@ -9,7 +9,6 @@
   "created_at": "2026-05-01",
   "domain": "renewable-energy-resource",
   "evidence_id": "CLAIMBOUND-NASA-POWER-D103-2026-04-29",
-  "record_type": "evidence_result",
   "evidence_url": "https://github.com/ClaimBound/claimbound-public-benchmarks/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json",
   "execution_mode": "MANUAL_NO_AI",
   "git_commit": "1f91f1c",
@@ -19,6 +18,7 @@
     "No operational deployment claim is made.",
     "No broad model comparison is made."
   ],
+  "last_verified_date": "2026-04-29",
   "manual_review": "source boundary and claim boundary reviewed by maintainer",
   "official_source_name": "NASA POWER Daily point API",
   "official_source_url": "https://power.larc.nasa.gov/docs/services/api/temporal/daily/",
@@ -27,10 +27,14 @@
   "protocol_version": "1.0.143",
   "raw_payload_committed": false,
   "raw_payload_manifest": "external payload manifest SHA-256: 7ef2e8d6503e8ef540f6f1c85547d21a13a9a0dd913128cb9953a468b90a0bd7",
+  "record_type": "evidence_result",
+  "registry_sequence": 8,
   "reproduction_level": "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT",
   "result_status": "PASSED_UNDER_PROTOCOL",
   "runner_command": "uv run python scripts/claimbound_run_nasa_power_prereg.py --point POWER_A --point POWER_B --point POWER_C --json <local NASA POWER JSON files> --report artifacts/nasa_power_d103_real_run_summary.json",
   "sanitized_report_path": "artifacts/nasa_power_d103_real_run_summary.json",
   "sanitized_report_sha256": "aec2a0792560cfd6bcd3d5d645d15bcde25a03b7f506e1ff3704a53ea9507d4a",
-  "source_rights_note": "Official public source. Raw payloads are not committed."
+  "source_rights_note": "Official public source. Raw payloads are not committed.",
+  "verification_count": 2,
+  "verification_level": "SINGLE_OPERATOR_RERUN"
 }

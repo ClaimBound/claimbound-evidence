@@ -33,6 +33,7 @@ Required fields:
 
 ```text
 evidence_id:
+registry_sequence:
 protocol_id:
 protocol_version:
 result_status:
@@ -47,6 +48,9 @@ report_hash:
 repository_url:
 git_commit:
 operator:
+last_verified_date:
+verification_count:
+verification_level:
 reproduction_level:
 created_at:
 ```
@@ -134,6 +138,7 @@ or chain timestamp requirements to the public ClaimBound roadmap.
 
 - Add a machine-readable registry index.
 - Add stable evidence IDs.
+- Add contiguous registry sequence numbers and verification metadata.
 - Add query examples by source, status, domain and reproduction level.
 - Add a contribution path for independent reproduction records.
 

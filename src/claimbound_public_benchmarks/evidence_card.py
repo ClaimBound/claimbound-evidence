@@ -28,8 +28,17 @@ ALLOWED_RECORD_TYPES = {
     "reproduction_attempt",
 }
 
+ALLOWED_VERIFICATION_LEVELS = {
+    "SINGLE_OPERATOR",
+    "SINGLE_OPERATOR_RERUN",
+    "INDEPENDENT_RERUN",
+    "MULTI_OPERATOR",
+    "NOT_EXECUTED",
+}
+
 REQUIRED_FIELDS = {
     "evidence_id",
+    "registry_sequence",
     "record_type",
     "protocol_id",
     "protocol_version",
@@ -50,6 +59,9 @@ REQUIRED_FIELDS = {
     "runner_command",
     "operator",
     "created_at",
+    "last_verified_date",
+    "verification_count",
+    "verification_level",
     "reproduction_level",
     "ai_assistance",
     "manual_review",
@@ -116,6 +128,21 @@ def validate_evidence_card(card: dict[str, Any]) -> list[str]:
 
     if card.get("raw_payload_committed") is not False:
         violations.append("raw_payload_committed must be false")
+
+    registry_sequence = card.get("registry_sequence")
+    if not isinstance(registry_sequence, int) or registry_sequence < 1:
+        violations.append("registry_sequence must be a positive integer")
+
+    verification_count = card.get("verification_count")
+    if not isinstance(verification_count, int) or verification_count < 0:
+        violations.append("verification_count must be a non-negative integer")
+
+    verification_level = card.get("verification_level")
+    if verification_level not in ALLOWED_VERIFICATION_LEVELS:
+        violations.append(
+            "verification_level must be one of: "
+            + ", ".join(sorted(ALLOWED_VERIFICATION_LEVELS))
+        )
 
     claim_type = str(card.get("claim_type", "")).lower()
     if claim_type == "forecast":

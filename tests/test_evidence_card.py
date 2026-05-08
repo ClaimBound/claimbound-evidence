@@ -17,6 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 def _valid_card() -> dict[str, object]:
     return {
         "evidence_id": "CLAIMBOUND-EXAMPLE-001",
+        "registry_sequence": 1,
         "record_type": "evidence_result",
         "protocol_id": "EXAMPLE_D001",
         "protocol_version": "0.1.0",
@@ -37,6 +38,9 @@ def _valid_card() -> dict[str, object]:
         "runner_command": "manual audit checklist",
         "operator": "maintainer",
         "created_at": "2026-05-01",
+        "last_verified_date": "2026-05-01",
+        "verification_count": 1,
+        "verification_level": "SINGLE_OPERATOR",
         "reproduction_level": "not independently reproduced",
         "ai_assistance": "not used",
         "manual_review": "source boundary and claim boundary reviewed",
@@ -82,6 +86,24 @@ def test_evidence_card_requires_record_type() -> None:
     violations = validate_evidence_card(card)
 
     assert "missing required field: record_type" in violations
+
+
+def test_evidence_card_requires_registry_sequence() -> None:
+    card = _valid_card()
+    card["registry_sequence"] = 0
+
+    violations = validate_evidence_card(card)
+
+    assert "registry_sequence must be a positive integer" in violations
+
+
+def test_evidence_card_requires_valid_verification_level() -> None:
+    card = _valid_card()
+    card["verification_level"] = "POPULAR_VOTE"
+
+    violations = validate_evidence_card(card)
+
+    assert "verification_level must be one of" in " ".join(violations)
 
 
 def test_evidence_card_rejects_raw_payload_committed() -> None:

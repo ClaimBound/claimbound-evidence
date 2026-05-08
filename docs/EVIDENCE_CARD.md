@@ -11,6 +11,7 @@ possible.
 | Field | Purpose |
 | --- | --- |
 | `evidence_id` | Stable ID for this evidence record. |
+| `registry_sequence` | Positive integer sequence in the public registry. |
 | `record_type` | Required record category: `evidence_result`, `source_audit`, `protocol_registration` or `reproduction_attempt`. |
 | `protocol_id` | ID of the frozen protocol. |
 | `protocol_version` | Version or commit-bound protocol reference. |
@@ -31,6 +32,9 @@ possible.
 | `runner_command` | Exact command or manual-track reference used for the run. |
 | `operator` | Person, organization or role that performed the run. |
 | `created_at` | Date the evidence card was created. |
+| `last_verified_date` | Latest date this card status or source boundary was verified. |
+| `verification_count` | Number of recorded verifications or same-operator reruns represented by this card. |
+| `verification_level` | Verification strength: `SINGLE_OPERATOR`, `SINGLE_OPERATOR_RERUN`, `INDEPENDENT_RERUN`, `MULTI_OPERATOR` or `NOT_EXECUTED`. |
 | `reproduction_level` | Exact reproduction level from `docs/CLAIMS.md` when applicable. |
 | `ai_assistance` | Whether AI assisted with code, protocol drafting, summarization or validation. |
 | `manual_review` | Whether a human operator reviewed source rights, protocol boundary and final claim. |
@@ -100,6 +104,7 @@ It contains placeholder fields and should be filled from validated card JSON.
 ```json
 {
   "evidence_id": "CLAIMBOUND-NASA-POWER-D103-2026-04-29",
+  "registry_sequence": 8,
   "record_type": "evidence_result",
   "protocol_id": "NASA_POWER_D103",
   "protocol_version": "1.0.143",
@@ -120,6 +125,9 @@ It contains placeholder fields and should be filled from validated card JSON.
   "runner_command": "uv run python scripts/claimbound_run_nasa_power_prereg.py ...",
   "operator": "maintainer",
   "created_at": "2026-04-29",
+  "last_verified_date": "2026-04-29",
+  "verification_count": 2,
+  "verification_level": "SINGLE_OPERATOR_RERUN",
   "reproduction_level": "reproduced at outcome/gate level with source-byte drift",
   "ai_assistance": "not used for outcome selection or gate changes",
   "manual_review": "source boundary and claim boundary reviewed by maintainer",
@@ -136,6 +144,7 @@ It contains placeholder fields and should be filled from validated card JSON.
 Evidence cards should fail validation when:
 
 - `record_type` is missing or outside the allowed record categories;
+- `registry_sequence` is missing, duplicated in the registry or not positive;
 - `execution_mode` is missing or outside the allowed modes;
 - `result_status` is not one of the documented statuses;
 - `claim_boundary` is missing;
@@ -145,12 +154,14 @@ Evidence cards should fail validation when:
 - a blocked record does not explain the block reason;
 - a reproduction record does not state the reproduction level;
 - AI assistance is not disclosed;
+- verification metadata is missing or uses an unknown level;
 - the card contains broad claims outside the protocol boundary.
 
 Run the local validator:
 
 ```bash
 uv run python scripts/claimbound_validate_evidence_card.py path/to/evidence_card.json
+uv run python scripts/claimbound_validate_registry.py
 ```
 
 The validator is deterministic. It does not try to infer hidden AI use from
