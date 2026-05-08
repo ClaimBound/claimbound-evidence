@@ -1,7 +1,7 @@
 [project]
 name = "claimbound-public-benchmarks"
 version = "0.2.0"
-description = "ClaimBound public benchmark foreground for pre-registered public time-series evaluation"
+description = "ClaimBound public evidence-card toolkit for narrow public AI, ML and data claims"
 license = "Apache-2.0"
 requires-python = ">=3.12"
 dependencies = [
@@ -13,6 +13,9 @@ dev = [
     "pytest>=8.0",
     "pytest-xdist>=3.5",
 ]
+
+[project.scripts]
+claimbound = "claimbound_public_benchmarks.cli:main"
 
 [build-system]
 requires = ["hatchling"]

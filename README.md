@@ -8,11 +8,12 @@
   />
 </p>
 
-ClaimBound Public Benchmarks is an open-source foreground for pre-registered
-public-source evidence records for narrow AI/ML claims.
+ClaimBound Public Benchmarks is an open-source foreground for evidence cards:
+small, checkable records for narrow public AI, ML and data claims.
 
-It is not a production forecasting service. It is a public toolkit for checking
-whether a narrow claim was tested under rules fixed before the run.
+It is not a production forecasting service, model leaderboard or certification
+authority. It is a public toolkit for checking whether a narrow claim was tested
+under rules fixed before the run.
 
 The short version:
 
@@ -23,6 +24,13 @@ Where is the evidence?
 ClaimBound turns a narrow public AI, ML or data claim into a reproducible
 evidence card with protocol, source lineage, hashes, result status, claim
 boundary and reproduction level.
+
+If there is no evidence card, the statement is still only a claim.
+
+![ClaimBound workflow](docs/assets/claimbound_workflow.svg)
+
+Start with [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) for the
+plain-language version.
 
 ## Flagship Workflow: Public AI Transparency Claim To Evidence Card
 
@@ -82,6 +90,15 @@ Blocked cards are useful: they show that the project refused to convert a
 request or scaffold into a positive result without source access, hashes,
 scoring and rerun evidence.
 
+## Concrete Evidence Cards
+
+| Example | What it shows | Card |
+| --- | --- | --- |
+| Grok prompt-source audit | A green AI-transparency source audit with a strict runtime-equivalence boundary. | [JSON](docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json) / [SVG](docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.svg) |
+| NASA POWER D-103 | A narrow positive public-source result reproduced at outcome/gate level with source-byte drift. | [JSON](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg) |
+| NOAA CO-OPS D-131 | A negative result under a frozen official-source protocol. | [JSON](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg) |
+| EEA source audit D-001 | A green public-data source-boundary card that does not claim dataset coverage or legal approval. | [JSON](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.svg) |
+
 The project focuses on reproducibility discipline:
 
 - source eligibility is checked before a real run;
@@ -133,14 +150,16 @@ official public source
 
 ## Core Documents
 
-- Start here: [getting started](docs/GETTING_STARTED.md),
+- Start here: [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md),
+  [getting started](docs/GETTING_STARTED.md),
   [audience and value](docs/AUDIENCE_AND_VALUE.md) and
   [current evidence tracks](docs/CURRENT_EVIDENCE_TRACKS.md).
 - Evidence rules: [result statuses](docs/RESULT_STATUS.md),
   [claim boundaries](docs/CLAIMS.md) and
   [evidence cards](docs/EVIDENCE_CARD.md).
-- Operating protocols: [manual audit](docs/MANUAL_AUDIT_PROTOCOL.md) and
-  [AI-assisted operation](docs/AI_OPERATOR_PROTOCOL.md).
+- Operating protocols: [manual audit](docs/MANUAL_AUDIT_PROTOCOL.md),
+  [AI-assisted operation](docs/AI_OPERATOR_PROTOCOL.md) and
+  [AI workflow](docs/AI_WORKFLOW.md).
 - Project direction: [positioning](docs/PROJECT_POSITIONING.md),
   [honesty manifesto](docs/HONESTY_MANIFESTO.md) and
   [use cases](docs/USE_CASES.md).
@@ -149,6 +168,7 @@ official public source
   [Grok claim evidence workflow](docs/FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md).
 - Automation direction: [scaffold automation plan](docs/SCAFFOLD_AUTOMATION_PLAN.md).
 - Registry direction: [global evidence registry](docs/GLOBAL_EVIDENCE_REGISTRY.md).
+- Next steps: [public, near-term and later scope](docs/PROJECT_NEXT_STEPS.md).
 
 ## Install
 
@@ -156,6 +176,20 @@ official public source
 uv sync --extra dev
 uv run --extra dev python -m pytest -n auto
 ```
+
+## Common Commands
+
+```bash
+uv run claimbound new
+uv run claimbound demo eea-source-audit
+uv run claimbound demo grok-source-audit
+uv run claimbound validate-all
+```
+
+`claimbound new` can run interactively or with flags. `claimbound demo
+grok-source-audit` clones the public `xai-org/grok-prompts` repository into
+`$HOME/claimbound_runs/claimbound_demo/` and writes demo reports there by
+default. It records only hashes and metadata, not prompt text.
 
 ## Offline Smoke
 

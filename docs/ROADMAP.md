@@ -2,6 +2,10 @@
 
 This roadmap is about the public open-source foreground.
 
+The working split between immediate public work, near-term public work and
+later platform work is summarized in
+[Project next steps](PROJECT_NEXT_STEPS.md).
+
 ## Immediate Implementation Plan
 
 The immediate goal is to make ClaimBound obvious to a new reader:
@@ -164,6 +168,28 @@ Keep heavier discovery modules for later unless they are small and deterministic
 - `SourceProbe`;
 - `RightsProbe`;
 - `TrackClassifier`.
+
+The current public scaffold should remain conservative. Smart source probing
+with HTTP/content-type checks, OpenAPI/Swagger hints, license/terms discovery,
+robots/terms notes and safe/blocked recommendations is better scoped as a
+public roadmap item because it needs careful validation and should not look like
+an automated legal or final-evidence conclusion.
+
+### High-Value Public Card Candidates
+
+Good next cards should be concrete, current and narrow:
+
+- xAI `grok-prompts` repository source-audit reruns;
+- OpenAI system-card page/PDF source audits;
+- Anthropic system-card index and selected-card source audits;
+- Google DeepMind model-card page/PDF source audits;
+- LLM forecast-resolution records with timestamped answers and official
+  resolution sources;
+- independent reproduction attempts for existing NASA POWER and NOAA cards.
+
+Each AI-company documentation card should prove only source availability,
+version/date, hash and limitation boundary. It must not claim model superiority,
+runtime equivalence, safety certification or deployment readiness.
 
 ### What To Defer
 

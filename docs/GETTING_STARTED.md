@@ -3,6 +3,10 @@
 ClaimBound is easiest to understand as a small evidence pipeline for one narrow
 claim.
 
+If there is no evidence card, the statement is still only a claim.
+
+![ClaimBound workflow](assets/claimbound_workflow.svg)
+
 ```text
 official source
   -> frozen protocol
@@ -63,14 +67,42 @@ make source limits visible.
 ```bash
 uv sync --extra dev
 uv run --extra dev python -m pytest -n auto
+uv run claimbound validate-all
 uv run --extra dev python scripts/claimbound_validate_evidence_card.py \
   docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
 ```
 
+## Create A New Scaffold
+
+Interactive:
+
+```bash
+uv run claimbound new
+```
+
+Non-interactive:
+
+```bash
+uv run claimbound new \
+  --source-url "https://example.org/source-docs" \
+  --protocol-id "EXAMPLE_D001" \
+  --domain "public-data" \
+  --track-type "source_audit" \
+  --execution-mode "MANUAL_NO_AI" \
+  --out "docs/manual_audit/EXAMPLE_D001"
+```
+
+The scaffold is not evidence. It creates a request, protocol draft, playbook,
+checklist, operator declaration, draft card and source-probe summary so an
+operator can freeze the real protocol and run the track without missing common
+steps.
+
 ## Read Next
 
+- [ClaimBound in 5 minutes](CLAIMBOUND_IN_5_MINUTES.md)
 - [Audience and value](AUDIENCE_AND_VALUE.md)
 - [Current evidence tracks](CURRENT_EVIDENCE_TRACKS.md)
 - [Evidence card specification](EVIDENCE_CARD.md)
 - [Manual audit protocol](MANUAL_AUDIT_PROTOCOL.md)
 - [AI operator protocol](AI_OPERATOR_PROTOCOL.md)
+- [AI workflow](AI_WORKFLOW.md)

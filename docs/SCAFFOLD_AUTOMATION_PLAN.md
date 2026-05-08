@@ -8,6 +8,29 @@ without producing an unsupported result.
 A scaffold is not evidence by itself. It is a prepared workspace for a future
 operator run.
 
+## Scope Split
+
+The public repository should keep a deterministic scaffold MVP now:
+
+- request file;
+- preregistration charter draft;
+- playbook;
+- checklist;
+- operator declaration;
+- draft evidence card without result status;
+- static source-probe summary;
+- validation command path.
+
+Smarter source probing belongs in the future public roadmap because it requires
+careful design, tests and public documentation. That future probe should record
+HTTP status, content type, OpenAPI/Swagger hints, CSV/JSON/XML hints,
+license/terms link discovery, robots/terms notes, checksum possibility and a
+machine-readable recommendation such as `safe_to_continue`,
+`needs_human_review` or `blocked`.
+
+The smart probe must not make a legal conclusion and must not produce a final
+evidence result by itself.
+
 ## Goal
 
 Create a command that can prepare:

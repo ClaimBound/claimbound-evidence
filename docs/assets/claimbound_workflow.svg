@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="860" viewBox="0 0 1600 860" role="img" aria-labelledby="title desc">
+  <title id="title">ClaimBound workflow from public claim to evidence card</title>
+  <desc id="desc">A simple workflow diagram showing a public claim becoming an evidence request, scaffold, frozen protocol, run or checklist, sanitized report, evidence card, and registry entry.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f4f7fb}
+      .panel{fill:#ffffff;stroke:#cbd5e1;stroke-width:2}
+      .step{fill:#ffffff;stroke:#2563eb;stroke-width:3}
+      .stepAlt{fill:#f8fbff;stroke:#0f766e;stroke-width:3}
+      .stop{fill:#fff7ed;stroke:#ea580c;stroke-width:3}
+      .title{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:44px;font-weight:800;fill:#0f172a}
+      .subtitle{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:24px;font-weight:500;fill:#475569}
+      .label{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:25px;font-weight:800;fill:#0f172a}
+      .small{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:18px;font-weight:550;fill:#475569}
+      .mini{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:16px;font-weight:700;fill:#64748b}
+      .arrow{stroke:#334155;stroke-width:4;fill:none;marker-end:url(#arrowHead)}
+      .thin{stroke:#94a3b8;stroke-width:2;fill:none;stroke-dasharray:8 9}
+      .badge{fill:#e0f2fe;stroke:#0284c7;stroke-width:2}
+      .badgeText{font-family:Inter,Segoe UI,Arial,sans-serif;font-size:17px;font-weight:800;fill:#075985}
+    </style>
+    <marker id="arrowHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="860"/>
+  <rect class="panel" x="40" y="40" width="1520" height="780" rx="28"/>
+
+  <text class="title" x="92" y="105">ClaimBound: from claim to evidence card</text>
+  <text class="subtitle" x="92" y="143">Rules first. Source second. Run third. Claim last.</text>
+
+  <g transform="translate(92 196)">
+    <rect class="step" x="0" y="0" width="250" height="118" rx="18"/>
+    <text class="label" x="24" y="43">Public claim</text>
+    <text class="small" x="24" y="76">A statement people</text>
+    <text class="small" x="24" y="99">want to trust</text>
+  </g>
+
+  <path class="arrow" d="M356 255 H438"/>
+
+  <g transform="translate(454 196)">
+    <rect class="step" x="0" y="0" width="250" height="118" rx="18"/>
+    <text class="label" x="24" y="43">Evidence request</text>
+    <text class="small" x="24" y="76">Narrow question,</text>
+    <text class="small" x="24" y="99">source, forbidden claims</text>
+  </g>
+
+  <path class="arrow" d="M718 255 H800"/>
+
+  <g transform="translate(816 196)">
+    <rect class="stepAlt" x="0" y="0" width="250" height="118" rx="18"/>
+    <text class="label" x="24" y="43">Scaffold</text>
+    <text class="small" x="24" y="76">Draft protocol,</text>
+    <text class="small" x="24" y="99">playbook, checklist</text>
+  </g>
+
+  <path class="arrow" d="M1080 255 H1162"/>
+
+  <g transform="translate(1178 196)">
+    <rect class="stop" x="0" y="0" width="250" height="118" rx="18"/>
+    <text class="label" x="24" y="43">Protocol freeze</text>
+    <text class="small" x="24" y="76">Gate and scoring</text>
+    <text class="small" x="24" y="99">fixed before outcome</text>
+  </g>
+
+  <path class="arrow" d="M1303 326 V395"/>
+
+  <g transform="translate(1178 414)">
+    <rect class="step" x="0" y="0" width="250" height="118" rx="18"/>
+    <text class="label" x="24" y="43">Run / checklist</text>
+    <text class="small" x="24" y="76">Manual or deterministic</text>
+    <text class="small" x="24" y="99">AI-assisted scripts</text>
+  </g>
+
+  <path class="arrow" d="M1162 473 H1080"/>
+
+  <g transform="translate(816 414)">
+    <rect class="stepAlt" x="0" y="0" width="250" height="118" rx="18"/>
+    <text class="label" x="24" y="43">Sanitized report</text>
+    <text class="small" x="24" y="76">Hashes, logs, limits;</text>
+    <text class="small" x="24" y="99">raw payloads outside repo</text>
+  </g>
+
+  <path class="arrow" d="M800 473 H718"/>
+
+  <g transform="translate(454 414)">
+    <rect class="step" x="0" y="0" width="250" height="118" rx="18"/>
+    <text class="label" x="24" y="43">Evidence card</text>
+    <text class="small" x="24" y="76">Exact status and</text>
+    <text class="small" x="24" y="99">claim boundary</text>
+  </g>
+
+  <path class="arrow" d="M438 473 H356"/>
+
+  <g transform="translate(92 414)">
+    <rect class="stepAlt" x="0" y="0" width="250" height="118" rx="18"/>
+    <text class="label" x="24" y="43">Registry</text>
+    <text class="small" x="24" y="76">Searchable public</text>
+    <text class="small" x="24" y="99">index after validation</text>
+  </g>
+
+  <path class="thin" d="M579 548 V630 H1303 V548"/>
+  <g transform="translate(494 650)">
+    <rect class="badge" x="0" y="0" width="720" height="52" rx="26"/>
+    <text class="badgeText" x="30" y="33">If the card is missing, the statement remains a claim, not ClaimBound evidence.</text>
+  </g>
+
+  <g transform="translate(92 734)">
+    <text class="mini" x="0" y="0">Valid statuses: PASSED_UNDER_PROTOCOL, NEGATIVE_RESULT_UNDER_PROTOCOL, BLOCKED_SOURCE, INSUFFICIENT_COVERAGE, REPRODUCED_OUTCOME.</text>
+    <text class="mini" x="0" y="28">AI may draft, scaffold, code and summarize. AI must not decide final status by opinion or change gates after seeing outcomes.</text>
+  </g>
+</svg>
