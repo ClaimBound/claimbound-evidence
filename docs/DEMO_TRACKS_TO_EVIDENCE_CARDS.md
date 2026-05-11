@@ -44,7 +44,7 @@ evidence request
 | AI and LLM evaluation teams | `MODEL_EVAL_D001` | Model ID, prompt set, transcript hashes, scoring rule and acceptance gate are available before outcome scoring. | `BLOCKED_SOURCE` until those fields are available. |
 | Companies with AI products | `AI_PRODUCT_CLAIM_D001` | A product claim is narrow enough to show customers without implying certification or deployment readiness. | `BLOCKED_SOURCE` until model/source docs and evidence artifacts are available. |
 | Independent verifiers and public buyers | `PROCUREMENT_AI_D001` | A vendor claim has independently checkable sources, scoring and limitations before adoption. | `BLOCKED_SOURCE` until procurement-ready source and scoring evidence exists. |
-| Data stewards and public-data teams | `SOURCE_AUDIT_D001` | Official source page, rights note, data-service link and raw-payload policy are clear. | EEA source audit is green; CDC mirror path remains unresolved. |
+| Data stewards and public-data teams | `SOURCE_AUDIT_D001`, `EEA_AQ_D001` | Official source page, rights note, data-service link and raw-payload policy are clear before coverage scoring. | EEA source audit is green; EEA AQ manual track is `BLOCKED_SOURCE` on incomplete public URL manifest; CDC mirror path remains unresolved. |
 | Civic tech, journalism and watchdogs | `CIVIC_CLAIM_D001`, NYC TLC Phase 4 | A public civic claim can be resolved from official data without overclaiming. | Current cards/artifacts are blocked or negative, not success claims. |
 | Open science and reproducibility teams | `REPRO_APPENDIX_D001`, NASA POWER D-103, NOAA CO-OPS D-131 | A published result can pass, fail or reproduce with drift under a fixed protocol. | NASA passed with source-byte drift; NOAA is negative; reproduction appendix is blocked. |
 | ML researchers | `ML_APPENDIX_D001` | A method appendix states source, baselines, controls, gate and claim boundary. | `BLOCKED_SOURCE` until a completed run validates. |
@@ -94,6 +94,18 @@ Manual track:
 
 Use this when judgment, source-rights review or domain interpretation is the
 main risk.
+
+For the EEA AQ D-001 manual track, the reusable runner is:
+
+```bash
+python3 scripts/claimbound_run_eea_manual_track.py \
+  --probe-eea-api \
+  --report artifacts/eea_aq_d001_manual_summary.json
+```
+
+The current committed card is blocked-source because the fixed API URL-list path
+did not provide a complete BE/DE/NL manifest. A future operator can rerun with a
+local raw-payload folder and publish a new exact status.
 
 ## AI-Assisted Track
 

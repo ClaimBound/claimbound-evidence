@@ -1,10 +1,32 @@
 # EEA AQ D-001 Manual Track Checklist
 
-This is a command-driven manual checklist for the EEA Air Quality D-001 track. It is a runbook, not a completed result.
+This is a command-driven manual checklist for the EEA Air Quality D-001 track.
+It remains the operator runbook for a future raw-payload rerun.
+
+The public repository now contains a completed blocked-source readiness card for
+the manifest path:
+
+```text
+docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.json
+```
+
+That card does not claim PM10 coverage pass/fail. It records that the fixed API
+URL-list path did not provide a complete BE/DE/NL manifest for a fair coverage
+run.
 
 The track audits **source readiness and PM10 daily coverage only**. It does **not** claim forecasting performance, deployment readiness, model superiority, health impact, or production suitability.
 
 General manual audit rules are defined in [`docs/MANUAL_AUDIT_PROTOCOL.md`](../MANUAL_AUDIT_PROTOCOL.md).
+
+To reproduce the current blocked-source manifest probe:
+
+```bash
+python3 scripts/claimbound_run_eea_manual_track.py \
+  --probe-eea-api \
+  --operator "local operator" \
+  --access-date 2026-05-11 \
+  --report artifacts/eea_aq_d001_manual_summary.json
+```
 
 ---
 

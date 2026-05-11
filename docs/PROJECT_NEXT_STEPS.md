@@ -47,8 +47,9 @@ These are practical next improvements for the open repository:
    links, structured-data hints and `safe / human review / blocked` output.
 2. Scaffold workflow hardening: reusable builders for request, protocol,
    playbook, checklist, draft card, registry patch and SVG rendering.
-3. Manual-track simplification: fewer copy/paste steps, clearer deviation log,
-   run-root setup and separate manual/AI testimonials.
+3. Manual-track completion path: the EEA AQ D-001 runner and blocked card now
+   exist; next, add an external raw-payload rerun path and independent operator
+   reproduction record.
 4. Static searchable registry: filters by status, source, domain, audience and
    SVG preview.
 5. Completed example set: 10 to 20 honest cards across positive, negative,

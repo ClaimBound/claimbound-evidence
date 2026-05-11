@@ -53,7 +53,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     demo_parser.add_argument(
         "name",
-        choices=("grok-source-audit", "eea-source-audit", "validate-all"),
+        choices=("grok-source-audit", "eea-source-audit", "eea-manual-probe", "validate-all"),
     )
     demo_parser.add_argument("--report", type=Path)
     demo_parser.add_argument(
@@ -147,6 +147,15 @@ def _cmd_demo(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
     if args.name == "eea-source-audit":
         report = args.report or (args.demo_root / "reports" / "source_audit_d001_demo_summary.json")
         return _run_script("claimbound_run_eea_source_audit.py", "--report", str(report))
+
+    if args.name == "eea-manual-probe":
+        report = args.report or (args.demo_root / "reports" / "eea_aq_d001_manual_summary.json")
+        return _run_script(
+            "claimbound_run_eea_manual_track.py",
+            "--probe-eea-api",
+            "--report",
+            str(report),
+        )
 
     if args.name == "grok-source-audit":
         repo_dir = args.grok_repo_dir or args.demo_root / "sources" / "grok-prompts"

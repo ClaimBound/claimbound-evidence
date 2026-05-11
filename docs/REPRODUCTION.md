@@ -55,10 +55,12 @@ Interpretation:
 - different raw payload hashes: source-byte drift;
 - different gate outcome: record the mismatch and do not claim reproduction.
 
-## Manual Public-Domain Track
+## EEA Manual Public-Domain Track
 
-The next recommended manual track is European air quality time series from the
-European Environment Agency Air Quality Download Service.
+The EEA AQ D-001 manual track is the current public-domain manual example. The
+repository includes a blocked-source manifest card and a reusable runner. A
+future operator can still complete the raw-payload coverage path outside the
+repository.
 
 Official references:
 
@@ -120,6 +122,20 @@ Stop and record a blocked or negative result if:
 - too few events are present;
 - a negative control beats the candidate;
 - the result only passes after deleting weak windows.
+
+Current manifest probe:
+
+```bash
+python3 scripts/claimbound_run_eea_manual_track.py \
+  --probe-eea-api \
+  --report artifacts/eea_aq_d001_manual_summary.json
+```
+
+Current public card:
+
+```text
+docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.json
+```
 
 The manual checklist is in:
 
