@@ -715,31 +715,12 @@ if [ -f scripts/claimbound_validate_evidence_card.py ]; then
 fi
 ```
 
-Create SVG card:
+Create SVG card from the validated JSON:
 
 ```bash
 SVG_PATH="${CARD_PATH%.json}.svg"
-cp docs/assets/claimbound_evidence_card.svg "$SVG_PATH"
-printf 'Fill SVG placeholders from JSON card: %s\n' "$CARD_PATH"
-rg "\{\{" "$SVG_PATH" || true
-```
-
-Manual SVG replacements:
-
-```text
-{{status_exact}} -> result_status
-{{reproduction_level}} -> not independently reproduced
-{{allowed_claim_sentence}} -> EEA AQ D-001 source-readiness status recorded
-{{record_id}} -> EEA-AQ-D001
-{{protocol_id}} -> EEA_AQ_D001 manual-track-v1
-{{target_definition}} -> PM10 daily source coverage
-{{candidate_definition}} -> official EEA E1a records
-{{controls_and_gate}} -> 85 percent coverage, 5 stations per country
-{{source_name}} -> EEA Air Quality Download Service
-{{period_scope}} -> 2018-2024, BE/DE/NL
-{{evidence_date}} -> CARD_DATE
-{{artifact_ref}} -> short commit plus sanitized summary
-{{evidence_url}} -> CARD_PATH
+python scripts/claimbound_render_evidence_card_svg.py "$CARD_PATH" "$SVG_PATH"
+xmllint --noout "$SVG_PATH"
 ```
 
 Update `docs/registry/evidence_index.json` manually, then validate:
@@ -751,7 +732,7 @@ python3 -m json.tool docs/registry/evidence_index.json >/tmp/claimbound_registry
 - [ ] New branch created.
 - [ ] Only sanitized summary copied into `artifacts/`.
 - [ ] Evidence card JSON created and validated.
-- [ ] SVG copied and placeholders filled.
+- [ ] SVG rendered from the validated JSON.
 - [ ] SVG status matches JSON status.
 - [ ] Registry entry and counts updated.
 - [ ] Registry JSON validates.

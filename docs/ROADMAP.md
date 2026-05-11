@@ -110,8 +110,8 @@ Add deterministic card validity levels:
 
 | Level | Meaning |
 | --- | --- |
-| `GREEN_VALIDATED` | Protocol frozen, required fields present, hashes/logs valid, source boundary recorded, scoring rule fixed, card validates and rerun path is clear. |
-| `YELLOW_LIMITED_REPRODUCIBILITY` | Card validates but has a known limitation such as proprietary API drift, source-byte drift, no independent rerun or temporary prompt embargo. |
+| `GREEN_VALIDATED` | Required fields present, hashes/logs valid, source boundary recorded, scoring rule fixed when applicable, card validates and rerun path is clear. |
+| `YELLOW_LIMITED_REPRODUCIBILITY` | Card validates but has an explicit reproduction limitation such as source-byte drift, proprietary API drift or temporary prompt embargo. |
 | `RED_INVALID_OR_TAMPER_EVIDENCE` | Missing prompt/source/scoring rule, changed protocol after result, missing hashes, broad claim, unverifiable source or validator failure. |
 | `GRAY_DRAFT_NOT_EXECUTED` | Scaffold or request exists, but no real run has happened. |
 
