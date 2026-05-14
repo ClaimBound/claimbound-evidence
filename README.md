@@ -4,175 +4,132 @@
   <img
     src="docs/assets/claimbound_logo.svg"
     alt="ClaimBound public benchmarks logo"
-    width="400"
+    width="360"
   />
 </p>
 
-ClaimBound Public Benchmarks is an open-source foreground for evidence cards:
-small, checkable records for narrow public AI, ML and data claims.
+ClaimBound turns a narrow public AI, ML or data claim into a small evidence
+card: a checkable record with the protocol, source boundary, hashes, exact
+result status, claim boundary and reproduction level.
 
-It is not a production forecasting service, model leaderboard or certification
-authority. It is a public toolkit for checking whether a narrow claim was tested
-under rules fixed before the run.
-
-The short version:
+It is not a model leaderboard, production forecasting service or certification
+authority. It is an open-source toolkit for asking one plain question:
 
 ```text
 Where is the evidence?
 ```
 
-ClaimBound turns a narrow public AI, ML or data claim into a reproducible
-evidence card with protocol, source lineage, hashes, result status, claim
-boundary and reproduction level.
-
 If there is no evidence card, the statement is still only a claim.
 
 ![ClaimBound workflow](docs/assets/claimbound_workflow.svg)
 
-Start with [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) for the
-plain-language version.
+## What A Card Shows
 
-## Flagship Workflow: Public AI Transparency Claim To Evidence Card
+An evidence card keeps the useful claim small enough to inspect:
 
-Example public claim:
+| Card field | Plain meaning |
+| --- | --- |
+| Claim | The exact public statement being checked. |
+| Source | The public source or source documentation used for the check. |
+| Protocol | The rules fixed before the result was accepted. |
+| Status | Passed, negative, blocked, insufficient or reproduced. |
+| Boundary | What the card proves and what it must not be used to claim. |
+| Reproduction | Whether another run reproduced the outcome, and with what limits. |
+
+Raw payloads, prompt text, transcripts and restricted source files stay outside
+the public repository unless redistribution is clearly allowed. The public
+record stores hashes, summaries and links so a local operator or organization
+can keep private evidence reproducible without publishing sensitive material.
+
+## Example: AI System-Card Claim
+
+Public claim:
 
 ```text
-xAI publishes system prompts for Grok chat assistant and product features in
-the public xai-org/grok-prompts repository.
+Anthropic publishes a public system-card index for its AI models.
 ```
 
-ClaimBound does not turn this into a broad claim that Grok is safer, better or
-fully reproducible at runtime. It asks a narrower question:
+ClaimBound narrows it:
 
 ```text
-Can the public prompt-disclosure source boundary be verified with repository
-commit, README/license presence, prompt file list and SHA-256 hashes without
-copying prompt text into this repository?
+Can the official Anthropic system-card page be source-audited by URL, access
+date, content type, expected markers and SHA-256 without making any model
+safety, model quality or runtime-behavior claim?
 ```
 
-Current ClaimBound status for this repository:
+Current card status:
 
 ```text
 PASSED_UNDER_PROTOCOL / GREEN_VALIDATED
 ```
 
-This green card proves only the narrow prompt-source audit. It does not prove
-that the free Grok chat runtime uses these exact prompts, does not prove hidden
-server-side layers are absent, and does not prove model superiority.
+What this proves: the public source boundary passed the documented source-audit
+gate at access time.
 
-See the full worked example:
-[Where is the evidence? Grok claim workflow](docs/FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md).
-The rendered share card is available as
-[SVG](docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.svg).
+What it does not prove: that Claude or any Anthropic runtime is safer, better,
+unchanged, deployment-ready or benchmark-superior.
 
-## Demo Track Cards
+[Read the JSON](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json)
+or open the
+[visual SVG card](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg).
 
-The first ten demonstration tracks have been scaffolded and locally assessed.
-The Grok prompt-transparency and EEA public-data source-audit tracks have green
-source-audit cards. The other cards currently publish honest blocked-readiness
-records, not success claims. Each blocked card says what is missing before a
-real pass/fail empirical result can be claimed.
+## Example Cards
 
-| Track | Audience | Current status | Card |
+These are deliberately different outcomes: green means a narrow claim passed,
+yellow means reproduction is useful but limited, amber means the source boundary
+blocked a fair result, and red means the protocol ran but the claim did not
+pass.
+
+<p>
+  <img
+    src="docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg"
+    alt="Green ClaimBound card for Anthropic system-card source audit"
+    width="32%"
+  />
+  <img
+    src="docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg"
+    alt="Yellow ClaimBound card for NASA POWER reproduction with source-byte drift"
+    width="32%"
+  />
+  <img
+    src="docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg"
+    alt="Red ClaimBound card for NOAA negative result"
+    width="32%"
+  />
+</p>
+
+| Example | Status | What the card proves | Links |
 | --- | --- | --- | --- |
-| Grok prompt transparency | Public AI transparency verification | `PASSED_UNDER_PROTOCOL` | [JSON](docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json) / [SVG](docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.svg) |
-| Model evaluation | AI and LLM evaluation teams | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-MODEL_EVAL_D001-2026-05-07.json) |
-| Reproduction appendix | Open-science reproducibility | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-REPRO_APPENDIX_D001-2026-05-07.json) |
-| Funding review appendix | Funding reviewers and program evaluators | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-FUNDING_REVIEW_D001-2026-05-07.json) |
-| Source audit | Data stewards and public-data teams | `PASSED_UNDER_PROTOCOL` | [JSON](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.svg) |
-| Civic claim | Civic-tech, journalism and watchdog projects | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-CIVIC_CLAIM_D001-2026-05-07.json) |
-| ML appendix | ML researchers | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-ML_APPENDIX_D001-2026-05-07.json) |
-| Education reproduction | Educators | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-EDU_REPRO_D001-2026-05-07.json) |
-| AI product claim | Companies with AI products | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-AI_PRODUCT_CLAIM_D001-2026-05-07.json) |
-| Procurement claim | Independent verifiers and public buyers | `BLOCKED_SOURCE` | [JSON](docs/evidence_cards/CLAIMBOUND-PROCUREMENT_AI_D001-2026-05-07.json) |
+| Anthropic system-card source audit | `PASSED_UNDER_PROTOCOL` | The official system-card index passed a narrow public-document source audit. | [JSON](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg) |
+| EEA AQ manual track | `BLOCKED_SOURCE` | The larger PM10 manual track could not fairly run from an incomplete public URL manifest. | [JSON](docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.json) / [SVG](docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.svg) |
+| NASA POWER D-103 | `PASSED_UNDER_PROTOCOL` with `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` | The frozen gate-level outcome reproduced, but fresh source bytes differed. | [JSON](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg) |
+| NOAA CO-OPS D-131 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed and honestly did not pass the frozen gate. | [JSON](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg) |
 
-Blocked cards are useful: they show that the project refused to convert a
-request or scaffold into a positive result without source access, hashes,
-scoring and rerun evidence.
+## Ten Public Use Categories
 
-## Concrete Evidence Cards
+The public examples are easier to understand by audience. Every row below says
+who the evidence discipline helps, what kind of claim it checks, what has been
+proven so far, and what to do next.
 
-| Example | What it shows | Card |
-| --- | --- | --- |
-| Grok prompt-source audit | A green AI-transparency source audit with a strict runtime-equivalence boundary. | [JSON](docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json) / [SVG](docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.svg) |
-| NASA POWER D-103 | A narrow positive public-source result reproduced at outcome/gate level with source-byte drift. | [JSON](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg) |
-| NOAA CO-OPS D-131 | A negative result under a frozen official-source protocol. | [JSON](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg) |
-| EEA source audit D-001 | A green public-data source-boundary card that does not claim dataset coverage or legal approval. | [JSON](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.svg) |
-| OpenAI GPT-5 system card | A public-document source audit for an official system-card PDF, with no model-quality claim. | [JSON](docs/evidence_cards/CLAIMBOUND-OPENAI_GPT5_SYSTEM_CARD_SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-OPENAI_GPT5_SYSTEM_CARD_SOURCE_AUDIT_D001-2026-05-08.svg) |
-| Anthropic system cards | A public-document source audit for the official model system-card index. | [JSON](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg) |
-| Google DeepMind model cards | A public-document source audit for the official model-card index. | [JSON](docs/evidence_cards/CLAIMBOUND-GOOGLE_DEEPMIND_MODEL_CARDS_SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-GOOGLE_DEEPMIND_MODEL_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg) |
+| Audience / category | Typical task | Current examples | What we proved | Status and next step |
+| --- | --- | --- | --- | --- |
+| Public AI transparency readers | Check whether AI vendors publish inspectable public documentation. | Anthropic system cards, OpenAI GPT-5 system-card PDF, Google DeepMind model cards, xAI Grok prompts. | Official public pages or repositories were reachable and hashed under a source-audit boundary. | Green source-audit cards exist. Next: independent reruns and narrower runtime-equivalence requests where sources allow it. |
+| AI and LLM evaluation teams | Check whether a benchmark or model claim has model ID, prompt set, scoring rule and transcript hashes. | `MODEL_EVAL_D001`. | The current source did not provide enough material for a fair public evidence result. | `BLOCKED_SOURCE`. Next: provide frozen prompts, model/API metadata, transcript hashes and scoring code. |
+| Companies with AI products | Turn a product claim into a customer-readable evidence card. | `AI_PRODUCT_CLAIM_D001`. | The public product announcement was not enough to support an empirical pass/fail claim. | `BLOCKED_SOURCE`. Next: publish exact claim, model/source docs, prompt or transcript manifest and limitations. |
+| Independent verifiers and public buyers | Decide what is independently checkable before adopting an AI system. | `PROCUREMENT_AI_D001`. | Procurement evidence needs source, scoring and model metadata before it can become decision support. | `BLOCKED_SOURCE`. Next: run a vendor-claim protocol with frozen sources and stop rules. |
+| Data stewards and public-data teams | Verify official source pages, rights notes and raw-payload policy before analysis. | EEA Air Quality source audit, EEA AQ manual track. | EEA passed a narrow download-page source audit, but the larger PM10 manual track blocked because the API URL-list manifest was incomplete for BE/NL. | EEA source audit is green; EEA manual track is a blocked-source card. Next: complete raw-payload reruns only with a full external manifest. |
+| Civic tech, journalism and watchdogs | Check claims about mobility, infrastructure, climate or public services against official data. | NYC TLC Phase 4 artifact, `CIVIC_CLAIM_D001`. | Current civic examples show why official source access and frozen gates matter before public claims. | Blocked or artifact-only. Next: add a full evidence card or keep the artifact clearly marked as non-card evidence. |
+| Open science and reproducibility teams | Reproduce a published result and keep negative or drift outcomes citable. | NASA POWER D-103, `REPRO_APPENDIX_D001`. | NASA reproduced the gate-level outcome with source-byte drift; the reproduction appendix scaffold still needs stronger source linkage. | NASA is yellow-limited reproduction. Next: add independent rerun records. |
+| ML researchers | Separate a narrow method result from broad model-superiority language. | `ML_APPENDIX_D001`. | The current appendix scaffold shows required controls, baselines and claim boundary, but no completed empirical result. | `BLOCKED_SOURCE`. Next: run with frozen controls and publish exact pass/negative/blocked status. |
+| Educators | Teach reproducible ML discipline with small public examples. | `EDU_REPRO_D001`. | The classroom track is ready as a scaffold, not as a completed evidence claim. | `BLOCKED_SOURCE`. Next: complete a student-friendly run and publish limitations. |
+| Funding reviewers and program evaluators | Read what was promised, which source was used, what happened and what cannot be claimed. | `FUNDING_REVIEW_D001`. | A funding appendix needs protocol, source, status and limitations instead of a narrative success claim. | `BLOCKED_SOURCE`. Next: attach validated cards to reports or proposals. |
 
-The project focuses on reproducibility discipline:
+For the full card list, see
+[docs/evidence_cards/README.md](docs/evidence_cards/README.md). The registry
+index is [docs/registry/evidence_index.json](docs/registry/evidence_index.json).
 
-- source eligibility is checked before a real run;
-- targets, scorers, controls and acceptance gates are fixed before execution;
-- raw public-source payloads stay outside the repository;
-- committed artifacts contain commands, hashes, summaries and claim boundaries;
-- negative and blocked results remain first-class evidence.
-
-## Current Evidence
-
-The current public evidence contains one narrow positive result and multiple
-negative or source-blocked records:
-
-```text
-NASA POWER D-103 passed the pre-registered gate under protocol 1.0.143 and was
-independently reproduced at outcome/gate level on 2026-04-29.
-```
-
-Additional records show source lineage and negative/blocked outcomes:
-
-- EEA Air Quality Download Service D-001: source-audit completed; the public
-  download page exposed expected service and rights links. See the
-  [EEA source-audit card](docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json).
-- NOAA CO-OPS D-131: official-source run completed; statistical acceptance did
-  not pass. See the
-  [NOAA evidence card](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json).
-- NYC TLC Phase 4: official-source run completed; statistical acceptance did
-  not pass.
-- CDC mirror path: public mirror proof path completed, but external source
-  equivalence remained unresolved.
-
-The NASA POWER D-103 positive record has a
-[shareable JSON evidence card](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json)
-and a [visual SVG card](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg).
-
-This does not imply a universal forecasting edge, deployment readiness, or
-superiority over all statistical methods.
-
-## How The Pipeline Works
-
-```text
-official public source
-  -> local raw payload outside this repository
-  -> parser and source manifest
-  -> pre-registered runner
-  -> baseline and control comparison
-  -> result status and sanitized evidence summary
-```
-
-## Core Documents
-
-- Start here: [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md),
-  [getting started](docs/GETTING_STARTED.md),
-  [audience and value](docs/AUDIENCE_AND_VALUE.md) and
-  [current evidence tracks](docs/CURRENT_EVIDENCE_TRACKS.md).
-- Evidence rules: [result statuses](docs/RESULT_STATUS.md),
-  [claim boundaries](docs/CLAIMS.md) and
-  [evidence cards](docs/EVIDENCE_CARD.md).
-- Operating protocols: [manual audit](docs/MANUAL_AUDIT_PROTOCOL.md),
-  [AI-assisted operation](docs/AI_OPERATOR_PROTOCOL.md) and
-  [AI workflow](docs/AI_WORKFLOW.md).
-- Project direction: [positioning](docs/PROJECT_POSITIONING.md),
-  [honesty manifesto](docs/HONESTY_MANIFESTO.md) and
-  [use cases](docs/USE_CASES.md).
-- Public workflows: [audience demonstration workflows](docs/AUDIENCE_TESTIMONIAL_WORKFLOWS.md),
-  [demo tracks to evidence cards](docs/DEMO_TRACKS_TO_EVIDENCE_CARDS.md) and
-  [Grok claim evidence workflow](docs/FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md).
-- Reproduction: [independent rerun workflow](docs/INDEPENDENT_RERUN_WORKFLOW.md).
-- Automation direction: [scaffold automation plan](docs/SCAFFOLD_AUTOMATION_PLAN.md).
-- Registry direction: [global evidence registry](docs/GLOBAL_EVIDENCE_REGISTRY.md).
-- Next steps: [public, near-term and later scope](docs/PROJECT_NEXT_STEPS.md).
+Start with [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) for the
+plain-language version.
 
 ## Install
 
@@ -181,76 +138,98 @@ uv sync --extra dev
 uv run --extra dev python -m pytest -n auto
 ```
 
-## Common Commands
+## Quick Start
+
+Create a draft scaffold:
 
 ```bash
 uv run claimbound new
-uv run claimbound new-track
-uv run claimbound run-root --protocol-id EXAMPLE_D001 --source-url https://example.org/source
+```
+
+Create the same scaffold non-interactively:
+
+```bash
+uv run claimbound new \
+  --source-url "https://example.org/source-docs" \
+  --protocol-id "EXAMPLE_D001" \
+  --domain "public-data" \
+  --track-type "source_audit" \
+  --execution-mode "MANUAL_NO_AI" \
+  --out "docs/manual_audit/EXAMPLE_D001"
+```
+
+Run local demo helpers:
+
+```bash
 uv run claimbound demo eea-source-audit
 uv run claimbound demo grok-source-audit
 uv run claimbound validate-all
 ```
 
-`claimbound new` can run interactively or with flags. `claimbound demo
-grok-source-audit` clones the public `xai-org/grok-prompts` repository into
-`$HOME/claimbound_runs/claimbound_demo/` and writes demo reports there by
-default. It records only hashes and metadata, not prompt text.
-
-## Offline Smoke
+Prepare a local-only run root:
 
 ```bash
-uv run --extra dev python scripts/fetch_nasa_power.py --help
-uv run --extra dev python scripts/claimbound_run_nasa_power_prereg.py --help
+uv run claimbound run-root \
+  --protocol-id EXAMPLE_D001 \
+  --source-url https://example.org/source \
+  --operator your-name-or-handle
 ```
 
-The real NASA POWER payload files used for the recorded D-103 run are not
-committed. Reproduction requires downloading fresh official NASA POWER Daily
-JSON payloads outside the repository and recording their hashes.
+`claimbound new` creates a request, protocol draft, playbook, checklist,
+operator declaration, draft card and source-probe summary. It is not evidence.
+Evidence begins only after an operator freezes the protocol, runs the check,
+publishes a sanitized report, validates the card and updates the registry.
 
-Detailed reproduction instructions are in
-[docs/REPRODUCTION.md](docs/REPRODUCTION.md).
+## Next Steps: Simple To Technical
 
-## Manual Domain Tracks
+| Step | Document | Why read it |
+| --- | --- | --- |
+| 1 | [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) | The shortest plain-language explanation. |
+| 2 | [Evidence card examples](docs/evidence_cards/README.md) | Green, yellow, red and blocked examples in one place. |
+| 3 | [Getting started](docs/GETTING_STARTED.md) | Installation, local run roots and scaffold commands. |
+| 4 | [Result status protocol v0.1](docs/RESULT_STATUS.md) | Exact statuses and the color semantics used by cards. |
+| 5 | [Evidence card protocol v0.1](docs/EVIDENCE_CARD.md) | Required JSON fields and validation rules. |
+| 6 | [Current evidence tracks](docs/CURRENT_EVIDENCE_TRACKS.md) | What the committed results prove and do not prove. |
+| 7 | [Manual audit protocol v0.1](docs/MANUAL_AUDIT_PROTOCOL.md) | How to run a no-AI operator track. |
+| 8 | [AI operator protocol v0.1](docs/AI_OPERATOR_PROTOCOL.md) and [AI workflow](docs/AI_WORKFLOW.md) | What AI may draft, run or summarize, and where human approval is required. |
+| 9 | [Scaffold workflow protocol v0.1](docs/SCAFFOLD_AUTOMATION_PLAN.md) | How requests become protocol, playbook, checklist and draft card files. |
+| 10 | [Registry direction v0.1](docs/GLOBAL_EVIDENCE_REGISTRY.md) and [project next steps](docs/PROJECT_NEXT_STEPS.md) | How validated cards become a public registry and what is intentionally out of scope. |
 
-Future public-domain track runbooks are included for European air quality data:
+Individual pre-registration charters live in
+[docs/protocols/](docs/protocols/). They are protocol-bound examples, not broad
+claims.
 
-- [No-AI manual track](docs/manual_audit/EEA_AQ_D001_MANUAL_TRACK.md)
-- [AI-assisted autonomous prompt](docs/manual_audit/EEA_AQ_D001_AI_ASSISTED_TRACK.md)
+## Manual And AI Tracks
 
-These runbooks are designed for operator audits: rules first, then source
-download, then run, then publish the exact result status.
+Manual tracks are for human operators who complete checklists and record
+judgment explicitly. AI-assisted tracks are for cases where an AI agent may
+draft scaffolds, write deterministic runner code or summarize reports. In both
+tracks, the final status must come from a protocol, checklist, runner or
+validator, not from model opinion.
 
-## Evidence Cards And Registry Direction
+Useful entry points:
 
-ClaimBound records are intended to become compact evidence cards: protocol ID,
-source, access date, result status, claim boundary, hashes, git commit and
-reproduction level.
-
-The current examples are listed in
-[docs/evidence_cards/README.md](docs/evidence_cards/README.md). The public
-registry index is [docs/registry/evidence_index.json](docs/registry/evidence_index.json).
-The SVG share-card template is
-[docs/assets/claimbound_evidence_card.svg](docs/assets/claimbound_evidence_card.svg).
-
-The long-term direction is a small global evidence registry for narrow
-pre-registered public results. The registry should store sanitized cards and
-hashes, not raw payloads. Blockchain, token, wallet, on-chain storage and chain
-timestamp features are outside the current roadmap and have no scheduled review
-date. The core trust model remains public code, source lineage, frozen gates and
-independent reproduction.
+- [No-AI EEA manual track](docs/manual_audit/EEA_AQ_D001_MANUAL_TRACK.md)
+- [AI-assisted EEA track](docs/manual_audit/EEA_AQ_D001_AI_ASSISTED_TRACK.md)
+- [EEA manual-track blocked card](docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.json)
+- [Audience workflows](docs/AUDIENCE_TESTIMONIAL_WORKFLOWS.md)
+- [Demo tracks to evidence cards](docs/DEMO_TRACKS_TO_EVIDENCE_CARDS.md)
 
 ## Boundary
 
-This repository is independently usable as an open benchmark foreground. It does
-not include, import, or require private background technology.
+This repository is independently usable as an open benchmark foreground. It
+does not include, import or require private background technology.
+
+The registry stores validated card metadata and sanitized report references, not
+raw payloads. Blockchain, token, wallet, on-chain storage and chain timestamp
+features are outside the current roadmap.
 
 ## Community
 
 - [Contributing guide](CONTRIBUTING.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [Security policy](SECURITY.md)
-- [Discussions — maintainer announcements and community Q&A](https://github.com/ClaimBound/claimbound-public-benchmarks/discussions)
+- [Discussions: maintainer announcements and community Q&A](https://github.com/ClaimBound/claimbound-public-benchmarks/discussions)
 
 ## License
 

@@ -1,8 +1,8 @@
 # Audience Demonstration Workflows
 
 These are scenario testimonials, not endorsements from real users and not
-completed evidence cards. They show how each audience would use ClaimBound
-through both a manual track and an AI-assisted track.
+completed evidence cards. They show how each audience category would use
+ClaimBound through both a manual track and an AI-assisted track.
 
 Each workflow ends with a validated evidence card or with an honest draft,
 blocked, negative or limited-reproducibility status.
@@ -11,7 +11,44 @@ The concrete path from these scenarios to real cards is defined in
 [demo tracks to evidence cards](DEMO_TRACKS_TO_EVIDENCE_CARDS.md). A README
 example should link to a card only after the track has been run and validated.
 
-## 1. AI And LLM Evaluation Teams
+## 1. Public AI Transparency Readers
+
+Scenario:
+
+```text
+We see a public AI documentation claim and need to know what source evidence is
+actually checkable.
+```
+
+Manual track:
+
+1. Write the exact public documentation claim.
+2. Freeze the official source URL, access date and required markers.
+3. Record content type, byte size and SHA-256.
+4. State what the source audit does not prove about runtime behavior.
+5. Publish the card only after validation.
+
+AI-assisted track:
+
+1. AI drafts source-audit fields and expected markers.
+2. Human freezes the source boundary.
+3. Deterministic HTTP or repository checks produce the report.
+4. Validator rejects model-quality, safety or deployment overclaims.
+5. Human approves the final claim boundary.
+
+Scaffold:
+
+```bash
+uv run python scripts/claimbound_scaffold_track.py \
+  --source-url "https://example.com/official-ai-doc" \
+  --protocol-id "AI_TRANSPARENCY_SOURCE_AUDIT_D001" \
+  --domain "ai-transparency" \
+  --track-type "public_doc_source_audit" \
+  --execution-mode "AUTOMATED_AI_ASSISTED" \
+  --out "docs/manual_audit/AI_TRANSPARENCY_SOURCE_AUDIT_D001"
+```
+
+## 2. AI And LLM Evaluation Teams
 
 Scenario:
 
@@ -51,7 +88,7 @@ uv run python scripts/claimbound_scaffold_track.py \
   --out "docs/manual_audit/MODEL_EVAL_D001"
 ```
 
-## 2. Open Science And Reproducibility Researchers
+## 3. Open Science And Reproducibility Researchers
 
 Scenario:
 
@@ -89,7 +126,7 @@ uv run python scripts/claimbound_scaffold_track.py \
   --out "docs/manual_audit/REPRO_APPENDIX_D001"
 ```
 
-## 3. Funding Reviewers And Program Evaluators
+## 4. Funding Reviewers And Program Evaluators
 
 Scenario:
 
@@ -125,7 +162,7 @@ uv run python scripts/claimbound_scaffold_track.py \
   --out "docs/manual_audit/FUNDING_REVIEW_D001"
 ```
 
-## 4. Data Stewards And Public-Data Teams
+## 5. Data Stewards And Public-Data Teams
 
 Scenario:
 
@@ -161,7 +198,7 @@ uv run python scripts/claimbound_scaffold_track.py \
   --out "docs/manual_audit/SOURCE_AUDIT_D001"
 ```
 
-## 5. Civic Tech, Journalism And Watchdogs
+## 6. Civic Tech, Journalism And Watchdogs
 
 Scenario:
 
@@ -197,7 +234,7 @@ uv run python scripts/claimbound_scaffold_track.py \
   --out "docs/manual_audit/CIVIC_CLAIM_D001"
 ```
 
-## 6. ML Researchers
+## 7. ML Researchers
 
 Scenario:
 
@@ -232,7 +269,7 @@ uv run python scripts/claimbound_scaffold_track.py \
   --out "docs/manual_audit/ML_APPENDIX_D001"
 ```
 
-## 7. Educators
+## 8. Educators
 
 Scenario:
 
@@ -267,7 +304,7 @@ uv run python scripts/claimbound_scaffold_track.py \
   --out "docs/manual_audit/EDU_REPRO_D001"
 ```
 
-## 8. Companies With AI Products
+## 9. Companies With AI Products
 
 Scenario:
 
@@ -304,7 +341,7 @@ uv run python scripts/claimbound_scaffold_track.py \
   --out "docs/manual_audit/AI_PRODUCT_CLAIM_D001"
 ```
 
-## 9. Independent Verifiers, Procurement Teams And Public Buyers
+## 10. Independent Verifiers, Procurement Teams And Public Buyers
 
 Scenario:
 

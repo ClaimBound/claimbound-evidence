@@ -72,6 +72,21 @@ uv run --extra dev python scripts/claimbound_validate_evidence_card.py \
   docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
 ```
 
+## Common Commands
+
+| Command | What it does |
+| --- | --- |
+| `uv run claimbound new` | Creates a draft request, protocol, playbook, checklist, operator declaration, draft card and source-probe summary. Prompts interactively in a terminal. |
+| `uv run claimbound new-track` | Alias for `new`; kept for people who think in "track" language. |
+| `uv run claimbound run-root --protocol-id ... --source-url ...` | Creates a local-only run directory under `$HOME/claimbound_runs/` with `raw/`, `logs/`, `hashes/`, `reports/` and `transcripts/`. |
+| `uv run claimbound demo eea-source-audit` | Runs the EEA source-audit demo helper and writes a sanitized report under the demo run root. |
+| `uv run claimbound demo grok-source-audit` | Clones or reuses the public `xai-org/grok-prompts` repository in a local-only demo root, then writes source-audit metadata and hashes. |
+| `uv run claimbound validate-all` | Validates all committed evidence cards and the registry index. |
+
+These commands are useful for private local work too. A person or organization
+can keep raw payloads, prompt text, transcripts and logs inside a local run
+root, while publishing only the sanitized hashes and evidence card.
+
 ## Create A New Scaffold
 
 Interactive:

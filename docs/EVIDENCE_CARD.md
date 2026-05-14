@@ -69,6 +69,19 @@ The execution mode is provenance metadata. It does not make a result more or
 less valid by itself. A result is valid only when the protocol, source boundary,
 hashes, status and claim boundary validate.
 
+## Visual Status Colors
+
+The JSON `result_status` remains the source of truth. Rendered SVG cards use
+colors only to make the status easier to scan:
+
+| Color | Typical value |
+| --- | --- |
+| Green | `PASSED_UNDER_PROTOCOL`, `REPRODUCED_OUTCOME`, `GREEN_VALIDATED` |
+| Yellow | `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` or limited reproducibility |
+| Amber | `BLOCKED_SOURCE`, `INSUFFICIENT_COVERAGE` |
+| Red | `NEGATIVE_RESULT_UNDER_PROTOCOL` or invalid/tamper evidence |
+| Gray | Draft, request or scaffold only |
+
 ## Required Interpretation
 
 The card must make the allowed claim and forbidden claims clear.
@@ -92,14 +105,20 @@ This proves correctness outside the protocol boundary.
 
 Current committed examples:
 
+- [Anthropic system-card source audit](evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json)
+  and [visual SVG](evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg)
 - [NASA POWER D-103 passed evidence card](evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json)
   and [visual SVG](evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg)
 - [NOAA CO-OPS D-131 negative evidence card](evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json)
   and [visual SVG](evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg)
 
-The visual share-card template is
-[docs/assets/claimbound_evidence_card.svg](assets/claimbound_evidence_card.svg).
-It contains placeholder fields and should be filled from validated card JSON.
+Render visual cards from validated JSON:
+
+```bash
+uv run --extra dev python scripts/claimbound_render_evidence_card_svg.py \
+  docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json \
+  docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg
+```
 
 ```json
 {
@@ -171,8 +190,8 @@ overbroad records.
 ## Sharing And Registry
 
 To share a result, link directly to its JSON evidence card in
-`docs/evidence_cards/`. A visual card can be rendered from the same data by
-filling the SVG template fields.
+`docs/evidence_cards/`. A visual card can be rendered from the same data with
+`scripts/claimbound_render_evidence_card_svg.py`.
 
 The public registry index is stored in `docs/registry/evidence_index.json`.
 It is intended to remain freely readable and to expose aggregate counts by

@@ -32,9 +32,9 @@ If the report is declined, I will explain the reason where possible.
 
 ## Project-Specific Boundaries
 
-This repository is public ClaimBound benchmark foreground. It must not contain raw external payloads, credentials, private local paths, Closed Core source code, or private production integrations.
+This repository is public ClaimBound benchmark foreground. It must not contain raw external payloads, credentials, private local paths, private-source code, or private production integrations.
 
-Security reports about private systems, Closed Core implementations, or unrelated infrastructure are out of scope for this public repository unless they demonstrate a direct leak or vulnerability in the public benchmark code.
+Security reports about private systems, private-source implementations, or unrelated infrastructure are out of scope for this public repository unless they demonstrate a direct leak or vulnerability in the public benchmark code.
 
 ## Safe Handling Notes
 

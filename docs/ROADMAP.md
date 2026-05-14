@@ -35,12 +35,13 @@ Add or tighten public documentation around:
 
 ### Global Audiences And Examples
 
-Add nine audience examples to the public README and audience/use-case docs.
+Add ten audience examples to the public README and audience/use-case docs.
 Each example should show what a concrete ClaimBound record gives that ordinary
 marketing, screenshots or narrative claims do not give.
 
 | Audience | Example public use |
 | --- | --- |
+| Public AI transparency readers | Check official AI documentation, system-card and model-card source boundaries without turning them into model-quality claims. |
 | AI and LLM evaluation teams | Check a model, RAG, agent or benchmark claim with timestamp, prompt hash, model/API metadata, source rule and scoring rule. |
 | Open-science and reproducibility researchers | Publish negative, blocked and reproduced outcomes as useful evidence records instead of hiding them. |
 | Funding reviewers and program evaluators | Inspect what was promised, which protocol and source were used, what happened and what cannot be claimed. |
@@ -109,8 +110,8 @@ Add deterministic card validity levels:
 
 | Level | Meaning |
 | --- | --- |
-| `GREEN_VALIDATED` | Protocol frozen, required fields present, hashes/logs valid, source boundary recorded, scoring rule fixed, card validates and rerun path is clear. |
-| `YELLOW_LIMITED_REPRODUCIBILITY` | Card validates but has a known limitation such as proprietary API drift, source-byte drift, no independent rerun or temporary prompt embargo. |
+| `GREEN_VALIDATED` | Required fields present, hashes/logs valid, source boundary recorded, scoring rule fixed when applicable, card validates and rerun path is clear. |
+| `YELLOW_LIMITED_REPRODUCIBILITY` | Card validates but has an explicit reproduction limitation such as source-byte drift, proprietary API drift or temporary prompt embargo. |
 | `RED_INVALID_OR_TAMPER_EVIDENCE` | Missing prompt/source/scoring rule, changed protocol after result, missing hashes, broad claim, unverifiable source or validator failure. |
 | `GRAY_DRAFT_NOT_EXECUTED` | Scaffold or request exists, but no real run has happened. |
 

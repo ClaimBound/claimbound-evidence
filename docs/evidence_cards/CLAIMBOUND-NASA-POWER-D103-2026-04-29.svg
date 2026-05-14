@@ -14,9 +14,25 @@
       .bodyText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:500;fill:#1f2937}
       .muted{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:17px;font-weight:500;fill:#55627a}
     </style>
-    <linearGradient id="okGrad" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#0fbaaa"/>
       <stop offset="100%" stop-color="#0a9f93"/>
+    </linearGradient>
+    <linearGradient id="yellowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="grayGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#475569"/>
     </linearGradient>
     <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#1f64f2"/>
@@ -68,15 +84,14 @@
     <line x1="1120" y1="700" x2="1194" y2="700" stroke="#11AFA9" stroke-width="4"/>
   </g>
   <text x="70" y="175" class="chipLabel">Result status</text>
-  <rect x="70" y="193" width="430" height="52" rx="17" fill="url(#okGrad)"/>
+  <rect x="70" y="193" width="430" height="52" rx="17" fill="url(#greenGrad)"/>
   <text x="91" y="227" class="chipText">PASSED_UNDER_PROTOCOL</text>
   <text x="520" y="175" class="chipLabel">Validity</text>
-  <rect x="520" y="193" width="370" height="52" rx="17" fill="url(#okGrad)"/>
-  <text x="541" y="227" class="chipText">VALIDATED</text>
+  <rect x="520" y="193" width="370" height="52" rx="17" fill="url(#greenGrad)"/>
+  <text x="541" y="227" class="chipText">GREEN_VALIDATED</text>
   <text x="910" y="175" class="chipLabel">Reproduction</text>
-  <rect x="910" y="193" width="480" height="52" rx="17" fill="url(#blueGrad)"/>
-  <text x="931" y="216" class="chipText">REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_D</text>
-  <text x="931" y="240" class="chipText">RIFT</text>
+  <rect x="910" y="193" width="480" height="52" rx="17" fill="url(#yellowGrad)"/>
+  <text x="931" y="227" class="chipText">OUTCOME REPRODUCED; BYTE DRIFT</text>
   <text x="1410" y="175" class="chipLabel">Record type</text>
   <rect x="1410" y="193" width="520" height="52" rx="17" fill="url(#blueGrad)"/>
   <text x="1431" y="227" class="chipText">evidence_result</text>

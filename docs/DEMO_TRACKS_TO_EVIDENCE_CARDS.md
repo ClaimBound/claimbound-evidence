@@ -1,75 +1,76 @@
 # Demo Tracks To Evidence Cards
 
-This document defines the honest path from a scenario testimonial to a real
+This document defines the honest path from a public example to a real
 ClaimBound card.
 
-It exists because a testimonial is not enough. A README example should point to
-a validated card only after a request, scaffold, protocol, run, report and
-validator pass exist.
+A demo, testimonial or scaffold is not evidence. A README example may point to a
+card only after there is a request, frozen protocol, run or checklist, sanitized
+report, validated JSON card and registry entry.
 
-## Card Publication Rule
+## Publication Rule
 
-Do not put a demo card in the README as evidence unless it has one of these:
+Publish a card as evidence only when it has one documented result status:
 
-- `PASSED_UNDER_PROTOCOL`;
-- `NEGATIVE_RESULT_UNDER_PROTOCOL`;
-- `BLOCKED_SOURCE`;
-- `INSUFFICIENT_COVERAGE`;
-- `REPRODUCED_OUTCOME`;
-- `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT`.
+- `PASSED_UNDER_PROTOCOL`
+- `NEGATIVE_RESULT_UNDER_PROTOCOL`
+- `BLOCKED_SOURCE`
+- `INSUFFICIENT_COVERAGE`
+- `REPRODUCED_OUTCOME`
+- `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT`
 
 Do not show `GRAY_DRAFT_NOT_EXECUTED` as evidence. It can appear only as a
 request or scaffold example.
 
-## Full Workflow
-
-Every demo track must follow the same path:
+## Workflow
 
 ```text
-request example
-  -> scaffold command
+evidence request
+  -> scaffold
   -> preregistration charter
-  -> playbook
-  -> checklist
+  -> playbook and checklist
   -> manual or AI-assisted local run
-  -> raw logs/transcripts/payloads outside repo
+  -> raw logs, transcripts or payloads outside repo
   -> public sanitized report
   -> validated evidence card JSON
-  -> optional SVG card
+  -> rendered SVG card
   -> registry update
-  -> README link only after validation
 ```
 
-## Ten Demo Tracks
+## Ten Audience Categories
 
-| Track ID | Audience | Honest local outcome target | README rule |
+| Audience / category | Example track | What the card should prove | Current status |
 | --- | --- | --- | --- |
-| `GROK_PROMPTS_SOURCE_AUDIT_D001` | Public AI transparency / flagship workflow | `PASSED_UNDER_PROTOCOL` for repository source audit when commit, README, license and prompt hashes validate. Local rerun report matches the original sanitized-report hash, but independent reproduction is still pending. | Show as green only for prompt-source audit, not runtime equivalence. |
-| `MODEL_EVAL_D001` | AI and LLM evaluation teams | Public model-card or benchmark-claim readiness audit: are model id, prompt set, scoring rule and transcript hashes available? | Show only after prompt manifest, transcript hashes and score report validate. |
-| `REPRO_APPENDIX_D001` | Open science / reproducibility | Independent rerun of an existing public ClaimBound card, starting with NASA POWER D-103. | Show reproduced, negative or source-byte-drift status honestly. |
-| `FUNDING_REVIEW_D001` | Funding reviewers | Evidence appendix audit for a public report: promised protocol, source, result status and forbidden claims. | Show source/status/limitations trail, not funding strategy. |
-| `SOURCE_AUDIT_D001` | Data stewards | EEA Air Quality source audit: official download page reachability, current download-service link, rights notice link and raw payload policy. | Show the green source-audit card only for the narrow source-page claim; do not imply dataset coverage or legal approval. |
-| `CIVIC_CLAIM_D001` | Civic tech / journalism | NYC TLC public-data claim readiness: can a civic mobility claim be resolved from official data without raw redistribution? | Show pass/negative/blocked only. |
-| `ML_APPENDIX_D001` | ML researchers | NASA POWER method-appendix card: fixed source, baselines, controls and claim boundary. | Show narrow result, not broad superiority. |
-| `EDU_REPRO_D001` | Educators | Classroom reproducibility exercise using public NASA POWER source and an honest checklist. | Show as classroom reproducibility example. |
-| `AI_PRODUCT_CLAIM_D001` | Companies with AI products | Public AI product transparency card: what exact public claim, model/source docs and limitations can be shown to customers? | Show only with forbidden claims listed. |
-| `PROCUREMENT_AI_D001` | Independent verifiers / procurement | Procurement-readiness card for AI vendor claims: what is independently checkable before adoption? | Show as decision-support evidence, not certification. |
+| Public AI transparency readers | `GROK_PROMPTS_SOURCE_AUDIT_D001`, Anthropic/OpenAI/Google public-doc source audits | Public AI documentation source boundaries are reachable, dated, hashed and limited to source audit only. | Green cards exist for source audits. Runtime equivalence is not proven. |
+| AI and LLM evaluation teams | `MODEL_EVAL_D001` | Model ID, prompt set, transcript hashes, scoring rule and acceptance gate are available before outcome scoring. | `BLOCKED_SOURCE` until those fields are available. |
+| Companies with AI products | `AI_PRODUCT_CLAIM_D001` | A product claim is narrow enough to show customers without implying certification or deployment readiness. | `BLOCKED_SOURCE` until model/source docs and evidence artifacts are available. |
+| Independent verifiers and public buyers | `PROCUREMENT_AI_D001` | A vendor claim has independently checkable sources, scoring and limitations before adoption. | `BLOCKED_SOURCE` until procurement-ready source and scoring evidence exists. |
+| Data stewards and public-data teams | `SOURCE_AUDIT_D001`, `EEA_AQ_D001` | Official source page, rights note, data-service link and raw-payload policy are clear before coverage scoring. | EEA source audit is green; EEA AQ manual track is `BLOCKED_SOURCE` on incomplete public URL manifest; CDC mirror path remains unresolved. |
+| Civic tech, journalism and watchdogs | `CIVIC_CLAIM_D001`, NYC TLC Phase 4 | A public civic claim can be resolved from official data without overclaiming. | Current cards/artifacts are blocked or negative, not success claims. |
+| Open science and reproducibility teams | `REPRO_APPENDIX_D001`, NASA POWER D-103, NOAA CO-OPS D-131 | A published result can pass, fail or reproduce with drift under a fixed protocol. | NASA passed with source-byte drift; NOAA is negative; reproduction appendix is blocked. |
+| ML researchers | `ML_APPENDIX_D001` | A method appendix states source, baselines, controls, gate and claim boundary. | `BLOCKED_SOURCE` until a completed run validates. |
+| Educators | `EDU_REPRO_D001` | Students can learn protocol freeze, status discipline and limitation writing on public data. | `BLOCKED_SOURCE` until a classroom run is completed. |
+| Funding reviewers and program evaluators | `FUNDING_REVIEW_D001` | A report or proposal has source, protocol, status and forbidden-claim boundaries. | `BLOCKED_SOURCE` until the appendix links to validated cards. |
 
-## Required Artifacts Per Track
+## Scaffold Files
 
-Each completed demo track should create:
+`uv run claimbound new` creates a draft scaffold:
 
 ```text
+docs/evidence_requests/<TRACK_ID>_REQUEST.md
 docs/protocols/<TRACK_ID>_PREREG_CHARTER.md
-docs/manual_audit/<TRACK_ID>_PLAYBOOK.md
-docs/manual_audit/<TRACK_ID>_CHECKLIST.md
+docs/manual_audit/<TRACK_ID>/<TRACK_ID>_PLAYBOOK.md
+docs/manual_audit/<TRACK_ID>/<TRACK_ID>_CHECKLIST.md
+docs/manual_audit/<TRACK_ID>/<TRACK_ID>_OPERATOR_DECLARATION.md
 docs/evidence_card_drafts/CLAIMBOUND-<TRACK_ID>-DRAFT.json
-docs/evidence_cards/CLAIMBOUND-<TRACK_ID>-<DATE>.json
-docs/evidence_cards/CLAIMBOUND-<TRACK_ID>-<DATE>.svg
-artifacts/<track_id>_summary.json
+artifacts/<track_id>_source_probe_summary.json
 ```
 
-External local-only artifacts should stay outside the repository:
+Those files are a safe starting point. They are not a result.
+
+## Local-Only Files
+
+Manual and AI-assisted runs should keep sensitive or bulky material outside the
+repository:
 
 ```text
 $HOME/claimbound_runs/<run_id>/raw/
@@ -78,91 +79,44 @@ $HOME/claimbound_runs/<run_id>/hashes/
 $HOME/claimbound_runs/<run_id>/transcripts/
 ```
 
-## Request Example Shape
+The public repository stores sanitized summaries, hashes and cards, not raw
+payloads or private transcripts.
 
-Each track should start with an issue-like request:
+## Manual Track
 
-```text
-Title: [Evidence request]: <short claim>
-Public claim:
-Claim source URL:
-Narrow ClaimBound question:
-Main audience:
-Preferred track: MANUAL_NO_AI | AUTOMATED_AI_ASSISTED
-Proposed official or public sources:
-Proposed scoring or resolution rule:
-Known reproducibility risks:
-Claims this card must not make:
+Manual track:
+
+1. Human writes the narrow claim.
+2. Human freezes source, gate, scoring and stop rules.
+3. Human completes the checklist.
+4. Human records deviations and limitations.
+5. Validator checks the card before registry publication.
+
+Use this when judgment, source-rights review or domain interpretation is the
+main risk.
+
+For the EEA AQ D-001 manual track, the reusable runner is:
+
+```bash
+python3 scripts/claimbound_run_eea_manual_track.py \
+  --probe-eea-api \
+  --report artifacts/eea_aq_d001_manual_summary.json
 ```
 
-## Local Manual Run Shape
+The current committed card is blocked-source because the fixed API URL-list path
+did not provide a complete BE/DE/NL manifest. A future operator can rerun with a
+local raw-payload folder and publish a new exact status.
 
-Manual local run:
+## AI-Assisted Track
 
-```text
-1. Create run root outside the repo.
-2. Freeze protocol before source outcome inspection.
-3. Record source rights and raw payload policy.
-4. Run checklist exactly.
-5. Hash local-only raw files, transcripts or logs.
-6. Write sanitized summary JSON.
-7. Fill evidence card.
-8. Run card validator.
-9. Add registry entry only after validation.
-```
+AI-assisted track:
 
-## Local AI-Assisted Run Shape
+1. AI may draft the request, scaffold and missing-field checks.
+2. Human freezes the protocol and source boundary.
+3. AI may write runner, parser, scorer or validation code.
+4. Deterministic code or checklist produces the report.
+5. AI may draft card wording from validated artifacts.
+6. Human approves final status, claim boundary and publication.
 
-AI-assisted local run:
-
-```text
-1. AI prepares scaffold and missing-field checks.
-2. Human freezes protocol.
-3. AI may generate runner/scorer code.
-4. Deterministic runner/scorer produces report.
-5. AI may draft card text from report.
-6. Validator checks fields and forbidden claims.
-7. Human approves final claim boundary.
-```
-
-AI must not:
-
-- choose favorable examples after seeing outcomes;
-- change thresholds after scoring;
-- hide failed answers or rows;
-- invent hashes, source notes, request IDs or citations;
-- approve its own final status.
-
-## Grok Track: Correct Interpretation
-
-For `GROK_PROMPTS_SOURCE_AUDIT_D001`, the useful public claim is prompt-source
-transparency, not model benchmark performance.
-
-The green card can say:
-
-```text
-xAI's public grok-prompts repository was accessible at commit X; README and
-LICENSE were present; listed prompt files were hashed; prompt text was not
-copied into this repository.
-```
-
-The green card must not say:
-
-```text
-the live Grok chat runtime uses exactly these prompts;
-there are no hidden prompt or policy layers;
-Grok is safer, better or benchmark-superior;
-the free Grok chat fast UI exposes an immutable model id.
-```
-
-## README Inclusion Rule
-
-README should eventually show:
-
-```text
-Track ID | Audience | Status | Card | What it proves | What it does not prove
-```
-
-But only after cards validate. Until then, README should link only to the Grok
-workflow and audience workflow docs as examples of how to create evidence, not
-as completed evidence.
+AI must not choose favorable examples after seeing outcomes, change thresholds,
+hide failures, invent hashes or approve its own final result.

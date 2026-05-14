@@ -28,7 +28,7 @@ small enough to audit, and the claim boundary can be written in plain language.
 | Cross-operator rerun | Did another operator reach the same status or find source-byte drift? | Turns reproduction into a first-class result. |
 | Public data rights check | Can the source be used without raw payload redistribution? | Prevents evidence records from becoming data-rights problems. |
 
-## Flagship Workflow
+## Worked Workflow
 
 The central public workflow is:
 
@@ -42,11 +42,11 @@ public claim
   -> optional independent rerun
 ```
 
-The worked Grok example shows how a public model claim becomes a draft evidence
-workflow instead of a broad model-ranking statement:
-[Where is the evidence? Grok claim workflow](FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md).
+The worked Grok example shows how a public AI documentation claim becomes a
+source-audit card instead of a broad model-ranking statement:
+[Grok prompt source-audit workflow](FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md).
 
-Detailed scenario workflows for all nine audiences are in
+Detailed scenario workflows for the audience categories are in
 [audience demonstration workflows](AUDIENCE_TESTIMONIAL_WORKFLOWS.md). The
 publication rule for completed demo cards is in
 [demo tracks to evidence cards](DEMO_TRACKS_TO_EVIDENCE_CARDS.md).

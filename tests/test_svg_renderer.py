@@ -40,3 +40,31 @@ def test_grok_card_renders_svg_without_placeholders() -> None:
     assert "CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json" in svg
     assert 'width="2000" height="1190"' in svg
     assert "ClaimBound public benchmarks logo" in svg
+
+
+def test_status_and_reproduction_colors_are_rendered() -> None:
+    renderer = _load_renderer()
+
+    noaa_svg = renderer.render_svg(
+        REPO_ROOT
+        / "docs"
+        / "evidence_cards"
+        / "CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json"
+    )
+    nasa_svg = renderer.render_svg(
+        REPO_ROOT
+        / "docs"
+        / "evidence_cards"
+        / "CLAIMBOUND-NASA-POWER-D103-2026-04-29.json"
+    )
+    blocked_svg = renderer.render_svg(
+        REPO_ROOT
+        / "docs"
+        / "evidence_cards"
+        / "CLAIMBOUND-MODEL_EVAL_D001-2026-05-07.json"
+    )
+
+    assert 'fill="url(#redGrad)"' in noaa_svg
+    assert 'fill="url(#yellowGrad)"' in nasa_svg
+    assert "OUTCOME REPRODUCED; BYTE DRIFT" in nasa_svg
+    assert 'fill="url(#amberGrad)"' in blocked_svg

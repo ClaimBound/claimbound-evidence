@@ -72,13 +72,19 @@ uv run python scripts/claimbound_scaffold_track.py \
 ## Proposed Outputs
 
 ```text
+docs/evidence_requests/EXAMPLE_D001_REQUEST.md
 docs/protocols/EXAMPLE_D001_PREREG_CHARTER.md
-docs/manual_audit/EXAMPLE_D001_PLAYBOOK.md
-docs/manual_audit/EXAMPLE_D001_CHECKLIST.md
-docs/manual_audit/EXAMPLE_D001_OPERATOR_DECLARATION.md
-docs/evidence_cards/CLAIMBOUND-EXAMPLE-D001-DRAFT.json
+docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_PLAYBOOK.md
+docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_CHECKLIST.md
+docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_OPERATOR_DECLARATION.md
+docs/evidence_card_drafts/CLAIMBOUND-EXAMPLE_D001-DRAFT.json
 artifacts/example_d001_source_probe_summary.json
 ```
+
+The scaffold is useful because it creates the files an operator would otherwise
+forget. It is not useful because it "proves" anything. The real result begins
+only after protocol freeze, manual or deterministic execution, sanitized report,
+card validation and registry update.
 
 ## Suggested Modules
 

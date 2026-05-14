@@ -1,4 +1,4 @@
-# Flagship Workflow: Where Is The Evidence?
+# Worked Example: Grok Prompt Source Audit
 
 ClaimBound should make one public habit simple:
 

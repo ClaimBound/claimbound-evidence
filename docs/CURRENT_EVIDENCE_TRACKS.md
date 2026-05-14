@@ -9,8 +9,10 @@ protocols, sanitized artifacts, evidence cards and registry entries.
 
 | Track | Source | Public outcome | Interpretation |
 | --- | --- | --- | --- |
+| Anthropic/OpenAI/Google public AI docs | Official system-card or model-card pages/PDFs | `PASSED_UNDER_PROTOCOL` | The public documentation source boundaries passed narrow URL, content, marker and SHA-256 source audits only. |
 | Grok prompts source audit | xAI Grok prompts GitHub repository | `PASSED_UNDER_PROTOCOL` | The public prompt repository passed the source-audit gate for repository availability, commit identity, README/LICENSE presence and prompt-file hashes only. |
 | EEA source audit D-001 | EEA Air Quality Download Service | `PASSED_UNDER_PROTOCOL` | The public EEA download page passed the source-audit gate for page reachability, current download-service link and rights notice link only. |
+| EEA AQ manual track D-001 | EEA Air Quality Download API | `BLOCKED_SOURCE` | The larger PM10 manual track could not fairly run the fixed coverage gate because the reproducible URL-list endpoint returned no BE/NL URLs while summaries reported files. |
 | NASA POWER D-103 | NASA POWER Daily point API | `PASSED_UNDER_PROTOCOL` | A narrow renewable-resource signal passed the frozen gate for the documented points, period, target, controls and acceptance rule only. |
 | NOAA CO-OPS D-131 | NOAA CO-OPS Data API | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed, but the candidate did not pass the frozen acceptance gate. |
 | NYC TLC Phase 4 | NYC TLC public trip records | Negative artifact | The official-source run completed, but the candidate did not pass all required controls. A full evidence card should be added or the record should remain clearly marked as artifact-only. |
@@ -18,8 +20,8 @@ protocols, sanitized artifacts, evidence cards and registry entries.
 
 ## Grok Prompts Source Audit
 
-Grok prompts source audit is the current flagship "Where is the evidence?"
-example for public AI transparency.
+Grok prompts source audit is a worked "Where is the evidence?" example for
+public AI transparency.
 
 Allowed interpretation:
 
@@ -38,6 +40,27 @@ This proves Grok is safer, better or benchmark-superior.
 
 The card is green only for the source-audit boundary. It is not a runtime model
 equivalence result.
+
+## Public AI System-Card And Model-Card Audits
+
+The Anthropic, OpenAI and Google DeepMind source-audit cards are public AI
+transparency examples.
+
+Allowed interpretation:
+
+```text
+The official public documentation source was reachable at access time and the
+sanitized source-audit report recorded the expected metadata and SHA-256.
+```
+
+Forbidden interpretation:
+
+```text
+This proves model safety.
+This proves model quality.
+This proves runtime behavior.
+This proves benchmark superiority or deployment readiness.
+```
 
 ## EEA Source Audit D-001
 
@@ -58,8 +81,31 @@ This proves pollutant, station or time completeness.
 This makes a legal conclusion about data reuse.
 ```
 
-This is separate from the larger EEA AQ D-001 manual PM10 track. That manual
-track still needs a completed run or an honest blocked/insufficient outcome.
+This is separate from the larger EEA AQ D-001 manual PM10 track.
+
+## EEA AQ Manual Track D-001
+
+EEA AQ manual track D-001 is an amber blocked-source record for the larger PM10
+coverage workflow.
+
+Allowed interpretation:
+
+```text
+The fixed BE/DE/NL PM10 E1a daily manual track could not fairly run the coverage
+gate from the public URL-list path because BE and NL URL manifests were missing
+while the API summaries reported files.
+```
+
+Forbidden interpretation:
+
+```text
+This proves PM10 station coverage failed.
+This proves the EEA source is unusable generally.
+This proves air-quality forecasting performance or health impact.
+```
+
+The committed runner can still complete a future local raw-payload run when an
+operator provides a full external manifest or local payload folder.
 
 ## NASA POWER D-103
 

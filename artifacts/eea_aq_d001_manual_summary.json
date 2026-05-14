@@ -1,0 +1,110 @@
+{
+  "access_date": "2026-05-11",
+  "block_reason": "The fixed EEA PM10 E1a daily source reported downloadable files for BE, NL, but the reproducible URL-list endpoint returned zero URLs for those countries. The PM10 coverage gate cannot be run fairly from a complete public manifest.",
+  "by_country": {},
+  "claim_boundary": "EEA AQ D-001 reports only manual-track source-readiness and PM10 daily coverage status under the fixed protocol.",
+  "claim_type": "manual_track_source_readiness",
+  "file_summaries": [],
+  "fixed_scope": {
+    "aggregation": "day",
+    "countries": [
+      "BE",
+      "DE",
+      "NL"
+    ],
+    "coverage_gate": "at least 85 percent daily coverage per sampling point",
+    "dataset": "Primary validated data (E1a)",
+    "dataset_code": 2,
+    "period": "2018-01-01..2024-12-31",
+    "pollutant": "PM10",
+    "pollutant_uri": "http://dd.eionet.europa.eu/vocabulary/aq/pollutant/5",
+    "selection_rule": "first five eligible sampling points per country after sorting by country code, city/locality if available, and sampling point ID"
+  },
+  "known_limitations": [
+    "No air-quality forecasting claim is made.",
+    "No health-impact claim is made.",
+    "No deployment or production suitability claim is made.",
+    "No raw EEA payload files are committed."
+  ],
+  "operator": "local operator",
+  "raw_payload_policy": "Raw EEA payload files stay outside the public repository.",
+  "record_type": "source_audit",
+  "result": {
+    "reason": "The fixed EEA PM10 E1a daily source reported downloadable files for BE, NL, but the reproducible URL-list endpoint returned zero URLs for those countries. The PM10 coverage gate cannot be run fairly from a complete public manifest.",
+    "result_status": "BLOCKED_SOURCE"
+  },
+  "schema": "claimbound_eea_aq_d001_manual_summary_v1",
+  "selected_sampling_points": [],
+  "source": {
+    "api_swagger_json": "https://eeadmz1-downloads-api-appservice.azurewebsites.net/swagger/v1/swagger.json",
+    "download_page": "https://aqportal.discomap.eea.europa.eu/download-data/",
+    "name": "EEA Air Quality Download Service",
+    "raw_payload_committed": false,
+    "web_application": "https://eeadmz1-downloads-webapp.azurewebsites.net/"
+  },
+  "source_probe": {
+    "api_base": "https://eeadmz1-downloads-api-appservice.azurewebsites.net",
+    "by_country": {
+      "BE": {
+        "download_summary_number_files": 103,
+        "download_summary_size": 90,
+        "url_list_count": 0
+      },
+      "DE": {
+        "download_summary_number_files": 669,
+        "download_summary_size": 637,
+        "url_list_count": 244
+      },
+      "NL": {
+        "download_summary_number_files": 85,
+        "download_summary_size": 92,
+        "url_list_count": 0
+      }
+    },
+    "combined_download_summary": {
+      "numberFiles": 857,
+      "size": 820
+    },
+    "combined_url_country_counts": {
+      "DE": 244
+    },
+    "combined_url_list_count": 244,
+    "fixed_request": {
+      "aggregation": "day",
+      "countries": [
+        "BE",
+        "DE",
+        "NL"
+      ],
+      "coverage_gate": "at least 85 percent daily coverage per sampling point",
+      "dataset": "Primary validated data (E1a)",
+      "dataset_code": 2,
+      "period": "2018-01-01..2024-12-31",
+      "pollutant": "PM10",
+      "pollutant_uri": "http://dd.eionet.europa.eu/vocabulary/aq/pollutant/5",
+      "selection_rule": "first five eligible sampling points per country after sorting by country code, city/locality if available, and sampling point ID"
+    },
+    "probe_type": "eea_api_manifest_probe",
+    "raw_payload_committed": false,
+    "raw_payload_policy": "No raw EEA parquet payloads or URL manifests are committed.",
+    "swagger_json_url": "https://eeadmz1-downloads-api-appservice.azurewebsites.net/swagger/v1/swagger.json",
+    "swagger_paths_present": [
+      "/City",
+      "/City/GetCountryCitySpos",
+      "/Country",
+      "/DownloadSummary",
+      "/List",
+      "/ParquetFile",
+      "/ParquetFile/async",
+      "/ParquetFile/async/classic",
+      "/ParquetFile/async/dynamic",
+      "/ParquetFile/classic",
+      "/ParquetFile/dynamic",
+      "/ParquetFile/urls",
+      "/Pollutant",
+      "/Version"
+    ]
+  },
+  "station_coverage": [],
+  "track_id": "EEA_AQ_D001"
+}

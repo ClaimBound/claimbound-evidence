@@ -52,7 +52,9 @@ def _visual_values(card: dict[str, Any]) -> dict[str, Any]:
         ),
         "artifact_ref": _first(visual, "artifact_ref", sanitized_report_path),
         "candidate_definition": _first(visual, "candidate_definition", source_name),
-        "card_validity_level": str(card.get("card_validity_level", "VALIDATED")),
+        "card_validity_level": str(
+            card.get("card_validity_level") or _default_card_validity(card)
+        ),
         "claim_boundary": str(card.get("claim_boundary", "")),
         "controls_and_gate": _first(
             visual,
@@ -102,9 +104,25 @@ def _render_card(values: dict[str, Any]) -> str:
         "      .bodyText{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:20px;font-weight:500;fill:#1f2937}",
         "      .muted{font-family:Inter,'Segoe UI',Arial,sans-serif;font-size:17px;font-weight:500;fill:#55627a}",
         "    </style>",
-        '    <linearGradient id="okGrad" x1="0" y1="0" x2="1" y2="0">',
+        '    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="0">',
         '      <stop offset="0%" stop-color="#0fbaaa"/>',
         '      <stop offset="100%" stop-color="#0a9f93"/>',
+        "    </linearGradient>",
+        '    <linearGradient id="yellowGrad" x1="0" y1="0" x2="1" y2="0">',
+        '      <stop offset="0%" stop-color="#fbbf24"/>',
+        '      <stop offset="100%" stop-color="#d97706"/>',
+        "    </linearGradient>",
+        '    <linearGradient id="amberGrad" x1="0" y1="0" x2="1" y2="0">',
+        '      <stop offset="0%" stop-color="#f97316"/>',
+        '      <stop offset="100%" stop-color="#c2410c"/>',
+        "    </linearGradient>",
+        '    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">',
+        '      <stop offset="0%" stop-color="#ef4444"/>',
+        '      <stop offset="100%" stop-color="#b91c1c"/>',
+        "    </linearGradient>",
+        '    <linearGradient id="grayGrad" x1="0" y1="0" x2="1" y2="0">',
+        '      <stop offset="0%" stop-color="#64748b"/>',
+        '      <stop offset="100%" stop-color="#475569"/>',
         "    </linearGradient>",
         '    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="0">',
         '      <stop offset="0%" stop-color="#1f64f2"/>',
@@ -135,13 +153,34 @@ def _render_card(values: dict[str, Any]) -> str:
     ]
 
     out.extend(
-        _chip(70, 193, 430, "Result status", values["result_status"], "okGrad")
+        _chip(
+            70,
+            193,
+            430,
+            "Result status",
+            values["result_status"],
+            _result_gradient(values["result_status"]),
+        )
     )
     out.extend(
-        _chip(520, 193, 370, "Validity", values["card_validity_level"], "okGrad")
+        _chip(
+            520,
+            193,
+            370,
+            "Validity",
+            values["card_validity_level"],
+            _validity_gradient(values["card_validity_level"]),
+        )
     )
     out.extend(
-        _chip(910, 193, 480, "Reproduction", values["reproduction_level"], "blueGrad")
+        _chip(
+            910,
+            193,
+            480,
+            "Reproduction",
+            values["reproduction_level"],
+            _reproduction_gradient(values["reproduction_level"]),
+        )
     )
     out.extend(
         _chip(1410, 193, 520, "Record type", values["record_type"], "blueGrad")
@@ -321,9 +360,61 @@ def _format_path(value: str) -> str:
 
 def _short_reproduction(value: str) -> str:
     value = value.strip()
+    if value.upper() == "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT":
+        return "OUTCOME REPRODUCED; BYTE DRIFT"
+    if value.upper() == "REPRODUCED_OUTCOME":
+        return "OUTCOME REPRODUCED"
     if value.lower() == "not independently reproduced":
         return "not independently reproduced"
     return value
+
+
+def _default_card_validity(card: dict[str, Any]) -> str:
+    draft_status = str(card.get("draft_status", "")).upper()
+    if draft_status:
+        return draft_status
+    return "GREEN_VALIDATED"
+
+
+def _result_gradient(result_status: str) -> str:
+    value = result_status.upper()
+    if value in {"PASSED_UNDER_PROTOCOL", "REPRODUCED_OUTCOME"}:
+        return "greenGrad"
+    if value == "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT":
+        return "yellowGrad"
+    if value in {"BLOCKED_SOURCE", "INSUFFICIENT_COVERAGE"}:
+        return "amberGrad"
+    if value == "NEGATIVE_RESULT_UNDER_PROTOCOL":
+        return "redGrad"
+    if "DRAFT" in value or "NOT_EXECUTED" in value:
+        return "grayGrad"
+    return "blueGrad"
+
+
+def _validity_gradient(card_validity_level: str) -> str:
+    value = card_validity_level.upper()
+    if value.startswith("GREEN") or value == "VALIDATED":
+        return "greenGrad"
+    if value.startswith("YELLOW"):
+        return "yellowGrad"
+    if value.startswith("RED"):
+        return "redGrad"
+    if value.startswith("GRAY") or "DRAFT" in value:
+        return "grayGrad"
+    return "blueGrad"
+
+
+def _reproduction_gradient(reproduction_level: str) -> str:
+    value = reproduction_level.upper()
+    if value == "REPRODUCED_OUTCOME":
+        return "greenGrad"
+    if "SOURCE_BYTE_DRIFT" in value or "BYTE DRIFT" in value:
+        return "yellowGrad"
+    if "NOT" in value and "REPRODUCED" in value:
+        return "blueGrad"
+    if "DRAFT" in value or "NOT_EXECUTED" in value:
+        return "grayGrad"
+    return "blueGrad"
 
 
 def _e(value: str) -> str:

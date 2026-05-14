@@ -19,8 +19,9 @@ paper index, experiment database, archive service or certification authority.
 | Educators | Teaches protocol discipline, baselines, controls and honest failure reporting. |
 | Companies with AI products | Supports narrow customer-facing evidence cards instead of broad trust claims. |
 | Independent verifiers, procurement teams and public buyers | Gives a clear path to request, rerun or challenge a result before adoption. |
+| Public AI transparency readers | Connects familiar AI documentation claims to narrow source-audit cards. |
 
-Detailed manual and AI-assisted workflow examples for all nine audiences are in
+Detailed manual and AI-assisted workflow examples for the audience categories are in
 [audience demonstration workflows](AUDIENCE_TESTIMONIAL_WORKFLOWS.md). The path
 from those scenarios to real cards is defined in
 [demo tracks to evidence cards](DEMO_TRACKS_TO_EVIDENCE_CARDS.md).
@@ -39,7 +40,7 @@ Many public AI/ML claims are hard to inspect because:
 
 ClaimBound makes these points visible in a compact evidence card.
 
-## Flagship Workflow
+## Worked Public Workflow
 
 The public habit ClaimBound wants to support is simple:
 
@@ -47,11 +48,11 @@ The public habit ClaimBound wants to support is simple:
 Where is the evidence?
 ```
 
-For example, a public model announcement can be turned into a narrow protocol:
-claim source, model/API metadata, prompt hash, transcript hashes, scoring rule,
-result status, limitations and rerun path. See the
-[Grok claim workflow](FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md) for a concrete worked
-example.
+For example, a public AI documentation claim can be turned into a narrow source
+audit with URL, access date, expected markers, hash, result status, limitations
+and rerun path. See the
+[Grok prompt source-audit workflow](FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md) for a
+concrete worked example.
 
 ## What ClaimBound Adds
 
