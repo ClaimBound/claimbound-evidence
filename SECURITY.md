@@ -47,14 +47,14 @@ When reproducing benchmarks:
 
 ## Provenance And Audit-Log Handling
 
-Funding evidence bundles, GitHub organization audit-log exports, AI session logs
+AI provenance bundles, GitHub organization audit-log exports, AI session logs
 and private reviewer materials may contain account metadata, private messages,
 local paths or sensitive operational details. Do not commit those raw exports to
 this public repository.
 
 Use public PRs, commits, releases, GitHub Actions runs, evidence cards and the
 registry as the public provenance trail. Store any raw audit-log export only in a
-private funding archive, redact before sharing externally and publish hashes or
+private AI provenance archive, redact before sharing externally and publish hashes or
 public URLs instead of private logs where possible.
 
 If an audit-log export, AI transcript, raw payload, token, private path or

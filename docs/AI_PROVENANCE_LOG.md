@@ -1,11 +1,11 @@
-# Funding Provenance And Audit Logs
+# AI Provenance Log And Audit Logs
 
 This note defines how ClaimBound Public Benchmarks should present development
-provenance for funding reviews and public accountability.
+provenance for AI-assisted work and public accountability.
 
 ## Short Answer
 
-The GitHub organization audit log is not an AI provenance log.
+The GitHub organization audit log is not the AI provenance log.
 
 Use it as supporting governance evidence only: repository settings changes,
 ruleset changes, permission changes, security-adjacent events and other
@@ -20,9 +20,9 @@ The primary project provenance is the public development trail:
 - documented AI assistance fields in evidence cards;
 - human-reviewed PR descriptions and linked issues or discussions.
 
-## Public Provenance Sources
+## Public AI Provenance Sources
 
-For funding-facing reports, cite public records first:
+For AI-assisted ClaimBound work, cite public records first:
 
 | Source | What it proves | Where |
 | --- | --- | --- |
@@ -36,15 +36,16 @@ For funding-facing reports, cite public records first:
 These public records are safer and more useful for reviewers than private audit
 exports because they are reproducible from the repository itself.
 
-## Private Funding Evidence Bundle
+## Private AI Provenance Bundle
 
-If a funding reviewer requests additional provenance, prepare a private bundle
-outside this public repository.
+If a reviewer requests additional AI-work provenance, prepare a private bundle
+outside this public repository. Treat it as sensitive operational material unless
+it has been explicitly sanitized.
 
 Suggested private layout:
 
 ```text
-funding-evidence/
+ai-provenance-log/
   claimbound-public-benchmarks/
     2026-05-14/
       README.md
@@ -62,11 +63,35 @@ The private bundle may include:
   `repo:ClaimBound/claimbound-public-benchmarks`;
 - a dated list of public PRs, commits, releases and workflow runs;
 - a digest of the evidence-card registry;
-- sanitized AI-work summaries when they are relevant to funding reporting.
+- sanitized AI-work summaries when they are relevant to public accountability.
 
 Do not include raw payloads, credentials, private local paths, personal account
 screenshots, private messages, full AI chat transcripts or private-source
 implementation details in this public repository.
+
+## What Counts As The AI Provenance Log
+
+The AI provenance log is a layered record, not a single GitHub screen.
+
+Minimum public layer:
+
+- PR summary describing material AI assistance;
+- commit SHA for the exact change;
+- passing GitHub Actions checks;
+- evidence-card `ai_assistance` and `execution_mode` fields when the work
+  produces or updates a card;
+- human review or maintainer publication decision.
+
+Optional private layer:
+
+- sanitized AI session summary;
+- command transcript or terminal log with secrets and private paths removed;
+- prompt or task summary when redistribution is allowed;
+- hashes for any private raw transcript or archive kept outside this public
+  repository.
+
+This structure lets reviewers inspect what changed without requiring trust in a
+private chat transcript or a platform audit log.
 
 ## GitHub Audit Log Use
 
@@ -99,7 +124,7 @@ For the ClaimBound organization UI, use:
 
 <https://github.com/organizations/ClaimBound/settings/audit-log?q=repo%3AClaimBound%2Fclaimbound-public-benchmarks>
 
-## Recommended Funding Reporting Pattern
+## Recommended AI Provenance Reporting Pattern
 
 For each reporting period:
 
@@ -107,7 +132,8 @@ For each reporting period:
    and evidence-card links.
 2. Export a private, repo-filtered GitHub audit log only if needed.
 3. Redact sensitive fields before sharing outside maintainers.
-4. Hash the private bundle and record the hash in the private funding archive.
+4. Hash the private bundle and record the hash in the private AI provenance
+   archive.
 5. Submit public URLs plus private bundle hashes, not raw private logs, unless
    the reviewer explicitly requires the raw export.
 

@@ -224,10 +224,10 @@ The registry stores validated card metadata and sanitized report references, not
 raw payloads. Blockchain, token, wallet, on-chain storage and chain timestamp
 features are outside the current roadmap.
 
-For funding-facing development provenance, use public PRs, commits, releases,
-checks, evidence cards and registry entries first. GitHub organization audit logs
-are governance support, not AI provenance by themselves. See
-[Funding provenance and audit logs](docs/FUNDING_PROVENANCE.md).
+For the AI provenance log, use public PRs, commits, releases, checks, evidence
+cards and registry entries first. GitHub organization audit logs are governance
+support, not AI provenance by themselves. See
+[AI provenance log and audit logs](docs/AI_PROVENANCE_LOG.md).
 
 ## Community
 

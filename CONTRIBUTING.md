@@ -29,8 +29,8 @@ When AI assistance is materially used in a contribution:
 - keep public provenance in PRs, commits, checks, releases, evidence cards and
   registry entries.
 
-For funding-facing provenance and GitHub audit-log handling, see
-[Funding provenance and audit logs](docs/FUNDING_PROVENANCE.md).
+For AI provenance log and GitHub audit-log handling, see
+[AI provenance log and audit logs](docs/AI_PROVENANCE_LOG.md).
 
 ## Default branch (`main`)
 
