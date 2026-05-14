@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Run NASA POWER D-103 frozen pre-registration evaluator over local JSON files."""
 
 from __future__ import annotations

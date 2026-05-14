@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Render a readable ClaimBound evidence-card SVG from JSON."""
 
 from __future__ import annotations

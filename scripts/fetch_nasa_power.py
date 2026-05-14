@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Materialize NASA POWER D-103 solar series into the generic OHLCV CSV contract.
 
 Supported source modes:

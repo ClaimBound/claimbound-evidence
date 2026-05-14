@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Run or block the EEA AQ D-001 manual-track readiness check."""
 
 from __future__ import annotations

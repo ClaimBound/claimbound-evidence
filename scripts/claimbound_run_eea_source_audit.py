@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Audit the EEA Air Quality download source boundary without storing raw HTML."""
 
 from __future__ import annotations
