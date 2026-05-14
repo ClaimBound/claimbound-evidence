@@ -44,3 +44,21 @@ When reproducing benchmarks:
 - publish hashes, manifests, summaries, and claim boundaries only;
 - do not include access tokens, cookies, API keys, or private local paths in reports;
 - verify generated artifacts before committing.
+
+## Provenance And Audit-Log Handling
+
+Funding evidence bundles, GitHub organization audit-log exports, AI session logs
+and private reviewer materials may contain account metadata, private messages,
+local paths or sensitive operational details. Do not commit those raw exports to
+this public repository.
+
+Use public PRs, commits, releases, GitHub Actions runs, evidence cards and the
+registry as the public provenance trail. Store any raw audit-log export only in a
+private funding archive, redact before sharing externally and publish hashes or
+public URLs instead of private logs where possible.
+
+If an audit-log export, AI transcript, raw payload, token, private path or
+private-source detail is accidentally committed or disclosed, report it through
+GitHub Security Advisories:
+
+<https://github.com/ClaimBound/claimbound-public-benchmarks/security/advisories/new>

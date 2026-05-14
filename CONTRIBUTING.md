@@ -13,6 +13,25 @@ Rules:
   a result;
 - record failed or blocked runs honestly.
 
+## AI Assistance And Provenance
+
+AI assistance is allowed when it follows [AI Workflow](docs/AI_WORKFLOW.md) and
+[AI Operator Protocol](docs/AI_OPERATOR_PROTOCOL.md).
+
+When AI assistance is materially used in a contribution:
+
+- disclose the role of AI assistance in the pull request summary or linked
+  evidence card;
+- keep final status decisions tied to a frozen protocol, checklist, runner or
+  validator, not model opinion;
+- keep raw prompts, transcripts, private account material and private-source
+  details outside the public repository unless redistribution is clearly allowed;
+- keep public provenance in PRs, commits, checks, releases, evidence cards and
+  registry entries.
+
+For funding-facing provenance and GitHub audit-log handling, see
+[Funding provenance and audit logs](docs/FUNDING_PROVENANCE.md).
+
 ## Default branch (`main`)
 
 Repository rules enforce the following:
@@ -37,4 +56,3 @@ Before opening a pull request:
 ```bash
 uv run pytest -n auto
 ```
-
