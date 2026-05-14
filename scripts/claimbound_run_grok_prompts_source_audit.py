@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Audit a local clone of xai-org/grok-prompts without committing prompt text."""
 
 from __future__ import annotations

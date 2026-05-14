@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """Audit an official public documentation page without storing raw page content."""
 
 from __future__ import annotations
