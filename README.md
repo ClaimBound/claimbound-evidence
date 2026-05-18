@@ -1,5 +1,11 @@
 # ClaimBound Public Benchmarks
 
+[![Stars](https://img.shields.io/github/stars/ClaimBound/claimbound-public-benchmarks?style=social)](https://github.com/ClaimBound/claimbound-public-benchmarks/stargazers)
+[![License](https://img.shields.io/github/license/ClaimBound/claimbound-public-benchmarks)](https://github.com/ClaimBound/claimbound-public-benchmarks/blob/main/LICENSE)
+[![Python >=3.12](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://github.com/ClaimBound/claimbound-public-benchmarks/blob/main/pyproject.toml)
+[![tests](https://github.com/ClaimBound/claimbound-public-benchmarks/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ClaimBound/claimbound-public-benchmarks/actions/workflows/tests.yml)
+[![Release](https://img.shields.io/github/v/release/ClaimBound/claimbound-public-benchmarks?display_name=tag)](https://github.com/ClaimBound/claimbound-public-benchmarks/releases)
+
 <p align="center">
   <img
     src="docs/assets/claimbound_logo.svg"
