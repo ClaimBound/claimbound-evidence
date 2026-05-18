@@ -32,6 +32,19 @@ When AI assistance is materially used in a contribution:
 For AI provenance log and GitHub audit-log handling, see
 [AI provenance log and audit logs](docs/AI_PROVENANCE_LOG.md).
 
+## Maintainer And Contributor Hygiene
+
+To keep the public contributor graph clean and research-grade:
+
+- prefer one explicit maintainer identity for public maintenance commits;
+- do not use `Co-authored-by:` trailers for Cursor, AI agents, or other tools;
+- do not merge automated dependency-update PRs directly from bot authors unless
+  the bot attribution is intentionally accepted for the public history;
+- prefer a human-reviewed squash merge for dependency updates and AI-assisted
+  changes;
+- disclose material AI assistance in the PR summary or evidence card without
+  making the AI tool a Git author or co-author.
+
 ## Default branch (`main`)
 
 Repository rules enforce the following:
@@ -43,8 +56,8 @@ Repository rules enforce the following:
   GitHub does not count approving your **own** PR toward the required review count.
 - **Status checks**: `pytest` (`.github/workflows/tests.yml`) and `review`
   (`.github/workflows/dependency-review.yml`) must succeed; strict branch-up-to-date behavior is enabled.
-- **Merge style**: only **squash** or **rebase** merges are allowed; merge commits are disabled to match
-  **required linear history** and reduce accidental merge-only noise on `main`.
+- **Merge style**: only **squash** merges are allowed; merge commits and rebase merges should stay disabled to match
+  **required linear history**, keep one reviewed commit per PR, and reduce accidental bot/tool noise on `main`.
 
 The JSON payload for the repo ruleset (for reproducibility) lives at
 [`scripts/github/ruleset_protect_main.json`](scripts/github/ruleset_protect_main.json). To recreate it from
