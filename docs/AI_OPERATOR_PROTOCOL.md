@@ -9,6 +9,7 @@ AI tools may help with:
 
 - drafting protocol text before source data is inspected;
 - checking whether a protocol has missing fields;
+- drafting a family ledger with claim IDs, track modes, budgets and stop rules;
 - writing parsers and tests;
 - generating validation code;
 - summarizing already computed machine-readable reports;
@@ -22,6 +23,7 @@ AI tools may help with:
 When AI assistance is used, the operator must ensure:
 
 - the protocol is frozen before outcome inspection;
+- related-track family ledgers are validated before they are cited;
 - data selection rules are deterministic or manually recorded before scoring;
 - thresholds are not tuned after seeing results;
 - every automated run writes logs and hashes;
@@ -51,19 +53,21 @@ AI tools must not:
 Automated operation must use a staged workflow:
 
 1. Freeze protocol.
-2. Record source boundary.
-3. Fetch or reference raw payloads outside the repository.
-4. Hash raw payloads or record why this is blocked.
-5. Run parser and runner.
-6. Produce a sanitized report.
-7. Validate status, claim boundary and evidence-card fields.
-8. Publish the exact status.
+2. Validate the family ledger when related tracks are involved.
+3. Record source boundary.
+4. Fetch or reference raw payloads outside the repository.
+5. Hash raw payloads or record why this is blocked.
+6. Run parser and runner.
+7. Produce a sanitized report.
+8. Validate status, claim boundary and evidence-card fields.
+9. Publish the exact status.
 
 The automated system must stop and record a blocked or invalid state when:
 
 - source rights are unclear;
 - raw payload hashing fails;
 - required fields are missing;
+- a proof track exceeds the family budget;
 - the protocol was changed after outcome inspection;
 - negative controls invalidate the candidate;
 - the evidence card contains a broad unsupported claim.

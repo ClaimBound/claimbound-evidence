@@ -76,12 +76,14 @@ uv run --extra dev python scripts/claimbound_validate_evidence_card.py \
 
 | Command | What it does |
 | --- | --- |
-| `uv run claimbound new` | Creates a draft request, protocol, playbook, checklist, operator declaration, draft card and source-probe summary. Prompts interactively in a terminal. |
+| `uv run claimbound new` | Creates a draft request, protocol, playbook, checklist, operator declaration, draft card, family ledger and source-probe summary. Prompts interactively in a terminal. |
 | `uv run claimbound new-track` | Alias for `new`; kept for people who think in "track" language. |
 | `uv run claimbound run-root --protocol-id ... --source-url ...` | Creates a local-only run directory under `$HOME/claimbound_runs/` with `raw/`, `logs/`, `hashes/`, `reports/` and `transcripts/`. |
 | `uv run claimbound demo eea-source-audit` | Runs the EEA source-audit demo helper and writes a sanitized report under the demo run root. |
 | `uv run claimbound demo grok-source-audit` | Clones or reuses the public `xai-org/grok-prompts` repository in a local-only demo root, then writes source-audit metadata and hashes. |
-| `uv run claimbound validate-all` | Validates all committed evidence cards and the registry index. |
+| `uv run claimbound validate-family docs/track_families/<ID>_FAMILY_LEDGER.json` | Validates claim IDs, family budget, track modes and stop/closure structure for related R&D tracks. |
+| `uv run python scripts/claimbound_validate_family_ledger.py docs/track_families/<ID>_FAMILY_LEDGER.json` | Script entrypoint for the same family-ledger validation, useful in shell workflows. |
+| `uv run claimbound validate-all` | Validates all committed evidence cards, the registry index and any optional `*_FAMILY_LEDGER.json` files. |
 
 These commands are useful for private local work too. A person or organization
 can keep raw payloads, prompt text, transcripts and logs inside a local run
@@ -108,9 +110,13 @@ uv run claimbound new \
 ```
 
 The scaffold is not evidence. It creates a request, protocol draft, playbook,
-checklist, operator declaration, draft card and source-probe summary so an
-operator can freeze the real protocol and run the track without missing common
-steps.
+checklist, operator declaration, draft card, R&D family ledger and source-probe
+summary so an operator can freeze the real protocol and run the track without
+missing common steps.
+
+For related tracks, edit the generated family ledger before the second track
+runs. The ledger is where you list claim IDs, diagnostic versus proof mode,
+track budget, stop rules and closure decisions.
 
 ## Prepare A Local Run Root
 
@@ -134,5 +140,6 @@ This creates a local-only directory under `$HOME/claimbound_runs/` with standard
 - [Current evidence tracks](CURRENT_EVIDENCE_TRACKS.md)
 - [Evidence card specification](EVIDENCE_CARD.md)
 - [Manual audit protocol](MANUAL_AUDIT_PROTOCOL.md)
+- [R&D family protocol](R_AND_D_FAMILY_PROTOCOL.md)
 - [AI operator protocol](AI_OPERATOR_PROTOCOL.md)
 - [AI workflow](AI_WORKFLOW.md)

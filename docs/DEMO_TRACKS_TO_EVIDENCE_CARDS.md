@@ -26,6 +26,7 @@ request or scaffold example.
 ```text
 evidence request
   -> scaffold
+  -> family ledger for related tracks
   -> preregistration charter
   -> playbook and checklist
   -> manual or AI-assisted local run
@@ -62,10 +63,13 @@ docs/manual_audit/<TRACK_ID>/<TRACK_ID>_PLAYBOOK.md
 docs/manual_audit/<TRACK_ID>/<TRACK_ID>_CHECKLIST.md
 docs/manual_audit/<TRACK_ID>/<TRACK_ID>_OPERATOR_DECLARATION.md
 docs/evidence_card_drafts/CLAIMBOUND-<TRACK_ID>-DRAFT.json
+docs/track_families/<TRACK_ID>_FAMILY_LEDGER.json
 artifacts/<track_id>_source_probe_summary.json
 ```
 
 Those files are a safe starting point. They are not a result.
+For related R&D tracks, the family ledger is where claim IDs, diagnostic versus
+proof mode, proof-track budget, stop rules and closure decisions are recorded.
 
 ## Local-Only Files
 
@@ -111,7 +115,7 @@ local raw-payload folder and publish a new exact status.
 
 AI-assisted track:
 
-1. AI may draft the request, scaffold and missing-field checks.
+1. AI may draft the request, scaffold, family ledger and missing-field checks.
 2. Human freezes the protocol and source boundary.
 3. AI may write runner, parser, scorer or validation code.
 4. Deterministic code or checklist produces the report.

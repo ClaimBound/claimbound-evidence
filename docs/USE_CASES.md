@@ -36,6 +36,7 @@ The central public workflow is:
 public claim
   -> evidence request
   -> protocol scaffold
+  -> family ledger when tracks are related
   -> manual or AI-assisted track
   -> hashes and deterministic report
   -> validated evidence card

@@ -12,6 +12,10 @@ from claimbound_public_benchmarks.evidence_card import (
     load_evidence_card,
     validate_evidence_card,
 )
+from claimbound_public_benchmarks.family_ledger import (
+    load_family_ledger,
+    validate_family_ledger,
+)
 from claimbound_public_benchmarks.registry import load_registry, validate_registry
 from claimbound_public_benchmarks.run_root import RunRootRequest, prepare_run_root
 from claimbound_public_benchmarks.scaffold import ScaffoldRequest, build_scaffold
@@ -83,7 +87,20 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=REPO_ROOT / "docs" / "registry" / "evidence_index.json",
     )
+    validate_parser.add_argument(
+        "--families-dir",
+        type=Path,
+        default=REPO_ROOT / "docs" / "track_families",
+        help="Directory containing optional *_FAMILY_LEDGER.json files.",
+    )
     validate_parser.set_defaults(func=_cmd_validate_all)
+
+    family_parser = subparsers.add_parser(
+        "validate-family",
+        description="Validate one R&D family ledger JSON file.",
+    )
+    family_parser.add_argument("path", type=Path)
+    family_parser.set_defaults(func=_cmd_validate_family)
 
     run_root_parser = subparsers.add_parser(
         "run-root",
@@ -141,6 +158,7 @@ def _cmd_demo(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
         validate_args = argparse.Namespace(
             cards_dir=REPO_ROOT / "docs" / "evidence_cards",
             registry=REPO_ROOT / "docs" / "registry" / "evidence_index.json",
+            families_dir=REPO_ROOT / "docs" / "track_families",
         )
         return _cmd_validate_all(validate_args, build_parser())
 
@@ -179,11 +197,16 @@ def _cmd_validate_all(args: argparse.Namespace, parser: argparse.ArgumentParser)
 
     for card_path in card_paths:
         for violation in validate_evidence_card(load_evidence_card(card_path)):
-            violations.append(f"{card_path.relative_to(REPO_ROOT)}: {violation}")
+            violations.append(f"{_display_path(card_path)}: {violation}")
 
     registry = load_registry(args.registry)
     for violation in validate_registry(registry, REPO_ROOT):
-        violations.append(f"{args.registry.relative_to(REPO_ROOT)}: {violation}")
+        violations.append(f"{_display_path(args.registry)}: {violation}")
+
+    family_paths = sorted(args.families_dir.glob("*_FAMILY_LEDGER.json"))
+    for family_path in family_paths:
+        for violation in validate_family_ledger(load_family_ledger(family_path)):
+            violations.append(f"{_display_path(family_path)}: {violation}")
 
     if violations:
         for violation in violations:
@@ -191,7 +214,24 @@ def _cmd_validate_all(args: argparse.Namespace, parser: argparse.ArgumentParser)
         return 1
 
     print(f"valid_cards={len(card_paths)}")
-    print(f"valid_registry={args.registry.relative_to(REPO_ROOT)}")
+    print(f"valid_registry={_display_path(args.registry)}")
+    print(f"valid_family_ledgers={len(family_paths)}")
+    return 0
+
+
+def _cmd_validate_family(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = args.path
+    if not path.is_absolute():
+        path = REPO_ROOT / path
+
+    violations = validate_family_ledger(load_family_ledger(path))
+    if violations:
+        for violation in violations:
+            print(f"violation: {_display_path(path)}: {violation}", file=sys.stderr)
+        return 1
+
+    print(f"valid_family_ledger={_display_path(path)}")
     return 0
 
 
@@ -235,6 +275,13 @@ def _prompt_path(prompt: str, parser: argparse.ArgumentParser) -> Path:
 def _run_script(script_name: str, *args: str) -> int:
     cmd = [sys.executable, str(REPO_ROOT / "scripts" / script_name), *args]
     return subprocess.call(cmd, cwd=REPO_ROOT)
+
+
+def _display_path(path: Path) -> str:
+    try:
+        return path.relative_to(REPO_ROOT).as_posix()
+    except ValueError:
+        return path.as_posix()
 
 
 def _ensure_grok_clone(repo_dir: Path) -> None:

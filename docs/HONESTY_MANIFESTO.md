@@ -26,6 +26,7 @@ Rules first. Source second. Run third. Claim last.
 A ClaimBound evidence record can include:
 
 - frozen protocol;
+- family ledger for related tracks;
 - official source reference;
 - source-rights note;
 - raw payload hash manifest outside the repository;
@@ -51,6 +52,7 @@ A ClaimBound evidence record does not rely on:
 ClaimBound should make manipulation visible through:
 
 - protocol files committed before real runs;
+- family ledgers that separate diagnostic, proof and closure tracks;
 - fixed target, candidate, baselines, controls and acceptance gate;
 - raw payload hashes recorded outside the repository;
 - sanitized reports committed inside the repository;
@@ -91,4 +93,3 @@ What happened?
 What can be reproduced?
 What must not be claimed?
 ```
-
