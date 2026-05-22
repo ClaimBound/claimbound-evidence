@@ -159,6 +159,7 @@ Implement a small deterministic scaffold command before building a server:
 - `ProtocolDraftBuilder`;
 - `ChecklistRenderer`;
 - `PlaybookRenderer`;
+- `FamilyLedgerScaffolder`;
 - `EvidenceCardScaffolder`;
 - `CardValidator`;
 - `SvgRenderer`;
@@ -175,6 +176,24 @@ with HTTP/content-type checks, OpenAPI/Swagger hints, license/terms discovery,
 robots/terms notes and safe/blocked recommendations is better scoped as a
 public roadmap item because it needs careful validation and should not look like
 an automated legal or final-evidence conclusion.
+
+### R&D Family Governance
+
+Add a lightweight protocol for related tracks before ClaimBound grows into a
+larger experiment workflow:
+
+- keep a family ledger with parent claim, non-overlap boundary, claim list,
+  track modes and stop rules;
+- separate diagnostic tracks from proof tracks;
+- require proof-track budgets per hypothesis family;
+- require closure decisions when repeated proof attempts are negative or
+  blocked;
+- validate that tracks reference known claim IDs before they are cited by an
+  evidence card.
+
+This keeps ClaimBound from repeatedly retesting one narrow branch after the
+evidence already says to stop, while still allowing genuinely new source,
+label, protocol or reproduction families.
 
 ### High-Value Public Card Candidates
 

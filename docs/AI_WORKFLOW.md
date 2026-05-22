@@ -29,14 +29,18 @@ final result status, claim boundary and publication decision.
 2. **Scaffold**
 
    AI or CLI may create a draft protocol, playbook, checklist, operator
-   declaration, draft card and source-probe summary.
+   declaration, draft card, R&D family ledger and source-probe summary.
 
    This is not evidence. It must not assign a positive or negative result.
+   The family ledger is planning metadata: it may define claim IDs, diagnostic
+   versus proof mode, proof-track budget and stop rules, but it must not be
+   cited as a completed result.
 
 3. **Protocol freeze**
 
    A human freezes source, target, model or method identity, baselines, controls,
-   scoring rule, acceptance gate, stop rules and forbidden after-result changes.
+   scoring rule, acceptance gate, family claim list, stop rules and forbidden
+   after-result changes.
 
 4. **Run or reproduction**
 

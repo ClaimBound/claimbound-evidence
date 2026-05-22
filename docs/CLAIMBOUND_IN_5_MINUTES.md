@@ -80,17 +80,21 @@ renamed as successes.
 
 1. Write a narrow public claim.
 2. Open an evidence request.
-3. Generate a scaffold: protocol draft, playbook, checklist and draft card.
-4. Freeze source, scoring, gate and stop rules before outcome inspection.
+3. Generate a scaffold: protocol draft, playbook, checklist, family ledger and
+   draft card.
+4. Freeze source, claim list, scoring, gate and stop rules before outcome
+   inspection.
 5. Run a manual checklist or deterministic script.
 6. Keep raw payloads, prompt text and transcripts outside the public repo.
 7. Publish a sanitized report with hashes and limitations.
 8. Validate the evidence card JSON.
-9. Add it to the registry only after validation.
+9. Validate the family ledger when related tracks are involved.
+10. Add it to the registry only after validation.
 
 ## Where To Start
 
 - Browse the [evidence cards](evidence_cards/README.md).
 - Follow [getting started](GETTING_STARTED.md) for installation and commands.
 - Use `uv run claimbound new` to create a scaffold.
+- Use `uv run claimbound validate-family ...` for related R&D tracks.
 - Use `uv run claimbound validate-all` before publishing cards.

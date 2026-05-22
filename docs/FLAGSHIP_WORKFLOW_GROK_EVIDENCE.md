@@ -39,8 +39,8 @@ A ClaimBound track has five distinct states. Do not skip them.
    actual artifacts.
 ```
 
-For the Grok prompt-transparency example, scaffold creates the request and draft
-track. The green card requires an actual source audit run.
+For the Grok prompt-transparency example, scaffold creates the request, family
+ledger and draft track. The green card requires an actual source audit run.
 
 To create a real card, the operator must also have:
 
@@ -233,13 +233,15 @@ Expected draft outputs:
 
 ```text
 docs/protocols/GROK_PROMPTS_SOURCE_AUDIT_D001_PREREG_CHARTER.md
-docs/manual_audit/GROK_PROMPTS_SOURCE_AUDIT_D001_PLAYBOOK.md
-docs/manual_audit/GROK_PROMPTS_SOURCE_AUDIT_D001_CHECKLIST.md
+docs/manual_audit/GROK_PROMPTS_SOURCE_AUDIT_D001/GROK_PROMPTS_SOURCE_AUDIT_D001_PLAYBOOK.md
+docs/manual_audit/GROK_PROMPTS_SOURCE_AUDIT_D001/GROK_PROMPTS_SOURCE_AUDIT_D001_CHECKLIST.md
+docs/manual_audit/GROK_PROMPTS_SOURCE_AUDIT_D001/GROK_PROMPTS_SOURCE_AUDIT_D001_OPERATOR_DECLARATION.md
 docs/evidence_card_drafts/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-DRAFT.json
+docs/track_families/GROK_PROMPTS_SOURCE_AUDIT_D001_FAMILY_LEDGER.json
 artifacts/grok_prompts_source_audit_d001_source_probe_summary.json
 ```
 
-Draft card status:
+Completed card status after source-audit execution:
 
 ```text
 PASSED_UNDER_PROTOCOL / GREEN_VALIDATED after source audit execution

@@ -172,6 +172,10 @@ uv run claimbound demo grok-source-audit
 uv run claimbound validate-all
 ```
 
+`validate-all` checks committed evidence cards, the registry and any optional
+`docs/track_families/*_FAMILY_LEDGER.json` files. Historical cards created
+before the R&D family protocol do not need retroactive ledgers.
+
 Prepare a local-only run root:
 
 ```bash
@@ -182,9 +186,10 @@ uv run claimbound run-root \
 ```
 
 `claimbound new` creates a request, protocol draft, playbook, checklist,
-operator declaration, draft card and source-probe summary. It is not evidence.
-Evidence begins only after an operator freezes the protocol, runs the check,
-publishes a sanitized report, validates the card and updates the registry.
+operator declaration, draft card, R&D family ledger and source-probe summary.
+It is not evidence. Evidence begins only after an operator freezes the
+protocol, runs the check, publishes a sanitized report, validates the card and
+updates the registry.
 
 ## Next Steps: Simple To Technical
 
@@ -198,8 +203,9 @@ publishes a sanitized report, validates the card and updates the registry.
 | 6 | [Current evidence tracks](docs/CURRENT_EVIDENCE_TRACKS.md) | What the committed results prove and do not prove. |
 | 7 | [Manual audit protocol v0.1](docs/MANUAL_AUDIT_PROTOCOL.md) | How to run a no-AI operator track. |
 | 8 | [AI operator protocol v0.1](docs/AI_OPERATOR_PROTOCOL.md) and [AI workflow](docs/AI_WORKFLOW.md) | What AI may draft, run or summarize, and where human approval is required. |
-| 9 | [Scaffold workflow protocol v0.1](docs/SCAFFOLD_AUTOMATION_PLAN.md) | How requests become protocol, playbook, checklist and draft card files. |
-| 10 | [Registry direction v0.1](docs/GLOBAL_EVIDENCE_REGISTRY.md) and [project next steps](docs/PROJECT_NEXT_STEPS.md) | How validated cards become a public registry and what is intentionally out of scope. |
+| 9 | [Scaffold workflow protocol v0.1](docs/SCAFFOLD_AUTOMATION_PLAN.md) | How requests become protocol, playbook, checklist, family ledger and draft card files. |
+| 10 | [R&D family protocol](docs/R_AND_D_FAMILY_PROTOCOL.md) | How related tracks keep claim lists, budgets, diagnostic/proof separation and closure decisions. |
+| 11 | [Registry direction v0.1](docs/GLOBAL_EVIDENCE_REGISTRY.md) and [project next steps](docs/PROJECT_NEXT_STEPS.md) | How validated cards become a public registry and what is intentionally out of scope. |
 
 Individual pre-registration charters live in
 [docs/protocols/](docs/protocols/). They are protocol-bound examples, not broad

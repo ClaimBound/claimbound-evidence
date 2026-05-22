@@ -18,6 +18,7 @@ The public repository should keep a deterministic scaffold MVP now:
 - checklist;
 - operator declaration;
 - draft evidence card without result status;
+- draft R&D family ledger;
 - static source-probe summary;
 - validation command path.
 
@@ -78,6 +79,7 @@ docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_PLAYBOOK.md
 docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_CHECKLIST.md
 docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_OPERATOR_DECLARATION.md
 docs/evidence_card_drafts/CLAIMBOUND-EXAMPLE_D001-DRAFT.json
+docs/track_families/EXAMPLE_D001_FAMILY_LEDGER.json
 artifacts/example_d001_source_probe_summary.json
 ```
 
@@ -96,6 +98,7 @@ card validation and registry update.
 | ProtocolDraftBuilder | Creates a preregistration charter with fixed placeholders for source, target, baselines, controls and gates. |
 | ChecklistRenderer | Creates a step-by-step checklist with commands, expected artifacts and stop conditions. |
 | PlaybookRenderer | Creates a human-readable runbook for the operator. |
+| FamilyLedgerScaffolder | Creates a claim list, track budget and stop-rule template for related R&D tracks. |
 | EvidenceCardScaffolder | Creates a draft card without a positive or negative result status. |
 | CardValidator | Ensures that the final evidence card uses allowed fields and does not overclaim. |
 | RegistryPatchBuilder | Prepares a registry patch only after the evidence card validates. |
@@ -150,6 +153,10 @@ Add tests that verify:
 
 - scaffold creates all expected files;
 - draft card does not claim a result;
+- draft family ledger validates;
+- proof-track budget can block repeated tracks in the same hypothesis family;
+- `validate-all` validates only optional `*_FAMILY_LEDGER.json` files and does
+  not require old evidence cards to have ledgers;
 - payload policy defaults to not committed;
 - checklist includes stop conditions;
 - generated files contain no broad claims;
@@ -159,7 +166,8 @@ Add tests that verify:
 
 1. Add static templates.
 2. Add a deterministic scaffold command.
-3. Add source-probe summary output.
-4. Add draft evidence-card generation.
-5. Add validation tests.
-6. Add one example scaffold for an air-quality source.
+3. Add family-ledger generation.
+4. Add source-probe summary output.
+5. Add draft evidence-card generation.
+6. Add validation tests.
+7. Add one example scaffold for an air-quality source.
