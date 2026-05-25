@@ -183,7 +183,9 @@ Add a lightweight protocol for related tracks before ClaimBound grows into a
 larger experiment workflow:
 
 - keep a family ledger with parent claim, non-overlap boundary, claim list,
-  track modes and stop rules;
+  proof surface, context budget, track modes and stop rules;
+- keep optional frontier/tombstone ledgers for alive, stopped and closed
+  families;
 - separate diagnostic tracks from proof tracks;
 - require proof-track budgets per hypothesis family;
 - require closure decisions when repeated proof attempts are negative or

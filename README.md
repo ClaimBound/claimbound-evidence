@@ -173,8 +173,9 @@ uv run claimbound validate-all
 ```
 
 `validate-all` checks committed evidence cards, the registry and any optional
-`docs/track_families/*_FAMILY_LEDGER.json` files. Historical cards created
-before the R&D family protocol do not need retroactive ledgers.
+`docs/track_families/*_FAMILY_LEDGER.json` or
+`docs/track_families/*_FRONTIER.json` files. Historical cards created before
+the R&D family protocol do not need retroactive ledgers.
 
 Prepare a local-only run root:
 

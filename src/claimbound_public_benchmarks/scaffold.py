@@ -315,12 +315,40 @@ def _render_draft_card(
 def _render_family_ledger(request: ScaffoldRequest, protocol_id: str) -> dict[str, object]:
     return {
         "family_id": f"{protocol_id}_FAMILY",
+        "protocol_version": "claimbound-rnd-family-v2",
         "family_status": "DRAFT",
+        "family_type": _family_type_for_track(request.track_type),
         "parent_claim": "Write the narrow parent hypothesis before protocol freeze.",
         "non_overlap_boundary": (
             "Describe what makes this family new relative to previous tracks. "
             "Do not reuse a failed source, label, mechanics or gate as a new proof."
         ),
+        "proof_surface": {
+            "source_surface": request.source_url,
+            "selection_surface": "NOT_FROZEN_YET",
+            "label_or_target_surface": "NOT_FROZEN_YET",
+            "candidate_or_method_surface": "NOT_FROZEN_YET",
+            "decision_rule": "NOT_FROZEN_YET",
+            "target_metric": "NOT_FROZEN_YET",
+            "acceptance_gates": ["NOT_FROZEN_YET"],
+        },
+        "proof_surface_hash": "NOT_COMPUTED_UNTIL_FREEZE",
+        "allowed_next_tracks": [
+            "source_audit",
+            "diagnostic",
+            "proof_after_freeze",
+            "closure",
+        ],
+        "blocked_claim_flags": [
+            "broad_model_superiority",
+            "deployment_readiness",
+            "correctness_outside_protocol",
+        ],
+        "context_budget": {
+            "max_context_lines": 80,
+            "capsule_required": True,
+            "capsule_note": "Future related tracks should read this ledger before full reports.",
+        },
         "claim_scope": {
             "allowed": [
                 f"Draft family planning for {request.track_type} evidence under {protocol_id}.",
@@ -408,9 +436,33 @@ def _render_family_ledger(request: ScaffoldRequest, protocol_id: str) -> dict[st
                 "mode": "source_audit",
                 "hypothesis_family": request.track_type,
                 "claim_ids": [f"{protocol_id}-C001"],
+                "dependencies": [],
+                "writes_artifacts": [],
             }
         ],
+        "frontier": {
+            "current_frontier": [f"{protocol_id}-T001"],
+            "consumed_tombstones": [],
+            "tombstone_required_before_descendants": True,
+        },
     }
+
+
+def _family_type_for_track(track_type: str) -> str:
+    normalized = track_type.lower()
+    if "source" in normalized:
+        return "source_boundary_family"
+    if "repro" in normalized:
+        return "reproduction_family"
+    if "safety" in normalized or "policy" in normalized:
+        return "safety_policy_family"
+    if "product" in normalized:
+        return "product_decision_family"
+    if "audit" in normalized:
+        return "publication_audit_family"
+    if "signal" in normalized or "forecast" in normalized:
+        return "feature_signal_family"
+    return "evaluation_family"
 
 
 def _render_source_probe(

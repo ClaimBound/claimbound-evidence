@@ -16,6 +16,7 @@ def test_cli_parser_has_public_workflow_commands() -> None:
     assert "demo" in help_text
     assert "run-root" in help_text
     assert "validate-family" in help_text
+    assert "validate-frontier" in help_text
     assert "validate-all" in help_text
 
 
@@ -26,9 +27,24 @@ def test_validate_all_command_passes_for_committed_cards() -> None:
 def test_validate_family_accepts_external_absolute_path(tmp_path: Path) -> None:
     ledger = {
         "family_id": "EXAMPLE_D001_FAMILY",
+        "protocol_version": "claimbound-rnd-family-v2",
         "family_status": "ACTIVE",
+        "family_type": "feature_signal_family",
         "parent_claim": "A narrow family claim.",
         "non_overlap_boundary": "New source family and new label family.",
+        "proof_surface": {
+            "source_surface": "https://example.org/source",
+            "selection_surface": "frozen public sample",
+            "label_or_target_surface": "frozen target",
+            "candidate_or_method_surface": "fixed method",
+            "decision_rule": "fixed gate",
+            "target_metric": "fixed metric",
+            "acceptance_gates": ["fixed acceptance gate"],
+        },
+        "proof_surface_hash": "NOT_COMPUTED_UNTIL_FREEZE",
+        "allowed_next_tracks": ["diagnostic", "proof", "closure"],
+        "blocked_claim_flags": ["deployment_readiness"],
+        "context_budget": {"max_context_lines": 80},
         "claim_scope": {
             "allowed": ["source and diagnostic claims under this family"],
             "forbidden": ["deployment claims"],
@@ -52,6 +68,8 @@ def test_validate_family_accepts_external_absolute_path(tmp_path: Path) -> None:
                 "mode": "diagnostic",
                 "hypothesis_family": "feature_inventory",
                 "claim_ids": ["EXAMPLE_D001-C001"],
+                "dependencies": [],
+                "writes_artifacts": [],
             }
         ],
     }
@@ -59,3 +77,25 @@ def test_validate_family_accepts_external_absolute_path(tmp_path: Path) -> None:
     path.write_text(json.dumps(ledger), encoding="utf-8")
 
     assert main(["validate-family", str(path)]) == 0
+
+
+def test_validate_frontier_accepts_external_absolute_path(tmp_path: Path) -> None:
+    frontier = {
+        "protocol_version": "claimbound-rnd-family-v2",
+        "families": [
+            {
+                "family_id": "EXAMPLE_D001_FAMILY",
+                "family_type": "feature_signal_family",
+                "status": "alive",
+                "current_frontier": ["EXAMPLE_D001-T001"],
+                "blocked_claim_flags": ["deployment_readiness"],
+                "consumed_tombstones": [],
+                "proof_surface_hashes": ["NOT_COMPUTED_UNTIL_FREEZE"],
+            }
+        ],
+        "tombstones": [],
+    }
+    path = tmp_path / "EXAMPLE_D001_FRONTIER.json"
+    path.write_text(json.dumps(frontier), encoding="utf-8")
+
+    assert main(["validate-frontier", str(path)]) == 0

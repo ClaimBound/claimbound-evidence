@@ -26,7 +26,7 @@ request or scaffold example.
 ```text
 evidence request
   -> scaffold
-  -> family ledger for related tracks
+  -> family/frontier ledger for related tracks
   -> preregistration charter
   -> playbook and checklist
   -> manual or AI-assisted local run
@@ -68,8 +68,10 @@ artifacts/<track_id>_source_probe_summary.json
 ```
 
 Those files are a safe starting point. They are not a result.
-For related R&D tracks, the family ledger is where claim IDs, diagnostic versus
-proof mode, proof-track budget, stop rules and closure decisions are recorded.
+For related R&D tracks, the family ledger is where claim IDs, proof surface,
+diagnostic versus proof mode, proof-track budget, stop rules and closure
+decisions are recorded. Optional frontier ledgers summarize alive, stopped and
+closed family state.
 
 ## Local-Only Files
 

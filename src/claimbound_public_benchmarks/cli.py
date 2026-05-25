@@ -13,7 +13,9 @@ from claimbound_public_benchmarks.evidence_card import (
     validate_evidence_card,
 )
 from claimbound_public_benchmarks.family_ledger import (
+    load_frontier_ledger,
     load_family_ledger,
+    validate_frontier_ledger,
     validate_family_ledger,
 )
 from claimbound_public_benchmarks.registry import load_registry, validate_registry
@@ -93,6 +95,12 @@ def build_parser() -> argparse.ArgumentParser:
         default=REPO_ROOT / "docs" / "track_families",
         help="Directory containing optional *_FAMILY_LEDGER.json files.",
     )
+    validate_parser.add_argument(
+        "--frontiers-dir",
+        type=Path,
+        default=REPO_ROOT / "docs" / "track_families",
+        help="Directory containing optional *_FRONTIER.json files.",
+    )
     validate_parser.set_defaults(func=_cmd_validate_all)
 
     family_parser = subparsers.add_parser(
@@ -101,6 +109,18 @@ def build_parser() -> argparse.ArgumentParser:
     )
     family_parser.add_argument("path", type=Path)
     family_parser.set_defaults(func=_cmd_validate_family)
+
+    frontier_parser = subparsers.add_parser(
+        "validate-frontier",
+        description="Validate one R&D family frontier JSON file.",
+    )
+    frontier_parser.add_argument("path", type=Path)
+    frontier_parser.add_argument(
+        "--base-dir",
+        type=Path,
+        help="Optional base directory for context capsule and tombstone path checks.",
+    )
+    frontier_parser.set_defaults(func=_cmd_validate_frontier)
 
     run_root_parser = subparsers.add_parser(
         "run-root",
@@ -159,6 +179,7 @@ def _cmd_demo(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
             cards_dir=REPO_ROOT / "docs" / "evidence_cards",
             registry=REPO_ROOT / "docs" / "registry" / "evidence_index.json",
             families_dir=REPO_ROOT / "docs" / "track_families",
+            frontiers_dir=REPO_ROOT / "docs" / "track_families",
         )
         return _cmd_validate_all(validate_args, build_parser())
 
@@ -208,6 +229,14 @@ def _cmd_validate_all(args: argparse.Namespace, parser: argparse.ArgumentParser)
         for violation in validate_family_ledger(load_family_ledger(family_path)):
             violations.append(f"{_display_path(family_path)}: {violation}")
 
+    frontier_paths = sorted(args.frontiers_dir.glob("*_FRONTIER.json"))
+    for frontier_path in frontier_paths:
+        for violation in validate_frontier_ledger(
+            load_frontier_ledger(frontier_path),
+            frontier_path.parent,
+        ):
+            violations.append(f"{_display_path(frontier_path)}: {violation}")
+
     if violations:
         for violation in violations:
             print(f"violation: {violation}", file=sys.stderr)
@@ -216,6 +245,7 @@ def _cmd_validate_all(args: argparse.Namespace, parser: argparse.ArgumentParser)
     print(f"valid_cards={len(card_paths)}")
     print(f"valid_registry={_display_path(args.registry)}")
     print(f"valid_family_ledgers={len(family_paths)}")
+    print(f"valid_frontier_ledgers={len(frontier_paths)}")
     return 0
 
 
@@ -232,6 +262,25 @@ def _cmd_validate_family(args: argparse.Namespace, parser: argparse.ArgumentPars
         return 1
 
     print(f"valid_family_ledger={_display_path(path)}")
+    return 0
+
+
+def _cmd_validate_frontier(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = args.path
+    if not path.is_absolute():
+        path = REPO_ROOT / path
+    base_dir = args.base_dir
+    if base_dir is not None and not base_dir.is_absolute():
+        base_dir = REPO_ROOT / base_dir
+
+    violations = validate_frontier_ledger(load_frontier_ledger(path), base_dir or path.parent)
+    if violations:
+        for violation in violations:
+            print(f"violation: {_display_path(path)}: {violation}", file=sys.stderr)
+        return 1
+
+    print(f"valid_frontier_ledger={_display_path(path)}")
     return 0
 
 

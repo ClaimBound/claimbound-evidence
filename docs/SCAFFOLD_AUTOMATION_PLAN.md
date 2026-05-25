@@ -19,6 +19,7 @@ The public repository should keep a deterministic scaffold MVP now:
 - operator declaration;
 - draft evidence card without result status;
 - draft R&D family ledger;
+- optional frontier/tombstone ledger validation path;
 - static source-probe summary;
 - validation command path.
 
@@ -98,7 +99,8 @@ card validation and registry update.
 | ProtocolDraftBuilder | Creates a preregistration charter with fixed placeholders for source, target, baselines, controls and gates. |
 | ChecklistRenderer | Creates a step-by-step checklist with commands, expected artifacts and stop conditions. |
 | PlaybookRenderer | Creates a human-readable runbook for the operator. |
-| FamilyLedgerScaffolder | Creates a claim list, track budget and stop-rule template for related R&D tracks. |
+| FamilyLedgerScaffolder | Creates a claim list, proof surface, context budget, track budget and stop-rule template for related R&D tracks. |
+| FrontierValidator | Validates optional frontier and tombstone ledgers without requiring old evidence cards to migrate. |
 | EvidenceCardScaffolder | Creates a draft card without a positive or negative result status. |
 | CardValidator | Ensures that the final evidence card uses allowed fields and does not overclaim. |
 | RegistryPatchBuilder | Prepares a registry patch only after the evidence card validates. |
@@ -157,6 +159,8 @@ Add tests that verify:
 - proof-track budget can block repeated tracks in the same hypothesis family;
 - `validate-all` validates only optional `*_FAMILY_LEDGER.json` files and does
   not require old evidence cards to have ledgers;
+- optional `*_FRONTIER.json` files validate tombstones, consumed tombstone
+  references and proof-surface hashes;
 - payload policy defaults to not committed;
 - checklist includes stop conditions;
 - generated files contain no broad claims;

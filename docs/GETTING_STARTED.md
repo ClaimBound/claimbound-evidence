@@ -83,7 +83,9 @@ uv run --extra dev python scripts/claimbound_validate_evidence_card.py \
 | `uv run claimbound demo grok-source-audit` | Clones or reuses the public `xai-org/grok-prompts` repository in a local-only demo root, then writes source-audit metadata and hashes. |
 | `uv run claimbound validate-family docs/track_families/<ID>_FAMILY_LEDGER.json` | Validates claim IDs, family budget, track modes and stop/closure structure for related R&D tracks. |
 | `uv run python scripts/claimbound_validate_family_ledger.py docs/track_families/<ID>_FAMILY_LEDGER.json` | Script entrypoint for the same family-ledger validation, useful in shell workflows. |
-| `uv run claimbound validate-all` | Validates all committed evidence cards, the registry index and any optional `*_FAMILY_LEDGER.json` files. |
+| `uv run claimbound validate-frontier docs/track_families/<ID>_FRONTIER.json` | Validates a compact frontier/tombstone ledger for related R&D families. |
+| `uv run python scripts/claimbound_validate_family_frontier.py docs/track_families/<ID>_FRONTIER.json` | Script entrypoint for the same frontier validation. |
+| `uv run claimbound validate-all` | Validates all committed evidence cards, the registry index and any optional `*_FAMILY_LEDGER.json` or `*_FRONTIER.json` files. |
 
 These commands are useful for private local work too. A person or organization
 can keep raw payloads, prompt text, transcripts and logs inside a local run
