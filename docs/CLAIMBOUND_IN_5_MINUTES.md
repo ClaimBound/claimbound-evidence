@@ -88,7 +88,7 @@ renamed as successes.
 6. Keep raw payloads, prompt text and transcripts outside the public repo.
 7. Publish a sanitized report with hashes and limitations.
 8. Validate the evidence card JSON.
-9. Validate the family ledger when related tracks are involved.
+9. Validate family and frontier ledgers when related tracks are involved.
 10. Add it to the registry only after validation.
 
 ## Where To Start
@@ -96,5 +96,6 @@ renamed as successes.
 - Browse the [evidence cards](evidence_cards/README.md).
 - Follow [getting started](GETTING_STARTED.md) for installation and commands.
 - Use `uv run claimbound new` to create a scaffold.
-- Use `uv run claimbound validate-family ...` for related R&D tracks.
+- Use `uv run claimbound validate-family ...` and `validate-frontier ...` for
+  related R&D tracks.
 - Use `uv run claimbound validate-all` before publishing cards.

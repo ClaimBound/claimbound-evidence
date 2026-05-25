@@ -27,6 +27,7 @@ A ClaimBound evidence record can include:
 
 - frozen protocol;
 - family ledger for related tracks;
+- frontier or tombstone ledger when a branch is alive, stopped or closed;
 - official source reference;
 - source-rights note;
 - raw payload hash manifest outside the repository;
@@ -52,7 +53,8 @@ A ClaimBound evidence record does not rely on:
 ClaimBound should make manipulation visible through:
 
 - protocol files committed before real runs;
-- family ledgers that separate diagnostic, proof and closure tracks;
+- family and frontier ledgers that separate diagnostic, proof, closure and
+  tombstoned tracks;
 - fixed target, candidate, baselines, controls and acceptance gate;
 - raw payload hashes recorded outside the repository;
 - sanitized reports committed inside the repository;

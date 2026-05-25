@@ -9,7 +9,8 @@ AI tools may help with:
 
 - drafting protocol text before source data is inspected;
 - checking whether a protocol has missing fields;
-- drafting a family ledger with claim IDs, track modes, budgets and stop rules;
+- drafting a family ledger with claim IDs, proof surface, track modes, budgets,
+  tombstone requirements and stop rules;
 - writing parsers and tests;
 - generating validation code;
 - summarizing already computed machine-readable reports;
@@ -23,7 +24,7 @@ AI tools may help with:
 When AI assistance is used, the operator must ensure:
 
 - the protocol is frozen before outcome inspection;
-- related-track family ledgers are validated before they are cited;
+- related-track family and frontier ledgers are validated before they are cited;
 - data selection rules are deterministic or manually recorded before scoring;
 - thresholds are not tuned after seeing results;
 - every automated run writes logs and hashes;
@@ -53,7 +54,7 @@ AI tools must not:
 Automated operation must use a staged workflow:
 
 1. Freeze protocol.
-2. Validate the family ledger when related tracks are involved.
+2. Validate the family and frontier ledgers when related tracks are involved.
 3. Record source boundary.
 4. Fetch or reference raw payloads outside the repository.
 5. Hash raw payloads or record why this is blocked.

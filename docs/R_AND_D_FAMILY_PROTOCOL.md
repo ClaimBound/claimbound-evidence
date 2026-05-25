@@ -1,4 +1,4 @@
-# R&D Family Protocol
+# R&D Family Protocol v2
 
 ClaimBound evidence cards are intentionally small: one narrow claim, one frozen
 protocol, one exact status. Real research often needs a connected sequence of
@@ -8,6 +8,14 @@ run that sequence without turning exploration into selective reporting.
 The protocol applies to ML, source audits, public-data checks, benchmark
 claims, forecasts, reproducibility work and any other ClaimBound workflow where
 multiple tracks test related hypotheses.
+
+Status: v2 family-orchestration protocol. This document does not migrate
+historical cards, change evidence-card schemas or create a new empirical
+result.
+
+The objective-order rule remains separate: objective-order documents say what
+must be proven first; this protocol says how related families are scheduled,
+stopped, tombstoned and summarized.
 
 ## Core Rule
 
@@ -33,6 +41,11 @@ a positive proof, deployment or production result.
 | Proof track | A track with a frozen candidate, frozen source, frozen label or target, baselines, controls and acceptance gate. |
 | Closure track | A track that stops, supersedes or narrows a family after evidence says continuing the same branch would be misleading. |
 | Non-overlap boundary | The reason a proposed next family is genuinely new rather than a cosmetic repeat of a failed branch. |
+| Family DAG | Directed acyclic graph of family contracts, tracks and dependencies. |
+| Frontier | Machine-readable set of currently runnable tracks whose dependencies passed. |
+| Tombstone | Immutable stop record for a failed, closed or poisoned branch. |
+| Proof surface | Reusable claim-support tuple: source, selection, target, candidate, decision rule, target metric and gates. |
+| Context capsule | Compact state summary read by later tracks before they inspect long reports. |
 
 ## Required Family Ledger
 
@@ -44,9 +57,27 @@ Minimum fields:
 ```json
 {
   "family_id": "EXAMPLE_D001_FAMILY",
+  "protocol_version": "claimbound-rnd-family-v2",
   "family_status": "DRAFT",
+  "family_type": "feature_signal_family",
   "parent_claim": "Write the narrow parent hypothesis before protocol freeze.",
   "non_overlap_boundary": "What makes this family new relative to prior work.",
+  "proof_surface": {
+    "source_surface": "official source or source family",
+    "selection_surface": "split, cohort, prompt set or selection rule",
+    "label_or_target_surface": "target, label or resolution rule",
+    "candidate_or_method_surface": "candidate method, model or checklist",
+    "decision_rule": "fixed pass, negative, blocked and insufficient rules",
+    "target_metric": "primary metric or checklist gate",
+    "acceptance_gates": ["gate fixed before scoring"]
+  },
+  "proof_surface_hash": "NOT_COMPUTED_UNTIL_FREEZE",
+  "allowed_next_tracks": ["source_audit", "diagnostic", "proof_after_freeze", "closure"],
+  "blocked_claim_flags": ["deployment_readiness", "correctness_outside_protocol"],
+  "context_budget": {
+    "max_context_lines": 80,
+    "capsule_required": true
+  },
   "claim_scope": {
     "allowed": ["what the family may claim"],
     "forbidden": ["what the family must not claim"]
@@ -56,7 +87,12 @@ Minimum fields:
   },
   "stop_rules": ["when to stop or close the family"],
   "claim_list": [],
-  "tracks": []
+  "tracks": [],
+  "frontier": {
+    "current_frontier": [],
+    "consumed_tombstones": [],
+    "tombstone_required_before_descendants": true
+  }
 }
 ```
 
@@ -76,6 +112,116 @@ uv run python scripts/claimbound_validate_family_ledger.py \
 `uv run claimbound validate-all` also validates every optional
 `docs/track_families/*_FAMILY_LEDGER.json` file. It does not require historical
 evidence cards or old draft scaffolds to have ledgers.
+
+Frontier ledgers are optional and additive:
+
+```bash
+uv run claimbound validate-frontier docs/track_families/EXAMPLE_D001_FRONTIER.json
+uv run python scripts/claimbound_validate_family_frontier.py \
+  docs/track_families/EXAMPLE_D001_FRONTIER.json
+```
+
+`validate-all` validates optional `docs/track_families/*_FRONTIER.json` files
+when they exist. Existing cards and old drafts do not need frontier ledgers.
+
+## Family Types
+
+Future family ledgers must declare one general type:
+
+| Family type | Use |
+| --- | --- |
+| `source_boundary_family` | Source, rights, lineage, access, coverage or causality checks. |
+| `feature_signal_family` | Feature, signal, label, forecast or target diagnostics before proof. |
+| `evaluation_family` | Frozen candidate, benchmark, scorer or checklist evaluation. |
+| `reproduction_family` | Independent rerun or reproduction attempt. |
+| `systems_performance_family` | Runtime, parity or acceleration work that does not change the claim. |
+| `safety_policy_family` | Safety, governance, policy or compliance checks. |
+| `product_decision_family` | User, product or operational decision validation under frozen gates. |
+| `publication_audit_family` | Evidence digest, source audit or publication-readiness review. |
+
+The family type does not make a result stronger. It only routes the family
+through appropriate stop rules and closure expectations.
+
+## Family DAG And Frontier
+
+Protocol v2 treats related R&D as a DAG:
+
+```text
+family contract
+  -> source and causality
+  -> cheap diagnostic
+  -> frozen proof
+  -> robustness or reproduction
+  -> closure
+```
+
+The graph must be acyclic. A stopped or tombstoned family may be cited only as
+negative evidence, baseline context or excluded design space. It must not be
+reused as a fresh success proof.
+
+A frontier ledger records only currently relevant state:
+
+```json
+{
+  "protocol_version": "claimbound-rnd-family-v2",
+  "families": [
+    {
+      "family_id": "EXAMPLE_D001_FAMILY",
+      "family_type": "feature_signal_family",
+      "status": "alive",
+      "current_frontier": ["EXAMPLE_D001-T002"],
+      "blocked_claim_flags": ["deployment_readiness"],
+      "consumed_tombstones": ["STOP_OLD_BRANCH"],
+      "proof_surface_hashes": ["NOT_COMPUTED_UNTIL_FREEZE"]
+    }
+  ],
+  "tombstones": [
+    {
+      "family_id": "OLD_BRANCH",
+      "decision": "STOP_OLD_BRANCH",
+      "poisoned_proof_surface_hashes": ["0000000000000000000000000000000000000000000000000000000000000000"],
+      "blocked_future_work": ["reuse_old_surface_as_success"],
+      "non_overlap_requirements": ["new source, target, method or decision surface"]
+    }
+  ]
+}
+```
+
+The frontier is not evidence by itself. It is a compact scheduler and audit
+index for future tracks.
+
+## Proof Surface Hash
+
+Every frozen proof track should compute a deterministic `proof_surface_hash`
+over the fields that make a result reusable:
+
+- source surface;
+- selection surface;
+- label, target or resolution surface;
+- candidate or method surface;
+- decision rule;
+- target metric;
+- acceptance gates.
+
+If a family fails robustness or closes as negative, the hash becomes poisoned
+for future success claims. A later family may cite it only as negative evidence,
+baseline context, excluded design space or meta-audit input.
+
+## Tombstones
+
+When a family stops, the closure decision should produce a tombstone. Minimum
+tombstone fields:
+
+- `family_id`;
+- `decision`;
+- `reason`;
+- `poisoned_proof_surface_hashes`;
+- `allowed_future_work`;
+- `blocked_future_work`;
+- `non_overlap_requirements`.
+
+Tombstones are append-only. Editing a tombstone to rescue a stopped branch is a
+protocol violation.
 
 ## How To Write A Claim List
 
@@ -145,6 +291,10 @@ Use this sequence unless the protocol has a documented reason to differ:
    failure modes are separate claims.
 7. Reproduction or closure: independent rerun, stopped branch, superseded
    branch or allowed non-overlapping next work.
+
+Every family must close. A positive aggregate result can still close with a
+limited boundary or become tombstoned if robustness, reproduction, source or
+policy gates fail.
 
 ## Stop Rules
 
@@ -219,6 +369,70 @@ When a family stops, add a closure decision to the ledger:
 
 Closure is not failure. It is how ClaimBound prevents a weak family from
 becoming a long sequence of selective reruns.
+
+## Bounded Context
+
+Every active family should keep a compact context capsule:
+
+- contract summary;
+- current frontier status;
+- pass, fail and blocked gates;
+- source-artifact hashes;
+- tombstones consumed;
+- allowed next tracks;
+- blocked reuse keys;
+- one-paragraph interpretation.
+
+Later tracks should read the capsule first and inspect full evidence cards only
+when auditing a claim. This reduces context use without weakening the evidence
+trail.
+
+## Parallel Scheduling
+
+Independent families may run in parallel only when all are true:
+
+- no shared writable artifact path;
+- no shared holdout, pilot, source-selection or scoring surface;
+- no ancestor or descendant dependency between tracks;
+- no unresolved tombstone required by either family;
+- each family has a frozen contract.
+
+Allowed parallelism:
+
+- contract-only family seeds;
+- source validation across independent sources or audiences;
+- candidate evaluation inside one frozen track;
+- row-level label or target computation;
+- metric aggregation over independent blocks;
+- report verification after artifacts are immutable.
+
+Blocked parallelism:
+
+- two tracks writing the same family ledger;
+- proof before candidate, target and gate are frozen;
+- closure before robustness or reproduction finishes;
+- descendants of a family with a pending kill gate;
+- threshold, model, prompt or report-text search over holdout outcomes.
+
+Schedulers should prefer cheap contract, source and diagnostic jobs over
+expensive proof chains while branches remain unproven.
+
+## Acceleration And Parity
+
+Hardware acceleration is a systems-performance optimization, not a claim.
+Accelerated kernels may be used only behind a deterministic runner boundary.
+Evidence cards consume frozen artifacts; they do not depend on whether those
+artifacts were produced by CPU, GPU or another backend.
+
+A `systems_performance_family` must prove parity before accelerated output is
+trusted:
+
+- CPU reference output exists;
+- accelerated output matches within a frozen tolerance;
+- random seeds, precision, batch order and reduction order are declared;
+- a sample parity digest is stored before accelerated output is trusted;
+- parity failure tombstones only the acceleration branch, not the scientific or
+  source family.
 
 ## Preflight Checks
 

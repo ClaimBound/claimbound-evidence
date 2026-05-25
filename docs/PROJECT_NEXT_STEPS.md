@@ -49,7 +49,8 @@ These are practical next improvements for the open repository:
    playbook, checklist, family ledger, draft card, registry patch and SVG
    rendering.
 3. R&D family governance: claim-list ledgers, diagnostic/proof split,
-   proof-track budgets, stop rules and closure decisions for related tracks.
+   proof surfaces, frontier/tombstone ledgers, proof-track budgets, stop rules
+   and closure decisions for related tracks.
 4. Manual-track completion path: the EEA AQ D-001 runner and blocked card now
    exist; next, add an external raw-payload rerun path and independent operator
    reproduction record.

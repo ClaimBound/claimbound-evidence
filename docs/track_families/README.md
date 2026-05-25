@@ -1,10 +1,15 @@
 # Track Family Ledgers
 
-This directory is for R&D family ledgers created by `uv run claimbound new`.
+This directory is for R&D family ledgers and optional frontier ledgers created
+by `uv run claimbound new` or by future family orchestration tools.
 
 A family ledger is not evidence. It is planning and preflight metadata for
 related tracks: parent claim, non-overlap boundary, claim list, track modes,
-proof-track budget, stop rules and closure decisions.
+proof surface, proof-track budget, stop rules and closure decisions.
+
+A frontier ledger is also not evidence. It is a compact machine-readable view of
+alive, stopped and closed families, consumed tombstones and blocked proof
+surfaces.
 
 Validate a ledger before citing related tracks:
 
@@ -19,10 +24,23 @@ uv run python scripts/claimbound_validate_family_ledger.py \
   docs/track_families/<ID>_FAMILY_LEDGER.json
 ```
 
+Validate a frontier:
+
+```bash
+uv run claimbound validate-frontier docs/track_families/<ID>_FRONTIER.json
+```
+
+or:
+
+```bash
+uv run python scripts/claimbound_validate_family_frontier.py \
+  docs/track_families/<ID>_FRONTIER.json
+```
+
 Validated evidence still lives in `docs/evidence_cards/`. The ledger prevents
 diagnostic screening, repeated proof attempts or closed branches from being
 misread as a completed evidence result.
 
 Historical evidence cards created before this protocol do not need retroactive
 ledgers. New ledgers are optional planning records and are validated only when a
-`*_FAMILY_LEDGER.json` file exists.
+`*_FAMILY_LEDGER.json` or `*_FRONTIER.json` file exists.
