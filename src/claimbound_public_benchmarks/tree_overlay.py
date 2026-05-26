@@ -203,7 +203,9 @@ def _validate_track_nodes(value: object, claim_ids: set[str], violations: list[s
             violations.append(f"{prefix} must be an object")
             continue
 
-        missing = sorted(field for field in REQUIRED_TRACK_NODE_FIELDS if _is_missing(item.get(field)))
+        missing = sorted(
+            field for field in REQUIRED_TRACK_NODE_FIELDS if _is_missing_track_field(item, field)
+        )
         violations.extend(f"{prefix} missing required field: {field}" for field in missing)
 
         track_id = item.get("track_id")
@@ -318,6 +320,17 @@ def _looks_like_sha256_placeholder_or_hash(value: object) -> bool:
     if len(value) != 64:
         return False
     return all(char in "0123456789abcdef" for char in value.lower())
+
+
+def _is_missing_track_field(item: dict[str, Any], field: str) -> bool:
+    if field not in item:
+        return True
+    value = item.get(field)
+    if value is None:
+        return True
+    if isinstance(value, str) and value.strip() == "":
+        return True
+    return False
 
 
 def _is_missing(value: object) -> bool:
