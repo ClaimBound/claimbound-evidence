@@ -112,7 +112,7 @@ def load_tree_overlay(path: Path) -> dict[str, Any]:
 def validate_tree_overlay(tree: dict[str, Any]) -> list[str]:
     violations: list[str] = []
 
-    missing = sorted(field for field in REQUIRED_TOP_LEVEL_FIELDS if _is_missing(tree.get(field)))
+    missing = sorted(field for field in REQUIRED_TOP_LEVEL_FIELDS if _is_missing_top_level(tree, field))
     violations.extend(f"missing required field: {field}" for field in missing)
 
     if tree.get("protocol_version") != PROTOCOL_VERSION_V3:
@@ -126,7 +126,12 @@ def validate_tree_overlay(tree: dict[str, Any]) -> list[str]:
     claim_ids = _validate_claim_nodes(tree.get("claim_nodes"), violations)
     _validate_track_nodes(tree.get("track_nodes"), claim_ids, violations)
     _validate_tombstones(tree.get("tombstones"), violations)
-    _validate_badge_counts(tree.get("badge_counts"), tree.get("claim_nodes"), tree.get("tombstones"), violations)
+    _validate_badge_counts(
+        tree.get("badge_counts"),
+        tree.get("claim_nodes"),
+        tree.get("tombstones"),
+        violations,
+    )
 
     if not isinstance(tree.get("branch_block_rules"), list) or not tree.get("branch_block_rules"):
         violations.append("branch_block_rules must be a non-empty list")
@@ -176,8 +181,12 @@ def _validate_claim_nodes(value: object, violations: list[str]) -> set[str]:
             if not isinstance(item.get(list_field), list) or not item.get(list_field):
                 violations.append(f"{prefix}.{list_field} must be a non-empty list")
 
-        if item.get("claim_kind") == "iron_claim" and not _looks_like_sha256_placeholder_or_hash(item.get("proof_surface_hash")):
-            violations.append(f"{prefix}.proof_surface_hash must be SHA-256 hex or NOT_COMPUTED_UNTIL_FREEZE")
+        if item.get("claim_kind") == "iron_claim" and not _looks_like_sha256_placeholder_or_hash(
+            item.get("proof_surface_hash")
+        ):
+            violations.append(
+                f"{prefix}.proof_surface_hash must be SHA-256 hex or NOT_COMPUTED_UNTIL_FREEZE"
+            )
 
     return claim_ids
 
@@ -288,6 +297,17 @@ def _validate_badge_counts(
 
     if isinstance(tombstones, list) and badge_counts.get("tombstones") != len(tombstones):
         violations.append("badge_counts.tombstones must match tombstone records")
+
+
+def _is_missing_top_level(tree: dict[str, Any], field: str) -> bool:
+    if field not in tree:
+        return True
+    value = tree.get(field)
+    if value is None:
+        return True
+    if isinstance(value, str) and value.strip() == "":
+        return True
+    return False
 
 
 def _looks_like_sha256_placeholder_or_hash(value: object) -> bool:
