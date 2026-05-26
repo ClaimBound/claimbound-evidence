@@ -378,6 +378,46 @@ uv run python scripts/claimbound_scaffold_track.py \
   --out "docs/manual_audit/PROCUREMENT_AI_D001"
 ```
 
+## 11. Software Developers And Maintainers
+
+Scenario:
+
+```text
+We changed software behavior and need a narrow evidence trail reviewers can
+inspect without treating the whole project as proven.
+```
+
+Manual track:
+
+1. Write the exact build, API, parity, compatibility or regression claim.
+2. Freeze commands, fixtures, environment notes, expected output or tolerance,
+   and stop rules before the final run.
+3. Run the fixed command path or checklist.
+4. Keep bulky logs outside the repository and publish sanitized hashes.
+5. Publish a card whose boundary says the result does not replace tests, CI,
+   code review, release engineering or maintainer judgment.
+
+AI-assisted track:
+
+1. AI may draft the claim, protocol, missing-field checklist and deterministic runner.
+2. Human freezes the claim, commands and fixtures before final result review.
+3. A fixed command, test, checklist or validator produces the report.
+4. Validator rejects broad `fixed`, `ready` or `works` wording unless it is
+   narrowed to the written protocol.
+5. Maintainer approves the final status, claim boundary and publication.
+
+Scaffold:
+
+```bash
+uv run python scripts/claimbound_scaffold_track.py \
+  --source-url "https://example.org/software-change" \
+  --protocol-id "SOFTWARE_CHANGE_D001" \
+  --domain "software-development" \
+  --track-type "software_change_evidence" \
+  --execution-mode "AUTOMATED_AI_ASSISTED" \
+  --out "docs/manual_audit/SOFTWARE_CHANGE_D001"
+```
+
 ## Common Card Outcomes
 
 Every audience uses the same status discipline:
