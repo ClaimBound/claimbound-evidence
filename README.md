@@ -47,6 +47,21 @@ the public repository unless redistribution is clearly allowed. The public
 record stores hashes, summaries and links so a local operator or organization
 can keep private evidence reproducible without publishing sensitive material.
 
+## Choosing Protocol V2 And V3
+
+The evidence card is the result. Protocol v2 and v3 are optional guardrails
+around the result, not stronger evidence by themselves.
+
+| Need | Use | Read next |
+| --- | --- | --- |
+| Publish one completed narrow result. | Evidence card JSON/SVG and sanitized report. | [Evidence card protocol](docs/EVIDENCE_CARD.md) |
+| Keep related R&D fair across diagnostics, proof tracks, stop rules and closure. | Protocol v2 family/frontier ledgers. | [R&D family protocol v2](docs/R_AND_D_FAMILY_PROTOCOL.md) |
+| Give public readers a compact map of iron claims, flow claims, tombstones and blocked branches. | Protocol v3 tree overlay. | [Protocol v3 tree overlay](docs/PROTOCOL_V3_TREE_OVERLAY.md) |
+| Decide which stack an audience should use. | Smallest honest stack: card only, card + v2, or card + v2 + v3. | [Protocol use by layer and audience](docs/PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md) |
+
+Practical rule: use the smallest layer stack that prevents overclaiming. Do not
+add v2 or v3 to make a weak result look stronger.
+
 ## Example: AI System-Card Claim
 
 Public claim:
@@ -208,9 +223,10 @@ updates the registry.
 | 9 | [AI operator protocol v0.1](docs/AI_OPERATOR_PROTOCOL.md) and [AI workflow](docs/AI_WORKFLOW.md) | What AI may draft, run or summarize, and where human approval is required. |
 | 10 | [Scaffold workflow protocol v0.1](docs/SCAFFOLD_AUTOMATION_PLAN.md) | How requests become protocol, playbook, checklist, family ledger and draft card files. |
 | 11 | [R&D family protocol v2](docs/R_AND_D_FAMILY_PROTOCOL.md) | How related tracks keep claim lists, budgets, diagnostic/proof separation and closure decisions. |
-| 12 | [Protocol layers v2 and v3](docs/PROTOCOL_LAYERS_V2_V3.md) | How evidence cards, v2 family/frontier ledgers and v3 tree overlays differ. |
-| 13 | [Protocol v3 tree overlay](docs/PROTOCOL_V3_TREE_OVERLAY.md) | How iron claims, flow claims, tombstones, badge counts and branch-block rules map related work. |
-| 14 | [Registry direction v0.1](docs/GLOBAL_EVIDENCE_REGISTRY.md) and [project next steps](docs/PROJECT_NEXT_STEPS.md) | How validated cards become a public registry and what is intentionally out of scope. |
+| 12 | [Protocol use by layer and audience](docs/PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md) | Which protocol layers to use for each audience and work shape. |
+| 13 | [Protocol layers v2 and v3](docs/PROTOCOL_LAYERS_V2_V3.md) | How evidence cards, v2 family/frontier ledgers and v3 tree overlays differ. |
+| 14 | [Protocol v3 tree overlay](docs/PROTOCOL_V3_TREE_OVERLAY.md) | How iron claims, flow claims, tombstones, badge counts and branch-block rules map related work. |
+| 15 | [Registry direction v0.1](docs/GLOBAL_EVIDENCE_REGISTRY.md) and [project next steps](docs/PROJECT_NEXT_STEPS.md) | How validated cards become a public registry and what is intentionally out of scope. |
 
 Individual pre-registration charters live in
 [docs/protocols/](docs/protocols/). They are protocol-bound examples, not broad
@@ -233,6 +249,7 @@ Useful entry points:
 - [Demo tracks to evidence cards](docs/DEMO_TRACKS_TO_EVIDENCE_CARDS.md)
 - [Software development workflow](docs/SOFTWARE_DEVELOPMENT_WORKFLOW.md)
 - [Protocol layers v2 and v3](docs/PROTOCOL_LAYERS_V2_V3.md)
+- [Protocol use by layer and audience](docs/PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md)
 
 ## Boundary
 
@@ -240,8 +257,8 @@ This repository is independently usable as an open evidence foreground. It
 does not include, import or require private background technology.
 
 The registry stores validated card metadata and sanitized report references, not
-raw payloads. Blockchain, token, wallet, on-chain storage and chain timestamp
-features are outside the current roadmap.
+raw payloads. Distributed-ledger and chain timestamp features are outside the
+current roadmap.
 
 For the AI provenance log, use public PRs, commits, releases, checks, evidence
 cards and registry entries first. GitHub organization audit logs are governance
