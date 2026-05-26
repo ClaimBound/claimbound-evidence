@@ -1,16 +1,18 @@
 # Audience And Value
 
-ClaimBound is useful when a public AI, ML or data-analysis claim should be
-checked under rules fixed before the result is known.
+ClaimBound is useful when a public AI, ML, data-analysis or software-development
+claim should be checked under rules fixed before the result is known.
 
 The project is intentionally narrow. It is not a general model leaderboard,
-paper index, experiment database, archive service or certification authority.
+paper index, experiment database, archive service, software test replacement or
+certification authority.
 
 ## Main Audiences
 
 | Audience | Why ClaimBound helps |
 | --- | --- |
 | AI and LLM evaluation teams | Converts model, RAG, agent and benchmark claims into timestamped, source-bound evidence records. |
+| Software developers and maintainers | Adds a narrow evidence trail for risky, public, regression-sensitive or AI-assisted software changes without replacing tests, CI or review. |
 | Open-science researchers | Makes negative, blocked and reproduced outcomes publishable. |
 | Funding reviewers and program evaluators | Provides a compact trail from protocol to source to status to limitation. |
 | Data stewards and public-data teams | Makes source boundary, rights notes and coverage limits visible. |
@@ -26,6 +28,11 @@ Detailed manual and AI-assisted workflow examples for the audience categories ar
 from those scenarios to real cards is defined in
 [demo tracks to evidence cards](DEMO_TRACKS_TO_EVIDENCE_CARDS.md).
 
+Software-development guidance is in
+[software development workflow](SOFTWARE_DEVELOPMENT_WORKFLOW.md). That page
+keeps software evidence narrow: it helps document complex or risky changes, but
+it does not replace ordinary tests, CI, code review or release judgment.
+
 ## Problem ClaimBound Solves
 
 Many public AI/ML claims are hard to inspect because:
@@ -37,6 +44,10 @@ Many public AI/ML claims are hard to inspect because:
 - negative results are not published;
 - limitations are hidden or vague;
 - reproduction level is not explicit.
+
+Software-development claims can have the same problem when a change is described
+too broadly as working, fixed or ready without a frozen command path, fixture set,
+log summary, result status and limitation boundary.
 
 ClaimBound makes these points visible in a compact evidence card.
 
@@ -54,15 +65,21 @@ and rerun path. See the
 [Grok prompt source-audit workflow](FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md) for a
 concrete worked example.
 
+For software development, the same question can be applied to one narrow build,
+API, parity or regression claim. The evidence card should say exactly which
+command, fixture, environment and boundary were checked, and what must not be
+inferred from the result.
+
 ## What ClaimBound Adds
 
 ClaimBound adds a thin evidence layer:
 
 ```text
 frozen protocol
-+ family ledger for related tracks
-+ frontier or tombstone ledger when needed
-+ official public source
++ family ledger for one or many tracks
++ frontier or tombstone ledger when useful
++ optional v3 tree overlay
++ official public source or recorded software source boundary
 + local payload policy
 + deterministic or auditable run path
 + exact result status
@@ -70,6 +87,10 @@ frozen protocol
 + reproduction level
 + public card
 ```
+
+For software projects, this layer sits around normal engineering practice. It
+can summarize selected tests, runner output, fixture manifests and sanitized
+reports, but it must not become the test suite or the review process itself.
 
 ## Why Negative Results Matter
 
@@ -111,16 +132,20 @@ Examples:
 - public mobility and operations data;
 - public infrastructure records;
 - LLM forecast-resolution records;
-- reproducible AI evaluation appendices.
+- reproducible AI evaluation appendices;
+- software-development regression, parity, local API or agent-task evidence
+  records.
 
 ## What ClaimBound Should Avoid
 
 ClaimBound should avoid:
 
-- private-source claims that cannot be sanitized;
+- source claims that cannot be sanitized;
 - informal predictions without a resolution rule;
 - broad model-superiority claims;
 - deployment-readiness claims;
+- broad software-correctness claims;
+- replacing tests, CI or code review with an evidence card;
 - payload redistribution when rights are unclear;
 - subjective manual judgment after seeing outcomes;
 - replacing source audit with model confidence.
