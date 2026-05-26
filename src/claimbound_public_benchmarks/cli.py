@@ -21,6 +21,10 @@ from claimbound_public_benchmarks.family_ledger import (
 from claimbound_public_benchmarks.registry import load_registry, validate_registry
 from claimbound_public_benchmarks.run_root import RunRootRequest, prepare_run_root
 from claimbound_public_benchmarks.scaffold import ScaffoldRequest, build_scaffold
+from claimbound_public_benchmarks.tree_overlay import (
+    load_tree_overlay,
+    validate_tree_overlay,
+)
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -101,6 +105,12 @@ def build_parser() -> argparse.ArgumentParser:
         default=REPO_ROOT / "docs" / "track_families",
         help="Directory containing optional *_FRONTIER.json files.",
     )
+    validate_parser.add_argument(
+        "--trees-dir",
+        type=Path,
+        default=REPO_ROOT / "docs" / "track_families",
+        help="Directory containing optional protocol v3 *_TREE.json files.",
+    )
     validate_parser.set_defaults(func=_cmd_validate_all)
 
     family_parser = subparsers.add_parser(
@@ -121,6 +131,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional base directory for context capsule and tombstone path checks.",
     )
     frontier_parser.set_defaults(func=_cmd_validate_frontier)
+
+    tree_parser = subparsers.add_parser(
+        "validate-tree",
+        description="Validate one protocol v3 R&D tree overlay JSON file.",
+    )
+    tree_parser.add_argument("path", type=Path)
+    tree_parser.set_defaults(func=_cmd_validate_tree)
 
     run_root_parser = subparsers.add_parser(
         "run-root",
@@ -180,6 +197,7 @@ def _cmd_demo(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
             registry=REPO_ROOT / "docs" / "registry" / "evidence_index.json",
             families_dir=REPO_ROOT / "docs" / "track_families",
             frontiers_dir=REPO_ROOT / "docs" / "track_families",
+            trees_dir=REPO_ROOT / "docs" / "track_families",
         )
         return _cmd_validate_all(validate_args, build_parser())
 
@@ -237,6 +255,11 @@ def _cmd_validate_all(args: argparse.Namespace, parser: argparse.ArgumentParser)
         ):
             violations.append(f"{_display_path(frontier_path)}: {violation}")
 
+    tree_paths = sorted(args.trees_dir.glob("*_TREE.json"))
+    for tree_path in tree_paths:
+        for violation in validate_tree_overlay(load_tree_overlay(tree_path)):
+            violations.append(f"{_display_path(tree_path)}: {violation}")
+
     if violations:
         for violation in violations:
             print(f"violation: {violation}", file=sys.stderr)
@@ -246,6 +269,7 @@ def _cmd_validate_all(args: argparse.Namespace, parser: argparse.ArgumentParser)
     print(f"valid_registry={_display_path(args.registry)}")
     print(f"valid_family_ledgers={len(family_paths)}")
     print(f"valid_frontier_ledgers={len(frontier_paths)}")
+    print(f"valid_tree_overlays={len(tree_paths)}")
     return 0
 
 
@@ -281,6 +305,22 @@ def _cmd_validate_frontier(args: argparse.Namespace, parser: argparse.ArgumentPa
         return 1
 
     print(f"valid_frontier_ledger={_display_path(path)}")
+    return 0
+
+
+def _cmd_validate_tree(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = args.path
+    if not path.is_absolute():
+        path = REPO_ROOT / path
+
+    violations = validate_tree_overlay(load_tree_overlay(path))
+    if violations:
+        for violation in violations:
+            print(f"violation: {_display_path(path)}: {violation}", file=sys.stderr)
+        return 1
+
+    print(f"valid_tree_overlay={_display_path(path)}")
     return 0
 
 
