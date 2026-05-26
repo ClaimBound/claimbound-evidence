@@ -2,7 +2,7 @@
 
 Funded foreground in this repository:
 
-- public benchmark runners;
+- public evidence runners;
 - public-source adapters;
 - pre-registration templates;
 - tests and publication guards;

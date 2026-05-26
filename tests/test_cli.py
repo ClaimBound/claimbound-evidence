@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from claimbound_public_benchmarks.cli import build_parser, main
+from claimbound_evidence.cli import build_parser, main
 
 
 def test_cli_parser_has_public_workflow_commands() -> None:

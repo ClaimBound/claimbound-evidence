@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from claimbound_public_benchmarks.tree_overlay import validate_tree_overlay
+from claimbound_evidence.tree_overlay import validate_tree_overlay
 
 
 def _valid_tree() -> dict[str, object]:

@@ -6,9 +6,9 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from claimbound_public_benchmarks.family_ledger import validate_family_ledger
-from claimbound_public_benchmarks.scaffold import ScaffoldRequest, build_scaffold
-from claimbound_public_benchmarks.tree_overlay import validate_tree_overlay
+from claimbound_evidence.family_ledger import validate_family_ledger
+from claimbound_evidence.scaffold import ScaffoldRequest, build_scaffold
+from claimbound_evidence.tree_overlay import validate_tree_overlay
 
 
 def test_scaffold_creates_draft_without_result_status(tmp_path: Path) -> None:

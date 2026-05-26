@@ -12,8 +12,8 @@ legal certification, or correctness outside this protocol.
 
 ## Source
 
-- Source name: ClaimBound public repository
-- Source URL: https://github.com/ClaimBound/claimbound-public-benchmarks
+- Source name: ClaimBound evidence repository
+- Source URL: https://github.com/ClaimBound/claimbound-evidence
 - Domain: funding-review
 - Audience: Funding reviewers and program evaluators
 - Execution mode: MANUAL_NO_AI

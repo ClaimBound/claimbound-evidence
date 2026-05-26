@@ -8,7 +8,7 @@ To be written narrowly by the requester before protocol freeze.
 
 ## Claim Source URL
 
-https://github.com/ClaimBound/claimbound-public-benchmarks/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
+https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
 
 ## Narrow ClaimBound Question
 
@@ -25,7 +25,7 @@ MANUAL_NO_AI
 
 ## Proposed Sources
 
-- ClaimBound NASA POWER D-103 evidence card: https://github.com/ClaimBound/claimbound-public-benchmarks/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
+- ClaimBound NASA POWER D-103 evidence card: https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
 
 ## Proposed Scoring Or Resolution Rule
 

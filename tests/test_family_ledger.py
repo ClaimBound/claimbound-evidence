@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from claimbound_public_benchmarks.family_ledger import (
+from claimbound_evidence.family_ledger import (
     validate_family_ledger,
     validate_frontier_ledger,
 )

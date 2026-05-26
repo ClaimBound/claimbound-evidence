@@ -8,7 +8,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from claimbound_public_benchmarks.evidence_card import validate_evidence_card
+from claimbound_evidence.evidence_card import validate_evidence_card
 
 
 ENTRY_CARD_FIELDS = {

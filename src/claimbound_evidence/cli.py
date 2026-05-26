@@ -8,20 +8,20 @@ import subprocess
 import sys
 from pathlib import Path
 
-from claimbound_public_benchmarks.evidence_card import (
+from claimbound_evidence.evidence_card import (
     load_evidence_card,
     validate_evidence_card,
 )
-from claimbound_public_benchmarks.family_ledger import (
+from claimbound_evidence.family_ledger import (
     load_frontier_ledger,
     load_family_ledger,
     validate_frontier_ledger,
     validate_family_ledger,
 )
-from claimbound_public_benchmarks.registry import load_registry, validate_registry
-from claimbound_public_benchmarks.run_root import RunRootRequest, prepare_run_root
-from claimbound_public_benchmarks.scaffold import ScaffoldRequest, build_scaffold
-from claimbound_public_benchmarks.tree_overlay import (
+from claimbound_evidence.registry import load_registry, validate_registry
+from claimbound_evidence.run_root import RunRootRequest, prepare_run_root
+from claimbound_evidence.scaffold import ScaffoldRequest, build_scaffold
+from claimbound_evidence.tree_overlay import (
     load_tree_overlay,
     validate_tree_overlay,
 )

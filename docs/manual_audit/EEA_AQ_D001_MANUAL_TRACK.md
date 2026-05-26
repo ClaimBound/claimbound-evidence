@@ -708,7 +708,7 @@ card = {
   "created_at": "$CARD_DATE",
   "domain": "air-quality",
   "evidence_id": "CLAIMBOUND-EEA-AQ-D001-$CARD_DATE",
-  "evidence_url": "https://github.com/ClaimBound/claimbound-public-benchmarks/blob/main/$CARD_PATH",
+  "evidence_url": "https://github.com/ClaimBound/claimbound-evidence/blob/main/$CARD_PATH",
   "execution_mode": "$EXECUTION_MODE",
   "git_commit": "$(git rev-parse --short HEAD)",
   "known_limitations": ["source-readiness and coverage audit only", "no forecasting-performance claim", "no deployment-readiness claim", "no model-superiority claim", "no health-impact claim", "no raw payloads committed"],

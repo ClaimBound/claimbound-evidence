@@ -20,10 +20,10 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
-from claimbound_public_benchmarks.generic_ohlcv_batch_pre_registration_meta import (  # noqa: E402
+from claimbound_evidence.generic_ohlcv_batch_pre_registration_meta import (  # noqa: E402
     build_generic_ohlcv_batch_reproducibility,
 )
-from claimbound_public_benchmarks.nasa_power import (  # noqa: E402
+from claimbound_evidence.nasa_power import (  # noqa: E402
     NASA_POWER_POINTS,
     NasaPowerMockConfig,
     build_nasa_power_dataset_id,

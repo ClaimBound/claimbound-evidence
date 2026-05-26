@@ -9,11 +9,11 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_public_benchmarks.nasa_power import (
+from claimbound_evidence.nasa_power import (
     parse_nasa_power_json_file,
     solar_7d_mean_from_values,
 )
-from claimbound_public_benchmarks.nasa_power_parser import (
+from claimbound_evidence.nasa_power_parser import (
     parse_nasa_power_daily_json,
 )
 

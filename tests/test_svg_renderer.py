@@ -39,7 +39,7 @@ def test_grok_card_renders_svg_without_placeholders() -> None:
     assert "docs/evidence_cards/" in svg
     assert "CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json" in svg
     assert 'width="2000" height="1190"' in svg
-    assert "ClaimBound public benchmarks logo" in svg
+    assert "ClaimBound evidence logo" in svg
 
 
 def test_status_and_reproduction_colors_are_rendered() -> None:

@@ -8,7 +8,7 @@ To be written narrowly by the requester before protocol freeze.
 
 ## Claim Source URL
 
-https://github.com/ClaimBound/claimbound-public-benchmarks
+https://github.com/ClaimBound/claimbound-evidence
 
 ## Narrow ClaimBound Question
 
@@ -25,7 +25,7 @@ MANUAL_NO_AI
 
 ## Proposed Sources
 
-- ClaimBound public repository: https://github.com/ClaimBound/claimbound-public-benchmarks
+- ClaimBound evidence repository: https://github.com/ClaimBound/claimbound-evidence
 
 ## Proposed Scoring Or Resolution Rule
 

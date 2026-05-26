@@ -49,7 +49,7 @@ Repository rules enforce the following:
 The JSON payload for the repo ruleset (for reproducibility) lives at
 [`scripts/github/ruleset_protect_main.json`](scripts/github/ruleset_protect_main.json). To recreate it from
 scratch after deletion, admins can run `gh api --method POST` with `--input` pointing at that file; to
-adjust an existing ruleset without duplicating entries, obtain its numeric id (`gh ruleset list -R ClaimBound/claimbound-public-benchmarks`) and use GitHub's `PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}` REST route.
+adjust an existing ruleset without duplicating entries, obtain its numeric id (`gh ruleset list -R ClaimBound/claimbound-evidence`) and use GitHub's `PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}` REST route.
 
 Before opening a pull request:
 
