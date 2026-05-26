@@ -82,7 +82,7 @@ claims that can pass, fail, block or remain insufficient.
 | `The API is compatible.` | `Endpoint A returns the same response schema for fixture requests F001-F010 as the frozen baseline, except for documented field B.` |
 | `The refactor is safe.` | `The refactored module preserves the frozen public behavior for the listed fixtures and passes the existing test suite.` |
 | `The AI patch is good.` | `The AI-assisted patch passes the fixed runner, does not modify forbidden files and leaves the declared regression checks green.` |
-| `The CLI works.` | `The CLI command `tool subcommand --fixture fixtures/basic.json` exits 0 and emits the frozen stdout markers.` |
+| `The CLI works.` | The command `tool subcommand --fixture fixtures/basic.json` exits 0 and emits the frozen stdout markers. |
 | `Performance improved.` | `The benchmark command completes the fixed workload at least N% faster than the baseline on the declared machine, without changing output hashes.` |
 
 Good claims are small, environment-bound and falsifiable. Weak claims are broad,
