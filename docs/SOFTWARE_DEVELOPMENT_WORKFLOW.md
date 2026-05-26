@@ -41,6 +41,17 @@ ClaimBound must not be presented as:
 - a way to make subjective judgments look objective after the result is known;
 - a certification service unless an external review process exists.
 
+## Universal Protocol Use
+
+The same ClaimBound layers can support one software check or a larger development sequence:
+
+- an evidence card records one completed command, fixture, checklist or validator result;
+- a family ledger can hold a one-track claim list, proof surface, stop rule and closure boundary;
+- a frontier ledger can summarize runnable, stopped or closed development work when useful;
+- a v3 tree overlay can start as one node and later expand to many nodes with iron claims, flow claims and tombstones.
+
+These layers are optional helpers around normal engineering practice. They do not replace the project's tests, CI, review or release process.
+
 ## Workflow
 
 ```text
@@ -57,14 +68,12 @@ software claim
 
 The result must come from a command, test, checklist or validator, not from AI opinion.
 
-## QWC_API_SERVER Draft Example
-
-`QWC_API_SERVER` can be used as a software-development example while keeping private implementation material outside the public repository.
+## Generic Draft Example
 
 Draft question:
 
 ```text
-Can a QWC_API_SERVER development track produce a protocol-bound evidence record for one narrow local API behavior check, using sanitized command logs, fixture hashes and a boundary that does not claim deployment readiness or correctness outside the protocol?
+Can this software-development track produce a protocol-bound evidence record for one narrow behavior, compatibility, parity or regression claim, using fixed commands, fixtures, sanitized logs, hashes and a boundary that does not claim deployment readiness or correctness outside the protocol?
 ```
 
 The draft evidence card should stay gray until a real run produces validated artifacts. A completed card may be green, amber, red or yellow depending on what happened.
