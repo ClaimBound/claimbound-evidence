@@ -6,8 +6,9 @@ tracks before a final evidence card is justified. This document defines how to
 run that sequence without turning exploration into selective reporting.
 
 The protocol applies to ML, source audits, public-data checks, benchmark
-claims, forecasts, reproducibility work and any other ClaimBound workflow where
-multiple tracks test related hypotheses.
+claims, forecasts, reproducibility work, software-development evidence tracks
+and any other ClaimBound workflow where multiple tracks test related
+hypotheses.
 
 Status: v2 family-orchestration protocol. This document does not migrate
 historical cards, change evidence-card schemas or create a new empirical
@@ -15,7 +16,9 @@ result.
 
 The objective-order rule remains separate: objective-order documents say what
 must be proven first; this protocol says how related families are scheduled,
-stopped, tombstoned and summarized.
+stopped, tombstoned and summarized. For the difference between result cards,
+v2 family/frontier ledgers and v3 tree overlays, see
+[Protocol layers: v2 and v3](PROTOCOL_LAYERS_V2_V3.md).
 
 ## Core Rule
 

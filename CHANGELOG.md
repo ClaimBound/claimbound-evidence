@@ -11,6 +11,8 @@
 - Extended `claimbound validate-all` so optional v3 tree overlays are validated when present.
 - Added script entrypoint `scripts/claimbound_validate_family_tree.py`.
 - Added protocol documentation in `docs/PROTOCOL_V3_TREE_OVERLAY.md`.
+- Added software developers and maintainers as a public audience category in README-facing documentation.
+- Added `docs/PROTOCOL_LAYERS_V2_V3.md` to explain the difference between evidence cards, v2 family/frontier ledgers and v3 tree overlays.
 
 ### Compatibility
 
