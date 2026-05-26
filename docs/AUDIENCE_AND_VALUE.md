@@ -28,6 +28,10 @@ Detailed manual and AI-assisted workflow examples for the audience categories ar
 from those scenarios to real cards is defined in
 [demo tracks to evidence cards](DEMO_TRACKS_TO_EVIDENCE_CARDS.md).
 
+For a practical guide to choosing card-only, protocol v2, or protocol v3 stacks
+by audience and work shape, see
+[protocol use by layer and audience](PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md).
+
 Software-development guidance is in
 [software development workflow](SOFTWARE_DEVELOPMENT_WORKFLOW.md). That page
 keeps software evidence narrow: it helps document complex or risky changes, but
