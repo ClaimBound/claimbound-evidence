@@ -19,6 +19,7 @@ small enough to audit, and the claim boundary can be written in plain language.
 | Independent reproduction | Can another operator reproduce the same status or gate outcome? | Makes source drift and reproduction level explicit. |
 | LLM forecast resolution | Did a timestamped model forecast resolve correctly against official sources? | Gives model claims a checkable trail instead of a screenshot. |
 | Agent or tool claim check | Did a coding, research or analysis agent pass a frozen task gate? | Helps compare systems without changing the task after seeing output. |
+| Software-development evidence | Did a narrow build, API, parity or regression claim pass under fixed commands, fixtures and boundaries? | Adds reviewable evidence to risky or public changes without replacing tests or code review. |
 | Research-method appendix | Can a paper or report link to a compact evidence record? | Adds a durable, reviewable companion to ordinary publication. |
 | Teaching reproducible ML | Can students run, fail, reproduce and explain a protocol? | Trains audit discipline, not only leaderboard optimization. |
 | Public infrastructure audit | Did a public operations signal pass a fixed protocol on official data? | Supports transparent civic analytics without deployment claims. |
@@ -51,6 +52,11 @@ Detailed scenario workflows for the audience categories are in
 [audience demonstration workflows](AUDIENCE_TESTIMONIAL_WORKFLOWS.md). The
 publication rule for completed demo cards is in
 [demo tracks to evidence cards](DEMO_TRACKS_TO_EVIDENCE_CARDS.md).
+
+For software-development use, see
+[software development workflow](SOFTWARE_DEVELOPMENT_WORKFLOW.md). It explains
+how ClaimBound can support risky, public or AI-assisted changes while remaining
+a thin evidence layer rather than a replacement for tests, CI or review.
 
 ## Evidence Card Pattern
 
