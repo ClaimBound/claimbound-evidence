@@ -3,10 +3,9 @@
 Status: additive protocol v3 overlay. This document does not migrate historical
 evidence cards, change evidence-card schemas or create a new empirical result.
 
-Protocol v3 exists to make multi-track R&D easier to audit when a project has
-many related branches, repeated diagnostics, stopped paths and narrow proof
-claims. It sits above the existing evidence-card protocol and above the v2
-family/frontier ledgers.
+Protocol v3 is a universal tree overlay. It can describe one track with one node
+or many related branches with many nodes. It sits above the existing
+evidence-card protocol and above the v2 family/frontier ledgers.
 
 ## Compatibility
 
@@ -19,27 +18,44 @@ family/frontier ledgers.
 The tree overlay is planning, scheduling and anti-overclaim metadata. It is not
 a result card.
 
+## How The Layers Fit
+
+ClaimBound keeps three protocol layers separate and universal:
+
+| Layer | One-track use | Multi-track use |
+| --- | --- | --- |
+| Evidence card protocol | Record one completed result, status, boundary and rerun path. | Record each completed evidence leaf without changing the card schema. |
+| Family/frontier protocol v2 | Keep one claim list, proof surface, stop rule and closure boundary. | Coordinate budgets, frontiers, tombstones and closure across related tracks. |
+| Tree overlay v3 | Publish a one-node status map with optional iron, flow and tombstone references. | Publish a larger tree of evidence leaves, reusable bounded claims, volatile gates and stopped branches. |
+
+A one-track overlay is not a weaker or special-case protocol. It is the same
+`claimbound-tree-v3` structure with one node and small counts.
+
 ## Why v3 Exists
 
-The v2 family/frontier layer made related-track planning explicit. v3 adds a
-compact tree view for projects where readers need to see:
+The v2 family/frontier layer made planning explicit. v3 adds a compact tree view
+for projects where readers need to see:
 
 - which claims are frozen proof claims versus diagnostic or flow claims;
-- which branches are runnable, blocked, stopped or closed;
+- which work is runnable, blocked, stopped or closed;
 - which branches are blocked by tombstones;
 - how many iron claims, flow claims and tombstones exist;
 - why a failed branch cannot be reused as a fresh success claim.
+
+For a single track, the same fields make the result boundary easier to inspect.
+For many tracks, they prevent repeated diagnostics, stale dependencies and
+stopped paths from being confused with proof.
 
 ## Terms
 
 | Term | Meaning |
 | --- | --- |
-| `iron_claim` | A narrow proof-supporting claim with a frozen gate and proof-surface hash placeholder or hash. |
-| `flow_claim` | A routing, diagnostic, dependency or scheduling claim that may unlock later work but is not proof by itself. |
+| `iron_claim` | A narrow bounded claim with stable evidence and proof-surface hash placeholder or hash. |
+| `flow_claim` | A volatile routing, dependency, availability or scheduling claim that may unlock later work but is not proof by itself. |
 | `tombstone` | An append-only stop record for a failed, closed, superseded or poisoned branch. |
 | `claimbound-tree-v3` | The protocol string required by v3 tree overlays. |
 | Badge counts | Machine-readable counts of iron claims, flow claims and tombstones for quick review. |
-| Branch block rules | Rules that prevent stopped or poisoned branches from being reused as success evidence. |
+| Branch block rules | Rules that prevent stopped or poisoned work from being reused as success evidence. |
 
 ## Minimum Tree Overlay
 
@@ -119,12 +135,13 @@ A v3 tree overlay must not:
 
 - reinterpret an old card as stronger evidence;
 - turn a diagnostic claim into proof;
+- promote a stale flow claim into an iron claim;
 - remove a tombstone to rescue a failed branch;
 - claim deployment readiness from source, diagnostic or proof metadata alone;
 - replace tests, CI, code review or maintainer judgment in software projects.
 
 ## Practical Rule
 
-Use v3 only when the project has enough related branches that readers need a
-small machine-readable tree. For a single simple evidence card, the normal
-Evidence Card protocol is enough.
+Use v3 when you want a public status map for a track. Keep it one-node and
+small for a single track. Expand it only when related tracks, flow dependencies,
+iron claims or tombstones make that useful.
