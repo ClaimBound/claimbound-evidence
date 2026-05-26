@@ -1,7 +1,8 @@
 # Track Family Ledgers
 
-This directory is for R&D family ledgers and optional frontier ledgers created
-by `uv run claimbound new` or by future family orchestration tools.
+This directory is for R&D family ledgers, optional frontier ledgers and optional
+protocol v3 tree overlays created by `uv run claimbound new` or by future family
+orchestration tools.
 
 A family ledger is not evidence. It is planning and preflight metadata for
 related tracks: parent claim, non-overlap boundary, claim list, track modes,
@@ -10,6 +11,11 @@ proof surface, proof-track budget, stop rules and closure decisions.
 A frontier ledger is also not evidence. It is a compact machine-readable view of
 alive, stopped and closed families, consumed tombstones and blocked proof
 surfaces.
+
+A protocol v3 tree overlay is also not evidence. It is a compact tree view for
+complex R&D families: iron claims, flow claims, tombstones, badge counts and
+branch-blocking rules. It uses `protocol_version: "claimbound-tree-v3"` and is
+stored as `*_TREE.json`.
 
 Validate a ledger before citing related tracks:
 
@@ -37,10 +43,24 @@ uv run python scripts/claimbound_validate_family_frontier.py \
   docs/track_families/<ID>_FRONTIER.json
 ```
 
+Validate a v3 tree overlay:
+
+```bash
+uv run claimbound validate-tree docs/track_families/<ID>_TREE.json
+```
+
+or:
+
+```bash
+uv run python scripts/claimbound_validate_family_tree.py \
+  docs/track_families/<ID>_TREE.json
+```
+
 Validated evidence still lives in `docs/evidence_cards/`. The ledger prevents
 diagnostic screening, repeated proof attempts or closed branches from being
 misread as a completed evidence result.
 
-Historical evidence cards created before this protocol do not need retroactive
-ledgers. New ledgers are optional planning records and are validated only when a
-`*_FAMILY_LEDGER.json` or `*_FRONTIER.json` file exists.
+Historical evidence cards created before these protocols do not need
+retroactive ledgers or tree overlays. New ledgers and overlays are optional
+planning records and are validated only when a matching `*_FAMILY_LEDGER.json`,
+`*_FRONTIER.json` or `*_TREE.json` file exists.
