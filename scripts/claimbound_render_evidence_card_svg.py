@@ -78,7 +78,7 @@ def _visual_values(card: dict[str, Any]) -> dict[str, Any]:
         "result_status": str(card.get("result_status", "")),
         "sanitized_report_path": sanitized_report_path,
         "sanitized_report_sha256": sanitized_report_sha256,
-        "source": f"{source_name}\n{source_url}".strip(),
+        "source": f"{source_name}\n{_format_path(source_url)}".strip(),
         "target_definition": _first(visual, "target_definition", card.get("domain")),
     }
 
@@ -353,6 +353,9 @@ def _first(mapping: dict[str, Any], key: str, fallback: object) -> str:
 
 
 def _format_path(value: str) -> str:
+    github_blob_prefix = "https://github.com/ClaimBound/claimbound-evidence/blob/main/"
+    if value.startswith(github_blob_prefix):
+        return value.removeprefix(github_blob_prefix)
     if len(value) <= 64 or "/" not in value:
         return value
     prefix, leaf = value.rsplit("/", 1)
