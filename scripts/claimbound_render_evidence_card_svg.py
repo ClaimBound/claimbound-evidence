@@ -285,7 +285,7 @@ def _wide_note(
 
 def _logo_lockup(x: int, y: int, scale: float) -> list[str]:
     return [
-        f'  <g aria-label="ClaimBound public benchmarks logo" transform="translate({x},{y}) scale({scale}) translate(-40,-478)">',
+        f'  <g aria-label="ClaimBound evidence logo" transform="translate({x},{y}) scale({scale}) translate(-40,-478)">',
         '    <g stroke-linecap="butt" stroke-linejoin="round">',
         '      <g stroke="#CBD3DC" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="10 12" opacity="0.72">',
         '        <path d="M130 507V714"/>',
@@ -306,7 +306,7 @@ def _logo_lockup(x: int, y: int, scale: float) -> list[str]:
         '    <text x="428" y="633" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="124" font-weight="750" fill="#082F59" text-rendering="geometricPrecision">Claim</text>',
         '    <text x="792" y="633" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="124" font-weight="750" fill="#0E73CC" text-rendering="geometricPrecision">Bound</text>',
         '    <line x1="436" y1="700" x2="514" y2="700" stroke="#11AFA9" stroke-width="4"/>',
-        '    <text x="542" y="717" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="13" fill="#082F59">public benchmarks</text>',
+        '    <text x="542" y="717" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="13" fill="#082F59">evidence</text>',
         '    <line x1="1120" y1="700" x2="1194" y2="700" stroke="#11AFA9" stroke-width="4"/>',
         "  </g>",
     ]

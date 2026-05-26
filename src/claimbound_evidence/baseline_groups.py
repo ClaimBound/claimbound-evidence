@@ -31,7 +31,7 @@ from typing import Mapping, Sequence
 import numpy as np
 from numpy.typing import NDArray
 
-from claimbound_public_benchmarks.baselines import (
+from claimbound_evidence.baselines import (
     DOC11_BASELINE_NAMES,
     BaselinePoolConfig,
     compute_baseline_scores,

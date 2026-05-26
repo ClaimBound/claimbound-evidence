@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
-from claimbound_public_benchmarks.nasa_power_prereg_runner import (  # noqa: E402
+from claimbound_evidence.nasa_power_prereg_runner import (  # noqa: E402
     evaluate_nasa_power_prereg,
 )
 

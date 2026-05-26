@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_public_benchmarks.registry import load_registry, validate_registry
+from claimbound_evidence.registry import load_registry, validate_registry
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 

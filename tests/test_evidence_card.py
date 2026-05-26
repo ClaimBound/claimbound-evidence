@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_public_benchmarks.evidence_card import validate_evidence_card
+from claimbound_evidence.evidence_card import validate_evidence_card
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 

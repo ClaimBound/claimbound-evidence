@@ -1,15 +1,15 @@
-# ClaimBound Public Benchmarks
+# ClaimBound Evidence
 
-[![Stars](https://img.shields.io/github/stars/ClaimBound/claimbound-public-benchmarks?style=social)](https://github.com/ClaimBound/claimbound-public-benchmarks/stargazers)
-[![License](https://img.shields.io/github/license/ClaimBound/claimbound-public-benchmarks)](https://github.com/ClaimBound/claimbound-public-benchmarks/blob/main/LICENSE)
-[![Python >=3.12](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://github.com/ClaimBound/claimbound-public-benchmarks/blob/main/pyproject.toml)
-[![tests](https://github.com/ClaimBound/claimbound-public-benchmarks/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ClaimBound/claimbound-public-benchmarks/actions/workflows/tests.yml)
-[![Release](https://img.shields.io/github/v/release/ClaimBound/claimbound-public-benchmarks?display_name=tag)](https://github.com/ClaimBound/claimbound-public-benchmarks/releases)
+[![Stars](https://img.shields.io/github/stars/ClaimBound/claimbound-evidence?style=social)](https://github.com/ClaimBound/claimbound-evidence/stargazers)
+[![License](https://img.shields.io/github/license/ClaimBound/claimbound-evidence)](https://github.com/ClaimBound/claimbound-evidence/blob/main/LICENSE)
+[![Python >=3.12](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://github.com/ClaimBound/claimbound-evidence/blob/main/pyproject.toml)
+[![tests](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml)
+[![Release](https://img.shields.io/github/v/release/ClaimBound/claimbound-evidence?display_name=tag)](https://github.com/ClaimBound/claimbound-evidence/releases)
 
 <p align="center">
   <img
     src="docs/assets/claimbound_logo.svg"
-    alt="ClaimBound public benchmarks logo"
+    alt="ClaimBound evidence logo"
     width="360"
   />
 </p>
@@ -230,7 +230,7 @@ Useful entry points:
 
 ## Boundary
 
-This repository is independently usable as an open benchmark foreground. It
+This repository is independently usable as an open evidence foreground. It
 does not include, import or require private background technology.
 
 The registry stores validated card metadata and sanitized report references, not
@@ -247,7 +247,7 @@ support, not AI provenance by themselves. See
 - [Contributing guide](CONTRIBUTING.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [Security policy](SECURITY.md)
-- [Discussions: maintainer announcements and community Q&A](https://github.com/ClaimBound/claimbound-public-benchmarks/discussions)
+- [Discussions: maintainer announcements and community Q&A](https://github.com/ClaimBound/claimbound-evidence/discussions)
 
 ## License
 

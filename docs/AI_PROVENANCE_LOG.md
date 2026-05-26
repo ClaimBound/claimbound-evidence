@@ -1,6 +1,6 @@
 # AI Provenance Log And Audit Logs
 
-This note defines how ClaimBound Public Benchmarks should present development
+This note defines how ClaimBound Evidence should present development
 provenance for AI-assisted work and public accountability.
 
 ## Short Answer
@@ -46,7 +46,7 @@ Suggested private layout:
 
 ```text
 ai-provenance-log/
-  claimbound-public-benchmarks/
+  claimbound-evidence/
     2026-05-14/
       README.md
       public-pr-index.csv
@@ -60,7 +60,7 @@ ai-provenance-log/
 The private bundle may include:
 
 - exported GitHub organization audit-log rows filtered to
-  `repo:ClaimBound/claimbound-public-benchmarks`;
+  `repo:ClaimBound/claimbound-evidence`;
 - a dated list of public PRs, commits, releases and workflow runs;
 - a digest of the evidence-card registry;
 - sanitized AI-work summaries when they are relevant to public accountability.
@@ -122,7 +122,7 @@ Useful reference:
 
 For the ClaimBound organization UI, use:
 
-<https://github.com/organizations/ClaimBound/settings/audit-log?q=repo%3AClaimBound%2Fclaimbound-public-benchmarks>
+<https://github.com/organizations/ClaimBound/settings/audit-log?q=repo%3AClaimBound%2Fclaimbound-evidence>
 
 ## Recommended AI Provenance Reporting Pattern
 

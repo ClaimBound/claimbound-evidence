@@ -31,7 +31,7 @@ local filesystem, no terminal, and no way to verify command output.
 Copy the full prompt below into the AI agent. Do not edit the fixed scope.
 
 ```text
-You are operating inside the ClaimBound public benchmarks repository.
+You are operating inside the ClaimBound evidence repository.
 
 Your task is to run or prepare the EEA AQ D-001 AI-assisted ClaimBound track
 honestly, reproducibly, and without broadening the claim.

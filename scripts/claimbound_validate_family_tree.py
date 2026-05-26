@@ -11,7 +11,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
-from claimbound_public_benchmarks.tree_overlay import (  # noqa: E402
+from claimbound_evidence.tree_overlay import (  # noqa: E402
     load_tree_overlay,
     validate_tree_overlay,
 )

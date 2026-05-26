@@ -1,6 +1,6 @@
 # REPRO_APPENDIX_D001 Checklist
 
-- [ ] Public claim source opens: https://github.com/ClaimBound/claimbound-public-benchmarks/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
+- [ ] Public claim source opens: https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
 - [ ] Exact claim is written narrowly.
 - [ ] Official or public source boundary is recorded.
 - [ ] Source rights and attribution note are recorded.

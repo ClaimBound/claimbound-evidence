@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 from __future__ import annotations
 
-from claimbound_public_benchmarks.run_root import (
+from claimbound_evidence.run_root import (
     RUN_ROOT_SUBDIRS,
     RunRootRequest,
     prepare_run_root,

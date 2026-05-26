@@ -12,7 +12,7 @@ uv run --extra dev python scripts/claimbound_validate_evidence_card.py --help
 
 ## Operator Flow
 
-1. Open the public claim source: https://github.com/ClaimBound/claimbound-public-benchmarks/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
+1. Open the public claim source: https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
 2. Record the exact claim being checked.
 3. Freeze the protocol before collecting outcomes.
 4. Create a run root outside this repository.

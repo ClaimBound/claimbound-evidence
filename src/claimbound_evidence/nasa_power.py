@@ -19,7 +19,7 @@ from pathlib import Path
 import numpy as np
 from numpy.typing import NDArray
 
-from claimbound_public_benchmarks.nasa_power_parser import (
+from claimbound_evidence.nasa_power_parser import (
     parse_nasa_power_daily_json,
 )
 

@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-ClaimBound Public Benchmarks is currently pre-1.0 public research tooling. Security fixes are applied to the default branch and to the latest tagged release when practical.
+ClaimBound Evidence is currently pre-1.0 public research tooling. Security fixes are applied to the default branch and to the latest tagged release when practical.
 
 | Version | Supported |
 | ------- | --------- |
@@ -14,7 +14,7 @@ ClaimBound Public Benchmarks is currently pre-1.0 public research tooling. Secur
 
 Please report suspected vulnerabilities privately through GitHub Security Advisories:
 
-<https://github.com/ClaimBound/claimbound-public-benchmarks/security/advisories/new>
+<https://github.com/ClaimBound/claimbound-evidence/security/advisories/new>
 
 Do not open a public issue for vulnerabilities involving:
 
@@ -32,13 +32,13 @@ If the report is declined, I will explain the reason where possible.
 
 ## Project-Specific Boundaries
 
-This repository is public ClaimBound benchmark foreground. It must not contain raw external payloads, credentials, private local paths, private-source code, or private production integrations.
+This repository is public ClaimBound evidence foreground. It must not contain raw external payloads, credentials, private local paths, private-source code, or private production integrations.
 
-Security reports about private systems, private-source implementations, or unrelated infrastructure are out of scope for this public repository unless they demonstrate a direct leak or vulnerability in the public benchmark code.
+Security reports about private systems, private-source implementations, or unrelated infrastructure are out of scope for this public repository unless they demonstrate a direct leak or vulnerability in the public evidence code.
 
 ## Safe Handling Notes
 
-When reproducing benchmarks:
+When reproducing evidence runs:
 
 - keep raw payloads outside the repository;
 - publish hashes, manifests, summaries, and claim boundaries only;
@@ -61,4 +61,4 @@ If an audit-log export, AI transcript, raw payload, token, private path or
 private-source detail is accidentally committed or disclosed, report it through
 GitHub Security Advisories:
 
-<https://github.com/ClaimBound/claimbound-public-benchmarks/security/advisories/new>
+<https://github.com/ClaimBound/claimbound-evidence/security/advisories/new>

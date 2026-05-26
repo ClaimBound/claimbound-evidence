@@ -11,7 +11,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
-from claimbound_public_benchmarks.evidence_card import (  # noqa: E402
+from claimbound_evidence.evidence_card import (  # noqa: E402
     load_evidence_card,
     validate_evidence_card,
 )

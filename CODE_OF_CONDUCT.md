@@ -53,7 +53,7 @@ SECURITY policy.
 ## Scope
 
 This Code applies to all interaction spaces tied to contributing to ClaimBound
-Public Benchmarks, including issues, discussions, pull requests, and project
+Evidence, including issues, discussions, pull requests, and project
 communications where contributors meet.
 
 ## Enforcement

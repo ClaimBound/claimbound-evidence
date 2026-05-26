@@ -10,8 +10,8 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_public_benchmarks.baseline_groups import Doc11AcceptanceConfig
-from claimbound_public_benchmarks.nasa_power_prereg_runner import (
+from claimbound_evidence.baseline_groups import Doc11AcceptanceConfig
+from claimbound_evidence.nasa_power_prereg_runner import (
     NASA_POWER_PREREG_REPORT_SCHEMA,
     NasaPowerPreregConfig,
     evaluate_nasa_power_prereg,

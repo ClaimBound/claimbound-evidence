@@ -1,5 +1,5 @@
 [project]
-name = "claimbound-public-benchmarks"
+name = "claimbound-evidence"
 version = "0.3.0"
 description = "ClaimBound public evidence-card toolkit for narrow public AI, ML and data claims"
 license = "Apache-2.0"
@@ -15,14 +15,14 @@ dev = [
 ]
 
 [project.scripts]
-claimbound = "claimbound_public_benchmarks.cli:main"
+claimbound = "claimbound_evidence.cli:main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/claimbound_public_benchmarks"]
+packages = ["src/claimbound_evidence"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
