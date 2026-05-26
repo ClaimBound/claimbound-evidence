@@ -10,6 +10,14 @@ It is not a replacement for tests, CI, code review, release engineering, maintai
 
 Use ClaimBound for complex, risky, public, AI-assisted or regression-sensitive software changes. Do not use a full track for every typo, formatting edit, small comment or disposable prototype.
 
+Good fit examples:
+
+- public pull requests that change behavior users rely on;
+- AI-assisted patches that need deterministic verification;
+- compatibility, parity or regression checks with fixed fixtures;
+- local API or library behavior checks summarized with sanitized logs and hashes;
+- R&D sequences where diagnostic, proof, reproduction and closure tracks must not be confused.
+
 ## What It Adds
 
 | Development problem | ClaimBound contribution |
@@ -19,12 +27,19 @@ Use ClaimBound for complex, risky, public, AI-assisted or regression-sensitive s
 | AI-assisted patches | Separates generated code from deterministic runner or checklist results. |
 | Public PR review | Shows what was checked and what was not checked. |
 | Negative or blocked outcomes | Keeps failures useful instead of renaming them as success. |
+| Repeated R&D attempts | Uses family ledgers, stop rules and closure records to avoid selective reruns. |
 
 ## Limits
 
 A green software-development card means only that one narrow claim passed under one written protocol. It does not mean the whole project is correct, complete or ready for deployment.
 
-ClaimBound must not be presented as a replacement for software tests, proof of correctness outside the protocol boundary, or proof of production readiness unless that is a separate frozen claim.
+ClaimBound must not be presented as:
+
+- a replacement for software tests;
+- proof of correctness outside the protocol boundary;
+- proof of production readiness unless that is a separate frozen claim;
+- a way to make subjective judgments look objective after the result is known;
+- a certification service unless an external review process exists.
 
 ## Workflow
 
@@ -41,3 +56,15 @@ software claim
 ```
 
 The result must come from a command, test, checklist or validator, not from AI opinion.
+
+## QWC_API_SERVER Draft Example
+
+`QWC_API_SERVER` can be used as a software-development example while keeping private implementation material outside the public repository.
+
+Draft question:
+
+```text
+Can a QWC_API_SERVER development track produce a protocol-bound evidence record for one narrow local API behavior check, using sanitized command logs, fixture hashes and a boundary that does not claim deployment readiness or correctness outside the protocol?
+```
+
+The draft evidence card should stay gray until a real run produces validated artifacts. A completed card may be green, amber, red or yellow depending on what happened.
