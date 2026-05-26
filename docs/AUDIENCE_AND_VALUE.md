@@ -12,6 +12,7 @@ certification authority.
 | Audience | Why ClaimBound helps |
 | --- | --- |
 | AI and LLM evaluation teams | Converts model, RAG, agent and benchmark claims into timestamped, source-bound evidence records. |
+| AI risk, security and automation-control teams | Adds an evidence-bound control layer for AI-assisted decisions, agent actions, security-sensitive changes and robotics/vehicle-software claims without pretending to be a runtime safety controller. |
 | Software developers and maintainers | Adds a narrow evidence trail for risky, public, regression-sensitive or AI-assisted software changes without replacing tests, CI or review. |
 | Open-science researchers | Makes negative, blocked and reproduced outcomes publishable. |
 | Funding reviewers and program evaluators | Provides a compact trail from protocol to source to status to limitation. |
@@ -31,6 +32,12 @@ from those scenarios to real cards is defined in
 For a practical guide to choosing card-only, protocol v2, or protocol v3 stacks
 by audience and work shape, see
 [protocol use by layer and audience](PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md).
+
+For practical guidance on using ClaimBound as an evidence-bound AI risk-control
+layer, see [AI risk control with ClaimBound](AI_RISK_CONTROL_WITH_CLAIMBOUND.md).
+That page explains the difference between ClaimBound and broad mnemonic rules,
+and gives examples for agent security, robotics and driver-assistance-style
+claims.
 
 Software-development guidance is in
 [software development workflow](SOFTWARE_DEVELOPMENT_WORKFLOW.md). That page
@@ -53,6 +60,11 @@ Software-development claims can have the same problem when a change is described
 too broadly as working, fixed or ready without a frozen command path, fixture set,
 log summary, result status and limitation boundary.
 
+AI risk-control claims have the same problem when a high-level rule such as
+"do not harm", "do not leak secrets" or "do not act without approval" is not
+translated into a concrete source, scenario, command, fixture, log, threshold,
+stop rule and forbidden inference.
+
 ClaimBound makes these points visible in a compact evidence card.
 
 ## Worked Public Workflow
@@ -73,6 +85,11 @@ For software development, the same question can be applied to one narrow build,
 API, parity or regression claim. The evidence card should say exactly which
 command, fixture, environment and boundary were checked, and what must not be
 inferred from the result.
+
+For AI control, the same question can be applied to one narrow agent, robot,
+vehicle-software, prompt-injection, security-scan or approval-gate claim. The
+card should say which scenario or command path was checked and must not claim
+that the whole AI, robot, vehicle or software system is safe.
 
 ## What ClaimBound Adds
 
@@ -96,6 +113,11 @@ For software projects, this layer sits around normal engineering practice. It
 can summarize selected tests, runner output, fixture manifests and sanitized
 reports, but it must not become the test suite or the review process itself.
 
+For AI risk-control work, this layer sits around normal safety, security,
+robotics, automotive, access-control, sandboxing and release-engineering
+practice. It can make narrow control claims reviewable, but it must not be
+represented as certification, runtime enforcement or complete risk removal.
+
 ## Why Negative Results Matter
 
 A negative result under a fair protocol is useful. It says:
@@ -117,10 +139,14 @@ Examples:
 - source rights were unclear;
 - coverage was insufficient;
 - source lineage could not be verified;
-- official-source equivalence was unresolved.
+- official-source equivalence was unresolved;
+- model, tool, command, robot, vehicle-software or environment identity could not
+  be frozen;
+- the proposed claim would require broad safety, security or deployment-readiness
+  language that the evidence cannot support.
 
 A blocked result prevents a technical proof path from becoming an unsupported
-performance claim.
+performance, safety or security claim.
 
 ## Best-Fit Domains
 
@@ -138,7 +164,9 @@ Examples:
 - LLM forecast-resolution records;
 - reproducible AI evaluation appendices;
 - software-development regression, parity, local API or agent-task evidence
-  records.
+  records;
+- AI-agent tool-use, prompt-injection, security-scan, robotics-scenario,
+  driver-assistance-style documentation and release-gate evidence records.
 
 ## What ClaimBound Should Avoid
 
@@ -149,7 +177,10 @@ ClaimBound should avoid:
 - broad model-superiority claims;
 - deployment-readiness claims;
 - broad software-correctness claims;
+- broad robot, vehicle, autonomy or physical-safety claims;
 - replacing tests, CI or code review with an evidence card;
+- replacing cybersecurity controls, sandboxing, secret handling, access control,
+  runtime monitors or emergency-stop design;
 - payload redistribution when rights are unclear;
 - subjective manual judgment after seeing outcomes;
 - replacing source audit with model confidence.
