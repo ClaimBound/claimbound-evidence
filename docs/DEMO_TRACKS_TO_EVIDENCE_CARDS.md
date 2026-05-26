@@ -37,12 +37,13 @@ evidence request
   -> registry update
 ```
 
-## Ten Audience Categories
+## Eleven Audience Categories
 
 | Audience / category | Example track | What the card should prove | Current status |
 | --- | --- | --- | --- |
 | Public AI transparency readers | `GROK_PROMPTS_SOURCE_AUDIT_D001`, Anthropic/OpenAI/Google public-doc source audits | Public AI documentation source boundaries are reachable, dated, hashed and limited to source audit only. | Green cards exist for source audits. Runtime equivalence is not proven. |
 | AI and LLM evaluation teams | `MODEL_EVAL_D001` | Model ID, prompt set, transcript hashes, scoring rule and acceptance gate are available before outcome scoring. | `BLOCKED_SOURCE` until those fields are available. |
+| Software developers and maintainers | `SOFTWARE_CHANGE_D001`, compatibility/parity/regression tracks | A narrow software claim has fixed commands, fixtures, sanitized logs, hashes and a boundary that does not replace tests, CI or review. | Guidance exists in `SOFTWARE_DEVELOPMENT_WORKFLOW.md`; next step is a completed narrow software evidence card. |
 | Companies with AI products | `AI_PRODUCT_CLAIM_D001` | A product claim is narrow enough to show customers without implying certification or deployment readiness. | `BLOCKED_SOURCE` until model/source docs and evidence artifacts are available. |
 | Independent verifiers and public buyers | `PROCUREMENT_AI_D001` | A vendor claim has independently checkable sources, scoring and limitations before adoption. | `BLOCKED_SOURCE` until procurement-ready source and scoring evidence exists. |
 | Data stewards and public-data teams | `SOURCE_AUDIT_D001`, `EEA_AQ_D001` | Official source page, rights note, data-service link and raw-payload policy are clear before coverage scoring. | EEA source audit is green; EEA AQ manual track is `BLOCKED_SOURCE` on incomplete public URL manifest; CDC mirror path remains unresolved. |
@@ -71,7 +72,8 @@ Those files are a safe starting point. They are not a result.
 For related R&D tracks, the family ledger is where claim IDs, proof surface,
 diagnostic versus proof mode, proof-track budget, stop rules and closure
 decisions are recorded. Optional frontier ledgers summarize alive, stopped and
-closed family state.
+closed family state. Optional v3 tree overlays summarize iron claims, flow
+claims, tombstones, badge counts and branch-block rules for public review.
 
 ## Local-Only Files
 
