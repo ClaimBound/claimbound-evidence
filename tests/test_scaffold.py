@@ -8,6 +8,7 @@ from pathlib import Path
 
 from claimbound_public_benchmarks.family_ledger import validate_family_ledger
 from claimbound_public_benchmarks.scaffold import ScaffoldRequest, build_scaffold
+from claimbound_public_benchmarks.tree_overlay import validate_tree_overlay
 
 
 def test_scaffold_creates_draft_without_result_status(tmp_path: Path) -> None:
@@ -33,6 +34,7 @@ def test_scaffold_creates_draft_without_result_status(tmp_path: Path) -> None:
         "docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_OPERATOR_DECLARATION.md",
         "docs/evidence_card_drafts/CLAIMBOUND-EXAMPLE_D001-DRAFT.json",
         "docs/track_families/EXAMPLE_D001_FAMILY_LEDGER.json",
+        "docs/track_families/EXAMPLE_D001_TREE.json",
         "artifacts/example_d001_source_probe_summary.json",
     }
 
@@ -61,3 +63,11 @@ def test_scaffold_creates_draft_without_result_status(tmp_path: Path) -> None:
     )
     assert validate_family_ledger(ledger) == []
     assert ledger["track_budget"]["max_proof_tracks_per_hypothesis"] == 3
+
+    tree = json.loads(
+        (tmp_path / "docs/track_families/EXAMPLE_D001_TREE.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert tree["protocol_version"] == "claimbound-tree-v3"
+    assert validate_tree_overlay(tree) == []
