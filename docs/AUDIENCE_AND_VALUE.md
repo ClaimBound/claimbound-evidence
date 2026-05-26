@@ -76,9 +76,10 @@ ClaimBound adds a thin evidence layer:
 
 ```text
 frozen protocol
-+ family ledger for related tracks
-+ frontier or tombstone ledger when needed
-+ official public source
++ family ledger for one or many tracks
++ frontier or tombstone ledger when useful
++ optional v3 tree overlay
++ official public source or recorded software source boundary
 + local payload policy
 + deterministic or auditable run path
 + exact result status
