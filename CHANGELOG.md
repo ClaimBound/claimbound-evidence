@@ -14,6 +14,7 @@
 - Added software developers and maintainers as a public audience category in README-facing documentation.
 - Added `docs/PROTOCOL_LAYERS_V2_V3.md` to explain the difference between evidence cards, v2 family/frontier ledgers and v3 tree overlays.
 - Added a software developers and maintainers scenario to `docs/AUDIENCE_TESTIMONIAL_WORKFLOWS.md`.
+- Added `docs/PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md` with practical guidance for choosing card-only, v2 and v3 stacks by audience.
 
 ### Compatibility
 
