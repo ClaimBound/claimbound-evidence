@@ -4,20 +4,22 @@ This directory is for R&D family ledgers, optional frontier ledgers and optional
 protocol v3 tree overlays created by `uv run claimbound new` or by future family
 orchestration tools.
 
-A family ledger is not evidence. It is planning and preflight metadata for
-related tracks: parent claim, non-overlap boundary, claim list, track modes,
-proof surface, proof-track budget, stop rules and closure decisions.
+A family ledger is not evidence. It is planning and preflight metadata for one
+track or many related tracks: parent claim, non-overlap boundary, claim list,
+track modes, proof surface, proof-track budget, stop rules and closure
+decisions.
 
 A frontier ledger is also not evidence. It is a compact machine-readable view of
-alive, stopped and closed families, consumed tombstones and blocked proof
-surfaces.
+alive, stopped and closed work. In a one-track workflow it can stay small; in a
+larger workflow it can coordinate families, consumed tombstones and blocked
+proof surfaces.
 
 A protocol v3 tree overlay is also not evidence. It is a compact tree view for
-complex R&D families: iron claims, flow claims, tombstones, badge counts and
-branch-blocking rules. It uses `protocol_version: "claimbound-tree-v3"` and is
-stored as `*_TREE.json`.
+one track or many related tracks: iron claims, flow claims, tombstones, badge
+counts and branch-blocking rules. It uses `protocol_version:
+"claimbound-tree-v3"` and is stored as `*_TREE.json`.
 
-Validate a ledger before citing related tracks:
+Validate a ledger before citing track state:
 
 ```bash
 uv run claimbound validate-family docs/track_families/<ID>_FAMILY_LEDGER.json
