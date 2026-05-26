@@ -10,6 +10,9 @@ protocol v2 = family/frontier planning and closure discipline
 protocol v3 = optional tree overlay for public status maps
 ```
 
+For a practical decision matrix by layer, work shape and audience, see
+[Protocol use by layer and audience](PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md).
+
 ## Why There Are Multiple Layers
 
 A single evidence card is intentionally small: it records one narrow claim, one source boundary, one frozen protocol, one status and one reproduction level. Real R&D often needs more than one track before a card is justified. Protocol v2 and v3 exist to manage that surrounding work without making the final card broader than it is.
