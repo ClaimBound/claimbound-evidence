@@ -16,6 +16,7 @@
 - Added a software developers and maintainers scenario to `docs/AUDIENCE_TESTIMONIAL_WORKFLOWS.md`.
 - Added `docs/PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md` with practical guidance for choosing card-only, v2 and v3 stacks by audience.
 - Added `docs/AI_RISK_CONTROL_WITH_CLAIMBOUND.md` with practical guidance for using ClaimBound as an evidence-bound AI risk-control layer without claiming certification, runtime safety or complete risk removal.
+- Added a README `ClaimBound In 30 Seconds` overview, a standalone `docs/CLAIMBOUND_IN_30_SECONDS.md` guide and a public funding eligibility self-check runbook.
 
 ### Changed
 

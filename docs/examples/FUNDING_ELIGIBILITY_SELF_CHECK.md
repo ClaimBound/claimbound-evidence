@@ -4,10 +4,10 @@ This example shows how ClaimBound can be used by an applicant to check their own
 public project against public funding eligibility criteria without turning the
 result into a funding decision claim.
 
-It is intentionally narrow. It does not claim that a funding organization should fund the
-project, that reviewers will agree with the applicant, or that the submitted
-proposal is accepted. It only shows how public rules can be converted into
-bounded, reviewable claims.
+It is intentionally narrow. It does not claim that a funding organization should
+fund the project, that reviewers will agree with the applicant, or that the
+submitted proposal is accepted. It only shows how public rules can be converted
+into bounded, reviewable claims.
 
 ## Why This Example Exists
 
@@ -40,7 +40,7 @@ A funding self-check is acceptable only if it stays inside these limits:
 - Do not include private reviewer communication, private application text or
   personal data unless there is a clear reason and permission to publish it.
 - Treat uncertain, missing or ambiguous items as `BLOCKED_SOURCE` or
-  `INSUFFICIENT_SOURCE`, not as a pass.
+  `INSUFFICIENT_COVERAGE`, not as a pass.
 
 If the self-check is published after an application has already been submitted,
 label it as a public applicant-side example, not as a modification of the
@@ -48,8 +48,8 @@ submitted application.
 
 ## Example Source Boundary
 
-For an NLnet-style public eligibility self-check, the source boundary should be
-limited to public pages such as:
+For a public eligibility self-check, the source boundary should be limited to
+public pages such as:
 
 - the public fund page;
 - the public eligibility page;
@@ -110,9 +110,9 @@ unpublished proposal text.
 
 ```text
 This evidence card is an applicant-side public self-check. It maps public call
-criteria to public project facts. It does not represent NLnet, NGI0, any review
-committee or any funding decision. It must not be used to claim that the project
-is selected, ranked, approved or more likely to be funded.
+criteria to public project facts. It does not represent any funder, programme,
+review committee or funding decision. It must not be used to claim that the
+project is selected, ranked, approved or more likely to be funded.
 ```
 
 ## Why This Is A Useful Adoption Example
@@ -136,3 +136,93 @@ actual artifacts:
 
 - frozen protocol file;
 - source manifest;
+- completed checklist or scoring table;
+- local raw-source archive or source hashes, if redistribution is allowed;
+- sanitized report;
+- evidence-card JSON;
+- rendered SVG card;
+- registry entry, if the result is published as a public card.
+
+Do not publish private proposal text, private reviewer communication or personal
+data as part of this example. If the example should stay non-branded, keep the
+funder name out of committed files and store the exact source URLs only in the
+local run root or sanitized source manifest.
+
+## Local Run For A Specific Public Call
+
+Use this workflow when you want to check ClaimBound Evidence against a specific
+public eligibility page without committing private application material.
+
+1. Install and validate the current repository.
+
+```bash
+uv sync --extra dev
+uv run claimbound validate-all
+```
+
+2. Create a local-only run root. Use the exact public eligibility URL for the
+   target call.
+
+```bash
+uv run claimbound run-root \
+  --protocol-id FUNDING_ELIGIBILITY_SELF_CHECK_D001 \
+  --source-url "https://example.org/public-call/eligibility/" \
+  --operator "your-name-or-handle"
+```
+
+3. Create a local scaffold outside committed documentation.
+
+```bash
+uv run claimbound new \
+  --source-url "https://example.org/public-call/eligibility/" \
+  --protocol-id "FUNDING_ELIGIBILITY_SELF_CHECK_D001" \
+  --domain "funding-review" \
+  --track-type "source_audit" \
+  --execution-mode "MANUAL_NO_AI" \
+  --source-name "Public eligibility pages for the target funding call" \
+  --audience "applicant-side funding reviewers" \
+  --out "$HOME/claimbound_runs/FUNDING_ELIGIBILITY_SELF_CHECK_D001/scaffold"
+```
+
+4. Freeze the public source manifest before scoring:
+
+```text
+source_id,url,role,access_date,content_type,sha256_or_note
+CALL_MAIN,https://example.org/public-call/,public fund page,YYYY-MM-DD,html,...
+CALL_ELIGIBILITY,https://example.org/public-call/eligibility/,eligibility criteria,YYYY-MM-DD,html,...
+CALL_GUIDE,https://example.org/public-call/guide/,guide for applicants,YYYY-MM-DD,html,...
+CALL_FAQ,https://example.org/public-call/faq/,public FAQ,YYYY-MM-DD,html,...
+PROJECT_README,https://github.com/ClaimBound/claimbound-evidence,project README,YYYY-MM-DD,html,...
+PROJECT_LICENSE,https://github.com/ClaimBound/claimbound-evidence/blob/main/LICENSE,project license,YYYY-MM-DD,html,...
+```
+
+5. Score only the frozen narrow claims below. Use `PASSED_UNDER_PROTOCOL` only
+   for items directly supported by public text. Use `BLOCKED_SOURCE` or
+   `INSUFFICIENT_COVERAGE` when the source is unavailable, ambiguous or too broad.
+
+| Narrow claim | Suggested status gate |
+| --- | --- |
+| The project repository is publicly readable at access time. | Public repository page is reachable without authentication. |
+| The repository declares a recognized free/open-source license. | `LICENSE` is present and matches a recognized license. |
+| The public project docs describe software, documentation, validation or quality work that can map to at least one eligible activity category. | Both the public eligibility text and project docs support the narrow mapping. |
+| The project has a public-interest or commons-oriented boundary in public docs. | Public docs support the boundary without relying on private proposal text. |
+| The self-check uses only public source material. | Source manifest contains only public URLs or publishable hashes. |
+| The evidence boundary rejects endorsement and funding-decision claims. | Final boundary text explicitly says the card is not approval, selection, ranking or endorsement. |
+| The published artifact exposes no private application or reviewer material. | Sanitized report contains no private proposal text, personal data or private communication. |
+
+6. If you publish a real card, render and validate it before adding it to the
+   registry:
+
+```bash
+uv run python scripts/claimbound_validate_evidence_card.py \
+  docs/evidence_cards/CLAIMBOUND-FUNDING-ELIGIBILITY-SELF-CHECK-D001-YYYY-MM-DD.json
+
+uv run python scripts/claimbound_render_evidence_card_svg.py \
+  docs/evidence_cards/CLAIMBOUND-FUNDING-ELIGIBILITY-SELF-CHECK-D001-YYYY-MM-DD.json \
+  docs/evidence_cards/CLAIMBOUND-FUNDING-ELIGIBILITY-SELF-CHECK-D001-YYYY-MM-DD.svg
+
+uv run claimbound validate-all
+```
+
+Until those steps are completed, this file remains a public runbook and example,
+not a completed eligibility result.

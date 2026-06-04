@@ -27,19 +27,21 @@ Where is the evidence?
 
 If there is no evidence card, the statement is still only a claim.
 
-## ClaimBound In 30 Seconds
+<h2 id="claimbound-in-30-seconds">ClaimBound In 30 Seconds</h2>
 
-ClaimBound is a GitHub-native evidence layer for public AI, ML, data and
-software-development claims. It turns a statement like "this source exists",
-"this benchmark was reproduced" or "this risky change passed a fixed check"
-into a small evidence card with the exact claim, source boundary, frozen
-protocol, command or checklist, result status, hashes, limits and reproduction
-level.
+ClaimBound turns a public statement like "we checked this", "this source
+exists", "this benchmark reproduced", "this model is better" or "this risky
+change passed" into a small evidence card: what exactly was checked, under
+which frozen protocol, against which source, with which status, hashes,
+limitations and reproduction level.
 
-The rule is simple: green does not mean "trust everything". It only means one
-narrow claim passed under the stated protocol. Negative, blocked, insufficient
-and drift results are first-class evidence too, because they stop a weak or
-incomplete claim from being silently upgraded into a stronger one.
+Its main job is anti-overclaiming. Green means one narrow claim passed under the
+stated protocol, not "trust everything". Negative, blocked, insufficient and
+drift results are first-class evidence too, because they stop weak or incomplete
+claims from being silently upgraded into stronger ones.
+
+Open the standalone document:
+[docs/CLAIMBOUND_IN_30_SECONDS.md](docs/CLAIMBOUND_IN_30_SECONDS.md).
 
 ![ClaimBound workflow](docs/assets/claimbound_workflow.svg)
 
@@ -168,7 +170,8 @@ index is [docs/registry/evidence_index.json](docs/registry/evidence_index.json).
 For a simple funding-review self-check example, see
 [Funding eligibility self-check](docs/examples/FUNDING_ELIGIBILITY_SELF_CHECK.md).
 
-Start with [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) for the
+Start with [ClaimBound in 30 seconds](docs/CLAIMBOUND_IN_30_SECONDS.md), then
+read [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) for the
 plain-language version.
 
 ## Install
@@ -230,22 +233,23 @@ updates the registry.
 
 | Step | Document | Why read it |
 | --- | --- | --- |
-| 1 | [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) | The shortest plain-language explanation. |
-| 2 | [Evidence card examples](docs/evidence_cards/README.md) | Green, yellow, red and blocked examples in one place. |
-| 3 | [Getting started](docs/GETTING_STARTED.md) | Installation, local run roots and scaffold commands. |
-| 4 | [Audience and value](docs/AUDIENCE_AND_VALUE.md) | Who the project helps, including software developers and AI risk-control teams. |
-| 5 | [Result status protocol v0.1](docs/RESULT_STATUS.md) | Exact statuses and the color semantics used by cards. |
-| 6 | [Evidence card protocol v0.1](docs/EVIDENCE_CARD.md) | Required JSON fields and validation rules. |
-| 7 | [Current evidence tracks](docs/CURRENT_EVIDENCE_TRACKS.md) | What the committed results prove and do not prove. |
-| 8 | [Manual audit protocol v0.1](docs/MANUAL_AUDIT_PROTOCOL.md) | How to run a no-AI operator track. |
-| 9 | [AI operator protocol v0.1](docs/AI_OPERATOR_PROTOCOL.md) and [AI workflow](docs/AI_WORKFLOW.md) | What AI may draft, run or summarize, and where human approval is required. |
-| 10 | [AI risk control with ClaimBound](docs/AI_RISK_CONTROL_WITH_CLAIMBOUND.md) | How to use ClaimBound as an evidence-bound AI control layer without claiming certification or complete risk removal. |
-| 11 | [Scaffold workflow protocol v0.1](docs/SCAFFOLD_AUTOMATION_PLAN.md) | How requests become protocol, playbook, checklist, family ledger and draft card files. |
-| 12 | [R&D family protocol v2](docs/R_AND_D_FAMILY_PROTOCOL.md) | How related tracks keep claim lists, budgets, diagnostic/proof separation and closure decisions. |
-| 13 | [Protocol use by layer and audience](docs/PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md) | Which protocol layers to use for each audience and work shape. |
-| 14 | [Protocol layers v2 and v3](docs/PROTOCOL_LAYERS_V2_V3.md) | How evidence cards, v2 family/frontier ledgers and v3 tree overlays differ. |
-| 15 | [Protocol v3 tree overlay](docs/PROTOCOL_V3_TREE_OVERLAY.md) | How iron claims, flow claims, tombstones, badge counts and branch-block rules map related work. |
-| 16 | [Registry direction v0.1](docs/GLOBAL_EVIDENCE_REGISTRY.md) and [project next steps](docs/PROJECT_NEXT_STEPS.md) | How validated cards become a public registry and what is intentionally out of scope. |
+| 1 | [ClaimBound in 30 seconds](docs/CLAIMBOUND_IN_30_SECONDS.md) | The one-screen explanation. |
+| 2 | [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) | The shortest plain-language walkthrough. |
+| 3 | [Evidence card examples](docs/evidence_cards/README.md) | Green, yellow, red and blocked examples in one place. |
+| 4 | [Getting started](docs/GETTING_STARTED.md) | Installation, local run roots and scaffold commands. |
+| 5 | [Audience and value](docs/AUDIENCE_AND_VALUE.md) | Who the project helps, including software developers and AI risk-control teams. |
+| 6 | [Result status protocol v0.1](docs/RESULT_STATUS.md) | Exact statuses and the color semantics used by cards. |
+| 7 | [Evidence card protocol v0.1](docs/EVIDENCE_CARD.md) | Required JSON fields and validation rules. |
+| 8 | [Current evidence tracks](docs/CURRENT_EVIDENCE_TRACKS.md) | What the committed results prove and do not prove. |
+| 9 | [Manual audit protocol v0.1](docs/MANUAL_AUDIT_PROTOCOL.md) | How to run a no-AI operator track. |
+| 10 | [AI operator protocol v0.1](docs/AI_OPERATOR_PROTOCOL.md) and [AI workflow](docs/AI_WORKFLOW.md) | What AI may draft, run or summarize, and where human approval is required. |
+| 11 | [AI risk control with ClaimBound](docs/AI_RISK_CONTROL_WITH_CLAIMBOUND.md) | How to use ClaimBound as an evidence-bound AI control layer without claiming certification or complete risk removal. |
+| 12 | [Scaffold workflow protocol v0.1](docs/SCAFFOLD_AUTOMATION_PLAN.md) | How requests become protocol, playbook, checklist, family ledger and draft card files. |
+| 13 | [R&D family protocol v2](docs/R_AND_D_FAMILY_PROTOCOL.md) | How related tracks keep claim lists, budgets, diagnostic/proof separation and closure decisions. |
+| 14 | [Protocol use by layer and audience](docs/PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md) | Which protocol layers to use for each audience and work shape. |
+| 15 | [Protocol layers v2 and v3](docs/PROTOCOL_LAYERS_V2_V3.md) | How evidence cards, v2 family/frontier ledgers and v3 tree overlays differ. |
+| 16 | [Protocol v3 tree overlay](docs/PROTOCOL_V3_TREE_OVERLAY.md) | How iron claims, flow claims, tombstones, badge counts and branch-block rules map related work. |
+| 17 | [Registry direction v0.1](docs/GLOBAL_EVIDENCE_REGISTRY.md) and [project next steps](docs/PROJECT_NEXT_STEPS.md) | How validated cards become a public registry and what is intentionally out of scope. |
 
 Individual pre-registration charters live in
 [docs/protocols/](docs/protocols/). They are protocol-bound examples, not broad
