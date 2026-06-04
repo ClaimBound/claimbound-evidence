@@ -138,6 +138,7 @@ pass.
 | Example | Status | What the card proves | Links |
 | --- | --- | --- | --- |
 | Anthropic system-card source audit | `PASSED_UNDER_PROTOCOL` | The official system-card index passed a narrow public-document source audit. | [JSON](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg) |
+| Funding-fit self-check | `PASSED_UNDER_PROTOCOL` | Public ClaimBound materials mapped to selected public-interest open-source funding eligibility categories without claiming approval, endorsement or award likelihood. | [JSON](docs/evidence_cards/CLAIMBOUND-FUNDING_FIT_D001-2026-06-04.json) / [SVG](docs/evidence_cards/CLAIMBOUND-FUNDING_FIT_D001-2026-06-04.svg) |
 | EEA AQ manual track | `BLOCKED_SOURCE` | The larger PM10 manual track could not fairly run from an incomplete public URL manifest. | [JSON](docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.json) / [SVG](docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.svg) |
 | NASA POWER D-103 | `PASSED_UNDER_PROTOCOL` with `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` | The frozen gate-level outcome reproduced, but fresh source bytes differed. | [JSON](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg) |
 | NOAA CO-OPS D-131 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed and honestly did not pass the frozen gate. | [JSON](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg) |
@@ -161,14 +162,16 @@ proven so far, and what to do next.
 | Open science and reproducibility teams | Reproduce a published result and keep negative or drift outcomes citable. | NASA POWER D-103, `REPRO_APPENDIX_D001`. | NASA reproduced the gate-level outcome with source-byte drift; the reproduction appendix scaffold still needs stronger source linkage. | NASA is yellow-limited reproduction. Next: add independent rerun records. |
 | ML researchers | Separate a narrow method result from broad model-superiority language. | `ML_APPENDIX_D001`. | The current appendix scaffold shows required controls, baselines and claim boundary, but no completed empirical result. | `BLOCKED_SOURCE`. Next: run with frozen controls and publish exact pass/negative/blocked status. |
 | Educators | Teach reproducible ML discipline with small public examples. | `EDU_REPRO_D001`. | The classroom track is ready as a scaffold, not as a completed evidence claim. | `BLOCKED_SOURCE`. Next: complete a student-friendly run and publish limitations. |
-| Funding reviewers and program evaluators | Read what was promised, which source was used, what happened and what cannot be claimed. | `FUNDING_REVIEW_D001`. | A funding appendix needs protocol, source, status and limitations instead of a narrative success claim. | `BLOCKED_SOURCE`. Next: attach validated cards to reports or proposals. |
+| Funding reviewers and program evaluators | Read what was promised, which source was used, what happened and what cannot be claimed. | `FUNDING_REVIEW_D001`, `FUNDING_FIT_D001`. | A funding appendix needs protocol, source, status and limitations instead of a narrative success claim. The completed self-check maps public project materials to selected public-interest eligibility categories without claiming approval or award likelihood. | Review appendix: `BLOCKED_SOURCE`. Self-check: `PASSED_UNDER_PROTOCOL`, single-operator only. Next: attach validated cards to reports or proposals without exposing private application material. |
 
 For the full card list, see
 [docs/evidence_cards/README.md](docs/evidence_cards/README.md). The registry
 index is [docs/registry/evidence_index.json](docs/registry/evidence_index.json).
 
-For a simple funding-review self-check example, see
+For a simple funding-review self-check runbook, see
 [Funding eligibility self-check](docs/examples/FUNDING_ELIGIBILITY_SELF_CHECK.md).
+For the completed non-branded example, see
+[FUNDING_FIT_D001](docs/evidence_cards/CLAIMBOUND-FUNDING_FIT_D001-2026-06-04.json).
 
 Start with [ClaimBound in 30 seconds](docs/CLAIMBOUND_IN_30_SECONDS.md), then
 read [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) for the
@@ -279,6 +282,10 @@ Useful entry points:
 
 This repository is independently usable as an open evidence foreground. It
 does not include, import or require private background technology.
+
+This is a single-maintainer public repository. Evidence cards are reusable
+examples and validation records, not a support queue, review service, legal
+advice, or commitment that the maintainer will run third-party checks on demand.
 
 The registry stores validated card metadata and sanitized report references, not
 raw payloads. Distributed-ledger and chain timestamp features are outside the

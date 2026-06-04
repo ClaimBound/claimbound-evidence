@@ -1,0 +1,25 @@
+# FUNDING_FIT_D001 Checklist
+
+- [ ] Public claim source opens in the local operator archive.
+- [ ] Exact claim is written narrowly.
+- [ ] Official or public source boundary is recorded.
+- [ ] Source rights and attribution note are recorded.
+- [ ] Raw payload or transcript policy is recorded.
+- [ ] Protocol file is frozen before execution.
+- [ ] Prompt set or source selection is frozen before execution.
+- [ ] Model/method identifier is recorded when applicable.
+- [ ] Scoring or resolution rule is frozen before execution.
+- [ ] Stop conditions are listed.
+- [ ] Family ledger exists when this is part of a multi-track R&D family.
+- [ ] Optional v3 tree overlay exists for complex branch tracking.
+- [ ] Claim IDs are unique and each claim has evidence required, gate and forbidden inference.
+- [ ] Diagnostic and flow claims are not used as proof, deployment or production claims.
+- [ ] Proof tracks are counted against the family budget.
+- [ ] Local-only raw artifacts are kept outside the repository.
+- [ ] Raw artifact hashes or blocked reason are recorded.
+- [ ] Sanitized public summary is created.
+- [ ] Evidence card uses an exact documented result status.
+- [ ] Evidence card states a narrow claim boundary.
+- [ ] Evidence card validates.
+- [ ] Optional family, frontier and tree overlays validate.
+- [ ] Registry update is made only after validation.
