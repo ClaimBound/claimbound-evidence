@@ -1,0 +1,74 @@
+{
+  "protocol_id": "FUNDING_FIT_D001",
+  "evidence_id": "CLAIMBOUND-FUNDING_FIT_D001-2026-06-04",
+  "access_date": "2026-06-04",
+  "claim_boundary": "This sanitized summary records a single-operator funding-fit self-check against selected public-interest open-source funding eligibility categories. It does not prove approval, endorsement, legal eligibility, award likelihood, reviewer acceptance, or a complete audit of any private submitted application.",
+  "execution_mode": "MANUAL_NO_AI",
+  "operator": "Rostyslav / local operator",
+  "official_sources": [
+    {
+      "name": "Public-interest open-source funding eligibility information",
+      "url": "source identity withheld from public card to avoid implying funder affiliation",
+      "local_source_sha256": "3e17b458f10d7f25825422b00b3c0625bb75ade865c2b4200b59f05440dd8b5e",
+      "local_source_bytes": 17745
+    },
+    {
+      "name": "ClaimBound public evidence repository",
+      "url": "https://github.com/ClaimBound/claimbound-evidence"
+    }
+  ],
+  "checked_claim": "ClaimBound public materials can be mapped to selected public-interest open-source funding eligibility activity categories under a frozen manual checklist, without claiming funder approval, funding likelihood, legal eligibility or endorsement.",
+  "manual_mapping": [
+    {
+      "funding_category": "design and development of free and open source software and open hardware",
+      "claimbound_material": "ClaimBound public repository and evidence-card workflow",
+      "manual_result": "PASS",
+      "boundary": "Does not prove adoption, funding approval or technical superiority."
+    },
+    {
+      "funding_category": "validation or constructive inquiry into existing or novel technical solutions",
+      "claimbound_material": "source-audit cards, negative/blocked statuses, protocol-bound checks",
+      "manual_result": "PASS",
+      "boundary": "Only validates the existence of a bounded evidence-check workflow."
+    },
+    {
+      "funding_category": "software engineering aimed at adapting to new usage areas or improving software quality",
+      "claimbound_material": "validators, registry checks, evidence-card schema discipline",
+      "manual_result": "PASS",
+      "boundary": "Does not replace tests, CI, code review or security audit."
+    },
+    {
+      "funding_category": "documentation for researchers, developers and end users, including educational materials",
+      "claimbound_material": "README, getting-started flow, manual/AI protocol docs, audience guidance",
+      "manual_result": "PASS",
+      "boundary": "Documentation fit does not prove reviewer acceptance."
+    },
+    {
+      "funding_category": "other activities relevant to robust software development and deployment practices",
+      "claimbound_material": "family ledger, claim boundaries, status rules, raw-payload policy and public registry",
+      "manual_result": "PASS",
+      "boundary": "This is process evidence, not certification."
+    },
+    {
+      "funding_category": "project management",
+      "claimbound_material": "protocol/family/registry discipline for tracking what was promised, checked and limited",
+      "manual_result": "PASS",
+      "boundary": "Does not prove project delivery capacity by itself."
+    }
+  ],
+  "final_status": "PASSED_UNDER_PROTOCOL",
+  "forbidden_claims": [
+    "A funder approved ClaimBound.",
+    "ClaimBound will receive funding.",
+    "A funder endorsed ClaimBound.",
+    "ClaimBound is legally or finally eligible.",
+    "ClaimBound replaces human funding review.",
+    "ClaimBound is better than every manual review process."
+  ],
+  "known_limitations": [
+    "Private submitted application text is not committed or fully audited in this public card.",
+    "The result is a funding-fit self-check, not a funding decision.",
+    "The mapping can drift if the external eligibility page changes after the access date.",
+    "The card is single-operator and not independently reproduced."
+  ]
+}

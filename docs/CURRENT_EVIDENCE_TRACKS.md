@@ -13,6 +13,7 @@ protocols, sanitized artifacts, evidence cards and registry entries.
 | Grok prompts source audit | xAI Grok prompts GitHub repository | `PASSED_UNDER_PROTOCOL` | The public prompt repository passed the source-audit gate for repository availability, commit identity, README/LICENSE presence and prompt-file hashes only. |
 | EEA source audit D-001 | EEA Air Quality Download Service | `PASSED_UNDER_PROTOCOL` | The public EEA download page passed the source-audit gate for page reachability, current download-service link and rights notice link only. |
 | EEA AQ manual track D-001 | EEA Air Quality Download API | `BLOCKED_SOURCE` | The larger PM10 manual track could not fairly run the fixed coverage gate because the reproducible URL-list endpoint returned no BE/NL URLs while summaries reported files. |
+| Funding-fit self-check D-001 | Public-interest open-source funding eligibility information | `PASSED_UNDER_PROTOCOL` | Public ClaimBound materials mapped to selected funding eligibility categories under a frozen manual checklist, without claiming approval, endorsement, legal eligibility, reviewer acceptance or award likelihood. |
 | NASA POWER D-103 | NASA POWER Daily point API | `PASSED_UNDER_PROTOCOL` | A narrow renewable-resource signal passed the frozen gate for the documented points, period, target, controls and acceptance rule only. |
 | NOAA CO-OPS D-131 | NOAA CO-OPS Data API | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed, but the candidate did not pass the frozen acceptance gate. |
 | NYC TLC Phase 4 | NYC TLC public trip records | Negative artifact | The official-source run completed, but the candidate did not pass all required controls. A full evidence card should be added or the record should remain clearly marked as artifact-only. |
@@ -82,6 +83,31 @@ This makes a legal conclusion about data reuse.
 ```
 
 This is separate from the larger EEA AQ D-001 manual PM10 track.
+
+## Funding-Fit Self-Check D-001
+
+Funding-fit self-check D-001 is a green applicant-side public example for
+funding reviewers and program evaluators.
+
+Allowed interpretation:
+
+```text
+ClaimBound public materials mapped to selected public-interest open-source
+funding eligibility categories under the frozen manual checklist.
+```
+
+Forbidden interpretation:
+
+```text
+This proves approval, endorsement, legal eligibility or award likelihood.
+This proves reviewers will accept the submitted application.
+This is a complete audit of private application material.
+This replaces human funding review.
+```
+
+The source identity is intentionally withheld from the public card to avoid
+implying funder affiliation. The card is single-operator evidence only and is
+not independently reproduced.
 
 ## EEA AQ Manual Track D-001
 
