@@ -165,8 +165,8 @@ For the full card list, see
 [docs/evidence_cards/README.md](docs/evidence_cards/README.md). The registry
 index is [docs/registry/evidence_index.json](docs/registry/evidence_index.json).
 
-For a simple grant-review self-check example, see
-[Grant eligibility self-check](docs/examples/GRANT_ELIGIBILITY_SELF_CHECK.md).
+For a simple funding-review self-check example, see
+[Funding eligibility self-check](docs/examples/FUNDING_ELIGIBILITY_SELF_CHECK.md).
 
 Start with [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) for the
 plain-language version.
