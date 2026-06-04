@@ -17,6 +17,10 @@
 - Added `docs/PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md` with practical guidance for choosing card-only, v2 and v3 stacks by audience.
 - Added `docs/AI_RISK_CONTROL_WITH_CLAIMBOUND.md` with practical guidance for using ClaimBound as an evidence-bound AI risk-control layer without claiming certification, runtime safety or complete risk removal.
 
+### Changed
+
+- Replaced README badges that depended on dynamic GitHub-backed shields endpoints with local static SVG badges.
+
 ### Compatibility
 
 - Historical evidence cards are not migrated or reinterpreted.
