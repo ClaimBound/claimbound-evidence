@@ -1,0 +1,219 @@
+{
+  "family_id": "NLNET_GRANT_FIT_D001_FAMILY",
+  "protocol_id": "NLNET_GRANT_FIT_D001",
+  "protocol_version": "claimbound-rnd-family-v2",
+  "family_type": "source_boundary_family",
+  "family_status": "ACTIVE",
+  "domain": "funding-review",
+  "created_at": "2026-06-04",
+  "operator": "Rostyslav / local operator",
+  "parent_claim": "ClaimBound public materials can be mapped to selected NLnet eligible activity categories under a frozen manual funding-fit source audit, without claiming NLnet approval, endorsement, legal eligibility, reviewer acceptance or funding likelihood.",
+  "claim_scope": {
+    "allowed": [
+      "ClaimBound public materials have a traceable fit-map to selected NLnet eligible activity categories.",
+      "The fit-map is checked against a public NLnet eligibility source snapshot and public ClaimBound materials.",
+      "The result may be published as a bounded evidence card with explicit limitations."
+    ],
+    "forbidden": [
+      "NLnet approved ClaimBound.",
+      "NLnet endorsed ClaimBound.",
+      "ClaimBound will receive funding.",
+      "ClaimBound is legally eligible in the final reviewer sense.",
+      "ClaimBound replaces human grant review.",
+      "ClaimBound is better than every manual review process.",
+      "The private submitted NLnet application has been fully audited."
+    ]
+  },
+  "claim_list": [
+    {
+      "claim_id": "NLNET-GRANT-FIT-C1",
+      "claim_class": "source",
+      "claim_text": "Selected NLnet eligible activity categories can be mapped to public ClaimBound materials.",
+      "status": "FROZEN",
+      "acceptance_gate": "PASS only if each selected NLnet category has both a public source basis and a public ClaimBound material reference.",
+      "evidence_required": [
+        "official NLnet eligibility source snapshot",
+        "local source hash",
+        "public ClaimBound materials",
+        "sanitized mapping summary"
+      ],
+      "forbidden_inference": [
+        "NLnet approval",
+        "funding likelihood",
+        "legal eligibility decision",
+        "NLnet endorsement"
+      ]
+    },
+    {
+      "claim_id": "NLNET-GRANT-FIT-C2",
+      "claim_class": "closure",
+      "claim_text": "The funding-fit check can be published without committing private NLnet application text.",
+      "status": "FROZEN",
+      "acceptance_gate": "PASS only if raw_payload_committed=false, private application text is excluded, and the public card contains a clear claim boundary.",
+      "evidence_required": [
+        "raw_payload_committed=false",
+        "private_application_text_committed=false",
+        "sanitized report hash",
+        "known limitations"
+      ],
+      "forbidden_inference": [
+        "complete audit of submitted application",
+        "reviewer acceptance",
+        "private application disclosure"
+      ]
+    },
+    {
+      "claim_id": "NLNET-GRANT-FIT-C3",
+      "claim_class": "diagnostic",
+      "claim_text": "The resulting card is a bounded example of ClaimBound discipline for grant-fit self-checking.",
+      "status": "FROZEN",
+      "acceptance_gate": "PASS only if the card explains what ClaimBound helps with and what it does not replace.",
+      "evidence_required": [
+        "evidence card JSON",
+        "SVG visual card",
+        "registry entry",
+        "manual-review limitations"
+      ],
+      "forbidden_inference": [
+        "ClaimBound is better than all manual review",
+        "ClaimBound replaces human grant review",
+        "ClaimBound certifies the project"
+      ]
+    }
+  ],
+  "blocked_claim_flags": [
+    "NO_NLNET_APPROVAL_CLAIM",
+    "NO_NLNET_ENDORSEMENT_CLAIM",
+    "NO_FUNDING_LIKELIHOOD_CLAIM",
+    "NO_LEGAL_ELIGIBILITY_CLAIM",
+    "NO_PRIVATE_APPLICATION_AUDIT_CLAIM",
+    "NO_HUMAN_REVIEW_REPLACEMENT_CLAIM"
+  ],
+  "proof_surface": {
+    "source_surface": {
+      "official_source_name": "NLnet NGI Zero Commons Fund Eligibility information",
+      "official_source_url": "https://nlnet.nl/commonsfund/eligibility/",
+      "access_date": "2026-06-04",
+      "local_source_sha256": "3e17b458f10d7f25825422b00b3c0625bb75ade865c2b4200b59f05440dd8b5e",
+      "local_source_bytes": 17745,
+      "raw_source_committed": false,
+      "private_application_text_committed": false
+    },
+    "candidate_or_method_surface": {
+      "candidate": "ClaimBound public evidence-card workflow and registry discipline",
+      "public_materials": [
+        "README.md",
+        "docs/evidence_cards/",
+        "docs/registry/evidence_index.json",
+        "src/claimbound_evidence/"
+      ],
+      "method": "Manual source-boundary mapping from selected NLnet eligible activity categories to public ClaimBound materials."
+    },
+    "label_or_target_surface": {
+      "target_label": "funding_fit_source_audit",
+      "positive_status": "PASSED_UNDER_PROTOCOL",
+      "negative_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+      "blocked_status": "BLOCKED_SOURCE"
+    },
+    "selection_surface": {
+      "included_sources": [
+        "official public NLnet eligibility page",
+        "public ClaimBound repository materials"
+      ],
+      "excluded_sources": [
+        "private submitted NLnet application text",
+        "NLnet reviewer communications",
+        "non-public funding decision data"
+      ],
+      "selection_rule": "Use only public source material sufficient to support a narrow funding-fit mapping."
+    },
+    "target_metric": {
+      "metric_name": "category_mapping_gate_count",
+      "pass_condition": "Every selected mapped NLnet category has a public NLnet source basis and a public ClaimBound material reference.",
+      "minimum_required_passes": 3,
+      "observed_status": "manual_review_pending_until_summary_card_registry_are_created"
+    },
+    "acceptance_gates": [
+      "No private NLnet application text is committed.",
+      "Every mapped category is tied to a public source basis.",
+      "Every mapped category is tied to public ClaimBound material.",
+      "Forbidden claims are explicitly blocked.",
+      "The final evidence card does not claim NLnet approval, endorsement, legal eligibility or funding likelihood."
+    ],
+    "decision_rule": "Set the card to PASSED_UNDER_PROTOCOL only if all acceptance gates pass; otherwise set BLOCKED_SOURCE, INSUFFICIENT_COVERAGE or NEGATIVE_RESULT_UNDER_PROTOCOL."
+  },
+  "proof_surface_hash": "e8e88680c7b3a2c4991ae230960d86cfd9ed9cc78d42b70c2b8cc44c37c52439",
+  "non_overlap_boundary": {
+    "source_boundary": "Only the official public NLnet eligibility page and public ClaimBound materials are used.",
+    "private_boundary": "Private submitted NLnet application text is excluded from the public evidence surface.",
+    "decision_boundary": "Grant decision, reviewer judgment, legal eligibility and award likelihood are outside the claim.",
+    "time_boundary": "Source snapshot and manual mapping are bounded to access date 2026-06-04."
+  },
+  "context_budget": {
+    "max_context_lines": 500,
+    "max_official_sources": 1,
+    "max_public_project_source_groups": 4,
+    "private_payloads_allowed": false,
+    "raw_html_committed": false,
+    "ai_generation_allowed_for_final_status": false
+  },
+  "track_budget": {
+    "max_proof_tracks_per_hypothesis": 1,
+    "max_tracks_in_family": 3,
+    "tracks_used": 1,
+    "remaining_tracks": 2
+  },
+  "tracks": [
+    {
+      "track_id": "NLNET_GRANT_FIT_D001",
+      "hypothesis_family": "NLNET_GRANT_FIT_D001_FAMILY",
+      "claim_ids": [
+        "NLNET-GRANT-FIT-C1",
+        "NLNET-GRANT-FIT-C2",
+        "NLNET-GRANT-FIT-C3"
+      ],
+      "mode": "source_audit",
+      "track_status": "ACTIVE",
+      "started_at": "2026-06-04",
+      "dependencies": [],
+      "writes_artifacts": [
+        "artifacts/nlnet_grant_fit_d001_summary.json",
+        "docs/evidence_cards/CLAIMBOUND-NLNET_GRANT_FIT_D001-2026-06-04.json",
+        "docs/evidence_cards/CLAIMBOUND-NLNET_GRANT_FIT_D001-2026-06-04.svg",
+        "docs/registry/evidence_index.json"
+      ],
+      "source_url": "https://nlnet.nl/commonsfund/eligibility/",
+      "source_sha256": "3e17b458f10d7f25825422b00b3c0625bb75ade865c2b4200b59f05440dd8b5e",
+      "status_if_completed": "PASSED_UNDER_PROTOCOL"
+    }
+  ],
+  "allowed_next_tracks": [
+    "create_sanitized_summary_report",
+    "create_evidence_card_json",
+    "render_evidence_card_svg",
+    "register_card_in_evidence_index",
+    "optional_independent_reproduction_review"
+  ],
+  "stop_rules": [
+    {
+      "rule_id": "STOP-PRIVATE-PAYLOAD",
+      "condition": "Private NLnet application text would be required to support the public claim.",
+      "action": "Stop or downgrade to BLOCKED_SOURCE."
+    },
+    {
+      "rule_id": "STOP-OVERCLAIM",
+      "condition": "The card claims NLnet approval, endorsement, legal eligibility or funding likelihood.",
+      "action": "Stop and change result to NEGATIVE_RESULT_UNDER_PROTOCOL or rewrite claim boundary."
+    },
+    {
+      "rule_id": "STOP-SOURCE-DRIFT",
+      "condition": "The NLnet eligibility page materially changes after the access date.",
+      "action": "Create a new verification track instead of silently reusing this result."
+    },
+    {
+      "rule_id": "STOP-NO-MAPPING",
+      "condition": "No selected NLnet category can be mapped to public ClaimBound materials.",
+      "action": "Set family_status to STOPPED and result to NEGATIVE_RESULT_UNDER_PROTOCOL."
+    }
+  ]
+}
