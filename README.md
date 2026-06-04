@@ -27,6 +27,20 @@ Where is the evidence?
 
 If there is no evidence card, the statement is still only a claim.
 
+## ClaimBound In 30 Seconds
+
+ClaimBound is a GitHub-native evidence layer for public AI, ML, data and
+software-development claims. It turns a statement like "this source exists",
+"this benchmark was reproduced" or "this risky change passed a fixed check"
+into a small evidence card with the exact claim, source boundary, frozen
+protocol, command or checklist, result status, hashes, limits and reproduction
+level.
+
+The rule is simple: green does not mean "trust everything". It only means one
+narrow claim passed under the stated protocol. Negative, blocked, insufficient
+and drift results are first-class evidence too, because they stop a weak or
+incomplete claim from being silently upgraded into a stronger one.
+
 ![ClaimBound workflow](docs/assets/claimbound_workflow.svg)
 
 ## What A Card Shows
@@ -150,6 +164,9 @@ proven so far, and what to do next.
 For the full card list, see
 [docs/evidence_cards/README.md](docs/evidence_cards/README.md). The registry
 index is [docs/registry/evidence_index.json](docs/registry/evidence_index.json).
+
+For a simple funding-review self-check example, see
+[Funding eligibility self-check](docs/examples/FUNDING_ELIGIBILITY_SELF_CHECK.md).
 
 Start with [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) for the
 plain-language version.
