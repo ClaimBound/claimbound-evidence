@@ -86,6 +86,13 @@ API, parity or regression claim. The evidence card should say exactly which
 command, fixture, environment and boundary were checked, and what must not be
 inferred from the result.
 
+For funding reviewers and program evaluators, the same question can be applied
+to one applicant-side public self-check. See the completed
+[FUNDING_FIT_D001 card](evidence_cards/CLAIMBOUND-FUNDING_FIT_D001-2026-06-04.json);
+it maps public project materials to selected public-interest eligibility
+categories without claiming approval, endorsement, legal eligibility or award
+likelihood.
+
 For AI control, the same question can be applied to one narrow agent, robot,
 vehicle-software, prompt-injection, security-scan or approval-gate claim. The
 card should say which scenario or command path was checked and must not claim

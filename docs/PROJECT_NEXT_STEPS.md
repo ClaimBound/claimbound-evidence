@@ -20,6 +20,9 @@ Keep the open project understandable before adding more machinery:
 5. Publish only validated cards in the registry.
 6. Keep raw payloads, prompt text and transcripts outside the public repository
    unless rights clearly allow redistribution.
+7. Keep maintainer workload bounded. This is a single-maintainer repository, so
+   prefer self-contained examples, deterministic validators and reusable
+   runbooks over any workflow that implies an on-demand review service.
 
 ## Strong Public AI Examples
 

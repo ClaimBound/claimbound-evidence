@@ -129,6 +129,18 @@ benchmarks or AI model behavior. They only need to compare:
 That makes it a good first example for funding reviewers, maintainers and
 public-interest readers.
 
+## Completed Non-Branded Card
+
+The repository includes one completed, non-branded self-check card:
+
+- [FUNDING_FIT_D001 JSON](../evidence_cards/CLAIMBOUND-FUNDING_FIT_D001-2026-06-04.json)
+- [FUNDING_FIT_D001 SVG](../evidence_cards/CLAIMBOUND-FUNDING_FIT_D001-2026-06-04.svg)
+
+It records a single-operator `PASSED_UNDER_PROTOCOL` result for mapping public
+ClaimBound materials to selected public-interest open-source funding eligibility
+categories. It does not claim approval, endorsement, legal eligibility, reviewer
+acceptance, award likelihood or a complete audit of any private application.
+
 ## What Would Make It A Real Card
 
 This document is only an example until an operator creates and validates the
