@@ -2,6 +2,22 @@
 
 ## 0.4.0 - Unreleased
 
+## 0.3.1 - 2026-06-05
+
+### Added
+
+- Added post-submit public hardening docs: reviewer summary, public roadmap
+  2026, external operator starter pack, governance, maintainer boundary and
+  release process.
+- Added source-drift and card-boundary issue templates and external-operator
+  labels/issues.
+
+### Changed
+
+- Clarified evidence cards versus non-card artifacts for NYC TLC and CDC mirror
+  records.
+- Updated release metadata from `v0.3.0` to `v0.3.1`.
+
 ### Added
 
 - Added ClaimBound protocol v3 as a compatible tree overlay using `protocol_version: "claimbound-tree-v3"`.
