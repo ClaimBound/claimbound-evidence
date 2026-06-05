@@ -1,0 +1,40 @@
+name: Card boundary question
+description: Ask whether a card's claim boundary is too broad, too narrow or unclear.
+title: "[Card boundary]: "
+labels:
+  - card-boundary
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when the wording of a card, report or README example may make
+        a claim stronger than the evidence supports.
+  - type: input
+    id: evidence_card_or_doc
+    attributes:
+      label: Card or document URL
+      description: Link to the card, report, README section or protocol.
+    validations:
+      required: true
+  - type: textarea
+    id: concern
+    attributes:
+      label: Boundary concern
+      description: Explain which wording seems too broad, too narrow or ambiguous.
+    validations:
+      required: true
+  - type: textarea
+    id: suggested_boundary
+    attributes:
+      label: Suggested narrower wording
+      description: Suggest wording that would keep the claim inside the evidence.
+    validations:
+      required: false
+  - type: textarea
+    id: forbidden_claims
+    attributes:
+      label: Claims to avoid
+      description: List claims the card or doc should not imply.
+    validations:
+      required: true
+

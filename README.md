@@ -45,6 +45,22 @@ Open the standalone document:
 
 ![ClaimBound workflow](docs/assets/claimbound_workflow.svg)
 
+## For Reviewers And External Operators
+
+Start here if you are reviewing the project, trying it from outside the
+maintainer's machine, or checking what the open-source foreground is meant to
+deliver:
+
+- [Reviewer summary](docs/NLNET_REVIEWER_SUMMARY.md) gives the problem,
+  strongest cards, European/public-interest dimension and funding-sized
+  deliverables in one page.
+- [Public funding roadmap 2026](docs/FUNDING_ROADMAP_2026.md) maps the current
+  9-month open-source work package to concrete software, workflow and
+  documentation outputs.
+- [External operator starter pack](docs/EXTERNAL_OPERATOR_STARTER_PACK.md)
+  explains how to read cards, request a card, rerun an existing card, report
+  source drift or ask a boundary question.
+
 ## What A Card Shows
 
 An evidence card keeps the useful claim small enough to inspect:
@@ -287,6 +303,10 @@ This is a single-maintainer public repository. Evidence cards are reusable
 examples and validation records, not a support queue, review service, legal
 advice, or commitment that the maintainer will run third-party checks on demand.
 
+For public review and sustainability boundaries, see
+[governance](GOVERNANCE.md), [maintainer boundary](MAINTAINER_BOUNDARY.md) and
+[release process](RELEASE_PROCESS.md).
+
 The registry stores validated card metadata and sanitized report references, not
 raw payloads. Distributed-ledger and chain timestamp features are outside the
 current roadmap.
@@ -299,6 +319,7 @@ support, not AI provenance by themselves. See
 ## Community
 
 - [Contributing guide](CONTRIBUTING.md)
+- [External operator starter pack](docs/EXTERNAL_OPERATOR_STARTER_PACK.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [Security policy](SECURITY.md)
 - [Discussions: maintainer announcements and community Q&A](https://github.com/ClaimBound/claimbound-evidence/discussions)
