@@ -129,10 +129,10 @@ or open the
 
 ## Example Cards
 
-These are deliberately different outcomes: green means a narrow claim passed,
-yellow means reproduction is useful but limited, amber means the source boundary
-blocked a fair result, and red means the protocol ran but the claim did not
-pass.
+These examples show how small evidence records stay inside their claim
+boundary. The visual cards below focus on source-audit and blocked-source
+records so the README stays close to the project's public review path. The
+table also links to limited-reproduction and negative-result examples.
 
 <p>
   <img
@@ -141,13 +141,13 @@ pass.
     width="32%"
   />
   <img
-    src="docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg"
-    alt="Yellow ClaimBound card for NASA POWER reproduction with source-byte drift"
+    src="docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.svg"
+    alt="Green ClaimBound card for EEA download-page source audit"
     width="32%"
   />
   <img
-    src="docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg"
-    alt="Red ClaimBound card for NOAA negative result"
+    src="docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.svg"
+    alt="Amber ClaimBound card for EEA blocked-source manual track"
     width="32%"
   />
 </p>
