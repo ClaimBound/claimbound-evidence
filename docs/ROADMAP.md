@@ -33,24 +33,22 @@ Add or tighten public documentation around:
   archives, fact-checking sites and certification services;
 - the two execution paths: `MANUAL_NO_AI` and `AUTOMATED_AI_ASSISTED`.
 
-### Global Audiences And Examples
+### Core Workflows And Deep Audience Docs
 
-Add ten audience examples to the public README and audience/use-case docs.
-Each example should show what a concrete ClaimBound record gives that ordinary
-marketing, screenshots or narrative claims do not give.
+Keep the public README focused on four core workflows. Keep detailed audience
+examples in audience and workflow documents so the first project page stays
+simple for reviewers and external operators.
 
-| Audience | Example public use |
+| Core workflow | Public value |
 | --- | --- |
-| Public AI transparency readers | Check official AI documentation, system-card and model-card source boundaries without turning them into model-quality claims. |
-| AI and LLM evaluation teams | Check a model, RAG, agent or benchmark claim with timestamp, prompt hash, model/API metadata, source rule and scoring rule. |
-| Open-science and reproducibility researchers | Publish negative, blocked and reproduced outcomes as useful evidence records instead of hiding them. |
-| Funding reviewers and program evaluators | Inspect what was promised, which protocol and source were used, what happened and what cannot be claimed. |
-| Data stewards and public-data teams | Audit whether a source is official, rights are clear, coverage is sufficient and raw redistribution is avoided. |
-| Civic-tech, journalism and watchdog projects | Check claims against public sources such as government data, climate data, mobility data and public infrastructure records. |
-| ML researchers | Add a small honest appendix to a paper or report with protocol, hashes, result status and reproduction level. |
-| Educators | Teach reproducible ML by requiring students to run a protocol, publish pass/fail/blocked status and explain limitations. |
-| Companies with AI products | Give customers narrow evidence cards for specific public claims instead of broad "trust us" statements. |
-| Independent verifiers, procurement teams and public buyers | Request or rerun a narrow evidence card before adopting, buying or citing an AI/data product claim. |
+| Public AI documentation | Check official system-card, model-card and policy-document source boundaries without turning them into runtime claims. |
+| Public and European open data | Check source access, source drift, official pages and fair result boundaries for public datasets. |
+| Reproduction and reruns | Let another operator rerun a completed card and report whether the narrow result still holds. |
+| Software and review evidence | Attach a bounded evidence record to a risky change, review gate, CI result or AI-assisted development workflow. |
+
+Detailed audience material belongs in
+[Audience and value](AUDIENCE_AND_VALUE.md) and
+[Audience workflows](AUDIENCE_TESTIMONIAL_WORKFLOWS.md).
 
 ### Claim Request Workflow
 
