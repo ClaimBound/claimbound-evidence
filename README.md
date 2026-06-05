@@ -18,7 +18,7 @@ ClaimBound turns a narrow public AI, ML, data or software-development claim into
 a small evidence card: a checkable record with the protocol, source boundary,
 hashes, exact result status, claim boundary and reproduction level.
 
-It is not a model leaderboard, production forecasting service or certification
+It is not a model leaderboard, hosted scoring service or certification
 authority. It is an open-source toolkit for asking one plain question:
 
 ```text
@@ -51,12 +51,10 @@ Start here if you are reviewing the project, trying it from outside the
 maintainer's machine, or checking what the open-source foreground is meant to
 deliver:
 
-- [Reviewer summary](docs/NLNET_REVIEWER_SUMMARY.md) gives the problem,
-  strongest cards, European/public-interest dimension and 9-month public
-  deliverables in one page.
-- [Public roadmap 2026](docs/ROADMAP_2026.md) maps the current
-  9-month open-source work package to concrete software, workflow and
-  documentation outputs.
+- [Reviewer summary](docs/REVIEWER_SUMMARY.md) gives the problem, strongest
+  cards, public-interest dimension and planned public deliverables in one page.
+- [Public roadmap 2026](docs/ROADMAP_2026.md) maps the current public work
+  package to concrete software, workflow and documentation outputs.
 - [External operator starter pack](docs/EXTERNAL_OPERATOR_STARTER_PACK.md)
   explains how to read cards, request a card, rerun an existing card, report
   source drift or ask a boundary question.

@@ -1,15 +1,15 @@
 # ClaimBound Reviewer Summary
 
-This page is a public orientation note for funding reviewers, first-time
-readers and external operators. It is not a funding decision, endorsement or
-private application document.
+This page is a public orientation note for first-time readers, reviewers and
+external operators. It is not an endorsement, selection note, legal opinion or
+private project document.
 
 ## What Problem ClaimBound Addresses
 
-Public AI, ML, data and software claims often travel faster than their
-evidence. A claim such as "we checked this", "this source exists", "this
-benchmark reproduced" or "this model is better" is hard to inspect unless the
-source, protocol, status and limitations are kept together.
+Public AI, ML, data and software claims often travel faster than their evidence.
+A claim such as "we checked this", "this source exists", "this benchmark
+reproduced" or "this model is better" is hard to inspect unless the source,
+protocol, status and limitations are kept together.
 
 ClaimBound turns one narrow public claim into a compact evidence card:
 
@@ -45,11 +45,12 @@ Representative public examples:
 | NOAA CO-OPS D-131 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed and honestly did not pass the frozen gate. |
 | EEA AQ manual track | `BLOCKED_SOURCE` | A larger manual track was blocked by an incomplete public source manifest. |
 
-## 9-Month Public Work Package
+## Planned Public Work Package
 
-The public foreground should stay narrow and concrete. A 9-month work package
-should fund reusable open-source infrastructure, not a hosted service or private
-background technology.
+The public foreground should stay narrow and concrete. The planned work package
+is intended to harden reusable open-source infrastructure, examples and review
+workflows. It should not turn the repository into a hosted service or mix it
+with unrelated private systems.
 
 Planned public deliverables:
 
@@ -59,7 +60,7 @@ Planned public deliverables:
 | SourceProbe v1 | Deterministic source metadata, hashes and source-boundary recommendations | Probe output supports public AI docs and public-data source audits, but cannot create a green card alone. |
 | Scaffold hardening | Request, protocol, playbook, checklist, draft card and registry-patch scaffolds | Drafts remain gray and cannot become `PASSED_UNDER_PROTOCOL` automatically. |
 | Operator workflows | Manual and AI-assisted runbooks, run roots, deviation logs and source-rights checks | A new operator can follow the workflow without hidden private steps. |
-| Public AI claim protocol | Prompt/model/transcript/scoring metadata policy for public AI claims | Source audits never imply runtime behavior, safety or model superiority. |
+| Public AI claim protocol | Public-source rules, model/API metadata fields, prompt/transcript hash policy and screenshot-only limits | Source audits never imply runtime behavior, safety or model superiority. |
 | Static registry | Public read-only index and generated views | Every registry entry points to a validated card and no raw payload is stored. |
 | Rerun workflow | Reproduction request path, rerun checklist and drift handling | Reruns can add evidence without changing the original claim. |
 
@@ -68,7 +69,7 @@ Planned public deliverables:
 - Public-source AI documentation source audits.
 - European and public open-data source-boundary checks.
 - Narrow empirical public-data pass, negative, blocked and drift outcomes.
-- Software/reproducibility evidence examples where commands, fixtures and
+- Software and reproducibility evidence examples where commands, fixtures and
   limitations can be fixed before the result is accepted.
 - Documentation, tests, validation commands, release process and accessibility
   improvements.
@@ -80,20 +81,20 @@ Planned public deliverables:
 - Legal, compliance or procurement approval.
 - Raw-data archival service.
 - Hosted accounts, authenticated write API or operator reputation system.
-- Blockchain, token, wallet or on-chain storage features.
-- Market-signal products, forecasting services or private background
-  technology.
+- Broad platform features outside evidence-card validation, registry and
+  operator workflow needs.
+- Unrelated private systems or private performance claims.
 
-## European Dimension
+## European Public-Interest Dimension
 
-ClaimBound supports European digital commons by making public technology claims
-more inspectable, reproducible and limitation-aware. The current public example
-set includes a European Environment Agency source audit and an EEA Air Quality
+ClaimBound supports digital commons by making public technology claims more
+inspectable, reproducible and limitation-aware. The current public example set
+includes a European Environment Agency source audit and an EEA Air Quality
 manual-track blocked-source card. These examples are used only as public-data
 source-boundary records; they do not claim EEA endorsement, legal reuse advice
 or dataset completeness.
 
-Useful European public-interest applications include:
+Useful public-interest applications include:
 
 - public-sector AI transparency;
 - open-data stewardship;

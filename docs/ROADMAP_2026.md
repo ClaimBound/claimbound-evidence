@@ -1,8 +1,8 @@
 # Public Roadmap 2026
 
 This roadmap describes the open-source ClaimBound foreground. It does not
-include private background technology and does not change any already-submitted
-funding application.
+include private systems and does not change any private or already-submitted
+materials.
 
 ## Position
 
@@ -10,16 +10,15 @@ ClaimBound is an open-source evidence-card toolkit for narrow public AI, ML,
 data and software claims. It should remain independently usable from this
 repository.
 
-It is not a model leaderboard, production forecasting service, certification
-authority, hosted review queue, raw-data archive or blockchain project.
+It is not a model leaderboard, certification authority, hosted review queue or
+raw-data archive.
 
-## 9-Month Public Work Plan
+## Public Work Plan
 
-This plan matches the public open-source work package described by the current
-project materials: harden an existing prototype into reusable evidence-card
-infrastructure.
+This plan describes the current public implementation path: harden an existing
+prototype into reusable evidence-card infrastructure.
 
-| Month | Work package | Deliverables | Acceptance |
+| Phase | Work package | Deliverables | Acceptance |
 | ---: | --- | --- | --- |
 | 1 | Public baseline consolidation | Release checklist, link/metadata audits, status wording, card/report/protocol consistency checks | `validate-all` passes; artifact-only records are not presented as completed cards. |
 | 2 | SourceProbe v1 | Source URL metadata, final URL, content type, byte size, SHA-256, marker checks and source-boundary recommendations | Probe supports public AI documentation and public-data source audits; probe output is not a positive result by itself. |
@@ -28,12 +27,12 @@ infrastructure.
 | 5 | Public AI claim protocol | Source-audit rules for public AI docs, model/API metadata fields, prompt/transcript hash policy and screenshot-only limits | Source-audit cards do not imply model safety, runtime behavior or benchmark superiority. |
 | 6 | Static registry MVP | Generated read-only registry views, filters by status/source/domain/audience/reproduction and SVG links | Registry remains inspectable without hosted accounts or a database; entries validate against card JSON. |
 | 7 | Independent rerun workflow | Reproduction request template, rerun checklist, reproduction status fields and source-byte drift handling | Reruns can update evidence without changing the original claim. |
-| 8 | Completed example set and tutorials | 10-20 honest cards or scaffolds across public AI, public data, reproducibility and software examples | Project credibility does not depend on only positive results. |
-| 9 | Release, review and sustainability | Tagged release, maintainer guide, dependency/security notes, AI-use disclosure summary and post-funding roadmap | The repository remains independently usable after the funded work. |
+| 8 | Completed example set and tutorials | Honest cards or scaffolds across public AI, public data, reproducibility and software examples | Project credibility does not depend on only positive results. |
+| 9 | Release, review and sustainability | Tagged release, maintainer guide, dependency/security notes, AI-use disclosure summary and follow-on roadmap | The repository remains independently usable after this work. |
 
-## Value-For-Money Boundary
+## Work Boundary
 
-A 9-month public work package should pay for reusable open-source outputs:
+The public work package should produce reusable open-source outputs:
 
 - validators and test coverage;
 - source-boundary tooling;
@@ -42,15 +41,15 @@ A 9-month public work package should pay for reusable open-source outputs:
 - documented rerun paths;
 - examples, tutorials and release process.
 
-It should not pay for:
+It should not produce:
 
-- closed background technology;
+- closed private systems;
 - private data or private transcripts;
 - hosted account systems;
 - authenticated write APIs;
 - commercial hosting;
 - legal certification services;
-- market-signal, forecasting or investment products.
+- broad product or private performance claims.
 
 This boundary keeps the work small enough for a single-maintainer open-source
 project and clear enough for external review.
@@ -61,15 +60,15 @@ project and clear enough for external review.
 | --- | --- | --- |
 | Public AI source audit | Anthropic, OpenAI, Google DeepMind and Grok source-audit cards | Familiar AI transparency sources, safely narrowed to source boundaries. |
 | European public data | EEA source audit and EEA AQ manual blocked card | European open-data source-boundary and blocked-source discipline. |
-| Narrow positive empirical result | NASA POWER D-103 | Shows the project is more than URL checking. |
+| Narrow positive empirical result | NASA POWER D-103 | Shows that fixed public-data gates can produce reusable evidence. |
 | Honest negative result | NOAA CO-OPS D-131 | Shows a protocol can fail without being renamed as success. |
-| Funding-review self-check | FUNDING_FIT_D001 | Shows how public eligibility rules can be checked without claiming approval or endorsement. |
+| External operator path | Starter pack, rerun issues and boundary-review issues | Shows how another reader can inspect, rerun or challenge a card. |
 
 ## Risk Register
 
 | Risk | Control |
 | --- | --- |
-| Scope grows into a general verification platform | Keep funded work to validators, source-boundary checks, registry, workflows and examples. |
+| Scope grows into a general verification platform | Keep work to validators, source-boundary checks, registry, workflows and examples. |
 | Source audits are misread as safety or runtime claims | Repeat claim boundaries in cards, docs and issue templates. |
 | Blocked/negative cards look like project failure | Explain that blocked and negative outcomes are first-class evidence. |
 | Artifact-only records are confused with validated cards | Keep artifact-only records in a separate section and mark them as not evidence cards. |
