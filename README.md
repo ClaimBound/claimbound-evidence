@@ -52,9 +52,9 @@ maintainer's machine, or checking what the open-source foreground is meant to
 deliver:
 
 - [Reviewer summary](docs/NLNET_REVIEWER_SUMMARY.md) gives the problem,
-  strongest cards, European/public-interest dimension and funding-sized
+  strongest cards, European/public-interest dimension and 9-month public
   deliverables in one page.
-- [Public funding roadmap 2026](docs/FUNDING_ROADMAP_2026.md) maps the current
+- [Public roadmap 2026](docs/ROADMAP_2026.md) maps the current
   9-month open-source work package to concrete software, workflow and
   documentation outputs.
 - [External operator starter pack](docs/EXTERNAL_OPERATOR_STARTER_PACK.md)

@@ -1,4 +1,4 @@
-# Public Funding Roadmap 2026
+# Public Roadmap 2026
 
 This roadmap describes the open-source ClaimBound foreground. It does not
 include private background technology and does not change any already-submitted
@@ -33,7 +33,7 @@ infrastructure.
 
 ## Value-For-Money Boundary
 
-Funding-sized work should pay for reusable open-source outputs:
+A 9-month public work package should pay for reusable open-source outputs:
 
 - validators and test coverage;
 - source-boundary tooling;

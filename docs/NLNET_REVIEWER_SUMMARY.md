@@ -45,10 +45,10 @@ Representative public examples:
 | NOAA CO-OPS D-131 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed and honestly did not pass the frozen gate. |
 | EEA AQ manual track | `BLOCKED_SOURCE` | A larger manual track was blocked by an incomplete public source manifest. |
 
-## Funding-Sized Work Package
+## 9-Month Public Work Package
 
-The funding-sized public foreground should stay narrow and concrete. It should
-fund reusable open-source infrastructure, not a hosted service or private
+The public foreground should stay narrow and concrete. A 9-month work package
+should fund reusable open-source infrastructure, not a hosted service or private
 background technology.
 
 Planned public deliverables:
