@@ -1,0 +1,49 @@
+name: Source drift report
+description: Report that a public source used by a ClaimBound card has changed.
+title: "[Source drift]: "
+labels:
+  - source-drift
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when a public source used by a committed card appears to have
+        changed. Source drift is not automatically an error. It may become a
+        reproduction limitation, blocked-source note or new rerun request.
+  - type: input
+    id: evidence_card
+    attributes:
+      label: Evidence card URL
+      description: Link to the card whose source appears to have changed.
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      description: Link to the source that changed.
+    validations:
+      required: true
+  - type: textarea
+    id: observed_change
+    attributes:
+      label: Observed change
+      description: Describe what changed, including timestamps, status codes, content type, redirects, byte size or marker differences.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence
+      description: Provide public, non-sensitive evidence. Do not paste raw restricted payloads, credentials, private transcripts or personal data.
+    validations:
+      required: true
+  - type: textarea
+    id: forbidden_claims
+    attributes:
+      label: Claims this report must not make
+      description: List any broad interpretations to avoid.
+      placeholder: "Example: do not claim the original card was invalid unless the protocol/card evidence supports that."
+    validations:
+      required: true
+

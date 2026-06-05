@@ -19,6 +19,23 @@ protocols, sanitized artifacts, evidence cards and registry entries.
 | NYC TLC Phase 4 | NYC TLC public trip records | Negative artifact | The official-source run completed, but the candidate did not pass all required controls. A full evidence card should be added or the record should remain clearly marked as artifact-only. |
 | CDC mirror path | Public mirror path | Blocked-source style artifact | The proof path completed, but external source equivalence remained unresolved. No empirical pass or fail claim should be made. |
 
+## Evidence Cards Versus Non-Card Artifacts
+
+The registry should contain validated evidence cards. Historical artifacts can
+still be useful, but they must not be presented as completed cards until they
+have the required protocol, source boundary, sanitized artifact, exact status,
+claim boundary, reproduction level and registry entry.
+
+Current non-card or artifact-only records:
+
+| Artifact | Current handling | What must happen before it is cited as a card |
+| --- | --- | --- |
+| NYC TLC Phase 4 | Negative artifact only. | Add a validated evidence-card JSON/SVG and registry entry, or keep it outside the completed-card list. |
+| CDC mirror path | Blocked-source style artifact only. | Resolve source equivalence or publish a blocked-source card with explicit source-boundary limitations. |
+
+This distinction is intentional. ClaimBound does not upgrade artifacts into
+evidence cards just because a technical run completed.
+
 ## Grok Prompts Source Audit
 
 Grok prompts source audit is a worked "Where is the evidence?" example for

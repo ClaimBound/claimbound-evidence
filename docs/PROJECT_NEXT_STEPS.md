@@ -66,6 +66,11 @@ These are practical next improvements for the open repository:
 8. Independent rerun workflow: reproduction PR template, reproduction badge and
    registry fields.
 
+The public 2026 work-package version of this roadmap is summarized in
+[Public roadmap 2026](ROADMAP_2026.md). It keeps the work package focused on
+open-source validators, source-boundary tooling, scaffolds, static registry
+outputs, rerun workflows, examples and release documentation.
+
 ## Later Platform Work
 
 These should wait until the static cards, validators, examples and workflows are

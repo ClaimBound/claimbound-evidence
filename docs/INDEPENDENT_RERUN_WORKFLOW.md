@@ -25,6 +25,11 @@ opened.
 
 The issue is only a request. It is not reproduction evidence.
 
+If you are new to the project, start with the
+[external operator starter pack](EXTERNAL_OPERATOR_STARTER_PACK.md). It explains
+how to set up the repository, create a local run root and avoid publishing raw
+payloads or overbroad claims.
+
 ## PR Path
 
 1. Create a local run root outside this repository.
@@ -60,3 +65,11 @@ uv run --extra dev python -m pytest -q
 ```
 
 Do not edit thresholds, gates or claim boundaries to force a reproduced result.
+
+## Source Drift And Boundary Questions
+
+If a source changed but you are not ready to produce a rerun card, open a
+`Source drift report` issue instead. If a card seems to imply more than the
+evidence supports, open a `Card boundary question` issue. Neither issue type is
+evidence by itself; both are triage paths for deciding whether a new rerun,
+repair or documentation change is needed.
