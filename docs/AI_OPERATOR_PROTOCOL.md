@@ -3,6 +3,11 @@
 AI tools may assist ClaimBound work only when they make the evidence trail more
 auditable. They must never decide the result after seeing the outcome.
 
+For the compact control-layer rulebook behind this protocol, see
+[12 AI Life Rules](TWELVE_AI_LIFE_CONTROLS.md). The rules explain how AI-assisted claims
+and actions should be bounded, sourced, frozen, blocked, reviewed and
+tombstoned.
+
 ## Allowed AI Assistance
 
 AI tools may help with:

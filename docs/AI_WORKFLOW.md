@@ -3,6 +3,10 @@
 AI assistance is allowed when it makes the evidence trail easier to inspect.
 It must not decide the final result by opinion.
 
+For a compact checklist-style framing of this workflow, see
+[12 AI Life Rules](TWELVE_AI_LIFE_CONTROLS.md). The rules can be used internally by an
+operator, externally by a reviewer or publicly through evidence cards.
+
 ## Correct Use
 
 AI can help with:

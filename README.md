@@ -88,10 +88,58 @@ that keeps the claim honest.
 | Public and European open data | Check source access, source drift, official pages and fair result boundaries for public datasets. | [Evidence card examples](docs/evidence_cards/README.md) |
 | Reproduction and reruns | Rerun a completed card and report whether the narrow outcome, source bytes and limitations still match. | [External operator starter pack](docs/EXTERNAL_OPERATOR_STARTER_PACK.md) |
 | Software and review evidence | Attach a bounded evidence record to a risky change, review gate, CI result or AI-assisted development workflow. | [Software development workflow](docs/SOFTWARE_DEVELOPMENT_WORKFLOW.md) |
+| AI control and agent review | Bind AI-assisted claims and actions to evidence cards, blocked states, human gates, audit trails and tombstones. | [12 AI Life Rules](docs/TWELVE_AI_LIFE_CONTROLS.md) |
 
 Advanced protocol layers for related work families, frontier ledgers and tree
 overlays are documented separately. Use the smallest layer stack that prevents
 overclaiming; do not add layers to make a weak result look stronger.
+
+## 12 AI Life Rules
+
+One practical use of ClaimBound is a portable evidence-bound control layer for
+AI claims and actions. The same rules can support internal operator workflows,
+external review, or public evidence records.
+
+```text
+AI may assist, but evidence must bind.
+```
+
+These rules do not make an AI system safe by slogan or intention. They make
+unsupported claims and risky actions easier to block, review, reproduce or
+tombstone.
+
+Before an AI-assisted claim or action is trusted, ask:
+
+- What exactly is the AI claiming or trying to do?
+- Which source, file, prompt, dataset, fixture, command or evidence card
+  supports it?
+- Were the rules and gates fixed before the result?
+- Is the action reversible, or does it need a human gate?
+- What risk or unsupported inference is being blocked?
+- Where is the audit trail or evidence card?
+
+Read the full rulebook:
+[docs/TWELVE_AI_LIFE_CONTROLS.md](docs/TWELVE_AI_LIFE_CONTROLS.md).
+
+<details>
+<summary>Show the 12 AI Life Rules</summary>
+
+| Rule | ClaimBound check |
+| --- | --- |
+| Bounded Claim | Keep every AI claim inside a written boundary. |
+| Evidence Before Authority | Do not trust model confidence, brand or tone without evidence. |
+| Frozen Rules Before Run | Fix source, scorer, controls and gates before outcomes. |
+| Source Lineage | Record where data, prompts, files or claims came from. |
+| Honest Blocked State | Block claims when evidence is missing or unusable. |
+| Reversible Action First | Prefer read-only, draft or reversible actions before hard-to-reverse ones. |
+| Human Gate For High-Impact Actions | Require human approval for high-impact or irreversible steps. |
+| No Hidden Goal Substitution | Keep AI work tied to the user's stated intent. |
+| Minimal Necessary Data | Publish summaries and hashes, not raw private payloads. |
+| Counterclaim Search | Look for contradicting, missing and negative evidence. |
+| Audit Trail | Record what happened, why, by which tool and with what result. |
+| Tombstone And Supersession | Preserve failed, stale or overbroad branches instead of hiding them. |
+
+</details>
 
 ## Example: AI System-Card Claim
 
@@ -158,9 +206,11 @@ pass.
 | NASA POWER D-103 | `PASSED_UNDER_PROTOCOL` with `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` | The frozen gate-level outcome reproduced, but fresh source bytes differed. | [JSON](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg) |
 | NOAA CO-OPS D-131 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed and honestly did not pass the frozen gate. | [JSON](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg) |
 
-For the full card list, see
-[docs/evidence_cards/README.md](docs/evidence_cards/README.md). The registry
-index is [docs/registry/evidence_index.json](docs/registry/evidence_index.json).
+Other registry examples include public-interest self-checks and blocked-source
+records that are deliberately kept out of this first-screen table. For the full
+card list, see [docs/evidence_cards/README.md](docs/evidence_cards/README.md).
+The registry index is
+[docs/registry/evidence_index.json](docs/registry/evidence_index.json).
 
 Start with [ClaimBound in 30 seconds](docs/CLAIMBOUND_IN_30_SECONDS.md), then
 read [ClaimBound in 5 minutes](docs/CLAIMBOUND_IN_5_MINUTES.md) for the
