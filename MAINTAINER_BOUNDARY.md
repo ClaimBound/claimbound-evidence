@@ -15,7 +15,7 @@ review service.
 
 - Running third-party benchmarks on demand.
 - Certifying AI systems, models, datasets or vendors.
-- Making funding, procurement, legal, compliance or investment decisions.
+- Making award, procurement, legal, compliance or investment decisions.
 - Hosting private data or restricted transcripts.
 - Guaranteeing a result will be green.
 - Guaranteeing turnaround time for evidence requests.

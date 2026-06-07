@@ -1,6 +1,6 @@
 # Open Foreground Boundary
 
-Funded foreground in this repository:
+Public foreground in this repository:
 
 - public evidence runners;
 - public-source adapters;

@@ -20,7 +20,7 @@ If there is no evidence card, the statement is still only a claim.
 ## What Problem It Solves
 
 ClaimBound is an anti-overclaiming layer. It helps public AI, ML, data,
-software-development, funding-review and reproducibility work say exactly what
+software-development, program-review and reproducibility work say exactly what
 has been checked and what has not.
 
 The point is not to say "the model is safe" or "the change works". The point is
@@ -32,7 +32,7 @@ hashed under the documented source-audit protocol on the recorded access date.
 ```
 
 That narrow result must not be silently upgraded into a broad model-safety,
-product-quality, deployment-readiness or funding-approval claim.
+product-quality, deployment-readiness or award-approval claim.
 
 ## Who It Helps
 
@@ -42,7 +42,7 @@ product-quality, deployment-readiness or funding-approval claim.
 | AI risk, security and automation-control teams | Record bounded checks for tool use, prompt-injection controls, release gates or incident evidence. |
 | Software developers and maintainers | Attach a reviewable evidence trail to risky, AI-assisted or regression-sensitive changes. |
 | Open science and reproducibility teams | Publish reproduced, negative, blocked and drift outcomes instead of hiding weak results. |
-| Funding reviewers and public-interest teams | Replace marketing-style progress language with protocol, source, status and limitation records. |
+| Program reviewers and public-interest teams | Replace marketing-style progress language with protocol, source, status and limitation records. |
 | Public data, civic tech and procurement teams | Check official source and evidence boundaries before relying on public claims. |
 
 ## What Makes It Different

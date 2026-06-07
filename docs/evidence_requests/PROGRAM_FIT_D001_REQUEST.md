@@ -1,4 +1,4 @@
-# Evidence Request: FUNDING_FIT_D001
+# Evidence Request: PROGRAM_FIT_D001
 
 Status: request scaffold. This is not evidence.
 
@@ -8,7 +8,7 @@ To be written narrowly by the requester before protocol freeze.
 
 ## Claim Source URL
 
-Public-interest open-source funding eligibility source, identity withheld from public card to avoid implying funder affiliation.
+Public-interest open-source program eligibility source, identity withheld from public card to avoid implying program-sponsor affiliation.
 
 ## Narrow ClaimBound Question
 
@@ -25,7 +25,7 @@ MANUAL_NO_AI
 
 ## Proposed Sources
 
-- Public source under review: public-interest open-source funding eligibility source, identity withheld from public card to avoid implying funder affiliation.
+- Public source under review: public-interest open-source program eligibility source, identity withheld from public card to avoid implying program-sponsor affiliation.
 
 ## Proposed Scoring Or Resolution Rule
 
