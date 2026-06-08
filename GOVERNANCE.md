@@ -19,7 +19,7 @@ The maintainer is responsible for:
 
 Evidence status is determined by protocol, source boundary, artifacts,
 validator output and documented limitations. It is not determined by votes,
-popularity, funding interest or maintainer preference.
+popularity, award interest or maintainer preference.
 
 Requests and scaffolds are not evidence. A result becomes public evidence only
 after:
@@ -48,7 +48,7 @@ boundary.
 
 This repository does not provide:
 
-- legal, procurement, compliance, funding or investment decisions;
+- legal, procurement, compliance, award or investment decisions;
 - certification;
 - model rankings by default;
 - hosted review services;

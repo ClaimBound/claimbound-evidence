@@ -1,4 +1,4 @@
-# Evidence Request: FUNDING_REVIEW_D001
+# Evidence Request: PROGRAM_REVIEW_D001
 
 Status: request scaffold. This is not evidence.
 
@@ -17,7 +17,7 @@ rule, hashes, result status, limitation and rerun path?
 
 ## Main Audience
 
-Funding reviewers and program evaluators
+Program reviewers and evaluators
 
 ## Preferred Track
 

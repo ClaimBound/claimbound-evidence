@@ -1,4 +1,4 @@
-# FUNDING_FIT_D001 Operator Declaration
+# PROGRAM_FIT_D001 Operator Declaration
 
 ```text
 I fixed source, selection, prompt or target, scoring rule, controls, stop

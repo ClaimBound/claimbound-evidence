@@ -126,7 +126,7 @@ uv run python scripts/claimbound_scaffold_track.py \
   --out "docs/manual_audit/REPRO_APPENDIX_D001"
 ```
 
-## 4. Funding Reviewers And Program Evaluators
+## 4. Program Reviewers And Evaluators
 
 Scenario:
 
@@ -154,12 +154,12 @@ Scaffold:
 
 ```bash
 uv run python scripts/claimbound_scaffold_track.py \
-  --source-url "https://example.org/funding-result" \
-  --protocol-id "FUNDING_REVIEW_D001" \
-  --domain "funding-review" \
+  --source-url "https://example.org/program-review-result" \
+  --protocol-id "PROGRAM_REVIEW_D001" \
+  --domain "program-review" \
   --track-type "evidence_appendix" \
   --execution-mode "MANUAL_NO_AI" \
-  --out "docs/manual_audit/FUNDING_REVIEW_D001"
+  --out "docs/manual_audit/PROGRAM_REVIEW_D001"
 ```
 
 ## 5. Data Stewards And Public-Data Teams

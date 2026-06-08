@@ -51,7 +51,7 @@ evidence request
 | Open science and reproducibility teams | `REPRO_APPENDIX_D001`, NASA POWER D-103, NOAA CO-OPS D-131 | A published result can pass, fail or reproduce with drift under a fixed protocol. | NASA passed with source-byte drift; NOAA is negative; reproduction appendix is blocked. |
 | ML researchers | `ML_APPENDIX_D001` | A method appendix states source, baselines, controls, gate and claim boundary. | `BLOCKED_SOURCE` until a completed run validates. |
 | Educators | `EDU_REPRO_D001` | Students can learn protocol freeze, status discipline and limitation writing on public data. | `BLOCKED_SOURCE` until a classroom run is completed. |
-| Funding reviewers and program evaluators | `FUNDING_REVIEW_D001` | A report or proposal has source, protocol, status and forbidden-claim boundaries. | `BLOCKED_SOURCE` until the appendix links to validated cards. |
+| Program reviewers and evaluators | `PROGRAM_REVIEW_D001` | A report or proposal has source, protocol, status and forbidden-claim boundaries. | `BLOCKED_SOURCE` until the appendix links to validated cards. |
 
 ## Scaffold Files
 

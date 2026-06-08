@@ -70,10 +70,10 @@ ClaimBound cards are deliberately narrow. A card must not be used to claim:
 
 - model safety or deployment readiness from a source audit;
 - broad model superiority from a small benchmark;
-- legal, procurement or funding approval;
+- legal, procurement or award approval;
 - investment advice or production forecasting quality;
 - raw-byte reproduction when source bytes changed;
-- endorsement by a source owner or funding organization.
+- endorsement by a source owner or program sponsor.
 
 ## Good First Issues To Open
 

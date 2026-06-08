@@ -15,7 +15,7 @@ certification authority.
 | AI risk, security and automation-control teams | Adds an evidence-bound control layer for AI-assisted decisions, agent actions, security-sensitive changes and robotics/vehicle-software claims without pretending to be a runtime safety controller. |
 | Software developers and maintainers | Adds a narrow evidence trail for risky, public, regression-sensitive or AI-assisted software changes without replacing tests, CI or review. |
 | Open-science researchers | Makes negative, blocked and reproduced outcomes publishable. |
-| Funding reviewers and program evaluators | Provides a compact trail from protocol to source to status to limitation. |
+| Program reviewers and evaluators | Provides a compact trail from protocol to source to status to limitation. |
 | Data stewards and public-data teams | Makes source boundary, rights notes and coverage limits visible. |
 | Civic-tech, journalism and watchdog projects | Supports transparent public-data checks without deployment claims. |
 | ML researchers | Separates narrow evidence from broad model-superiority claims. |
@@ -86,9 +86,9 @@ API, parity or regression claim. The evidence card should say exactly which
 command, fixture, environment and boundary were checked, and what must not be
 inferred from the result.
 
-For funding reviewers and program evaluators, the same question can be applied
+For program reviewers and program evaluators, the same question can be applied
 to one applicant-side public self-check. See the completed
-[FUNDING_FIT_D001 card](evidence_cards/CLAIMBOUND-FUNDING_FIT_D001-2026-06-04.json);
+[PROGRAM_FIT_D001 card](evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json);
 it maps public project materials to selected public-interest eligibility
 categories without claiming approval, endorsement, legal eligibility or award
 likelihood.
