@@ -39,6 +39,10 @@ That page explains the difference between ClaimBound and broad mnemonic rules,
 and gives examples for agent security, robotics and driver-assistance-style
 claims.
 
+For the compact rulebook version, see [12 AI Life Rules](TWELVE_AI_LIFE_CONTROLS.md).
+Those rules describe ClaimBound as a portable evidence-bound control layer for
+AI claims and actions across internal, external and public use.
+
 Software-development guidance is in
 [software development workflow](SOFTWARE_DEVELOPMENT_WORKFLOW.md). That page
 keeps software evidence narrow: it helps document complex or risky changes, but

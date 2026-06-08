@@ -4,6 +4,11 @@ Status: practical guidance. This page does not create an empirical result, safet
 
 ClaimBound can be used as an evidence-bound control layer around AI-assisted work. It is not a replacement for safety engineering, cybersecurity, access control, sandboxing, formal verification, runtime monitoring, robot safety standards, human supervision or emergency-stop design.
 
+For the compact rulebook version of this idea, see
+[12 AI Life Rules](TWELVE_AI_LIFE_CONTROLS.md). Those rules are practical guidance for
+using ClaimBound internally, externally or publicly around AI-assisted claims
+and actions.
+
 ## Is ClaimBound A Rule System For Managing AI?
 
 ClaimBound is not a set of moral slogans for AI. It is a way to make narrow AI-related claims and actions checkable.

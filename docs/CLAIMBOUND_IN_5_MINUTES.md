@@ -25,6 +25,11 @@ ClaimBound is not a leaderboard, certification authority, newsroom, raw-data
 archive or blockchain project. It is a thin evidence layer between a claim and a
 public source.
 
+For AI-assisted work, that same evidence layer can be read as
+[12 AI Life Rules](TWELVE_AI_LIFE_CONTROLS.md): AI may assist, but the trusted
+claim or action still needs a boundary, source, frozen gate, blocked-state
+policy, audit trail and human review when the action requires it.
+
 ## One Simple AI Example
 
 Public claim:

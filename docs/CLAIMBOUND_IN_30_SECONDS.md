@@ -58,6 +58,11 @@ Green means one narrow claim passed under the stated protocol. Negative,
 blocked, insufficient and drift results are useful too, because they prevent
 weak or incomplete evidence from being renamed as success.
 
+For AI-assisted claims and actions, the same discipline becomes
+[12 AI Life Rules](TWELVE_AI_LIFE_CONTROLS.md): a compact control layer for
+boundaries, sources, frozen gates, blocked states, human review, audit trails
+and tombstones.
+
 ## Honest Caveat
 
 ClaimBound is an early open-source evidence framework with public examples and a

@@ -6,6 +6,10 @@ ClaimBound can support software development when a change needs a small public
 evidence trail: the narrow claim, the frozen rule, the commands or checklist
 used, the result status, and the boundary of what the result does not prove.
 
+For AI-assisted changes, the compact rulebook is
+[12 AI Life Rules](TWELVE_AI_LIFE_CONTROLS.md). It frames evidence cards as checkpoints
+for bounded claims, reversible action, human gates, audit trails and tombstones.
+
 It is not a replacement for unit tests, integration tests, CLI commands, CI,
 manual QA, code review, release engineering, security review, maintainer
 judgment or ordinary project quality practices. ClaimBound records and explains
