@@ -4,7 +4,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://github.com/ClaimBound/claimbound-evidence/blob/main/LICENSE)
 [![Python >=3.12](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://github.com/ClaimBound/claimbound-evidence/blob/main/pyproject.toml)
 [![tests](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml)
-[![Release: v0.3.3](docs/assets/badge_release.svg)](https://github.com/ClaimBound/claimbound-evidence/releases/tag/v0.3.3)
+[![Release: v0.4.0](docs/assets/badge_release.svg)](https://github.com/ClaimBound/claimbound-evidence/releases/tag/v0.4.0)
 
 <p align="center">
   <img
@@ -44,6 +44,9 @@ cards in those areas are first-class evidence, not hidden failures.
 Artifact-only records (for example NYC TLC Phase 4 and CDC mirror summaries) are
 listed separately in [docs/artifacts/README.md](docs/artifacts/README.md) and
 are not presented as completed evidence cards.
+
+Software R&D methodology case study (external, staging):
+[docs/case_studies/SOFTWARE_RND_EVIDENCE_CASE_STUDY.md](docs/case_studies/SOFTWARE_RND_EVIDENCE_CASE_STUDY.md).
 
 <h2 id="claimbound-in-30-seconds">ClaimBound In 30 Seconds</h2>
 

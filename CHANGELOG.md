@@ -1,6 +1,20 @@
 # Changelog
 
-## 0.4.0 - Unreleased
+## 0.4.0 - 2026-06-11
+
+### Added
+
+- Reviewer surface release: European Dimension, rerun examples, software-dev
+  card, external R&D case study page, sustainability plan.
+- `CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11` validated software-development card.
+- `docs/case_studies/SOFTWARE_RND_EVIDENCE_CASE_STUDY.md` for external NO-GO R&D
+  narrative (private staging repo until public flip).
+- `docs/SUSTAINABILITY.md` maintenance and scope boundaries.
+
+### Changed
+
+- README foreground: three primary workflows plus future applications tier.
+- Registry: 18 validated cards.
 
 ## 0.3.3 - 2026-06-11
 
