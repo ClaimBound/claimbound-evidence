@@ -54,6 +54,6 @@ def test_software_dev_card_claim_sentence_is_gate_pass_not_validator_failure() -
     visible = re.sub(r"<[^>]+>", " ", svg)
     collapsed = " ".join(visible.split())
 
-    assert "regression gate passed" in collapsed
-    assert "validator rejects card JSON missing execution_mode" in collapsed
-    assert "validator rejected a card missing" not in collapsed
+    assert "required-field regression gate passed for execution_mode enforcement" in collapsed
+    assert "validator rejects" not in collapsed.lower()
+    assert "validator rejected" not in collapsed.lower()

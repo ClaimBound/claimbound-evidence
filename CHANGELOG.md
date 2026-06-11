@@ -6,8 +6,8 @@
 
 - Evidence-card SVG renderer now uses inline text attributes so cards render in
   GitHub README `<img>` embeds (GitHub strips internal `<style>` blocks).
-- Clarified SOFTWARE_DEV_D001 allowed claim: regression gate passed, validator
-  rejects missing `execution_mode`.
+- Clarified SOFTWARE_DEV_D001 allowed claim: required-field regression gate
+  passed for `execution_mode` enforcement (no failure-style headline wording).
 
 ### Changed
 
