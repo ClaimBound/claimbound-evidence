@@ -1,6 +1,10 @@
 # Software Development Workflow
 
-Status: guidance and scaffold. This page is not a completed evidence record.
+Status: guidance with one completed example card.
+
+Completed example:
+[CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11](evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json)
+(validator regression gate under frozen pytest commands).
 
 ClaimBound can support software development when a change needs a small public
 evidence trail: the narrow claim, the frozen rule, the commands or checklist
