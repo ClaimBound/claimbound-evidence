@@ -48,6 +48,7 @@ Color is a reading aid, not a second result system.
 | ML researchers | Narrow method appendices with controls, baselines and claim boundaries. | [ML appendix JSON](CLAIMBOUND-ML_APPENDIX_D001-2026-05-07.json) / [SVG](CLAIMBOUND-ML_APPENDIX_D001-2026-05-07.svg) | `BLOCKED_SOURCE` |
 | Educators | Small classroom reproducibility exercises. | [Education reproduction JSON](CLAIMBOUND-EDU_REPRO_D001-2026-05-07.json) / [SVG](CLAIMBOUND-EDU_REPRO_D001-2026-05-07.svg) | `BLOCKED_SOURCE` |
 | Program reviewers and evaluators | Whether a proposal or report has protocol, source, status and limitations. | [Award review JSON](CLAIMBOUND-PROGRAM_REVIEW_D001-2026-05-07.json) / [SVG](CLAIMBOUND-PROGRAM_REVIEW_D001-2026-05-07.svg)<br>[Award-fit self-check JSON](CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json) / [SVG](CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.svg) | Review appendix: `BLOCKED_SOURCE`<br>Self-check: `PASSED_UNDER_PROTOCOL`, single-operator only |
+| Software developers and maintainers | Whether a narrow validator or regression gate passed under frozen commands. | [Software dev validator gate JSON](CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json) / [SVG](CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.svg) | `PASSED_UNDER_PROTOCOL` |
 
 ## What The Mix Shows
 
