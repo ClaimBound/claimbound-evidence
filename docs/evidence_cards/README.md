@@ -14,6 +14,14 @@ Each card is a compact JSON record that points to:
 The SVG preview is rendered from the JSON card. Do not edit rendered SVG cards
 by hand after the result is known.
 
+## Card Versus Artifact Versus Scaffold
+
+| Type | In [registry](../registry/evidence_index.json)? | Meaning |
+| --- | --- | --- |
+| Evidence card | Yes | Frozen protocol, exact status, claim boundary, validated JSON/SVG |
+| Artifact-only | No | Useful run output without full card promotion — see [artifacts catalog](../artifacts/README.md) |
+| Scaffold | No | Gray draft from `claimbound new`; not evidence |
+
 ## Color Semantics
 
 Color is a reading aid, not a second result system.
