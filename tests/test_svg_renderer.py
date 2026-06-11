@@ -3,32 +3,18 @@
 
 from __future__ import annotations
 
-import importlib.util as ilu
+import re
 from pathlib import Path
 
+from claimbound_evidence.card_svg_render import render_svg
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-
-
-def _load_renderer():
-    script_path = REPO_ROOT / "scripts" / "claimbound_render_evidence_card_svg.py"
-    spec = ilu.spec_from_file_location("claimbound_render_evidence_card_svg_mod", script_path)
-    assert spec is not None and spec.loader is not None
-    module = ilu.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+CARDS_DIR = REPO_ROOT / "docs" / "evidence_cards"
 
 
 def test_grok_card_renders_svg_without_placeholders() -> None:
-    renderer = _load_renderer()
-    card_path = (
-        REPO_ROOT
-        / "docs"
-        / "evidence_cards"
-        / "CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json"
-    )
-
-    svg = renderer.render_svg(card_path, REPO_ROOT / "docs" / "assets" / "claimbound_evidence_card.svg")
+    card_path = CARDS_DIR / "CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json"
+    svg = render_svg(card_path)
 
     assert "{{" not in svg
     assert "..." not in svg
@@ -43,28 +29,31 @@ def test_grok_card_renders_svg_without_placeholders() -> None:
 
 
 def test_status_and_reproduction_colors_are_rendered() -> None:
-    renderer = _load_renderer()
-
-    noaa_svg = renderer.render_svg(
-        REPO_ROOT
-        / "docs"
-        / "evidence_cards"
-        / "CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json"
-    )
-    nasa_svg = renderer.render_svg(
-        REPO_ROOT
-        / "docs"
-        / "evidence_cards"
-        / "CLAIMBOUND-NASA-POWER-D103-2026-04-29.json"
-    )
-    blocked_svg = renderer.render_svg(
-        REPO_ROOT
-        / "docs"
-        / "evidence_cards"
-        / "CLAIMBOUND-MODEL_EVAL_D001-2026-05-07.json"
-    )
+    noaa_svg = render_svg(CARDS_DIR / "CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json")
+    nasa_svg = render_svg(CARDS_DIR / "CLAIMBOUND-NASA-POWER-D103-2026-04-29.json")
+    blocked_svg = render_svg(CARDS_DIR / "CLAIMBOUND-MODEL_EVAL_D001-2026-05-07.json")
 
     assert 'fill="url(#redGrad)"' in noaa_svg
     assert 'fill="url(#yellowGrad)"' in nasa_svg
     assert "OUTCOME REPRODUCED; BYTE DRIFT" in nasa_svg
     assert 'fill="url(#amberGrad)"' in blocked_svg
+
+
+def test_svg_uses_inline_text_styles_for_github_readme_safety() -> None:
+    svg = render_svg(CARDS_DIR / "CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json")
+
+    assert "<style>" not in svg
+    assert 'class="claimText"' not in svg
+    assert 'fill="#0d1736"' in svg
+    assert 'font-size="39"' in svg
+    assert "PASSED_UNDER_PROTOCOL" in svg
+
+
+def test_software_dev_card_claim_sentence_is_gate_pass_not_validator_failure() -> None:
+    svg = render_svg(CARDS_DIR / "CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json")
+    visible = re.sub(r"<[^>]+>", " ", svg)
+    collapsed = " ".join(visible.split())
+
+    assert "regression gate passed" in collapsed
+    assert "validator rejects card JSON missing execution_mode" in collapsed
+    assert "validator rejected a card missing" not in collapsed
