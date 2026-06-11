@@ -4,7 +4,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://github.com/ClaimBound/claimbound-evidence/blob/main/LICENSE)
 [![Python >=3.12](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://github.com/ClaimBound/claimbound-evidence/blob/main/pyproject.toml)
 [![tests](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml)
-[![Release: v0.4.1](docs/assets/badge_release.svg)](https://github.com/ClaimBound/claimbound-evidence/releases/tag/v0.4.1)
+[![Release: v0.4.2](docs/assets/badge_release.svg)](https://github.com/ClaimBound/claimbound-evidence/releases/tag/v0.4.2)
 
 <p align="center">
   <img
@@ -222,6 +222,17 @@ pass.
   />
 </p>
 
+Software development validator gate (in-repo example paired with the external
+[software R&D case study](docs/case_studies/SOFTWARE_RND_EVIDENCE_CASE_STUDY.md)):
+
+<p>
+  <img
+    src="docs/evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.svg"
+    alt="Green ClaimBound card for SOFTWARE_DEV_D001 validator regression gate"
+    width="65%"
+  />
+</p>
+
 | Example | Status | What the card proves | Links |
 | --- | --- | --- | --- |
 | Anthropic system-card source audit | `PASSED_UNDER_PROTOCOL` | The official system-card index passed a narrow public-document source audit. | [JSON](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json) / [SVG](docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg) |
@@ -229,6 +240,7 @@ pass.
 | EEA AQ manual track | `BLOCKED_SOURCE` | The larger PM10 manual track could not fairly run from an incomplete public URL manifest. | [JSON](docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.json) / [SVG](docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.svg) |
 | NASA POWER D-103 | `PASSED_UNDER_PROTOCOL` with `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` | The frozen gate-level outcome reproduced, but fresh source bytes differed. | [JSON](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg) |
 | NOAA CO-OPS D-131 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed and honestly did not pass the frozen gate. | [JSON](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json) / [SVG](docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg) |
+| Software dev validator gate D-001 | `PASSED_UNDER_PROTOCOL` | The evidence-card validator rejected a card missing `execution_mode` under frozen pytest gate SOFTWARE_DEV_D001 only. | [JSON](docs/evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json) / [SVG](docs/evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.svg) |
 
 Other registry examples include public-interest self-checks and blocked-source
 records that are deliberately kept out of this first-screen table. For the full

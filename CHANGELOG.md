@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.2 - 2026-06-11
+
+### Changed
+
+- Embed the `SOFTWARE_DEV_D001` evidence card SVG in README, software
+  development workflow, case study page and current tracks summary.
+
 ## 0.4.1 - 2026-06-11
 
 ### Changed

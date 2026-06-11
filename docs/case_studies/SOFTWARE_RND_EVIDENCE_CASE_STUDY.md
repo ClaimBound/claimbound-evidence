@@ -42,9 +42,19 @@ the same anti-overclaiming discipline applied to a private R&D program:
 
 ## Completed in-repo software example
 
-For a validated **software-development evidence card inside this repository**,
-see
-[CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11](../evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json).
+Validated **software-development evidence card** inside this repository
+(validator regression gate under frozen pytest commands):
+
+<p>
+  <img
+    src="../evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.svg"
+    alt="ClaimBound SOFTWARE_DEV_D001 evidence card"
+    width="75%"
+  />
+</p>
+
+[JSON](../evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json) ·
+[SVG](../evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.svg)
 
 ## Read next
 

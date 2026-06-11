@@ -16,6 +16,7 @@ protocols, sanitized artifacts, evidence cards and registry entries.
 | Award-fit self-check D-001 | Public-interest open-source program eligibility information | `PASSED_UNDER_PROTOCOL` | Public ClaimBound materials mapped to selected program eligibility categories under a frozen manual checklist, without claiming approval, endorsement, legal eligibility, reviewer acceptance or award likelihood. |
 | NASA POWER D-103 | NASA POWER Daily point API | `PASSED_UNDER_PROTOCOL` | A narrow renewable-resource signal passed the frozen gate for the documented points, period, target, controls and acceptance rule only. |
 | NOAA CO-OPS D-131 | NOAA CO-OPS Data API | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed, but the candidate did not pass the frozen acceptance gate. |
+| Software dev validator gate D-001 | ClaimBound evidence repository | `PASSED_UNDER_PROTOCOL` | The evidence-card validator rejected a card JSON missing `execution_mode` when exercised by the frozen pytest gate in protocol SOFTWARE_DEV_D001 only. |
 | NYC TLC Phase 4 | NYC TLC public trip records | Negative artifact | The official-source run completed, but the candidate did not pass all required controls. A full evidence card should be added or the record should remain clearly marked as artifact-only. |
 | CDC mirror path | Public mirror path | Blocked-source style artifact | The proof path completed, but external source equivalence remained unresolved. No empirical pass or fail claim should be made. |
 
