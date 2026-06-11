@@ -15,18 +15,81 @@ Completed example (validator regression gate under frozen pytest commands):
 [CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11](evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json) ·
 [SVG](evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.svg)
 
-ClaimBound can support software development when a change needs a small public
-evidence trail: the narrow claim, the frozen rule, the commands or checklist
-used, the result status, and the boundary of what the result does not prove.
+## Where ClaimBound Was Used Here
 
-For AI-assisted changes, the compact rulebook is
-[12 AI Life Rules](TWELVE_AI_LIFE_CONTROLS.md). It frames evidence cards as checkpoints
-for bounded claims, reversible action, human gates, audit trails and tombstones.
+This repository ships two linked software examples:
 
-It is not a replacement for unit tests, integration tests, CLI commands, CI,
-manual QA, code review, release engineering, security review, maintainer
-judgment or ordinary project quality practices. ClaimBound records and explains
-selected checks; it does not become the checks.
+| Layer | Where | How ClaimBound was used |
+| --- | --- | --- |
+| In-repo card | [SOFTWARE_DEV_D001](protocols/SOFTWARE_DEV_D001_PREREG_CHARTER.md) | Frozen protocol, fixed pytest gate, `validate-all`, sanitized summary hash, validated JSON/SVG card and registry entry. |
+| External case study | [software-rnd-evidence-case-study](case_studies/SOFTWARE_RND_EVIDENCE_CASE_STUDY.md) | Same evidence-chain discipline on a private multi-protocol R&D track: protocol → run → report → negative/blocked record, with explicit NO-GO track closure. |
+
+### In-repo use (SOFTWARE_DEV_D001)
+
+**Where:** evidence-card validator regression in this repository.
+
+**How:**
+
+1. Pre-registered charter froze one narrow claim before the run.
+2. Operator ran fixed commands only:
+   `pytest tests/test_evidence_card.py::test_evidence_card_requires_execution_mode`
+   and `claimbound validate-all`.
+3. Sanitized summary went to `artifacts/software_dev_d001_summary.json` with SHA-256.
+4. Card JSON/SVG and registry entry recorded exact status, limitations and forbidden interpretations.
+
+**Why:** the project needed a public, reviewable proof that the validator still
+rejects a card missing `execution_mode` — not a vague “tests are green” story.
+
+**What it gave:** a third party can see the exact gate, commit context, hash and
+boundary without reading the whole test suite or inferring deployment readiness.
+
+### External use (software R&D case study)
+
+**Where:** a private time-series R&D program, published later as a sanitized static export.
+
+**How:** Hardgate A/B protocol ladder, negative/blocked YAML records, closure
+docs and an explicit tombstone when replication candidates stayed at zero.
+
+**Why:** utility R&D often overclaims from early deltas. ClaimBound-style rules
+forced frozen protocols, first-class negative records and honest track closure.
+
+**What it gave:** a public methodology example that shows NO-GO and BLOCKED
+outcomes as useful evidence instead of silent continuation or marketing upgrade.
+
+## Why ClaimBound — Strengths For Software Work
+
+| Strength | What it means in practice |
+| --- | --- |
+| Narrow claims | Replaces `works`, `fixed`, `ready` with one falsifiable sentence. |
+| Frozen protocol | Rules and gates are fixed before the run; thresholds cannot drift after results. |
+| Exact status | `PASSED`, `NEGATIVE`, `BLOCKED` and `INSUFFICIENT` stay distinct. |
+| Claim boundary | Every card states what must **not** be inferred from a green result. |
+| Evidence chain | protocol → dataset/command → run → report/hash → card or negative record. |
+| Negative results stay visible | Failures and blocked domains remain first-class, not deleted or reframed. |
+| Thin layer over engineering | Records selected checks; does not replace tests, CI, review or security work. |
+| Public review surface | JSON, SVG, registry and sanitized artifacts are shareable without raw payloads. |
+
+For this repository, the card above is green only for one validator regression
+gate. It is not proof that the whole toolkit, CI or any external R&D program is
+production-ready.
+
+## What Would Change Without ClaimBound
+
+Without this discipline, the same work would likely look like ordinary engineering
+documentation:
+
+| Without ClaimBound | Typical failure mode |
+| --- | --- |
+| `pytest` green only | Readers assume full validator coverage or project correctness. |
+| README success narrative | A small Mission1 delta can be marketed as overall utility success. |
+| No frozen protocol | Gates move after seeing results; selective reruns look like progress. |
+| No negative records | BLOCKED domains and NO-GO tracks disappear into “future work”. |
+| No claim boundary | Reviewers, funders or users infer endorsement, safety or readiness. |
+| No hashed sanitized report | “We checked it” has no stable artifact to compare later. |
+| No registry card | The check is not discoverable, citable or independently rerunnable. |
+
+ClaimBound does not make software correct. It makes **what was checked, under
+which limits, with which outcome** hard to exaggerate later.
 
 ## Core Principle
 
@@ -42,229 +105,77 @@ ordinary engineering work
 = reviewable evidence record
 ```
 
-The evidence card should answer one question only:
-
-```text
-What exactly was checked, by which fixed procedure, at which commit, and what
-must readers not infer from the result?
-```
-
 A green software-development card means one narrow software claim passed under
 one written protocol. It does not mean the whole project is correct, secure,
 complete, stable or deployment-ready.
 
+For AI-assisted changes, see [12 AI Life Rules](TWELVE_AI_LIFE_CONTROLS.md).
+
+ClaimBound is not a replacement for unit tests, integration tests, CLI, CI,
+manual QA, code review, release engineering or security review.
+
 ## When It Fits
 
 Use ClaimBound for complex, risky, public, AI-assisted or regression-sensitive
-software changes. Do not use a full track for every typo, formatting edit, small
-comment or disposable prototype.
+software changes — including R&D sequences where proof, reproduction and closure
+must not be confused.
 
-Good fit examples:
-
-- public pull requests that change behavior users rely on;
-- crash, data-loss, migration, compatibility or regression fixes;
-- AI-assisted patches that need deterministic verification;
-- compatibility, parity or regression checks with fixed fixtures;
-- local API, CLI or library behavior checks summarized with sanitized logs and hashes;
-- interactive or manual workflows where a checklist is needed because no unit
-  test covers the scenario yet;
-- build-system, packaging or platform-compatibility changes where environment
-  details matter;
-- R&D sequences where diagnostic, proof, reproduction and closure tracks must
-  not be confused.
+Do not use a full track for typo fixes, formatting-only edits or disposable
+prototypes.
 
 ## Practical Advantages
 
 | Development problem | ClaimBound contribution |
 | --- | --- |
-| Broad claims such as `the feature works` | Converts the statement into one or more narrow, testable claims. |
-| Regression risk | Records the exact commands, fixtures, logs, environment notes and limitations. |
-| AI-assisted patches | Separates code generation from deterministic runner or checklist results. |
-| Public PR review | Shows what was checked, what was not checked and what is still risky. |
-| Hard-to-automate behavior | Allows a manual checklist while keeping the result bounded and auditable. |
+| Broad claims such as `the feature works` | Converts the statement into narrow, testable claims. |
+| Regression risk | Records exact commands, fixtures, logs and limitations. |
+| AI-assisted patches | Separates code generation from deterministic runner results. |
+| Public PR review | Shows what was checked, what was not checked and what remains risky. |
 | Negative or blocked outcomes | Keeps failures useful instead of renaming them as success. |
-| Repeated R&D attempts | Uses family ledgers, stop rules and closure records to avoid selective reruns. |
-| Cross-platform uncertainty | Makes OS, compiler, runtime and fixture boundaries explicit. |
-| Long logs | Replaces log dumping with a short evidence summary plus hashes and retained artifacts. |
+| Repeated R&D attempts | Uses stop rules and closure records to avoid selective reruns. |
 
 ## Examples Of Narrow Software Claims
 
-ClaimBound is most useful when vague engineering language is rewritten as small
-claims that can pass, fail, block or remain insufficient.
-
 | Vague statement | Better ClaimBound claim |
 | --- | --- |
-| `The feature works.` | `The feature command returns exit code 0 and writes the expected output for fixture set A on commit X.` |
-| `The crash is fixed.` | `The documented reproduction path completes without process crash or fatal log marker on the declared local environment.` |
-| `The API is compatible.` | `Endpoint A returns the same response schema for fixture requests F001-F010 as the frozen baseline, except for documented field B.` |
-| `The refactor is safe.` | `The refactored module preserves the frozen public behavior for the listed fixtures and passes the existing test suite.` |
-| `The AI patch is good.` | `The AI-assisted patch passes the fixed runner, does not modify forbidden files and leaves the declared regression checks green.` |
-| `The CLI works.` | The command `tool subcommand --fixture fixtures/basic.json` exits 0 and emits the frozen stdout markers. |
-| `Performance improved.` | `The benchmark command completes the fixed workload at least N% faster than the baseline on the declared machine, without changing output hashes.` |
+| `The feature works.` | `The feature command returns exit code 0 for fixture set A on commit X.` |
+| `The crash is fixed.` | `The documented reproduction path completes without crash on the declared environment.` |
+| `The AI patch is good.` | `The AI-assisted patch passes the fixed runner and leaves declared regression checks green.` |
 
-Good claims are small, environment-bound and falsifiable. Weak claims are broad,
-subjective or deployment-like.
-
-## Example Track Patterns
-
-### Regression or crash fix
-
-```text
-Claim 1: The project builds on the declared local environment.
-Claim 2: The existing test suite remains green.
-Claim 3: The documented reproduction path no longer crashes.
-Claim 4: The sanitized log contains no fatal marker for the tested path.
-Claim 5: The fix does not disable the feature or remove the entry point.
-Claim 6: The result is limited to the declared OS, build type, commit and fixtures.
-```
-
-This is useful when a bug is easy to describe but hard to prove globally. The
-card should say `passed under this path`, not `bug eliminated everywhere`.
-
-### API, library or CLI behavior
-
-```text
-Claim 1: The command or endpoint is invoked with a frozen fixture set.
-Claim 2: Exit code, response schema, stdout markers or output hashes match the gate.
-Claim 3: Known unsupported arguments, inputs or platforms are listed as limitations.
-Claim 4: The result comes from the command, test or validator, not from AI opinion.
-```
-
-This is useful for public packages, tools, data pipelines and local services.
-
-### Refactor, migration or compatibility work
-
-```text
-Claim 1: The old and new implementations produce matching output for frozen fixtures.
-Claim 2: The existing unit and integration tests still pass.
-Claim 3: Any intentional output differences are listed before scoring.
-Claim 4: The card does not claim full semantic equivalence outside the fixtures.
-```
-
-This is useful when the main risk is preserving behavior while changing internals.
-
-### AI-assisted patch
-
-```text
-Claim 1: The AI-assisted change is limited to declared files or modules.
-Claim 2: The generated code passes the fixed runner or checklist.
-Claim 3: The patch does not remove asserts, disable checks or hide errors unless that is the explicit frozen claim.
-Claim 4: A human maintainer approves final status and boundary wording.
-```
-
-This is useful because AI can write plausible code while still missing the real
-engineering boundary.
+More track patterns: [TRACK_PATTERN_EXAMPLES.md](software_development/TRACK_PATTERN_EXAMPLES.md).
 
 ## What ClaimBound Does Not Replace
 
-ClaimBound must stay outside the normal quality stack. It can cite or summarize
-ordinary checks, but it must not replace them.
-
-It does not replace:
-
-- unit tests;
-- integration tests;
-- end-to-end tests;
-- property tests or fuzz tests;
-- CLI commands and local verification scripts;
-- CI workflows and build matrices;
-- compiler warnings, linters, type checkers or formatters;
-- code review;
-- maintainer judgment;
-- manual QA;
-- security review, threat modeling or penetration testing;
-- release engineering and rollback planning;
-- production monitoring and incident response;
-- documentation review.
-
-The correct relationship is:
+Unit tests, integration tests, CI, linters, code review, maintainer judgment,
+manual QA, security review, release engineering and production monitoring.
 
 ```text
-Unit tests / CI / CLI / review decide engineering quality.
+Tests / CI / review decide engineering quality.
 ClaimBound records one narrow evidence claim about selected checks and their limits.
 ```
 
 ## Where ClaimBound Should Not Be Applied
 
-Do not use a full ClaimBound track when the overhead is larger than the risk or
-when the claim cannot be made narrow and checkable.
-
-Usually not worth it:
-
-- typo fixes;
-- formatting-only changes;
-- comment-only edits;
-- small rename-only patches;
-- disposable local experiments;
-- private scratch prototypes that will not become a PR;
-- purely subjective preference changes;
-- one-off debugging notes that will not be reused.
-
-Wrong or dangerous uses:
-
-- claiming the whole project is correct because one evidence card is green;
-- claiming production readiness from a local-only check;
-- claiming security certification without an external security review process;
-- turning subjective judgment into a fake objective result after seeing output;
-- using a card to bypass tests, CI or review;
-- hiding negative, blocked or insufficient results;
-- changing thresholds, fixtures or acceptance gates after seeing the result;
-- using vague claims such as `fixed`, `works`, `safe`, `ready` or `secure`
-  without a frozen boundary.
+Do not use a full track when overhead exceeds risk or the claim cannot be narrow
+and checkable. Do not claim whole-project correctness, production readiness or
+security certification from one green card.
 
 ## Fit Levels
 
 | Fit level | Examples | Recommended use |
 | --- | --- | --- |
-| Strong fit | crash fixes, regression-sensitive behavior, public API changes, migrations, AI-assisted patches, cross-platform compatibility, R&D proof tracks | Use a full ClaimBound track with claims, commands/checklist, artifacts and limitations. |
-| Moderate fit | UI behavior, build packaging, developer tooling, documentation examples with executable snippets | Use a short evidence summary or a lightweight track when the change is public or risky. |
-| Weak fit | style-only edits, comments, renames, exploratory prototypes | Do not use ClaimBound unless the change becomes a public or risky claim. |
-| Not appropriate | broad correctness, security certification, production readiness, subjective quality claims | Split into narrow claims or use ordinary engineering/governance processes instead. |
+| Strong fit | crash fixes, API changes, AI-assisted patches, R&D proof tracks | Full track with claims, commands, artifacts and limitations. |
+| Moderate fit | build packaging, executable doc examples | Lightweight summary when public or risky. |
+| Weak fit | style-only edits, exploratory prototypes | Skip unless the change becomes a public claim. |
 
 ## Recommended PR Evidence Summary
 
-A software PR should stay readable. The public PR does not need a huge evidence
-bundle when a compact summary is enough.
-
-Good PR evidence summary:
-
 ```text
-Claim:
-- Narrow behavior, build, API, parity or regression claim.
-
-Checked:
-- Commit and branch.
-- Commands or manual checklist.
-- Fixture set or scenario.
-- Sanitized log/report path.
-- Result status.
-
-Passed:
-- Existing tests or selected command outputs.
-- Fixed runner/checklist result.
-
-Not checked:
-- Other platforms.
-- Other build modes.
-- Larger input corpus.
-- Production deployment.
-- Security properties.
+Claim: narrow behavior, build, API, parity or regression claim.
+Checked: commit, commands/checklist, fixtures, sanitized report path, status.
+Passed: selected tests or command outputs.
+Not checked: other platforms, build modes, production deployment, security.
 ```
-
-This helps maintainers review the change without pretending the evidence card is
-a replacement for ordinary project review.
-
-## Universal Protocol Use
-
-The same ClaimBound layers can support one software check or a larger development sequence:
-
-- an evidence card records one completed command, fixture, checklist or validator result;
-- a family ledger can hold a one-track claim list, proof surface, stop rule and closure boundary;
-- a frontier ledger can summarize runnable, stopped or closed development work when useful;
-- a v3 tree overlay can start as one node and later expand to many nodes with iron claims, flow claims and tombstones.
-
-These layers are optional helpers around normal engineering practice. They do
-not replace the project's tests, CI, review or release process.
 
 ## Workflow
 
@@ -274,23 +185,11 @@ software claim
   -> narrow claim list
   -> protocol freeze
   -> implementation or patch
-  -> deterministic tests, CLI command, CI result or manual checklist
+  -> deterministic tests, CLI, CI or manual checklist
   -> sanitized report and hashes
   -> validated evidence card
   -> optional independent rerun or closure
 ```
 
 The result must come from a command, test, checklist, validator or reviewed CI
-result, not from AI opinion.
-
-## Generic Draft Example
-
-Draft question:
-
-```text
-Can this software-development track produce a protocol-bound evidence record for one narrow behavior, compatibility, parity or regression claim, using fixed commands, fixtures, sanitized logs, hashes and a boundary that does not claim deployment readiness or correctness outside the protocol?
-```
-
-The draft evidence card should stay gray until a real run produces validated
-artifacts. A completed card may be green, amber, red or yellow depending on what
-happened.
+result — not from AI opinion.

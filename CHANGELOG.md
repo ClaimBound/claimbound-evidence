@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.4.3 - 2026-06-11
+
+### Added
+
+- Software development workflow: where/how ClaimBound was used, strengths, and
+  counterfactual without ClaimBound; track pattern examples split to companion doc.
+
+### Changed
+
+- `docs/SOFTWARE_DEVELOPMENT_WORKFLOW.md` expanded with completed in-repo and
+  external case-study usage narrative.
+
 ## 0.4.2 - 2026-06-11
 
 ### Changed

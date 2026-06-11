@@ -4,7 +4,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://github.com/ClaimBound/claimbound-evidence/blob/main/LICENSE)
 [![Python >=3.12](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://github.com/ClaimBound/claimbound-evidence/blob/main/pyproject.toml)
 [![tests](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml)
-[![Release: v0.4.2](docs/assets/badge_release.svg)](https://github.com/ClaimBound/claimbound-evidence/releases/tag/v0.4.2)
+[![Release: v0.4.3](docs/assets/badge_release.svg)](https://github.com/ClaimBound/claimbound-evidence/releases/tag/v0.4.3)
 
 <p align="center">
   <img
