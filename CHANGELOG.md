@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.4.4 - 2026-06-11
+
+### Fixed
+
+- Evidence-card SVG renderer now uses inline text attributes so cards render in
+  GitHub README `<img>` embeds (GitHub strips internal `<style>` blocks).
+- Clarified SOFTWARE_DEV_D001 allowed claim: regression gate passed, validator
+  rejects missing `execution_mode`.
+
+### Changed
+
+- Moved SVG render logic to `claimbound_evidence.card_svg_render`; regenerated
+  all committed evidence-card SVG files.
+
 ## 0.4.3 - 2026-06-11
 
 ### Added

@@ -17,6 +17,10 @@ FORBIDDEN_PATTERNS = (
     "/users/" + "rostsh",
     "tr" + "ading",
     "gr" + "ant",
+    "cu" + "rsoragent",
+    "co-authored-by: cu" + "rsor",
+    "made with cu" + "rsor",
+    "cursor" + ".com",
 )
 
 FORBIDDEN_IMPORT_PREFIXES = (
