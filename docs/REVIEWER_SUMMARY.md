@@ -45,6 +45,12 @@ Representative public examples:
 | NOAA CO-OPS D-131 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed and honestly did not pass the frozen gate. |
 | EEA AQ manual track | `BLOCKED_SOURCE` | A larger manual track was blocked by an incomplete public source manifest. |
 
+## European Dimension
+
+ClaimBound includes European public-data examples such as the EEA source-audit
+and blocked manual-track cards. See [European Dimension](EUROPEAN_DIMENSION.md)
+for the public-interest framing and explicit limits.
+
 ## Planned Public Work Package
 
 The public foreground should stay narrow and concrete. The planned work package
