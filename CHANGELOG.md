@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.1 - 2026-06-11
+
+### Changed
+
+- Cross-linked the public
+  [software-rnd-evidence-case-study](https://github.com/ClaimBound/software-rnd-evidence-case-study)
+  repository (v1.0.0) from README and case study page.
+- Removed staging / manual public-flip wording from the external case study docs.
+
 ## 0.4.0 - 2026-06-11
 
 ### Added

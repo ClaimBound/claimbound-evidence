@@ -7,16 +7,19 @@ negative and blocked evidence records.
 It is not a ClaimBound evidence card. It is not proof that any closed-core
 system works in production.
 
-## Repository (staging)
+## Repository
 
-Private staging repository (manual public flip pending maintainer review):
+Public sanitized export (methodology and negative/blocked records only):
 
 ```text
 https://github.com/ClaimBound/software-rnd-evidence-case-study
 ```
 
-Before citing this URL publicly, the maintainer must complete the private-repo
-sanitization checklist and switch visibility to **public** in GitHub Settings.
+Release: [v1.0.0](https://github.com/ClaimBound/software-rnd-evidence-case-study/releases/tag/v1.0.0).
+
+The repository does not ship proprietary closed-core code, raw payloads or funding
+application materials. Sanitization and audit gates run in a private source
+repository before export.
 
 ## What the case study shows
 
