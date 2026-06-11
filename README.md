@@ -4,7 +4,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://github.com/ClaimBound/claimbound-evidence/blob/main/LICENSE)
 [![Python >=3.12](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://github.com/ClaimBound/claimbound-evidence/blob/main/pyproject.toml)
 [![tests](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml)
-[![Release: v0.3.1](docs/assets/badge_release.svg)](https://github.com/ClaimBound/claimbound-evidence/releases/tag/v0.3.1)
+[![Release: v0.3.2](docs/assets/badge_release.svg)](https://github.com/ClaimBound/claimbound-evidence/releases/tag/v0.3.2)
 
 <p align="center">
   <img
@@ -26,6 +26,24 @@ Where is the evidence?
 ```
 
 If there is no evidence card, the statement is still only a claim.
+
+## Primary Public Workflows
+
+ClaimBound is intentionally narrow. Start with these three foreground workflows:
+
+| Workflow | Question it helps answer | Start here |
+| --- | --- | --- |
+| Public AI transparency | Did a public system-card or model-card **source boundary** pass a frozen audit? | [Current evidence tracks](docs/CURRENT_EVIDENCE_TRACKS.md) |
+| European and public open data | Did an official public-data source pass a source-boundary or narrow empirical gate? | [EEA and NASA examples](docs/evidence_cards/README.md) |
+| Software development evidence | Did a narrow build, validator or regression claim pass under fixed commands? | [Software development workflow](docs/SOFTWARE_DEVELOPMENT_WORKFLOW.md) |
+
+Additional domains such as robotics, procurement, civic tech and education remain
+documented as [future applications](docs/future_applications/README.md). Blocked
+cards in those areas are first-class evidence, not hidden failures.
+
+Artifact-only records (for example NYC TLC Phase 4 and CDC mirror summaries) are
+listed separately in [docs/artifacts/README.md](docs/artifacts/README.md) and
+are not presented as completed evidence cards.
 
 <h2 id="claimbound-in-30-seconds">ClaimBound In 30 Seconds</h2>
 

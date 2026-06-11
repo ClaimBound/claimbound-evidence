@@ -2,6 +2,22 @@
 
 ## 0.4.0 - Unreleased
 
+## 0.3.2 - 2026-06-11
+
+### Added
+
+- Added `docs/future_applications/` guides for robotics, procurement/civic and
+  education/open-science secondary domains.
+- Added `docs/artifacts/README.md` catalog for NYC TLC Phase 4 and CDC mirror
+  artifact-only records.
+
+### Changed
+
+- README foreground now highlights three primary workflows: AI transparency,
+  European/public open data and software development evidence.
+- Evidence card README now includes card versus artifact versus scaffold table.
+- Synchronized `pyproject.toml` version with release badge `v0.3.2`.
+
 ## 0.3.1 - 2026-06-05
 
 ### Added
