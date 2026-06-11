@@ -2,6 +2,19 @@
 
 ## 0.4.0 - Unreleased
 
+## 0.3.3 - 2026-06-11
+
+### Added
+
+- Added `docs/EUROPEAN_DIMENSION.md` for the European public-data and digital
+  commons framing.
+- Added `examples/rerun/README.md` with copy-paste local verification commands.
+
+### Changed
+
+- Linked European Dimension from README and reviewer summary.
+- Independent rerun workflow now points to runnable example commands.
+
 ## 0.3.2 - 2026-06-11
 
 ### Added

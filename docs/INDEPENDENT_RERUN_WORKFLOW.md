@@ -30,6 +30,9 @@ If you are new to the project, start with the
 how to set up the repository, create a local run root and avoid publishing raw
 payloads or overbroad claims.
 
+For copy-paste commands and expected outputs, see
+[examples/rerun/README.md](../examples/rerun/README.md).
+
 ## PR Path
 
 1. Create a local run root outside this repository.
