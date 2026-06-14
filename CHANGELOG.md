@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Added related-work and independence documentation that acknowledges EviBound
+  as prior art while separating ClaimBound Evidence's public evidence-card
+  scope from autonomous research-agent execution frameworks.
+
 ## 0.4.4 - 2026-06-11
 
 ### Fixed
