@@ -30,6 +30,10 @@ reproduction level.
 
 ClaimBound should not duplicate established projects.
 
+For adjacent evidence-bound autonomous research work and the explicit boundary
+between ClaimBound Evidence and EviBound, see
+[Related Work And Independence](RELATED_WORK_AND_INDEPENDENCE.md).
+
 | Existing project type | Already covered elsewhere | ClaimBound boundary |
 | --- | --- | --- |
 | Experiment database | Datasets, tasks, runs and many model setups | Store only compact evidence records for narrow public claims. |
