@@ -23,6 +23,7 @@ This repository ships two linked software examples:
 | --- | --- | --- |
 | In-repo card | [SOFTWARE_DEV_D001](protocols/SOFTWARE_DEV_D001_PREREG_CHARTER.md) | Frozen protocol, fixed pytest gate, `validate-all`, sanitized summary hash, validated JSON/SVG card and registry entry. |
 | External case study | [software-rnd-evidence-case-study](case_studies/SOFTWARE_RND_EVIDENCE_CASE_STUDY.md) | Same evidence-chain discipline on a private multi-protocol R&D track: protocol → run → report → negative/blocked record, with explicit NO-GO track closure. |
+| Lightweight R&D note | [Lightweight software R&D claim discipline](case_studies/LIGHTWEIGHT_SOFTWARE_RND_CLAIM_DISCIPLINE.md) | Pre-card methodology for keeping important R&D claims bounded without requiring a full evidence card for every exploratory step. |
 
 ### In-repo use (SOFTWARE_DEV_D001)
 
@@ -55,6 +56,24 @@ forced frozen protocols, first-class negative records and honest track closure.
 
 **What it gave:** a public methodology example that shows NO-GO and BLOCKED
 outcomes as useful evidence instead of silent continuation or marketing upgrade.
+
+### Lightweight use before a card exists
+
+**Where:** exploratory software or ML/R&D work where the team is still building
+features, labels, datasets, baselines and validation gates.
+
+**How:** ordinary coding, debugging and exploratory sweeps stay lightweight.
+Important statements such as `feature added value`, `metric is good`,
+`candidate failed`, `branch should continue` or `production is allowed` are
+written as small claim records with scope, baseline, command, artifact, metric,
+status and forbidden inference.
+
+**Why:** early R&D needs fast iteration, but roadmap, alpha, release and
+publication language should not drift beyond the evidence.
+
+**What it gives:** a middle layer between informal notes and full evidence
+cards. It blocks overclaiming without forcing every local experiment into the
+public registry.
 
 ## Why ClaimBound — Strengths For Software Work
 
@@ -122,6 +141,10 @@ must not be confused.
 
 Do not use a full track for typo fixes, formatting-only edits or disposable
 prototypes.
+
+Use a lightweight claim record instead of a full card when the work is still
+exploratory but the statement may affect roadmap, publication, alpha, release or
+production language.
 
 ## Practical Advantages
 
