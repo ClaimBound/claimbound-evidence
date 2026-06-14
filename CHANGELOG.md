@@ -7,6 +7,9 @@
 - Added related-work and independence documentation that acknowledges EviBound
   as prior art while separating ClaimBound Evidence's public evidence-card
   scope from autonomous research-agent execution frameworks.
+- Added a lightweight software R&D claim-discipline note showing when to use
+  small claim records before a full evidence card exists, and when to avoid
+  ClaimBound overhead for low-risk exploratory work.
 
 ## 0.4.4 - 2026-06-11
 

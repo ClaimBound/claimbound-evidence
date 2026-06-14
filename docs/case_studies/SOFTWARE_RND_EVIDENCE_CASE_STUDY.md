@@ -59,5 +59,6 @@ Validated **software-development evidence card** inside this repository
 ## Read next
 
 - [Software development workflow](../SOFTWARE_DEVELOPMENT_WORKFLOW.md)
+- [Lightweight software R&D claim discipline](LIGHTWEIGHT_SOFTWARE_RND_CLAIM_DISCIPLINE.md)
 - [Evidence card examples](../evidence_cards/README.md)
 - [12 AI Life Rules](../TWELVE_AI_LIFE_CONTROLS.md)
