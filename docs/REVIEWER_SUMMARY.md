@@ -41,15 +41,20 @@ Representative public examples:
 | --- | --- | --- |
 | Anthropic system-card source audit | `PASSED_UNDER_PROTOCOL` | The official public source boundary passed a narrow source-audit gate. |
 | EEA source audit | `PASSED_UNDER_PROTOCOL` | A European public-data source page exposed expected source-boundary markers. |
+| EU Data Portal source audit | `PASSED_UNDER_PROTOCOL` | The European Data Portal landing page passed a narrow source-boundary audit. |
+| EEA content reuse FAQ source audit | `PASSED_UNDER_PROTOCOL` | The EEA reuse FAQ page passed a narrow reachability and navigation-link audit. |
+| Eurostat API guidelines source audit | `PASSED_UNDER_PROTOCOL` | The Eurostat API guidelines page passed a narrow copyright and documentation-link audit. |
 | NASA POWER D-103 | `PASSED_UNDER_PROTOCOL` with source-byte drift reproduction | A narrow public-data gate-level outcome reproduced with an explicit drift limitation. |
 | NOAA CO-OPS D-131 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed and honestly did not pass the frozen gate. |
 | EEA AQ manual track | `BLOCKED_SOURCE` | A larger manual track was blocked by an incomplete public source manifest. |
 
 ## European Dimension
 
-ClaimBound includes European public-data examples such as the EEA source-audit
-and blocked manual-track cards. See [European Dimension](EUROPEAN_DIMENSION.md)
-for the public-interest framing and explicit limits.
+ClaimBound includes European public-data examples such as the EEA source-audit,
+EU Data Portal, EEA reuse FAQ and Eurostat source-audit cards, plus the blocked
+EEA AQ manual-track card. See [European Dimension](EUROPEAN_DIMENSION.md) for
+the public-interest framing, SVG previews, operator rerun commands and explicit
+limits.
 
 ## Planned Public Work Package
 

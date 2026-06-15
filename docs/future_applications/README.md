@@ -7,7 +7,7 @@ without making them the first-screen project focus.
 ## Primary workflows (foreground)
 
 1. [Public AI transparency](../CURRENT_EVIDENCE_TRACKS.md) — source audits, not safety claims
-2. [European and public open data](../CURRENT_EVIDENCE_TRACKS.md) — EEA, NASA, NOAA examples
+2. [European and public open data](../CURRENT_EVIDENCE_TRACKS.md) — EEA, EU Data Portal, Eurostat, NASA, NOAA examples
 3. [Software development evidence](../SOFTWARE_DEVELOPMENT_WORKFLOW.md) — risky or AI-assisted changes
 
 ## Future application guides
