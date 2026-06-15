@@ -185,7 +185,7 @@ def _cmd_new(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
     )
     paths = build_scaffold(request, REPO_ROOT)
     for path in paths:
-        print(path.relative_to(REPO_ROOT).as_posix())
+        print(_display_path(path))
     return 0
 
 

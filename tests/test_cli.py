@@ -79,6 +79,40 @@ def test_validate_family_accepts_external_absolute_path(tmp_path: Path) -> None:
     assert main(["validate-family", str(path)]) == 0
 
 
+def test_new_prints_absolute_paths_when_out_dir_is_outside_repo(
+    tmp_path: Path, capsys, monkeypatch
+) -> None:
+    from claimbound_evidence import cli
+
+    monkeypatch.setattr(cli, "REPO_ROOT", tmp_path)
+    out_dir = tmp_path.parent / "outside_claimbound_repo" / "scaffold"
+
+    assert (
+        main(
+            [
+                "new",
+                "--source-url",
+                "https://example.org/source-docs",
+                "--protocol-id",
+                "CLI_NEW_OUT_TEST_D001",
+                "--domain",
+                "public-data",
+                "--track-type",
+                "source_audit",
+                "--execution-mode",
+                "MANUAL_NO_AI",
+                "--out",
+                str(out_dir),
+            ]
+        )
+        == 0
+    )
+
+    stdout = capsys.readouterr().out
+    assert "docs/protocols/CLI_NEW_OUT_TEST_D001_PREREG_CHARTER.md" in stdout
+    assert f"{out_dir.as_posix()}/CLI_NEW_OUT_TEST_D001_PLAYBOOK.md" in stdout
+
+
 def test_validate_frontier_accepts_external_absolute_path(tmp_path: Path) -> None:
     frontier = {
         "protocol_version": "claimbound-rnd-family-v2",
