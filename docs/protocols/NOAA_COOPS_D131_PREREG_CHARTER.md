@@ -45,6 +45,25 @@ Record `PASSED_UNDER_PROTOCOL` only when:
 Record `NEGATIVE_RESULT_UNDER_PROTOCOL` when the official-source run completes
 but any frozen acceptance gate fails.
 
+## Frozen Evaluator Parameters
+
+```text
+train_hours: 26280
+test_hours: 8760
+step_hours: 8760
+event_quantile: 0.90
+minimum_test_event_count: 15
+candidate: abs(observed - prediction)
+baselines: persistence_residual, seasonal_hour_of_year_residual
+top_rate: 0.10
+min_positive_rate: 0.65
+min_event_rate: 0.03
+max_event_rate: 0.40
+rng_seed: 20260430
+min_joined_rows: 53603
+runner: scripts/claimbound_run_noaa_coops_prereg.py
+```
+
 ## Recorded Negative Outcome
 
 The committed D-131 card recorded:

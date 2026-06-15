@@ -1,0 +1,64 @@
+{
+  "claim_boundary": {
+    "allowed": "executed under a frozen protocol and recorded as NEGATIVE_RESULT_UNDER_PROTOCOL",
+    "forbidden": [
+      "accepted by protocol",
+      "coastal-warning performance proven",
+      "universal forecasting edge",
+      "deployment readiness",
+      "all statistical methods beaten"
+    ]
+  },
+  "domain": "NOAA_COOPS_D131",
+  "external_payload_manifest_sha256": "f60ec057aed51dc44941f64274cb639505829d4c37d46b405a17e05a178e907e",
+  "failed_gates": [
+    "event rate below minimum in one window",
+    "event rate above maximum in one window"
+  ],
+  "inputs": [
+    {
+      "joined_rows": 61368,
+      "observed_sha256": "72df91b24778903f843eaaa8ff96583785f245398032007fd8c41550f6c09639",
+      "predictions_sha256": "6b4871e7097448e4cb4f77058846693a34456c1853da4a30501497222b2d0232",
+      "station": "8518750"
+    },
+    {
+      "joined_rows": 56424,
+      "observed_sha256": "dca70529a31fff58e1ac0c978ada04207eca8efc19df4c0311c27ca4a452c422",
+      "predictions_sha256": "cee0d35d28f64cea7809e80291053761795450acb8c771020fdef47a5f43829a",
+      "station": "9414290"
+    },
+    {
+      "joined_rows": 61368,
+      "observed_sha256": "ff1e613824236521449f8841375022f8247ec72e075033728ab443cf3acf7372",
+      "predictions_sha256": "59b2fa0dac78a64f8a03ccae130064c7e003f576951013f1a817e3948ad125f0",
+      "station": "8638610"
+    }
+  ],
+  "protocol_version": "1.0.139",
+  "report_sha256": "8a12f7fb82ad40165492a81795b1b388410aafdffe1115c7cc1b01b4990b1316",
+  "result": {
+    "eligible_station_count": 3,
+    "eligible_windows": 11,
+    "overall_go_no_go": false,
+    "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+    "source_audit_passed": true
+  },
+  "schema": "claimbound_negative_result_summary_v1",
+  "source": {
+    "datum": "MLLW",
+    "format": "json",
+    "observed_product": "hourly_height",
+    "official_base_url": "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter",
+    "period": "2018-01-01..2024-12-31",
+    "prediction_product": "predictions",
+    "raw_payload_committed": false,
+    "stations": [
+      "8518750",
+      "9414290",
+      "8638610"
+    ],
+    "time_zone": "gmt",
+    "units": "metric"
+  }
+}

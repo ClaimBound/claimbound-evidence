@@ -1,5 +1,5 @@
 {
-  "card_count": 21,
+  "card_count": 22,
   "cards": [
     {
       "domain": "ai-product-evidence",
@@ -140,19 +140,19 @@
     {
       "domain": "coastal-water-level",
       "evidence_id": "CLAIMBOUND-NOAA-COOPS-D131-2026-04-30",
-      "last_verified_date": "2026-04-30",
+      "last_verified_date": "2026-06-15",
       "official_source_name": "NOAA CO-OPS Data API",
       "operator": "maintainer",
       "path": "docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json",
       "record_type": "evidence_result",
       "registry_sequence": 9,
-      "reproduction_level": "not independently reproduced",
+      "reproduction_level": "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT",
       "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
       "sanitized_report_path": "artifacts/noaa_coops_d131_negative_result_summary.json",
       "share_url": "https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json",
       "svg_url": "https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg",
-      "verification_count": 1,
-      "verification_level": "SINGLE_OPERATOR"
+      "verification_count": 2,
+      "verification_level": "SINGLE_OPERATOR_RERUN"
     },
     {
       "domain": "public-procurement",
@@ -357,6 +357,23 @@
       "verification_count": 1,
       "verification_level": "SINGLE_OPERATOR",
       "svg_url": "https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-EUROSTAT_SOURCE_AUDIT_D001-2026-06-10.svg"
+    },
+    {
+      "domain": "coastal-water-level",
+      "evidence_id": "CLAIMBOUND-NOAA-COOPS-D131-RERUN-2026-06-15",
+      "last_verified_date": "2026-06-15",
+      "official_source_name": "NOAA CO-OPS Data API",
+      "operator": "rostsh",
+      "path": "docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-RERUN-2026-06-15.json",
+      "record_type": "reproduction_attempt",
+      "registry_sequence": 22,
+      "reproduction_level": "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT",
+      "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+      "sanitized_report_path": "artifacts/noaa_coops_d131_maintainer_rerun_summary.json",
+      "share_url": "https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-RERUN-2026-06-15.json",
+      "verification_count": 1,
+      "verification_level": "SINGLE_OPERATOR_RERUN",
+      "svg_url": "https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-RERUN-2026-06-15.svg"
     }
   ],
   "public_access": "free_read_only",
@@ -369,7 +386,7 @@
       "ai-product-evidence": 1,
       "ai-transparency": 4,
       "civic-tech": 1,
-      "coastal-water-level": 1,
+      "coastal-water-level": 2,
       "education": 1,
       "program-review": 2,
       "ml-research": 1,
@@ -381,11 +398,12 @@
     },
     "by_record_type": {
       "evidence_result": 3,
+      "reproduction_attempt": 1,
       "source_audit": 18
     },
     "by_result_status": {
       "BLOCKED_SOURCE": 9,
-      "NEGATIVE_RESULT_UNDER_PROTOCOL": 1,
+      "NEGATIVE_RESULT_UNDER_PROTOCOL": 2,
       "PASSED_UNDER_PROTOCOL": 11
     },
     "by_source": {
@@ -399,7 +417,7 @@
       "Google DeepMind Model Cards": 1,
       "NASA POWER Daily point API": 3,
       "Public-interest open-source program eligibility information": 1,
-      "NOAA CO-OPS Data API": 1,
+      "NOAA CO-OPS Data API": 2,
       "NYC TLC Trip Record Data": 1,
       "OpenAI GPT-5 System Card PDF": 1,
       "xAI Grok 4 API documentation": 2,

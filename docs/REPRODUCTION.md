@@ -55,6 +55,57 @@ Interpretation:
 - different raw payload hashes: source-byte drift;
 - different gate outcome: record the mismatch and do not claim reproduction.
 
+## NOAA CO-OPS D-131
+
+Current protocol:
+
+```text
+docs/protocols/NOAA_COOPS_D131_PREREG_CHARTER.md
+```
+
+NOAA's Data API limits `hourly_height` requests to **365 days per call**. The
+frozen D-131 period is `2018-01-01..2024-12-31`, so a single 7-year request
+returns HTTP 400 (`Range Limit Exceeded`). Download yearly chunks and merge them
+locally outside the repository.
+
+Official NOAA reference:
+
+- https://api.tidesandcurrents.noaa.gov/api/prod/datagetter
+
+Fetch merged payloads for all three D-131 stations:
+
+```bash
+uv run python scripts/fetch_noaa_coops_d131_payloads.py \
+  --out-dir "$HOME/claimbound_runs/NOAA_COOPS_D131/raw"
+```
+
+Record SHA-256 hashes:
+
+```bash
+shasum -a 256 "$HOME/claimbound_runs/NOAA_COOPS_D131/raw"/*.json
+```
+
+Run the frozen gate evaluator:
+
+```bash
+uv run python scripts/claimbound_run_noaa_coops_prereg.py \
+  --raw-dir "$HOME/claimbound_runs/NOAA_COOPS_D131/raw" \
+  --report "$HOME/claimbound_runs/NOAA_COOPS_D131/reports/noaa_coops_d131_report.json" \
+  --summary "$HOME/claimbound_runs/NOAA_COOPS_D131/reports/noaa_coops_d131_summary.json"
+```
+
+Compare gate outcome and hashes against:
+
+```text
+artifacts/noaa_coops_d131_negative_result_summary.json
+```
+
+Interpretation:
+
+- same negative gate outcome: valid D-131 reproduction attempt;
+- different raw payload hashes with same gate outcome: source-byte drift;
+- do not change thresholds or gates after seeing outcomes.
+
 ## EEA Manual Public-Domain Track
 
 The EEA AQ D-001 manual track is the current public-domain manual example. The
