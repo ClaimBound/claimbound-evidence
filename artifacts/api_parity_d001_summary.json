@@ -1,0 +1,30 @@
+{
+  "protocol_id": "API_PARITY_D001",
+  "evidence_id": "CLAIMBOUND-API_PARITY_D001-2026-06-15",
+  "access_date": "2026-06-15",
+  "claim_boundary": "Records registry validation parity only under frozen commands.",
+  "execution_mode": "MANUAL_NO_AI",
+  "operator": "rostsh",
+  "official_sources": [
+    {
+      "name": "ClaimBound evidence repository",
+      "url": "https://github.com/ClaimBound/claimbound-evidence",
+      "git_commit": "0e42720"
+    }
+  ],
+  "checked_claim": "Registry validator passes and registry metadata matches frozen expectation.",
+  "frozen_commands": [
+    "uv run python scripts/claimbound_validate_registry.py",
+    "uv run claimbound validate-all"
+  ],
+  "gate_results": [
+    {"gate": "validate_registry", "result": "PASS"},
+    {"gate": "validate_all", "result": "PASS"}
+  ],
+  "expected_registry_name": "ClaimBound Public Evidence Registry",
+  "expected_card_count": 24,
+  "known_limitations": [
+    "Single-operator check only.",
+    "Registry metadata parity only."
+  ]
+}

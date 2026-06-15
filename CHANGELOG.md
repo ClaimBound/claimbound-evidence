@@ -4,12 +4,31 @@
 
 ### Added
 
-- Added related-work and independence documentation that acknowledges EviBound
-  as prior art while separating ClaimBound Evidence's public evidence-card
-  scope from autonomous research-agent execution frameworks.
-- Added a lightweight software R&D claim-discipline note showing when to use
-  small claim records before a full evidence card exists, and when to avoid
-  ClaimBound overhead for low-risk exploratory work.
+- Related-work and independence documentation acknowledging EviBound as prior art.
+- Lightweight software R&D claim-discipline note for small claim records.
+
+## 0.4.6 - 2026-06-15
+
+### Added
+
+- NOAA CO-OPS D-131 frozen gate runner (`claimbound_run_noaa_coops_prereg.py`) and maintainer
+  negative `reproduction_attempt` card (closes #56).
+- NASA POWER D-103 maintainer `reproduction_attempt` card and rerun summary (closes #55).
+- `API_PARITY_D001` software-development evidence card for registry validation parity
+  (closes #59).
+- Operator runbooks under `docs/runbooks/` for issues #55–#59.
+- EEA source drift check report and operator note (closes #57).
+- AI source-audit boundary review record (closes #58).
+
+### Fixed
+
+- Synchronized `pyproject.toml`, `specs/repo_version.yaml`, README release badge and
+  GitHub release tag to **v0.4.6** (resolves 0.4.5 / 0.4.4 / 0.4.3 mismatch).
+
+### Changed
+
+- Registry: 24 validated cards including NASA and API parity reruns.
+- Original NASA POWER D-103 card verification metadata updated after maintainer rerun.
 
 ## 0.4.5 - 2026-06-11
 
