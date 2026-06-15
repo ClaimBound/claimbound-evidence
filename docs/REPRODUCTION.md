@@ -85,6 +85,15 @@ Record SHA-256 hashes:
 shasum -a 256 "$HOME/claimbound_runs/NOAA_COOPS_D131/raw"/*.json
 ```
 
+Run the frozen gate evaluator:
+
+```bash
+uv run python scripts/claimbound_run_noaa_coops_prereg.py \
+  --raw-dir "$HOME/claimbound_runs/NOAA_COOPS_D131/raw" \
+  --report "$HOME/claimbound_runs/NOAA_COOPS_D131/reports/noaa_coops_d131_report.json" \
+  --summary "$HOME/claimbound_runs/NOAA_COOPS_D131/reports/noaa_coops_d131_summary.json"
+```
+
 Compare gate outcome and hashes against:
 
 ```text
