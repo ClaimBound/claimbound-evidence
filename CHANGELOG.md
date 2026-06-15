@@ -11,6 +11,25 @@
   small claim records before a full evidence card exists, and when to avoid
   ClaimBound overhead for low-risk exploratory work.
 
+## 0.4.5 - 2026-06-11
+
+### Added
+
+- Three European public-data source-audit cards (sequences 19–21): EU Data Portal,
+  EEA content reuse FAQ and Eurostat API detailed guidelines.
+- `scripts/claimbound_run_eu_public_source_audit.py` runner with frozen profiles.
+- `scripts/claimbound_build_eu_evidence_cards.py` card builder.
+- `tests/test_eu_public_source_audit.py` with mocked HTTP coverage.
+
+### Changed
+
+- Registry: 21 validated cards; European Dimension page with five EU examples,
+  SVG embeds, blocked-track narrative, operator rerun commands and explicit
+  non-endorsement note.
+- EU card builder now rebuilds from saved sanitized summaries by default; live
+  source refresh is explicit with `--refresh-reports`.
+- Updated current evidence tracks, reviewer summary and future applications index.
+
 ## 0.4.4 - 2026-06-11
 
 ### Fixed
