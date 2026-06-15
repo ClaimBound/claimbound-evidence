@@ -1,0 +1,63 @@
+{
+  "claim_boundary": {
+    "allowed": "passed the pre-registered NASA POWER D-103 gate under protocol 1.0.143",
+    "forbidden": [
+      "raw payload hash reproduced exactly",
+      "broad or universal forecasting edge",
+      "deployment readiness",
+      "all statistical methods beaten"
+    ]
+  },
+  "external_payload_manifest_sha256": "bc11e02a3b62e987faef8efa3d581759e6f97df1b959f520046c4435c46c891c",
+  "inputs": [
+    {
+      "name": "Kyiv",
+      "point": "POWER_A",
+      "rows": 3653,
+      "sha256": "833d6307c755a040d937eb59255a3c71304a06306d18a23eaec0907b150b7506"
+    },
+    {
+      "name": "Lviv",
+      "point": "POWER_B",
+      "rows": 3653,
+      "sha256": "0103bfd39df4630b4440d2f9992b842928389bf6825b94f0a89f2efa8fa1d692"
+    },
+    {
+      "name": "Odesa",
+      "point": "POWER_C",
+      "rows": 3653,
+      "sha256": "8611aa6f02864c1998441af3e6b85aea6a6efda852d580ce51d2343594d62a9d"
+    }
+  ],
+  "protocol_doc": "docs/protocols/NASA_POWER_D103_PREREG_CHARTER.md",
+  "protocol_version": "1.0.143",
+  "result": {
+    "allowed_narrow_claim": "passed the pre-registered NASA POWER D-103 gate under protocol 1.0.143",
+    "eligible_point_count": 3,
+    "eligible_windows": 15,
+    "overall_go_no_go": true,
+    "result_status": "PASSED_UNDER_PROTOCOL",
+    "source_audit_passed": true
+  },
+  "schema": "nasa_power_d103_real_run_summary_public_v1",
+  "source": {
+    "community": "RE",
+    "format": "JSON",
+    "official_base_url": "https://power.larc.nasa.gov/api/temporal/daily/point",
+    "parameters": [
+      "ALLSKY_SFC_SW_DWN",
+      "T2M",
+      "WS10M",
+      "PRECTOTCORR"
+    ],
+    "period": "2015-01-01..2024-12-31",
+    "points": [
+      "POWER_A",
+      "POWER_B",
+      "POWER_C"
+    ],
+    "raw_payload_committed": false,
+    "time_standard": "UTC"
+  },
+  "source_milestone": "1.0.146"
+}
