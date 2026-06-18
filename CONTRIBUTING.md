@@ -41,8 +41,9 @@ Repository rules enforce the following:
   **ClaimBound organization owners** can bypass rules in the pull-request merge path (`bypass_mode: pull_request`)
   so a solo org owner can still land changes after checks pass; everyone else needs a normal approval.
   GitHub does not count approving your **own** PR toward the required review count.
-- **Status checks**: `pytest` (`.github/workflows/tests.yml`) and `review`
-  (`.github/workflows/dependency-review.yml`) must succeed; strict branch-up-to-date behavior is enabled.
+- **Status checks**: `review` (`.github/workflows/dependency-review.yml`) must succeed when that
+  workflow is enabled; run `uv run --extra dev pytest -n auto` locally before opening a PR.
+  Strict branch-up-to-date behavior is enabled.
 - **Merge style**: only **squash** or **rebase** merges are allowed; merge commits are disabled to match
   **required linear history** and reduce accidental merge-only noise on `main`.
 
