@@ -37,6 +37,9 @@ Sustainability depends on **external reruns and feedback**, not vanity metrics:
 - GitHub Discussions for card requests;
 - independent operators following [examples/rerun](../examples/rerun/README.md).
 
+Public CI on GitHub Actions (`pytest` on every push and pull request) uses
+free hosted runners for this open repository.
+
 ## Post-funding maintenance (if approved)
 
 A funded 9-month work package would add SourceProbe v1, static registry views and
