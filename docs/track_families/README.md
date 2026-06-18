@@ -66,3 +66,11 @@ Historical evidence cards created before these protocols do not need
 retroactive ledgers or tree overlays. New ledgers and overlays are optional
 planning records and are validated only when a matching `*_FAMILY_LEDGER.json`,
 `*_FRONTIER.json` or `*_TREE.json` file exists.
+
+## Current Example Set
+
+| File | Role |
+| --- | --- |
+| [PROGRAM_FIT_D001_FAMILY_LEDGER.json](PROGRAM_FIT_D001_FAMILY_LEDGER.json) | v2 family contract for the program-fit self-check track. |
+| [PROGRAM_FIT_D001_FRONTIER.json](PROGRAM_FIT_D001_FRONTIER.json) | v2 frontier state: primary track closed after the evidence card was published. |
+| [PROGRAM_FIT_D001_TREE.json](PROGRAM_FIT_D001_TREE.json) | v3 tree overlay for the same family. |

@@ -166,3 +166,13 @@ def test_frontier_rejects_missing_consumed_tombstone() -> None:
     violations = validate_frontier_ledger(frontier)
 
     assert any("unknown tombstone" in violation for violation in violations)
+
+
+def test_program_fit_frontier_ledger_passes() -> None:
+    from pathlib import Path
+
+    from claimbound_evidence.family_ledger import load_frontier_ledger
+
+    repo_root = Path(__file__).resolve().parents[1]
+    path = repo_root / "docs/track_families/PROGRAM_FIT_D001_FRONTIER.json"
+    assert validate_frontier_ledger(load_frontier_ledger(path)) == []
