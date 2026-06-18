@@ -30,8 +30,7 @@ reproduction level.
 
 ClaimBound should not duplicate established projects.
 
-For adjacent evidence-bound autonomous research work and the explicit boundary
-between ClaimBound Evidence and EviBound, see
+For scope boundary vs adjacent arXiv work (EviBound), see
 [Related Work And Independence](RELATED_WORK_AND_INDEPENDENCE.md).
 
 | Existing project type | Already covered elsewhere | ClaimBound boundary |

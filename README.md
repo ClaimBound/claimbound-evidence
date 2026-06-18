@@ -29,26 +29,10 @@ If there is no evidence card, the statement is still only a claim.
 
 ## Related Work And Independence
 
-ClaimBound Evidence is an independent open-source evidence-card toolkit for
-narrow public AI, ML, data and software-development claims. It is not affiliated
-with EviBound and is not a continuation, fork or implementation of the EviBound
-paper or any EviBound code/research package.
-
-The maintainer acknowledges EviBound, "Evidence-Bound Autonomous Research
-(EviBound): A Governance Framework for Eliminating False Claims"
-([arXiv:2511.05524](https://arxiv.org/abs/2511.05524)), submitted on
-2025-10-28, as related prior art discovered after ClaimBound development work
-was already underway. The similar naming and shared concern with evidence-bound
-claims are acknowledged explicitly.
-
-The projects occupy different scopes: EviBound focuses on autonomous research
-agent execution gates and MLflow-backed machine-checkable artifacts; ClaimBound
-Evidence focuses on public evidence cards, source boundaries, claim boundaries,
-negative/blocked/drift outcomes, registry records and R&D family discipline
-across public AI, data, reproducibility and software-development workflows.
-
-See [Related Work And Independence](docs/RELATED_WORK_AND_INDEPENDENCE.md) for
-the detailed scope split.
+Independent project — not affiliated with or derived from
+[EviBound](https://arxiv.org/abs/2511.05524) (arXiv preprint on autonomous
+research-agent execution gates). Similar naming acknowledged; scopes differ.
+See [scope split](docs/RELATED_WORK_AND_INDEPENDENCE.md).
 
 ## Primary Public Workflows
 
