@@ -3,6 +3,12 @@
 Goal: rerun the frozen NOAA D-131 protocol and record the same **negative** gate
 honestly. Do not turn a negative result into success.
 
+## Quick path (any OS)
+
+```bash
+uv run claimbound rerun noaa-d131 --operator "<your-handle>"
+```
+
 ## Important limits in this repository
 
 | Step | Status |

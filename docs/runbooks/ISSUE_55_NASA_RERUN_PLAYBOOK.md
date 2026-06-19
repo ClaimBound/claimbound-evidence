@@ -5,6 +5,12 @@ card if you complete the full PR path.
 
 This is **NASA**, not NOAA. NOAA is issue #56.
 
+## Quick path (any OS)
+
+```bash
+uv run claimbound rerun nasa-d103 --operator "<your-handle>"
+```
+
 ## Read first
 
 - `docs/protocols/NASA_POWER_D103_PREREG_CHARTER.md`
