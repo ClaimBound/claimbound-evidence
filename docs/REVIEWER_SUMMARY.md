@@ -33,10 +33,11 @@ planned to harden that baseline into additional reusable infrastructure.
 
 | Already public now | Planned next (not claimed as completed here) |
 | --- | --- |
-| Evidence-card JSON/SVG, registry index, validators, 70+ tests | SourceProbe v1 implementation |
+| Evidence-card JSON/SVG, registry index, validators, 72+ tests | SourceProbe v1 implementation |
 | EU and public AI source-audit runners for existing card types | Static registry generated views |
 | Scaffold drafts via `claimbound new` | Scaffold workflow hardening |
-| Manual and AI-assisted workflow docs | Independent rerun workflow implementation |
+| Manual and AI-assisted workflow docs | Operator workflow hardening and external adoption |
+| Rerun workflow docs, issue templates, maintainer rerun cards and playbooks | Independent external reruns (`INDEPENDENT_RERUN`, `MULTI_OPERATOR`) |
 | 24 honest cards across green, yellow, amber and red outcomes | Expanded tutorial set and accessibility pass |
 
 Documents such as [SourceProbe v1 acceptance criteria](SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md)
@@ -110,7 +111,7 @@ Planned public deliverables:
 | Operator workflows | Manual and AI-assisted runbooks, run roots, deviation logs and source-rights checks | A new operator can follow the workflow without hidden private steps. |
 | Public AI claim protocol | Public-source rules, model/API metadata fields, prompt/transcript hash policy and screenshot-only limits | Source audits never imply runtime behavior, safety or model superiority. |
 | Static registry | Public read-only index and generated views | Every registry entry points to a validated card and no raw payload is stored. |
-| Rerun workflow | Reproduction request path, rerun checklist and drift handling | Reruns can add evidence without changing the original claim. |
+| Rerun workflow | Reproduction request path, rerun checklist, drift handling and external adoption | Docs, templates and maintainer examples exist; independent external reruns remain the acceptance signal. |
 
 ## Scope In
 

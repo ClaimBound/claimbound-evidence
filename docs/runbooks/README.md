@@ -13,7 +13,7 @@ Step-by-step playbooks for open external-operator issues.
 Shared setup (works in **zsh** and bash on macOS):
 
 ```bash
-export REPO_ROOT="<absolute-path-to-claimbound-public-benchmarks>"
+export REPO_ROOT="<absolute-path-to-claimbound-evidence-checkout>"
 export RUNS_ROOT="$HOME/claimbound_runs"
 export OPERATOR="<your-handle>"
 export TODAY="$(date +%F)"
