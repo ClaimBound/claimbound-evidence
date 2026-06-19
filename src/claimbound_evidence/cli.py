@@ -29,6 +29,7 @@ from claimbound_evidence.family_ledger import (
 )
 from claimbound_evidence.registry import load_registry, validate_registry
 from claimbound_evidence.run_root import RunRootRequest, prepare_run_root
+from claimbound_evidence.workflows import drift_eea_source_audit, rerun_nasa_d103, rerun_noaa_d131
 from claimbound_evidence.scaffold import ScaffoldRequest, build_scaffold
 from claimbound_evidence.tree_overlay import (
     load_tree_overlay,
@@ -217,6 +218,32 @@ def build_parser() -> argparse.ArgumentParser:
     )
     validate_card_parser.add_argument("path", type=Path)
     validate_card_parser.set_defaults(func=_cmd_validate_card)
+
+    rerun_parser = subparsers.add_parser(
+        "rerun",
+        description="Run frozen public-data reruns with cross-platform commands.",
+    )
+    rerun_sub = rerun_parser.add_subparsers(dest="rerun_name", required=True)
+    for name, handler in (
+        ("nasa-d103", _cmd_rerun_nasa_d103),
+        ("noaa-d131", _cmd_rerun_noaa_d131),
+    ):
+        sub = rerun_sub.add_parser(name)
+        sub.add_argument("--operator", default="local operator")
+        sub.add_argument("--root", type=Path, default=Path.home() / "claimbound_runs")
+        sub.add_argument("--run-dir", type=Path)
+        sub.add_argument("--baseline", type=Path)
+        sub.set_defaults(func=handler)
+
+    drift_parser = subparsers.add_parser(
+        "drift",
+        description="Compare fresh public-source probes against frozen baselines.",
+    )
+    drift_sub = drift_parser.add_subparsers(dest="drift_name", required=True)
+    eea_drift = drift_sub.add_parser("eea-source-audit")
+    eea_drift.add_argument("--baseline", type=Path)
+    eea_drift.add_argument("--report", type=Path)
+    eea_drift.set_defaults(func=_cmd_drift_eea)
 
     return parser
 
@@ -448,6 +475,37 @@ def _cmd_validate_card(args: argparse.Namespace, parser: argparse.ArgumentParser
         return 1
     print(f"valid_card={_display_path(path)}")
     return 0
+
+
+def _cmd_rerun_nasa_d103(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    return rerun_nasa_d103(
+        REPO_ROOT,
+        operator=args.operator,
+        root=args.root,
+        run_dir=args.run_dir,
+        baseline_path=args.baseline,
+    )
+
+
+def _cmd_rerun_noaa_d131(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    return rerun_noaa_d131(
+        REPO_ROOT,
+        operator=args.operator,
+        root=args.root,
+        run_dir=args.run_dir,
+        baseline_path=args.baseline,
+    )
+
+
+def _cmd_drift_eea(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    return drift_eea_source_audit(
+        REPO_ROOT,
+        baseline_path=args.baseline,
+        report_path=args.report,
+    )
 
 
 def _cmd_doctor(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:

@@ -81,7 +81,10 @@ rerun workflows.
 | Inspect JSON fields | `claimbound inspect card/registry/json` | Replaces jq |
 | File hashes | `claimbound hash` | Replaces shasum |
 
-`claimbound rerun`, `drift` and `verify` commands land in follow-up PRs.
+| NASA / NOAA reruns | `claimbound rerun nasa-d103` / `noaa-d131` | Python download + gate |
+| EEA drift | `claimbound drift eea-source-audit` | Probe + field compare |
+
+`claimbound verify` shortcuts land in a follow-up PR.
 
 ## Optional shell tools
 
