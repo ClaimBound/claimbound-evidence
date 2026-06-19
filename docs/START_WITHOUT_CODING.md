@@ -7,6 +7,14 @@ See [platform support](PLATFORM_SUPPORT.md) for Windows, macOS and Linux notes.
 
 ## 15-minute path
 
+Optional motion demo: record and add
+[`claimbound_nondev_15min.gif`](assets/gifs/README.md) per the
+[GIF guide](assets/gifs/README.md), then embed:
+
+```markdown
+![15-minute baseline demo](../assets/gifs/claimbound_nondev_15min.gif)
+```
+
 ### 1. Install
 
 ```bash

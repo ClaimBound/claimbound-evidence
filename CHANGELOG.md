@@ -2,15 +2,33 @@
 
 ## Unreleased
 
+## 0.4.7 - 2026-06-19
+
 ### Added
 
-- Related-work and independence documentation acknowledging EviBound as prior art.
-- Lightweight software R&D claim-discipline note for small claim records.
+- Cross-platform operator CLI: `doctor`, `inspect`, `hash`, `validate-card`,
+  `rerun`, `drift`, and `verify` shortcuts (#107–#112).
+- [Platform support](docs/PLATFORM_SUPPORT.md) and
+  [Start without coding](docs/START_WITHOUT_CODING.md) for Windows, macOS and Linux.
+- [Reviewer path](docs/REVIEWER_PATH.md) one-page orientation for first-time readers.
+- [Common misreadings](docs/COMMON_MISREADINGS.md) FAQ.
+- [EEA source audit case study](docs/case_studies/EEA_SOURCE_AUDIT_CASE_STUDY.md).
+- [GIF production and insertion guide](docs/assets/gifs/README.md).
+- [Maintainer guide](docs/MAINTAINER_GUIDE.md) for public sustainability boundaries.
+- Windows CI matrix in GitHub Actions.
 
 ### Changed
 
-- Clarified `verification_level` versus `record_type` in evidence-card docs;
-  aligned NASA example metadata and reviewer wording for maintainer reruns.
+- Documentation sync: 86 tests, Tier C wording, legacy optional shell sections in
+  runbooks (#113).
+- VERIFY mirrors #85–#87 reopened for **independent external operator** closure.
+- Synchronized `pyproject.toml`, `specs/repo_version.yaml`, README release badge
+  and GitHub release tag to **v0.4.7**.
+
+### Fixed
+
+- Audit gaps after cross-platform rollout: `verify eea-drift`, `nasa-rerun`,
+  `noaa-rerun` shortcuts and CONTRIBUTING platform section (#113).
 
 ## 0.4.6 - 2026-06-15
 
