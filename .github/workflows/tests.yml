@@ -13,9 +13,19 @@ env:
 
 jobs:
   pytest:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            pytest_args: "-n auto -q"
+          - os: windows-latest
+            pytest_args: "-q"
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
       - run: uv sync --extra dev
-      - run: uv run --extra dev pytest -n auto
+      - run: uv run claimbound doctor
+      - run: uv run claimbound validate-all
+      - run: uv run --extra dev pytest ${{ matrix.pytest_args }}

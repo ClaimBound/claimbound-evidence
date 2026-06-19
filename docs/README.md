@@ -32,14 +32,16 @@ uv run --extra dev python -m pytest -q
 
 For people who want to run or challenge a card locally:
 
-1. [ClaimBound in 5 minutes](CLAIMBOUND_IN_5_MINUTES.md)
-2. [Getting started](GETTING_STARTED.md)
-3. [External verification packs](external_verification/README.md) — split VERIFY work
-4. [External operator starter pack](EXTERNAL_OPERATOR_STARTER_PACK.md)
-5. [Result status protocol](RESULT_STATUS.md)
-6. [Evidence card protocol](EVIDENCE_CARD.md)
-7. [Independent rerun workflow](INDEPENDENT_RERUN_WORKFLOW.md)
-8. [Artifacts catalog](artifacts/README.md) — not registry cards
+1. [Start without coding](START_WITHOUT_CODING.md) — Windows/macOS/Linux, no jq or bash
+2. [Platform support](PLATFORM_SUPPORT.md)
+3. [ClaimBound in 5 minutes](CLAIMBOUND_IN_5_MINUTES.md)
+4. [Getting started](GETTING_STARTED.md)
+5. [External verification packs](external_verification/README.md) — split VERIFY work
+6. [External operator starter pack](EXTERNAL_OPERATOR_STARTER_PACK.md)
+7. [Result status protocol](RESULT_STATUS.md)
+8. [Evidence card protocol](EVIDENCE_CARD.md)
+9. [Independent rerun workflow](INDEPENDENT_RERUN_WORKFLOW.md)
+10. [Artifacts catalog](artifacts/README.md) — not registry cards
 
 Rerun playbooks: [runbooks/](runbooks/README.md).
 

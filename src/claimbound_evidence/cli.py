@@ -29,6 +29,7 @@ from claimbound_evidence.family_ledger import (
 )
 from claimbound_evidence.registry import load_registry, validate_registry
 from claimbound_evidence.run_root import RunRootRequest, prepare_run_root
+from claimbound_evidence.verify_packs import VERIFY_PACKS, run_verify_pack
 from claimbound_evidence.workflows import drift_eea_source_audit, rerun_nasa_d103, rerun_noaa_d131
 from claimbound_evidence.scaffold import ScaffoldRequest, build_scaffold
 from claimbound_evidence.tree_overlay import (
@@ -244,6 +245,16 @@ def build_parser() -> argparse.ArgumentParser:
     eea_drift.add_argument("--baseline", type=Path)
     eea_drift.add_argument("--report", type=Path)
     eea_drift.set_defaults(func=_cmd_drift_eea)
+
+    verify_parser = subparsers.add_parser(
+        "verify",
+        description="Run VERIFY pack checklists with PASS/FAIL output.",
+    )
+    verify_parser.add_argument(
+        "pack",
+        choices=sorted(VERIFY_PACKS),
+    )
+    verify_parser.set_defaults(func=_cmd_verify)
 
     return parser
 
@@ -475,6 +486,11 @@ def _cmd_validate_card(args: argparse.Namespace, parser: argparse.ArgumentParser
         return 1
     print(f"valid_card={_display_path(path)}")
     return 0
+
+
+def _cmd_verify(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    return run_verify_pack(REPO_ROOT, args.pack)
 
 
 def _cmd_rerun_nasa_d103(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
