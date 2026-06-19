@@ -214,13 +214,19 @@ The failed controls can be ignored.
 
 ## Maintainer Rerun Cards (NASA And NOAA)
 
-The NASA POWER D-103 and NOAA CO-OPS D-131 maintainer rerun cards are
-`reproduction_attempt` records linked to the original evidence cards. They use
-`SINGLE_OPERATOR_RERUN` and record source-byte drift in `reproduction_level`
-while keeping the honest gate outcome in `result_status`.
+NASA POWER D-103 and NOAA CO-OPS D-131 use two related patterns:
 
-They demonstrate the rerun workflow shape. They are not independent external
-verification.
+1. **Baseline `evidence_result` cards** — the primary outcome rows. After a
+   maintainer re-verify they may show `verification_level`:
+   `SINGLE_OPERATOR_RERUN` and a higher `verification_count` while
+   `record_type` stays `evidence_result`.
+2. **`reproduction_attempt` sibling cards** — separate dated rerun rows (for
+   example the 2026-06-15 maintainer reruns). They also use
+   `SINGLE_OPERATOR_RERUN` and record source-byte drift in `reproduction_level`
+   while keeping the honest gate outcome in `result_status`.
+
+Both patterns are maintainer same-operator reruns. Neither is independent
+external verification (`INDEPENDENT_RERUN` / `MULTI_OPERATOR`).
 
 ## NYC TLC Phase 4
 

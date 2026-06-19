@@ -88,7 +88,7 @@ Representative public examples:
 | EEA content reuse FAQ source audit | `PASSED_UNDER_PROTOCOL` | The EEA reuse FAQ page passed a narrow reachability and navigation-link audit. |
 | Eurostat API guidelines source audit | `PASSED_UNDER_PROTOCOL` | The Eurostat API guidelines page passed a narrow copyright and documentation-link audit. |
 | NASA POWER D-103 | `PASSED_UNDER_PROTOCOL` with source-byte drift reproduction | A narrow public-data gate-level outcome reproduced with drift in `reproduction_level`. |
-| NASA / NOAA maintainer reruns | `reproduction_attempt` cards | Maintainer `SINGLE_OPERATOR_RERUN` examples; not independent external verification. |
+| NASA / NOAA maintainer reruns | Baseline cards plus `reproduction_attempt` siblings | Maintainer `SINGLE_OPERATOR_RERUN` only; not `INDEPENDENT_RERUN` or `MULTI_OPERATOR`. |
 | NOAA CO-OPS D-131 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed and honestly did not pass the frozen gate. |
 | API parity registry gate | `PASSED_UNDER_PROTOCOL` | Frozen registry validators exited 0; registry metadata parity only. |
 | EEA AQ manual track | `BLOCKED_SOURCE` | A larger manual track was blocked by an incomplete public source manifest. |
