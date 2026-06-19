@@ -30,7 +30,7 @@ possible.
 | `sanitized_report_sha256` | SHA-256 for the sanitized report. |
 | `git_commit` | Commit containing the protocol and public evidence record. |
 | `runner_command` | Exact command or manual-track reference used for the run. |
-| `operator` | Person, organization or role that performed the run. |
+| `operator` | Person, organization or role that performed the run. Use `maintainer` for repository maintainer runs, `local operator` for blocked or scaffold-only records, and an external GitHub handle for independent reruns. |
 | `created_at` | Date the evidence card was created. |
 | `last_verified_date` | Latest date this card status or source boundary was verified. |
 | `verification_count` | Number of recorded verifications or same-operator reruns represented by this card. |

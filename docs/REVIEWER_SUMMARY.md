@@ -38,7 +38,7 @@ planned to harden that baseline into additional reusable infrastructure.
 | Scaffold drafts via `claimbound new` | Scaffold workflow hardening |
 | Manual and AI-assisted workflow docs | Operator workflow hardening and external adoption |
 | Rerun workflow docs, issue templates, maintainer rerun cards and playbooks | Independent external reruns (`INDEPENDENT_RERUN`, `MULTI_OPERATOR`) |
-| 24 honest cards across green, yellow, amber and red outcomes | Expanded tutorial set and accessibility pass |
+| 24 honest cards across green, amber, red and drift-limited reproduction outcomes | Expanded tutorial set and accessibility pass |
 
 Documents such as [SourceProbe v1 acceptance criteria](SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md)
 and [Static registry MVP acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md)
@@ -72,7 +72,8 @@ and forbidden claims.
 - Evidence-card JSON records and SVG previews rendered from JSON.
 - A public registry index for validated cards.
 - Validators for cards, registry entries and optional related-track ledgers.
-- Public examples across green, yellow, amber and red outcomes.
+- Public examples across green gate passes, amber blocked sources, red negative
+  gates and yellow reproduction chips for source-byte drift.
 - Manual and AI-assisted operator workflow docs.
 - Source-audit protocols for public AI documentation and public-data sources.
 - Rerun guidance for operators who want to reproduce an existing card.
@@ -86,8 +87,10 @@ Representative public examples:
 | EU Data Portal source audit | `PASSED_UNDER_PROTOCOL` | The European Data Portal landing page passed a narrow source-boundary audit. |
 | EEA content reuse FAQ source audit | `PASSED_UNDER_PROTOCOL` | The EEA reuse FAQ page passed a narrow reachability and navigation-link audit. |
 | Eurostat API guidelines source audit | `PASSED_UNDER_PROTOCOL` | The Eurostat API guidelines page passed a narrow copyright and documentation-link audit. |
-| NASA POWER D-103 | `PASSED_UNDER_PROTOCOL` with source-byte drift reproduction | A narrow public-data gate-level outcome reproduced with an explicit drift limitation. |
+| NASA POWER D-103 | `PASSED_UNDER_PROTOCOL` with source-byte drift reproduction | A narrow public-data gate-level outcome reproduced with drift in `reproduction_level`. |
+| NASA / NOAA maintainer reruns | `reproduction_attempt` cards | Maintainer `SINGLE_OPERATOR_RERUN` examples; not independent external verification. |
 | NOAA CO-OPS D-131 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed and honestly did not pass the frozen gate. |
+| API parity registry gate | `PASSED_UNDER_PROTOCOL` | Frozen registry validators exited 0; registry metadata parity only. |
 | EEA AQ manual track | `BLOCKED_SOURCE` | A larger manual track was blocked by an incomplete public source manifest. |
 
 ## European Dimension

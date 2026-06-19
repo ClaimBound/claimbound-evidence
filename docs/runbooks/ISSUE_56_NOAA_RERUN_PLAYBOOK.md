@@ -24,7 +24,8 @@ honestly. Do not turn a negative result into success.
 - `docs/protocols/NOAA_COOPS_D131_PREREG_CHARTER.md`
 - `docs/evidence/NOAA_COOPS_D131_NEGATIVE_RESULT.md`
 - `artifacts/noaa_coops_d131_negative_result_summary.json`
-- `docs/REPRODUCTION.md` (NOAA CO-OPS D-131 section)
+- `docs/external_verification/TIER_C_NOAA_RERUN.md`
+- `docs/REPRODUCTION.md` (legacy NOAA background)
 
 ## 1. Create local run root
 
