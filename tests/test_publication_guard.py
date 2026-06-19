@@ -17,6 +17,10 @@ FORBIDDEN_PATTERNS = (
     "/users/" + "rostsh",
     "tr" + "ading",
     "gr" + "ant",
+    "fun" + "ding",
+    "nl" + "net",
+    "post-fun" + "ding",
+    "post-mo" + "u",
     "cu" + "rsoragent",
     "co-authored-by: cu" + "rsor",
     "made with cu" + "rsor",
@@ -55,7 +59,10 @@ def test_no_forbidden_public_tokens_or_ru_text() -> None:
         text = path.read_text(encoding="utf-8", errors="replace")
         lower = text.lower()
         for token in FORBIDDEN_PATTERNS:
-            if rel.as_posix() == "LICENSE" and token == "gr" + "ant":
+            if rel.as_posix() == "LICENSE" and token in {
+                "gr" + "ant",
+                "fun" + "ding",
+            }:
                 continue
             if token in lower:
                 violations.append(f"{rel}: forbidden token {token!r}")

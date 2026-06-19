@@ -16,7 +16,7 @@ protocols, sanitized artifacts, evidence cards and registry entries.
 | EEA content reuse FAQ source audit D-001 | EEA content reuse FAQ | `PASSED_UNDER_PROTOCOL` | The EEA reuse FAQ page passed the source-audit gate for page reachability, legal-notice link and FAQ navigation links only. |
 | Eurostat API guidelines source audit D-001 | Eurostat API detailed guidelines | `PASSED_UNDER_PROTOCOL` | The Eurostat API detailed guidelines page passed the source-audit gate for page reachability, copyright notice link and catalogue API documentation links only. |
 | EEA AQ manual track D-001 | EEA Air Quality Download API | `BLOCKED_SOURCE` | The larger PM10 manual track could not fairly run the fixed coverage gate because the reproducible URL-list endpoint returned no BE/NL URLs while summaries reported files. |
-| Award-fit self-check D-001 | Public-interest open-source program eligibility information | `PASSED_UNDER_PROTOCOL` | Public ClaimBound materials mapped to selected program eligibility categories under a frozen manual checklist, without claiming approval, endorsement, legal eligibility, reviewer acceptance or award likelihood. |
+| Program-fit self-check D-001 | Public-interest open-source program eligibility information | `PASSED_UNDER_PROTOCOL` | Public ClaimBound materials mapped to selected program eligibility categories under a frozen manual checklist, without claiming approval, endorsement, legal eligibility, reviewer acceptance or selection likelihood. |
 | NASA POWER D-103 | NASA POWER Daily point API | `PASSED_UNDER_PROTOCOL` | A narrow renewable-resource signal passed the frozen gate for the documented points, period, target, controls and acceptance rule only. |
 | NOAA CO-OPS D-131 | NOAA CO-OPS Data API | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed, but the candidate did not pass the frozen acceptance gate. |
 | Software dev validator gate D-001 | ClaimBound evidence repository | `PASSED_UNDER_PROTOCOL` | The evidence-card validator rejected a card JSON missing `execution_mode` when exercised by the frozen pytest gate in protocol SOFTWARE_DEV_D001 only. |
@@ -105,9 +105,9 @@ This makes a legal conclusion about data reuse.
 
 This is separate from the larger EEA AQ D-001 manual PM10 track.
 
-## Award-Fit Self-Check D-001
+## Program-Fit Self-Check D-001
 
-Award-fit self-check D-001 is a green applicant-side public example for
+Program-fit self-check D-001 is a green applicant-side public example for
 program reviewers and program evaluators.
 
 Allowed interpretation:
@@ -120,10 +120,10 @@ program eligibility categories under the frozen manual checklist.
 Forbidden interpretation:
 
 ```text
-This proves approval, endorsement, legal eligibility or award likelihood.
+This proves approval, endorsement, legal eligibility or selection likelihood.
 This proves reviewers will accept the submitted application.
 This is a complete audit of private application material.
-This replaces human award review.
+This replaces human programme review.
 ```
 
 The source identity is intentionally withheld from the public card to avoid

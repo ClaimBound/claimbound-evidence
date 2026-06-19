@@ -40,11 +40,11 @@ Sustainability depends on **external reruns and feedback**, not vanity metrics:
 Public CI on GitHub Actions (`pytest` on every push and pull request) uses
 free hosted runners for this open repository.
 
-## Post-funding maintenance (if approved)
+## Roadmap maintenance
 
-A funded 9-month work package would add SourceProbe v1, static registry views and
-additional honest cards — still without a hosted backend. See
-[ROADMAP_2026.md](ROADMAP_2026.md).
+Longer-term open-source hardening items such as SourceProbe v1, static registry
+views and additional honest cards are described in [ROADMAP_2026.md](ROADMAP_2026.md).
+The project remains usable without a hosted backend.
 
 ## Maintainer boundary
 

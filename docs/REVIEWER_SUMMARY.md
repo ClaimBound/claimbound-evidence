@@ -25,6 +25,43 @@ public claim
 
 If there is no evidence card, the statement is still only a claim.
 
+## Current Baseline Versus Planned Work
+
+The public repository already contains a working open-source baseline. A separate
+public work package (described in [Public roadmap 2026](ROADMAP_2026.md)) is
+planned to harden that baseline into additional reusable infrastructure.
+
+| Already public now | Planned next (not claimed as completed here) |
+| --- | --- |
+| Evidence-card JSON/SVG, registry index, validators, 70+ tests | SourceProbe v1 implementation |
+| EU and public AI source-audit runners for existing card types | Static registry generated views |
+| Scaffold drafts via `claimbound new` | Scaffold workflow hardening |
+| Manual and AI-assisted workflow docs | Independent rerun workflow implementation |
+| 24 honest cards across green, yellow, amber and red outcomes | Expanded tutorial set and accessibility pass |
+
+Documents such as [SourceProbe v1 acceptance criteria](SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md)
+and [Static registry MVP acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md)
+are **pre-implementation specifications**, not completed deliverables.
+
+## Not A Duplicate Of
+
+ClaimBound is intentionally narrow. It complements adjacent projects instead of
+replacing them.
+
+| Adjacent project | What it already does | ClaimBound boundary |
+| --- | --- | --- |
+| OSF / preregistration platforms | Register study plans before outcomes are known | Publish **outcome evidence cards** with exact status, hashes, claim boundary and forbidden inferences |
+| OpenML / MLCommons-style benchmarks | Broad model evaluation and leaderboard tables | Small frozen protocols and source-boundary checks; no global ranking by default |
+| Fact-checking / newsroom workflows | Editorial verification of public statements | Machine-checkable evidence records tied to frozen protocols and public sources |
+| EviBound (research-agent execution gates) | Dual-gate agent execution with MLflow artifacts | Public evidence cards for narrow claims on public sources — see [Related work](RELATED_WORK_AND_INDEPENDENCE.md) |
+
+Key sentence:
+
+```text
+OSF registers the plan; ClaimBound publishes the outcome card with exact status
+and forbidden claims.
+```
+
 ## What This Repository Already Contains
 
 - Evidence-card JSON records and SVG previews rendered from JSON.
@@ -58,10 +95,10 @@ limits.
 
 ## Planned Public Work Package
 
-The public foreground should stay narrow and concrete. The planned work package
-is intended to harden reusable open-source infrastructure, examples and review
-workflows. It should not turn the repository into a hosted service or mix it
-with unrelated private systems.
+The public foreground should stay narrow and concrete. The [roadmap](ROADMAP_2026.md)
+describes planned hardening work. Acceptance-criteria documents for some items
+exist as specs only; implementation is part of that planned package, not claimed
+as already completed in this repository.
 
 Planned public deliverables:
 

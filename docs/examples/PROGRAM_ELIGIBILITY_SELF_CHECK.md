@@ -1,5 +1,10 @@
 # Program Eligibility Self-Check Example
 
+> **Applicant-side example only — not approval evidence.** A green card here
+> does not claim that any program sponsor selected, endorsed, ranked or approved
+> a proposal. It records only that a narrow public self-check passed under a
+> frozen manual checklist on one access date.
+
 This example shows how ClaimBound can be used by an applicant to check their own
 public project against program eligibility criteria without turning the
 result into an award decision claim.
