@@ -8,6 +8,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+from claimbound_evidence.doctor import format_doctor_report, run_doctor
 from claimbound_evidence.evidence_card import (
     load_evidence_card,
     validate_evidence_card,
@@ -153,6 +154,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Local-only parent directory. Defaults to ~/claimbound_runs.",
     )
     run_root_parser.set_defaults(func=_cmd_run_root)
+
+    doctor_parser = subparsers.add_parser(
+        "doctor",
+        description="Check Python, git and repo layout for cross-platform workflows.",
+    )
+    doctor_parser.set_defaults(func=_cmd_doctor)
 
     return parser
 
@@ -322,6 +329,13 @@ def _cmd_validate_tree(args: argparse.Namespace, parser: argparse.ArgumentParser
 
     print(f"valid_tree_overlay={_display_path(path)}")
     return 0
+
+
+def _cmd_doctor(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del args, parser
+    report = run_doctor(REPO_ROOT)
+    print(format_doctor_report(report))
+    return 0 if report.ok else 1
 
 
 def _cmd_run_root(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:

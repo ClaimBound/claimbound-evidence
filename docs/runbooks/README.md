@@ -10,28 +10,24 @@ Step-by-step playbooks for open external-operator issues.
 | #58 AI source-audit boundary review | [ISSUE_58_AI_BOUNDARY_PLAYBOOK.md](ISSUE_58_AI_BOUNDARY_PLAYBOOK.md) |
 | #59 Developer evidence card | [ISSUE_59_API_PARITY_PLAYBOOK.md](ISSUE_59_API_PARITY_PLAYBOOK.md) |
 
-Shared setup (works in **zsh** and bash on macOS):
+Shared setup (Windows, macOS and Linux via the `claimbound` CLI):
 
 ```bash
-export REPO_ROOT="<absolute-path-to-claimbound-evidence-checkout>"
-export RUNS_ROOT="$HOME/claimbound_runs"
-export OPERATOR="<your-handle>"
-export TODAY="$(date +%F)"
-
-cd "$REPO_ROOT"
+cd <path-to-claimbound-evidence-checkout>
 uv sync --extra dev
+uv run claimbound doctor
 uv run claimbound validate-all
 ```
 
-Capture `run-root` directory (first stdout line):
+Use your GitHub handle as `--operator` and note today's date for issue
+comments (`claimbound doctor` prints `today=YYYY-MM-DD`). See
+[platform support](../PLATFORM_SUPPORT.md).
+
+Create a run directory (first printed line is the path to reuse):
 
 ```bash
-export RUN_DIR="$(
-  uv run claimbound run-root \
-    --protocol-id "PROTOCOL_ID" \
-    --source-url "https://example.org/source" \
-    --operator "$OPERATOR" \
-    --root "$RUNS_ROOT" | head -1
-)"
-echo "RUN_DIR=$RUN_DIR"
+uv run claimbound run-root \
+  --protocol-id "PROTOCOL_ID" \
+  --source-url "https://example.org/source" \
+  --operator "<your-handle>"
 ```

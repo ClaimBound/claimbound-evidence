@@ -74,6 +74,7 @@ make source limits visible.
 
 ```bash
 uv sync --extra dev
+uv run claimbound doctor
 uv run --extra dev python -m pytest -n auto
 uv run claimbound validate-all
 uv run --extra dev python scripts/claimbound_validate_evidence_card.py \
@@ -96,8 +97,11 @@ uv run --extra dev python scripts/claimbound_validate_evidence_card.py \
 | `uv run claimbound validate-frontier docs/track_families/<ID>_FRONTIER.json` | Validates a compact frontier/tombstone ledger for related R&D families. |
 | `uv run python scripts/claimbound_validate_family_frontier.py docs/track_families/<ID>_FRONTIER.json` | Script entrypoint for the same frontier validation. |
 | `uv run claimbound validate-all` | Validates all committed evidence cards, the registry index and any optional `*_FAMILY_LEDGER.json` or `*_FRONTIER.json` files. |
+| `uv run claimbound doctor` | Checks Python, git and repo layout on Windows, macOS or Linux. |
 
-These commands are useful for private local work too. A person or organization
+These commands are useful for private local work too. Shell tools such as jq,
+curl and shasum are not required for the primary `claimbound` workflows. See
+[platform support](PLATFORM_SUPPORT.md). A person or organization
 can keep raw payloads, prompt text, transcripts and logs inside a local run
 root, while publishing only the sanitized hashes and evidence card.
 
@@ -141,7 +145,8 @@ uv run claimbound run-root \
   --operator "your-name-or-handle"
 ```
 
-This creates a local-only directory under `$HOME/claimbound_runs/` with standard
+This creates a local-only directory under your home folder (by default
+`claimbound_runs/` there) with standard
 `raw/`, `logs/`, `hashes/`, `reports/` and `transcripts/` folders, plus
 `RUN_CONTEXT.md`, `DEVIATIONS.md` and `LOCAL_MANIFEST.md`.
 

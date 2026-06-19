@@ -96,10 +96,13 @@ Independent from [EviBound](https://arxiv.org/abs/2511.05524); see
 
 ## Install
 
+Works on Windows, macOS and Linux. See [platform support](docs/PLATFORM_SUPPORT.md).
+
 ```bash
 git clone https://github.com/ClaimBound/claimbound-evidence.git
 cd claimbound-evidence
 uv sync --extra dev
+uv run claimbound doctor
 ```
 
 ## Reproduce In Three Commands

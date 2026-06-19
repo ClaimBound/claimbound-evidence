@@ -16,10 +16,14 @@ not need private data, private technology or a hosted account.
 
 ## Minimal Local Setup
 
+Works on Windows, macOS and Linux. Prerequisites: Python 3.12+, git. See
+[platform support](PLATFORM_SUPPORT.md).
+
 ```bash
 git clone https://github.com/ClaimBound/claimbound-evidence.git
 cd claimbound-evidence
 uv sync --extra dev
+uv run claimbound doctor
 uv run claimbound validate-all
 uv run --extra dev python -m pytest -q
 ```
@@ -39,7 +43,7 @@ uv run claimbound new \
   --domain "public-data" \
   --track-type "source_audit" \
   --execution-mode "MANUAL_NO_AI" \
-  --out "$HOME/claimbound_runs/EXAMPLE_D001/scaffold"
+  --out "claimbound_runs/EXAMPLE_D001/scaffold"
 ```
 
 Keep raw payloads, transcripts and restricted source materials outside this
