@@ -95,7 +95,8 @@ EOF
 
 - **No drift:** commit report + `eea_source_audit_drift_check_summary.json`
 - **Drift:** same, optionally add `reproduction_attempt` card with
-  `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT`
+  `reproduction_level: REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` while keeping
+  the honest gate outcome in `result_status`
 
 ```bash
 uv run claimbound validate-all

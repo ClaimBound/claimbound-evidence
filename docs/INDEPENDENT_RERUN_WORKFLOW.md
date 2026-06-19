@@ -6,13 +6,16 @@ into a certification authority.
 ## When To Use This
 
 Use this workflow when another operator wants to rerun an existing card and
-publish one of these outcomes:
+publish an updated reproduction record or an honest non-pass.
 
-- `REPRODUCED_OUTCOME`;
-- `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT`;
-- `NEGATIVE_RESULT_UNDER_PROTOCOL`;
-- `BLOCKED_SOURCE`;
-- `INSUFFICIENT_COVERAGE`.
+Typical fields:
+
+- `result_status`: the gate outcome under the frozen protocol
+  (`PASSED_UNDER_PROTOCOL`, `NEGATIVE_RESULT_UNDER_PROTOCOL`, `BLOCKED_SOURCE`
+  or `INSUFFICIENT_COVERAGE`);
+- `reproduction_level`: `REPRODUCED_OUTCOME` or
+  `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` when another run confirms the
+  outcome.
 
 The rerun must stay inside the original claim boundary unless a new protocol is
 opened.
@@ -49,14 +52,22 @@ For copy-paste commands and expected outputs, see
 
 ## Status Selection
 
-Use `REPRODUCED_OUTCOME` only when the original outcome is reproduced under the
-same protocol and the source boundary remains stable.
+Set `result_status` to the honest gate outcome from the rerun:
 
-Use `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` when the gate-level outcome
-matches but fresh source bytes differ from the original raw payload bytes.
+- `PASSED_UNDER_PROTOCOL` when the frozen gate passed;
+- `NEGATIVE_RESULT_UNDER_PROTOCOL` when the gate did not pass;
+- `BLOCKED_SOURCE` or `INSUFFICIENT_COVERAGE` when the source boundary blocks a
+  fair result.
 
-Use `NEGATIVE_RESULT_UNDER_PROTOCOL`, `BLOCKED_SOURCE` or
-`INSUFFICIENT_COVERAGE` when that is what the rerun honestly finds.
+Set `reproduction_level` separately:
+
+- `REPRODUCED_OUTCOME` when the original gate outcome is reproduced and source
+  bytes remain stable;
+- `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` when the gate-level outcome
+  matches but fresh source bytes differ from the original raw payload bytes;
+- `not independently reproduced` when no rerun has confirmed the outcome yet.
+
+Do not put `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` in `result_status`.
 
 ## Verification
 

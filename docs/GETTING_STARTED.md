@@ -50,14 +50,22 @@ This method is better than all other methods.
 
 ## Valid Result Statuses
 
-Use the documented status values:
+Use the documented `result_status` values:
 
 - `PASSED_UNDER_PROTOCOL`
 - `NEGATIVE_RESULT_UNDER_PROTOCOL`
 - `BLOCKED_SOURCE`
 - `INSUFFICIENT_COVERAGE`
+- `REPRODUCED_OUTCOME` (rare; most cards record gate outcomes instead)
+
+Record reproduction separately in `reproduction_level`:
+
+- `not independently reproduced`
 - `REPRODUCED_OUTCOME`
 - `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT`
+
+Do not put source-byte drift in `result_status`. See
+[result statuses](RESULT_STATUS.md).
 
 Negative and blocked outcomes are useful. They prevent selective reporting and
 make source limits visible.

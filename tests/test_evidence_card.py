@@ -115,6 +115,25 @@ def test_evidence_card_rejects_raw_payload_committed() -> None:
     assert "raw_payload_committed must be false" in violations
 
 
+def test_evidence_card_rejects_drift_in_result_status() -> None:
+    card = _valid_card()
+    card["result_status"] = "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT"
+    card["reproduction_level"] = "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT"
+
+    violations = validate_evidence_card(card)
+
+    assert any("result_status must not be REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT" in item for item in violations)
+
+
+def test_evidence_card_requires_valid_reproduction_level() -> None:
+    card = _valid_card()
+    card["reproduction_level"] = "maybe reproduced"
+
+    violations = validate_evidence_card(card)
+
+    assert "reproduction_level must be one of" in " ".join(violations)
+
+
 def test_evidence_card_cli_reports_violations(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:

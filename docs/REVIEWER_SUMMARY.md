@@ -162,7 +162,7 @@ claims.
 | Green | `PASSED_UNDER_PROTOCOL` | One narrow claim passed under the written protocol. |
 | Red | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The protocol ran and the claim did not pass. |
 | Amber | `BLOCKED_SOURCE` or `INSUFFICIENT_COVERAGE` | A fair empirical claim should not be made from the available source. |
-| Yellow | `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` | The outcome is useful but reproduction has an explicit limitation. |
+| Yellow (reproduction chip) | `reproduction_level: REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` | The gate outcome is useful but reproduction has an explicit source-byte limitation. |
 | Gray | request or scaffold | Not evidence yet. |
 
 ## External Operator Path
