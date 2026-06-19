@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Removed
+
+- Motion-demo placeholder guide and references from documentation.
+
 ## 0.4.7 - 2026-06-19
 
 ### Added
@@ -13,7 +17,6 @@
 - [Reviewer path](docs/REVIEWER_PATH.md) one-page orientation for first-time readers.
 - [Common misreadings](docs/COMMON_MISREADINGS.md) FAQ.
 - [EEA source audit case study](docs/case_studies/EEA_SOURCE_AUDIT_CASE_STUDY.md).
-- [GIF production and insertion guide](docs/assets/gifs/README.md).
 - [Maintainer guide](docs/MAINTAINER_GUIDE.md) for public sustainability boundaries.
 - Windows CI matrix in GitHub Actions.
 

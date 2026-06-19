@@ -37,10 +37,6 @@ the [non-developer start guide](docs/START_WITHOUT_CODING.md) or the
 
 ![ClaimBound workflow](docs/assets/claimbound_workflow.svg)
 
-Motion demos (optional): add GIFs per [GIF guide](docs/assets/gifs/README.md). When
-`docs/assets/gifs/claimbound_nondev_15min.gif` is present, embed it in this README
-and in `START_WITHOUT_CODING.md`.
-
 ## Public Workflows
 
 | Workflow | Question it helps answer | Start here |

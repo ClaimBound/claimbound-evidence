@@ -42,8 +42,6 @@ an operator who is **not** the maintainer.
 sufficient external signal — reopen or post a new closing comment with your
 GitHub handle and today's date.
 
-Optional motion demo for operators: [GIF guide](../assets/gifs/README.md).
-
 ## After Your Pack
 
 1. Post a closing comment using [CLOSING_COMMENT_TEMPLATE.md](CLOSING_COMMENT_TEMPLATE.md).

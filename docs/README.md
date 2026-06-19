@@ -20,7 +20,6 @@ For first-time readers, program reviewers, journalists and external inspectors:
 9. [Artifacts catalog](artifacts/README.md) — NYC TLC / CDC artifact-only records
 10. [Public roadmap 2026](ROADMAP_2026.md)
 11. [European Dimension](EUROPEAN_DIMENSION.md)
-12. [GIF demos guide](assets/gifs/README.md) — record, convert, embed
 
 Closing VERIFY mirrors? See [External verification packs](external_verification/README.md).
 Issues **#85–#87** are open for **independent** external operators.
