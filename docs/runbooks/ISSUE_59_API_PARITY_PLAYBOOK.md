@@ -40,21 +40,15 @@ Edit copied files: replace `SOFTWARE_DEV_D001` → `API_PARITY_D001` and command
 
 ## 3. Frozen commands (run exactly)
 
+Primary path (any OS):
+
 ```bash
-export GIT_SHA="$(git rev-parse HEAD)"
-export EXPECTED_CARD_COUNT="$(jq '.card_count' docs/registry/evidence_index.json)"
-export EXPECTED_REGISTRY_NAME="$(jq -r '.registry_name' docs/registry/evidence_index.json)"
-
-uv run python scripts/claimbound_validate_registry.py
-echo "validate_registry_exit=$?"
-
 uv run claimbound validate-all
-echo "validate_all_exit=$?"
-
-jq '{registry_name, card_count, registry_version}' docs/registry/evidence_index.json
+uv run claimbound inspect registry --keys registry_name card_count registry_version
 ```
 
-Both commands must exit `0`.
+`validate-all` must exit `0`. Record `git rev-parse HEAD` in your summary if you
+use git.
 
 ## 4. Sanitized summary
 

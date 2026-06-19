@@ -4,11 +4,19 @@
 from __future__ import annotations
 
 import argparse
+import json
 import subprocess
 import sys
 from pathlib import Path
 
 from claimbound_evidence.doctor import format_doctor_report, run_doctor
+from claimbound_evidence.inspect import (
+    format_hash_lines,
+    format_json_subset,
+    hash_files,
+    load_json,
+    pick_fields,
+)
 from claimbound_evidence.evidence_card import (
     load_evidence_card,
     validate_evidence_card,
@@ -160,6 +168,55 @@ def build_parser() -> argparse.ArgumentParser:
         description="Check Python, git and repo layout for cross-platform workflows.",
     )
     doctor_parser.set_defaults(func=_cmd_doctor)
+
+    inspect_parser = subparsers.add_parser(
+        "inspect",
+        description="Print selected JSON fields from cards, registry or artifacts.",
+    )
+    inspect_sub = inspect_parser.add_subparsers(dest="inspect_target", required=True)
+
+    inspect_card = inspect_sub.add_parser("card", help="Inspect one evidence card JSON file.")
+    inspect_card.add_argument("path", type=Path)
+    inspect_card.add_argument(
+        "--keys",
+        nargs="+",
+        required=True,
+        help="Top-level JSON keys to print.",
+    )
+    inspect_card.set_defaults(func=_cmd_inspect_card)
+
+    inspect_registry = inspect_sub.add_parser("registry", help="Inspect the registry index.")
+    inspect_registry.add_argument(
+        "--registry",
+        type=Path,
+        default=REPO_ROOT / "docs" / "registry" / "evidence_index.json",
+    )
+    inspect_registry.add_argument(
+        "--keys",
+        nargs="+",
+        default=["registry_name", "card_count"],
+    )
+    inspect_registry.set_defaults(func=_cmd_inspect_registry)
+
+    inspect_json = inspect_sub.add_parser("json", help="Inspect any JSON object file.")
+    inspect_json.add_argument("path", type=Path)
+    inspect_json.add_argument("--keys", nargs="+", required=True)
+    inspect_json.set_defaults(func=_cmd_inspect_json)
+
+    hash_parser = subparsers.add_parser(
+        "hash",
+        description="Print SHA-256 hashes for local files.",
+    )
+    hash_parser.add_argument("paths", nargs="+", type=Path)
+    hash_parser.add_argument("--out", type=Path, help="Optional file to write hash lines.")
+    hash_parser.set_defaults(func=_cmd_hash)
+
+    validate_card_parser = subparsers.add_parser(
+        "validate-card",
+        description="Validate one evidence card JSON file.",
+    )
+    validate_card_parser.add_argument("path", type=Path)
+    validate_card_parser.set_defaults(func=_cmd_validate_card)
 
     return parser
 
@@ -328,6 +385,68 @@ def _cmd_validate_tree(args: argparse.Namespace, parser: argparse.ArgumentParser
         return 1
 
     print(f"valid_tree_overlay={_display_path(path)}")
+    return 0
+
+
+def _resolve_repo_path(path: Path) -> Path:
+    return path if path.is_absolute() else REPO_ROOT / path
+
+
+def _cmd_inspect_card(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = _resolve_repo_path(args.path)
+    try:
+        subset = pick_fields(load_json(path), tuple(args.keys))
+    except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
+        print(f"inspect error: {exc}", file=sys.stderr)
+        return 1
+    print(format_json_subset(subset), end="")
+    return 0
+
+
+def _cmd_inspect_registry(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = _resolve_repo_path(args.registry)
+    try:
+        subset = pick_fields(load_json(path), tuple(args.keys))
+    except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
+        print(f"inspect error: {exc}", file=sys.stderr)
+        return 1
+    print(format_json_subset(subset), end="")
+    return 0
+
+
+def _cmd_inspect_json(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    return _cmd_inspect_card(args, parser)
+
+
+def _cmd_hash(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    paths = tuple(_resolve_repo_path(path) for path in args.paths)
+    try:
+        lines = format_hash_lines(hash_files(paths))
+    except OSError as exc:
+        print(f"hash error: {exc}", file=sys.stderr)
+        return 1
+    if args.out is not None:
+        out_path = _resolve_repo_path(args.out) if not args.out.is_absolute() else args.out
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(lines, encoding="utf-8")
+        print(_display_path(out_path))
+        return 0
+    print(lines, end="")
+    return 0
+
+
+def _cmd_validate_card(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = _resolve_repo_path(args.path)
+    violations = validate_evidence_card(load_evidence_card(path))
+    if violations:
+        for violation in violations:
+            print(f"violation: {_display_path(path)}: {violation}", file=sys.stderr)
+        return 1
+    print(f"valid_card={_display_path(path)}")
     return 0
 
 

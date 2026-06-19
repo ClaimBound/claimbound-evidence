@@ -7,21 +7,17 @@ This is a **wording review**. Network reruns are optional.
 
 ## Cards to review
 
+Primary path (any OS):
+
 ```bash
-cd "$REPO_ROOT"
-
-CARDS=(
-  CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08
-  CLAIMBOUND-OPENAI_GPT5_SYSTEM_CARD_SOURCE_AUDIT_D001-2026-05-08
-  CLAIMBOUND-GOOGLE_DEEPMIND_MODEL_CARDS_SOURCE_AUDIT_D001-2026-05-08
-  CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07
-)
-
-for card in "${CARDS[@]}"; do
-  echo "=== $card ==="
-  jq '{evidence_id, claim_boundary, allowed_claim_sentence, known_limitations}' \
-    "docs/evidence_cards/${card}.json"
-done
+uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
+  --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
+uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-OPENAI_GPT5_SYSTEM_CARD_SOURCE_AUDIT_D001-2026-05-08.json \
+  --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
+uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-GOOGLE_DEEPMIND_MODEL_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
+  --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
+uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json \
+  --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
 ```
 
 Also read:
