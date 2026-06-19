@@ -77,14 +77,11 @@ rerun workflows.
 | Local run root | `claimbound run-root` | Uses `Path.home()` by default |
 | Demos | `claimbound demo eea-source-audit` | Python HTTP; no curl required |
 | Environment check | `claimbound doctor` | Confirms Python, git and repo layout |
-
 | Inspect JSON fields | `claimbound inspect card/registry/json` | Replaces jq |
 | File hashes | `claimbound hash` | Replaces shasum |
-
 | NASA / NOAA reruns | `claimbound rerun nasa-d103` / `noaa-d131` | Python download + gate |
 | EEA drift | `claimbound drift eea-source-audit` | Probe + field compare |
-
-`claimbound verify` shortcuts land in a follow-up PR.
+| VERIFY packs | `claimbound verify starter-pack` (etc.) | Tier A checklist shortcuts |
 
 ## Optional shell tools
 
