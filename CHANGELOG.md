@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 0.4.7.2 - 2026-06-19
+
+### Added
+
+- [Volunteer one-pager](docs/external_verification/VOLUNTEER_ONE_PAGER.md) — single
+  page with baseline, verify commands, closing comment and troubleshooting for
+  external operators.
+- [GitHub outreach templates](docs/external_verification/GITHUB_OUTREACH.md) —
+  copy-paste DM, issue and Discussion invites for maintainers.
+
 ## 0.4.7.1 - 2026-06-19
 
 ### Changed

@@ -5,6 +5,9 @@ outside the maintainer's machine. You are **not** certifying models, approving
 deployments or making program-sponsor claims — you only confirm that the published checklist
 and commands reproduce on your environment.
 
+**Volunteer?** Start with the [one-pager](VOLUNTEER_ONE_PAGER.md) (all commands on
+one page). Maintainers inviting strangers on GitHub: [outreach templates](GITHUB_OUTREACH.md).
+
 **Who may close #85–#87:** any GitHub user who is **not** the maintainer
 (`NeoZorK` / `ClaimBound` bot bootstrap runs do not count as external signal).
 
@@ -70,6 +73,8 @@ your handle and today's date.
 
 ## Related Docs
 
+- [Volunteer one-pager](VOLUNTEER_ONE_PAGER.md) — send this link to new operators
+- [GitHub outreach templates](GITHUB_OUTREACH.md) — copy-paste invites for maintainers
 - [External operator starter pack](../EXTERNAL_OPERATOR_STARTER_PACK.md)
 - [Planned work not shipped](../PLANNED_NOT_SHIPPED.md)
 - [Artifacts catalog](../artifacts/README.md) — NYC TLC / CDC are artifact-only
