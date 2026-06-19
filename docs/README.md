@@ -21,7 +21,8 @@ For first-time readers, program reviewers, journalists and external inspectors:
 10. [Public roadmap 2026](ROADMAP_2026.md)
 11. [European Dimension](EUROPEAN_DIMENSION.md)
 
-Closing VERIFY mirrors? See [External verification packs](external_verification/README.md).
+Closing VERIFY mirrors? See [Volunteer one-pager](external_verification/VOLUNTEER_ONE_PAGER.md)
+or [External verification packs](external_verification/README.md).
 Issues **#85–#87** are open for **independent** external operators.
 
 Quick validation:

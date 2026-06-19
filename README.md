@@ -87,6 +87,8 @@ More examples, including EU source audits and blocked-source cards:
   versus roadmap, differentiation from adjacent projects
 - [Common misreadings](docs/COMMON_MISREADINGS.md) — green ≠ safe, yellow drift FAQ
 - [European Dimension](docs/EUROPEAN_DIMENSION.md) — EU open-data angle and limits
+- [Volunteer one-pager](docs/external_verification/VOLUNTEER_ONE_PAGER.md) — close
+  VERIFY #85–#87 (~15 min first time)
 - [External verification packs](docs/external_verification/README.md) — split VERIFY
   work across Tier A/B/C operators
 - [External operator starter pack](docs/EXTERNAL_OPERATOR_STARTER_PACK.md) — read,
