@@ -64,11 +64,6 @@ See [Public roadmap 2026](ROADMAP_2026.md) and
 [Planned work not shipped](PLANNED_NOT_SHIPPED.md). Acceptance-criteria documents
 are specifications until implementation lands on `main`.
 
-## Visual walkthrough (optional)
-
-Short GIF demos (when present) live under [docs/assets/gifs/](assets/gifs/README.md).
-The static workflow diagram remains in the README SVG.
-
 ## Read next by role
 
 | Role | Next page |

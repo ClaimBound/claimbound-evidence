@@ -53,8 +53,7 @@ pass — are listed in [Planned work not shipped](PLANNED_NOT_SHIPPED.md).
 Current adoption priority: close **open** VERIFY mirrors #85–#87 via
 [external verification packs](external_verification/README.md) with an operator who
 is **not** the maintainer; record at least one `INDEPENDENT_RERUN` where protocol
-allows. Orientation: [Reviewer path](REVIEWER_PATH.md). Motion demos:
-[GIF guide](assets/gifs/README.md).
+allows. Orientation: [Reviewer path](REVIEWER_PATH.md).
 
 ## Later Platform Work
 
