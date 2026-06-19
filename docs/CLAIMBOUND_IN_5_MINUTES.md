@@ -98,6 +98,7 @@ from being renamed as successes.
 
 ## Where To Start
 
+- Non-developers: [start without coding](START_WITHOUT_CODING.md) (Windows/macOS/Linux).
 - Browse the [evidence cards](evidence_cards/README.md).
 - Follow [getting started](GETTING_STARTED.md) for installation and commands.
 - Use `uv run claimbound new` to create a scaffold.

@@ -53,8 +53,17 @@ The JSON payload for the repo ruleset (for reproducibility) lives at
 scratch after deletion, admins can run `gh api --method POST` with `--input` pointing at that file; to
 adjust an existing ruleset without duplicating entries, obtain its numeric id (`gh ruleset list -R ClaimBound/claimbound-evidence`) and use GitHub's `PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}` REST route.
 
+## Platform support
+
+ClaimBound targets Windows, macOS and Linux through the `claimbound` Python CLI.
+You do not need bash, jq, curl or shasum for the primary operator paths. See
+[platform support](docs/PLATFORM_SUPPORT.md).
+
 Before opening a pull request:
 
 ```bash
+uv sync --extra dev
+uv run claimbound doctor
+uv run claimbound validate-all
 uv run pytest -n auto
 ```

@@ -69,3 +69,12 @@ ClaimBound is an early open-source evidence framework with public examples and a
 clear social need. It should be presented as a practical evidence-discipline
 toolkit, not as a mature standard, certification authority or already adopted
 market category.
+
+## Try It
+
+```bash
+uv run claimbound doctor
+uv run claimbound validate-all
+```
+
+Operators on any OS: [start without coding](START_WITHOUT_CODING.md).

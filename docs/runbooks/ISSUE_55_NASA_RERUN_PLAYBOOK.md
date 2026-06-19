@@ -18,6 +18,10 @@ uv run claimbound rerun nasa-d103 --operator "<your-handle>"
 - `artifacts/nasa_power_d103_real_run_summary.json`
 - `docs/INDEPENDENT_RERUN_WORKFLOW.md`
 
+## Legacy (optional shell)
+
+Use only if you need step-by-step control. Prefer the **Quick path** above on any OS.
+
 ## 1. Create local run root
 
 `claimbound run-root` prints the real directory as its **first line** (timestamped name).

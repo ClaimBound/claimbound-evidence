@@ -22,7 +22,9 @@ and validators pass on `main`.
 The current public baseline is:
 
 - evidence-card JSON/SVG and registry index;
-- `uv run claimbound validate-all` and pytest gates;
+- `uv run claimbound validate-all` and pytest gates (86 tests; CI on Linux and Windows);
+- cross-platform operator CLI: `doctor`, `inspect`, `hash`, `rerun`, `drift`, `verify`;
+- [platform support](PLATFORM_SUPPORT.md) and [start without coding](START_WITHOUT_CODING.md);
 - manual and AI-assisted workflow docs;
 - public runners for existing card types (EEA, NASA, NOAA, public AI docs, etc.);
 - rerun workflow docs, issue templates and maintainer rerun examples.

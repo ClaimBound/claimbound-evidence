@@ -11,6 +11,8 @@ Primary path (any OS, no curl or shasum):
 
 ```bash
 uv run claimbound rerun nasa-d103 --operator "<your-handle>"
+# or checklist shortcut:
+uv run claimbound verify nasa-rerun --operator "<your-handle>"
 ```
 
 The command creates a local run directory, downloads three frozen JSON payloads,

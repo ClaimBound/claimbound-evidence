@@ -33,12 +33,12 @@ planned to harden that baseline into additional reusable infrastructure.
 
 | Already public now | Planned next (not claimed as completed here) |
 | --- | --- |
-| Evidence-card JSON/SVG, registry index, validators, 72+ tests | SourceProbe v1 implementation |
-| EU and public AI source-audit runners for existing card types | Static registry generated views |
-| Scaffold drafts via `claimbound new` | Scaffold workflow hardening |
-| Manual and AI-assisted workflow docs | Operator workflow hardening and external adoption |
-| Rerun workflow docs, issue templates, maintainer rerun cards and playbooks | Independent external reruns (`INDEPENDENT_RERUN`, `MULTI_OPERATOR`) |
-| 24 honest cards across green, amber, red and drift-limited reproduction outcomes | Expanded tutorial set and accessibility pass |
+| Evidence-card JSON/SVG, registry index, validators, 86 tests | SourceProbe v1 implementation |
+| Cross-platform CLI (`doctor`, `inspect`, `rerun`, `drift`, `verify`) on Windows/macOS/Linux | Static registry generated views |
+| EU and public AI source-audit runners for existing card types | Scaffold workflow hardening |
+| Scaffold drafts via `claimbound new` | Operator workflow hardening and external adoption |
+| Manual and AI-assisted workflow docs; CI on ubuntu + windows | Independent external reruns (`INDEPENDENT_RERUN`, `MULTI_OPERATOR`) |
+| Rerun workflow docs, issue templates, maintainer rerun cards; 24 honest cards | Expanded tutorial set and accessibility pass |
 
 Documents such as [SourceProbe v1 acceptance criteria](SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md)
 and [Static registry MVP acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md)

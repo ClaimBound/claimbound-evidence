@@ -36,6 +36,27 @@ payloads or overbroad claims.
 For copy-paste commands and expected outputs, see
 [examples/rerun/README.md](../examples/rerun/README.md).
 
+## One-command reruns (any OS)
+
+Frozen public-data reruns do not require bash, jq, curl or shasum on the primary
+path. See [platform support](PLATFORM_SUPPORT.md).
+
+```bash
+uv run claimbound rerun nasa-d103 --operator "<your-handle>"
+uv run claimbound rerun noaa-d131 --operator "<your-handle>"
+uv run claimbound drift eea-source-audit
+```
+
+Or run VERIFY shortcuts:
+
+```bash
+uv run claimbound verify nasa-rerun --operator "<your-handle>"
+uv run claimbound verify noaa-rerun --operator "<your-handle>"
+uv run claimbound verify eea-drift
+```
+
+Tier packs: [external verification](external_verification/README.md).
+
 ## PR Path
 
 1. Create a local run root outside this repository.

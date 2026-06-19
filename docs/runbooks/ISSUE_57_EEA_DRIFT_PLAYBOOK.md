@@ -15,6 +15,10 @@ uv run claimbound drift eea-source-audit
 - `artifacts/source_audit_d001_summary.json`
 - `docs/protocols/SOURCE_AUDIT_D001_PREREG_CHARTER.md`
 
+## Legacy (optional shell)
+
+Use only if you need step-by-step control. Prefer the **Quick path** above on any OS.
+
 ## 1. Baseline values
 
 ```bash
@@ -106,7 +110,7 @@ EOF
 
 ```bash
 uv run claimbound validate-all
-uv run --extra dev python -m pytest tests/test_eea_source_audit.py -n auto -q
+uv run --extra dev python -m pytest -q
 ```
 
 Closes #57.

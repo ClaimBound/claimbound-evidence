@@ -254,6 +254,11 @@ def build_parser() -> argparse.ArgumentParser:
         "pack",
         choices=sorted(VERIFY_PACKS),
     )
+    verify_parser.add_argument(
+        "--operator",
+        default="verify-operator",
+        help="Operator handle for network rerun verify packs.",
+    )
     verify_parser.set_defaults(func=_cmd_verify)
 
     return parser
@@ -490,7 +495,7 @@ def _cmd_validate_card(args: argparse.Namespace, parser: argparse.ArgumentParser
 
 def _cmd_verify(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
     del parser
-    return run_verify_pack(REPO_ROOT, args.pack)
+    return run_verify_pack(REPO_ROOT, args.pack, operator=args.operator)
 
 
 def _cmd_rerun_nasa_d103(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
