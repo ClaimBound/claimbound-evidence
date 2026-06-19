@@ -78,8 +78,10 @@ rerun workflows.
 | Demos | `claimbound demo eea-source-audit` | Python HTTP; no curl required |
 | Environment check | `claimbound doctor` | Confirms Python, git and repo layout |
 
-Additional `claimbound inspect`, `hash`, `rerun`, `drift` and `verify` commands
-land in follow-up PRs so jq, curl and shasum are not required on the primary path.
+| Inspect JSON fields | `claimbound inspect card/registry/json` | Replaces jq |
+| File hashes | `claimbound hash` | Replaces shasum |
+
+`claimbound rerun`, `drift` and `verify` commands land in follow-up PRs.
 
 ## Optional shell tools
 
