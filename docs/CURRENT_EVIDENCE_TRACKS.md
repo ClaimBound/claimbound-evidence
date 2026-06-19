@@ -16,12 +16,25 @@ protocols, sanitized artifacts, evidence cards and registry entries.
 | EEA content reuse FAQ source audit D-001 | EEA content reuse FAQ | `PASSED_UNDER_PROTOCOL` | The EEA reuse FAQ page passed the source-audit gate for page reachability, legal-notice link and FAQ navigation links only. |
 | Eurostat API guidelines source audit D-001 | Eurostat API detailed guidelines | `PASSED_UNDER_PROTOCOL` | The Eurostat API detailed guidelines page passed the source-audit gate for page reachability, copyright notice link and catalogue API documentation links only. |
 | EEA AQ manual track D-001 | EEA Air Quality Download API | `BLOCKED_SOURCE` | The larger PM10 manual track could not fairly run the fixed coverage gate because the reproducible URL-list endpoint returned no BE/NL URLs while summaries reported files. |
-| Program-fit self-check D-001 | Public-interest open-source program eligibility information | `PASSED_UNDER_PROTOCOL` | Public ClaimBound materials mapped to selected program eligibility categories under a frozen manual checklist, without claiming approval, endorsement, legal eligibility, reviewer acceptance or selection likelihood. |
-| NASA POWER D-103 | NASA POWER Daily point API | `PASSED_UNDER_PROTOCOL` | A narrow renewable-resource signal passed the frozen gate for the documented points, period, target, controls and acceptance rule only. |
-| NOAA CO-OPS D-131 | NOAA CO-OPS Data API | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed, but the candidate did not pass the frozen acceptance gate. |
+| NASA POWER D-103 | NASA POWER Daily point API | `PASSED_UNDER_PROTOCOL` | A narrow renewable-resource signal passed the frozen gate for the documented points, period, target, controls and acceptance rule only. Source-byte drift is recorded in `reproduction_level`. |
+| NASA POWER D-103 maintainer rerun | NASA POWER Daily point API | `PASSED_UNDER_PROTOCOL` | A maintainer `reproduction_attempt` card under the same protocol; `reproduction_level` records source-byte drift. `SINGLE_OPERATOR_RERUN` only. |
+| NOAA CO-OPS D-131 | NOAA CO-OPS Data API | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed, but the candidate did not pass the frozen acceptance gate. Source-byte drift is recorded in `reproduction_level`. |
+| NOAA CO-OPS D-131 maintainer rerun | NOAA CO-OPS Data API | `NEGATIVE_RESULT_UNDER_PROTOCOL` | A maintainer `reproduction_attempt` card under the same protocol; gate still did not pass. `SINGLE_OPERATOR_RERUN` only. |
 | Software dev validator gate D-001 | ClaimBound evidence repository | `PASSED_UNDER_PROTOCOL` | The evidence-card validator rejected a card JSON missing `execution_mode` when exercised by the frozen pytest gate in protocol SOFTWARE_DEV_D001 only. |
+| API parity registry gate D-001 | ClaimBound evidence repository | `PASSED_UNDER_PROTOCOL` | Frozen registry validation commands exited 0 and registry metadata matched expectation. Registry parity only; not production readiness or full validator coverage. |
 | NYC TLC Phase 4 | NYC TLC public trip records | Negative artifact | The official-source run completed, but the candidate did not pass all required controls. A full evidence card should be added or the record should remain clearly marked as artifact-only. |
 | CDC mirror path | Public mirror path | Blocked-source style artifact | The proof path completed, but external source equivalence remained unresolved. No empirical pass or fail claim should be made. |
+
+## Advanced Optional Tracks
+
+These registry cards illustrate optional patterns. They are not first-screen
+examples for new readers.
+
+| Track | Source | Public outcome | Interpretation |
+| --- | --- | --- | --- |
+| Program-fit self-check D-001 | Public-interest open-source program eligibility information | `PASSED_UNDER_PROTOCOL` | Public ClaimBound materials mapped to selected program eligibility categories under a frozen manual checklist, without claiming approval, endorsement, legal eligibility, reviewer acceptance or selection likelihood. Single-operator only. |
+
+See [Program eligibility self-check example](examples/PROGRAM_ELIGIBILITY_SELF_CHECK.md).
 
 ## Evidence Cards Versus Non-Card Artifacts
 
@@ -105,10 +118,10 @@ This makes a legal conclusion about data reuse.
 
 This is separate from the larger EEA AQ D-001 manual PM10 track.
 
-## Program-Fit Self-Check D-001
+## Program-Fit Self-Check D-001 (Advanced Optional)
 
-Program-fit self-check D-001 is a green applicant-side public example for
-program reviewers and program evaluators.
+Program-fit self-check D-001 is an advanced optional example for readers who
+want an applicant-side methodology demo. It is not a first-screen card.
 
 Allowed interpretation:
 
@@ -198,6 +211,16 @@ The method passed under a different threshold.
 The result can be renamed as success after the run.
 The failed controls can be ignored.
 ```
+
+## Maintainer Rerun Cards (NASA And NOAA)
+
+The NASA POWER D-103 and NOAA CO-OPS D-131 maintainer rerun cards are
+`reproduction_attempt` records linked to the original evidence cards. They use
+`SINGLE_OPERATOR_RERUN` and record source-byte drift in `reproduction_level`
+while keeping the honest gate outcome in `result_status`.
+
+They demonstrate the rerun workflow shape. They are not independent external
+verification.
 
 ## NYC TLC Phase 4
 
