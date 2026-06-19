@@ -88,7 +88,9 @@ uv run --extra dev python scripts/claimbound_validate_evidence_card.py \
 | `uv run claimbound new-track` | Alias for `new`; kept for people who think in "track" language. |
 | `uv run claimbound run-root --protocol-id ... --source-url ...` | Creates a local-only run directory under `$HOME/claimbound_runs/` with `raw/`, `logs/`, `hashes/`, `reports/` and `transcripts/`. |
 | `uv run claimbound demo eea-source-audit` | Runs the EEA source-audit demo helper and writes a sanitized report under the demo run root. |
+| `uv run claimbound demo eea-manual-probe` | Runs the EEA AQ manual-track probe helper and writes a blocked-readiness summary under the demo run root. |
 | `uv run claimbound demo grok-source-audit` | Clones or reuses the public `xai-org/grok-prompts` repository in a local-only demo root, then writes source-audit metadata and hashes. |
+| `uv run claimbound validate-tree docs/track_families/<ID>_TREE.json` | Validates optional v3 tree overlays for related manual tracks. |
 | `uv run claimbound validate-family docs/track_families/<ID>_FAMILY_LEDGER.json` | Validates claim IDs, family budget, track modes and stop/closure structure for related R&D tracks. |
 | `uv run python scripts/claimbound_validate_family_ledger.py docs/track_families/<ID>_FAMILY_LEDGER.json` | Script entrypoint for the same family-ledger validation, useful in shell workflows. |
 | `uv run claimbound validate-frontier docs/track_families/<ID>_FRONTIER.json` | Validates a compact frontier/tombstone ledger for related R&D families. |

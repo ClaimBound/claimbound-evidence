@@ -153,18 +153,23 @@ echo "=== YOUR FAILED GATES ==="
 jq '.failed_gates' "$NOAA_REPORTS/noaa_coops_d131_summary.json"
 ```
 
-## 5. What you can close now vs later
+## 5. Maintainer rerun card (already in registry)
 
-**Now (operator evidence short of full card):**
+The maintainer `reproduction_attempt` card is already committed:
+
+- `docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-RERUN-2026-06-15.json`
+- `artifacts/noaa_coops_d131_maintainer_rerun_summary.json`
+- registry entry in `docs/registry/evidence_index.json`
+
+External operators should still use this playbook to produce their own local
+rerun evidence under `SINGLE_OPERATOR_RERUN` or `INDEPENDENT_RERUN`, not copy
+the maintainer card as independent verification.
+
+**Local operator evidence before opening a PR:**
 
 - payloads downloaded outside repo
 - `RUN_DIR/hashes/raw_sha256.txt` recorded
 - row-count comparison documented in `docs/operator_trials/NOAA_D131_RERUN_${TODAY}.md`
-
-**Later (full #56 PR):**
-
-- copy summary to `artifacts/noaa_coops_d131_maintainer_rerun_summary.json`
-- `reproduction_attempt` card + registry + PR template
 
 ## 6. Optional operator note
 
