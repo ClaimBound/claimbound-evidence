@@ -182,7 +182,7 @@ uv run claimbound validate-all
 
 ```bash
 uv run claimbound run-root \
-  --protocol-id PROGRAM_ELIGIBILITY_SELF_CHECK_D001 \
+  --protocol-id PROGRAM_FIT_D001 \
   --source-url "https://example.org/public-call/eligibility/" \
   --operator "your-name-or-handle"
 ```
@@ -192,13 +192,13 @@ uv run claimbound run-root \
 ```bash
 uv run claimbound new \
   --source-url "https://example.org/public-call/eligibility/" \
-  --protocol-id "PROGRAM_ELIGIBILITY_SELF_CHECK_D001" \
+  --protocol-id "PROGRAM_FIT_D001" \
   --domain "program-review" \
   --track-type "source_audit" \
   --execution-mode "MANUAL_NO_AI" \
   --source-name "Public eligibility pages for the target award call" \
   --audience "applicant-side program reviewers" \
-  --out "$HOME/claimbound_runs/PROGRAM_ELIGIBILITY_SELF_CHECK_D001/scaffold"
+  --out "$HOME/claimbound_runs/PROGRAM_FIT_D001/scaffold"
 ```
 
 4. Freeze the public source manifest before scoring:

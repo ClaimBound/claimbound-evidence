@@ -28,7 +28,7 @@ uv run --extra dev python scripts/claimbound_validate_evidence_card.py --help
 
 ```text
 docs/protocols/EDU_REPRO_D001_PREREG_CHARTER.md
-docs/manual_audit/EDU_REPRO_D001_CHECKLIST.md
+docs/manual_audit/EDU_REPRO_D001/EDU_REPRO_D001_CHECKLIST.md
 docs/evidence_cards/CLAIMBOUND-EDU_REPRO_D001-<DATE>.json
 artifacts/edu_repro_d001_summary.json
 ```

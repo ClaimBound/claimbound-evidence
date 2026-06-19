@@ -28,7 +28,7 @@ uv run --extra dev python scripts/claimbound_validate_evidence_card.py --help
 
 ```text
 docs/protocols/AI_PRODUCT_CLAIM_D001_PREREG_CHARTER.md
-docs/manual_audit/AI_PRODUCT_CLAIM_D001_CHECKLIST.md
+docs/manual_audit/AI_PRODUCT_CLAIM_D001/AI_PRODUCT_CLAIM_D001_CHECKLIST.md
 docs/evidence_cards/CLAIMBOUND-AI_PRODUCT_CLAIM_D001-<DATE>.json
 artifacts/ai_product_claim_d001_summary.json
 ```

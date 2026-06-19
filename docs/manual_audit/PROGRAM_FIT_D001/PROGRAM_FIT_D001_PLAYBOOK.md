@@ -30,7 +30,7 @@ uv run claimbound validate-tree docs/track_families/PROGRAM_FIT_D001_TREE.json
 
 ```text
 docs/protocols/PROGRAM_FIT_D001_PREREG_CHARTER.md
-docs/manual_audit/PROGRAM_FIT_D001_CHECKLIST.md
+docs/manual_audit/PROGRAM_FIT_D001/PROGRAM_FIT_D001_CHECKLIST.md
 docs/track_families/PROGRAM_FIT_D001_TREE.json
 docs/evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-<DATE>.json
 artifacts/program_fit_d001_summary.json

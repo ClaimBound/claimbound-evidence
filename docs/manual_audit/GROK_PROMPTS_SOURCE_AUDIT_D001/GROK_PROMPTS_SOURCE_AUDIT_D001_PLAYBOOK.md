@@ -28,7 +28,7 @@ uv run --extra dev python scripts/claimbound_validate_evidence_card.py --help
 
 ```text
 docs/protocols/GROK_PROMPTS_SOURCE_AUDIT_D001_PREREG_CHARTER.md
-docs/manual_audit/GROK_PROMPTS_SOURCE_AUDIT_D001_CHECKLIST.md
+docs/manual_audit/GROK_PROMPTS_SOURCE_AUDIT_D001/GROK_PROMPTS_SOURCE_AUDIT_D001_CHECKLIST.md
 docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-<DATE>.json
 artifacts/grok_prompts_source_audit_d001_summary.json
 ```
