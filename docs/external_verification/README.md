@@ -1,12 +1,28 @@
 # External Verification Packs
 
-Split verification work so different operators can close different VERIFY issues
-without one person carrying the full load.
+Independent operators close open VERIFY issues to show that ClaimBound works
+outside the maintainer's machine. You are **not** certifying models, approving
+deployments or making program-sponsor claims — you only confirm that the published checklist
+and commands reproduce on your environment.
+
+**Who may close #85–#87:** any GitHub user who is **not** the maintainer
+(`NeoZorK` / `ClaimBound` bot bootstrap runs do not count as external signal).
+
+## Can you finish in 5 minutes?
+
+| Situation | Realistic time | Can close issue? |
+| --- | --- | --- |
+| First visit (clone + `uv sync` + baseline) | **15–25 min** | Yes, after baseline |
+| Repo already cloned, deps installed | **5–10 min per pack** | Yes |
+| Tier C NASA/NOAA with `claimbound verify` shortcuts | **~1–2 min** pack run + baseline | Yes (#86, #87) |
+
+Five minutes is enough **only when the repository is already set up**. First-time
+operators should budget **15 minutes minimum** ([Start without coding](../START_WITHOUT_CODING.md)).
 
 ## Before Anyone Starts
 
 Every operator runs the same baseline on current `main`. Works on Windows,
-macOS and Linux — no jq or bash required for the primary pack commands. See
+macOS and Linux — no jq or bash required for primary commands. See
 [platform support](../PLATFORM_SUPPORT.md).
 
 ```bash
@@ -23,35 +39,39 @@ uv run --extra dev python -m pytest -q
 Note your GitHub handle and today's date for issue comments. `claimbound doctor`
 prints `today=YYYY-MM-DD`.
 
-Expected: `valid_cards=24`, `86 passed`, both commands exit `0`.
+Expected: `ready=yes`, `valid_cards=24`, `86 passed`, all commands exit `0`.
+
+Record `git rev-parse HEAD` for your closing comment.
 
 ## Choose A Pack
 
-| Pack | Operator profile | VERIFY issues | Time |
-| --- | --- | --- | --- |
-| [Tier A — reviewer / spec](TIER_A_REVIEWER.md) | Doc review, validators, no heavy downloads | #85, #89, #90, #91, #92 | ~1 h |
-| [Tier B — EEA drift](TIER_B_EEA_DRIFT.md) | Public-data probe, network | #88 | ~30 min |
-| [Tier C — NASA rerun](TIER_C_NASA_RERUN.md) | Reproducibility, `claimbound rerun` + gate | #86 | 1–2 h |
-| [Tier C — NOAA rerun](TIER_C_NOAA_RERUN.md) | Reproducibility, `claimbound rerun` + gate | #87 | 1–2 h |
+| Pack | Why it exists | VERIFY issues | One-command check | Time (after setup) |
+| --- | --- | --- | --- | --- |
+| [Tier A — starter](TIER_A_REVIEWER.md) | Confirm demos + flagship card semantics | **#85** | `uv run claimbound verify starter-pack` | ~2 min |
+| [Tier C — NASA rerun](TIER_C_NASA_RERUN.md) | Confirm positive gate reruns independently | **#86** | `uv run claimbound verify nasa-rerun --operator <handle>` | ~1–2 min |
+| [Tier C — NOAA rerun](TIER_C_NOAA_RERUN.md) | Confirm negative gate stays negative | **#87** | `uv run claimbound verify noaa-rerun --operator <handle>` | ~1–2 min |
 
-Minimum credible external signal for reviewers: **Tier A + one Tier C pack** from
-an operator who is **not** the maintainer.
+**Minimum credible external signal:** close **#85** plus **one of #86 or #87**
+from a non-maintainer operator.
 
-**Open for independent closure:** VERIFY #85 (starter pack), #86 (NASA rerun),
-#87 (NOAA rerun). Maintainer bootstrap comments on closed VERIFY issues are not
-sufficient external signal — reopen or post a new closing comment with your
-GitHub handle and today's date.
+**Open for independent closure:** VERIFY #85, #86, #87. Maintainer bootstrap
+comments on closed mirrors are not sufficient — post a new closing comment with
+your handle and today's date.
 
-## After Your Pack
+## Close An Issue (step by step)
 
-1. Post a closing comment using [CLOSING_COMMENT_TEMPLATE.md](CLOSING_COMMENT_TEMPLATE.md).
-2. Check all boxes that apply to your pack.
-3. Close the VERIFY issue if you have permission, or ask the maintainer to close.
-
-Maintainers: see [MAINTAINER_TRIAGE.md](MAINTAINER_TRIAGE.md).
+1. Run [baseline](#before-anyone-starts) on current `main`.
+2. Run the pack one-command check from the table above (replace `<handle>` with
+   your GitHub username or a short handle).
+3. Copy [CLOSING_COMMENT_TEMPLATE.md](CLOSING_COMMENT_TEMPLATE.md) into the VERIFY
+   issue; fill every section; paste command output or `verify_*=PASS` lines.
+4. Close the issue if you have permission, or ask the maintainer to close after
+   reviewing your comment.
 
 ## Related Docs
 
 - [External operator starter pack](../EXTERNAL_OPERATOR_STARTER_PACK.md)
 - [Planned work not shipped](../PLANNED_NOT_SHIPPED.md)
 - [Artifacts catalog](../artifacts/README.md) — NYC TLC / CDC are artifact-only
+
+Maintainers: see [MAINTAINER_TRIAGE.md](MAINTAINER_TRIAGE.md).

@@ -16,7 +16,10 @@ Copy into the VERIFY issue you completed. Replace placeholders.
 - [ ] `uv run --extra dev python -m pytest -q` → 86 passed
 
 ### Pack-specific checks
-- [ ] <list commands you ran and outcomes>
+- [ ] #85: `uv run claimbound verify starter-pack` → `verify_starter-pack=PASS`
+- [ ] #86: `uv run claimbound verify nasa-rerun --operator <handle>` → `verify_nasa-rerun=PASS`
+- [ ] #87: `uv run claimbound verify noaa-rerun --operator <handle>` → `verify_noaa-rerun=PASS`
+- [ ] (delete lines that do not apply; add manual steps only if you did not use `verify`)
 
 ### Outcome
 - Result: match | mismatch | spec-only

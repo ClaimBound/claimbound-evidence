@@ -1,9 +1,14 @@
 # Tier C — NASA POWER Rerun Pack
 
 **VERIFY issue:** #86  
+**Why:** an independent operator reruns the frozen NASA POWER D-103 gate and
+confirms the same narrow positive outcome (source-byte drift is honest, not a
+failed gate).
+
 **Profile:** download three NASA POWER JSON files and rerun the frozen gate.
 
-Run [baseline](README.md#before-anyone-starts) first.
+Run [baseline](README.md#before-anyone-starts) first. After setup, the primary
+command usually finishes in **under 2 minutes** (network dependent).
 
 Playbook: [ISSUE_55_NASA_RERUN_PLAYBOOK.md](../runbooks/ISSUE_55_NASA_RERUN_PLAYBOOK.md)
 

@@ -2,9 +2,19 @@
 
 ## Unreleased
 
+## 0.4.7.1 - 2026-06-19
+
+### Changed
+
+- External verification docs: honest time estimates (15 min first setup, ~2 min per
+  `verify` pack after baseline), explicit **why** per VERIFY pack, and
+  `claimbound verify starter-pack` as the primary #85 path.
+- VERIFY issue bodies #85–#87 synced to 86 tests and one-command `verify` shortcuts.
+- GitHub release notes for v0.4.7 corrected (GIF guide removed in #115).
+
 ### Removed
 
-- Motion-demo placeholder guide and references from documentation.
+- Motion-demo placeholder guide and references from documentation (#115).
 
 ## 0.4.7 - 2026-06-19
 

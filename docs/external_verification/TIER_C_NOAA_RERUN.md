@@ -1,9 +1,13 @@
 # Tier C — NOAA CO-OPS Rerun Pack
 
 **VERIFY issue:** #87  
+**Why:** an independent operator reruns the frozen NOAA CO-OPS D-131 gate and
+confirms it stays **negative** under protocol (do not rename failure as success).
+
 **Profile:** fetch NOAA payloads and rerun the frozen negative gate.
 
-Run [baseline](README.md#before-anyone-starts) first.
+Run [baseline](README.md#before-anyone-starts) first. After setup, the primary
+command usually finishes in **under 2 minutes** (network dependent).
 
 Playbook: [ISSUE_56_NOAA_RERUN_PLAYBOOK.md](../runbooks/ISSUE_56_NOAA_RERUN_PLAYBOOK.md)
 

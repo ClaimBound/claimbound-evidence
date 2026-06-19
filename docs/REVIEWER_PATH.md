@@ -52,11 +52,12 @@ All **24** registry cards currently use `SINGLE_OPERATOR` or
 `SINGLE_OPERATOR_RERUN`. There is **no** `INDEPENDENT_RERUN` or
 `MULTI_OPERATOR` card yet.
 
-Maintainer bootstrap runs closed VERIFY mirrors #85–#92 for repository hygiene.
-**Independent external closure** is the acceptance signal. See
-[External verification packs](external_verification/README.md) — minimum credible
-signal: **Tier A + one Tier C pack** from an operator who is **not** the
-maintainer.
+Maintainer bootstrap runs closed VERIFY mirrors #88–#92 for repository hygiene.
+**Independent external closure** of **#85, #86 or #87** is the acceptance signal.
+See [External verification packs](external_verification/README.md): first setup
+~15 min; each open issue closes with one `claimbound verify …` command (~2 min)
+after baseline. Minimum credible signal: **#85 + one of #86/#87** from an
+operator who is **not** the maintainer.
 
 ## What is planned but not shipped
 

@@ -1,14 +1,29 @@
 # Tier A — Reviewer / Spec Pack
 
-**VERIFY issues:** #85, #89, #90, #91, #92  
-**Profile:** documentation review and validator commands; no large downloads.
+**VERIFY issues:** #85 (open for external closure), #89, #90, #91, #92  
+**Profile:** documentation review and validator commands; no large downloads.  
+**#85 time:** ~2 min after baseline via `claimbound verify starter-pack`.
 
 Run [baseline](README.md#before-anyone-starts) first. Primary commands work on
 Windows, macOS and Linux without jq or bash.
 
 ## #85 — Starter pack (#54)
 
+**Why:** prove that starter demos run and flagship cards use honest status fields
+(NASA drift belongs in `reproduction_level`, not `result_status`).
+
 Docs: [EXTERNAL_OPERATOR_STARTER_PACK.md](../EXTERNAL_OPERATOR_STARTER_PACK.md)
+
+**Primary path (~2 min after baseline):**
+
+```bash
+uv run claimbound verify starter-pack
+```
+
+Expected last line: `verify_starter-pack=PASS`.
+
+<details>
+<summary>Manual equivalent (if you prefer step-by-step)</summary>
 
 ```bash
 uv run claimbound demo eea-source-audit
@@ -23,6 +38,8 @@ uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-20
 ```
 
 Confirm: NASA drift is in `reproduction_level`, not `result_status`.
+
+</details>
 
 <details>
 <summary>Optional shell (jq)</summary>
