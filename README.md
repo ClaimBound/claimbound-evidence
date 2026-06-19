@@ -30,8 +30,9 @@ If there is no evidence card, the statement is still only a claim. Green means
 one narrow claim passed under a frozen protocol — not "trust everything".
 Negative, blocked and drift outcomes are first-class evidence too.
 
-Read the one-screen walkthrough in [ClaimBound in 30 seconds](docs/CLAIMBOUND_IN_30_SECONDS.md)
-or the [documentation index](docs/README.md) for reviewer, operator and advanced paths.
+Read the one-screen walkthrough in [ClaimBound in 30 seconds](docs/CLAIMBOUND_IN_30_SECONDS.md),
+the [non-developer start guide](docs/START_WITHOUT_CODING.md) or the
+[documentation index](docs/README.md) for reviewer, operator and advanced paths.
 
 ![ClaimBound workflow](docs/assets/claimbound_workflow.svg)
 

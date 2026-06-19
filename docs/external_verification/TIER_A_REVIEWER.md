@@ -24,6 +24,16 @@ uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-20
 
 Confirm: NASA drift is in `reproduction_level`, not `result_status`.
 
+<details>
+<summary>Optional shell (jq)</summary>
+
+```bash
+jq '{evidence_id,result_status,reproduction_level,claim_boundary}' \
+  docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
+```
+
+</details>
+
 ## #89 — AI boundary review (#58)
 
 Playbook: [ISSUE_58_AI_BOUNDARY_PLAYBOOK.md](../runbooks/ISSUE_58_AI_BOUNDARY_PLAYBOOK.md)
@@ -60,9 +70,7 @@ in your issue comment if you use git.
 **Not a runtime reproduction.** Verify the design document only.
 
 ```bash
-head -8 docs/SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md
-uv run python -c "from pathlib import Path; import sys; sys.exit(1 if Path('scripts/claimbound_source_probe.py').exists() else 0)"
-grep -n "design document" docs/SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md
+uv run claimbound verify source-probe-spec
 ```
 
 Confirm: spec says probe cannot emit `PASSED_UNDER_PROTOCOL` by itself.
@@ -72,8 +80,7 @@ Confirm: spec says probe cannot emit `PASSED_UNDER_PROTOCOL` by itself.
 **Not a UI reproduction.** Verify the design document only.
 
 ```bash
-head -8 docs/STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md
-uv run python -c "from pathlib import Path; import sys; p=Path('scripts/claimbound_build_registry_view.py'); v=Path('docs/registry/views'); sys.exit(1 if p.exists() or v.exists() else 0)"
+uv run claimbound verify static-registry-spec
 ```
 
 Confirm: [PLANNED_NOT_SHIPPED.md](../PLANNED_NOT_SHIPPED.md) matches repository state.
