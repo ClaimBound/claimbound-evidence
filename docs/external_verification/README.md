@@ -5,21 +5,23 @@ without one person carrying the full load.
 
 ## Before Anyone Starts
 
-Every operator runs the same baseline on current `main`:
+Every operator runs the same baseline on current `main`. Works on Windows,
+macOS and Linux — no jq or bash required for the primary pack commands. See
+[platform support](../PLATFORM_SUPPORT.md).
 
 ```bash
 git clone https://github.com/ClaimBound/claimbound-evidence.git
 cd claimbound-evidence
 git pull origin main
 
-export REPO_ROOT="$(pwd)"
-export OPERATOR="<github-handle>"
-export TODAY="$(date +%F)"
-
 uv sync --extra dev
+uv run claimbound doctor
 uv run claimbound validate-all
 uv run --extra dev python -m pytest -q
 ```
+
+Note your GitHub handle and today's date for issue comments. `claimbound doctor`
+prints `today=YYYY-MM-DD`.
 
 Expected: `valid_cards=24`, `72 passed`, both commands exit `0`.
 

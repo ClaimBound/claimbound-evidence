@@ -18,6 +18,7 @@ def test_cli_parser_has_public_workflow_commands() -> None:
     assert "validate-family" in help_text
     assert "validate-frontier" in help_text
     assert "validate-all" in help_text
+    assert "doctor" in help_text
 
 
 def test_validate_all_command_passes_for_committed_cards() -> None:
