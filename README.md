@@ -31,10 +31,15 @@ one narrow claim passed under a frozen protocol — not "trust everything".
 Negative, blocked and drift outcomes are first-class evidence too.
 
 Read the one-screen walkthrough in [ClaimBound in 30 seconds](docs/CLAIMBOUND_IN_30_SECONDS.md),
+the [reviewer path](docs/REVIEWER_PATH.md),
 the [non-developer start guide](docs/START_WITHOUT_CODING.md) or the
 [documentation index](docs/README.md) for reviewer, operator and advanced paths.
 
 ![ClaimBound workflow](docs/assets/claimbound_workflow.svg)
+
+Motion demos (optional): add GIFs per [GIF guide](docs/assets/gifs/README.md). When
+`docs/assets/gifs/claimbound_nondev_15min.gif` is present, embed it in this README
+and in `START_WITHOUT_CODING.md`.
 
 ## Public Workflows
 
@@ -81,8 +86,10 @@ More examples, including EU source audits and blocked-source cards:
 
 ## For Reviewers And External Operators
 
+- [Reviewer path](docs/REVIEWER_PATH.md) — one-page orientation and credibility gaps
 - [Reviewer summary](docs/REVIEWER_SUMMARY.md) — problem, strongest cards, baseline
   versus roadmap, differentiation from adjacent projects
+- [Common misreadings](docs/COMMON_MISREADINGS.md) — green ≠ safe, yellow drift FAQ
 - [European Dimension](docs/EUROPEAN_DIMENSION.md) — EU open-data angle and limits
 - [External verification packs](docs/external_verification/README.md) — split VERIFY
   work across Tier A/B/C operators

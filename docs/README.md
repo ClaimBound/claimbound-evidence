@@ -7,18 +7,23 @@ try ClaimBound.
 
 For first-time readers, program reviewers, journalists and external inspectors:
 
-1. [ClaimBound in 30 seconds](CLAIMBOUND_IN_30_SECONDS.md)
-2. [Reviewer summary](REVIEWER_SUMMARY.md) — problem, baseline vs planned work,
+1. [Reviewer path (one page)](REVIEWER_PATH.md) — fastest honest baseline
+2. [ClaimBound in 30 seconds](CLAIMBOUND_IN_30_SECONDS.md)
+3. [Reviewer summary](REVIEWER_SUMMARY.md) — problem, baseline vs planned work,
    differentiation from adjacent projects
-3. [Current evidence tracks](CURRENT_EVIDENCE_TRACKS.md) — plain-language map of
+4. [Common misreadings](COMMON_MISREADINGS.md)
+5. [Current evidence tracks](CURRENT_EVIDENCE_TRACKS.md) — plain-language map of
    all registry cards
-4. [Evidence card examples](evidence_cards/README.md)
-5. [Planned work not shipped](PLANNED_NOT_SHIPPED.md) — roadmap vs current code
-6. [Artifacts catalog](artifacts/README.md) — NYC TLC / CDC artifact-only records
-7. [Public roadmap 2026](ROADMAP_2026.md)
-8. [European Dimension](EUROPEAN_DIMENSION.md)
+6. [Evidence card examples](evidence_cards/README.md)
+7. [Case studies](case_studies/README.md)
+8. [Planned work not shipped](PLANNED_NOT_SHIPPED.md) — roadmap vs current code
+9. [Artifacts catalog](artifacts/README.md) — NYC TLC / CDC artifact-only records
+10. [Public roadmap 2026](ROADMAP_2026.md)
+11. [European Dimension](EUROPEAN_DIMENSION.md)
+12. [GIF demos guide](assets/gifs/README.md) — record, convert, embed
 
 Closing VERIFY mirrors? See [External verification packs](external_verification/README.md).
+Issues **#85–#87** are open for **independent** external operators.
 
 Quick validation:
 

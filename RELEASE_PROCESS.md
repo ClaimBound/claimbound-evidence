@@ -43,6 +43,8 @@ registry structure or status interpretation materially change.
 
 ## After Release
 
+- Sync `pyproject.toml`, `specs/repo_version.yaml`, `docs/assets/badge_release.svg`
+  and [CHANGELOG](CHANGELOG.md) with the GitHub tag.
 - Update README badges or release links when needed.
 - Keep old cards citable unless they are invalid; if invalid, mark the problem
   explicitly rather than silently rewriting history.

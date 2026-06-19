@@ -50,9 +50,11 @@ Items that are specified but **not shipped** in the current repository —
 SourceProbe v1, static registry generated views, PyPI distribution and a WCAG
 pass — are listed in [Planned work not shipped](PLANNED_NOT_SHIPPED.md).
 
-Current adoption priority: close VERIFY mirrors via
-[external verification packs](external_verification/README.md) and record at
-least one independent operator rerun where protocol allows.
+Current adoption priority: close **open** VERIFY mirrors #85–#87 via
+[external verification packs](external_verification/README.md) with an operator who
+is **not** the maintainer; record at least one `INDEPENDENT_RERUN` where protocol
+allows. Orientation: [Reviewer path](REVIEWER_PATH.md). Motion demos:
+[GIF guide](assets/gifs/README.md).
 
 ## Later Platform Work
 

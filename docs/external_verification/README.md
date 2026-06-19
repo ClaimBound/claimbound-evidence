@@ -35,7 +35,14 @@ Expected: `valid_cards=24`, `86 passed`, both commands exit `0`.
 | [Tier C — NOAA rerun](TIER_C_NOAA_RERUN.md) | Reproducibility, `claimbound rerun` + gate | #87 | 1–2 h |
 
 Minimum credible external signal for reviewers: **Tier A + one Tier C pack** from
-an operator who is not the maintainer.
+an operator who is **not** the maintainer.
+
+**Open for independent closure:** VERIFY #85 (starter pack), #86 (NASA rerun),
+#87 (NOAA rerun). Maintainer bootstrap comments on closed VERIFY issues are not
+sufficient external signal — reopen or post a new closing comment with your
+GitHub handle and today's date.
+
+Optional motion demo for operators: [GIF guide](../assets/gifs/README.md).
 
 ## After Your Pack
 

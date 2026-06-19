@@ -45,8 +45,10 @@ and [Static registry MVP acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRI
 are **pre-implementation specifications**, not completed deliverables. See
 [Planned work not shipped](PLANNED_NOT_SHIPPED.md).
 
-External operators can close VERIFY mirrors using split packs in
-[External verification](external_verification/README.md).
+Start with the one-page [Reviewer path](REVIEWER_PATH.md). External operators can
+close **open** VERIFY mirrors #85–#87 using split packs in
+[External verification](external_verification/README.md). See
+[Common misreadings](COMMON_MISREADINGS.md) before interpreting card colors.
 
 ## Not A Duplicate Of
 
