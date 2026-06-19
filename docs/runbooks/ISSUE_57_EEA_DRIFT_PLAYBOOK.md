@@ -3,6 +3,12 @@
 Goal: check whether the EEA download page used by the source-audit card changed
 since `2026-05-08`. Source drift is not automatically an invalid card.
 
+## Quick path (any OS)
+
+```bash
+uv run claimbound drift eea-source-audit
+```
+
 ## Read first
 
 - `docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json`

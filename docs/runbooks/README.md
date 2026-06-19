@@ -31,3 +31,5 @@ uv run claimbound run-root \
   --source-url "https://example.org/source" \
   --operator "<your-handle>"
 ```
+
+Or use one-command reruns where documented, e.g. `claimbound rerun nasa-d103`.
