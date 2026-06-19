@@ -1,5 +1,11 @@
 # Global Evidence Registry Direction
 
+> **Future vision only — not a separate shipped product.** The current public
+> registry is [docs/registry/evidence_index.json](registry/evidence_index.json)
+> with **24** validated cards. Generated registry views and hosted search are
+> roadmap items — see [Planned work not shipped](PLANNED_NOT_SHIPPED.md) and
+> [Static registry MVP acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md).
+
 ClaimBound can grow from a single repository into a small global registry of
 pre-registered public evidence records.
 

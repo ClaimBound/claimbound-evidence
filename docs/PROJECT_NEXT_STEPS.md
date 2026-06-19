@@ -44,32 +44,15 @@ then, they should remain candidates, not evidence.
 
 ## Near-Term Public Roadmap
 
-These are practical next improvements for the open repository:
+The phase plan lives in [Public roadmap 2026](ROADMAP_2026.md).
 
-1. Smart SourceProbe v1: HTTP status, content type, source owner, license/terms
-   links, structured-data hints and `safe / human review / blocked` output.
-2. Scaffold workflow hardening: reusable builders for request, protocol,
-   playbook, checklist, family ledger, draft card, registry patch and SVG
-   rendering.
-3. R&D family governance: claim-list ledgers, diagnostic/proof split,
-   proof surfaces, frontier/tombstone ledgers, proof-track budgets, stop rules
-   and closure decisions for related tracks.
-4. Manual-track completion path: the EEA AQ D-001 runner and blocked card now
-   exist; next, add an external raw-payload rerun path and independent operator
-   reproduction record.
-5. Static searchable registry: filters by status, source, domain, audience and
-   SVG preview.
-6. Completed example set: 10 to 20 honest cards across positive, negative,
-   blocked, insufficient, reproduced and source-byte-drift outcomes.
-7. AI claim protocol: prompt hash or Merkle root, model/API metadata,
-   transcript hashes, resolution source and scoring rule.
-8. Independent rerun workflow: reproduction PR template, reproduction badge and
-   registry fields.
+Items that are specified but **not shipped** in the current repository —
+SourceProbe v1, static registry generated views, PyPI distribution and a WCAG
+pass — are listed in [Planned work not shipped](PLANNED_NOT_SHIPPED.md).
 
-The public 2026 work-package version of this roadmap is summarized in
-[Public roadmap 2026](ROADMAP_2026.md). It keeps the work package focused on
-open-source validators, source-boundary tooling, scaffolds, static registry
-outputs, rerun workflows, examples and release documentation.
+Current adoption priority: close VERIFY mirrors via
+[external verification packs](external_verification/README.md) and record at
+least one independent operator rerun where protocol allows.
 
 ## Later Platform Work
 

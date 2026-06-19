@@ -10,15 +10,22 @@ For first-time readers, program reviewers, journalists and external inspectors:
 1. [ClaimBound in 30 seconds](CLAIMBOUND_IN_30_SECONDS.md)
 2. [Reviewer summary](REVIEWER_SUMMARY.md) — problem, baseline vs planned work,
    differentiation from adjacent projects
-3. [European Dimension](EUROPEAN_DIMENSION.md)
+3. [Current evidence tracks](CURRENT_EVIDENCE_TRACKS.md) — plain-language map of
+   all registry cards
 4. [Evidence card examples](evidence_cards/README.md)
-5. [Public roadmap 2026](ROADMAP_2026.md)
+5. [Planned work not shipped](PLANNED_NOT_SHIPPED.md) — roadmap vs current code
+6. [Artifacts catalog](artifacts/README.md) — NYC TLC / CDC artifact-only records
+7. [Public roadmap 2026](ROADMAP_2026.md)
+8. [European Dimension](EUROPEAN_DIMENSION.md)
+
+Closing VERIFY mirrors? See [External verification packs](external_verification/README.md).
 
 Quick validation:
 
 ```bash
 uv sync --extra dev
 uv run claimbound validate-all
+uv run --extra dev python -m pytest -q
 ```
 
 ## Operator Path
@@ -33,6 +40,8 @@ For people who want to run or challenge a card locally:
 6. [Evidence card protocol](EVIDENCE_CARD.md)
 7. [Independent rerun workflow](INDEPENDENT_RERUN_WORKFLOW.md)
 8. [Artifacts catalog](artifacts/README.md) — not registry cards
+
+Rerun playbooks: [runbooks/](runbooks/README.md).
 
 ## Developer Path
 
@@ -70,3 +79,17 @@ completed implementations. See [Planned work not shipped](PLANNED_NOT_SHIPPED.md
 
 - [SourceProbe v1 acceptance criteria](SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md)
 - [Static registry MVP acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md)
+
+## Deep Dives (Optional, Not First-Screen)
+
+These pages support specific audiences or future direction. They are not part of
+the default reviewer or operator path.
+
+| Document | Role |
+| --- | --- |
+| [Project next steps](PROJECT_NEXT_STEPS.md) | Maintainer focus notes |
+| [Global evidence registry direction](GLOBAL_EVIDENCE_REGISTRY.md) | Future hosted-registry vision only |
+| [Reproduction guide (legacy)](REPRODUCTION.md) | NASA/NOAA background; use rerun workflow + tier C packs |
+| [Flagship Grok workflow](FLAGSHIP_WORKFLOW_GROK_EVIDENCE.md) | Worked public-AI example |
+| [Audience and value](AUDIENCE_AND_VALUE.md) | Audience-specific positioning |
+| [Claims](CLAIMS.md) | Claim-boundary language reference |

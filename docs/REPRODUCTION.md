@@ -1,4 +1,9 @@
-# Reproduction Guide
+# Reproduction Guide (Legacy Background)
+
+> **Prefer the canonical rerun path:** [Independent rerun workflow](INDEPENDENT_RERUN_WORKFLOW.md)
+> and the Tier C packs in [external verification](external_verification/README.md)
+> (`TIER_C_NASA_RERUN.md`, `TIER_C_NOAA_RERUN.md`). This page keeps NASA/NOAA
+> background commands for maintainers who already link here.
 
 This guide explains how to reproduce the current NASA POWER D-103 evidence and
 how to run a future manual public-domain audit without tuning after seeing the
@@ -13,7 +18,7 @@ result, even when it is negative or source-blocked.
 
 ```bash
 uv sync --extra dev
-uv run pytest -n auto
+uv run --extra dev python -m pytest -q
 ```
 
 ## NASA POWER D-103

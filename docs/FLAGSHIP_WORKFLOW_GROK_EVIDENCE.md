@@ -34,9 +34,9 @@ A ClaimBound track has five distinct states. Do not skip them.
    deviations. Prompt text is not committed here.
 
 5. Validated card
-   Validator checks required fields and forbidden claims. The final card is
-   green, yellow, red, gray, blocked, negative or reproduced according to the
-   actual artifacts.
+   Validator checks required fields and forbidden claims. SVG chips show the
+   gate outcome on the result-status chip (green/red/amber) and reproduction
+   limits on the reproduction chip (yellow when source-byte drift applies).
 ```
 
 For the Grok prompt-transparency example, scaffold creates the request, family
