@@ -3,6 +3,10 @@
 This catalog lists sanitized summaries and proof-path outputs that are **not**
 validated evidence cards.
 
+Reviewers: the public registry at [evidence_index.json](../registry/evidence_index.json)
+contains **24** validated cards only. NYC TLC Phase 4 and CDC mirror path appear
+here as transparency artifacts, not as missing registry entries by mistake.
+
 ## Card versus artifact versus scaffold
 
 | Type | In public registry? | Status semantics | Example |

@@ -56,7 +56,10 @@ Source-byte drift belongs in `reproduction_level`, not in `result_status`.
 ## Advanced Examples (Not First-Screen Cards)
 
 These registry cards illustrate optional patterns. They are **not** programme
-selection, endorsement or approval evidence.
+selection, endorsement or approval evidence. They stay in the registry for
+methodology transparency but are excluded from first-screen reviewer paths in
+[REVIEWER_SUMMARY.md](../REVIEWER_SUMMARY.md) and
+[CURRENT_EVIDENCE_TRACKS.md](../CURRENT_EVIDENCE_TRACKS.md#advanced-optional-tracks).
 
 | Pattern | Cards | Status | Read next |
 | --- | --- | --- | --- |

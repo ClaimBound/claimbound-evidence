@@ -1,6 +1,11 @@
 # CDC Mirror Source Boundary
 
-Status: `BLOCKED_SOURCE`
+> **Artifact-only record.** This page and
+> `artifacts/cdc_mirror_source_boundary_summary.json` are **not** in the public
+> registry. Do not cite them as validated evidence cards. See the
+> [artifacts catalog](../artifacts/README.md).
+
+Status: `BLOCKED_SOURCE` (artifact narrative only)
 
 ## Summary
 

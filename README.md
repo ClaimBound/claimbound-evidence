@@ -51,8 +51,10 @@ documented separately. They are not hidden failures. See
 
 ## Example Cards
 
-Green, yellow and red mean a narrow pass, a useful reproduction limit, or an
-honest non-pass under fixed rules — not general model quality.
+Each SVG uses separate chips. **Green** and **red** on the result-status chip
+mean a narrow gate pass or honest non-pass. **Yellow** appears on the
+**reproduction** chip when `reproduction_level` records source-byte drift — not
+on the gate outcome itself. None of this implies general model quality.
 
 <p>
   <img
@@ -81,8 +83,12 @@ More examples, including EU source audits and blocked-source cards:
 - [Reviewer summary](docs/REVIEWER_SUMMARY.md) — problem, strongest cards, baseline
   versus roadmap, differentiation from adjacent projects
 - [European Dimension](docs/EUROPEAN_DIMENSION.md) — EU open-data angle and limits
+- [External verification packs](docs/external_verification/README.md) — split VERIFY
+  work across Tier A/B/C operators
 - [External operator starter pack](docs/EXTERNAL_OPERATOR_STARTER_PACK.md) — read,
   rerun, drift report or boundary question paths
+- [Planned work not shipped](docs/PLANNED_NOT_SHIPPED.md) — roadmap vs current code
+- [Artifacts catalog](docs/artifacts/README.md) — NYC TLC / CDC artifact-only records
 - [Public roadmap 2026](docs/ROADMAP_2026.md) — planned open-source hardening work
 
 Independent from [EviBound](https://arxiv.org/abs/2511.05524); see

@@ -1,6 +1,7 @@
 # SourceProbe v1 Acceptance Criteria
 
-Status: design document. This is not an implementation or evidence record.
+Status: **design document only — not shipped.** This is not an implementation or
+evidence record. See [Planned work not shipped](PLANNED_NOT_SHIPPED.md).
 
 ## Purpose
 

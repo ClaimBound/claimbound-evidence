@@ -7,6 +7,7 @@ not need private data, private technology or a hosted account.
 
 | Path | Use when | Start here |
 | --- | --- | --- |
+| Close VERIFY issues | You were asked to verify maintainer deliverables. | [External verification packs](external_verification/README.md) |
 | Read existing evidence | You want to understand what ClaimBound cards prove. | [Evidence cards](evidence_cards/README.md) |
 | Request a new card | You have one narrow public claim that should be checked. | Open an `Evidence request` issue. |
 | Rerun an existing card | You want to reproduce or challenge a published card. | Open a `Reproduction request` issue. |
@@ -74,6 +75,14 @@ ClaimBound cards are deliberately narrow. A card must not be used to claim:
 - investment advice or production forecasting quality;
 - raw-byte reproduction when source bytes changed;
 - endorsement by a source owner or program sponsor.
+
+## Planned Work Versus Shipped Baseline
+
+SourceProbe v1, static registry views, PyPI and a WCAG pass are roadmap items.
+They are **not** claimed as shipped. See [Planned work not shipped](PLANNED_NOT_SHIPPED.md).
+
+NYC TLC Phase 4 and CDC mirror summaries are [artifact-only records](artifacts/README.md),
+not registry cards.
 
 ## Good First Issues To Open
 

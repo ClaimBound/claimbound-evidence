@@ -42,7 +42,11 @@ planned to harden that baseline into additional reusable infrastructure.
 
 Documents such as [SourceProbe v1 acceptance criteria](SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md)
 and [Static registry MVP acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md)
-are **pre-implementation specifications**, not completed deliverables.
+are **pre-implementation specifications**, not completed deliverables. See
+[Planned work not shipped](PLANNED_NOT_SHIPPED.md).
+
+External operators can close VERIFY mirrors using split packs in
+[External verification](external_verification/README.md).
 
 ## Not A Duplicate Of
 
