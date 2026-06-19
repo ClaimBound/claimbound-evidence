@@ -81,7 +81,10 @@ maintainer's machine, or checking what the open-source foreground is meant to
 deliver:
 
 - [Reviewer summary](docs/REVIEWER_SUMMARY.md) gives the problem, strongest
-  cards, public-interest dimension and planned public deliverables in one page.
+  cards, public-interest dimension, current baseline versus planned work, and
+  differentiation from adjacent projects in one page.
+- [Documentation index](docs/README.md) routes readers to reviewer, operator
+  and advanced optional layers without reading every protocol file.
 - [European Dimension](docs/EUROPEAN_DIMENSION.md) explains the European
   open-data and digital-commons angle with explicit limits.
 - [Public roadmap 2026](docs/ROADMAP_2026.md) maps the current public work
@@ -122,8 +125,9 @@ that keeps the claim honest.
 | AI control and agent review | Bind AI-assisted claims and actions to evidence cards, blocked states, human gates, audit trails and tombstones. | [12 AI Life Rules](docs/TWELVE_AI_LIFE_CONTROLS.md) |
 
 Advanced protocol layers for related work families, frontier ledgers and tree
-overlays are documented separately. Use the smallest layer stack that prevents
-overclaiming; do not add layers to make a weak result look stronger.
+overlays are documented separately under [advanced optional docs](docs/README.md#advanced-optional).
+They are not required to try ClaimBound. Use the smallest layer stack that
+prevents overclaiming; do not add layers to make a weak result look stronger.
 
 ## 12 AI Life Rules
 

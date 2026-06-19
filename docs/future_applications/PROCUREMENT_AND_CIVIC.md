@@ -23,7 +23,7 @@ contract or certify a vendor.
 | [Procurement AI D001](../evidence_cards/CLAIMBOUND-PROCUREMENT_AI_D001-2026-05-07.json) | `BLOCKED_SOURCE` |
 | [Civic claim D001](../evidence_cards/CLAIMBOUND-CIVIC_CLAIM_D001-2026-05-07.json) | `BLOCKED_SOURCE` |
 | [Program review D001](../evidence_cards/CLAIMBOUND-PROGRAM_REVIEW_D001-2026-05-07.json) | `BLOCKED_SOURCE` |
-| [Program fit D001](../evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json) | `PASSED_UNDER_PROTOCOL` (single-operator self-check) |
+| [Program fit D001](../evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json) | `PASSED_UNDER_PROTOCOL` (applicant-side example only — see [self-check runbook](../examples/PROGRAM_ELIGIBILITY_SELF_CHECK.md)) |
 
 Blocked procurement and civic cards are **first-class evidence**: they show why
 a larger claim could not fairly run.

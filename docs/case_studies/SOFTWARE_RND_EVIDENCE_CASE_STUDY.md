@@ -17,9 +17,9 @@ https://github.com/ClaimBound/software-rnd-evidence-case-study
 
 Release: [v1.0.0](https://github.com/ClaimBound/software-rnd-evidence-case-study/releases/tag/v1.0.0).
 
-The repository does not ship proprietary closed-core code, raw payloads or funding
-application materials. Sanitization and audit gates run in a private source
-repository before export.
+The repository does not ship proprietary closed-core code, raw payloads or private
+sponsor-application materials. Sanitization and audit gates run in a private
+source repository before export.
 
 ## What the case study shows
 
@@ -38,7 +38,7 @@ the same anti-overclaiming discipline applied to a private R&D program:
 
 - green/foundation claims stay bounded;
 - utility failure is documented, not hidden;
-- funding or product narratives are not upgraded from weak deltas.
+- sponsor or product narratives are not upgraded from weak deltas.
 
 ## Completed in-repo software example
 

@@ -91,10 +91,10 @@ command, fixture, environment and boundary were checked, and what must not be
 inferred from the result.
 
 For program reviewers and program evaluators, the same question can be applied
-to one applicant-side public self-check. See the completed
-[PROGRAM_FIT_D001 card](evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json);
-it maps public project materials to selected public-interest eligibility
-categories without claiming approval, endorsement, legal eligibility or award
+to one applicant-side public self-check. That pattern is documented as an
+**advanced example only** in
+[program eligibility self-check](examples/PROGRAM_ELIGIBILITY_SELF_CHECK.md).
+It does not claim program approval, endorsement, legal eligibility or award
 likelihood.
 
 For AI control, the same question can be applied to one narrow agent, robot,

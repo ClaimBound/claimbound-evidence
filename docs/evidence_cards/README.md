@@ -47,8 +47,17 @@ Color is a reading aid, not a second result system.
 | Open science and reproducibility teams | Whether a published result can be rerun, including negative or drift outcomes. | [NASA POWER D-103 JSON](CLAIMBOUND-NASA-POWER-D103-2026-04-29.json) / [SVG](CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg)<br>[Reproduction appendix JSON](CLAIMBOUND-REPRO_APPENDIX_D001-2026-05-07.json) / [SVG](CLAIMBOUND-REPRO_APPENDIX_D001-2026-05-07.svg)<br>[NOAA CO-OPS D-131 JSON](CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json) / [SVG](CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg) | NASA: `PASSED_UNDER_PROTOCOL` with source-byte drift<br>NOAA: `NEGATIVE_RESULT_UNDER_PROTOCOL`<br>Repro appendix: `BLOCKED_SOURCE` |
 | ML researchers | Narrow method appendices with controls, baselines and claim boundaries. | [ML appendix JSON](CLAIMBOUND-ML_APPENDIX_D001-2026-05-07.json) / [SVG](CLAIMBOUND-ML_APPENDIX_D001-2026-05-07.svg) | `BLOCKED_SOURCE` |
 | Educators | Small classroom reproducibility exercises. | [Education reproduction JSON](CLAIMBOUND-EDU_REPRO_D001-2026-05-07.json) / [SVG](CLAIMBOUND-EDU_REPRO_D001-2026-05-07.svg) | `BLOCKED_SOURCE` |
-| Program reviewers and evaluators | Whether a proposal or report has protocol, source, status and limitations. | [Award review JSON](CLAIMBOUND-PROGRAM_REVIEW_D001-2026-05-07.json) / [SVG](CLAIMBOUND-PROGRAM_REVIEW_D001-2026-05-07.svg)<br>[Award-fit self-check JSON](CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json) / [SVG](CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.svg) | Review appendix: `BLOCKED_SOURCE`<br>Self-check: `PASSED_UNDER_PROTOCOL`, single-operator only |
 | Software developers and maintainers | Whether a narrow validator or regression gate passed under frozen commands. | [Software dev validator gate JSON](CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json) / [SVG](CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.svg) | `PASSED_UNDER_PROTOCOL` |
+
+## Advanced Examples (Not First-Screen Cards)
+
+These registry cards illustrate optional patterns. They are **not** programme
+selection, endorsement or approval evidence.
+
+| Pattern | Cards | Status | Read next |
+| --- | --- | --- | --- |
+| Program review appendix | [Program review JSON](CLAIMBOUND-PROGRAM_REVIEW_D001-2026-05-07.json) / [SVG](CLAIMBOUND-PROGRAM_REVIEW_D001-2026-05-07.svg) | `BLOCKED_SOURCE` | Shows when a review appendix is not ready for an empirical claim. |
+| Applicant-side eligibility self-check | [Program-fit self-check JSON](CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json) / [SVG](CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.svg) | `PASSED_UNDER_PROTOCOL`, single-operator only | [Program eligibility self-check example](../examples/PROGRAM_ELIGIBILITY_SELF_CHECK.md) — methodology demo only; not program endorsement. |
 
 ## What The Mix Shows
 
