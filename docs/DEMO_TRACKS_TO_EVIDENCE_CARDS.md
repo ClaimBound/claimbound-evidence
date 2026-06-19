@@ -9,14 +9,16 @@ report, validated JSON card and registry entry.
 
 ## Publication Rule
 
-Publish a card as evidence only when it has one documented result status:
+Publish a card as evidence only when it has one documented `result_status`:
 
 - `PASSED_UNDER_PROTOCOL`
 - `NEGATIVE_RESULT_UNDER_PROTOCOL`
 - `BLOCKED_SOURCE`
 - `INSUFFICIENT_COVERAGE`
-- `REPRODUCED_OUTCOME`
-- `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT`
+- `REPRODUCED_OUTCOME` (rare)
+
+Record reproduction limits in `reproduction_level`, including
+`REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` when source bytes differ.
 
 Do not show `GRAY_DRAFT_NOT_EXECUTED` as evidence. It can appear only as a
 request or scaffold example.

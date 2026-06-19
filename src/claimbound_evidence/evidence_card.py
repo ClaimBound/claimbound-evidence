@@ -18,6 +18,11 @@ ALLOWED_RESULT_STATUSES = {
     "BLOCKED_SOURCE",
     "INSUFFICIENT_COVERAGE",
     "REPRODUCED_OUTCOME",
+}
+
+ALLOWED_REPRODUCTION_LEVELS = {
+    "not independently reproduced",
+    "REPRODUCED_OUTCOME",
     "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT",
 }
 
@@ -113,10 +118,22 @@ def validate_evidence_card(card: dict[str, Any]) -> list[str]:
         )
 
     result_status = card.get("result_status")
-    if result_status not in ALLOWED_RESULT_STATUSES:
+    if result_status == "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT":
+        violations.append(
+            "result_status must not be REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT; "
+            "set reproduction_level instead and keep result_status as the gate outcome"
+        )
+    elif result_status not in ALLOWED_RESULT_STATUSES:
         violations.append(
             "result_status must be one of: "
             + ", ".join(sorted(ALLOWED_RESULT_STATUSES))
+        )
+
+    reproduction_level = card.get("reproduction_level")
+    if reproduction_level not in ALLOWED_REPRODUCTION_LEVELS:
+        violations.append(
+            "reproduction_level must be one of: "
+            + ", ".join(sorted(ALLOWED_REPRODUCTION_LEVELS))
         )
 
     record_type = card.get("record_type")

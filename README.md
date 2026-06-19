@@ -62,7 +62,7 @@ honest non-pass under fixed rules — not general model quality.
   />
   <img
     src="docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg"
-    alt="Yellow ClaimBound card for NASA POWER reproduction with source-byte drift"
+    alt="ClaimBound card with green gate pass and yellow reproduction chip for NASA POWER source-byte drift"
     width="32%"
   />
   <img

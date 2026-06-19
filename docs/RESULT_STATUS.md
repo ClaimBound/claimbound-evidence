@@ -1,22 +1,40 @@
 # Result Status Protocol v0.1
 
-Every public evidence record must use one exact result status. The status is
-the result. Card colors are only a visual aid.
+Every public evidence record must use one exact `result_status`. The status is
+the gate outcome under the frozen protocol. Card colors are only a visual aid.
 
-## Statuses
+Source-byte drift and other reproduction limits belong in `reproduction_level`,
+not in `result_status`.
 
-| Status | Visual color | Required interpretation |
+## Result Statuses
+
+| Status | Visual color (result chip) | Required interpretation |
 | --- | --- | --- |
 | `PASSED_UNDER_PROTOCOL` | Green | The narrow claim passed only under the written protocol, source boundary and frozen gate. |
 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | Red | The source audit or run completed, but the candidate did not pass the frozen acceptance gate. No positive result claim is allowed. |
 | `BLOCKED_SOURCE` | Amber | Access, rights, coverage, metadata, source lineage, model identity or scoring evidence was not good enough for a fair pass/fail result. |
 | `INSUFFICIENT_COVERAGE` | Amber | The source exists, but usable coverage is too sparse or uneven for the pre-registered test. |
-| `REPRODUCED_OUTCOME` | Green | A rerun reproduced the result status or gate-level outcome. |
-| `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` | Yellow | A rerun reproduced the result status or gate-level outcome, but fresh source payload bytes differed from the original payload bytes. Do not claim raw-byte reproduction. |
+| `REPRODUCED_OUTCOME` | Green | Reserved for cards whose primary recorded outcome is reproduction itself. Most reruns should keep the original gate outcome in `result_status` and record reproduction in `reproduction_level`. |
+
+Do **not** put `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` in `result_status`.
+When a rerun matches the gate-level outcome but fresh source bytes differ, keep
+the honest gate outcome in `result_status` and set
+`reproduction_level` to `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT`.
+
+## Reproduction Levels
+
+| `reproduction_level` | Visual color (reproduction chip) | Required interpretation |
+| --- | --- | --- |
+| `not independently reproduced` | Blue | No rerun has confirmed the outcome yet. |
+| `REPRODUCED_OUTCOME` | Green | Another run reproduced the gate-level outcome under the same protocol and stable source bytes. |
+| `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` | Yellow | Another run reproduced the gate-level outcome, but fresh source payload bytes differed from the original payload bytes. Do not claim raw-byte reproduction. |
+
+Plain-language aliases such as `reproduced at outcome/gate level` may appear in
+claim text. Committed evidence cards should use the exact enum strings above.
 
 ## Validity Colors
 
-`card_validity_level` is separate from `result_status`.
+`card_validity_level` is separate from `result_status` and `reproduction_level`.
 
 | Validity color | Meaning |
 | --- | --- |
@@ -33,8 +51,9 @@ evidence when they ran under the frozen protocol.
 
 Read every card in this order:
 
-1. `result_status`: what happened under the protocol.
+1. `result_status`: what happened under the protocol gate.
 2. `claim_boundary`: what the card is allowed to prove.
 3. `known_limitations`: what must not be claimed.
-4. `reproduction_level`: whether another run confirmed the outcome.
+4. `reproduction_level`: whether another run confirmed the outcome and whether
+   source-byte drift applies.
 5. `card_validity_level`: whether the card itself is complete enough to use.

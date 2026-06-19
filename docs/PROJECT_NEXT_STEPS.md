@@ -9,8 +9,8 @@ Keep the open project understandable before adding more machinery:
 
 1. Lead with the simple message: ClaimBound turns a public claim into a small
    evidence card.
-2. Show real cards early: one green source audit, one yellow limited
-   reproduction card and one red negative result.
+2. Show real cards early: one green source audit, one card with a yellow
+   reproduction chip for source-byte drift and one red negative result.
 3. Keep the beginner path in this order:
    [ClaimBound in 5 minutes](CLAIMBOUND_IN_5_MINUTES.md),
    [evidence cards](evidence_cards/README.md),

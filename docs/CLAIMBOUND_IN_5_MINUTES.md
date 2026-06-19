@@ -69,17 +69,17 @@ endorsement.
 
 ## Statuses In Plain Language
 
-| Status | Plain meaning |
+| Field | Plain meaning |
 | --- | --- |
 | `PASSED_UNDER_PROTOCOL` | It passed, but only under the written rules. |
 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | It was tested and did not pass. |
 | `BLOCKED_SOURCE` | The source, access, metadata or rights boundary blocked a fair result. |
 | `INSUFFICIENT_COVERAGE` | The source exists, but there is not enough usable coverage. |
-| `REPRODUCED_OUTCOME` | Another run reproduced the status or gate-level outcome. |
-| `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` | The outcome reproduced, but fresh source bytes differed. |
+| `reproduction_level: REPRODUCED_OUTCOME` | Another run reproduced the gate-level outcome. |
+| `reproduction_level: REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` | The gate-level outcome reproduced, but fresh source bytes differed. |
 
-Negative, blocked and drift cards are useful. They stop weak claims from being
-renamed as successes.
+Negative, blocked and drift-limited cards are useful. They stop weak claims
+from being renamed as successes.
 
 ## The Workflow
 

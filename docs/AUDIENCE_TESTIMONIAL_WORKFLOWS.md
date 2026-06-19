@@ -427,12 +427,13 @@ Every audience uses the same status discipline:
 - `BLOCKED_SOURCE`: source, rights, access, scoring or model metadata blocked a
   fair run.
 - `INSUFFICIENT_COVERAGE`: source exists but cannot support the frozen gate.
-- `REPRODUCED_OUTCOME` or `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT`: another
-  operator reproduced the status or gate outcome.
+- `reproduction_level: REPRODUCED_OUTCOME` or
+  `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT`: another operator reproduced the
+  gate outcome, with or without source-byte drift.
 
-Validity color is separate from result status:
+Validity color is separate from `result_status` and `reproduction_level`:
 
 - green means evidence is complete enough to rerun;
-- yellow means limited reproducibility;
+- yellow on the reproduction chip means limited reproducibility or source-byte drift;
 - red means invalid or tamper evidence;
 - gray means draft, request or scaffold only.

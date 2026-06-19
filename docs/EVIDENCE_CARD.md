@@ -71,16 +71,24 @@ hashes, status and claim boundary validate.
 
 ## Visual Status Colors
 
-The JSON `result_status` remains the source of truth. Rendered SVG cards use
-colors only to make the status easier to scan:
+Rendered SVG cards use separate chips for `result_status`, `reproduction_level`
+and `card_validity_level`. Colors are reading aids only; the JSON fields remain
+the source of truth.
 
-| Color | Typical value |
-| --- | --- |
-| Green | `PASSED_UNDER_PROTOCOL`, `REPRODUCED_OUTCOME`, `GREEN_VALIDATED` |
-| Yellow | `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` or limited reproducibility |
-| Amber | `BLOCKED_SOURCE`, `INSUFFICIENT_COVERAGE` |
-| Red | `NEGATIVE_RESULT_UNDER_PROTOCOL` or invalid/tamper evidence |
-| Gray | Draft, request or scaffold only |
+| Chip | Color | Typical value |
+| --- | --- | --- |
+| Result status | Green | `PASSED_UNDER_PROTOCOL`, `REPRODUCED_OUTCOME` |
+| Result status | Red | `NEGATIVE_RESULT_UNDER_PROTOCOL` |
+| Result status | Amber | `BLOCKED_SOURCE`, `INSUFFICIENT_COVERAGE` |
+| Reproduction | Yellow | `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` |
+| Reproduction | Green | `REPRODUCED_OUTCOME` |
+| Reproduction | Blue | `not independently reproduced` |
+| Validity | Green | `GREEN_VALIDATED` |
+| Validity | Yellow | `YELLOW_LIMITED_REPRODUCIBILITY` |
+| Validity | Gray | Draft, request or scaffold only |
+
+Do not move source-byte drift into `result_status`. Drift belongs in
+`reproduction_level` while `result_status` records the gate outcome.
 
 ## Required Interpretation
 

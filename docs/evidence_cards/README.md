@@ -26,13 +26,17 @@ by hand after the result is known.
 
 Color is a reading aid, not a second result system.
 
-| Visual color | Used for | Meaning |
+| Visual color | Chip / field | Meaning |
 | --- | --- | --- |
-| Green | `PASSED_UNDER_PROTOCOL`, `REPRODUCED_OUTCOME`, `GREEN_VALIDATED` | The narrow card or validation gate passed. |
-| Yellow | `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT`, limited reproducibility | The outcome is useful, but reproduction has an important limitation. |
-| Amber | `BLOCKED_SOURCE`, `INSUFFICIENT_COVERAGE` | No empirical success or failure should be claimed. |
-| Red | `NEGATIVE_RESULT_UNDER_PROTOCOL` or invalid/tamper states | The protocol ran and the claim did not pass, or the card is invalid. |
+| Green | Result status | `PASSED_UNDER_PROTOCOL` or `REPRODUCED_OUTCOME` |
+| Green | Reproduction | `REPRODUCED_OUTCOME` |
+| Yellow | Reproduction | `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` |
+| Amber | Result status | `BLOCKED_SOURCE`, `INSUFFICIENT_COVERAGE` |
+| Red | Result status | `NEGATIVE_RESULT_UNDER_PROTOCOL` or invalid/tamper states |
+| Blue | Reproduction | `not independently reproduced` |
 | Gray | Drafts, requests and scaffolds | Not evidence yet. |
+
+Source-byte drift belongs in `reproduction_level`, not in `result_status`.
 
 ## Current Cards By Audience
 
