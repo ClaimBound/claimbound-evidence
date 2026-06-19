@@ -1,28 +1,8 @@
 # Maintainer Starter Pack Trial (2026-06-15)
 
-Operator: rostsh
-Platform: macOS
+This maintainer note is superseded for external operators. Use
+[Tier A — reviewer pack](../external_verification/TIER_A_REVIEWER.md) instead and
+post your report on VERIFY issue #85.
 
-## Commands
-
-| Step | Command | Result |
-|------|---------|--------|
-| sync | uv sync --extra dev | PASS/FAIL |
-| validate | uv run claimbound validate-all | PASS/FAIL |
-| pytest | uv run --extra dev python -m pytest -q | PASS/FAIL |
-
-## Cards read
-
-- Green NASA D-103: boundary clear? YES/NO — notes:
-- Negative NOAA D-131: boundary clear? YES/NO — notes:
-- Blocked EEA AQ: boundary clear? YES/NO — notes:
-
-## Friction
-
-1.
-2.
-3.
-
-## Suggested doc fixes
-
--
+Maintainers may keep private trial notes here; this file is not verification
+evidence by itself.

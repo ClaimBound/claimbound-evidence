@@ -1,6 +1,7 @@
 # Static Registry MVP Acceptance Criteria
 
-Status: design document.
+Status: **design document only — not shipped.** See
+[Planned work not shipped](PLANNED_NOT_SHIPPED.md).
 
 ## MVP scope
 

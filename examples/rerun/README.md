@@ -3,6 +3,9 @@
 This folder documents the **minimum local verification path** for external
 operators. It is not reproduction evidence by itself.
 
+For split verification packs (different people, different VERIFY issues), start
+at [docs/external_verification/README.md](../../docs/external_verification/README.md).
+
 ## Prerequisites
 
 - Python >= 3.12
@@ -15,7 +18,7 @@ operators. It is not reproduction evidence by itself.
 git clone https://github.com/ClaimBound/claimbound-evidence.git
 cd claimbound-evidence
 uv sync --extra dev
-uv run --extra dev python -m pytest -n auto
+uv run --extra dev python -m pytest -q
 uv run claimbound validate-all
 uv run claimbound demo eea-source-audit
 uv run claimbound demo grok-source-audit
@@ -25,7 +28,7 @@ uv run claimbound demo grok-source-audit
 
 ### pytest
 
-- All tests pass (currently 48 tests).
+- All tests pass (currently **72** tests).
 - Exit code `0`.
 
 ### validate-all
@@ -33,7 +36,7 @@ uv run claimbound demo grok-source-audit
 Expected tail output shape:
 
 ```text
-valid_cards=17
+valid_cards=24
 valid_registry=docs/registry/evidence_index.json
 valid_family_ledgers=...
 valid_frontier_ledgers=...
@@ -61,4 +64,4 @@ Card count may increase as new validated cards are added. The command must exit
 
 For a full rerun workflow, read
 [docs/INDEPENDENT_RERUN_WORKFLOW.md](../../docs/INDEPENDENT_RERUN_WORKFLOW.md)
-and open a reproduction request issue when ready to publish a rerun card.
+and use the tier packs under `docs/external_verification/`.

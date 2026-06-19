@@ -27,10 +27,12 @@ For people who want to run or challenge a card locally:
 
 1. [ClaimBound in 5 minutes](CLAIMBOUND_IN_5_MINUTES.md)
 2. [Getting started](GETTING_STARTED.md)
-3. [External operator starter pack](EXTERNAL_OPERATOR_STARTER_PACK.md)
-4. [Result status protocol](RESULT_STATUS.md)
-5. [Evidence card protocol](EVIDENCE_CARD.md)
-6. [Independent rerun workflow](INDEPENDENT_RERUN_WORKFLOW.md)
+3. [External verification packs](external_verification/README.md) — split VERIFY work
+4. [External operator starter pack](EXTERNAL_OPERATOR_STARTER_PACK.md)
+5. [Result status protocol](RESULT_STATUS.md)
+6. [Evidence card protocol](EVIDENCE_CARD.md)
+7. [Independent rerun workflow](INDEPENDENT_RERUN_WORKFLOW.md)
+8. [Artifacts catalog](artifacts/README.md) — not registry cards
 
 ## Developer Path
 
@@ -64,7 +66,7 @@ Optional methodology patterns kept out of the main card table:
 ## Pre-Implementation Specs
 
 Acceptance criteria for planned infrastructure. These are design documents, not
-completed implementations:
+completed implementations. See [Planned work not shipped](PLANNED_NOT_SHIPPED.md).
 
 - [SourceProbe v1 acceptance criteria](SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md)
 - [Static registry MVP acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md)

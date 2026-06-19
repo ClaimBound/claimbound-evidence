@@ -102,24 +102,29 @@ Interpretation:
 | same | different | `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` |
 | different | any | record mismatch honestly |
 
-## 5. PR artifacts (when ready)
+## 5. Maintainer rerun card (already in registry)
+
+The maintainer `reproduction_attempt` card is already committed:
+
+- `docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-RERUN-2026-06-15.json`
+- `artifacts/nasa_power_d103_maintainer_rerun_summary.json`
+- registry entry in `docs/registry/evidence_index.json`
+
+External operators should still use this playbook for their own local rerun
+evidence. A new PR is optional for VERIFY #86 closure; an honest issue comment
+with gate comparison is enough.
+
+## 6. Optional external PR path
+
+If you publish your own rerun card:
 
 ```bash
 cp "$NASA_REPORTS/nasa_power_d103_report.json" \
-   "$REPO_ROOT/artifacts/nasa_power_d103_maintainer_rerun_summary.json"
+   "$REPO_ROOT/artifacts/nasa_power_d103_<operator>_rerun_summary.json"
 
-shasum -a 256 "$REPO_ROOT/artifacts/nasa_power_d103_maintainer_rerun_summary.json"
-```
-
-Then create:
-
-- `docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-RERUN-${TODAY}.json` with `record_type: reproduction_attempt`
-- SVG via `scripts/claimbound_render_evidence_card_svg.py`
-- registry entry in `docs/registry/evidence_index.json`
-
-```bash
 uv run claimbound validate-all
 uv run --extra dev python -m pytest -n auto -q
 ```
 
-PR template: `.github/PULL_REQUEST_TEMPLATE/reproduction_rerun.md` — closes #55.
+Use `record_type: reproduction_attempt`, set `verification_level` honestly and
+open a PR with `.github/PULL_REQUEST_TEMPLATE/reproduction_rerun.md`.

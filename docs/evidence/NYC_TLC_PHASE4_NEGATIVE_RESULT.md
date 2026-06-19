@@ -1,6 +1,11 @@
 # NYC TLC Phase 4 Negative Result
 
-Status: `NEGATIVE_RESULT_UNDER_PROTOCOL`
+> **Artifact-only record.** This page and
+> `artifacts/nyc_tlc_phase4_negative_result_summary.json` are **not** in the
+> public registry. Do not cite them as validated evidence cards. See the
+> [artifacts catalog](../artifacts/README.md).
+
+Status: `NEGATIVE_RESULT_UNDER_PROTOCOL` (artifact narrative only)
 
 ## Summary
 
