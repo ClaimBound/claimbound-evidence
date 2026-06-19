@@ -34,7 +34,7 @@ possible.
 | `created_at` | Date the evidence card was created. |
 | `last_verified_date` | Latest date this card status or source boundary was verified. |
 | `verification_count` | Number of recorded verifications or same-operator reruns represented by this card. |
-| `verification_level` | Verification strength: `SINGLE_OPERATOR`, `SINGLE_OPERATOR_RERUN`, `INDEPENDENT_RERUN`, `MULTI_OPERATOR` or `NOT_EXECUTED`. |
+| `verification_level` | Verification strength: `SINGLE_OPERATOR`, `SINGLE_OPERATOR_RERUN`, `INDEPENDENT_RERUN`, `MULTI_OPERATOR` or `NOT_EXECUTED`. See [verification levels](#verification-levels) below. |
 | `reproduction_level` | Exact reproduction level from `docs/CLAIMS.md` when applicable. |
 | `ai_assistance` | Whether AI assisted with code, protocol drafting, summarization or validation. |
 | `manual_review` | Whether a human operator reviewed source rights, protocol boundary and final claim. |
@@ -68,6 +68,36 @@ Use one exact mode:
 The execution mode is provenance metadata. It does not make a result more or
 less valid by itself. A result is valid only when the protocol, source boundary,
 hashes, status and claim boundary validate.
+
+## Verification Levels
+
+`verification_level` records verification strength. It is separate from
+`record_type`:
+
+| Level | Meaning |
+| --- | --- |
+| `SINGLE_OPERATOR` | One operator run; no same-operator rerun recorded on this card yet. |
+| `SINGLE_OPERATOR_RERUN` | The same operator re-ran or re-checked the frozen gate and updated this card (`verification_count` ≥ 2). This is **not** independent external verification. |
+| `INDEPENDENT_RERUN` | A different operator reproduced the frozen gate under the rerun workflow. |
+| `MULTI_OPERATOR` | Multiple independent operators recorded on one card. |
+| `NOT_EXECUTED` | Scaffold or request only. |
+
+`record_type` tells you whether the JSON row is the primary outcome or a linked
+rerun attempt:
+
+| `record_type` | Typical `verification_level` | Example |
+| --- | --- | --- |
+| `evidence_result` | `SINGLE_OPERATOR` or `SINGLE_OPERATOR_RERUN` | NASA POWER D-103 baseline card after a maintainer re-verify |
+| `reproduction_attempt` | `SINGLE_OPERATOR_RERUN` | NASA POWER D-103 maintainer rerun card dated 2026-06-15 |
+| `source_audit` | `SINGLE_OPERATOR` or `SINGLE_OPERATOR_RERUN` | Grok prompts source audit with `verification_count` = 2 |
+
+A baseline `evidence_result` card may therefore show `SINGLE_OPERATOR_RERUN` when
+the maintainer re-ran the gate and refreshed `last_verified_date` on the original
+card. That is different from a separate `reproduction_attempt` sibling card,
+which links back to the baseline without replacing it.
+
+External adoption signal requires `INDEPENDENT_RERUN` or `MULTI_OPERATOR` from an
+operator who is not the maintainer.
 
 ## Visual Status Colors
 
@@ -151,11 +181,11 @@ uv run --extra dev python scripts/claimbound_render_evidence_card_svg.py \
   "git_commit": "fill with commit SHA",
   "runner_command": "uv run python scripts/claimbound_run_nasa_power_prereg.py ...",
   "operator": "maintainer",
-  "created_at": "2026-04-29",
-  "last_verified_date": "2026-04-29",
-  "verification_count": 2,
+  "created_at": "2026-05-01",
+  "last_verified_date": "2026-06-15",
+  "verification_count": 3,
   "verification_level": "SINGLE_OPERATOR_RERUN",
-  "reproduction_level": "reproduced at outcome/gate level with source-byte drift",
+  "reproduction_level": "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT",
   "ai_assistance": "not used for outcome selection or gate changes",
   "manual_review": "source boundary and claim boundary reviewed by maintainer",
   "known_limitations": [

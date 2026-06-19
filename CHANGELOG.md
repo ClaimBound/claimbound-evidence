@@ -7,6 +7,11 @@
 - Related-work and independence documentation acknowledging EviBound as prior art.
 - Lightweight software R&D claim-discipline note for small claim records.
 
+### Changed
+
+- Clarified `verification_level` versus `record_type` in evidence-card docs;
+  aligned NASA example metadata and reviewer wording for maintainer reruns.
+
 ## 0.4.6 - 2026-06-15
 
 ### Added
