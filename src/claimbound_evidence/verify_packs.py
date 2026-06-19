@@ -139,6 +139,42 @@ def verify_ai_boundary(repo_root: Path) -> list[VerifyCheck]:
     return checks
 
 
+def verify_eea_drift(repo_root: Path) -> list[VerifyCheck]:
+    from claimbound_evidence.workflows import drift_eea_source_audit
+
+    baseline = repo_root / "artifacts" / "source_audit_d001_summary.json"
+    checks = [
+        VerifyCheck("baseline_artifact", baseline.is_file(), str(baseline)),
+    ]
+    exit_code = drift_eea_source_audit(repo_root)
+    checks.append(VerifyCheck("eea_drift_probe", exit_code == 0, f"exit={exit_code}"))
+    return checks
+
+
+def verify_nasa_rerun(repo_root: Path, *, operator: str = "verify-operator") -> list[VerifyCheck]:
+    from claimbound_evidence.workflows import rerun_nasa_d103
+
+    baseline = repo_root / "artifacts" / "nasa_power_d103_real_run_summary.json"
+    checks = [
+        VerifyCheck("baseline_artifact", baseline.is_file(), str(baseline)),
+    ]
+    exit_code = rerun_nasa_d103(repo_root, operator=operator)
+    checks.append(VerifyCheck("nasa_rerun_gate", exit_code == 0, f"exit={exit_code}"))
+    return checks
+
+
+def verify_noaa_rerun(repo_root: Path, *, operator: str = "verify-operator") -> list[VerifyCheck]:
+    from claimbound_evidence.workflows import rerun_noaa_d131
+
+    baseline = repo_root / "artifacts" / "noaa_coops_d131_negative_result_summary.json"
+    checks = [
+        VerifyCheck("baseline_artifact", baseline.is_file(), str(baseline)),
+    ]
+    exit_code = rerun_noaa_d131(repo_root, operator=operator)
+    checks.append(VerifyCheck("noaa_rerun_gate", exit_code == 0, f"exit={exit_code}"))
+    return checks
+
+
 def verify_starter_pack(repo_root: Path) -> list[VerifyCheck]:
     checks: list[VerifyCheck] = []
     for demo_name in ("eea-source-audit", "grok-source-audit"):
@@ -179,20 +215,28 @@ def verify_starter_pack(repo_root: Path) -> list[VerifyCheck]:
     return checks
 
 
-VERIFY_PACKS: dict[str, Callable[[Path], list[VerifyCheck]]] = {
+VERIFY_PACKS: dict[str, Callable[..., list[VerifyCheck]]] = {
     "starter-pack": verify_starter_pack,
     "ai-boundary": verify_ai_boundary,
     "api-parity": verify_api_parity,
     "source-probe-spec": verify_source_probe_spec,
     "static-registry-spec": verify_static_registry_spec,
+    "eea-drift": verify_eea_drift,
+    "nasa-rerun": verify_nasa_rerun,
+    "noaa-rerun": verify_noaa_rerun,
 }
 
+_NETWORK_PACKS = frozenset({"eea-drift", "nasa-rerun", "noaa-rerun"})
 
-def run_verify_pack(repo_root: Path, pack_name: str) -> int:
+
+def run_verify_pack(repo_root: Path, pack_name: str, *, operator: str = "verify-operator") -> int:
     handler = VERIFY_PACKS.get(pack_name)
     if handler is None:
         raise ValueError(f"unknown verify pack: {pack_name}")
-    checks = handler(repo_root)
+    if pack_name in ("nasa-rerun", "noaa-rerun"):
+        checks = handler(repo_root, operator=operator)
+    else:
+        checks = handler(repo_root)
     ok = True
     for check in checks:
         status = "PASS" if check.ok else "FAIL"

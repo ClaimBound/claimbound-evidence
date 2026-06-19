@@ -23,7 +23,7 @@ uv run --extra dev python -m pytest -q
 Note your GitHub handle and today's date for issue comments. `claimbound doctor`
 prints `today=YYYY-MM-DD`.
 
-Expected: `valid_cards=24`, `72 passed`, both commands exit `0`.
+Expected: `valid_cards=24`, `86 passed`, both commands exit `0`.
 
 ## Choose A Pack
 
@@ -31,8 +31,8 @@ Expected: `valid_cards=24`, `72 passed`, both commands exit `0`.
 | --- | --- | --- | --- |
 | [Tier A — reviewer / spec](TIER_A_REVIEWER.md) | Doc review, validators, no heavy downloads | #85, #89, #90, #91, #92 | ~1 h |
 | [Tier B — EEA drift](TIER_B_EEA_DRIFT.md) | Public-data probe, network | #88 | ~30 min |
-| [Tier C — NASA rerun](TIER_C_NASA_RERUN.md) | Reproducibility, curl + gate | #86 | 1–2 h |
-| [Tier C — NOAA rerun](TIER_C_NOAA_RERUN.md) | Reproducibility, API fetch + gate | #87 | 1–2 h |
+| [Tier C — NASA rerun](TIER_C_NASA_RERUN.md) | Reproducibility, `claimbound rerun` + gate | #86 | 1–2 h |
+| [Tier C — NOAA rerun](TIER_C_NOAA_RERUN.md) | Reproducibility, `claimbound rerun` + gate | #87 | 1–2 h |
 
 Minimum credible external signal for reviewers: **Tier A + one Tier C pack** from
 an operator who is not the maintainer.

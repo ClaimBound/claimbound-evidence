@@ -69,6 +69,9 @@ validator-checked card is published.
 | NOAA rerun | `uv run claimbound rerun noaa-d131 --operator <handle>` |
 | EEA drift check | `uv run claimbound drift eea-source-audit` |
 | Close VERIFY Tier A packs | `uv run claimbound verify starter-pack` (and related `verify` commands) |
+| EEA drift VERIFY (#88) | `uv run claimbound verify eea-drift` |
+| NASA rerun VERIFY (#86) | `uv run claimbound verify nasa-rerun --operator <handle>` |
+| NOAA rerun VERIFY (#87) | `uv run claimbound verify noaa-rerun --operator <handle>` |
 
 ## What stays outside the repository
 

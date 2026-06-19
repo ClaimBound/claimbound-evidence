@@ -14,6 +14,18 @@ result.
 Fix the protocol first. Then download data. Then run. Then publish the exact
 result, even when it is negative or source-blocked.
 
+## Cross-platform one-command reruns
+
+Prefer these on Windows, macOS and Linux:
+
+```bash
+uv run claimbound rerun nasa-d103 --operator "<your-handle>"
+uv run claimbound rerun noaa-d131 --operator "<your-handle>"
+```
+
+They download payloads, hash files, run the frozen gate and print baseline vs
+your run. See [independent rerun workflow](INDEPENDENT_RERUN_WORKFLOW.md).
+
 ## Environment
 
 ```bash
@@ -50,8 +62,8 @@ uv run python scripts/claimbound_run_nasa_power_prereg.py \
 Record:
 
 ```bash
-shasum -a 256 /path/outside/repo/*.json
-shasum -a 256 /path/outside/repo/nasa_power_d103_report.json
+uv run claimbound hash /path/outside/repo/POWER_A.json /path/outside/repo/POWER_B.json /path/outside/repo/POWER_C.json
+uv run claimbound hash /path/outside/repo/nasa_power_d103_report.json
 ```
 
 Interpretation:
@@ -87,7 +99,7 @@ uv run python scripts/fetch_noaa_coops_d131_payloads.py \
 Record SHA-256 hashes:
 
 ```bash
-shasum -a 256 "$HOME/claimbound_runs/NOAA_COOPS_D131/raw"/*.json
+uv run claimbound hash ~/claimbound_runs/NOAA_COOPS_D131/raw/*.json
 ```
 
 Run the frozen gate evaluator:

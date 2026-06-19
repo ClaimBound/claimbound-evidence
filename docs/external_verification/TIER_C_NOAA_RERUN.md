@@ -11,6 +11,8 @@ Primary path (any OS):
 
 ```bash
 uv run claimbound rerun noaa-d131 --operator "<your-handle>"
+# or checklist shortcut:
+uv run claimbound verify noaa-rerun --operator "<your-handle>"
 ```
 
 The command fetches frozen D-131 payloads, hashes them, runs the gate and prints

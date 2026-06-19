@@ -11,6 +11,8 @@ Primary path (any OS, no jq or bash diff):
 
 ```bash
 uv run claimbound drift eea-source-audit
+# or checklist shortcut:
+uv run claimbound verify eea-drift
 ```
 
 Record in your issue comment:

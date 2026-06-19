@@ -19,6 +19,8 @@ uv run claimbound rerun noaa-d131 --operator "<your-handle>"
 
 ## Common mistakes
 
+Skip this section if you use the **Quick path** above.
+
 1. **Wrong issue** — `jq '.inputs' artifacts/noaa_coops_d131_negative_result_summary.json` is **NOAA #56**, not NASA #55.
 2. **`mapfile` in zsh** — macOS default shell is zsh; use `RUN_DIR="$(uv run claimbound run-root ... | head -1)"` instead of bash `mapfile`.
 3. **Wrong path** — if `RUN_DIR` is empty, `NOAA_RAW` becomes `/raw` and fetch fails. Always `echo "$RUN_DIR"` before fetch.
@@ -32,6 +34,10 @@ uv run claimbound rerun noaa-d131 --operator "<your-handle>"
 - `artifacts/noaa_coops_d131_negative_result_summary.json`
 - `docs/external_verification/TIER_C_NOAA_RERUN.md`
 - `docs/REPRODUCTION.md` (legacy NOAA background)
+
+## Legacy (optional shell)
+
+Use only if you need step-by-step control. Prefer the **Quick path** above on any OS.
 
 ## 1. Create local run root
 

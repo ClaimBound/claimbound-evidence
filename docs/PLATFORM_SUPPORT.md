@@ -81,7 +81,7 @@ rerun workflows.
 | File hashes | `claimbound hash` | Replaces shasum |
 | NASA / NOAA reruns | `claimbound rerun nasa-d103` / `noaa-d131` | Python download + gate |
 | EEA drift | `claimbound drift eea-source-audit` | Probe + field compare |
-| VERIFY packs | `claimbound verify starter-pack` (etc.) | Tier A checklist shortcuts |
+| VERIFY packs | `claimbound verify starter-pack` (etc.) | Tier A/B/C checklist shortcuts |
 
 ## Optional shell tools
 
