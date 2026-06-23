@@ -69,5 +69,5 @@ and registry update.
 ## Artifact-only records are not missing cards by accident
 
 NYC TLC Phase 4 and CDC mirror summaries live in the
-[artifacts catalog](artifacts/README.md). They are intentionally outside the 24-card
+[artifacts catalog](artifacts/README.md). They are intentionally outside the 33-card
 registry until promotion criteria are met.

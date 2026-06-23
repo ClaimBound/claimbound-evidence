@@ -79,7 +79,7 @@ uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-API_PARITY_D001-20
   --keys evidence_id result_status claim_boundary runner_command
 ```
 
-Expected: `validate-all` exits `0`, `card_count` is `24`. Record `git rev-parse HEAD`
+Expected: `validate-all` exits `0`, `card_count` is `33`. Record `git rev-parse HEAD`
 in your issue comment if you use git.
 
 ## #91 — SourceProbe spec only (#60)

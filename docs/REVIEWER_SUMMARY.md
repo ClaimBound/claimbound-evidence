@@ -38,7 +38,7 @@ planned to harden that baseline into additional reusable infrastructure.
 | EU and public AI source-audit runners for existing card types | Scaffold workflow hardening |
 | Scaffold drafts via `claimbound new` | Operator workflow hardening and external adoption |
 | Manual and AI-assisted workflow docs; CI on ubuntu + windows | Independent external reruns (`INDEPENDENT_RERUN`, `MULTI_OPERATOR`) |
-| Rerun workflow docs, issue templates, maintainer rerun cards; 24 honest cards | Expanded tutorial set and accessibility pass |
+| Rerun workflow docs, issue templates, maintainer rerun cards; 33 honest cards | Expanded tutorial set and accessibility pass |
 
 Documents such as [SourceProbe v1 acceptance criteria](SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md)
 and [Static registry MVP acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md)

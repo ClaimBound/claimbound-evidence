@@ -5,7 +5,7 @@
 [![Python >=3.12](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://github.com/ClaimBound/claimbound-evidence/blob/main/pyproject.toml)
 [![tests](https://img.shields.io/github/actions/workflow/status/ClaimBound/claimbound-evidence/tests.yml?branch=main&label=tests)](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml)
 [![release](https://img.shields.io/github/v/release/ClaimBound/claimbound-evidence?label=release)](https://github.com/ClaimBound/claimbound-evidence/releases/latest)
-[![evidence cards](https://img.shields.io/badge/evidence_cards-24-blue)](docs/registry/evidence_index.json)
+[![evidence cards](https://img.shields.io/badge/evidence_cards-33-blue)](docs/registry/evidence_index.json)
 
 <p align="center">
   <img

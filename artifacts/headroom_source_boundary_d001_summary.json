@@ -1,0 +1,116 @@
+{
+  "access_date": "2026-06-23",
+  "card_key": "HEADROOM_SOURCE_BOUNDARY_D001",
+  "claim_boundary": "This card verifies only public-source presence for Headroom v0.27.0. It does not prove runtime token savings, answer preservation, provider coverage, maintainer endorsement or general reliability.",
+  "decision_reason": "Headroom v0.27.0 public sources contain the wide claim and relevant Codex, Ollama/OpenAI-compatible and memory boundary signals.",
+  "evidence_id": "CLAIMBOUND-HEADROOM_SOURCE_BOUNDARY_D001-2026-06-23",
+  "protocol_id": "HEADROOM_WIDE_CLAIMS_D001",
+  "raw_payload_committed": false,
+  "raw_payload_policy": "Raw fixtures and model transcripts are generated in memory and not committed; public artifacts include hashes, counts and gate booleans.",
+  "run_context": {
+    "environment": {
+      "codex_cli_version": "codex-cli 0.142.0",
+      "darwin_kernel": "Darwin 25.5.0 arm64 arm",
+      "git_commit": "65284ef",
+      "hardware_privacy_note": "Serial number, hardware UUID and provisioning UDID intentionally not collected or committed.",
+      "machine": "arm64",
+      "machine_note": "User-declared MacBook Pro 16-inch, Apple M1 Pro, 16 GB.",
+      "macos": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80",
+      "ollama_api_version": {
+        "version": "0.30.10"
+      },
+      "ollama_models": [
+        "qwen2.5-coder:7b",
+        "qwen3:8b",
+        "gemma4:e2b-mlx"
+      ],
+      "ollama_version": "ollama version is 0.30.10",
+      "platform": "macOS-26.5.1-arm64-arm-64bit",
+      "processor": "arm",
+      "python_version": "3.12.11",
+      "requested_model": null
+    },
+    "headroom_package_version": "0.27.0",
+    "headroom_tag": "v0.27.0",
+    "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758",
+    "selected_ollama_model": "qwen2.5-coder:7b"
+  },
+  "source_probe": {
+    "all_required_sources_fetched": true,
+    "checks": {
+      "codex_support_claim": true,
+      "gemma_family_in_provider_code": true,
+      "limitations_include_rag_passthrough": true,
+      "limitations_include_source_code_passthrough": true,
+      "mcp_support_claim": true,
+      "memory_documented": true,
+      "memory_optional_signal": true,
+      "ollama_documented": true,
+      "openai_compatible_documented": true,
+      "proxy_support_claim": true,
+      "qwen_family_in_provider_code": true,
+      "same_answers_claim": true,
+      "tool_logs_rag_files_history_claim": true,
+      "wide_60_95_claim": true
+    },
+    "files": {
+      "README.md": {
+        "bytes": 24397,
+        "sha256": "ccfda7527cf587caf6a8e27ba514076df1e7bf0b732bb10ad73db1f8f22b0ce9",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/README.md"
+      },
+      "docs/content/docs/limitations.mdx": {
+        "bytes": 7252,
+        "sha256": "4a05968db6e7c2a6636dbca38c21875974c32c7baf5547ba9e53f1dabe4e605c",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/limitations.mdx"
+      },
+      "docs/content/docs/litellm.mdx": {
+        "bytes": 2531,
+        "sha256": "b0bbc6626c1cd3ab2dce17baf812f41f54d58a964d83ed7bb00b693511ee6aac",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/litellm.mdx"
+      },
+      "docs/content/docs/memory.mdx": {
+        "bytes": 8713,
+        "sha256": "c00f1f58df74bfcba9acdc962ae4ab6f075aa1e410c9d0ba46f5859a1beb92f8",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/memory.mdx"
+      },
+      "docs/content/docs/proxy.mdx": {
+        "bytes": 10650,
+        "sha256": "89514dd483546d4342d91fe8d1ee666936fb23c4748e59bc839b580f6984fc74",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/proxy.mdx"
+      },
+      "headroom/evals/README.md": {
+        "bytes": 10262,
+        "sha256": "467a704a9d63bb71c72dcd35f5f2c94192ea8294765381bef2d74f29ef3d785c",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/evals/README.md"
+      },
+      "headroom/evals/runners/before_after.py": {
+        "bytes": 20601,
+        "sha256": "123a12932ceb31ffe2439fbce6a09d2db629eccf4946595ac54d591ec6f51f49",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/evals/runners/before_after.py"
+      },
+      "headroom/providers/codex/runtime.py": {
+        "bytes": 702,
+        "sha256": "31bac14f850c7b71ac13bf8021bfc3e7f06a1f5d3b84def844de13bf33c072a4",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/providers/codex/runtime.py"
+      },
+      "headroom/providers/openai_compatible.py": {
+        "bytes": 14186,
+        "sha256": "64eac9bdbb994fed4184e5dd4b83b6ee15eb44dcbcd612984eb583824b7b11bf",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/providers/openai_compatible.py"
+      }
+    },
+    "headroom_tag": "v0.27.0",
+    "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758"
+  },
+  "status": "PASSED_UNDER_PROTOCOL"
+}
