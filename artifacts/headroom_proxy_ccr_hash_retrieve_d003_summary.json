@@ -1,0 +1,49 @@
+{
+  "access_date": "2026-06-23",
+  "allowed_claim_sentence": "Under HEADROOM_PROXY_CODEX_D003, the tested /v1/compress response did not provide a CCR hash that could be used to verify /v1/retrieve recovery for this synthetic fixture.",
+  "card_key": "HEADROOM_PROXY_CCR_HASH_RETRIEVE_D003",
+  "claim_boundary": "This is a narrow endpoint result for the compression-only proxy API. It must not be read as a failure of MCP CCR retrieval, which is covered separately by D002.",
+  "environment": {
+    "machine": "arm64",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python_version": "3.12.11",
+    "raw_identifiers_committed": false,
+    "system": "Darwin",
+    "user_declared_hardware": "MacBook Pro 16 inch, Apple M1 Pro, 16 GB"
+  },
+  "headroom_tag": "v0.27.0",
+  "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758",
+  "protocol_id": "HEADROOM_PROXY_CODEX_D003",
+  "protocol_version": "frozen-2026-06-23",
+  "proxy_gate": {
+    "ccr_hashes_count": 0,
+    "compress_status_code": 200,
+    "compressed_sha256": "c5f0960f5e3cc15924ad8e32187072255d0994710b6a006b3468bdef88af2782",
+    "compression_ratio": 0.5481212626067296,
+    "fixture_bytes": 153609,
+    "fixture_sha256": "bf756604e1033b6a2f72f9775b417a14d511a3d756f696468b21540d53d7f729",
+    "marker_hashes_count": 0,
+    "private_transcripts_committed": false,
+    "raw_payload_committed": false,
+    "retrieve_attempt": null,
+    "stats_sanitized": {
+      "recent_retrievals_count": 0,
+      "store": {
+        "backend_db_path_committed": false,
+        "backend_type": "sqlite",
+        "entry_count": 3,
+        "total_compressed_tokens": 25426,
+        "total_original_tokens": 34658,
+        "total_retrievals": 7
+      }
+    },
+    "stats_status_code": 200,
+    "tokens_after": 18424,
+    "tokens_before": 33613,
+    "tokens_saved": 15189,
+    "transforms_applied": [
+      "router:smart_crusher:0.00"
+    ]
+  },
+  "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL"
+}

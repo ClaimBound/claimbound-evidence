@@ -31,7 +31,7 @@ uv run claimbound doctor
 uv run claimbound validate-all
 ```
 
-Expected: `ready=yes`, `valid_cards=37`, exit code `0`.
+Expected: `ready=yes`, `valid_cards=40`, exit code `0`.
 
 4. Read [Planned work not shipped](PLANNED_NOT_SHIPPED.md) — SourceProbe v1,
    static registry HTML views, PyPI and WCAG are **not** claimed as completed.
@@ -48,7 +48,7 @@ Expected: `ready=yes`, `valid_cards=37`, exit code `0`.
 
 ## The main credibility gap (stated openly)
 
-All **37** registry cards currently use `SINGLE_OPERATOR` or
+All **40** registry cards currently use `SINGLE_OPERATOR` or
 `SINGLE_OPERATOR_RERUN`. There is **no** `INDEPENDENT_RERUN` or
 `MULTI_OPERATOR` card yet.
 

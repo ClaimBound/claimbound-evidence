@@ -67,7 +67,7 @@ uv run --extra dev python -m pytest -q
 | Command | Expected |
 | --- | --- |
 | `claimbound doctor` | `ready=yes` |
-| `claimbound validate-all` | exit `0`, `valid_cards=37` |
+| `claimbound validate-all` | exit `0`, `valid_cards=40` |
 | `pytest -q` | **86 passed** |
 
 Record for your closing comment:
@@ -153,7 +153,7 @@ field and delete lines that do not apply:
 - Environment: e.g. macOS 15 + Python 3.12.4
 
 ### Baseline
-- [x] `uv run claimbound validate-all` -> exit 0, `valid_cards=37`
+- [x] `uv run claimbound validate-all` -> exit 0, `valid_cards=40`
 - [x] `uv run --extra dev python -m pytest -q` → 86 passed
 
 ### Pack-specific checks

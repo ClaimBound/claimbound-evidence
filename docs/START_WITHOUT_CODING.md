@@ -24,7 +24,7 @@ uv run claimbound doctor
 uv run claimbound validate-all
 ```
 
-Expected: `valid_cards=37` and exit code `0`.
+Expected: `valid_cards=40` and exit code `0`.
 
 ### 3. Run one demo
 
