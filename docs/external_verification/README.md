@@ -42,7 +42,7 @@ uv run --extra dev python -m pytest -q
 Note your GitHub handle and today's date for issue comments. `claimbound doctor`
 prints `today=YYYY-MM-DD`.
 
-Expected: `ready=yes`, `valid_cards=33`, `86 passed`, all commands exit `0`.
+Expected: `ready=yes`, `valid_cards=37`, `86 passed`, all commands exit `0`.
 
 Record `git rev-parse HEAD` for your closing comment.
 

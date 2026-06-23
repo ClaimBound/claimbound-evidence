@@ -126,7 +126,7 @@ If anything fails, paste the full terminal output on the issue — don't close y
 - Environment: Ubuntu 24.04 + Python 3.12.3
 
 ### Baseline
-- [x] `uv run claimbound validate-all` -> exit 0, `valid_cards=33`
+- [x] `uv run claimbound validate-all` -> exit 0, `valid_cards=37`
 - [x] `uv run --extra dev python -m pytest -q` → 86 passed
 
 ### Pack-specific checks

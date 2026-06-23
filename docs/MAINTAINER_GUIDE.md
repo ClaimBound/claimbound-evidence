@@ -12,7 +12,7 @@ uv run claimbound validate-all
 uv run --extra dev python -m pytest -q
 ```
 
-Expected: `ready=yes`, `valid_cards=33`, `86 passed`.
+Expected: `ready=yes`, `valid_cards=37`, `86 passed`.
 
 ## What you may merge
 

@@ -12,7 +12,7 @@ Copy into the VERIFY issue you completed. Replace placeholders.
 - Environment: OS + Python version
 
 ### Baseline
-- [ ] `uv run claimbound validate-all` -> exit 0, `valid_cards=33`
+- [ ] `uv run claimbound validate-all` -> exit 0, `valid_cards=37`
 - [ ] `uv run --extra dev python -m pytest -q` → 86 passed
 
 ### Pack-specific checks
