@@ -100,8 +100,13 @@ def verify_api_parity(repo_root: Path) -> list[VerifyCheck]:
     checks = [VerifyCheck("validate_all", exit_code == 0, f"exit={exit_code}")]
     registry = load_json(repo_root / "docs" / "registry" / "evidence_index.json")
     card_count = registry.get("card_count")
+    cards = registry.get("cards")
     checks.append(
-        VerifyCheck("card_count_24", card_count == 24, f"card_count={card_count}")
+        VerifyCheck(
+            "card_count_consistent",
+            isinstance(cards, list) and card_count == len(cards),
+            f"card_count={card_count}, registry_entries={len(cards) if isinstance(cards, list) else 'n/a'}",
+        )
     )
     api_card = repo_root / "docs" / "evidence_cards" / "CLAIMBOUND-API_PARITY_D001-2026-06-15.json"
     if api_card.is_file():

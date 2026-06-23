@@ -1,0 +1,50 @@
+{
+  "access_date": "2026-06-23",
+  "allowed_claim_sentence": "Under HEADROOM_SEMANTIC_FIDELITY_D004, synthetic agent history semantic gate did not satisfy the combined semantic-field and >=60% token-reduction gate.",
+  "card_key": "HEADROOM_OLLAMA_HISTORY_SEMANTIC_SAVINGS_D004",
+  "claim_boundary": "This card checks same-meaning preservation only through predeclared structured fields, not literal answer equality. It covers one local Ollama model and one synthetic fixture family; it does not generalize to all prompts, models, proxy deployments or CCR-enabled workflows.",
+  "environment": {
+    "machine": "arm64",
+    "ollama_models": [
+      "gemma4:e2b-mlx",
+      "qwen2.5-coder:7b",
+      "qwen3:8b"
+    ],
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python_version": "3.12.11",
+    "raw_identifiers_committed": false,
+    "requested_model": null,
+    "system": "Darwin",
+    "user_declared_hardware": "MacBook Pro 16 inch, Apple M1 Pro, 16 GB"
+  },
+  "headroom_tag": "v0.27.0",
+  "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758",
+  "protocol_id": "HEADROOM_SEMANTIC_FIDELITY_D004",
+  "protocol_version": "frozen-2026-06-23",
+  "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+  "selected_ollama_model": "qwen2.5-coder:7b",
+  "semantic_gate": {
+    "baseline_answer_sha256": "fe1a1910c43f3714802fe05180c8a3de7e681c42a1f2251645f3b2d34f62c5a1",
+    "baseline_parse_ok": true,
+    "baseline_prompt_eval_count": 1599,
+    "baseline_semantic_match": true,
+    "compressed_answer_sha256": "fe1a1910c43f3714802fe05180c8a3de7e681c42a1f2251645f3b2d34f62c5a1",
+    "compressed_parse_ok": true,
+    "compressed_prompt_eval_count": 1599,
+    "compressed_semantic_match": true,
+    "compressed_tokens": 1599,
+    "decision_reason": "Semantic fields matched, but Headroom did not reduce tokens by the predeclared >=60% threshold for this fixture.",
+    "expected_fields_sha256": "06800c2637576dd529a0a546ca950676b62624f0086be13b8a84a50192deae2f",
+    "fixture_bytes": 7475,
+    "fixture_sha256": "ac2391f8dd58d134f6867b78c1168a8755d942d74762bd6ba238d1912b29551a",
+    "label": "synthetic agent history semantic gate",
+    "mismatched_fields": [],
+    "original_tokens": 1599,
+    "reduction_pct": 0.0,
+    "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+    "tokens_saved": 0,
+    "transforms_applied": [
+      "router:noop"
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "access_date": "2026-06-23",
+  "allowed_claim_sentence": "Headroom v0.27.0 public docs/source expose CCR/MCP compression, headroom_retrieve and proxy retrieve endpoints as the documented recoverability path.",
+  "card_key": "HEADROOM_CCR_SOURCE_BOUNDARY_D002",
+  "claim_boundary": "This card verifies documented/source surface only. It does not prove agent answer quality, Codex traffic handling or all provider integrations.",
+  "cli_probe": {
+    "headroom_mcp_help": {
+      "available": true,
+      "mentions_ccr": true,
+      "mentions_headroom_compress": true,
+      "mentions_headroom_retrieve": true,
+      "mentions_no_ccr_marker": false,
+      "returncode": 0,
+      "stdout_sha256": "3a3ddb604a53469d8cc57558d2b23f6b2e0a7db6079f9557fbfe299b9fdcf2bb"
+    },
+    "headroom_proxy_help": {
+      "available": true,
+      "mentions_ccr": true,
+      "mentions_headroom_compress": false,
+      "mentions_headroom_retrieve": true,
+      "mentions_no_ccr_marker": true,
+      "returncode": 0,
+      "stdout_sha256": "86e1ced0db0ca0ee4c2abe026a2339e1f0f631200c0d04e929da19451c05489f"
+    }
+  },
+  "environment": {
+    "machine": "arm64",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python_version": "3.12.11",
+    "raw_identifiers_committed": false,
+    "system": "Darwin",
+    "user_declared_hardware": "MacBook Pro 16 inch, Apple M1 Pro, 16 GB"
+  },
+  "headroom_package_version": "0.27.0",
+  "headroom_tag": "v0.27.0",
+  "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758",
+  "protocol_id": "HEADROOM_CCR_RETRIEVAL_D002",
+  "protocol_version": "frozen-2026-06-23",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "source_probe": {
+    "all_fetches_ok": true,
+    "files": {
+      "docs/content/docs/ccr.mdx": {
+        "bytes": 6372,
+        "mentions": {
+          "ccr": true,
+          "headroom_compress": false,
+          "headroom_retrieve": true,
+          "local_store": false,
+          "proxy_retrieve_endpoint": true
+        },
+        "sha256": "69609eb0b022b91f8f1a0b3b8ab076ed5c6cf2115aec3ed353d93bcc5bad9d6c",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/ccr.mdx"
+      },
+      "docs/content/docs/mcp.mdx": {
+        "bytes": 6841,
+        "mentions": {
+          "ccr": false,
+          "headroom_compress": true,
+          "headroom_retrieve": true,
+          "local_store": true,
+          "proxy_retrieve_endpoint": false
+        },
+        "sha256": "837e5b33ebb81558621b102dc7cd426b734bcffa6f85b5a5bc9740c80084e221",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/mcp.mdx"
+      },
+      "docs/content/docs/proxy.mdx": {
+        "bytes": 10650,
+        "mentions": {
+          "ccr": true,
+          "headroom_compress": true,
+          "headroom_retrieve": false,
+          "local_store": false,
+          "proxy_retrieve_endpoint": false
+        },
+        "sha256": "89514dd483546d4342d91fe8d1ee666936fb23c4748e59bc839b580f6984fc74",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/proxy.mdx"
+      },
+      "headroom/ccr/mcp_server.py": {
+        "bytes": 37802,
+        "mentions": {
+          "ccr": true,
+          "headroom_compress": true,
+          "headroom_retrieve": true,
+          "local_store": true,
+          "proxy_retrieve_endpoint": true
+        },
+        "sha256": "9e935595ddacf0f3406773a48e1be9ef0b043e758c64bc4fcbf9e80d2cf9ff83",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/ccr/mcp_server.py"
+      },
+      "headroom/ccr/tool_injection.py": {
+        "bytes": 20326,
+        "mentions": {
+          "ccr": true,
+          "headroom_compress": false,
+          "headroom_retrieve": true,
+          "local_store": false,
+          "proxy_retrieve_endpoint": true
+        },
+        "sha256": "33eaf3800a147c0a82b47cfa4f4afaa0ad082f24a3a724c89402e02b48abbca2",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/ccr/tool_injection.py"
+      },
+      "headroom/compress.py": {
+        "bytes": 14649,
+        "mentions": {
+          "ccr": true,
+          "headroom_compress": false,
+          "headroom_retrieve": false,
+          "local_store": false,
+          "proxy_retrieve_endpoint": false
+        },
+        "sha256": "e35d86a03bfac8911ca232aa9addfb6248435ae1c3ac152383e331cc35a55511",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/compress.py"
+      }
+    },
+    "mentions_ccr": true,
+    "mentions_compress_tool": true,
+    "mentions_direct_compress_as_ccr": false,
+    "mentions_proxy_retrieve_endpoint": true,
+    "mentions_retrieve_tool": true,
+    "source_sha256": "6ad8804fa41d34e82adbcebd5c835c59b9388c54f92b7db29c5b37bdf49695d9"
+  }
+}

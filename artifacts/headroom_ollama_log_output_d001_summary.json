@@ -1,0 +1,60 @@
+{
+  "access_date": "2026-06-23",
+  "card_key": "HEADROOM_OLLAMA_LOG_OUTPUT_D001",
+  "claim_boundary": "This card verifies only the synthetic structured logs fixture on one local Ollama Qwen run. It does not generalize to all prompts, providers, model families, proxy deployments, CCR retrieval tool use or future Headroom versions.",
+  "decision_reason": "The original baseline answered correctly, but the compressed path did not satisfy both the token-reduction and exact-answer gates.",
+  "evidence_id": "CLAIMBOUND-HEADROOM_OLLAMA_LOG_OUTPUT_D001-2026-06-23",
+  "protocol_id": "HEADROOM_WIDE_CLAIMS_D001",
+  "raw_payload_committed": false,
+  "raw_payload_policy": "Raw fixtures and model transcripts are generated in memory and not committed; public artifacts include hashes, counts and gate booleans.",
+  "run_context": {
+    "environment": {
+      "codex_cli_version": "codex-cli 0.142.0",
+      "darwin_kernel": "Darwin 25.5.0 arm64 arm",
+      "git_commit": "65284ef",
+      "hardware_privacy_note": "Serial number, hardware UUID and provisioning UDID intentionally not collected or committed.",
+      "machine": "arm64",
+      "machine_note": "User-declared MacBook Pro 16-inch, Apple M1 Pro, 16 GB.",
+      "macos": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80",
+      "ollama_api_version": {
+        "version": "0.30.10"
+      },
+      "ollama_models": [
+        "qwen2.5-coder:7b",
+        "qwen3:8b",
+        "gemma4:e2b-mlx"
+      ],
+      "ollama_version": "ollama version is 0.30.10",
+      "platform": "macOS-26.5.1-arm64-arm-64bit",
+      "processor": "arm",
+      "python_version": "3.12.11",
+      "requested_model": null
+    },
+    "headroom_package_version": "0.27.0",
+    "headroom_tag": "v0.27.0",
+    "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758",
+    "selected_ollama_model": "qwen2.5-coder:7b"
+  },
+  "runtime_gate": {
+    "baseline_answer_matches": true,
+    "baseline_answer_sha256": "5d2bc62570fb8e2c03128b6235a02911f20a41ef593c26d557eafe5b8c8f84d0",
+    "baseline_prompt_eval_count": 4123,
+    "compressed_answer_matches": false,
+    "compressed_answer_sha256": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306",
+    "compressed_prompt_eval_count": 323,
+    "compressed_tokens": 323,
+    "decision_reason": "The original baseline answered correctly, but the compressed path did not satisfy both the token-reduction and exact-answer gates.",
+    "expected_answer_sha256": "5d2bc62570fb8e2c03128b6235a02911f20a41ef593c26d557eafe5b8c8f84d0",
+    "fixture_bytes": 10184,
+    "fixture_sha256": "b41f4a6e6bffe3c4b8e883e3276744896787856a64cde79b427a8c8acf826a38",
+    "label": "synthetic structured logs",
+    "original_tokens": 4123,
+    "reduction_pct": 92.1659,
+    "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+    "tokens_saved": 3800,
+    "transforms_applied": [
+      "router:search:0.09"
+    ]
+  },
+  "status": "NEGATIVE_RESULT_UNDER_PROTOCOL"
+}

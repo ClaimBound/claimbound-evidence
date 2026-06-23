@@ -1,0 +1,54 @@
+{
+  "access_date": "2026-06-23",
+  "allowed_claim_sentence": "Under HEADROOM_SEMANTIC_FIDELITY_D004, synthetic structured log semantic gate did not satisfy the combined semantic-field and >=60% token-reduction gate.",
+  "card_key": "HEADROOM_OLLAMA_LOG_SEMANTIC_SAVINGS_D004",
+  "claim_boundary": "This card checks same-meaning preservation only through predeclared structured fields, not literal answer equality. It covers one local Ollama model and one synthetic fixture family; it does not generalize to all prompts, models, proxy deployments or CCR-enabled workflows.",
+  "environment": {
+    "machine": "arm64",
+    "ollama_models": [
+      "gemma4:e2b-mlx",
+      "qwen2.5-coder:7b",
+      "qwen3:8b"
+    ],
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python_version": "3.12.11",
+    "raw_identifiers_committed": false,
+    "requested_model": null,
+    "system": "Darwin",
+    "user_declared_hardware": "MacBook Pro 16 inch, Apple M1 Pro, 16 GB"
+  },
+  "headroom_tag": "v0.27.0",
+  "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758",
+  "protocol_id": "HEADROOM_SEMANTIC_FIDELITY_D004",
+  "protocol_version": "frozen-2026-06-23",
+  "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+  "selected_ollama_model": "qwen2.5-coder:7b",
+  "semantic_gate": {
+    "baseline_answer_sha256": "f0b2065ce6e00a36af67a50bf2949fe4acf525e3646cfa40f6daca8e0f198954",
+    "baseline_parse_ok": true,
+    "baseline_prompt_eval_count": 4149,
+    "baseline_semantic_match": true,
+    "compressed_answer_sha256": "66e5b853252715d07191119f6be8def978f1c3f0375d005d5dab56ba5d70a0b0",
+    "compressed_parse_ok": true,
+    "compressed_prompt_eval_count": 342,
+    "compressed_semantic_match": false,
+    "compressed_tokens": 342,
+    "decision_reason": "The original baseline matched the semantic fields, but the compressed path did not preserve the same structured meaning under the gate.",
+    "expected_fields_sha256": "53bd6c6695a78f16f7381a13f2f62c9849e086e9a7720c85cec39d3c5200e52e",
+    "fixture_bytes": 10184,
+    "fixture_sha256": "b41f4a6e6bffe3c4b8e883e3276744896787856a64cde79b427a8c8acf826a38",
+    "label": "synthetic structured log semantic gate",
+    "mismatched_fields": [
+      "target_code",
+      "request_id",
+      "worker"
+    ],
+    "original_tokens": 4149,
+    "reduction_pct": 91.757,
+    "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+    "tokens_saved": 3807,
+    "transforms_applied": [
+      "router:search:0.08"
+    ]
+  }
+}

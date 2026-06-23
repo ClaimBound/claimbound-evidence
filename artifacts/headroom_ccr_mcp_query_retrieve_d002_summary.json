@@ -1,0 +1,53 @@
+{
+  "access_date": "2026-06-23",
+  "allowed_claim_sentence": "Under HEADROOM_CCR_RETRIEVAL_D002, Headroom MCP query retrieve found the synthetic target row containing CASE-0073 and TARGET-ALPHA.",
+  "card_key": "HEADROOM_CCR_MCP_QUERY_RETRIEVE_D002",
+  "claim_boundary": "This verifies one deterministic query over one stored synthetic payload. It does not prove semantic ranking quality for arbitrary queries or that an LLM will choose to call retrieve at the right time.",
+  "environment": {
+    "machine": "arm64",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python_version": "3.12.11",
+    "raw_identifiers_committed": false,
+    "system": "Darwin",
+    "user_declared_hardware": "MacBook Pro 16 inch, Apple M1 Pro, 16 GB"
+  },
+  "headroom_package_version": "0.27.0",
+  "headroom_tag": "v0.27.0",
+  "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758",
+  "mcp_gate": {
+    "compression": {
+      "compressed_sha256": "9d3441729cfb1b0d8dfcce756d756b64a8bd20a8e15c7948f07302fe5f2b02ff",
+      "compressed_tokens": 11852,
+      "note_mentions_retrieve_tool": true,
+      "original_tokens": 16468,
+      "savings_percent": 72.0,
+      "tokens_saved": 4616,
+      "transforms": [
+        "router:smart_crusher:0.00"
+      ]
+    },
+    "fixture_bytes": 57609,
+    "fixture_sha256": "5190b1803a789b2552262562a965b73ec159b77cdb17ced0ef611f81da26a952",
+    "full_retrieve": {
+      "content_sha256": "5190b1803a789b2552262562a965b73ec159b77cdb17ced0ef611f81da26a952",
+      "matches_fixture_exact": true,
+      "matches_fixture_sha256": true,
+      "returned_raw_content_committed": false,
+      "source": "local"
+    },
+    "hash": "5190b1803a789b2552262562",
+    "hash_length": 24,
+    "hash_prefix": "5190b1803a78",
+    "query_retrieve": {
+      "count": 1,
+      "fallback_full_content": false,
+      "has_target_answer": true,
+      "has_target_case": true,
+      "results_sha256": "3b4b81d6f263db53ac383e84e19128b3569f6e526ea6ef06bdb5af05cb6a60cd",
+      "source": "local"
+    }
+  },
+  "protocol_id": "HEADROOM_CCR_RETRIEVAL_D002",
+  "protocol_version": "frozen-2026-06-23",
+  "result_status": "PASSED_UNDER_PROTOCOL"
+}

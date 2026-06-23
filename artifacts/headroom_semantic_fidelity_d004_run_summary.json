@@ -1,0 +1,109 @@
+{
+  "access_date": "2026-06-23",
+  "claim_boundary": "Semantic-fidelity follow-up to D001. The gate checks structured meaning equivalence, not literal answer equality, and combines it with the same >=60% token-reduction threshold for local Ollama.",
+  "created_at": "2026-06-23",
+  "environment": {
+    "machine": "arm64",
+    "ollama_models": [
+      "gemma4:e2b-mlx",
+      "qwen2.5-coder:7b",
+      "qwen3:8b"
+    ],
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python_version": "3.12.11",
+    "raw_identifiers_committed": false,
+    "requested_model": null,
+    "system": "Darwin",
+    "user_declared_hardware": "MacBook Pro 16 inch, Apple M1 Pro, 16 GB"
+  },
+  "headroom_expected_version": "0.27.0",
+  "headroom_package_version": "0.27.0",
+  "headroom_tag": "v0.27.0",
+  "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758",
+  "protocol_id": "HEADROOM_SEMANTIC_FIDELITY_D004",
+  "protocol_version": "frozen-2026-06-23",
+  "raw_payload_policy": "Synthetic fixtures and LLM answers are generated locally. Public artifacts include hashes, counts, semantic booleans and mismatched field names, not raw prompts or transcripts.",
+  "selected_ollama_model": "qwen2.5-coder:7b",
+  "semantic_gates": {
+    "HEADROOM_OLLAMA_HISTORY_SEMANTIC_SAVINGS_D004": {
+      "baseline_answer_sha256": "fe1a1910c43f3714802fe05180c8a3de7e681c42a1f2251645f3b2d34f62c5a1",
+      "baseline_parse_ok": true,
+      "baseline_prompt_eval_count": 1599,
+      "baseline_semantic_match": true,
+      "compressed_answer_sha256": "fe1a1910c43f3714802fe05180c8a3de7e681c42a1f2251645f3b2d34f62c5a1",
+      "compressed_parse_ok": true,
+      "compressed_prompt_eval_count": 1599,
+      "compressed_semantic_match": true,
+      "compressed_tokens": 1599,
+      "decision_reason": "Semantic fields matched, but Headroom did not reduce tokens by the predeclared >=60% threshold for this fixture.",
+      "expected_fields_sha256": "06800c2637576dd529a0a546ca950676b62624f0086be13b8a84a50192deae2f",
+      "fixture_bytes": 7475,
+      "fixture_sha256": "ac2391f8dd58d134f6867b78c1168a8755d942d74762bd6ba238d1912b29551a",
+      "label": "synthetic agent history semantic gate",
+      "mismatched_fields": [],
+      "original_tokens": 1599,
+      "reduction_pct": 0.0,
+      "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+      "tokens_saved": 0,
+      "transforms_applied": [
+        "router:noop"
+      ]
+    },
+    "HEADROOM_OLLAMA_JSON_SEMANTIC_SAVINGS_D004": {
+      "baseline_answer_sha256": "f113e6d8fc445c28654433802f7b7387bf40441f961e4a57e4b5c4693b533d95",
+      "baseline_parse_ok": true,
+      "baseline_prompt_eval_count": 4305,
+      "baseline_semantic_match": true,
+      "compressed_answer_sha256": "c84d2fbc679cb6ab7560240e0d62d944269c884353209660d13cfd99da985212",
+      "compressed_parse_ok": true,
+      "compressed_prompt_eval_count": 79,
+      "compressed_semantic_match": false,
+      "compressed_tokens": 80,
+      "decision_reason": "The original baseline matched the semantic fields, but the compressed path did not preserve the same structured meaning under the gate.",
+      "expected_fields_sha256": "a222742deb11f0f4e50b6b10a5a2eb29271a1e52039748f3363a75fc54bff26c",
+      "fixture_bytes": 19158,
+      "fixture_sha256": "79a15bf8acb9984dc79d1e3e46ee526612db62da4178df8f731d661f908eefe4",
+      "label": "synthetic JSON tool output semantic gate",
+      "mismatched_fields": [
+        "record_id",
+        "secret",
+        "status"
+      ],
+      "original_tokens": 4305,
+      "reduction_pct": 98.1417,
+      "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+      "tokens_saved": 4225,
+      "transforms_applied": [
+        "router:smart_crusher:0.01"
+      ]
+    },
+    "HEADROOM_OLLAMA_LOG_SEMANTIC_SAVINGS_D004": {
+      "baseline_answer_sha256": "f0b2065ce6e00a36af67a50bf2949fe4acf525e3646cfa40f6daca8e0f198954",
+      "baseline_parse_ok": true,
+      "baseline_prompt_eval_count": 4149,
+      "baseline_semantic_match": true,
+      "compressed_answer_sha256": "66e5b853252715d07191119f6be8def978f1c3f0375d005d5dab56ba5d70a0b0",
+      "compressed_parse_ok": true,
+      "compressed_prompt_eval_count": 342,
+      "compressed_semantic_match": false,
+      "compressed_tokens": 342,
+      "decision_reason": "The original baseline matched the semantic fields, but the compressed path did not preserve the same structured meaning under the gate.",
+      "expected_fields_sha256": "53bd6c6695a78f16f7381a13f2f62c9849e086e9a7720c85cec39d3c5200e52e",
+      "fixture_bytes": 10184,
+      "fixture_sha256": "b41f4a6e6bffe3c4b8e883e3276744896787856a64cde79b427a8c8acf826a38",
+      "label": "synthetic structured log semantic gate",
+      "mismatched_fields": [
+        "target_code",
+        "request_id",
+        "worker"
+      ],
+      "original_tokens": 4149,
+      "reduction_pct": 91.757,
+      "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+      "tokens_saved": 3807,
+      "transforms_applied": [
+        "router:search:0.08"
+      ]
+    }
+  }
+}

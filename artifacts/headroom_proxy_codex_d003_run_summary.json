@@ -1,0 +1,155 @@
+{
+  "access_date": "2026-06-23",
+  "claim_boundary": "Headroom proxy/Codex D003 checks only local proxy compression and public Codex route surface. It does not publish or inspect private Codex transcripts.",
+  "cli_probe": {
+    "headroom_proxy_help": {
+      "available": true,
+      "mentions_ccr": true,
+      "mentions_codex": true,
+      "mentions_proxy": true,
+      "returncode": 0,
+      "stdout_sha256": "86e1ced0db0ca0ee4c2abe026a2339e1f0f631200c0d04e929da19451c05489f"
+    },
+    "headroom_wrap_codex_help": {
+      "available": true,
+      "mentions_ccr": true,
+      "mentions_codex": true,
+      "mentions_proxy": true,
+      "returncode": 0,
+      "stdout_sha256": "e8463ca86cd1edd38ba0e19c6ad9c826946593510e20a06c43febf5542f9ad52"
+    }
+  },
+  "created_at": "2026-06-23",
+  "environment": {
+    "machine": "arm64",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python_version": "3.12.11",
+    "raw_identifiers_committed": false,
+    "system": "Darwin",
+    "user_declared_hardware": "MacBook Pro 16 inch, Apple M1 Pro, 16 GB"
+  },
+  "headroom_expected_version": "0.27.0",
+  "headroom_tag": "v0.27.0",
+  "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758",
+  "protocol_id": "HEADROOM_PROXY_CODEX_D003",
+  "protocol_version": "frozen-2026-06-23",
+  "proxy_gate": {
+    "ccr_hashes_count": 0,
+    "compress_status_code": 200,
+    "compressed_sha256": "c5f0960f5e3cc15924ad8e32187072255d0994710b6a006b3468bdef88af2782",
+    "compression_ratio": 0.5481212626067296,
+    "fixture_bytes": 153609,
+    "fixture_sha256": "bf756604e1033b6a2f72f9775b417a14d511a3d756f696468b21540d53d7f729",
+    "marker_hashes_count": 0,
+    "private_transcripts_committed": false,
+    "raw_payload_committed": false,
+    "retrieve_attempt": null,
+    "stats_sanitized": {
+      "recent_retrievals_count": 0,
+      "store": {
+        "backend_db_path_committed": false,
+        "backend_type": "sqlite",
+        "entry_count": 3,
+        "total_compressed_tokens": 25426,
+        "total_original_tokens": 34658,
+        "total_retrievals": 7
+      }
+    },
+    "stats_status_code": 200,
+    "tokens_after": 18424,
+    "tokens_before": 33613,
+    "tokens_saved": 15189,
+    "transforms_applied": [
+      "router:smart_crusher:0.00"
+    ]
+  },
+  "raw_payload_policy": "Synthetic payloads are generated in memory; public artifacts include hashes, counts and booleans, not full request/response bodies.",
+  "source_probe": {
+    "all_fetches_ok": false,
+    "files": {
+      "docs/content/docs/ccr.mdx": {
+        "bytes": 6372,
+        "mentions": {
+          "ccr_hashes": false,
+          "codex": false,
+          "proxy_compress": false,
+          "proxy_retrieve": true,
+          "wrap_codex": false
+        },
+        "sha256": "69609eb0b022b91f8f1a0b3b8ab076ed5c6cf2115aec3ed353d93bcc5bad9d6c",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/ccr.mdx"
+      },
+      "docs/content/docs/proxy.mdx": {
+        "bytes": 10650,
+        "mentions": {
+          "ccr_hashes": true,
+          "codex": true,
+          "proxy_compress": true,
+          "proxy_retrieve": false,
+          "wrap_codex": true
+        },
+        "sha256": "89514dd483546d4342d91fe8d1ee666936fb23c4748e59bc839b580f6984fc74",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/proxy.mdx"
+      },
+      "headroom/cli/wrap.py": {
+        "bytes": 195622,
+        "mentions": {
+          "ccr_hashes": false,
+          "codex": true,
+          "proxy_compress": false,
+          "proxy_retrieve": false,
+          "wrap_codex": true
+        },
+        "sha256": "809f792a53807ac771632b31431427e503515a7b096866857f3b266d34d158b7",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/cli/wrap.py"
+      },
+      "headroom/providers/codex/runtime.py": {
+        "bytes": 702,
+        "mentions": {
+          "ccr_hashes": false,
+          "codex": true,
+          "proxy_compress": false,
+          "proxy_retrieve": false,
+          "wrap_codex": true
+        },
+        "sha256": "31bac14f850c7b71ac13bf8021bfc3e7f06a1f5d3b84def844de13bf33c072a4",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/providers/codex/runtime.py"
+      },
+      "headroom/proxy/handlers/openai.py": {
+        "bytes": 0,
+        "mentions": {
+          "ccr_hashes": false,
+          "codex": false,
+          "proxy_compress": false,
+          "proxy_retrieve": false,
+          "wrap_codex": false
+        },
+        "sha256": null,
+        "status": "fetch_failed:URLError",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/proxy/handlers/openai.py"
+      },
+      "headroom/proxy/server.py": {
+        "bytes": 188967,
+        "mentions": {
+          "ccr_hashes": false,
+          "codex": true,
+          "proxy_compress": true,
+          "proxy_retrieve": true,
+          "wrap_codex": false
+        },
+        "sha256": "e99de10315bd2e6febb4b2483ab1cdeeb10ee44e582103bee7533fc32a33bd16",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/proxy/server.py"
+      }
+    },
+    "mentions_ccr_hashes": true,
+    "mentions_codex_route": true,
+    "mentions_proxy_compress": true,
+    "mentions_proxy_retrieve": true,
+    "source_sha256": "fd5680d2dba68594da20e8075a4a48f5f3904ae5f58e923438cdc1c3dca6e01b"
+  }
+}

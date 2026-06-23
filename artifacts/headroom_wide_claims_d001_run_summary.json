@@ -1,0 +1,206 @@
+{
+  "access_date": "2026-06-23",
+  "claim_boundary": "Aggregate run summary for HEADROOM_WIDE_CLAIMS_D001 only. Evidence status lives in the individual Headroom cards; this file must not be used as a broad pass/fail statement about Headroom.",
+  "cli_probe": {
+    "headroom_help": {
+      "available": true,
+      "bytes": 1916,
+      "command": "headroom --help",
+      "mentions_codex": true,
+      "mentions_openai_base_url": false,
+      "mentions_proxy": true,
+      "sha256": "9fc74c3b99600ee63ea92e28dd9d35fcd8930643ff789957758f524b0ac8caf1"
+    },
+    "headroom_wrap_codex_help": {
+      "available": true,
+      "bytes": 2281,
+      "command": "headroom wrap codex --help",
+      "mentions_codex": true,
+      "mentions_openai_base_url": true,
+      "mentions_proxy": true,
+      "sha256": "ff9db4be3871b87693cff021bb953838c0ea767c63d91a56424b618e9858afc5"
+    },
+    "headroom_wrap_help": {
+      "available": true,
+      "bytes": 2289,
+      "command": "headroom wrap --help",
+      "mentions_codex": true,
+      "mentions_openai_base_url": true,
+      "mentions_proxy": true,
+      "sha256": "e0a6f5fedec2015e4bb0ed7086ab62144e1432900a2f2600a6c94135d3e24dfd"
+    }
+  },
+  "created_at": "2026-06-23",
+  "environment": {
+    "codex_cli_version": "codex-cli 0.142.0",
+    "darwin_kernel": "Darwin 25.5.0 arm64 arm",
+    "git_commit": "65284ef",
+    "hardware_privacy_note": "Serial number, hardware UUID and provisioning UDID intentionally not collected or committed.",
+    "machine": "arm64",
+    "machine_note": "User-declared MacBook Pro 16-inch, Apple M1 Pro, 16 GB.",
+    "macos": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80",
+    "ollama_api_version": {
+      "version": "0.30.10"
+    },
+    "ollama_models": [
+      "qwen2.5-coder:7b",
+      "qwen3:8b",
+      "gemma4:e2b-mlx"
+    ],
+    "ollama_version": "ollama version is 0.30.10",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "processor": "arm",
+    "python_version": "3.12.11",
+    "requested_model": null
+  },
+  "headroom_expected_version": "0.27.0",
+  "headroom_package_version": "0.27.0",
+  "headroom_tag": "v0.27.0",
+  "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758",
+  "protocol_id": "HEADROOM_WIDE_CLAIMS_D001",
+  "protocol_version": "frozen-2026-06-23",
+  "raw_payload_policy": "Raw fixtures and model transcripts are generated in memory and not committed; public artifacts include hashes, counts and gate booleans.",
+  "runtime_gates": {
+    "HEADROOM_OLLAMA_AGENT_HISTORY_D001": {
+      "baseline_answer_matches": true,
+      "baseline_answer_sha256": "73a1a53f461a570d459729462d48378502f2e2771740a9f748aa08e48d6473dd",
+      "baseline_prompt_eval_count": 1582,
+      "compressed_answer_matches": true,
+      "compressed_answer_sha256": "73a1a53f461a570d459729462d48378502f2e2771740a9f748aa08e48d6473dd",
+      "compressed_prompt_eval_count": 1582,
+      "compressed_tokens": 1582,
+      "decision_reason": "The original baseline answered correctly, but the compressed path did not satisfy both the token-reduction and exact-answer gates.",
+      "expected_answer_sha256": "73a1a53f461a570d459729462d48378502f2e2771740a9f748aa08e48d6473dd",
+      "fixture_bytes": 7475,
+      "fixture_sha256": "ac2391f8dd58d134f6867b78c1168a8755d942d74762bd6ba238d1912b29551a",
+      "label": "synthetic agent history",
+      "original_tokens": 1582,
+      "reduction_pct": 0.0,
+      "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+      "tokens_saved": 0,
+      "transforms_applied": [
+        "router:noop"
+      ]
+    },
+    "HEADROOM_OLLAMA_JSON_TOOL_OUTPUT_D001": {
+      "baseline_answer_matches": true,
+      "baseline_answer_sha256": "a029fa8640a54b75bf8d937ec7a7f1c730de9df600ee50f3609f3c6cf2c80a89",
+      "baseline_prompt_eval_count": 4281,
+      "compressed_answer_matches": false,
+      "compressed_answer_sha256": "42cbc52582043e01cedfe8e944f490f9e1e8d836ee8d56d9b7004e8a9eecab05",
+      "compressed_prompt_eval_count": 59,
+      "compressed_tokens": 60,
+      "decision_reason": "The original baseline answered correctly, but the compressed path did not satisfy both the token-reduction and exact-answer gates.",
+      "expected_answer_sha256": "a029fa8640a54b75bf8d937ec7a7f1c730de9df600ee50f3609f3c6cf2c80a89",
+      "fixture_bytes": 19158,
+      "fixture_sha256": "79a15bf8acb9984dc79d1e3e46ee526612db62da4178df8f731d661f908eefe4",
+      "label": "synthetic JSON tool output",
+      "original_tokens": 4281,
+      "reduction_pct": 98.5985,
+      "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+      "tokens_saved": 4221,
+      "transforms_applied": [
+        "router:smart_crusher:0.01"
+      ]
+    },
+    "HEADROOM_OLLAMA_LOG_OUTPUT_D001": {
+      "baseline_answer_matches": true,
+      "baseline_answer_sha256": "5d2bc62570fb8e2c03128b6235a02911f20a41ef593c26d557eafe5b8c8f84d0",
+      "baseline_prompt_eval_count": 4123,
+      "compressed_answer_matches": false,
+      "compressed_answer_sha256": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306",
+      "compressed_prompt_eval_count": 323,
+      "compressed_tokens": 323,
+      "decision_reason": "The original baseline answered correctly, but the compressed path did not satisfy both the token-reduction and exact-answer gates.",
+      "expected_answer_sha256": "5d2bc62570fb8e2c03128b6235a02911f20a41ef593c26d557eafe5b8c8f84d0",
+      "fixture_bytes": 10184,
+      "fixture_sha256": "b41f4a6e6bffe3c4b8e883e3276744896787856a64cde79b427a8c8acf826a38",
+      "label": "synthetic structured logs",
+      "original_tokens": 4123,
+      "reduction_pct": 92.1659,
+      "result_status": "NEGATIVE_RESULT_UNDER_PROTOCOL",
+      "tokens_saved": 3800,
+      "transforms_applied": [
+        "router:search:0.09"
+      ]
+    }
+  },
+  "selected_ollama_model": "qwen2.5-coder:7b",
+  "source_probe": {
+    "all_required_sources_fetched": true,
+    "checks": {
+      "codex_support_claim": true,
+      "gemma_family_in_provider_code": true,
+      "limitations_include_rag_passthrough": true,
+      "limitations_include_source_code_passthrough": true,
+      "mcp_support_claim": true,
+      "memory_documented": true,
+      "memory_optional_signal": true,
+      "ollama_documented": true,
+      "openai_compatible_documented": true,
+      "proxy_support_claim": true,
+      "qwen_family_in_provider_code": true,
+      "same_answers_claim": true,
+      "tool_logs_rag_files_history_claim": true,
+      "wide_60_95_claim": true
+    },
+    "files": {
+      "README.md": {
+        "bytes": 24397,
+        "sha256": "ccfda7527cf587caf6a8e27ba514076df1e7bf0b732bb10ad73db1f8f22b0ce9",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/README.md"
+      },
+      "docs/content/docs/limitations.mdx": {
+        "bytes": 7252,
+        "sha256": "4a05968db6e7c2a6636dbca38c21875974c32c7baf5547ba9e53f1dabe4e605c",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/limitations.mdx"
+      },
+      "docs/content/docs/litellm.mdx": {
+        "bytes": 2531,
+        "sha256": "b0bbc6626c1cd3ab2dce17baf812f41f54d58a964d83ed7bb00b693511ee6aac",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/litellm.mdx"
+      },
+      "docs/content/docs/memory.mdx": {
+        "bytes": 8713,
+        "sha256": "c00f1f58df74bfcba9acdc962ae4ab6f075aa1e410c9d0ba46f5859a1beb92f8",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/memory.mdx"
+      },
+      "docs/content/docs/proxy.mdx": {
+        "bytes": 10650,
+        "sha256": "89514dd483546d4342d91fe8d1ee666936fb23c4748e59bc839b580f6984fc74",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/docs/content/docs/proxy.mdx"
+      },
+      "headroom/evals/README.md": {
+        "bytes": 10262,
+        "sha256": "467a704a9d63bb71c72dcd35f5f2c94192ea8294765381bef2d74f29ef3d785c",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/evals/README.md"
+      },
+      "headroom/evals/runners/before_after.py": {
+        "bytes": 20601,
+        "sha256": "123a12932ceb31ffe2439fbce6a09d2db629eccf4946595ac54d591ec6f51f49",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/evals/runners/before_after.py"
+      },
+      "headroom/providers/codex/runtime.py": {
+        "bytes": 702,
+        "sha256": "31bac14f850c7b71ac13bf8021bfc3e7f06a1f5d3b84def844de13bf33c072a4",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/providers/codex/runtime.py"
+      },
+      "headroom/providers/openai_compatible.py": {
+        "bytes": 14186,
+        "sha256": "64eac9bdbb994fed4184e5dd4b83b6ee15eb44dcbcd612984eb583824b7b11bf",
+        "status": "fetched",
+        "url": "https://raw.githubusercontent.com/headroomlabs-ai/headroom/v0.27.0/headroom/providers/openai_compatible.py"
+      }
+    },
+    "headroom_tag": "v0.27.0",
+    "headroom_tag_commit": "95b2333ee5a3f1cbe512ca04a6563c3572835758"
+  }
+}
