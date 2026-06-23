@@ -23,7 +23,7 @@ jobs:
             pytest_args: "-q"
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v7
       - run: uv sync --extra dev
       - run: uv run claimbound doctor
