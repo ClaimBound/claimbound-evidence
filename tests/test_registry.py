@@ -21,6 +21,14 @@ def test_committed_registry_matches_cards_and_statistics() -> None:
     assert validate_registry(registry, REPO_ROOT) == []
 
 
+def test_readme_uses_dynamic_evidence_cards_badge() -> None:
+    readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+
+    assert "img.shields.io/badge/dynamic/json" in readme
+    assert "query=%24.card_count" in readme
+    assert "evidence_cards-48" not in readme
+
+
 def test_registry_validator_detects_statistics_drift() -> None:
     registry_path = REPO_ROOT / "docs" / "registry" / "evidence_index.json"
     registry = load_registry(registry_path)
