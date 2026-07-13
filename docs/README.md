@@ -14,12 +14,13 @@ For first-time readers, program reviewers, journalists and external inspectors:
 4. [Common misreadings](COMMON_MISREADINGS.md)
 5. [Current evidence tracks](CURRENT_EVIDENCE_TRACKS.md) — plain-language map of
    all registry cards
-6. [Evidence card examples](evidence_cards/README.md)
-7. [Case studies](case_studies/README.md)
-8. [Planned work not shipped](PLANNED_NOT_SHIPPED.md) — roadmap vs current code
-9. [Artifacts catalog](artifacts/README.md) — NYC TLC / CDC artifact-only records
-10. [Public roadmap 2026](ROADMAP_2026.md)
-11. [European Dimension](EUROPEAN_DIMENSION.md)
+6. [ESA 500-card heatmap](esa/ESA_500_HEATMAP.md) — interactive coverage map and method
+7. [Evidence card examples](evidence_cards/README.md)
+8. [Case studies](case_studies/README.md)
+9. [Planned work not shipped](PLANNED_NOT_SHIPPED.md) — roadmap vs current code
+10. [Artifacts catalog](artifacts/README.md) — NYC TLC / CDC artifact-only records
+11. [Public roadmap 2026](ROADMAP_2026.md)
+12. [European Dimension](EUROPEAN_DIMENSION.md)
 
 Closing VERIFY mirrors? See [Volunteer one-pager](external_verification/VOLUNTEER_ONE_PAGER.md)
 or [External verification packs](external_verification/README.md).
