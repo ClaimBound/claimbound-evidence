@@ -294,7 +294,7 @@ def _render_heatmap(atlas: dict[str, Any]) -> str:
         for slot in range(1, 21)
     )
     legend_items = []
-    legend_y = y + 39
+    legend_y = y + 68
     for index, item in enumerate(atlas["slot_labels"]):
         column = index // 5
         row = index % 5
@@ -315,8 +315,8 @@ def _render_heatmap(atlas: dict[str, Any]) -> str:
     <style>
       .title {{ fill: #17383a; font: 700 29px Georgia, serif; }}
       .sub {{ fill: #5c6d69; font: 600 13px 'Trebuchet MS', sans-serif; letter-spacing: 1.2px; }}
-      .metric {{ fill: #17383a; font: 700 27px Georgia, serif; }}
-      .metric-label {{ fill: #6b7772; font: 600 11px 'Trebuchet MS', sans-serif; letter-spacing: .7px; }}
+      .metric {{ fill: #17383a; font: 700 27px Georgia, serif; text-anchor: middle; }}
+      .metric-label {{ fill: #6b7772; font: 600 10px 'Trebuchet MS', sans-serif; letter-spacing: .45px; text-anchor: middle; }}
       .mission {{ fill: #243d3d; font: 600 12px 'Trebuchet MS', sans-serif; }}
       .column {{ fill: #596c68; font: 700 10px 'Trebuchet MS', sans-serif; text-anchor: middle; }}
       .passed {{ fill: #2d9273; }}
@@ -332,17 +332,18 @@ def _render_heatmap(atlas: dict[str, Any]) -> str:
   <rect width="1200" height="{height}" rx="22" fill="url(#paper)"/>
   <text x="40" y="45" class="sub">CLAIMBOUND / OFFICIAL ESA SOURCE BOUNDARIES</text>
   <text x="40" y="86" class="title">Where the evidence is — and where it is not</text>
-  <text x="750" y="74" class="metric">25 × 20</text>
-  <text x="750" y="96" class="metric-label">MISSIONS × PROTOCOL SLOTS</text>
-  <text x="912" y="74" class="metric">490</text>
-  <text x="912" y="96" class="metric-label">PASSED</text>
-  <text x="1030" y="74" class="metric">10</text>
-  <text x="1030" y="96" class="metric-label">LIMITED</text>
+  <text x="790" y="74" class="metric">25 × 20</text>
+  <text x="790" y="96" class="metric-label">MISSION PAGES × SLOTS</text>
+  <text x="950" y="74" class="metric">490</text>
+  <text x="950" y="96" class="metric-label">PASSED</text>
+  <text x="1070" y="74" class="metric">10</text>
+  <text x="1070" y="96" class="metric-label">LIMITED</text>
   <line x1="40" y1="119" x2="1160" y2="119" class="rule"/>
   <text x="104" y="151" class="column" text-anchor="start">MISSION</text>
   {column_labels}
   {"".join(rows)}
   <line x1="40" y1="{y + 13}" x2="1160" y2="{y + 13}" class="rule"/>
+  <text x="40" y="{y + 41}" class="sub">PROTOCOL SLOT KEY</text>
   <rect x="870" y="{y + 27}" width="18" height="18" rx="4" class="passed"/>
   <text x="896" y="{y + 41}" class="note">exact source terms present</text>
   <rect x="1040" y="{y + 27}" width="18" height="18" rx="4" class="limited"/>
