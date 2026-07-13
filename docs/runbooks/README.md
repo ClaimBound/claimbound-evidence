@@ -11,6 +11,7 @@ Step-by-step playbooks for open external-operator issues.
 | #59 Developer evidence card | [ISSUE_59_API_PARITY_PLAYBOOK.md](ISSUE_59_API_PARITY_PLAYBOOK.md) |
 | #131 ESA 100-card batch | [ISSUE_131_ESA_100_CARDS.md](ISSUE_131_ESA_100_CARDS.md) |
 | #132 ESA 100-card batch | [ISSUE_132_ESA_100_CARDS.md](ISSUE_132_ESA_100_CARDS.md) |
+| #133-#135 ESA final 300 cards | [ISSUES_133_135_ESA_300_CARDS.md](ISSUES_133_135_ESA_300_CARDS.md) |
 
 Shared setup (Windows, macOS and Linux via the `claimbound` CLI):
 
