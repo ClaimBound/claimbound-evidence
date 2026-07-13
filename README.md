@@ -49,9 +49,9 @@ launch-site or launch-vehicle fields on five selected mission pages.
 ![ESA 500-card mission-by-protocol heatmap](docs/assets/esa_500_heatmap.svg)
 
 This is not an ESA mission ranking or scientific certification. It is a public,
-rerunnable map of exactly what each selected source page supports. Explore the
-[interactive evidence atlas](https://claimbound.github.io/claimbound-evidence/),
-read the [heatmap methodology](docs/esa/ESA_500_HEATMAP.md) and
+rerunnable map of exactly what each selected source page supports. Open the
+[interactive atlas entry point](docs/esa/atlas/index.html) locally, read the
+[heatmap methodology](docs/esa/ESA_500_HEATMAP.md) and
 [campaign findings](docs/esa/ESA_500_FINDINGS.md), inspect the
 [machine-readable summary](docs/esa/esa_500_summary.json), or reproduce the
 [remaining 300-card run](docs/runbooks/ISSUES_133_135_ESA_300_CARDS.md).
