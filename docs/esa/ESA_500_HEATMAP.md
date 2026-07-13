@@ -1,7 +1,7 @@
 # How to read the ESA 500-card evidence heatmap
 
-The [interactive evidence atlas](https://claimbound.github.io/claimbound-evidence/)
-and its [static heatmap](../assets/esa_500_heatmap.svg) summarize the completed
+The [interactive evidence atlas](atlas/index.html) and its
+[static heatmap](../assets/esa_500_heatmap.svg) summarize the completed
 ESA factory campaign without hiding the boundary of any individual card.
 
 ## What the axes mean
@@ -94,6 +94,17 @@ uv run python scripts/build_esa_factory_atlas.py
 uv run claimbound validate-all
 uv run --extra dev pytest -q
 ```
+
+Preview the dependency-free interactive page locally:
+
+```bash
+python3 -m http.server 8000 --directory docs/esa/atlas
+```
+
+Then open `http://127.0.0.1:8000/`. A hosted URL is intentionally not claimed
+until repository Pages is enabled by the GitHub organization and a deployment
+has completed successfully. The included Pages workflow is manual-only for that
+reason.
 
 ## Why the 500 cards matter
 
