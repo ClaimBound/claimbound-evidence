@@ -9,6 +9,8 @@ Step-by-step playbooks for open external-operator issues.
 | #57 EEA source drift check | [ISSUE_57_EEA_DRIFT_PLAYBOOK.md](ISSUE_57_EEA_DRIFT_PLAYBOOK.md) |
 | #58 AI source-audit boundary review | [ISSUE_58_AI_BOUNDARY_PLAYBOOK.md](ISSUE_58_AI_BOUNDARY_PLAYBOOK.md) |
 | #59 Developer evidence card | [ISSUE_59_API_PARITY_PLAYBOOK.md](ISSUE_59_API_PARITY_PLAYBOOK.md) |
+| #131 ESA 100-card batch | [ISSUE_131_ESA_100_CARDS.md](ISSUE_131_ESA_100_CARDS.md) |
+| #132 ESA 100-card batch | [ISSUE_132_ESA_100_CARDS.md](ISSUE_132_ESA_100_CARDS.md) |
 
 Shared setup (Windows, macOS and Linux via the `claimbound` CLI):
 
