@@ -29,6 +29,10 @@ The current public baseline is:
 - public runners for existing card types (EEA, NASA, NOAA, public AI docs, etc.);
 - rerun workflow docs, issue templates and maintainer rerun examples.
 
+The [ESA 500-card evidence atlas](esa/ESA_500_HEATMAP.md) is a shipped,
+campaign-specific static visualization. It does not implement the planned
+general-purpose registry MVP, registry search, or generated cross-track views.
+
 ## Artifact-Only Records Are Not Missing Cards By Accident
 
 Some runs produced useful sanitized summaries without full card promotion. They

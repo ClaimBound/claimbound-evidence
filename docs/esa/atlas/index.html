@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An interactive source-boundary heatmap for 500 ClaimBound evidence cards across 25 official ESA mission pages."
+    />
+    <title>ESA 500-card evidence atlas | ClaimBound</title>
+    <link rel="stylesheet" href="atlas.css" />
+    <script src="atlas-data.js" defer></script>
+    <script src="atlas.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#atlas">Skip to the evidence atlas</a>
+
+    <header class="hero">
+      <nav class="topbar" aria-label="Project links">
+        <a class="wordmark" href="https://github.com/ClaimBound/claimbound-evidence">
+          ClaimBound<span>/evidence</span>
+        </a>
+        <div class="topbar__links">
+          <a href="https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/esa/ESA_500_HEATMAP.md">Method</a>
+          <a href="atlas-data.json" download>Data JSON</a>
+          <a href="https://github.com/ClaimBound/claimbound-evidence">GitHub</a>
+        </div>
+      </nav>
+
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Official ESA source boundaries / 2026 baseline</p>
+          <h1>Where the evidence is.<br /><em>And where it is not.</em></h1>
+          <p class="lede">
+            A mission-by-protocol map of 500 frozen ClaimBound cards. Every cell
+            opens the exact claim, official page, source hash, and result boundary.
+          </p>
+        </div>
+
+        <dl class="scoreboard" aria-label="Campaign summary">
+          <div>
+            <dt>Evidence cards</dt>
+            <dd>500</dd>
+          </div>
+          <div>
+            <dt>Mission pages</dt>
+            <dd>25</dd>
+          </div>
+          <div class="scoreboard__pass">
+            <dt>Exact gates passed</dt>
+            <dd>490</dd>
+          </div>
+          <div class="scoreboard__limited">
+            <dt>Limited coverage</dt>
+            <dd>10</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero__finding">
+        <span class="finding-index">01</span>
+        <p>
+          <strong>The signal:</strong> all ten gaps are launch-site or launch-vehicle
+          fields absent from five selected mission landing pages. That is a source
+          boundary, not a claim that the mission facts are false.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="atlas-shell" id="atlas" aria-labelledby="atlas-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow eyebrow--dark">Evidence field / interactive</p>
+            <h2 id="atlas-title">25 missions × 20 protocol slots</h2>
+          </div>
+          <p class="section-intro">
+            Rows are official mission landing pages. Columns are protocol positions,
+            not uniform scientific scores. Select a cell to inspect its evidence.
+          </p>
+        </div>
+
+        <form class="controls" id="filters" aria-label="Filter evidence cards">
+          <label>
+            <span>Batch</span>
+            <select id="batch-filter" name="batch">
+              <option value="all">All five batches</option>
+            </select>
+          </label>
+          <label>
+            <span>Status</span>
+            <select id="status-filter" name="status">
+              <option value="all">All outcomes</option>
+              <option value="PASSED_UNDER_PROTOCOL">Passed under protocol</option>
+              <option value="INSUFFICIENT_COVERAGE">Limited coverage</option>
+            </select>
+          </label>
+          <label>
+            <span>Protocol slot</span>
+            <select id="slot-filter" name="slot">
+              <option value="all">All 20 slots</option>
+            </select>
+          </label>
+          <button class="button button--signal" id="gaps-button" type="button">
+            Show only gaps
+          </button>
+          <button class="button button--quiet" id="reset-button" type="reset">
+            Reset
+          </button>
+        </form>
+
+        <div class="atlas-status" aria-live="polite">
+          <p id="result-summary">Showing all 500 evidence cards.</p>
+          <div class="legend" aria-label="Result legend">
+            <span><i class="legend__swatch legend__swatch--pass"></i> Passed</span>
+            <span><i class="legend__swatch legend__swatch--limited"></i> Limited</span>
+          </div>
+        </div>
+
+        <div class="atlas-layout">
+          <div class="heatmap-panel">
+            <div class="slot-header" id="slot-header" aria-hidden="true"></div>
+            <div class="heatmap" id="heatmap"></div>
+            <noscript>
+              <p class="noscript">
+                JavaScript is required for filtering. The complete dataset remains
+                available in <a href="atlas-data.json">atlas-data.json</a>.
+              </p>
+            </noscript>
+          </div>
+
+          <aside class="detail-panel" id="detail-panel" aria-labelledby="detail-title">
+            <p class="detail-panel__kicker">Selected evidence</p>
+            <h3 id="detail-title">Choose any cell</h3>
+            <p class="detail-panel__empty" id="detail-empty">
+              Green records exact source-term presence. Amber records terms that the
+              selected official page did not expose under the frozen gate.
+            </p>
+            <div id="detail-content" hidden>
+              <div class="status-chip" id="detail-status"></div>
+              <dl class="detail-list">
+                <div>
+                  <dt>Protocol</dt>
+                  <dd id="detail-protocol"></dd>
+                </div>
+                <div>
+                  <dt>Slot</dt>
+                  <dd id="detail-slot"></dd>
+                </div>
+                <div>
+                  <dt>Exact topic</dt>
+                  <dd id="detail-topic"></dd>
+                </div>
+                <div>
+                  <dt>Frozen claim</dt>
+                  <dd id="detail-claim"></dd>
+                </div>
+                <div id="detail-missing-row" hidden>
+                  <dt>Missing patterns</dt>
+                  <dd id="detail-missing"></dd>
+                </div>
+                <div>
+                  <dt>Official source</dt>
+                  <dd><a id="detail-source" rel="noreferrer"></a></dd>
+                </div>
+                <div>
+                  <dt>Source snapshot</dt>
+                  <dd id="detail-snapshot"></dd>
+                </div>
+              </dl>
+              <div class="detail-actions">
+                <a class="button button--dark" id="detail-json">Open card JSON</a>
+                <a class="button button--quiet" id="detail-svg">View rendered card</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="reading-guide" aria-labelledby="reading-title">
+        <div class="reading-guide__title">
+          <p class="eyebrow eyebrow--dark">How to read the map</p>
+          <h2 id="reading-title">A coverage map,<br />not a mission ranking.</h2>
+        </div>
+        <ol class="reading-guide__steps">
+          <li>
+            <span>01</span>
+            <div>
+              <h3>One page per row</h3>
+              <p>Each row freezes one selected official ESA mission landing page.</p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h3>One gate per cell</h3>
+              <p>
+                A cell asks whether exact terms required by one preregistered gate
+                occur inside that page boundary.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h3>Amber preserves uncertainty</h3>
+              <p>
+                Limited coverage means the page did not support that gate. The search
+                was not silently widened to another source.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="conclusion" aria-labelledby="conclusion-title">
+        <p class="eyebrow">What the experiment established</p>
+        <h2 id="conclusion-title">
+          Scale is useful only when the boundary remains inspectable.
+        </h2>
+        <p>
+          The campaign shows that ClaimBound can generate, validate, register, and
+          present hundreds of narrow records without turning keyword presence into a
+          broad scientific endorsement. The lasting value is the rerunnable baseline:
+          later runs can measure source drift against these exact claims and hashes.
+        </p>
+        <div class="conclusion__links">
+          <a href="https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/esa/ESA_500_HEATMAP.md">Read the full methodology</a>
+          <a href="https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/esa/ESA_500_FINDINGS.md">Read campaign findings</a>
+          <a href="atlas-data.json" download>Download all 500 records</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>ClaimBound Evidence Atlas</p>
+      <p>Evidence boundaries are public. Interpretations remain challengeable.</p>
+    </footer>
+  </body>
+</html>

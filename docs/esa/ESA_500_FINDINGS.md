@@ -56,18 +56,18 @@ The campaign provides four reusable assets:
 The cards do not rank ESA missions, certify scientific results or imply ESA
 endorsement. They make the public evidence boundary visible and challengeable.
 
-## What to build next
+## What was built next
 
-The strongest next presentation is an evidence atlas rather than a carousel of
-500 tiny cards:
+The [ESA 500-card evidence atlas](ESA_500_HEATMAP.md) now provides the strongest
+first-screen presentation of the campaign:
 
-- a 25 x 20 mission-by-gate heatmap with filters for status and topic;
-- source-drift timelines after scheduled reruns;
-- cross-mission completeness scores that remain clearly separate from science
-  or mission-performance scores;
-- a small "show me the gap" interaction that opens the ten limited cards;
-- downloadable JSON/CSV slices for journalists and public-data reviewers.
+- a 25 x 20 mission-by-protocol heatmap;
+- filters for batch, status and protocol slot;
+- a "show only gaps" interaction for the ten limited cards;
+- cell-level claim, source, hash and card provenance;
+- downloadable JSON for all 500 normalized records.
 
-Animation should explain state change, such as a rerun moving from pass to
-limited coverage. Decorative card motion would attract attention but weaken the
-audit-first message and make 500 records harder to scan.
+The next meaningful analytical layer is a source-drift timeline after scheduled
+reruns. Animation should explain a real state change, such as a source hash or
+gate outcome changing over time. Decorative card motion would attract attention
+but weaken the audit-first message and make 500 records harder to scan.
