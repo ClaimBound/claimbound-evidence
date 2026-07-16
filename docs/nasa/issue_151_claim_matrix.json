@@ -1,0 +1,687 @@
+{
+  "version": "2026-07-16",
+  "issue_number": 151,
+  "source_issue_url": "https://github.com/ClaimBound/claimbound-evidence/issues/151",
+  "card_count": 50,
+  "claim_boundary": "Each card tests one frozen candidate against exactly one listed NASA page. The lexical patterns are selected from the pre-fetch candidate text only; they are a conservative source-boundary gate, not a scientific conclusion.",
+  "cards": [
+    {
+      "protocol_id": "NASA-WEBB-01-D901",
+      "mission": "James Webb Space Telescope",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Webb as an infrared space observatory studying the early universe, galaxies, stars, planets, and exoplanets.",
+      "official_source_name": "NASA James Webb Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/webb/",
+      "required_patterns": [
+        "\\binfrar\\w*",
+        "\\bobservatory\\w*",
+        "\\bstudy\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-WEBB-02-D902",
+      "mission": "James Webb Space Telescope",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies NASA, ESA, and CSA partnership boundaries.",
+      "official_source_name": "NASA James Webb Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/webb/",
+      "required_patterns": [
+        "\\bpartnership\\w*",
+        "\\bboundar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-WEBB-03-D903",
+      "mission": "James Webb Space Telescope",
+      "topic": "Design / architecture gate",
+      "claim": "Webb is described through a segmented primary mirror, deployable sunshield, and cryogenic observatory architecture.",
+      "official_source_name": "NASA James Webb Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/webb/",
+      "required_patterns": [
+        "\\bsegment\\w*",
+        "\\bprimary\\w*",
+        "\\bmirror\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-WEBB-04-D904",
+      "mission": "James Webb Space Telescope",
+      "topic": "Instrument / system gate",
+      "claim": "The page names NIRCam, NIRSpec, MIRI, FGS/NIRISS, or another principal observatory system.",
+      "official_source_name": "NASA James Webb Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/webb/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bnircam\\w*",
+        "\\bnirspec\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-WEBB-05-D905",
+      "mission": "James Webb Space Telescope",
+      "topic": "Target / measurement gate",
+      "claim": "The measurement domain spans infrared observations of cosmic history, star and planet formation, and exoplanet atmospheres.",
+      "official_source_name": "NASA James Webb Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/webb/",
+      "required_patterns": [
+        "\\bmeasure\\w*",
+        "\\bdomain\\w*",
+        "\\bspans\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-WEBB-06-D906",
+      "mission": "James Webb Space Telescope",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, deployment, commissioning, active operations, or current mission status at access time.",
+      "official_source_name": "NASA James Webb Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/webb/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bdeploy\\w*",
+        "\\bcommission\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-WEBB-07-D907",
+      "mission": "James Webb Space Telescope",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The observatory operates near the Sun-Earth L2 point rather than in low Earth orbit.",
+      "official_source_name": "NASA James Webb Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/webb/",
+      "required_patterns": [
+        "\\bobservatory\\w*",
+        "\\boperat\\w*",
+        "\\bsun\\-earth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-WEBB-08-D908",
+      "mission": "James Webb Space Telescope",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit mirror diameter, segment count, sunshield size, launch date, temperature, wavelength, or distance fact.",
+      "official_source_name": "NASA James Webb Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/webb/",
+      "required_patterns": [
+        "\\bmirror\\w*",
+        "\\bdiameter\\w*",
+        "\\bsegment\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-WEBB-09-D909",
+      "mission": "James Webb Space Telescope",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to images, spectra, data archives, observation programmes, discoveries, or public multimedia.",
+      "official_source_name": "NASA James Webb Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/webb/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bspectra\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-WEBB-10-D910",
+      "mission": "James Webb Space Telescope",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as saying Webb replaces all Hubble capabilities or proves any one life claim; later reruns should capture discoveries and status drift.",
+      "official_source_name": "NASA James Webb Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/webb/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-HUBBLE-01-D911",
+      "mission": "Hubble Space Telescope",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Hubble as a space telescope observing the universe in ultraviolet, visible, and near-infrared light.",
+      "official_source_name": "NASA Hubble Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/hubble/",
+      "required_patterns": [
+        "\\bobserv\\w*",
+        "\\buniverse\\w*",
+        "\\bultraviolet\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-HUBBLE-02-D912",
+      "mission": "Hubble Space Telescope",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies NASA and ESA partnership boundaries and the roles of operations or science institutions.",
+      "official_source_name": "NASA Hubble Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/hubble/",
+      "required_patterns": [
+        "\\bpartnership\\w*",
+        "\\bboundar\\w*",
+        "\\broles\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-HUBBLE-03-D913",
+      "mission": "Hubble Space Telescope",
+      "topic": "Design / architecture gate",
+      "claim": "Hubble is described as a serviceable observatory in low Earth orbit with replaceable instruments and systems.",
+      "official_source_name": "NASA Hubble Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/hubble/",
+      "required_patterns": [
+        "\\bserviceable\\w*",
+        "\\bobservatory\\w*",
+        "\\bearth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-HUBBLE-04-D914",
+      "mission": "Hubble Space Telescope",
+      "topic": "Instrument / system gate",
+      "claim": "The page names a current or historic instrument such as WFC3, ACS, COS, STIS, or a Fine Guidance Sensor.",
+      "official_source_name": "NASA Hubble Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/hubble/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bhistoric\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-HUBBLE-05-D915",
+      "mission": "Hubble Space Telescope",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes planets, stars, nebulae, galaxies, black holes, expansion, and deep-field cosmology.",
+      "official_source_name": "NASA Hubble Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/hubble/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bplanet\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-HUBBLE-06-D916",
+      "mission": "Hubble Space Telescope",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, servicing history, current operating status, or recent instrument status at access time.",
+      "official_source_name": "NASA Hubble Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/hubble/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bservic\\w*",
+        "\\bhistory\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-HUBBLE-07-D917",
+      "mission": "Hubble Space Telescope",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The telescope operates in low Earth orbit and was serviced by astronauts rather than placed at L2.",
+      "official_source_name": "NASA Hubble Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/hubble/",
+      "required_patterns": [
+        "\\boperat\\w*",
+        "\\bearth\\w*",
+        "\\borbit\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-HUBBLE-08-D918",
+      "mission": "Hubble Space Telescope",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit launch date, mirror diameter, orbit altitude, servicing-mission count, observation count, or longevity fact.",
+      "official_source_name": "NASA Hubble Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/hubble/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bmirror\\w*",
+        "\\bdiameter\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-HUBBLE-09-D919",
+      "mission": "Hubble Space Telescope",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to images, data archives, discoveries, observing information, mission history, or public multimedia.",
+      "official_source_name": "NASA Hubble Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/hubble/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\barchiv\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-HUBBLE-10-D920",
+      "mission": "Hubble Space Telescope",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as proving every cosmological interpretation or a fixed remaining lifetime; later reruns should capture instrument and operations drift.",
+      "official_source_name": "NASA Hubble Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/hubble/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-CHANDRA-01-D921",
+      "mission": "Chandra X-ray Observatory",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Chandra as an X-ray observatory for studying high-energy phenomena in the universe.",
+      "official_source_name": "NASA Chandra X-ray Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/chandra/",
+      "required_patterns": [
+        "\\bx\\-ray\\w*",
+        "\\bstudy\\w*",
+        "\\bhigh\\-energy\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CHANDRA-02-D922",
+      "mission": "Chandra X-ray Observatory",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Chandra within NASA's Great Observatories programme and identifies operations or institutional boundaries.",
+      "official_source_name": "NASA Chandra X-ray Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/chandra/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bgreat\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CHANDRA-03-D923",
+      "mission": "Chandra X-ray Observatory",
+      "topic": "Design / architecture gate",
+      "claim": "Chandra is described as a grazing-incidence X-ray telescope in a highly elliptical Earth orbit.",
+      "official_source_name": "NASA Chandra X-ray Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/chandra/",
+      "required_patterns": [
+        "\\bgrazing\\-incidence\\w*",
+        "\\bx\\-ray\\w*",
+        "\\btelescope\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CHANDRA-04-D924",
+      "mission": "Chandra X-ray Observatory",
+      "topic": "Instrument / system gate",
+      "claim": "The page names ACIS, HRC, HETG, LETG, or another principal observatory instrument.",
+      "official_source_name": "NASA Chandra X-ray Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/chandra/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CHANDRA-05-D925",
+      "mission": "Chandra X-ray Observatory",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes black holes, neutron stars, supernova remnants, hot gas, galaxy clusters, and energetic cosmic events.",
+      "official_source_name": "NASA Chandra X-ray Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/chandra/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bblack\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CHANDRA-06-D926",
+      "mission": "Chandra X-ray Observatory",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, current operations, mission longevity, or recent observatory status at access time.",
+      "official_source_name": "NASA Chandra X-ray Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/chandra/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\boperation\\w*",
+        "\\blongevity\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CHANDRA-07-D927",
+      "mission": "Chandra X-ray Observatory",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes long uninterrupted observing arcs in a high elliptical orbit rather than low Earth orbit.",
+      "official_source_name": "NASA Chandra X-ray Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/chandra/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\buninterrupt\\w*",
+        "\\bobserv\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CHANDRA-08-D928",
+      "mission": "Chandra X-ray Observatory",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, angular resolution, orbit period, altitude, mirror count, or longevity fact.",
+      "official_source_name": "NASA Chandra X-ray Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/chandra/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\bangular\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CHANDRA-09-D929",
+      "mission": "Chandra X-ray Observatory",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to X-ray images, data archives, observation proposals, discoveries, mission status, or public multimedia.",
+      "official_source_name": "NASA Chandra X-ray Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/chandra/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bx\\-ray\\w*",
+        "\\bimage\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CHANDRA-10-D930",
+      "mission": "Chandra X-ray Observatory",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as optical imagery or proof of every inferred compact object; later reruns should capture operational and operations/status drift.",
+      "official_source_name": "NASA Chandra X-ray Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/chandra/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-FERMI-01-D931",
+      "mission": "Fermi Gamma-ray Space Telescope",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Fermi as a gamma-ray observatory studying the high-energy universe.",
+      "official_source_name": "NASA Fermi Gamma-ray Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/fermi/",
+      "required_patterns": [
+        "\\bgamma\\-ray\\w*",
+        "\\bobservatory\\w*",
+        "\\bstudy\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-FERMI-02-D932",
+      "mission": "Fermi Gamma-ray Space Telescope",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies NASA and international or Department of Energy partnership boundaries.",
+      "official_source_name": "NASA Fermi Gamma-ray Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/fermi/",
+      "required_patterns": [
+        "\\binternational\\w*",
+        "\\bdepart\\w*",
+        "\\benergy\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-FERMI-03-D933",
+      "mission": "Fermi Gamma-ray Space Telescope",
+      "topic": "Design / architecture gate",
+      "claim": "Fermi is described as a low-Earth-orbit observatory performing broad sky surveys and transient monitoring.",
+      "official_source_name": "NASA Fermi Gamma-ray Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/fermi/",
+      "required_patterns": [
+        "\\blow\\-earth\\-orbit\\w*",
+        "\\bobservatory\\w*",
+        "\\bperform\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-FERMI-04-D934",
+      "mission": "Fermi Gamma-ray Space Telescope",
+      "topic": "Instrument / system gate",
+      "claim": "The page names the Large Area Telescope and Gamma-ray Burst Monitor and distinguishes their roles.",
+      "official_source_name": "NASA Fermi Gamma-ray Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/fermi/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\blarge\\w*",
+        "\\bgamma\\-ray\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-FERMI-05-D935",
+      "mission": "Fermi Gamma-ray Space Telescope",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes gamma-ray bursts, pulsars, active galaxies, cosmic rays, dark-matter searches, and solar events.",
+      "official_source_name": "NASA Fermi Gamma-ray Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/fermi/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bgamma\\-ray\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-FERMI-06-D936",
+      "mission": "Fermi Gamma-ray Space Telescope",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, active or extended operations, current status, or recent mission milestone at access time.",
+      "official_source_name": "NASA Fermi Gamma-ray Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/fermi/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\bextend\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-FERMI-07-D937",
+      "mission": "Fermi Gamma-ray Space Telescope",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The observatory operates in low Earth orbit and repeatedly scans the sky.",
+      "official_source_name": "NASA Fermi Gamma-ray Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/fermi/",
+      "required_patterns": [
+        "\\bobservatory\\w*",
+        "\\boperat\\w*",
+        "\\bearth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-FERMI-08-D938",
+      "mission": "Fermi Gamma-ray Space Telescope",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, energy range, sky-survey cadence, source count, burst count, or mission-duration fact.",
+      "official_source_name": "NASA Fermi Gamma-ray Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/fermi/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\benergy\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-FERMI-09-D939",
+      "mission": "Fermi Gamma-ray Space Telescope",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to all-sky maps, source catalogs, data archives, alerts, science results, or public multimedia.",
+      "official_source_name": "NASA Fermi Gamma-ray Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/fermi/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\ball\\-sky\\w*",
+        "\\bcatalog\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-FERMI-10-D940",
+      "mission": "Fermi Gamma-ray Space Telescope",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as detecting dark matter merely because it searches for signatures; later reruns should capture catalog and operations drift.",
+      "official_source_name": "NASA Fermi Gamma-ray Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/fermi/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-IXPE-01-D941",
+      "mission": "IXPE",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes IXPE as measuring X-ray polarization from extreme cosmic objects.",
+      "official_source_name": "NASA IXPE official page",
+      "source_url": "https://science.nasa.gov/mission/ixpe/",
+      "required_patterns": [
+        "\\bmeasur\\w*",
+        "\\bx\\-ray\\w*",
+        "\\bpolariz\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IXPE-02-D942",
+      "mission": "IXPE",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places IXPE within NASA's Small Explorers programme and identifies the Italian Space Agency partnership boundary.",
+      "official_source_name": "NASA IXPE official page",
+      "source_url": "https://science.nasa.gov/mission/ixpe/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bsmall\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IXPE-03-D943",
+      "mission": "IXPE",
+      "topic": "Design / architecture gate",
+      "claim": "IXPE is described as an observatory with multiple identical telescopes and polarization-sensitive detectors.",
+      "official_source_name": "NASA IXPE official page",
+      "source_url": "https://science.nasa.gov/mission/ixpe/",
+      "required_patterns": [
+        "\\bobservatory\\w*",
+        "\\bmultiple\\w*",
+        "\\bidentical\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IXPE-04-D944",
+      "mission": "IXPE",
+      "topic": "Instrument / system gate",
+      "claim": "The page names its mirror modules, detector units, gas pixel detectors, or another principal payload element.",
+      "official_source_name": "NASA IXPE official page",
+      "source_url": "https://science.nasa.gov/mission/ixpe/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bmirror\\w*",
+        "\\bmodul\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IXPE-05-D945",
+      "mission": "IXPE",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes black holes, neutron stars, pulsars, supernova remnants, and other high-energy sources.",
+      "official_source_name": "NASA IXPE official page",
+      "source_url": "https://science.nasa.gov/mission/ixpe/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bblack\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IXPE-06-D946",
+      "mission": "IXPE",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, active operations, observation programme, or current mission status at access time.",
+      "official_source_name": "NASA IXPE official page",
+      "source_url": "https://science.nasa.gov/mission/ixpe/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\boperation\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IXPE-07-D947",
+      "mission": "IXPE",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The observatory operates in an equatorial low Earth orbit.",
+      "official_source_name": "NASA IXPE official page",
+      "source_url": "https://science.nasa.gov/mission/ixpe/",
+      "required_patterns": [
+        "\\bobservatory\\w*",
+        "\\boperat\\w*",
+        "\\bequatorial\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IXPE-08-D948",
+      "mission": "IXPE",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit telescope count, launch date, energy range, orbit altitude, mission duration, or first imaging X-ray-polarimetry fact.",
+      "official_source_name": "NASA IXPE official page",
+      "source_url": "https://science.nasa.gov/mission/ixpe/",
+      "required_patterns": [
+        "\\btelescope\\w*",
+        "\\bcount\\w*",
+        "\\blaunch\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IXPE-09-D949",
+      "mission": "IXPE",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to polarization maps, data archives, observation targets, science results, or public multimedia.",
+      "official_source_name": "NASA IXPE official page",
+      "source_url": "https://science.nasa.gov/mission/ixpe/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bpolariz\\w*",
+        "\\barchiv\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IXPE-10-D950",
+      "mission": "IXPE",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as a general optical image or direct view of event horizons; later reruns should capture observation and status drift.",
+      "official_source_name": "NASA IXPE official page",
+      "source_url": "https://science.nasa.gov/mission/ixpe/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    }
+  ]
+}

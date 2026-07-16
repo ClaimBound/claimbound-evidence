@@ -24,9 +24,15 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: actions/configure-pages@v6
+      - name: Assemble ESA and NASA atlas site
+        run: |
+          mkdir -p _site
+          cp -R docs/esa/atlas _site/esa
+          cp -R docs/nasa/atlas _site/nasa
+          cp docs/atlas_home.html _site/index.html
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: docs/esa/atlas
+          path: _site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5

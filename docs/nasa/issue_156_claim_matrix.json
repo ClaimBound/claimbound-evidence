@@ -1,0 +1,689 @@
+{
+  "version": "2026-07-16",
+  "issue_number": 156,
+  "source_issue_url": "https://github.com/ClaimBound/claimbound-evidence/issues/156",
+  "card_count": 50,
+  "claim_boundary": "Each card tests one frozen candidate against exactly one listed NASA page. The lexical patterns are selected from the pre-fetch candidate text only; they are a conservative source-boundary gate, not a scientific conclusion.",
+  "cards": [
+    {
+      "protocol_id": "NASA-AQUA-01-D1151",
+      "mission": "Aqua",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Aqua as an Earth Observing System mission focused on the water cycle and related atmosphere, land, ocean, and energy measurements.",
+      "official_source_name": "NASA Aqua official page",
+      "source_url": "https://science.nasa.gov/mission/aqua/",
+      "required_patterns": [
+        "\\bearth\\w*",
+        "\\bobserv\\w*",
+        "\\bsystem\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AQUA-02-D1152",
+      "mission": "Aqua",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Aqua within NASA's Earth Observing System or A-Train and identifies international instrument boundaries.",
+      "official_source_name": "NASA Aqua official page",
+      "source_url": "https://science.nasa.gov/mission/aqua/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bearth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AQUA-03-D1153",
+      "mission": "Aqua",
+      "topic": "Design / architecture gate",
+      "claim": "Aqua is described as a multi-instrument Earth-observation satellite with coordinated global measurements.",
+      "official_source_name": "NASA Aqua official page",
+      "source_url": "https://science.nasa.gov/mission/aqua/",
+      "required_patterns": [
+        "\\bmulti\\-instru\\w*",
+        "\\bearth\\-observ\\w*",
+        "\\bsatellite\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AQUA-04-D1154",
+      "mission": "Aqua",
+      "topic": "Instrument / system gate",
+      "claim": "The page names AIRS, AMSR-E, AMSU-A, CERES, HSB, and MODIS and distinguishes their roles or status.",
+      "official_source_name": "NASA Aqua official page",
+      "source_url": "https://science.nasa.gov/mission/aqua/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bamsr\\-e\\w*",
+        "\\bamsu\\-a\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AQUA-05-D1155",
+      "mission": "Aqua",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes water vapour, precipitation, clouds, sea ice, sea-surface temperature, land, radiation, and atmospheric temperature.",
+      "official_source_name": "NASA Aqua official page",
+      "source_url": "https://science.nasa.gov/mission/aqua/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bwater\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AQUA-06-D1156",
+      "mission": "Aqua",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, active or changing operations, instrument status, constellation status, or current mission status at access time.",
+      "official_source_name": "NASA Aqua official page",
+      "source_url": "https://science.nasa.gov/mission/aqua/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\bchang\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AQUA-07-D1157",
+      "mission": "Aqua",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes a sun-synchronous near-polar afternoon-crossing Earth orbit.",
+      "official_source_name": "NASA Aqua official page",
+      "source_url": "https://science.nasa.gov/mission/aqua/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bsun\\-synchronou\\w*",
+        "\\bnear\\-polar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AQUA-08-D1158",
+      "mission": "Aqua",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, instrument count, orbit altitude, crossing time, data-record length, swath, or revisit fact.",
+      "official_source_name": "NASA Aqua official page",
+      "source_url": "https://science.nasa.gov/mission/aqua/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AQUA-09-D1159",
+      "mission": "Aqua",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to data, images, instrument resources, long-term products, science results, or public resources.",
+      "official_source_name": "NASA Aqua official page",
+      "source_url": "https://science.nasa.gov/mission/aqua/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AQUA-10-D1160",
+      "mission": "Aqua",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as an ocean-only mission or proof of every climate attribution; later reruns should capture instrument and operations drift.",
+      "official_source_name": "NASA Aqua official page",
+      "source_url": "https://science.nasa.gov/mission/aqua/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-AURA-01-D1161",
+      "mission": "Aura",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Aura as an Earth Observing System mission studying atmospheric chemistry, ozone, air quality, and climate.",
+      "official_source_name": "NASA Aura official page",
+      "source_url": "https://science.nasa.gov/mission/aura/",
+      "required_patterns": [
+        "\\bearth\\w*",
+        "\\bobserv\\w*",
+        "\\bsystem\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AURA-02-D1162",
+      "mission": "Aura",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Aura within NASA's Earth Observing System or A-Train and identifies U.S. and international instrument boundaries.",
+      "official_source_name": "NASA Aura official page",
+      "source_url": "https://science.nasa.gov/mission/aura/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bearth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AURA-03-D1163",
+      "mission": "Aura",
+      "topic": "Design / architecture gate",
+      "claim": "Aura is described as a multi-instrument atmospheric observatory in Earth orbit.",
+      "official_source_name": "NASA Aura official page",
+      "source_url": "https://science.nasa.gov/mission/aura/",
+      "required_patterns": [
+        "\\bmulti\\-instru\\w*",
+        "\\batmospheric\\w*",
+        "\\bobservatory\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AURA-04-D1164",
+      "mission": "Aura",
+      "topic": "Instrument / system gate",
+      "claim": "The page names OMI, MLS, TES, and HIRDLS and distinguishes their measurement roles or operational status.",
+      "official_source_name": "NASA Aura official page",
+      "source_url": "https://science.nasa.gov/mission/aura/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bhirdl\\w*",
+        "\\bdistinguish\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AURA-05-D1165",
+      "mission": "Aura",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes ozone, trace gases, air pollution, atmospheric composition, and chemical-climate interactions.",
+      "official_source_name": "NASA Aura official page",
+      "source_url": "https://science.nasa.gov/mission/aura/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bozone\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AURA-06-D1166",
+      "mission": "Aura",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, active or changing operations, instrument status, or current mission status at access time.",
+      "official_source_name": "NASA Aura official page",
+      "source_url": "https://science.nasa.gov/mission/aura/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\bchang\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AURA-07-D1167",
+      "mission": "Aura",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes a sun-synchronous near-polar Earth orbit.",
+      "official_source_name": "NASA Aura official page",
+      "source_url": "https://science.nasa.gov/mission/aura/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bsun\\-synchronou\\w*",
+        "\\bnear\\-polar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AURA-08-D1168",
+      "mission": "Aura",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, instrument count, orbit altitude, crossing time, data-record length, spectral range, or coverage fact.",
+      "official_source_name": "NASA Aura official page",
+      "source_url": "https://science.nasa.gov/mission/aura/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AURA-09-D1169",
+      "mission": "Aura",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to atmospheric-composition data, ozone maps, instrument resources, science results, or public products.",
+      "official_source_name": "NASA Aura official page",
+      "source_url": "https://science.nasa.gov/mission/aura/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\batmospheric\\-composition\\w*",
+        "\\bozone\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-AURA-10-D1170",
+      "mission": "Aura",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be confused with aurora imaging because of the mission name; later reruns should capture instrument and operations drift.",
+      "official_source_name": "NASA Aura official page",
+      "source_url": "https://science.nasa.gov/mission/aura/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-SUOMINPP-01-D1171",
+      "mission": "Suomi NPP",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Suomi NPP as providing weather and climate observations while bridging NASA Earth-observation and NOAA operational systems.",
+      "official_source_name": "NASA Suomi NPP official page",
+      "source_url": "https://science.nasa.gov/mission/suomi-npp/",
+      "required_patterns": [
+        "\\bprovid\\w*",
+        "\\bweather\\w*",
+        "\\bclimate\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SUOMINPP-02-D1172",
+      "mission": "Suomi NPP",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies NASA, NOAA, and programme partnership boundaries.",
+      "official_source_name": "NASA Suomi NPP official page",
+      "source_url": "https://science.nasa.gov/mission/suomi-npp/",
+      "required_patterns": [
+        "\\bprogramme\\w*",
+        "\\bpartnership\\w*",
+        "\\bboundar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SUOMINPP-03-D1173",
+      "mission": "Suomi NPP",
+      "topic": "Design / architecture gate",
+      "claim": "Suomi NPP is described as a polar-orbiting multi-instrument environmental satellite.",
+      "official_source_name": "NASA Suomi NPP official page",
+      "source_url": "https://science.nasa.gov/mission/suomi-npp/",
+      "required_patterns": [
+        "\\bpolar\\-orbit\\w*",
+        "\\bmulti\\-instru\\w*",
+        "\\benvironmental\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SUOMINPP-04-D1174",
+      "mission": "Suomi NPP",
+      "topic": "Instrument / system gate",
+      "claim": "The page names VIIRS, CrIS, ATMS, OMPS, and CERES and distinguishes their measurement roles.",
+      "official_source_name": "NASA Suomi NPP official page",
+      "source_url": "https://science.nasa.gov/mission/suomi-npp/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bviirs\\w*",
+        "\\bceres\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SUOMINPP-05-D1175",
+      "mission": "Suomi NPP",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes clouds, temperature, moisture, ocean colour, fires, aerosols, ozone, radiation, and night-time lights.",
+      "official_source_name": "NASA Suomi NPP official page",
+      "source_url": "https://science.nasa.gov/mission/suomi-npp/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bcloud\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SUOMINPP-06-D1176",
+      "mission": "Suomi NPP",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, active operations, instrument status, or current mission status at access time.",
+      "official_source_name": "NASA Suomi NPP official page",
+      "source_url": "https://science.nasa.gov/mission/suomi-npp/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\boperation\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SUOMINPP-07-D1177",
+      "mission": "Suomi NPP",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes a sun-synchronous near-polar Earth orbit.",
+      "official_source_name": "NASA Suomi NPP official page",
+      "source_url": "https://science.nasa.gov/mission/suomi-npp/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bsun\\-synchronou\\w*",
+        "\\bnear\\-polar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SUOMINPP-08-D1178",
+      "mission": "Suomi NPP",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, instrument count, orbit altitude, crossing time, swath, resolution, or day-night-band fact.",
+      "official_source_name": "NASA Suomi NPP official page",
+      "source_url": "https://science.nasa.gov/mission/suomi-npp/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SUOMINPP-09-D1179",
+      "mission": "Suomi NPP",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to operational products, imagery, data archives, weather applications, climate records, or public resources.",
+      "official_source_name": "NASA Suomi NPP official page",
+      "source_url": "https://science.nasa.gov/mission/suomi-npp/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\boperational\\w*",
+        "\\bproduct\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SUOMINPP-10-D1180",
+      "mission": "Suomi NPP",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as a NASA-only research mission or a guarantee of weather forecast accuracy; later reruns should capture instrument and operations drift.",
+      "official_source_name": "NASA Suomi NPP official page",
+      "source_url": "https://science.nasa.gov/mission/suomi-npp/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-CYGNSS-01-D1181",
+      "mission": "CYGNSS",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes CYGNSS as measuring ocean-surface winds in and near tropical cyclones using reflected navigation signals.",
+      "official_source_name": "NASA CYGNSS official page",
+      "source_url": "https://science.nasa.gov/mission/cygnss/",
+      "required_patterns": [
+        "\\bmeasur\\w*",
+        "\\bocean\\-surface\\w*",
+        "\\bwinds\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CYGNSS-02-D1182",
+      "mission": "CYGNSS",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places CYGNSS within NASA's Earth Venture programme and identifies university or partner boundaries.",
+      "official_source_name": "NASA CYGNSS official page",
+      "source_url": "https://science.nasa.gov/mission/cygnss/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bearth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CYGNSS-03-D1183",
+      "mission": "CYGNSS",
+      "topic": "Design / architecture gate",
+      "claim": "CYGNSS is described as a constellation of small satellites using bistatic radar observations from GPS reflections.",
+      "official_source_name": "NASA CYGNSS official page",
+      "source_url": "https://science.nasa.gov/mission/cygnss/",
+      "required_patterns": [
+        "\\bconstell\\w*",
+        "\\bsmall\\w*",
+        "\\bsatellit\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CYGNSS-04-D1184",
+      "mission": "CYGNSS",
+      "topic": "Instrument / system gate",
+      "claim": "The page names the Delay Doppler Mapping Instrument, GPS receiver, antenna system, or another principal payload element.",
+      "official_source_name": "NASA CYGNSS official page",
+      "source_url": "https://science.nasa.gov/mission/cygnss/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bdelay\\w*",
+        "\\bdoppler\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CYGNSS-05-D1185",
+      "mission": "CYGNSS",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes tropical-cyclone winds, ocean roughness, soil moisture, flooding, wetlands, and land-surface reflections.",
+      "official_source_name": "NASA CYGNSS official page",
+      "source_url": "https://science.nasa.gov/mission/cygnss/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\btropical\\-cyclone\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CYGNSS-06-D1186",
+      "mission": "CYGNSS",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, constellation health, active operations, extended applications, or current status at access time.",
+      "official_source_name": "NASA CYGNSS official page",
+      "source_url": "https://science.nasa.gov/mission/cygnss/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bconstell\\w*",
+        "\\bhealth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CYGNSS-07-D1187",
+      "mission": "CYGNSS",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes multiple low-inclination low-Earth orbits designed for rapid tropical revisit.",
+      "official_source_name": "NASA CYGNSS official page",
+      "source_url": "https://science.nasa.gov/mission/cygnss/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bmultiple\\w*",
+        "\\blow\\-inclin\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CYGNSS-08-D1188",
+      "mission": "CYGNSS",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit spacecraft count, launch date, revisit time, orbit inclination, wind range, footprint, or data-rate fact.",
+      "official_source_name": "NASA CYGNSS official page",
+      "source_url": "https://science.nasa.gov/mission/cygnss/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bspacecraft\\w*",
+        "\\bcount\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CYGNSS-09-D1189",
+      "mission": "CYGNSS",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to wind products, soil-moisture or flood data, mission datasets, science results, or public resources.",
+      "official_source_name": "NASA CYGNSS official page",
+      "source_url": "https://science.nasa.gov/mission/cygnss/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bproduct\\w*",
+        "\\bsoil\\-moisture\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CYGNSS-10-D1190",
+      "mission": "CYGNSS",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as directly predicting cyclone intensity or replacing all weather satellites; later reruns should capture constellation and product drift.",
+      "official_source_name": "NASA CYGNSS official page",
+      "source_url": "https://science.nasa.gov/mission/cygnss/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-EMIT-01-D1191",
+      "mission": "EMIT",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes EMIT as mapping the mineral composition of dust-source regions and related Earth-system effects.",
+      "official_source_name": "NASA EMIT official page",
+      "source_url": "https://science.nasa.gov/mission/emit/",
+      "required_patterns": [
+        "\\bmapping\\w*",
+        "\\bmineral\\w*",
+        "\\bcomposition\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EMIT-02-D1192",
+      "mission": "EMIT",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places EMIT within NASA Earth Science and identifies its installation on the International Space Station.",
+      "official_source_name": "NASA EMIT official page",
+      "source_url": "https://science.nasa.gov/mission/emit/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bearth\\w*",
+        "\\bscience\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EMIT-03-D1193",
+      "mission": "EMIT",
+      "topic": "Design / architecture gate",
+      "claim": "EMIT is described as an imaging spectrometer payload on the station rather than a free-flying satellite.",
+      "official_source_name": "NASA EMIT official page",
+      "source_url": "https://science.nasa.gov/mission/emit/",
+      "required_patterns": [
+        "\\bimaging\\w*",
+        "\\bspectrometer\\w*",
+        "\\bpayload\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EMIT-04-D1194",
+      "mission": "EMIT",
+      "topic": "Instrument / system gate",
+      "claim": "The page names the visible-to-shortwave-infrared imaging spectrometer and its detector or optical system.",
+      "official_source_name": "NASA EMIT official page",
+      "source_url": "https://science.nasa.gov/mission/emit/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bvisible\\-to\\-shortwave\\-infrar\\w*",
+        "\\bimaging\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EMIT-05-D1195",
+      "mission": "EMIT",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes surface minerals, airborne dust, radiative effects, methane, carbon dioxide, and other spectral signatures within the mission boundary.",
+      "official_source_name": "NASA EMIT official page",
+      "source_url": "https://science.nasa.gov/mission/emit/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bsurface\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EMIT-06-D1196",
+      "mission": "EMIT",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, installation, active operations, extended science, data release, or current mission status at access time.",
+      "official_source_name": "NASA EMIT official page",
+      "source_url": "https://science.nasa.gov/mission/emit/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\binstall\\w*",
+        "\\bactive\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EMIT-07-D1197",
+      "mission": "EMIT",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The observation boundary follows the International Space Station orbit and selected arid dust-source regions or stated coverage.",
+      "official_source_name": "NASA EMIT official page",
+      "source_url": "https://science.nasa.gov/mission/emit/",
+      "required_patterns": [
+        "\\bobserv\\w*",
+        "\\bfollow\\w*",
+        "\\binternational\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EMIT-08-D1198",
+      "mission": "EMIT",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit wavelength range, spectral-channel count, spatial resolution, launch date, coverage area, plume count, or instrument-mass fact.",
+      "official_source_name": "NASA EMIT official page",
+      "source_url": "https://science.nasa.gov/mission/emit/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bwavelength\\w*",
+        "\\brange\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EMIT-09-D1199",
+      "mission": "EMIT",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to mineral maps, methane or greenhouse-gas products, data archives, science results, images, or public resources.",
+      "official_source_name": "NASA EMIT official page",
+      "source_url": "https://science.nasa.gov/mission/emit/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bmineral\\w*",
+        "\\bmethane\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EMIT-10-D1200",
+      "mission": "EMIT",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as continuous global greenhouse-gas monitoring or direct emissions enforcement; later reruns should capture product and scope drift.",
+      "official_source_name": "NASA EMIT official page",
+      "source_url": "https://science.nasa.gov/mission/emit/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    }
+  ]
+}

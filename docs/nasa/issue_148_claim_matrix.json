@@ -1,0 +1,689 @@
+{
+  "version": "2026-07-16",
+  "issue_number": 148,
+  "source_issue_url": "https://github.com/ClaimBound/claimbound-evidence/issues/148",
+  "card_count": 50,
+  "claim_boundary": "Each card tests one frozen candidate against exactly one listed NASA page. The lexical patterns are selected from the pre-fetch candidate text only; they are a conservative source-boundary gate, not a scientific conclusion.",
+  "cards": [
+    {
+      "protocol_id": "NASA-PERSEVERANCE-01-D751",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA states that Perseverance studies Mars geology and searches for signs of ancient microbial life or past habitability.",
+      "official_source_name": "NASA Mars 2020 Perseverance official page",
+      "source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "required_patterns": [
+        "\\bstudi\\w*",
+        "\\bgeology\\w*",
+        "\\bsearch\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-02-D752",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places the rover within NASA's Mars Exploration Program and distinguishes partner instruments or contributions.",
+      "official_source_name": "NASA Mars 2020 Perseverance official page",
+      "source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\brover\\w*",
+        "\\bnasa'\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-03-D753",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Design / architecture gate",
+      "claim": "Perseverance is described as a mobile surface rover with a sampling system and named science payload.",
+      "official_source_name": "NASA Mars 2020 Perseverance official page",
+      "source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "required_patterns": [
+        "\\bmobile\\w*",
+        "\\bsurface\\w*",
+        "\\brover\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-04-D754",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Instrument / system gate",
+      "claim": "The page names a principal instrument or subsystem such as Mastcam-Z, SuperCam, PIXL, SHERLOC, RIMFAX, MEDA, MOXIE, or the coring system.",
+      "official_source_name": "NASA Mars 2020 Perseverance official page",
+      "source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\bsubsystem\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-05-D755",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes Jezero Crater geology, ancient environments, biosignatures, or sample collection.",
+      "official_source_name": "NASA Mars 2020 Perseverance official page",
+      "source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bjezero\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-06-D756",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, landing, active-mission, or current surface-operations status at access time.",
+      "official_source_name": "NASA Mars 2020 Perseverance official page",
+      "source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\blanding\\w*",
+        "\\bactive\\-mission\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-07-D757",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The destination and operating boundary is the surface of Mars at Jezero Crater.",
+      "official_source_name": "NASA Mars 2020 Perseverance official page",
+      "source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "required_patterns": [
+        "\\bdestin\\w*",
+        "\\boperat\\w*",
+        "\\bsurface\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-08-D758",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit landing date, rover mass, travel distance, sample count, instrument count, or first-of-kind fact.",
+      "official_source_name": "NASA Mars 2020 Perseverance official page",
+      "source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "required_patterns": [
+        "\\blanding\\w*",
+        "\\brover\\w*",
+        "\\btravel\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-09-D759",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to raw images, maps, samples, mission data, science results, or public multimedia.",
+      "official_source_name": "NASA Mars 2020 Perseverance official page",
+      "source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bsampl\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-10-D760",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The page must not be read as saying life has been discovered or that sample return is guaranteed; later reruns should record operations and sample-status drift.",
+      "official_source_name": "NASA Mars 2020 Perseverance official page",
+      "source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-01-D761",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Curiosity's purpose as assessing whether Mars ever had environments able to support microbial life.",
+      "official_source_name": "NASA Curiosity / Mars Science Laboratory official page",
+      "source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "required_patterns": [
+        "\\bcuriosity'\\w*",
+        "\\bpurpose\\w*",
+        "\\bassess\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-02-D762",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Curiosity within the Mars Science Laboratory mission and NASA's Mars exploration boundary.",
+      "official_source_name": "NASA Curiosity / Mars Science Laboratory official page",
+      "source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplor\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-03-D763",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Design / architecture gate",
+      "claim": "Curiosity is described as a car-sized rover delivered by a sky-crane landing system.",
+      "official_source_name": "NASA Curiosity / Mars Science Laboratory official page",
+      "source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "required_patterns": [
+        "\\bcar\\-siz\\w*",
+        "\\brover\\w*",
+        "\\bdeliver\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-04-D764",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Instrument / system gate",
+      "claim": "The page names a principal instrument such as SAM, ChemCam, CheMin, Mastcam, RAD, DAN, REMS, or APXS.",
+      "official_source_name": "NASA Curiosity / Mars Science Laboratory official page",
+      "source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\bchemcam\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-05-D765",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes Gale Crater, Mount Sharp, ancient lakes, climate, geology, or habitability.",
+      "official_source_name": "NASA Curiosity / Mars Science Laboratory official page",
+      "source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bcrater\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-06-D766",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Status / timeline gate",
+      "claim": "The page states the 2012 landing and current active or extended-mission status at access time.",
+      "official_source_name": "NASA Curiosity / Mars Science Laboratory official page",
+      "source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "required_patterns": [
+        "\\blanding\\w*",
+        "\\bactive\\w*",
+        "\\bextended\\-mission\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-07-D767",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The operating destination is the Martian surface in Gale Crater.",
+      "official_source_name": "NASA Curiosity / Mars Science Laboratory official page",
+      "source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "required_patterns": [
+        "\\boperat\\w*",
+        "\\bdestin\\w*",
+        "\\bmartian\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-08-D768",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit mission duration, distance driven, mass, instrument count, landing date, or drilling milestone.",
+      "official_source_name": "NASA Curiosity / Mars Science Laboratory official page",
+      "source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "required_patterns": [
+        "\\bduration\\w*",
+        "\\bdistance\\w*",
+        "\\bdriven\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-09-D769",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to images, raw data, maps, science results, mission updates, or public multimedia.",
+      "official_source_name": "NASA Curiosity / Mars Science Laboratory official page",
+      "source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bresult\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-10-D770",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as direct proof that life existed on Mars; later reruns should capture operational and distance drift.",
+      "official_source_name": "NASA Curiosity / Mars Science Laboratory official page",
+      "source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-MRO-01-D771",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes MRO as studying Mars from orbit with high-resolution imaging and mineral or climate observations.",
+      "official_source_name": "NASA Mars Reconnaissance Orbiter official page",
+      "source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "required_patterns": [
+        "\\bstudy\\w*",
+        "\\borbit\\w*",
+        "\\bhigh\\-resolution\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MRO-02-D772",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places MRO within NASA's Mars exploration programme and identifies relay support for other missions.",
+      "official_source_name": "NASA Mars Reconnaissance Orbiter official page",
+      "source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplor\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MRO-03-D773",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Design / architecture gate",
+      "claim": "MRO is described as an orbiter carrying cameras, spectrometers, radar, and communications systems.",
+      "official_source_name": "NASA Mars Reconnaissance Orbiter official page",
+      "source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "required_patterns": [
+        "\\bcarry\\w*",
+        "\\bcamera\\w*",
+        "\\bspectrometer\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MRO-04-D774",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Instrument / system gate",
+      "claim": "The page names HiRISE, CTX, CRISM, SHARAD, MARCI, MCS, or another principal instrument.",
+      "official_source_name": "NASA Mars Reconnaissance Orbiter official page",
+      "source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bhirise\\w*",
+        "\\bcrism\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MRO-05-D775",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes Martian surface detail, subsurface structure, minerals, atmosphere, weather, or landing-site safety.",
+      "official_source_name": "NASA Mars Reconnaissance Orbiter official page",
+      "source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bmartian\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MRO-06-D776",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, Mars-orbit insertion, current operations, or extended-mission status at access time.",
+      "official_source_name": "NASA Mars Reconnaissance Orbiter official page",
+      "source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bmars\\-orbit\\w*",
+        "\\binsertion\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MRO-07-D777",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The operating boundary is orbit around Mars rather than surface exploration.",
+      "official_source_name": "NASA Mars Reconnaissance Orbiter official page",
+      "source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "required_patterns": [
+        "\\boperat\\w*",
+        "\\borbit\\w*",
+        "\\baround\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MRO-08-D778",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, arrival date, image resolution, data-relay volume, orbit, or mission-duration fact.",
+      "official_source_name": "NASA Mars Reconnaissance Orbiter official page",
+      "source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\barrival\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MRO-09-D779",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to images, maps, instrument data, science results, mission updates, or relay information.",
+      "official_source_name": "NASA Mars Reconnaissance Orbiter official page",
+      "source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MRO-10-D780",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The page must not be read as a surface confirmation of every inferred feature; later reruns should capture instrument and mission-status drift.",
+      "official_source_name": "NASA Mars Reconnaissance Orbiter official page",
+      "source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-01-D781",
+      "mission": "MAVEN",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes MAVEN as investigating Mars' upper atmosphere, ionosphere, and interactions with the Sun and solar wind.",
+      "official_source_name": "NASA MAVEN official page",
+      "source_url": "https://science.nasa.gov/mission/maven/",
+      "required_patterns": [
+        "\\binvestigat\\w*",
+        "\\bupper\\w*",
+        "\\batmosphere\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-02-D782",
+      "mission": "MAVEN",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places MAVEN within NASA's Mars programme and distinguishes its science and communications-relay roles.",
+      "official_source_name": "NASA MAVEN official page",
+      "source_url": "https://science.nasa.gov/mission/maven/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bprogramme\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-03-D783",
+      "mission": "MAVEN",
+      "topic": "Design / architecture gate",
+      "claim": "MAVEN is described as an orbiter with particles-and-fields and remote-sensing instrument packages.",
+      "official_source_name": "NASA MAVEN official page",
+      "source_url": "https://science.nasa.gov/mission/maven/",
+      "required_patterns": [
+        "\\borbiter\\w*",
+        "\\bparticles\\-and\\-field\\w*",
+        "\\bremote\\-sens\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-04-D784",
+      "mission": "MAVEN",
+      "topic": "Instrument / system gate",
+      "claim": "The page names a principal instrument or suite such as IUVS, NGIMS, STATIC, SWEA, SWIA, SEP, LPW, or MAG.",
+      "official_source_name": "NASA MAVEN official page",
+      "source_url": "https://science.nasa.gov/mission/maven/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\bsuite\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-05-D785",
+      "mission": "MAVEN",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes atmospheric escape and how Mars lost much of its atmosphere or climate-supporting conditions.",
+      "official_source_name": "NASA MAVEN official page",
+      "source_url": "https://science.nasa.gov/mission/maven/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\batmospheric\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-06-D786",
+      "mission": "MAVEN",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, Mars arrival, active mission, or current operations status at access time.",
+      "official_source_name": "NASA MAVEN official page",
+      "source_url": "https://science.nasa.gov/mission/maven/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\barrival\\w*",
+        "\\bactive\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-07-D787",
+      "mission": "MAVEN",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The spacecraft follows an elliptical Mars orbit designed to sample different atmospheric regions.",
+      "official_source_name": "NASA MAVEN official page",
+      "source_url": "https://science.nasa.gov/mission/maven/",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bfollow\\w*",
+        "\\belliptical\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-08-D788",
+      "mission": "MAVEN",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, orbit-insertion date, orbit altitude, mission duration, or atmospheric-loss fact.",
+      "official_source_name": "NASA MAVEN official page",
+      "source_url": "https://science.nasa.gov/mission/maven/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\borbit\\-insertion\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-09-D789",
+      "mission": "MAVEN",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to data, images, science results, mission updates, or public mission resources.",
+      "official_source_name": "NASA MAVEN official page",
+      "source_url": "https://science.nasa.gov/mission/maven/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bscience\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-10-D790",
+      "mission": "MAVEN",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The page must not be read as a complete explanation of all Martian climate history; later reruns should capture mission and relay-status drift.",
+      "official_source_name": "NASA MAVEN official page",
+      "source_url": "https://science.nasa.gov/mission/maven/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-01-D791",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Odyssey as mapping Mars and studying its composition, radiation environment, or subsurface water-related materials.",
+      "official_source_name": "NASA 2001 Mars Odyssey official page",
+      "source_url": "https://science.nasa.gov/mission/odyssey/",
+      "required_patterns": [
+        "\\bmapping\\w*",
+        "\\bstudy\\w*",
+        "\\bcomposition\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-02-D792",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Odyssey within NASA's Mars exploration programme and identifies its relay role for surface missions.",
+      "official_source_name": "NASA 2001 Mars Odyssey official page",
+      "source_url": "https://science.nasa.gov/mission/odyssey/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplor\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-03-D793",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Design / architecture gate",
+      "claim": "Odyssey is described as a long-lived Mars orbiter with remote-sensing and communications capabilities.",
+      "official_source_name": "NASA 2001 Mars Odyssey official page",
+      "source_url": "https://science.nasa.gov/mission/odyssey/",
+      "required_patterns": [
+        "\\blong\\-liv\\w*",
+        "\\borbiter\\w*",
+        "\\bremote\\-sens\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-04-D794",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Instrument / system gate",
+      "claim": "The page names THEMIS, the Gamma Ray Spectrometer suite, MARIE, or another principal payload.",
+      "official_source_name": "NASA 2001 Mars Odyssey official page",
+      "source_url": "https://science.nasa.gov/mission/odyssey/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bthemi\\w*",
+        "\\bgamma\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-05-D795",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes mineralogy, thermal properties, hydrogen or water-ice distribution, and the Martian environment.",
+      "official_source_name": "NASA 2001 Mars Odyssey official page",
+      "source_url": "https://science.nasa.gov/mission/odyssey/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bmineralogy\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-06-D796",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, Mars arrival, active or extended mission, or current relay status at access time.",
+      "official_source_name": "NASA 2001 Mars Odyssey official page",
+      "source_url": "https://science.nasa.gov/mission/odyssey/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\barrival\\w*",
+        "\\bactive\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-07-D797",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The operating boundary is orbit around Mars rather than a surface mission.",
+      "official_source_name": "NASA 2001 Mars Odyssey official page",
+      "source_url": "https://science.nasa.gov/mission/odyssey/",
+      "required_patterns": [
+        "\\boperat\\w*",
+        "\\borbit\\w*",
+        "\\baround\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-08-D798",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit longevity record, launch date, orbit-insertion date, mapping altitude, or data-relay fact.",
+      "official_source_name": "NASA 2001 Mars Odyssey official page",
+      "source_url": "https://science.nasa.gov/mission/odyssey/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blongevity\\w*",
+        "\\brecord\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-09-D799",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to maps, images, instrument data, mission updates, science results, or public resources.",
+      "official_source_name": "NASA 2001 Mars Odyssey official page",
+      "source_url": "https://science.nasa.gov/mission/odyssey/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-10-D800",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The page must not be read as direct access to subsurface liquid water or proof of habitability; later reruns should capture longevity and status drift.",
+      "official_source_name": "NASA 2001 Mars Odyssey official page",
+      "source_url": "https://science.nasa.gov/mission/odyssey/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    }
+  ]
+}

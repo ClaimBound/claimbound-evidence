@@ -1,0 +1,1262 @@
+{
+  "issue_number": 147,
+  "matrix_version": "2026-07-16",
+  "matrix_sha256": "9b8c3a6415cea2ad0e7bc74e49c14e3c78753c3bd1d7da611a47647080fba53e",
+  "access_date": "2026-07-16",
+  "operator": "NeoZorK",
+  "raw_payload_committed": false,
+  "claim_boundary": "This batch report records 50 frozen source-boundary evaluations against five official NASA mission pages. It does not certify mission performance, data quality, safety or operational suitability.",
+  "result_counts": {
+    "INSUFFICIENT_COVERAGE": 44,
+    "PASSED_UNDER_PROTOCOL": 6
+  },
+  "source_records": [
+    {
+      "mission": "Artemis",
+      "official_source_name": "NASA Artemis official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "fetch_error": null,
+      "canonical_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "http_status": 200,
+      "sha256": "1f12f334183dcd69c541a4490659cbbe6643f5814d3aedb6f2724529738dbada"
+    },
+    {
+      "mission": "Orion",
+      "official_source_name": "NASA Orion official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "fetch_error": null,
+      "canonical_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "http_status": 200,
+      "sha256": "8a5fb2dd997a88019528b1f45fe92163d79b3530f3b30b67ceac89dced9d5c13"
+    },
+    {
+      "mission": "Space Launch System",
+      "official_source_name": "NASA Space Launch System official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "fetch_error": null,
+      "canonical_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "http_status": 200,
+      "sha256": "d0370a02092b4f339525e412e8f8d8d1d9f0a713ee96c4d638af9de9dd727db7"
+    },
+    {
+      "mission": "Gateway",
+      "official_source_name": "NASA Gateway official page",
+      "source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "fetch_error": null,
+      "canonical_url": "https://www.nasa.gov/reference/gateway-about/",
+      "http_status": 200,
+      "sha256": "475b9bbbe895e73bf53a9fb09d2dad3b9dd9d945d6e9465e1e600e0e2f4a0642"
+    },
+    {
+      "mission": "International Space Station",
+      "official_source_name": "NASA International Space Station official page",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "fetch_error": null,
+      "canonical_url": "https://www.nasa.gov/international-space-station/",
+      "http_status": 200,
+      "sha256": "236eaf7d35088f051449fbc76a5aa44478f440890e5b9446d7da46e65328cdb9"
+    }
+  ],
+  "cards": [
+    {
+      "protocol_id": "NASA-ARTEMIS-01-D701",
+      "mission": "Artemis",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA presents Artemis as a campaign for sustained human exploration of the Moon.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "source_sha256": "1f12f334183dcd69c541a4490659cbbe6643f5814d3aedb6f2724529738dbada",
+      "required_patterns": [
+        "\\bpresent\\w*",
+        "\\bcampaign\\w*",
+        "\\bsustain\\w*"
+      ],
+      "matched_patterns": [
+        "\\bcampaign\\w*",
+        "\\bsustain\\w*"
+      ],
+      "missing_patterns": [
+        "\\bpresent\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 549,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-02-D702",
+      "mission": "Artemis",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places Artemis within a Moon-to-Mars architecture involving commercial and international partners.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "source_sha256": "1f12f334183dcd69c541a4490659cbbe6643f5814d3aedb6f2724529738dbada",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bmoon\\-to\\-mar\\w*",
+        "\\barchitecture\\w*"
+      ],
+      "matched_patterns": [
+        "\\bplace\\w*"
+      ],
+      "missing_patterns": [
+        "\\bmoon\\-to\\-mar\\w*",
+        "\\barchitecture\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 550,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-03-D703",
+      "mission": "Artemis",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The architecture combines crewed missions, lunar surface systems, and supporting infrastructure rather than one spacecraft.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "source_sha256": "1f12f334183dcd69c541a4490659cbbe6643f5814d3aedb6f2724529738dbada",
+      "required_patterns": [
+        "\\barchitecture\\w*",
+        "\\bcombin\\w*",
+        "\\bcrewed\\w*"
+      ],
+      "matched_patterns": [
+        "\\bcombin\\w*",
+        "\\bcrewed\\w*"
+      ],
+      "missing_patterns": [
+        "\\barchitecture\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 551,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-04-D704",
+      "mission": "Artemis",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page identifies Orion, the Space Launch System, or other named systems as Artemis elements.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "source_sha256": "1f12f334183dcd69c541a4490659cbbe6643f5814d3aedb6f2724529738dbada",
+      "required_patterns": [
+        "\\borion\\w*",
+        "\\bspace\\w*",
+        "\\blaunch\\w*"
+      ],
+      "matched_patterns": [
+        "\\borion\\w*",
+        "\\bspace\\w*",
+        "\\blaunch\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 552,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-05-D705",
+      "mission": "Artemis",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The stated target includes lunar science, exploration, or learning to live and work beyond Earth.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "source_sha256": "1f12f334183dcd69c541a4490659cbbe6643f5814d3aedb6f2724529738dbada",
+      "required_patterns": [
+        "\\bstated\\w*",
+        "\\btarget\\w*",
+        "\\blunar\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*",
+        "\\blunar\\w*"
+      ],
+      "missing_patterns": [
+        "\\bstated\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 553,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-06-D706",
+      "mission": "Artemis",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page exposes the current Artemis mission sequence or current programme status at access time.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "source_sha256": "1f12f334183dcd69c541a4490659cbbe6643f5814d3aedb6f2724529738dbada",
+      "required_patterns": [
+        "\\bexpos\\w*",
+        "\\bsequence\\w*",
+        "\\bprogramme\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bexpos\\w*",
+        "\\bsequence\\w*",
+        "\\bprogramme\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 554,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-07-D707",
+      "mission": "Artemis",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The campaign destination is the Moon, with Mars framed as a later objective rather than the destination of the selected mission page.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "source_sha256": "1f12f334183dcd69c541a4490659cbbe6643f5814d3aedb6f2724529738dbada",
+      "required_patterns": [
+        "\\bcampaign\\w*",
+        "\\bdestin\\w*",
+        "\\bframed\\w*"
+      ],
+      "matched_patterns": [
+        "\\bcampaign\\w*",
+        "\\bdestin\\w*"
+      ],
+      "missing_patterns": [
+        "\\bframed\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 555,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-08-D708",
+      "mission": "Artemis",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page includes at least one explicit mission number, date, crew count, or other quantitative programme fact.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "source_sha256": "1f12f334183dcd69c541a4490659cbbe6643f5814d3aedb6f2724529738dbada",
+      "required_patterns": [
+        "\\bleast\\w*",
+        "\\bnumber\\w*",
+        "\\bcount\\w*"
+      ],
+      "matched_patterns": [
+        "\\bcount\\w*"
+      ],
+      "missing_patterns": [
+        "\\bleast\\w*",
+        "\\bnumber\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 556,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-09-D709",
+      "mission": "Artemis",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to mission, image, video, news, or public-information products.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "source_sha256": "1f12f334183dcd69c541a4490659cbbe6643f5814d3aedb6f2724529738dbada",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bvideo\\w*"
+      ],
+      "matched_patterns": [
+        "\\bimage\\w*",
+        "\\bvideo\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 557,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-10-D710",
+      "mission": "Artemis",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be widened into a guarantee of permanent settlement, mission success, or a fixed schedule; later reruns should record architecture and date drift.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "source_sha256": "1f12f334183dcd69c541a4490659cbbe6643f5814d3aedb6f2724529738dbada",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 558,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-01-D731",
+      "mission": "Gateway",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes Gateway as a lunar-orbiting outpost supporting Artemis exploration.",
+      "official_source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "source_sha256": "475b9bbbe895e73bf53a9fb09d2dad3b9dd9d945d6e9465e1e600e0e2f4a0642",
+      "required_patterns": [
+        "\\blunar\\-orbit\\w*",
+        "\\boutpost\\w*",
+        "\\bsupport\\w*"
+      ],
+      "matched_patterns": [
+        "\\boutpost\\w*",
+        "\\bsupport\\w*"
+      ],
+      "missing_patterns": [
+        "\\blunar\\-orbit\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 559,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-02-D732",
+      "mission": "Gateway",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page identifies international, commercial, or agency partners and keeps their roles source-bounded.",
+      "official_source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "source_sha256": "475b9bbbe895e73bf53a9fb09d2dad3b9dd9d945d6e9465e1e600e0e2f4a0642",
+      "required_patterns": [
+        "\\binternational\\w*",
+        "\\bcommercial\\w*",
+        "\\bagency\\w*"
+      ],
+      "matched_patterns": [
+        "\\binternational\\w*",
+        "\\bcommercial\\w*",
+        "\\bagency\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 560,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-03-D733",
+      "mission": "Gateway",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "Gateway is described as a modular system assembled from named elements rather than a single spacecraft.",
+      "official_source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "source_sha256": "475b9bbbe895e73bf53a9fb09d2dad3b9dd9d945d6e9465e1e600e0e2f4a0642",
+      "required_patterns": [
+        "\\bmodular\\w*",
+        "\\bsystem\\w*",
+        "\\bassembl\\w*"
+      ],
+      "matched_patterns": [
+        "\\bmodular\\w*",
+        "\\bsystem\\w*",
+        "\\bassembl\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 561,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-04-D734",
+      "mission": "Gateway",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names a principal element such as the Power and Propulsion Element, HALO, logistics modules, or an airlock.",
+      "official_source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "source_sha256": "475b9bbbe895e73bf53a9fb09d2dad3b9dd9d945d6e9465e1e600e0e2f4a0642",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\belement\\w*",
+        "\\bpower\\w*"
+      ],
+      "matched_patterns": [
+        "\\belement\\w*",
+        "\\bpower\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 562,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-05-D735",
+      "mission": "Gateway",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The intended domain includes crew staging, science, communications, logistics, or lunar-surface support.",
+      "official_source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "source_sha256": "475b9bbbe895e73bf53a9fb09d2dad3b9dd9d945d6e9465e1e600e0e2f4a0642",
+      "required_patterns": [
+        "\\bintend\\w*",
+        "\\bdomain\\w*",
+        "\\bstaging\\w*"
+      ],
+      "matched_patterns": [
+        "\\bstaging\\w*"
+      ],
+      "missing_patterns": [
+        "\\bintend\\w*",
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 563,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-06-D736",
+      "mission": "Gateway",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page exposes the current development, assembly, launch, or mission-integration status at access time.",
+      "official_source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "source_sha256": "475b9bbbe895e73bf53a9fb09d2dad3b9dd9d945d6e9465e1e600e0e2f4a0642",
+      "required_patterns": [
+        "\\bexpos\\w*",
+        "\\bdevelop\\w*",
+        "\\bassembly\\w*"
+      ],
+      "matched_patterns": [
+        "\\bdevelop\\w*",
+        "\\bassembly\\w*"
+      ],
+      "missing_patterns": [
+        "\\bexpos\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 564,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-07-D737",
+      "mission": "Gateway",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The planned operating location is a lunar orbit, potentially described as a near-rectilinear halo orbit.",
+      "official_source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "source_sha256": "475b9bbbe895e73bf53a9fb09d2dad3b9dd9d945d6e9465e1e600e0e2f4a0642",
+      "required_patterns": [
+        "\\bplann\\w*",
+        "\\boperat\\w*",
+        "\\blocation\\w*"
+      ],
+      "matched_patterns": [
+        "\\bplann\\w*",
+        "\\boperat\\w*"
+      ],
+      "missing_patterns": [
+        "\\blocation\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 565,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-08-D738",
+      "mission": "Gateway",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit module count, mission duration, power, mass, orbit period, or partner-count fact.",
+      "official_source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "source_sha256": "475b9bbbe895e73bf53a9fb09d2dad3b9dd9d945d6e9465e1e600e0e2f4a0642",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bmodule\\w*",
+        "\\bcount\\w*"
+      ],
+      "matched_patterns": [
+        "\\bmodule\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcontain\\w*",
+        "\\bcount\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 566,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-09-D739",
+      "mission": "Gateway",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to Gateway imagery, reference pages, partner material, science information, or mission updates.",
+      "official_source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "source_sha256": "475b9bbbe895e73bf53a9fb09d2dad3b9dd9d945d6e9465e1e600e0e2f4a0642",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimagery\\w*",
+        "\\breference\\w*"
+      ],
+      "matched_patterns": [
+        "\\bimagery\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*",
+        "\\breference\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 567,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-10-D740",
+      "mission": "Gateway",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The page must not be read as saying Gateway is already continuously inhabited or guarantees lunar access; later reruns should capture architecture and schedule drift.",
+      "official_source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "source_sha256": "475b9bbbe895e73bf53a9fb09d2dad3b9dd9d945d6e9465e1e600e0e2f4a0642",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 568,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ISS-01-D741",
+      "mission": "International Space Station",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA presents the International Space Station as an orbiting laboratory and platform for research in microgravity.",
+      "official_source_url": "https://www.nasa.gov/international-space-station/",
+      "source_sha256": "236eaf7d35088f051449fbc76a5aa44478f440890e5b9446d7da46e65328cdb9",
+      "required_patterns": [
+        "\\bpresent\\w*",
+        "\\borbit\\w*",
+        "\\blaboratory\\w*"
+      ],
+      "matched_patterns": [
+        "\\borbit\\w*",
+        "\\blaboratory\\w*"
+      ],
+      "missing_patterns": [
+        "\\bpresent\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 569,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ISS-02-D742",
+      "mission": "International Space Station",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page identifies the station as an international partnership rather than a NASA-only facility.",
+      "official_source_url": "https://www.nasa.gov/international-space-station/",
+      "source_sha256": "236eaf7d35088f051449fbc76a5aa44478f440890e5b9446d7da46e65328cdb9",
+      "required_patterns": [
+        "\\bpartnership\\w*",
+        "\\bnasa\\-only\\w*",
+        "\\bfacility\\w*"
+      ],
+      "matched_patterns": [
+        "\\bpartnership\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnasa\\-only\\w*",
+        "\\bfacility\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 570,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ISS-03-D743",
+      "mission": "International Space Station",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The station is described as an assembled orbital complex with laboratories, modules, truss, power, or visiting vehicles.",
+      "official_source_url": "https://www.nasa.gov/international-space-station/",
+      "source_sha256": "236eaf7d35088f051449fbc76a5aa44478f440890e5b9446d7da46e65328cdb9",
+      "required_patterns": [
+        "\\bassembl\\w*",
+        "\\borbital\\w*",
+        "\\bcomplex\\w*"
+      ],
+      "matched_patterns": [
+        "\\bassembl\\w*",
+        "\\borbital\\w*",
+        "\\bcomplex\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 571,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ISS-04-D744",
+      "mission": "International Space Station",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names a principal research facility, module, robotic system, or station capability.",
+      "official_source_url": "https://www.nasa.gov/international-space-station/",
+      "source_sha256": "236eaf7d35088f051449fbc76a5aa44478f440890e5b9446d7da46e65328cdb9",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bresearch\\w*",
+        "\\bfacility\\w*"
+      ],
+      "matched_patterns": [
+        "\\bresearch\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bfacility\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 572,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ISS-05-D745",
+      "mission": "International Space Station",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The measurement and application domain includes human research, physical science, Earth observation, technology, or biology.",
+      "official_source_url": "https://www.nasa.gov/international-space-station/",
+      "source_sha256": "236eaf7d35088f051449fbc76a5aa44478f440890e5b9446d7da46e65328cdb9",
+      "required_patterns": [
+        "\\bmeasure\\w*",
+        "\\bapplic\\w*",
+        "\\bdomain\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bmeasure\\w*",
+        "\\bapplic\\w*",
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 573,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ISS-06-D746",
+      "mission": "International Space Station",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page exposes the current crew, expedition, operational status, or transition planning at access time.",
+      "official_source_url": "https://www.nasa.gov/international-space-station/",
+      "source_sha256": "236eaf7d35088f051449fbc76a5aa44478f440890e5b9446d7da46e65328cdb9",
+      "required_patterns": [
+        "\\bexpos\\w*",
+        "\\bexpedition\\w*",
+        "\\boperational\\w*"
+      ],
+      "matched_patterns": [
+        "\\bexpedition\\w*"
+      ],
+      "missing_patterns": [
+        "\\bexpos\\w*",
+        "\\boperational\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 574,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ISS-07-D747",
+      "mission": "International Space Station",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The station operates in low Earth orbit and the page provides an altitude, orbital period, or related orbit fact.",
+      "official_source_url": "https://www.nasa.gov/international-space-station/",
+      "source_sha256": "236eaf7d35088f051449fbc76a5aa44478f440890e5b9446d7da46e65328cdb9",
+      "required_patterns": [
+        "\\boperat\\w*",
+        "\\bearth\\w*",
+        "\\borbit\\w*"
+      ],
+      "matched_patterns": [
+        "\\boperat\\w*",
+        "\\bearth\\w*",
+        "\\borbit\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 575,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ISS-08-D748",
+      "mission": "International Space Station",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page includes an explicit continuous-occupation date, partner count, crew count, size, speed, or orbit number.",
+      "official_source_url": "https://www.nasa.gov/international-space-station/",
+      "source_sha256": "236eaf7d35088f051449fbc76a5aa44478f440890e5b9446d7da46e65328cdb9",
+      "required_patterns": [
+        "\\bcontinuous\\-occup\\w*",
+        "\\bpartner\\w*",
+        "\\bcount\\w*"
+      ],
+      "matched_patterns": [
+        "\\bpartner\\w*",
+        "\\bcount\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcontinuous\\-occup\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 576,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ISS-09-D749",
+      "mission": "International Space Station",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to station research, live views, images, mission updates, datasets, or educational products.",
+      "official_source_url": "https://www.nasa.gov/international-space-station/",
+      "source_sha256": "236eaf7d35088f051449fbc76a5aa44478f440890e5b9446d7da46e65328cdb9",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bresearch\\w*",
+        "\\bviews\\w*"
+      ],
+      "matched_patterns": [
+        "\\bresearch\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*",
+        "\\bviews\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 577,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ISS-10-D750",
+      "mission": "International Space Station",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The page must not be read as proving all station research benefits or a fixed end-of-life date; later reruns should capture crew and programme drift.",
+      "official_source_url": "https://www.nasa.gov/international-space-station/",
+      "source_sha256": "236eaf7d35088f051449fbc76a5aa44478f440890e5b9446d7da46e65328cdb9",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 578,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ORION-01-D711",
+      "mission": "Orion",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes Orion as a spacecraft designed to carry astronauts on deep-space missions.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "source_sha256": "8a5fb2dd997a88019528b1f45fe92163d79b3530f3b30b67ceac89dced9d5c13",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bdesign\\w*",
+        "\\bcarry\\w*"
+      ],
+      "matched_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bdesign\\w*",
+        "\\bcarry\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 579,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ORION-02-D712",
+      "mission": "Orion",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page identifies NASA and ESA responsibilities or the European Service Module partnership boundary.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "source_sha256": "8a5fb2dd997a88019528b1f45fe92163d79b3530f3b30b67ceac89dced9d5c13",
+      "required_patterns": [
+        "\\bresponsibilit\\w*",
+        "\\beuropean\\w*",
+        "\\bservice\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bresponsibilit\\w*",
+        "\\beuropean\\w*",
+        "\\bservice\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 580,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ORION-03-D713",
+      "mission": "Orion",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "Orion is described through named major elements such as the crew module, service module, launch abort system, or adapter.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "source_sha256": "8a5fb2dd997a88019528b1f45fe92163d79b3530f3b30b67ceac89dced9d5c13",
+      "required_patterns": [
+        "\\bnamed\\w*",
+        "\\bmajor\\w*",
+        "\\belement\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bnamed\\w*",
+        "\\bmajor\\w*",
+        "\\belement\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 581,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ORION-04-D714",
+      "mission": "Orion",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names the launch abort system or another principal Orion system and states its role.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "source_sha256": "8a5fb2dd997a88019528b1f45fe92163d79b3530f3b30b67ceac89dced9d5c13",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\blaunch\\w*",
+        "\\babort\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\babort\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 582,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ORION-05-D715",
+      "mission": "Orion",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The spacecraft's domain includes crew transport, life support, navigation, or safe return from lunar missions.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "source_sha256": "8a5fb2dd997a88019528b1f45fe92163d79b3530f3b30b67ceac89dced9d5c13",
+      "required_patterns": [
+        "\\bspacecraft'\\w*",
+        "\\bdomain\\w*",
+        "\\btransport\\w*"
+      ],
+      "matched_patterns": [
+        "\\btransport\\w*"
+      ],
+      "missing_patterns": [
+        "\\bspacecraft'\\w*",
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 583,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ORION-06-D716",
+      "mission": "Orion",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states Orion's current Artemis flight status, completed test status, or next planned use at access time.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "source_sha256": "8a5fb2dd997a88019528b1f45fe92163d79b3530f3b30b67ceac89dced9d5c13",
+      "required_patterns": [
+        "\\borion'\\w*",
+        "\\bartemi\\w*",
+        "\\bflight\\w*"
+      ],
+      "matched_patterns": [
+        "\\bartemi\\w*",
+        "\\bflight\\w*"
+      ],
+      "missing_patterns": [
+        "\\borion'\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 584,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ORION-07-D717",
+      "mission": "Orion",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The trajectory boundary includes travel beyond low Earth orbit and return to an ocean splashdown.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "source_sha256": "8a5fb2dd997a88019528b1f45fe92163d79b3530f3b30b67ceac89dced9d5c13",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\btravel\\w*",
+        "\\bbeyond\\w*"
+      ],
+      "matched_patterns": [
+        "\\btravel\\w*"
+      ],
+      "missing_patterns": [
+        "\\btrajectory\\w*",
+        "\\bbeyond\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 585,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ORION-08-D718",
+      "mission": "Orion",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit crew-capacity, mission-duration, re-entry-speed, or distance fact.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "source_sha256": "8a5fb2dd997a88019528b1f45fe92163d79b3530f3b30b67ceac89dced9d5c13",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bcrew\\-capacity\\w*",
+        "\\bmission\\-dur\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bcontain\\w*",
+        "\\bcrew\\-capacity\\w*",
+        "\\bmission\\-dur\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 586,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ORION-09-D719",
+      "mission": "Orion",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to Orion images, videos, fact sheets, mission updates, or technical resources.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "source_sha256": "8a5fb2dd997a88019528b1f45fe92163d79b3530f3b30b67ceac89dced9d5c13",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bvideo\\w*"
+      ],
+      "matched_patterns": [
+        "\\bimage\\w*",
+        "\\bvideo\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 587,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ORION-10-D720",
+      "mission": "Orion",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The page must not be read as saying Orion is a lunar lander or a complete mission architecture; later reruns should record status and schedule drift.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "source_sha256": "8a5fb2dd997a88019528b1f45fe92163d79b3530f3b30b67ceac89dced9d5c13",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 588,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SLS-01-D721",
+      "mission": "Space Launch System",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes the Space Launch System as a heavy-lift rocket for Artemis or deep-space exploration.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "source_sha256": "d0370a02092b4f339525e412e8f8d8d1d9f0a713ee96c4d638af9de9dd727db7",
+      "required_patterns": [
+        "\\bheavy\\-lift\\w*",
+        "\\brocket\\w*",
+        "\\bartemi\\w*"
+      ],
+      "matched_patterns": [
+        "\\brocket\\w*",
+        "\\bartemi\\w*"
+      ],
+      "missing_patterns": [
+        "\\bheavy\\-lift\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 589,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SLS-02-D722",
+      "mission": "Space Launch System",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places SLS inside NASA's Artemis architecture rather than describing it as a standalone exploration programme.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "source_sha256": "d0370a02092b4f339525e412e8f8d8d1d9f0a713ee96c4d638af9de9dd727db7",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\binside\\w*",
+        "\\bnasa'\\w*"
+      ],
+      "matched_patterns": [
+        "\\bnasa'\\w*"
+      ],
+      "missing_patterns": [
+        "\\bplace\\w*",
+        "\\binside\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 590,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SLS-03-D723",
+      "mission": "Space Launch System",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The vehicle is described through stages, configurations, boosters, engines, or an evolution path.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "source_sha256": "d0370a02092b4f339525e412e8f8d8d1d9f0a713ee96c4d638af9de9dd727db7",
+      "required_patterns": [
+        "\\bvehicle\\w*",
+        "\\bstage\\w*",
+        "\\bconfiguration\\w*"
+      ],
+      "matched_patterns": [
+        "\\bstage\\w*",
+        "\\bconfiguration\\w*"
+      ],
+      "missing_patterns": [
+        "\\bvehicle\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 591,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SLS-04-D724",
+      "mission": "Space Launch System",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names RS-25 engines, solid rocket boosters, the core stage, or another principal propulsion element.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "source_sha256": "d0370a02092b4f339525e412e8f8d8d1d9f0a713ee96c4d638af9de9dd727db7",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\brs\\-25\\w*",
+        "\\bengin\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\brs\\-25\\w*",
+        "\\bengin\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 592,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SLS-05-D725",
+      "mission": "Space Launch System",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The stated payload domain includes launching Orion, crew, cargo, or large exploration payloads beyond Earth orbit.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "source_sha256": "d0370a02092b4f339525e412e8f8d8d1d9f0a713ee96c4d638af9de9dd727db7",
+      "required_patterns": [
+        "\\bstated\\w*",
+        "\\bpayload\\w*",
+        "\\bdomain\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bstated\\w*",
+        "\\bpayload\\w*",
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 593,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SLS-06-D726",
+      "mission": "Space Launch System",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page exposes the current flown or planned SLS configuration and mission status at access time.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "source_sha256": "d0370a02092b4f339525e412e8f8d8d1d9f0a713ee96c4d638af9de9dd727db7",
+      "required_patterns": [
+        "\\bexpos\\w*",
+        "\\bflown\\w*",
+        "\\bplann\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bexpos\\w*",
+        "\\bflown\\w*",
+        "\\bplann\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 594,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SLS-07-D727",
+      "mission": "Space Launch System",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The destination or performance boundary includes translunar injection, the Moon, or deep-space trajectories.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "source_sha256": "d0370a02092b4f339525e412e8f8d8d1d9f0a713ee96c4d638af9de9dd727db7",
+      "required_patterns": [
+        "\\bdestin\\w*",
+        "\\bperformance\\w*",
+        "\\btranslunar\\w*"
+      ],
+      "matched_patterns": [
+        "\\bdestin\\w*"
+      ],
+      "missing_patterns": [
+        "\\bperformance\\w*",
+        "\\btranslunar\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 595,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SLS-08-D728",
+      "mission": "Space Launch System",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page includes an explicit thrust, payload-mass, height, engine-count, or configuration number.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "source_sha256": "d0370a02092b4f339525e412e8f8d8d1d9f0a713ee96c4d638af9de9dd727db7",
+      "required_patterns": [
+        "\\bthrust\\w*",
+        "\\bpayload\\-mas\\w*",
+        "\\bheight\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bthrust\\w*",
+        "\\bpayload\\-mas\\w*",
+        "\\bheight\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 596,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SLS-09-D729",
+      "mission": "Space Launch System",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to SLS images, fact sheets, reference material, mission pages, or public technical resources.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "source_sha256": "d0370a02092b4f339525e412e8f8d8d1d9f0a713ee96c4d638af9de9dd727db7",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bsheet\\w*"
+      ],
+      "matched_patterns": [
+        "\\bimage\\w*",
+        "\\bsheet\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 597,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SLS-10-D730",
+      "mission": "Space Launch System",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The selected page must not be read as proving launch reliability, reusability, or schedule certainty; later reruns should record configuration and date drift.",
+      "official_source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "source_sha256": "d0370a02092b4f339525e412e8f8d8d1d9f0a713ee96c4d638af9de9dd727db7",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 598,
+      "publication_state": "created"
+    }
+  ]
+}

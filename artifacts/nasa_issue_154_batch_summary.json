@@ -1,0 +1,1268 @@
+{
+  "issue_number": 154,
+  "matrix_version": "2026-07-16",
+  "matrix_sha256": "157350e6228b3b2b303c7d29476847b958f4410ee53d8ce3f3cbb8a2fb780378",
+  "access_date": "2026-07-16",
+  "operator": "NeoZorK",
+  "raw_payload_committed": false,
+  "claim_boundary": "This batch report records 50 frozen source-boundary evaluations against five official NASA mission pages. It does not certify mission performance, data quality, safety or operational suitability.",
+  "result_counts": {
+    "INSUFFICIENT_COVERAGE": 46,
+    "PASSED_UNDER_PROTOCOL": 4
+  },
+  "source_records": [
+    {
+      "mission": "PACE",
+      "official_source_name": "NASA PACE official page",
+      "source_url": "https://science.nasa.gov/mission/pace/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/pace/",
+      "http_status": 200,
+      "sha256": "92b236b3be8d9e65f658fe7ee9e37ab486e7ea821f4f71fd6ac3cbd7997fc53e"
+    },
+    {
+      "mission": "SWOT",
+      "official_source_name": "NASA SWOT official page",
+      "source_url": "https://science.nasa.gov/mission/swot/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/swot/",
+      "http_status": 200,
+      "sha256": "d793fc77cfbd6a3348fbd4551c915e97e903eeb08a6f63fe7370cd25fac52059"
+    },
+    {
+      "mission": "GRACE Follow-On",
+      "official_source_name": "NASA GRACE Follow-On official page",
+      "source_url": "https://science.nasa.gov/mission/grace-fo/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/grace-fo/",
+      "http_status": 200,
+      "sha256": "0ae79a279eb6ecaa04317ee057e1c903488c356de4dbcbf8fa81b576211c1242"
+    },
+    {
+      "mission": "ICESat-2",
+      "official_source_name": "NASA ICESat-2 official page",
+      "source_url": "https://science.nasa.gov/mission/icesat-2/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/icesat-2/",
+      "http_status": 200,
+      "sha256": "ec680eba7f212e96a20eae5995574ba0fb098499722dd247771bf5d659b762de"
+    },
+    {
+      "mission": "OCO-2",
+      "official_source_name": "NASA OCO-2 official page",
+      "source_url": "https://science.nasa.gov/mission/oco-2/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/oco-2/",
+      "http_status": 200,
+      "sha256": "181addcfc35f7c8be81c7faaeca7883c7c30f5262850dce3bda7755184b56c84"
+    }
+  ],
+  "cards": [
+    {
+      "protocol_id": "NASA-GRACEFO-01-D1071",
+      "mission": "GRACE Follow-On",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes GRACE-FO as tracking changes in Earth's gravity field to monitor movement of water, ice, and mass.",
+      "official_source_url": "https://science.nasa.gov/mission/grace-fo/",
+      "source_sha256": "0ae79a279eb6ecaa04317ee057e1c903488c356de4dbcbf8fa81b576211c1242",
+      "required_patterns": [
+        "\\bgrace\\-fo\\w*",
+        "\\btrack\\w*",
+        "\\bchang\\w*"
+      ],
+      "matched_patterns": [
+        "\\bgrace\\-fo\\w*",
+        "\\btrack\\w*",
+        "\\bchang\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 899,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GRACEFO-02-D1072",
+      "mission": "GRACE Follow-On",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page identifies NASA and German partner boundaries and the continuity with the original GRACE mission.",
+      "official_source_url": "https://science.nasa.gov/mission/grace-fo/",
+      "source_sha256": "0ae79a279eb6ecaa04317ee057e1c903488c356de4dbcbf8fa81b576211c1242",
+      "required_patterns": [
+        "\\bgerman\\w*",
+        "\\bpartner\\w*",
+        "\\bboundar\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bgerman\\w*",
+        "\\bpartner\\w*",
+        "\\bboundar\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 900,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GRACEFO-03-D1073",
+      "mission": "GRACE Follow-On",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "GRACE-FO is described as a pair of satellites measuring changes in their separation.",
+      "official_source_url": "https://science.nasa.gov/mission/grace-fo/",
+      "source_sha256": "0ae79a279eb6ecaa04317ee057e1c903488c356de4dbcbf8fa81b576211c1242",
+      "required_patterns": [
+        "\\bgrace\\-fo\\w*",
+        "\\bsatellit\\w*",
+        "\\bmeasur\\w*"
+      ],
+      "matched_patterns": [
+        "\\bgrace\\-fo\\w*",
+        "\\bsatellit\\w*"
+      ],
+      "missing_patterns": [
+        "\\bmeasur\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 901,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GRACEFO-04-D1074",
+      "mission": "GRACE Follow-On",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names the microwave ranging system, accelerometers, GPS receivers, laser ranging interferometer, or another principal payload.",
+      "official_source_url": "https://science.nasa.gov/mission/grace-fo/",
+      "source_sha256": "0ae79a279eb6ecaa04317ee057e1c903488c356de4dbcbf8fa81b576211c1242",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bmicrowave\\w*",
+        "\\branging\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bmicrowave\\w*",
+        "\\branging\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 902,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GRACEFO-05-D1075",
+      "mission": "GRACE Follow-On",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes groundwater, ice sheets, glaciers, sea level, drought, and changes in Earth's mass distribution.",
+      "official_source_url": "https://science.nasa.gov/mission/grace-fo/",
+      "source_sha256": "0ae79a279eb6ecaa04317ee057e1c903488c356de4dbcbf8fa81b576211c1242",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bgroundwater\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*",
+        "\\bgroundwater\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 903,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GRACEFO-06-D1076",
+      "mission": "GRACE Follow-On",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, active operations, data continuity, or current spacecraft status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/grace-fo/",
+      "source_sha256": "0ae79a279eb6ecaa04317ee057e1c903488c356de4dbcbf8fa81b576211c1242",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\boperation\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*"
+      ],
+      "missing_patterns": [
+        "\\boperation\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 904,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GRACEFO-07-D1077",
+      "mission": "GRACE Follow-On",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The two spacecraft share a near-polar Earth orbit and maintain a stated along-track separation.",
+      "official_source_url": "https://science.nasa.gov/mission/grace-fo/",
+      "source_sha256": "0ae79a279eb6ecaa04317ee057e1c903488c356de4dbcbf8fa81b576211c1242",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bshare\\w*",
+        "\\bnear\\-polar\\w*"
+      ],
+      "matched_patterns": [
+        "\\bspacecraft\\w*"
+      ],
+      "missing_patterns": [
+        "\\bshare\\w*",
+        "\\bnear\\-polar\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 905,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GRACEFO-08-D1078",
+      "mission": "GRACE Follow-On",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page includes an explicit launch date, satellite separation, orbit altitude, monthly-map cadence, measurement precision, or technology-demonstration fact.",
+      "official_source_url": "https://science.nasa.gov/mission/grace-fo/",
+      "source_sha256": "0ae79a279eb6ecaa04317ee057e1c903488c356de4dbcbf8fa81b576211c1242",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bsatellite\\w*",
+        "\\bsepar\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\bsatellite\\w*"
+      ],
+      "missing_patterns": [
+        "\\bsepar\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 906,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GRACEFO-09-D1079",
+      "mission": "GRACE Follow-On",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to gravity-field solutions, water-storage maps, data archives, science results, or public resources.",
+      "official_source_url": "https://science.nasa.gov/mission/grace-fo/",
+      "source_sha256": "0ae79a279eb6ecaa04317ee057e1c903488c356de4dbcbf8fa81b576211c1242",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bgravity\\-field\\w*",
+        "\\bsolution\\w*"
+      ],
+      "matched_patterns": [
+        "\\bsolution\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*",
+        "\\bgravity\\-field\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 907,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-GRACEFO-10-D1080",
+      "mission": "GRACE Follow-On",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be read as direct optical imaging of groundwater or exact local well measurement; later reruns should capture spacecraft and data-continuity drift.",
+      "official_source_url": "https://science.nasa.gov/mission/grace-fo/",
+      "source_sha256": "0ae79a279eb6ecaa04317ee057e1c903488c356de4dbcbf8fa81b576211c1242",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 908,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ICESAT2-01-D1081",
+      "mission": "ICESat-2",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes ICESat-2 as measuring the height of Earth's ice, land, vegetation, and water surfaces with laser altimetry.",
+      "official_source_url": "https://science.nasa.gov/mission/icesat-2/",
+      "source_sha256": "ec680eba7f212e96a20eae5995574ba0fb098499722dd247771bf5d659b762de",
+      "required_patterns": [
+        "\\bicesat\\-2\\w*",
+        "\\bmeasur\\w*",
+        "\\bheight\\w*"
+      ],
+      "matched_patterns": [
+        "\\bicesat\\-2\\w*",
+        "\\bmeasur\\w*",
+        "\\bheight\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 909,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ICESAT2-02-D1082",
+      "mission": "ICESat-2",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places ICESat-2 within NASA Earth Science and identifies mission-management or data-centre boundaries.",
+      "official_source_url": "https://science.nasa.gov/mission/icesat-2/",
+      "source_sha256": "ec680eba7f212e96a20eae5995574ba0fb098499722dd247771bf5d659b762de",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bicesat\\-2\\w*",
+        "\\bearth\\w*"
+      ],
+      "matched_patterns": [
+        "\\bicesat\\-2\\w*",
+        "\\bearth\\w*"
+      ],
+      "missing_patterns": [
+        "\\bplace\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 910,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ICESAT2-03-D1083",
+      "mission": "ICESat-2",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "ICESat-2 is described as a photon-counting laser-altimetry satellite using multiple ground tracks.",
+      "official_source_url": "https://science.nasa.gov/mission/icesat-2/",
+      "source_sha256": "ec680eba7f212e96a20eae5995574ba0fb098499722dd247771bf5d659b762de",
+      "required_patterns": [
+        "\\bicesat\\-2\\w*",
+        "\\bphoton\\-count\\w*",
+        "\\blaser\\-altimetry\\w*"
+      ],
+      "matched_patterns": [
+        "\\bicesat\\-2\\w*"
+      ],
+      "missing_patterns": [
+        "\\bphoton\\-count\\w*",
+        "\\blaser\\-altimetry\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 911,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ICESAT2-04-D1084",
+      "mission": "ICESat-2",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names ATLAS as the principal instrument and states its laser or detector role.",
+      "official_source_url": "https://science.nasa.gov/mission/icesat-2/",
+      "source_sha256": "ec680eba7f212e96a20eae5995574ba0fb098499722dd247771bf5d659b762de",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\batlas\\w*",
+        "\\binstru\\w*"
+      ],
+      "matched_patterns": [
+        "\\binstru\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\batlas\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 912,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ICESAT2-05-D1085",
+      "mission": "ICESat-2",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes ice-sheet elevation, sea-ice freeboard, glaciers, forests, inland water, and surface change.",
+      "official_source_url": "https://science.nasa.gov/mission/icesat-2/",
+      "source_sha256": "ec680eba7f212e96a20eae5995574ba0fb098499722dd247771bf5d659b762de",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bice\\-sheet\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*",
+        "\\bice\\-sheet\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 913,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ICESAT2-06-D1086",
+      "mission": "ICESat-2",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, active operations, data release, or current mission status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/icesat-2/",
+      "source_sha256": "ec680eba7f212e96a20eae5995574ba0fb098499722dd247771bf5d659b762de",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\boperation\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*"
+      ],
+      "missing_patterns": [
+        "\\boperation\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 914,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ICESAT2-07-D1087",
+      "mission": "ICESat-2",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The orbit boundary includes a near-polar Earth orbit designed for repeated global elevation profiles.",
+      "official_source_url": "https://science.nasa.gov/mission/icesat-2/",
+      "source_sha256": "ec680eba7f212e96a20eae5995574ba0fb098499722dd247771bf5d659b762de",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bnear\\-polar\\w*",
+        "\\bearth\\w*"
+      ],
+      "matched_patterns": [
+        "\\borbit\\w*",
+        "\\bearth\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnear\\-polar\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 915,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ICESAT2-08-D1088",
+      "mission": "ICESat-2",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit beam count, pulse rate, footprint spacing, launch date, orbit altitude, repeat cycle, or precision fact.",
+      "official_source_url": "https://science.nasa.gov/mission/icesat-2/",
+      "source_sha256": "ec680eba7f212e96a20eae5995574ba0fb098499722dd247771bf5d659b762de",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bcount\\w*",
+        "\\bpulse\\w*"
+      ],
+      "matched_patterns": [
+        "\\bpulse\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcontain\\w*",
+        "\\bcount\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 916,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ICESAT2-09-D1089",
+      "mission": "ICESat-2",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to elevation data, maps, visualizations, data archives, science results, or public resources.",
+      "official_source_url": "https://science.nasa.gov/mission/icesat-2/",
+      "source_sha256": "ec680eba7f212e96a20eae5995574ba0fb098499722dd247771bf5d659b762de",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\belevation\\w*",
+        "\\bvisualization\\w*"
+      ],
+      "matched_patterns": [
+        "\\belevation\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*",
+        "\\bvisualization\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 917,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ICESAT2-10-D1090",
+      "mission": "ICESat-2",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be read as radar measurement or direct total-ice-volume measurement without modelling; later reruns should capture product and operations drift.",
+      "official_source_url": "https://science.nasa.gov/mission/icesat-2/",
+      "source_sha256": "ec680eba7f212e96a20eae5995574ba0fb098499722dd247771bf5d659b762de",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 918,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-OCO2-01-D1091",
+      "mission": "OCO-2",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes OCO-2 as measuring atmospheric carbon dioxide to study its sources and sinks.",
+      "official_source_url": "https://science.nasa.gov/mission/oco-2/",
+      "source_sha256": "181addcfc35f7c8be81c7faaeca7883c7c30f5262850dce3bda7755184b56c84",
+      "required_patterns": [
+        "\\boco\\-2\\w*",
+        "\\bmeasur\\w*",
+        "\\batmospheric\\w*"
+      ],
+      "matched_patterns": [
+        "\\boco\\-2\\w*",
+        "\\bmeasur\\w*",
+        "\\batmospheric\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 919,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-OCO2-02-D1092",
+      "mission": "OCO-2",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places OCO-2 within NASA Earth Science and identifies the A-Train or partner boundary.",
+      "official_source_url": "https://science.nasa.gov/mission/oco-2/",
+      "source_sha256": "181addcfc35f7c8be81c7faaeca7883c7c30f5262850dce3bda7755184b56c84",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\boco\\-2\\w*",
+        "\\bearth\\w*"
+      ],
+      "matched_patterns": [
+        "\\boco\\-2\\w*",
+        "\\bearth\\w*"
+      ],
+      "missing_patterns": [
+        "\\bplace\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 920,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-OCO2-03-D1093",
+      "mission": "OCO-2",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "OCO-2 is described as a spectrometer observatory making precise global column CO2 measurements.",
+      "official_source_url": "https://science.nasa.gov/mission/oco-2/",
+      "source_sha256": "181addcfc35f7c8be81c7faaeca7883c7c30f5262850dce3bda7755184b56c84",
+      "required_patterns": [
+        "\\boco\\-2\\w*",
+        "\\bspectrometer\\w*",
+        "\\bobservatory\\w*"
+      ],
+      "matched_patterns": [
+        "\\boco\\-2\\w*",
+        "\\bobservatory\\w*"
+      ],
+      "missing_patterns": [
+        "\\bspectrometer\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 921,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-OCO2-04-D1094",
+      "mission": "OCO-2",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names its three high-resolution spectrometers or the oxygen and carbon-dioxide spectral bands.",
+      "official_source_url": "https://science.nasa.gov/mission/oco-2/",
+      "source_sha256": "181addcfc35f7c8be81c7faaeca7883c7c30f5262850dce3bda7755184b56c84",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bthree\\w*",
+        "\\bhigh\\-resolution\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bthree\\w*",
+        "\\bhigh\\-resolution\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 922,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-OCO2-05-D1095",
+      "mission": "OCO-2",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes atmospheric CO2, carbon sources and sinks, seasonal cycles, and solar-induced chlorophyll fluorescence.",
+      "official_source_url": "https://science.nasa.gov/mission/oco-2/",
+      "source_sha256": "181addcfc35f7c8be81c7faaeca7883c7c30f5262850dce3bda7755184b56c84",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\batmospheric\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*",
+        "\\batmospheric\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 923,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-OCO2-06-D1096",
+      "mission": "OCO-2",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, active operations, data products, or current mission status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/oco-2/",
+      "source_sha256": "181addcfc35f7c8be81c7faaeca7883c7c30f5262850dce3bda7755184b56c84",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\boperation\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*"
+      ],
+      "missing_patterns": [
+        "\\boperation\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 924,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-OCO2-07-D1097",
+      "mission": "OCO-2",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The orbit boundary includes a sun-synchronous near-polar Earth orbit associated with the A-Train.",
+      "official_source_url": "https://science.nasa.gov/mission/oco-2/",
+      "source_sha256": "181addcfc35f7c8be81c7faaeca7883c7c30f5262850dce3bda7755184b56c84",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bsun\\-synchronou\\w*",
+        "\\bnear\\-polar\\w*"
+      ],
+      "matched_patterns": [
+        "\\borbit\\w*"
+      ],
+      "missing_patterns": [
+        "\\bsun\\-synchronou\\w*",
+        "\\bnear\\-polar\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 925,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-OCO2-08-D1098",
+      "mission": "OCO-2",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit launch date, sounding count, precision, swath, repeat cycle, wavelength band, or orbit fact.",
+      "official_source_url": "https://science.nasa.gov/mission/oco-2/",
+      "source_sha256": "181addcfc35f7c8be81c7faaeca7883c7c30f5262850dce3bda7755184b56c84",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\bsound\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcontain\\w*",
+        "\\bsound\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 926,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-OCO2-09-D1099",
+      "mission": "OCO-2",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to CO2 maps, fluorescence products, data archives, science results, or public resources.",
+      "official_source_url": "https://science.nasa.gov/mission/oco-2/",
+      "source_sha256": "181addcfc35f7c8be81c7faaeca7883c7c30f5262850dce3bda7755184b56c84",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bfluorescence\\w*",
+        "\\bproduct\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\blinks\\w*",
+        "\\bfluorescence\\w*",
+        "\\bproduct\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 927,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-OCO2-10-D1100",
+      "mission": "OCO-2",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be read as assigning legal responsibility for individual emissions or directly measuring all local sources; later reruns should capture product drift.",
+      "official_source_url": "https://science.nasa.gov/mission/oco-2/",
+      "source_sha256": "181addcfc35f7c8be81c7faaeca7883c7c30f5262850dce3bda7755184b56c84",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 928,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PACE-01-D1051",
+      "mission": "PACE",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes PACE as studying ocean colour, phytoplankton, aerosols, and clouds to improve understanding of ocean-atmosphere interactions.",
+      "official_source_url": "https://science.nasa.gov/mission/pace/",
+      "source_sha256": "92b236b3be8d9e65f658fe7ee9e37ab486e7ea821f4f71fd6ac3cbd7997fc53e",
+      "required_patterns": [
+        "\\bstudy\\w*",
+        "\\bocean\\w*",
+        "\\bcolour\\w*"
+      ],
+      "matched_patterns": [
+        "\\bstudy\\w*",
+        "\\bocean\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcolour\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 929,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PACE-02-D1052",
+      "mission": "PACE",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places PACE within NASA Earth Science and identifies partner-instrument boundaries.",
+      "official_source_url": "https://science.nasa.gov/mission/pace/",
+      "source_sha256": "92b236b3be8d9e65f658fe7ee9e37ab486e7ea821f4f71fd6ac3cbd7997fc53e",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bearth\\w*",
+        "\\bscience\\w*"
+      ],
+      "matched_patterns": [
+        "\\bearth\\w*",
+        "\\bscience\\w*"
+      ],
+      "missing_patterns": [
+        "\\bplace\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 930,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PACE-03-D1053",
+      "mission": "PACE",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "PACE is described as an Earth-observing satellite with a hyperspectral ocean-colour instrument and multi-angle polarimeters.",
+      "official_source_url": "https://science.nasa.gov/mission/pace/",
+      "source_sha256": "92b236b3be8d9e65f658fe7ee9e37ab486e7ea821f4f71fd6ac3cbd7997fc53e",
+      "required_patterns": [
+        "\\bearth\\-observ\\w*",
+        "\\bsatellite\\w*",
+        "\\bhyperspectral\\w*"
+      ],
+      "matched_patterns": [
+        "\\bearth\\-observ\\w*",
+        "\\bsatellite\\w*"
+      ],
+      "missing_patterns": [
+        "\\bhyperspectral\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 931,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PACE-04-D1054",
+      "mission": "PACE",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names OCI, HARP2, and SPEXone and distinguishes their measurement roles.",
+      "official_source_url": "https://science.nasa.gov/mission/pace/",
+      "source_sha256": "92b236b3be8d9e65f658fe7ee9e37ab486e7ea821f4f71fd6ac3cbd7997fc53e",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bharp2\\w*",
+        "\\bspexone\\w*"
+      ],
+      "matched_patterns": [
+        "\\bspexone\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bharp2\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 932,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PACE-05-D1055",
+      "mission": "PACE",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes marine ecosystems, carbon cycling, aerosols, clouds, air quality, and climate processes.",
+      "official_source_url": "https://science.nasa.gov/mission/pace/",
+      "source_sha256": "92b236b3be8d9e65f658fe7ee9e37ab486e7ea821f4f71fd6ac3cbd7997fc53e",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bmarine\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*",
+        "\\bmarine\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 933,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PACE-06-D1056",
+      "mission": "PACE",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, commissioning, operational data release, active mission, or current status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/pace/",
+      "source_sha256": "92b236b3be8d9e65f658fe7ee9e37ab486e7ea821f4f71fd6ac3cbd7997fc53e",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bcommission\\w*",
+        "\\boperational\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcommission\\w*",
+        "\\boperational\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 934,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PACE-07-D1057",
+      "mission": "PACE",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The orbit boundary includes a polar or sun-synchronous Earth orbit.",
+      "official_source_url": "https://science.nasa.gov/mission/pace/",
+      "source_sha256": "92b236b3be8d9e65f658fe7ee9e37ab486e7ea821f4f71fd6ac3cbd7997fc53e",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bpolar\\w*",
+        "\\bsun\\-synchronou\\w*"
+      ],
+      "matched_patterns": [
+        "\\borbit\\w*"
+      ],
+      "missing_patterns": [
+        "\\bpolar\\w*",
+        "\\bsun\\-synchronou\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 935,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PACE-08-D1058",
+      "mission": "PACE",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit launch date, wavelength range, spectral-band count, revisit time, orbit altitude, or field-of-view fact.",
+      "official_source_url": "https://science.nasa.gov/mission/pace/",
+      "source_sha256": "92b236b3be8d9e65f658fe7ee9e37ab486e7ea821f4f71fd6ac3cbd7997fc53e",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\bwavelength\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcontain\\w*",
+        "\\bwavelength\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 936,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PACE-09-D1059",
+      "mission": "PACE",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to data products, images, ocean-colour maps, instrument resources, science results, or public multimedia.",
+      "official_source_url": "https://science.nasa.gov/mission/pace/",
+      "source_sha256": "92b236b3be8d9e65f658fe7ee9e37ab486e7ea821f4f71fd6ac3cbd7997fc53e",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bproduct\\w*",
+        "\\bimage\\w*"
+      ],
+      "matched_patterns": [
+        "\\bproduct\\w*",
+        "\\bimage\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 937,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PACE-10-D1060",
+      "mission": "PACE",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be read as directly counting every marine organism or attributing all climate change; later reruns should capture data-release and operations drift.",
+      "official_source_url": "https://science.nasa.gov/mission/pace/",
+      "source_sha256": "92b236b3be8d9e65f658fe7ee9e37ab486e7ea821f4f71fd6ac3cbd7997fc53e",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 938,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SWOT-01-D1061",
+      "mission": "SWOT",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes SWOT as measuring Earth's surface water and ocean topography to understand how water bodies change over time.",
+      "official_source_url": "https://science.nasa.gov/mission/swot/",
+      "source_sha256": "d793fc77cfbd6a3348fbd4551c915e97e903eeb08a6f63fe7370cd25fac52059",
+      "required_patterns": [
+        "\\bmeasur\\w*",
+        "\\bearth'\\w*",
+        "\\bsurface\\w*"
+      ],
+      "matched_patterns": [
+        "\\bmeasur\\w*",
+        "\\bearth'\\w*",
+        "\\bsurface\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 939,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SWOT-02-D1062",
+      "mission": "SWOT",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page identifies the U.S.-French mission partnership and other international partner boundaries.",
+      "official_source_url": "https://science.nasa.gov/mission/swot/",
+      "source_sha256": "d793fc77cfbd6a3348fbd4551c915e97e903eeb08a6f63fe7370cd25fac52059",
+      "required_patterns": [
+        "\\bfrench\\w*",
+        "\\bpartnership\\w*",
+        "\\bother\\w*"
+      ],
+      "matched_patterns": [
+        "\\bfrench\\w*"
+      ],
+      "missing_patterns": [
+        "\\bpartnership\\w*",
+        "\\bother\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 940,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SWOT-03-D1063",
+      "mission": "SWOT",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "SWOT is described as an Earth-observation orbiter using wide-swath radar interferometry and supporting instruments.",
+      "official_source_url": "https://science.nasa.gov/mission/swot/",
+      "source_sha256": "d793fc77cfbd6a3348fbd4551c915e97e903eeb08a6f63fe7370cd25fac52059",
+      "required_patterns": [
+        "\\bearth\\-observ\\w*",
+        "\\borbiter\\w*",
+        "\\busing\\w*"
+      ],
+      "matched_patterns": [
+        "\\borbiter\\w*"
+      ],
+      "missing_patterns": [
+        "\\bearth\\-observ\\w*",
+        "\\busing\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 941,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SWOT-04-D1064",
+      "mission": "SWOT",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names KaRIn, the nadir altimeter, radiometer, GPS payload, DORIS, or another principal system.",
+      "official_source_url": "https://science.nasa.gov/mission/swot/",
+      "source_sha256": "d793fc77cfbd6a3348fbd4551c915e97e903eeb08a6f63fe7370cd25fac52059",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bkarin\\w*",
+        "\\bnadir\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bkarin\\w*",
+        "\\bnadir\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 942,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SWOT-05-D1065",
+      "mission": "SWOT",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes ocean surface topography, rivers, lakes, reservoirs, wetlands, and the global water cycle.",
+      "official_source_url": "https://science.nasa.gov/mission/swot/",
+      "source_sha256": "d793fc77cfbd6a3348fbd4551c915e97e903eeb08a6f63fe7370cd25fac52059",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bocean\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*",
+        "\\bocean\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 943,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SWOT-06-D1066",
+      "mission": "SWOT",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, calibration, science orbit, active mission, or current operations status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/swot/",
+      "source_sha256": "d793fc77cfbd6a3348fbd4551c915e97e903eeb08a6f63fe7370cd25fac52059",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bcalibr\\w*",
+        "\\bscience\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\bscience\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcalibr\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 944,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SWOT-07-D1067",
+      "mission": "SWOT",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The orbit boundary includes a global Earth-observation orbit and a stated repeat cycle.",
+      "official_source_url": "https://science.nasa.gov/mission/swot/",
+      "source_sha256": "d793fc77cfbd6a3348fbd4551c915e97e903eeb08a6f63fe7370cd25fac52059",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bglobal\\w*",
+        "\\bearth\\-observ\\w*"
+      ],
+      "matched_patterns": [
+        "\\borbit\\w*",
+        "\\bglobal\\w*"
+      ],
+      "missing_patterns": [
+        "\\bearth\\-observ\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 945,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SWOT-08-D1068",
+      "mission": "SWOT",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit launch date, swath width, water-body size threshold, orbit repeat, altitude, or first-global-survey fact.",
+      "official_source_url": "https://science.nasa.gov/mission/swot/",
+      "source_sha256": "d793fc77cfbd6a3348fbd4551c915e97e903eeb08a6f63fe7370cd25fac52059",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\bswath\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcontain\\w*",
+        "\\bswath\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 946,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SWOT-09-D1069",
+      "mission": "SWOT",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to water datasets, maps, mission products, science results, images, or public resources.",
+      "official_source_url": "https://science.nasa.gov/mission/swot/",
+      "source_sha256": "d793fc77cfbd6a3348fbd4551c915e97e903eeb08a6f63fe7370cd25fac52059",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bwater\\w*",
+        "\\bdataset\\w*"
+      ],
+      "matched_patterns": [
+        "\\bwater\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*",
+        "\\bdataset\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 947,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SWOT-10-D1070",
+      "mission": "SWOT",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be read as measuring all water continuously or predicting every flood; later reruns should capture product and mission-status drift.",
+      "official_source_url": "https://science.nasa.gov/mission/swot/",
+      "source_sha256": "d793fc77cfbd6a3348fbd4551c915e97e903eeb08a6f63fe7370cd25fac52059",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 948,
+      "publication_state": "created"
+    }
+  ]
+}

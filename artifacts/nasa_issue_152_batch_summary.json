@@ -1,0 +1,1266 @@
+{
+  "issue_number": 152,
+  "matrix_version": "2026-07-16",
+  "matrix_sha256": "67aa5a5c107a8f11ce511c6e736c206ebf23fca71fe811e10c15643965551105",
+  "access_date": "2026-07-16",
+  "operator": "NeoZorK",
+  "raw_payload_committed": false,
+  "claim_boundary": "This batch report records 50 frozen source-boundary evaluations against five official NASA mission pages. It does not certify mission performance, data quality, safety or operational suitability.",
+  "result_counts": {
+    "INSUFFICIENT_COVERAGE": 48,
+    "PASSED_UNDER_PROTOCOL": 2
+  },
+  "source_records": [
+    {
+      "mission": "TESS",
+      "official_source_name": "NASA TESS official page",
+      "source_url": "https://science.nasa.gov/mission/tess/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/tess/",
+      "http_status": 200,
+      "sha256": "a53f4ca302130472d008f72e32e882e82ecbfd64d5f7a7d70453f0f1288025d7"
+    },
+    {
+      "mission": "Kepler / K2",
+      "official_source_name": "NASA Kepler / K2 official page",
+      "source_url": "https://science.nasa.gov/mission/kepler/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/kepler/",
+      "http_status": 200,
+      "sha256": "d6f5fa7b425bcf6414d5730cadf170ef65ee1c96c706ef5c90077a583c5de880"
+    },
+    {
+      "mission": "Nancy Grace Roman Space Telescope",
+      "official_source_name": "NASA Nancy Grace Roman Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "http_status": 200,
+      "sha256": "30e31ee6ba6353944f9d4912d07e69ecbb0270f0bea22f89b1feab5f0254b815"
+    },
+    {
+      "mission": "SPHEREx",
+      "official_source_name": "NASA SPHEREx official page",
+      "source_url": "https://science.nasa.gov/mission/spherex/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/spherex/",
+      "http_status": 200,
+      "sha256": "f5330097d3c892a0e396fb74bb88a4db89ae3cf64954c59e8b2232542e2b1a7a"
+    },
+    {
+      "mission": "NuSTAR",
+      "official_source_name": "NASA NuSTAR official page",
+      "source_url": "https://science.nasa.gov/mission/nustar/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/nustar/",
+      "http_status": 200,
+      "sha256": "f4da247f2bea4b6ec442a3268bf0d2a64b35197dffce913eb4672ee7715f8dbd"
+    }
+  ],
+  "cards": [
+    {
+      "protocol_id": "NASA-KEPLER-01-D961",
+      "mission": "Kepler / K2",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes Kepler as a mission designed to determine the frequency and diversity of planets around other stars.",
+      "official_source_url": "https://science.nasa.gov/mission/kepler/",
+      "source_sha256": "d6f5fa7b425bcf6414d5730cadf170ef65ee1c96c706ef5c90077a583c5de880",
+      "required_patterns": [
+        "\\bdesign\\w*",
+        "\\bdetermine\\w*",
+        "\\bfrequency\\w*"
+      ],
+      "matched_patterns": [
+        "\\bdesign\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdetermine\\w*",
+        "\\bfrequency\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 799,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-02-D962",
+      "mission": "Kepler / K2",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places Kepler within NASA's Discovery Program and distinguishes the original Kepler and K2 phases.",
+      "official_source_url": "https://science.nasa.gov/mission/kepler/",
+      "source_sha256": "d6f5fa7b425bcf6414d5730cadf170ef65ee1c96c706ef5c90077a583c5de880",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bdiscovery\\w*"
+      ],
+      "matched_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bdiscovery\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 800,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-03-D963",
+      "mission": "Kepler / K2",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "Kepler is described as a photometric space telescope measuring repeated stellar brightness changes.",
+      "official_source_url": "https://science.nasa.gov/mission/kepler/",
+      "source_sha256": "d6f5fa7b425bcf6414d5730cadf170ef65ee1c96c706ef5c90077a583c5de880",
+      "required_patterns": [
+        "\\bphotometric\\w*",
+        "\\bspace\\w*",
+        "\\btelescope\\w*"
+      ],
+      "matched_patterns": [
+        "\\bspace\\w*",
+        "\\btelescope\\w*"
+      ],
+      "missing_patterns": [
+        "\\bphotometric\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 801,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-04-D964",
+      "mission": "Kepler / K2",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names the photometer, detector array, or another principal observatory system.",
+      "official_source_url": "https://science.nasa.gov/mission/kepler/",
+      "source_sha256": "d6f5fa7b425bcf6414d5730cadf170ef65ee1c96c706ef5c90077a583c5de880",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bphotometer\\w*",
+        "\\bdetector\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bphotometer\\w*",
+        "\\bdetector\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 802,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-05-D965",
+      "mission": "Kepler / K2",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes transiting exoplanets, planet sizes and periods, stellar populations, and habitable-zone statistics.",
+      "official_source_url": "https://science.nasa.gov/mission/kepler/",
+      "source_sha256": "d6f5fa7b425bcf6414d5730cadf170ef65ee1c96c706ef5c90077a583c5de880",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\btransit\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*",
+        "\\btransit\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 803,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-06-D966",
+      "mission": "Kepler / K2",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, end of operations, archive status, and the transition to K2.",
+      "official_source_url": "https://science.nasa.gov/mission/kepler/",
+      "source_sha256": "d6f5fa7b425bcf6414d5730cadf170ef65ee1c96c706ef5c90077a583c5de880",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\boperation\\w*",
+        "\\barchive\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\boperation\\w*"
+      ],
+      "missing_patterns": [
+        "\\barchive\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 804,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-07-D967",
+      "mission": "Kepler / K2",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The trajectory boundary includes an Earth-trailing heliocentric orbit rather than Earth orbit.",
+      "official_source_url": "https://science.nasa.gov/mission/kepler/",
+      "source_sha256": "d6f5fa7b425bcf6414d5730cadf170ef65ee1c96c706ef5c90077a583c5de880",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\bearth\\-trail\\w*",
+        "\\bheliocentric\\w*"
+      ],
+      "matched_patterns": [
+        "\\bheliocentric\\w*"
+      ],
+      "missing_patterns": [
+        "\\btrajectory\\w*",
+        "\\bearth\\-trail\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 805,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-08-D968",
+      "mission": "Kepler / K2",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit launch date, confirmed-planet count, candidate count, field size, mission duration, or detector fact.",
+      "official_source_url": "https://science.nasa.gov/mission/kepler/",
+      "source_sha256": "d6f5fa7b425bcf6414d5730cadf170ef65ee1c96c706ef5c90077a583c5de880",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\bconfirmed\\-planet\\w*"
+      ],
+      "matched_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*"
+      ],
+      "missing_patterns": [
+        "\\bconfirmed\\-planet\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 806,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-09-D969",
+      "mission": "Kepler / K2",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to planet catalogs, light curves, data archives, mission results, images, or public resources.",
+      "official_source_url": "https://science.nasa.gov/mission/kepler/",
+      "source_sha256": "d6f5fa7b425bcf6414d5730cadf170ef65ee1c96c706ef5c90077a583c5de880",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bplanet\\w*",
+        "\\bcatalog\\w*"
+      ],
+      "matched_patterns": [
+        "\\bplanet\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*",
+        "\\bcatalog\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 807,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-10-D970",
+      "mission": "Kepler / K2",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be read as proof that every candidate is a planet or that a habitable-zone planet is inhabited; later reruns should capture catalog drift.",
+      "official_source_url": "https://science.nasa.gov/mission/kepler/",
+      "source_sha256": "d6f5fa7b425bcf6414d5730cadf170ef65ee1c96c706ef5c90077a583c5de880",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 808,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-01-D991",
+      "mission": "NuSTAR",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes NuSTAR as the first focusing telescope to image the sky in high-energy or hard X-rays.",
+      "official_source_url": "https://science.nasa.gov/mission/nustar/",
+      "source_sha256": "f4da247f2bea4b6ec442a3268bf0d2a64b35197dffce913eb4672ee7715f8dbd",
+      "required_patterns": [
+        "\\bfirst\\w*",
+        "\\bfocus\\w*",
+        "\\btelescope\\w*"
+      ],
+      "matched_patterns": [
+        "\\bfirst\\w*",
+        "\\btelescope\\w*"
+      ],
+      "missing_patterns": [
+        "\\bfocus\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 809,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-02-D992",
+      "mission": "NuSTAR",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places NuSTAR within NASA's Small Explorer programme and identifies partner or operations boundaries.",
+      "official_source_url": "https://science.nasa.gov/mission/nustar/",
+      "source_sha256": "f4da247f2bea4b6ec442a3268bf0d2a64b35197dffce913eb4672ee7715f8dbd",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bsmall\\w*"
+      ],
+      "matched_patterns": [
+        "\\bnasa'\\w*"
+      ],
+      "missing_patterns": [
+        "\\bplace\\w*",
+        "\\bsmall\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 810,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-03-D993",
+      "mission": "NuSTAR",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NuSTAR is described as an observatory with two co-aligned focusing telescopes on an extendable mast.",
+      "official_source_url": "https://science.nasa.gov/mission/nustar/",
+      "source_sha256": "f4da247f2bea4b6ec442a3268bf0d2a64b35197dffce913eb4672ee7715f8dbd",
+      "required_patterns": [
+        "\\bobservatory\\w*",
+        "\\bco\\-align\\w*",
+        "\\bfocus\\w*"
+      ],
+      "matched_patterns": [
+        "\\bobservatory\\w*"
+      ],
+      "missing_patterns": [
+        "\\bco\\-align\\w*",
+        "\\bfocus\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 811,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-04-D994",
+      "mission": "NuSTAR",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names its optics modules, focal-plane detector modules, mast, or another principal observatory system.",
+      "official_source_url": "https://science.nasa.gov/mission/nustar/",
+      "source_sha256": "f4da247f2bea4b6ec442a3268bf0d2a64b35197dffce913eb4672ee7715f8dbd",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\boptic\\w*",
+        "\\bmodul\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\boptic\\w*",
+        "\\bmodul\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 812,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-05-D995",
+      "mission": "NuSTAR",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes black holes, supernova remnants, neutron stars, the Sun, and high-energy cosmic sources.",
+      "official_source_url": "https://science.nasa.gov/mission/nustar/",
+      "source_sha256": "f4da247f2bea4b6ec442a3268bf0d2a64b35197dffce913eb4672ee7715f8dbd",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bblack\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*",
+        "\\bblack\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 813,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-06-D996",
+      "mission": "NuSTAR",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, active or extended operations, and current mission status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/nustar/",
+      "source_sha256": "f4da247f2bea4b6ec442a3268bf0d2a64b35197dffce913eb4672ee7715f8dbd",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\bextend\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*"
+      ],
+      "missing_patterns": [
+        "\\bextend\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 814,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-07-D997",
+      "mission": "NuSTAR",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The observatory operates in low Earth orbit.",
+      "official_source_url": "https://science.nasa.gov/mission/nustar/",
+      "source_sha256": "f4da247f2bea4b6ec442a3268bf0d2a64b35197dffce913eb4672ee7715f8dbd",
+      "required_patterns": [
+        "\\bobservatory\\w*",
+        "\\boperat\\w*",
+        "\\bearth\\w*"
+      ],
+      "matched_patterns": [
+        "\\bobservatory\\w*",
+        "\\bearth\\w*"
+      ],
+      "missing_patterns": [
+        "\\boperat\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 815,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-08-D998",
+      "mission": "NuSTAR",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit launch date, energy range, telescope count, mast length, orbit, angular resolution, or mission-duration fact.",
+      "official_source_url": "https://science.nasa.gov/mission/nustar/",
+      "source_sha256": "f4da247f2bea4b6ec442a3268bf0d2a64b35197dffce913eb4672ee7715f8dbd",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\benergy\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\benergy\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcontain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 816,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-09-D999",
+      "mission": "NuSTAR",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to images, data archives, target lists, science results, mission updates, or public multimedia.",
+      "official_source_url": "https://science.nasa.gov/mission/nustar/",
+      "source_sha256": "f4da247f2bea4b6ec442a3268bf0d2a64b35197dffce913eb4672ee7715f8dbd",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\barchiv\\w*"
+      ],
+      "matched_patterns": [
+        "\\bimage\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*",
+        "\\barchiv\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 817,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-10-D1000",
+      "mission": "NuSTAR",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be read as an all-sky continuous monitor or optical telescope; later reruns should capture operations and target drift.",
+      "official_source_url": "https://science.nasa.gov/mission/nustar/",
+      "source_sha256": "f4da247f2bea4b6ec442a3268bf0d2a64b35197dffce913eb4672ee7715f8dbd",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 818,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-01-D971",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes Roman as a wide-field infrared observatory for dark-energy, exoplanet, and general astrophysics investigations.",
+      "official_source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "source_sha256": "30e31ee6ba6353944f9d4912d07e69ecbb0270f0bea22f89b1feab5f0254b815",
+      "required_patterns": [
+        "\\bwide\\-field\\w*",
+        "\\binfrar\\w*",
+        "\\bobservatory\\w*"
+      ],
+      "matched_patterns": [
+        "\\binfrar\\w*",
+        "\\bobservatory\\w*"
+      ],
+      "missing_patterns": [
+        "\\bwide\\-field\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 819,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-02-D972",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page identifies NASA management and partner or contributed-instrument boundaries.",
+      "official_source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "source_sha256": "30e31ee6ba6353944f9d4912d07e69ecbb0270f0bea22f89b1feab5f0254b815",
+      "required_patterns": [
+        "\\bmanage\\w*",
+        "\\bpartner\\w*",
+        "\\bcontributed\\-instru\\w*"
+      ],
+      "matched_patterns": [
+        "\\bpartner\\w*"
+      ],
+      "missing_patterns": [
+        "\\bmanage\\w*",
+        "\\bcontributed\\-instru\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 820,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-03-D973",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "Roman is described as a space telescope with a Hubble-sized primary mirror and a much wider field of view.",
+      "official_source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "source_sha256": "30e31ee6ba6353944f9d4912d07e69ecbb0270f0bea22f89b1feab5f0254b815",
+      "required_patterns": [
+        "\\bhubble\\-siz\\w*",
+        "\\bprimary\\w*",
+        "\\bmirror\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bhubble\\-siz\\w*",
+        "\\bprimary\\w*",
+        "\\bmirror\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 821,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-04-D974",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names the Wide Field Instrument and Coronagraph Instrument and distinguishes science from technology demonstration roles.",
+      "official_source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "source_sha256": "30e31ee6ba6353944f9d4912d07e69ecbb0270f0bea22f89b1feab5f0254b815",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bfield\\w*",
+        "\\binstru\\w*"
+      ],
+      "matched_patterns": [
+        "\\bfield\\w*",
+        "\\binstru\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 822,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-05-D975",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes cosmic expansion, large-scale structure, gravitational microlensing, exoplanets, and infrared sky surveys.",
+      "official_source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "source_sha256": "30e31ee6ba6353944f9d4912d07e69ecbb0270f0bea22f89b1feab5f0254b815",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bcosmic\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*",
+        "\\bcosmic\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 823,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-06-D976",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states current integration, test, launch-preparation, planned launch, or mission status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "source_sha256": "30e31ee6ba6353944f9d4912d07e69ecbb0270f0bea22f89b1feab5f0254b815",
+      "required_patterns": [
+        "\\bintegr\\w*",
+        "\\blaunch\\-prepar\\w*",
+        "\\bplann\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bintegr\\w*",
+        "\\blaunch\\-prepar\\w*",
+        "\\bplann\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 824,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-07-D977",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The planned operating location includes the Sun-Earth L2 region.",
+      "official_source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "source_sha256": "30e31ee6ba6353944f9d4912d07e69ecbb0270f0bea22f89b1feab5f0254b815",
+      "required_patterns": [
+        "\\bplann\\w*",
+        "\\boperat\\w*",
+        "\\blocation\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bplann\\w*",
+        "\\boperat\\w*",
+        "\\blocation\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 825,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-08-D978",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit mirror diameter, field-of-view comparison, detector count, launch-readiness date, survey area, or planet-yield target.",
+      "official_source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "source_sha256": "30e31ee6ba6353944f9d4912d07e69ecbb0270f0bea22f89b1feab5f0254b815",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bmirror\\w*",
+        "\\bdiameter\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bcontain\\w*",
+        "\\bmirror\\w*",
+        "\\bdiameter\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 826,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-09-D979",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to mission design, survey plans, simulations, data-policy information, images, news, or public resources.",
+      "official_source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "source_sha256": "30e31ee6ba6353944f9d4912d07e69ecbb0270f0bea22f89b1feab5f0254b815",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bdesign\\w*",
+        "\\bsurvey\\w*"
+      ],
+      "matched_patterns": [
+        "\\bsurvey\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*",
+        "\\bdesign\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 827,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-10-D980",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be read as a guaranteed dark-energy solution or guaranteed planet yield; later reruns should capture launch and performance-target drift.",
+      "official_source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "source_sha256": "30e31ee6ba6353944f9d4912d07e69ecbb0270f0bea22f89b1feab5f0254b815",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 828,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-01-D981",
+      "mission": "SPHEREx",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes SPHEREx as an all-sky spectral survey mission studying cosmic origins, galaxies, and water or organic material in the Milky Way.",
+      "official_source_url": "https://science.nasa.gov/mission/spherex/",
+      "source_sha256": "f5330097d3c892a0e396fb74bb88a4db89ae3cf64954c59e8b2232542e2b1a7a",
+      "required_patterns": [
+        "\\ball\\-sky\\w*",
+        "\\bspectral\\w*",
+        "\\bsurvey\\w*"
+      ],
+      "matched_patterns": [
+        "\\ball\\-sky\\w*",
+        "\\bspectral\\w*",
+        "\\bsurvey\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 829,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-02-D982",
+      "mission": "SPHEREx",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places SPHEREx within NASA's Explorer programme and identifies partner boundaries.",
+      "official_source_url": "https://science.nasa.gov/mission/spherex/",
+      "source_sha256": "f5330097d3c892a0e396fb74bb88a4db89ae3cf64954c59e8b2232542e2b1a7a",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplorer\\w*"
+      ],
+      "matched_patterns": [
+        "\\bnasa'\\w*",
+        "\\bexplorer\\w*"
+      ],
+      "missing_patterns": [
+        "\\bplace\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 830,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-03-D983",
+      "mission": "SPHEREx",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "SPHEREx is described as a cryogenic space observatory that maps the whole sky in many infrared spectral bands.",
+      "official_source_url": "https://science.nasa.gov/mission/spherex/",
+      "source_sha256": "f5330097d3c892a0e396fb74bb88a4db89ae3cf64954c59e8b2232542e2b1a7a",
+      "required_patterns": [
+        "\\bcryogenic\\w*",
+        "\\bspace\\w*",
+        "\\bobservatory\\w*"
+      ],
+      "matched_patterns": [
+        "\\bspace\\w*",
+        "\\bobservatory\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcryogenic\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 831,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-04-D984",
+      "mission": "SPHEREx",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names its telescope, detector arrays, spectral channels, or passive-cooling system as principal payload elements.",
+      "official_source_url": "https://science.nasa.gov/mission/spherex/",
+      "source_sha256": "f5330097d3c892a0e396fb74bb88a4db89ae3cf64954c59e8b2232542e2b1a7a",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\btelescope\\w*",
+        "\\bdetector\\w*"
+      ],
+      "matched_patterns": [
+        "\\btelescope\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bdetector\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 832,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-05-D985",
+      "mission": "SPHEREx",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes inflation signatures, galaxy history, interstellar ices, and a spectral atlas of the sky.",
+      "official_source_url": "https://science.nasa.gov/mission/spherex/",
+      "source_sha256": "f5330097d3c892a0e396fb74bb88a4db89ae3cf64954c59e8b2232542e2b1a7a",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\binflation\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*",
+        "\\binflation\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 833,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-06-D986",
+      "mission": "SPHEREx",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, commissioning, survey, active operations, or current mission status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/spherex/",
+      "source_sha256": "f5330097d3c892a0e396fb74bb88a4db89ae3cf64954c59e8b2232542e2b1a7a",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bcommission\\w*",
+        "\\bsurvey\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\bsurvey\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcommission\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 834,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-07-D987",
+      "mission": "SPHEREx",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The observatory operates in an Earth orbit suited to repeated all-sky mapping.",
+      "official_source_url": "https://science.nasa.gov/mission/spherex/",
+      "source_sha256": "f5330097d3c892a0e396fb74bb88a4db89ae3cf64954c59e8b2232542e2b1a7a",
+      "required_patterns": [
+        "\\bobservatory\\w*",
+        "\\boperat\\w*",
+        "\\bearth\\w*"
+      ],
+      "matched_patterns": [
+        "\\bobservatory\\w*",
+        "\\bearth\\w*"
+      ],
+      "missing_patterns": [
+        "\\boperat\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 835,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-08-D988",
+      "mission": "SPHEREx",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit band or colour count, all-sky map count, wavelength range, launch date, mission duration, or galaxy-count target.",
+      "official_source_url": "https://science.nasa.gov/mission/spherex/",
+      "source_sha256": "f5330097d3c892a0e396fb74bb88a4db89ae3cf64954c59e8b2232542e2b1a7a",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bcolour\\w*",
+        "\\bcount\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bcontain\\w*",
+        "\\bcolour\\w*",
+        "\\bcount\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 836,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-09-D989",
+      "mission": "SPHEREx",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to survey data, sky maps, mission images, science objectives, news, or public resources.",
+      "official_source_url": "https://science.nasa.gov/mission/spherex/",
+      "source_sha256": "f5330097d3c892a0e396fb74bb88a4db89ae3cf64954c59e8b2232542e2b1a7a",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bsurvey\\w*",
+        "\\bimage\\w*"
+      ],
+      "matched_patterns": [
+        "\\bsurvey\\w*",
+        "\\bimage\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 837,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-10-D990",
+      "mission": "SPHEREx",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be read as high-resolution imaging of every object or direct proof of inflation; later reruns should capture survey and operations drift.",
+      "official_source_url": "https://science.nasa.gov/mission/spherex/",
+      "source_sha256": "f5330097d3c892a0e396fb74bb88a4db89ae3cf64954c59e8b2232542e2b1a7a",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 838,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-TESS-01-D951",
+      "mission": "TESS",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes TESS as an all-sky survey mission searching for exoplanets using transits.",
+      "official_source_url": "https://science.nasa.gov/mission/tess/",
+      "source_sha256": "a53f4ca302130472d008f72e32e882e82ecbfd64d5f7a7d70453f0f1288025d7",
+      "required_patterns": [
+        "\\ball\\-sky\\w*",
+        "\\bsurvey\\w*",
+        "\\bsearch\\w*"
+      ],
+      "matched_patterns": [
+        "\\bsurvey\\w*",
+        "\\bsearch\\w*"
+      ],
+      "missing_patterns": [
+        "\\ball\\-sky\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 839,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-TESS-02-D952",
+      "mission": "TESS",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places TESS within NASA's Explorer programme and identifies MIT or partner boundaries.",
+      "official_source_url": "https://science.nasa.gov/mission/tess/",
+      "source_sha256": "a53f4ca302130472d008f72e32e882e82ecbfd64d5f7a7d70453f0f1288025d7",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplorer\\w*"
+      ],
+      "matched_patterns": [
+        "\\bnasa'\\w*"
+      ],
+      "missing_patterns": [
+        "\\bplace\\w*",
+        "\\bexplorer\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 840,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-TESS-03-D953",
+      "mission": "TESS",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "TESS is described as a spacecraft with four wide-field cameras observing the sky in sectors.",
+      "official_source_url": "https://science.nasa.gov/mission/tess/",
+      "source_sha256": "a53f4ca302130472d008f72e32e882e82ecbfd64d5f7a7d70453f0f1288025d7",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bwide\\-field\\w*",
+        "\\bcamera\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bwide\\-field\\w*",
+        "\\bcamera\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 841,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-TESS-04-D954",
+      "mission": "TESS",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names the four cameras, detectors, or photometer system as the principal payload.",
+      "official_source_url": "https://science.nasa.gov/mission/tess/",
+      "source_sha256": "a53f4ca302130472d008f72e32e882e82ecbfd64d5f7a7d70453f0f1288025d7",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bcamera\\w*",
+        "\\bdetector\\w*"
+      ],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bcamera\\w*",
+        "\\bdetector\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 842,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-TESS-05-D955",
+      "mission": "TESS",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes bright nearby stars, transiting exoplanets, stellar variability, and time-domain phenomena.",
+      "official_source_url": "https://science.nasa.gov/mission/tess/",
+      "source_sha256": "a53f4ca302130472d008f72e32e882e82ecbfd64d5f7a7d70453f0f1288025d7",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bbright\\w*"
+      ],
+      "matched_patterns": [
+        "\\bbright\\w*"
+      ],
+      "missing_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 843,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-TESS-06-D956",
+      "mission": "TESS",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, prime or extended mission, current sector, or active operations at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/tess/",
+      "source_sha256": "a53f4ca302130472d008f72e32e882e82ecbfd64d5f7a7d70453f0f1288025d7",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bprime\\w*",
+        "\\bextend\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\bextend\\w*"
+      ],
+      "missing_patterns": [
+        "\\bprime\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 844,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-TESS-07-D957",
+      "mission": "TESS",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The orbit boundary includes a highly elliptical Earth orbit in resonance with the Moon.",
+      "official_source_url": "https://science.nasa.gov/mission/tess/",
+      "source_sha256": "a53f4ca302130472d008f72e32e882e82ecbfd64d5f7a7d70453f0f1288025d7",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bhighly\\w*",
+        "\\belliptical\\w*"
+      ],
+      "matched_patterns": [
+        "\\borbit\\w*"
+      ],
+      "missing_patterns": [
+        "\\bhighly\\w*",
+        "\\belliptical\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 845,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-TESS-08-D958",
+      "mission": "TESS",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit camera count, sky coverage, sector duration, target-star count, candidate count, or launch date.",
+      "official_source_url": "https://science.nasa.gov/mission/tess/",
+      "source_sha256": "a53f4ca302130472d008f72e32e882e82ecbfd64d5f7a7d70453f0f1288025d7",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bcamera\\w*",
+        "\\bcount\\w*"
+      ],
+      "matched_patterns": [
+        "\\bcontain\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcamera\\w*",
+        "\\bcount\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 846,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-TESS-09-D959",
+      "mission": "TESS",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to light curves, candidate catalogs, data archives, sky maps, science results, or public multimedia.",
+      "official_source_url": "https://science.nasa.gov/mission/tess/",
+      "source_sha256": "a53f4ca302130472d008f72e32e882e82ecbfd64d5f7a7d70453f0f1288025d7",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\blight\\w*",
+        "\\bcurve\\w*"
+      ],
+      "matched_patterns": [
+        "\\blight\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*",
+        "\\bcurve\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 847,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-TESS-10-D960",
+      "mission": "TESS",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be read as confirming every candidate planet or detecting life; later reruns should capture candidate and sector drift.",
+      "official_source_url": "https://science.nasa.gov/mission/tess/",
+      "source_sha256": "a53f4ca302130472d008f72e32e882e82ecbfd64d5f7a7d70453f0f1288025d7",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 848,
+      "publication_state": "created"
+    }
+  ]
+}

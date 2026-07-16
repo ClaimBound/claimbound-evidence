@@ -1,0 +1,1272 @@
+{
+  "issue_number": 148,
+  "matrix_version": "2026-07-16",
+  "matrix_sha256": "e2847e68514df67a674cee0a4d4811fdc2ae82cb5ba63666b05991479cd8c419",
+  "access_date": "2026-07-16",
+  "operator": "NeoZorK",
+  "raw_payload_committed": false,
+  "claim_boundary": "This batch report records 50 frozen source-boundary evaluations against five official NASA mission pages. It does not certify mission performance, data quality, safety or operational suitability.",
+  "result_counts": {
+    "INSUFFICIENT_COVERAGE": 45,
+    "PASSED_UNDER_PROTOCOL": 5
+  },
+  "source_records": [
+    {
+      "mission": "Mars 2020 Perseverance",
+      "official_source_name": "NASA Mars 2020 Perseverance official page",
+      "source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "http_status": 200,
+      "sha256": "0c9a788764888c87f667870920b90d2e85ec38c768192d93e41ff8541c55e7fe"
+    },
+    {
+      "mission": "Curiosity / Mars Science Laboratory",
+      "official_source_name": "NASA Curiosity / Mars Science Laboratory official page",
+      "source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "http_status": 200,
+      "sha256": "1f808e9de0e12e9de7dac2ccd4fb23aceb6a35499a5508c61004e02c0fd4b8f3"
+    },
+    {
+      "mission": "Mars Reconnaissance Orbiter",
+      "official_source_name": "NASA Mars Reconnaissance Orbiter official page",
+      "source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "http_status": 200,
+      "sha256": "9be1c575a511dafecc51610450e0339f5c06400909900887b8f14111e61ba969"
+    },
+    {
+      "mission": "MAVEN",
+      "official_source_name": "NASA MAVEN official page",
+      "source_url": "https://science.nasa.gov/mission/maven/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/maven/",
+      "http_status": 200,
+      "sha256": "0cf675af95c706de3b3c9ca8b990c0e5c154c47da2147a75007c8448b6c797dc"
+    },
+    {
+      "mission": "2001 Mars Odyssey",
+      "official_source_name": "NASA 2001 Mars Odyssey official page",
+      "source_url": "https://science.nasa.gov/mission/odyssey/",
+      "fetch_error": null,
+      "canonical_url": "https://science.nasa.gov/mission/odyssey/",
+      "http_status": 200,
+      "sha256": "7d546c590cead7c2900bf044bdf9431b97bc563ead2d4b24e29f59054f22d65f"
+    }
+  ],
+  "cards": [
+    {
+      "protocol_id": "NASA-CURIOSITY-01-D761",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes Curiosity's purpose as assessing whether Mars ever had environments able to support microbial life.",
+      "official_source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "source_sha256": "1f808e9de0e12e9de7dac2ccd4fb23aceb6a35499a5508c61004e02c0fd4b8f3",
+      "required_patterns": [
+        "\\bcuriosity'\\w*",
+        "\\bpurpose\\w*",
+        "\\bassess\\w*"
+      ],
+      "matched_patterns": [
+        "\\bcuriosity'\\w*"
+      ],
+      "missing_patterns": [
+        "\\bpurpose\\w*",
+        "\\bassess\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 599,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-02-D762",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places Curiosity within the Mars Science Laboratory mission and NASA's Mars exploration boundary.",
+      "official_source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "source_sha256": "1f808e9de0e12e9de7dac2ccd4fb23aceb6a35499a5508c61004e02c0fd4b8f3",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplor\\w*"
+      ],
+      "matched_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplor\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 600,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-03-D763",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "Curiosity is described as a car-sized rover delivered by a sky-crane landing system.",
+      "official_source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "source_sha256": "1f808e9de0e12e9de7dac2ccd4fb23aceb6a35499a5508c61004e02c0fd4b8f3",
+      "required_patterns": [
+        "\\bcar\\-siz\\w*",
+        "\\brover\\w*",
+        "\\bdeliver\\w*"
+      ],
+      "matched_patterns": [
+        "\\bcar\\-siz\\w*",
+        "\\brover\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdeliver\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 601,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-04-D764",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names a principal instrument such as SAM, ChemCam, CheMin, Mastcam, RAD, DAN, REMS, or APXS.",
+      "official_source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "source_sha256": "1f808e9de0e12e9de7dac2ccd4fb23aceb6a35499a5508c61004e02c0fd4b8f3",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\bchemcam\\w*"
+      ],
+      "matched_patterns": [
+        "\\binstru\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bchemcam\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 602,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-05-D765",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes Gale Crater, Mount Sharp, ancient lakes, climate, geology, or habitability.",
+      "official_source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "source_sha256": "1f808e9de0e12e9de7dac2ccd4fb23aceb6a35499a5508c61004e02c0fd4b8f3",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bcrater\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*",
+        "\\bcrater\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 603,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-06-D766",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states the 2012 landing and current active or extended-mission status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "source_sha256": "1f808e9de0e12e9de7dac2ccd4fb23aceb6a35499a5508c61004e02c0fd4b8f3",
+      "required_patterns": [
+        "\\blanding\\w*",
+        "\\bactive\\w*",
+        "\\bextended\\-mission\\w*"
+      ],
+      "matched_patterns": [
+        "\\blanding\\w*",
+        "\\bactive\\w*"
+      ],
+      "missing_patterns": [
+        "\\bextended\\-mission\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 604,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-07-D767",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The operating destination is the Martian surface in Gale Crater.",
+      "official_source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "source_sha256": "1f808e9de0e12e9de7dac2ccd4fb23aceb6a35499a5508c61004e02c0fd4b8f3",
+      "required_patterns": [
+        "\\boperat\\w*",
+        "\\bdestin\\w*",
+        "\\bmartian\\w*"
+      ],
+      "matched_patterns": [
+        "\\bdestin\\w*",
+        "\\bmartian\\w*"
+      ],
+      "missing_patterns": [
+        "\\boperat\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 605,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-08-D768",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page includes an explicit mission duration, distance driven, mass, instrument count, landing date, or drilling milestone.",
+      "official_source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "source_sha256": "1f808e9de0e12e9de7dac2ccd4fb23aceb6a35499a5508c61004e02c0fd4b8f3",
+      "required_patterns": [
+        "\\bduration\\w*",
+        "\\bdistance\\w*",
+        "\\bdriven\\w*"
+      ],
+      "matched_patterns": [
+        "\\bdistance\\w*"
+      ],
+      "missing_patterns": [
+        "\\bduration\\w*",
+        "\\bdriven\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 606,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-09-D769",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to images, raw data, maps, science results, mission updates, or public multimedia.",
+      "official_source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "source_sha256": "1f808e9de0e12e9de7dac2ccd4fb23aceb6a35499a5508c61004e02c0fd4b8f3",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bresult\\w*"
+      ],
+      "matched_patterns": [
+        "\\bimage\\w*",
+        "\\bresult\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 607,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-CURIOSITY-10-D770",
+      "mission": "Curiosity / Mars Science Laboratory",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The source must not be read as direct proof that life existed on Mars; later reruns should capture operational and distance drift.",
+      "official_source_url": "https://science.nasa.gov/mission/msl-curiosity/",
+      "source_sha256": "1f808e9de0e12e9de7dac2ccd4fb23aceb6a35499a5508c61004e02c0fd4b8f3",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 608,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-01-D781",
+      "mission": "MAVEN",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes MAVEN as investigating Mars' upper atmosphere, ionosphere, and interactions with the Sun and solar wind.",
+      "official_source_url": "https://science.nasa.gov/mission/maven/",
+      "source_sha256": "0cf675af95c706de3b3c9ca8b990c0e5c154c47da2147a75007c8448b6c797dc",
+      "required_patterns": [
+        "\\binvestigat\\w*",
+        "\\bupper\\w*",
+        "\\batmosphere\\w*"
+      ],
+      "matched_patterns": [
+        "\\bupper\\w*",
+        "\\batmosphere\\w*"
+      ],
+      "missing_patterns": [
+        "\\binvestigat\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 609,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-02-D782",
+      "mission": "MAVEN",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places MAVEN within NASA's Mars programme and distinguishes its science and communications-relay roles.",
+      "official_source_url": "https://science.nasa.gov/mission/maven/",
+      "source_sha256": "0cf675af95c706de3b3c9ca8b990c0e5c154c47da2147a75007c8448b6c797dc",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bprogramme\\w*"
+      ],
+      "matched_patterns": [
+        "\\bnasa'\\w*"
+      ],
+      "missing_patterns": [
+        "\\bplace\\w*",
+        "\\bprogramme\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 610,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-03-D783",
+      "mission": "MAVEN",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "MAVEN is described as an orbiter with particles-and-fields and remote-sensing instrument packages.",
+      "official_source_url": "https://science.nasa.gov/mission/maven/",
+      "source_sha256": "0cf675af95c706de3b3c9ca8b990c0e5c154c47da2147a75007c8448b6c797dc",
+      "required_patterns": [
+        "\\borbiter\\w*",
+        "\\bparticles\\-and\\-field\\w*",
+        "\\bremote\\-sens\\w*"
+      ],
+      "matched_patterns": [
+        "\\borbiter\\w*"
+      ],
+      "missing_patterns": [
+        "\\bparticles\\-and\\-field\\w*",
+        "\\bremote\\-sens\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 611,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-04-D784",
+      "mission": "MAVEN",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names a principal instrument or suite such as IUVS, NGIMS, STATIC, SWEA, SWIA, SEP, LPW, or MAG.",
+      "official_source_url": "https://science.nasa.gov/mission/maven/",
+      "source_sha256": "0cf675af95c706de3b3c9ca8b990c0e5c154c47da2147a75007c8448b6c797dc",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\bsuite\\w*"
+      ],
+      "matched_patterns": [
+        "\\binstru\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bsuite\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 612,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-05-D785",
+      "mission": "MAVEN",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes atmospheric escape and how Mars lost much of its atmosphere or climate-supporting conditions.",
+      "official_source_url": "https://science.nasa.gov/mission/maven/",
+      "source_sha256": "0cf675af95c706de3b3c9ca8b990c0e5c154c47da2147a75007c8448b6c797dc",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\batmospheric\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*",
+        "\\batmospheric\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 613,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-06-D786",
+      "mission": "MAVEN",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, Mars arrival, active mission, or current operations status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/maven/",
+      "source_sha256": "0cf675af95c706de3b3c9ca8b990c0e5c154c47da2147a75007c8448b6c797dc",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\barrival\\w*",
+        "\\bactive\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*"
+      ],
+      "missing_patterns": [
+        "\\barrival\\w*",
+        "\\bactive\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 614,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-07-D787",
+      "mission": "MAVEN",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The spacecraft follows an elliptical Mars orbit designed to sample different atmospheric regions.",
+      "official_source_url": "https://science.nasa.gov/mission/maven/",
+      "source_sha256": "0cf675af95c706de3b3c9ca8b990c0e5c154c47da2147a75007c8448b6c797dc",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bfollow\\w*",
+        "\\belliptical\\w*"
+      ],
+      "matched_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bfollow\\w*"
+      ],
+      "missing_patterns": [
+        "\\belliptical\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 615,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-08-D788",
+      "mission": "MAVEN",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit launch date, orbit-insertion date, orbit altitude, mission duration, or atmospheric-loss fact.",
+      "official_source_url": "https://science.nasa.gov/mission/maven/",
+      "source_sha256": "0cf675af95c706de3b3c9ca8b990c0e5c154c47da2147a75007c8448b6c797dc",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\borbit\\-insertion\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcontain\\w*",
+        "\\borbit\\-insertion\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 616,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-09-D789",
+      "mission": "MAVEN",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to data, images, science results, mission updates, or public mission resources.",
+      "official_source_url": "https://science.nasa.gov/mission/maven/",
+      "source_sha256": "0cf675af95c706de3b3c9ca8b990c0e5c154c47da2147a75007c8448b6c797dc",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bscience\\w*"
+      ],
+      "matched_patterns": [
+        "\\bimage\\w*",
+        "\\bscience\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 617,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MAVEN-10-D790",
+      "mission": "MAVEN",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The page must not be read as a complete explanation of all Martian climate history; later reruns should capture mission and relay-status drift.",
+      "official_source_url": "https://science.nasa.gov/mission/maven/",
+      "source_sha256": "0cf675af95c706de3b3c9ca8b990c0e5c154c47da2147a75007c8448b6c797dc",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 618,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MRO-01-D771",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes MRO as studying Mars from orbit with high-resolution imaging and mineral or climate observations.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "source_sha256": "9be1c575a511dafecc51610450e0339f5c06400909900887b8f14111e61ba969",
+      "required_patterns": [
+        "\\bstudy\\w*",
+        "\\borbit\\w*",
+        "\\bhigh\\-resolution\\w*"
+      ],
+      "matched_patterns": [
+        "\\bstudy\\w*",
+        "\\borbit\\w*"
+      ],
+      "missing_patterns": [
+        "\\bhigh\\-resolution\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 619,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MRO-02-D772",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places MRO within NASA's Mars exploration programme and identifies relay support for other missions.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "source_sha256": "9be1c575a511dafecc51610450e0339f5c06400909900887b8f14111e61ba969",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplor\\w*"
+      ],
+      "matched_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplor\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 620,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MRO-03-D773",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "MRO is described as an orbiter carrying cameras, spectrometers, radar, and communications systems.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "source_sha256": "9be1c575a511dafecc51610450e0339f5c06400909900887b8f14111e61ba969",
+      "required_patterns": [
+        "\\bcarry\\w*",
+        "\\bcamera\\w*",
+        "\\bspectrometer\\w*"
+      ],
+      "matched_patterns": [
+        "\\bcamera\\w*",
+        "\\bspectrometer\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcarry\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 621,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MRO-04-D774",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names HiRISE, CTX, CRISM, SHARAD, MARCI, MCS, or another principal instrument.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "source_sha256": "9be1c575a511dafecc51610450e0339f5c06400909900887b8f14111e61ba969",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bhirise\\w*",
+        "\\bcrism\\w*"
+      ],
+      "matched_patterns": [
+        "\\bhirise\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bcrism\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 622,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MRO-05-D775",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes Martian surface detail, subsurface structure, minerals, atmosphere, weather, or landing-site safety.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "source_sha256": "9be1c575a511dafecc51610450e0339f5c06400909900887b8f14111e61ba969",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bmartian\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*",
+        "\\bmartian\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 623,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MRO-06-D776",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, Mars-orbit insertion, current operations, or extended-mission status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "source_sha256": "9be1c575a511dafecc51610450e0339f5c06400909900887b8f14111e61ba969",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bmars\\-orbit\\w*",
+        "\\binsertion\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\binsertion\\w*"
+      ],
+      "missing_patterns": [
+        "\\bmars\\-orbit\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 624,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MRO-07-D777",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The operating boundary is orbit around Mars rather than surface exploration.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "source_sha256": "9be1c575a511dafecc51610450e0339f5c06400909900887b8f14111e61ba969",
+      "required_patterns": [
+        "\\boperat\\w*",
+        "\\borbit\\w*",
+        "\\baround\\w*"
+      ],
+      "matched_patterns": [
+        "\\borbit\\w*",
+        "\\baround\\w*"
+      ],
+      "missing_patterns": [
+        "\\boperat\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 625,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MRO-08-D778",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit launch date, arrival date, image resolution, data-relay volume, orbit, or mission-duration fact.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "source_sha256": "9be1c575a511dafecc51610450e0339f5c06400909900887b8f14111e61ba969",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\barrival\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcontain\\w*",
+        "\\barrival\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 626,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MRO-09-D779",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to images, maps, instrument data, science results, mission updates, or relay information.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "source_sha256": "9be1c575a511dafecc51610450e0339f5c06400909900887b8f14111e61ba969",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\binstru\\w*"
+      ],
+      "matched_patterns": [
+        "\\bimage\\w*",
+        "\\binstru\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 627,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-MRO-10-D780",
+      "mission": "Mars Reconnaissance Orbiter",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The page must not be read as a surface confirmation of every inferred feature; later reruns should capture instrument and mission-status drift.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/",
+      "source_sha256": "9be1c575a511dafecc51610450e0339f5c06400909900887b8f14111e61ba969",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 628,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-01-D791",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA describes Odyssey as mapping Mars and studying its composition, radiation environment, or subsurface water-related materials.",
+      "official_source_url": "https://science.nasa.gov/mission/odyssey/",
+      "source_sha256": "7d546c590cead7c2900bf044bdf9431b97bc563ead2d4b24e29f59054f22d65f",
+      "required_patterns": [
+        "\\bmapping\\w*",
+        "\\bstudy\\w*",
+        "\\bcomposition\\w*"
+      ],
+      "matched_patterns": [
+        "\\bmapping\\w*",
+        "\\bstudy\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcomposition\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 629,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-02-D792",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places Odyssey within NASA's Mars exploration programme and identifies its relay role for surface missions.",
+      "official_source_url": "https://science.nasa.gov/mission/odyssey/",
+      "source_sha256": "7d546c590cead7c2900bf044bdf9431b97bc563ead2d4b24e29f59054f22d65f",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplor\\w*"
+      ],
+      "matched_patterns": [
+        "\\bnasa'\\w*",
+        "\\bexplor\\w*"
+      ],
+      "missing_patterns": [
+        "\\bplace\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 630,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-03-D793",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "Odyssey is described as a long-lived Mars orbiter with remote-sensing and communications capabilities.",
+      "official_source_url": "https://science.nasa.gov/mission/odyssey/",
+      "source_sha256": "7d546c590cead7c2900bf044bdf9431b97bc563ead2d4b24e29f59054f22d65f",
+      "required_patterns": [
+        "\\blong\\-liv\\w*",
+        "\\borbiter\\w*",
+        "\\bremote\\-sens\\w*"
+      ],
+      "matched_patterns": [
+        "\\borbiter\\w*"
+      ],
+      "missing_patterns": [
+        "\\blong\\-liv\\w*",
+        "\\bremote\\-sens\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 631,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-04-D794",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names THEMIS, the Gamma Ray Spectrometer suite, MARIE, or another principal payload.",
+      "official_source_url": "https://science.nasa.gov/mission/odyssey/",
+      "source_sha256": "7d546c590cead7c2900bf044bdf9431b97bc563ead2d4b24e29f59054f22d65f",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bthemi\\w*",
+        "\\bgamma\\w*"
+      ],
+      "matched_patterns": [
+        "\\bthemi\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bgamma\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 632,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-05-D795",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes mineralogy, thermal properties, hydrogen or water-ice distribution, and the Martian environment.",
+      "official_source_url": "https://science.nasa.gov/mission/odyssey/",
+      "source_sha256": "7d546c590cead7c2900bf044bdf9431b97bc563ead2d4b24e29f59054f22d65f",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bmineralogy\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*",
+        "\\bmineralogy\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 633,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-06-D796",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, Mars arrival, active or extended mission, or current relay status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/odyssey/",
+      "source_sha256": "7d546c590cead7c2900bf044bdf9431b97bc563ead2d4b24e29f59054f22d65f",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\barrival\\w*",
+        "\\bactive\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*"
+      ],
+      "missing_patterns": [
+        "\\barrival\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 634,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-07-D797",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The operating boundary is orbit around Mars rather than a surface mission.",
+      "official_source_url": "https://science.nasa.gov/mission/odyssey/",
+      "source_sha256": "7d546c590cead7c2900bf044bdf9431b97bc563ead2d4b24e29f59054f22d65f",
+      "required_patterns": [
+        "\\boperat\\w*",
+        "\\borbit\\w*",
+        "\\baround\\w*"
+      ],
+      "matched_patterns": [
+        "\\boperat\\w*",
+        "\\borbit\\w*",
+        "\\baround\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 635,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-08-D798",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page contains an explicit longevity record, launch date, orbit-insertion date, mapping altitude, or data-relay fact.",
+      "official_source_url": "https://science.nasa.gov/mission/odyssey/",
+      "source_sha256": "7d546c590cead7c2900bf044bdf9431b97bc563ead2d4b24e29f59054f22d65f",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blongevity\\w*",
+        "\\brecord\\w*"
+      ],
+      "matched_patterns": [
+        "\\brecord\\w*"
+      ],
+      "missing_patterns": [
+        "\\bcontain\\w*",
+        "\\blongevity\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 636,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-09-D799",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to maps, images, instrument data, mission updates, science results, or public resources.",
+      "official_source_url": "https://science.nasa.gov/mission/odyssey/",
+      "source_sha256": "7d546c590cead7c2900bf044bdf9431b97bc563ead2d4b24e29f59054f22d65f",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\binstru\\w*"
+      ],
+      "matched_patterns": [
+        "\\bimage\\w*",
+        "\\binstru\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 637,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-ODYSSEY-10-D800",
+      "mission": "2001 Mars Odyssey",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The page must not be read as direct access to subsurface liquid water or proof of habitability; later reruns should capture longevity and status drift.",
+      "official_source_url": "https://science.nasa.gov/mission/odyssey/",
+      "source_sha256": "7d546c590cead7c2900bf044bdf9431b97bc563ead2d4b24e29f59054f22d65f",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 638,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-01-D751",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Purpose / primary gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "NASA states that Perseverance studies Mars geology and searches for signs of ancient microbial life or past habitability.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "source_sha256": "0c9a788764888c87f667870920b90d2e85ec38c768192d93e41ff8541c55e7fe",
+      "required_patterns": [
+        "\\bstudi\\w*",
+        "\\bgeology\\w*",
+        "\\bsearch\\w*"
+      ],
+      "matched_patterns": [
+        "\\bstudi\\w*",
+        "\\bgeology\\w*",
+        "\\bsearch\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 639,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-02-D752",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Programme / partner boundary",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page places the rover within NASA's Mars Exploration Program and distinguishes partner instruments or contributions.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "source_sha256": "0c9a788764888c87f667870920b90d2e85ec38c768192d93e41ff8541c55e7fe",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\brover\\w*",
+        "\\bnasa'\\w*"
+      ],
+      "matched_patterns": [
+        "\\brover\\w*",
+        "\\bnasa'\\w*"
+      ],
+      "missing_patterns": [
+        "\\bplace\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 640,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-03-D753",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Design / architecture gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "Perseverance is described as a mobile surface rover with a sampling system and named science payload.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "source_sha256": "0c9a788764888c87f667870920b90d2e85ec38c768192d93e41ff8541c55e7fe",
+      "required_patterns": [
+        "\\bmobile\\w*",
+        "\\bsurface\\w*",
+        "\\brover\\w*"
+      ],
+      "matched_patterns": [
+        "\\bsurface\\w*",
+        "\\brover\\w*"
+      ],
+      "missing_patterns": [
+        "\\bmobile\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 641,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-04-D754",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Instrument / system gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page names a principal instrument or subsystem such as Mastcam-Z, SuperCam, PIXL, SHERLOC, RIMFAX, MEDA, MOXIE, or the coring system.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "source_sha256": "0c9a788764888c87f667870920b90d2e85ec38c768192d93e41ff8541c55e7fe",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\bsubsystem\\w*"
+      ],
+      "matched_patterns": [
+        "\\binstru\\w*"
+      ],
+      "missing_patterns": [
+        "\\bnames\\w*",
+        "\\bsubsystem\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 642,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-05-D755",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Target / measurement gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The target domain includes Jezero Crater geology, ancient environments, biosignatures, or sample collection.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "source_sha256": "0c9a788764888c87f667870920b90d2e85ec38c768192d93e41ff8541c55e7fe",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bjezero\\w*"
+      ],
+      "matched_patterns": [
+        "\\btarget\\w*",
+        "\\bjezero\\w*"
+      ],
+      "missing_patterns": [
+        "\\bdomain\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 643,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-06-D756",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Status / timeline gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page states launch, landing, active-mission, or current surface-operations status at access time.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "source_sha256": "0c9a788764888c87f667870920b90d2e85ec38c768192d93e41ff8541c55e7fe",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\blanding\\w*",
+        "\\bactive\\-mission\\w*"
+      ],
+      "matched_patterns": [
+        "\\blaunch\\w*",
+        "\\blanding\\w*"
+      ],
+      "missing_patterns": [
+        "\\bactive\\-mission\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 644,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-07-D757",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Orbit / trajectory / destination gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The destination and operating boundary is the surface of Mars at Jezero Crater.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "source_sha256": "0c9a788764888c87f667870920b90d2e85ec38c768192d93e41ff8541c55e7fe",
+      "required_patterns": [
+        "\\bdestin\\w*",
+        "\\boperat\\w*",
+        "\\bsurface\\w*"
+      ],
+      "matched_patterns": [
+        "\\bdestin\\w*",
+        "\\bsurface\\w*"
+      ],
+      "missing_patterns": [
+        "\\boperat\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 645,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-08-D758",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Numeric or first-of-kind fact gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page includes an explicit landing date, rover mass, travel distance, sample count, instrument count, or first-of-kind fact.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "source_sha256": "0c9a788764888c87f667870920b90d2e85ec38c768192d93e41ff8541c55e7fe",
+      "required_patterns": [
+        "\\blanding\\w*",
+        "\\brover\\w*",
+        "\\btravel\\w*"
+      ],
+      "matched_patterns": [
+        "\\blanding\\w*",
+        "\\brover\\w*",
+        "\\btravel\\w*"
+      ],
+      "missing_patterns": [],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "block_reason": null,
+      "registry_sequence": 646,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-09-D759",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Public output / data path gate",
+      "gate_type": "frozen_lexical_term_presence",
+      "claim": "The page links to raw images, maps, samples, mission data, science results, or public multimedia.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "source_sha256": "0c9a788764888c87f667870920b90d2e85ec38c768192d93e41ff8541c55e7fe",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bsampl\\w*"
+      ],
+      "matched_patterns": [
+        "\\bimage\\w*",
+        "\\bsampl\\w*"
+      ],
+      "missing_patterns": [
+        "\\blinks\\w*"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 647,
+      "publication_state": "created"
+    },
+    {
+      "protocol_id": "NASA-PERSEVERANCE-10-D760",
+      "mission": "Mars 2020 Perseverance",
+      "topic": "Overclaim / later-drift boundary",
+      "gate_type": "manual_overclaim_boundary",
+      "claim": "The page must not be read as saying life has been discovered or that sample return is guaranteed; later reruns should record operations and sample-status drift.",
+      "official_source_url": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "source_sha256": "0c9a788764888c87f667870920b90d2e85ec38c768192d93e41ff8541c55e7fe",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "missing_patterns": [
+        "manual review required; no automatic absence-based pass"
+      ],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "block_reason": null,
+      "registry_sequence": 648,
+      "publication_state": "created"
+    }
+  ]
+}
