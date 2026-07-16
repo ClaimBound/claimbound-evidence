@@ -28,4 +28,17 @@ jobs:
       - run: uv sync --extra dev
       - run: uv run claimbound doctor
       - run: uv run claimbound validate-all
-      - run: uv run --extra dev pytest ${{ matrix.pytest_args }}
+      - name: Run pytest
+        id: pytest
+        continue-on-error: true
+        run: uv run --extra dev pytest ${{ matrix.pytest_args }} --junitxml=pytest-${{ runner.os }}.xml
+      - name: Upload pytest report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-${{ runner.os }}
+          path: pytest-${{ runner.os }}.xml
+          if-no-files-found: error
+      - name: Preserve pytest failure
+        if: steps.pytest.outcome == 'failure'
+        run: exit 1
