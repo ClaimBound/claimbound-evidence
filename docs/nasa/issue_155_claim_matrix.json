@@ -1,0 +1,689 @@
+{
+  "version": "2026-07-16",
+  "issue_number": 155,
+  "source_issue_url": "https://github.com/ClaimBound/claimbound-evidence/issues/155",
+  "card_count": 50,
+  "claim_boundary": "Each card tests one frozen candidate against exactly one listed NASA page. The lexical patterns are selected from the pre-fetch candidate text only; they are a conservative source-boundary gate, not a scientific conclusion.",
+  "cards": [
+    {
+      "protocol_id": "NASA-LANDSAT9-01-D1101",
+      "mission": "Landsat 9",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Landsat 9 as continuing the long-term global record of Earth's land surface.",
+      "official_source_name": "NASA Landsat 9 official page",
+      "source_url": "https://science.nasa.gov/mission/landsat-9/",
+      "required_patterns": [
+        "\\bcontinu\\w*",
+        "\\blong\\-term\\w*",
+        "\\bglobal\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LANDSAT9-02-D1102",
+      "mission": "Landsat 9",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies NASA and U.S. Geological Survey responsibilities and the Landsat programme boundary.",
+      "official_source_name": "NASA Landsat 9 official page",
+      "source_url": "https://science.nasa.gov/mission/landsat-9/",
+      "required_patterns": [
+        "\\bgeological\\w*",
+        "\\bsurvey\\w*",
+        "\\bresponsibilit\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LANDSAT9-03-D1103",
+      "mission": "Landsat 9",
+      "topic": "Design / architecture gate",
+      "claim": "Landsat 9 is described as an Earth-observation satellite designed to operate with Landsat 8.",
+      "official_source_name": "NASA Landsat 9 official page",
+      "source_url": "https://science.nasa.gov/mission/landsat-9/",
+      "required_patterns": [
+        "\\bearth\\-observ\\w*",
+        "\\bsatellite\\w*",
+        "\\bdesign\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LANDSAT9-04-D1104",
+      "mission": "Landsat 9",
+      "topic": "Instrument / system gate",
+      "claim": "The page names OLI-2 and TIRS-2 and distinguishes reflected-light and thermal measurements.",
+      "official_source_name": "NASA Landsat 9 official page",
+      "source_url": "https://science.nasa.gov/mission/landsat-9/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\boli\\-2\\w*",
+        "\\btirs\\-2\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LANDSAT9-05-D1105",
+      "mission": "Landsat 9",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes land cover, agriculture, forests, water, cities, disasters, and environmental change.",
+      "official_source_name": "NASA Landsat 9 official page",
+      "source_url": "https://science.nasa.gov/mission/landsat-9/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bcover\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LANDSAT9-06-D1106",
+      "mission": "Landsat 9",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, operational handover, active mission, or current data status at access time.",
+      "official_source_name": "NASA Landsat 9 official page",
+      "source_url": "https://science.nasa.gov/mission/landsat-9/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\boperational\\w*",
+        "\\bhandover\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LANDSAT9-07-D1107",
+      "mission": "Landsat 9",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes a sun-synchronous near-polar Earth orbit and combined revisit with Landsat 8.",
+      "official_source_name": "NASA Landsat 9 official page",
+      "source_url": "https://science.nasa.gov/mission/landsat-9/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bsun\\-synchronou\\w*",
+        "\\bnear\\-polar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LANDSAT9-08-D1108",
+      "mission": "Landsat 9",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, spatial resolution, spectral-band count, revisit interval, swath width, orbit altitude, or archive-duration fact.",
+      "official_source_name": "NASA Landsat 9 official page",
+      "source_url": "https://science.nasa.gov/mission/landsat-9/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\bspatial\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LANDSAT9-09-D1109",
+      "mission": "Landsat 9",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to free data, imagery, analysis-ready products, mission resources, science applications, or public multimedia.",
+      "official_source_name": "NASA Landsat 9 official page",
+      "source_url": "https://science.nasa.gov/mission/landsat-9/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimagery\\w*",
+        "\\banalysis\\-ready\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LANDSAT9-10-D1110",
+      "mission": "Landsat 9",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as real-time video or proof of causation for every observed land change; later reruns should capture data and operations drift.",
+      "official_source_name": "NASA Landsat 9 official page",
+      "source_url": "https://science.nasa.gov/mission/landsat-9/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-NISAR-01-D1111",
+      "mission": "NISAR",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes NISAR as using radar to measure changes in Earth's land, ice, ecosystems, and solid surface.",
+      "official_source_name": "NASA NISAR official page",
+      "source_url": "https://science.nasa.gov/mission/nisar/",
+      "required_patterns": [
+        "\\busing\\w*",
+        "\\bradar\\w*",
+        "\\bmeasure\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NISAR-02-D1112",
+      "mission": "NISAR",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies the NASA-ISRO partnership and distinguishes U.S. L-band and Indian S-band contributions.",
+      "official_source_name": "NASA NISAR official page",
+      "source_url": "https://science.nasa.gov/mission/nisar/",
+      "required_patterns": [
+        "\\bnasa\\-isro\\w*",
+        "\\bpartnership\\w*",
+        "\\bdistinguish\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NISAR-03-D1113",
+      "mission": "NISAR",
+      "topic": "Design / architecture gate",
+      "claim": "NISAR is described as a dual-frequency synthetic-aperture-radar observatory with a large deployable reflector.",
+      "official_source_name": "NASA NISAR official page",
+      "source_url": "https://science.nasa.gov/mission/nisar/",
+      "required_patterns": [
+        "\\bdual\\-frequency\\w*",
+        "\\bsynthetic\\-aperture\\-radar\\w*",
+        "\\bobservatory\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NISAR-04-D1114",
+      "mission": "NISAR",
+      "topic": "Instrument / system gate",
+      "claim": "The page names the L-band SAR, S-band SAR, reflector antenna, boom, or another principal payload system.",
+      "official_source_name": "NASA NISAR official page",
+      "source_url": "https://science.nasa.gov/mission/nisar/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bl\\-band\\w*",
+        "\\bs\\-band\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NISAR-05-D1115",
+      "mission": "NISAR",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes earthquakes, volcanoes, landslides, glaciers, ice sheets, forests, agriculture, wetlands, and surface deformation.",
+      "official_source_name": "NASA NISAR official page",
+      "source_url": "https://science.nasa.gov/mission/nisar/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bearthquak\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NISAR-06-D1116",
+      "mission": "NISAR",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, deployment, commissioning, science operations, or current mission status at access time.",
+      "official_source_name": "NASA NISAR official page",
+      "source_url": "https://science.nasa.gov/mission/nisar/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bdeploy\\w*",
+        "\\bcommission\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NISAR-07-D1117",
+      "mission": "NISAR",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes a near-polar sun-synchronous Earth orbit with a stated repeat cycle.",
+      "official_source_name": "NASA NISAR official page",
+      "source_url": "https://science.nasa.gov/mission/nisar/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bnear\\-polar\\w*",
+        "\\bsun\\-synchronou\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NISAR-08-D1118",
+      "mission": "NISAR",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, antenna diameter, wavelength, repeat interval, swath width, data volume, or measurement-precision fact.",
+      "official_source_name": "NASA NISAR official page",
+      "source_url": "https://science.nasa.gov/mission/nisar/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\bantenna\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NISAR-09-D1119",
+      "mission": "NISAR",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to open data plans, radar products, mission images, science applications, news, or public resources.",
+      "official_source_name": "NASA NISAR official page",
+      "source_url": "https://science.nasa.gov/mission/nisar/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bplans\\w*",
+        "\\bradar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NISAR-10-D1120",
+      "mission": "NISAR",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as optical imaging or guaranteed earthquake prediction; later reruns should capture deployment, commissioning, and product drift.",
+      "official_source_name": "NASA NISAR official page",
+      "source_url": "https://science.nasa.gov/mission/nisar/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-TEMPO-01-D1121",
+      "mission": "TEMPO",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes TEMPO as measuring air pollution over North America at high temporal resolution.",
+      "official_source_name": "NASA TEMPO official page",
+      "source_url": "https://science.nasa.gov/mission/tempo/",
+      "required_patterns": [
+        "\\bmeasur\\w*",
+        "\\bpollution\\w*",
+        "\\bnorth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TEMPO-02-D1122",
+      "mission": "TEMPO",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places TEMPO within NASA's Earth Venture Instrument programme and identifies the hosted-payload and partner boundaries.",
+      "official_source_name": "NASA TEMPO official page",
+      "source_url": "https://science.nasa.gov/mission/tempo/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bearth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TEMPO-03-D1123",
+      "mission": "TEMPO",
+      "topic": "Design / architecture gate",
+      "claim": "TEMPO is described as a spectrometer hosted on a commercial communications satellite in geostationary orbit.",
+      "official_source_name": "NASA TEMPO official page",
+      "source_url": "https://science.nasa.gov/mission/tempo/",
+      "required_patterns": [
+        "\\bspectrometer\\w*",
+        "\\bhosted\\w*",
+        "\\bcommercial\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TEMPO-04-D1124",
+      "mission": "TEMPO",
+      "topic": "Instrument / system gate",
+      "claim": "The page names the ultraviolet-visible spectrometer or detector system as the principal instrument.",
+      "official_source_name": "NASA TEMPO official page",
+      "source_url": "https://science.nasa.gov/mission/tempo/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bultraviolet\\-visible\\w*",
+        "\\bspectrometer\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TEMPO-05-D1125",
+      "mission": "TEMPO",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes ozone, nitrogen dioxide, formaldehyde, aerosols, and other atmospheric pollutants.",
+      "official_source_name": "NASA TEMPO official page",
+      "source_url": "https://science.nasa.gov/mission/tempo/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bozone\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TEMPO-06-D1126",
+      "mission": "TEMPO",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, commissioning, public-data release, active operations, or current mission status at access time.",
+      "official_source_name": "NASA TEMPO official page",
+      "source_url": "https://science.nasa.gov/mission/tempo/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bcommission\\w*",
+        "\\bpublic\\-data\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TEMPO-07-D1127",
+      "mission": "TEMPO",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary is geostationary, enabling repeated daylight observations across North America.",
+      "official_source_name": "NASA TEMPO official page",
+      "source_url": "https://science.nasa.gov/mission/tempo/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bgeostationary\\w*",
+        "\\benabl\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TEMPO-08-D1128",
+      "mission": "TEMPO",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, hourly cadence, spatial resolution, spectral range, coverage extent, or first-from-geostationary fact.",
+      "official_source_name": "NASA TEMPO official page",
+      "source_url": "https://science.nasa.gov/mission/tempo/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\bhourly\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TEMPO-09-D1129",
+      "mission": "TEMPO",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to air-quality data, maps, quick-look products, science results, mission news, or public resources.",
+      "official_source_name": "NASA TEMPO official page",
+      "source_url": "https://science.nasa.gov/mission/tempo/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bair\\-quality\\w*",
+        "\\bquick\\-look\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TEMPO-10-D1130",
+      "mission": "TEMPO",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as a direct health diagnosis or complete emissions attribution system; later reruns should capture product and operations drift.",
+      "official_source_name": "NASA TEMPO official page",
+      "source_url": "https://science.nasa.gov/mission/tempo/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-GEDI-01-D1131",
+      "mission": "GEDI",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes GEDI as using spaceborne lidar to measure forest vertical structure and related carbon or habitat properties.",
+      "official_source_name": "NASA GEDI official page",
+      "source_url": "https://science.nasa.gov/mission/gedi/",
+      "required_patterns": [
+        "\\busing\\w*",
+        "\\bspaceborne\\w*",
+        "\\blidar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GEDI-02-D1132",
+      "mission": "GEDI",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places GEDI within NASA Earth Science and identifies its installation on the International Space Station.",
+      "official_source_name": "NASA GEDI official page",
+      "source_url": "https://science.nasa.gov/mission/gedi/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bearth\\w*",
+        "\\bscience\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GEDI-03-D1133",
+      "mission": "GEDI",
+      "topic": "Design / architecture gate",
+      "claim": "GEDI is described as a lidar instrument mounted on the station rather than a free-flying satellite.",
+      "official_source_name": "NASA GEDI official page",
+      "source_url": "https://science.nasa.gov/mission/gedi/",
+      "required_patterns": [
+        "\\blidar\\w*",
+        "\\binstru\\w*",
+        "\\bmount\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GEDI-04-D1134",
+      "mission": "GEDI",
+      "topic": "Instrument / system gate",
+      "claim": "The page names its lasers, beam tracks, telescope, detectors, or waveform-lidar system.",
+      "official_source_name": "NASA GEDI official page",
+      "source_url": "https://science.nasa.gov/mission/gedi/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\blaser\\w*",
+        "\\btrack\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GEDI-05-D1135",
+      "mission": "GEDI",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes canopy height, forest structure, aboveground biomass, topography, carbon, and habitat.",
+      "official_source_name": "NASA GEDI official page",
+      "source_url": "https://science.nasa.gov/mission/gedi/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bcanopy\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GEDI-06-D1136",
+      "mission": "GEDI",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, installation, storage, redeployment, active operations, or current mission status at access time.",
+      "official_source_name": "NASA GEDI official page",
+      "source_url": "https://science.nasa.gov/mission/gedi/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\binstall\\w*",
+        "\\bstorage\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GEDI-07-D1137",
+      "mission": "GEDI",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The observation boundary follows the International Space Station orbit and does not cover all polar regions.",
+      "official_source_name": "NASA GEDI official page",
+      "source_url": "https://science.nasa.gov/mission/gedi/",
+      "required_patterns": [
+        "\\bobserv\\w*",
+        "\\bfollow\\w*",
+        "\\binternational\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GEDI-08-D1138",
+      "mission": "GEDI",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit laser count, ground-track count, footprint size, sampling interval, launch date, data-volume, or coverage fact.",
+      "official_source_name": "NASA GEDI official page",
+      "source_url": "https://science.nasa.gov/mission/gedi/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaser\\w*",
+        "\\bcount\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GEDI-09-D1139",
+      "mission": "GEDI",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to waveform data, biomass products, maps, data archives, science results, or public resources.",
+      "official_source_name": "NASA GEDI official page",
+      "source_url": "https://science.nasa.gov/mission/gedi/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bwaveform\\w*",
+        "\\bbiomas\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GEDI-10-D1140",
+      "mission": "GEDI",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as wall-to-wall continuous global forest measurement without sampling or modelling; later reruns should capture hardware and data drift.",
+      "official_source_name": "NASA GEDI official page",
+      "source_url": "https://science.nasa.gov/mission/gedi/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-TERRA-01-D1141",
+      "mission": "Terra",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Terra as a flagship Earth Observing System mission studying interactions among land, atmosphere, oceans, and energy.",
+      "official_source_name": "NASA Terra official page",
+      "source_url": "https://science.nasa.gov/mission/terra/",
+      "required_patterns": [
+        "\\bflagship\\w*",
+        "\\bearth\\w*",
+        "\\bobserv\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TERRA-02-D1142",
+      "mission": "Terra",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Terra within NASA's Earth Observing System and identifies U.S. and international instrument boundaries.",
+      "official_source_name": "NASA Terra official page",
+      "source_url": "https://science.nasa.gov/mission/terra/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bearth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TERRA-03-D1143",
+      "mission": "Terra",
+      "topic": "Design / architecture gate",
+      "claim": "Terra is described as a multi-instrument Earth-observation satellite providing coordinated global measurements.",
+      "official_source_name": "NASA Terra official page",
+      "source_url": "https://science.nasa.gov/mission/terra/",
+      "required_patterns": [
+        "\\bmulti\\-instru\\w*",
+        "\\bearth\\-observ\\w*",
+        "\\bsatellite\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TERRA-04-D1144",
+      "mission": "Terra",
+      "topic": "Instrument / system gate",
+      "claim": "The page names ASTER, CERES, MISR, MODIS, and MOPITT and distinguishes their measurement roles.",
+      "official_source_name": "NASA Terra official page",
+      "source_url": "https://science.nasa.gov/mission/terra/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\baster\\w*",
+        "\\bceres\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TERRA-05-D1145",
+      "mission": "Terra",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes land cover, clouds, aerosols, radiation, carbon monoxide, oceans, fires, and climate processes.",
+      "official_source_name": "NASA Terra official page",
+      "source_url": "https://science.nasa.gov/mission/terra/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bcover\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TERRA-06-D1146",
+      "mission": "Terra",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, active or changing operations, constellation status, or current mission status at access time.",
+      "official_source_name": "NASA Terra official page",
+      "source_url": "https://science.nasa.gov/mission/terra/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\bchang\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TERRA-07-D1147",
+      "mission": "Terra",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes a sun-synchronous near-polar morning-crossing Earth orbit.",
+      "official_source_name": "NASA Terra official page",
+      "source_url": "https://science.nasa.gov/mission/terra/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bsun\\-synchronou\\w*",
+        "\\bnear\\-polar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TERRA-08-D1148",
+      "mission": "Terra",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, instrument count, orbit altitude, crossing time, data-record length, swath, or revisit fact.",
+      "official_source_name": "NASA Terra official page",
+      "source_url": "https://science.nasa.gov/mission/terra/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TERRA-09-D1149",
+      "mission": "Terra",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to imagery, instrument data, long-term products, Earth Observatory stories, science results, or public resources.",
+      "official_source_name": "NASA Terra official page",
+      "source_url": "https://science.nasa.gov/mission/terra/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimagery\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TERRA-10-D1150",
+      "mission": "Terra",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as one instrument proving all Earth-system causal relationships; later reruns should capture orbit and operations drift.",
+      "official_source_name": "NASA Terra official page",
+      "source_url": "https://science.nasa.gov/mission/terra/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    }
+  ]
+}

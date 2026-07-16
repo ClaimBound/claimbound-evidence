@@ -1,0 +1,689 @@
+{
+  "version": "2026-07-16",
+  "issue_number": 152,
+  "source_issue_url": "https://github.com/ClaimBound/claimbound-evidence/issues/152",
+  "card_count": 50,
+  "claim_boundary": "Each card tests one frozen candidate against exactly one listed NASA page. The lexical patterns are selected from the pre-fetch candidate text only; they are a conservative source-boundary gate, not a scientific conclusion.",
+  "cards": [
+    {
+      "protocol_id": "NASA-TESS-01-D951",
+      "mission": "TESS",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes TESS as an all-sky survey mission searching for exoplanets using transits.",
+      "official_source_name": "NASA TESS official page",
+      "source_url": "https://science.nasa.gov/mission/tess/",
+      "required_patterns": [
+        "\\ball\\-sky\\w*",
+        "\\bsurvey\\w*",
+        "\\bsearch\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TESS-02-D952",
+      "mission": "TESS",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places TESS within NASA's Explorer programme and identifies MIT or partner boundaries.",
+      "official_source_name": "NASA TESS official page",
+      "source_url": "https://science.nasa.gov/mission/tess/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplorer\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TESS-03-D953",
+      "mission": "TESS",
+      "topic": "Design / architecture gate",
+      "claim": "TESS is described as a spacecraft with four wide-field cameras observing the sky in sectors.",
+      "official_source_name": "NASA TESS official page",
+      "source_url": "https://science.nasa.gov/mission/tess/",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bwide\\-field\\w*",
+        "\\bcamera\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TESS-04-D954",
+      "mission": "TESS",
+      "topic": "Instrument / system gate",
+      "claim": "The page names the four cameras, detectors, or photometer system as the principal payload.",
+      "official_source_name": "NASA TESS official page",
+      "source_url": "https://science.nasa.gov/mission/tess/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bcamera\\w*",
+        "\\bdetector\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TESS-05-D955",
+      "mission": "TESS",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes bright nearby stars, transiting exoplanets, stellar variability, and time-domain phenomena.",
+      "official_source_name": "NASA TESS official page",
+      "source_url": "https://science.nasa.gov/mission/tess/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bbright\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TESS-06-D956",
+      "mission": "TESS",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, prime or extended mission, current sector, or active operations at access time.",
+      "official_source_name": "NASA TESS official page",
+      "source_url": "https://science.nasa.gov/mission/tess/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bprime\\w*",
+        "\\bextend\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TESS-07-D957",
+      "mission": "TESS",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes a highly elliptical Earth orbit in resonance with the Moon.",
+      "official_source_name": "NASA TESS official page",
+      "source_url": "https://science.nasa.gov/mission/tess/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bhighly\\w*",
+        "\\belliptical\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TESS-08-D958",
+      "mission": "TESS",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit camera count, sky coverage, sector duration, target-star count, candidate count, or launch date.",
+      "official_source_name": "NASA TESS official page",
+      "source_url": "https://science.nasa.gov/mission/tess/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bcamera\\w*",
+        "\\bcount\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TESS-09-D959",
+      "mission": "TESS",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to light curves, candidate catalogs, data archives, sky maps, science results, or public multimedia.",
+      "official_source_name": "NASA TESS official page",
+      "source_url": "https://science.nasa.gov/mission/tess/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\blight\\w*",
+        "\\bcurve\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-TESS-10-D960",
+      "mission": "TESS",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as confirming every candidate planet or detecting life; later reruns should capture candidate and sector drift.",
+      "official_source_name": "NASA TESS official page",
+      "source_url": "https://science.nasa.gov/mission/tess/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-01-D961",
+      "mission": "Kepler / K2",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Kepler as a mission designed to determine the frequency and diversity of planets around other stars.",
+      "official_source_name": "NASA Kepler / K2 official page",
+      "source_url": "https://science.nasa.gov/mission/kepler/",
+      "required_patterns": [
+        "\\bdesign\\w*",
+        "\\bdetermine\\w*",
+        "\\bfrequency\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-02-D962",
+      "mission": "Kepler / K2",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Kepler within NASA's Discovery Program and distinguishes the original Kepler and K2 phases.",
+      "official_source_name": "NASA Kepler / K2 official page",
+      "source_url": "https://science.nasa.gov/mission/kepler/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bdiscovery\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-03-D963",
+      "mission": "Kepler / K2",
+      "topic": "Design / architecture gate",
+      "claim": "Kepler is described as a photometric space telescope measuring repeated stellar brightness changes.",
+      "official_source_name": "NASA Kepler / K2 official page",
+      "source_url": "https://science.nasa.gov/mission/kepler/",
+      "required_patterns": [
+        "\\bphotometric\\w*",
+        "\\bspace\\w*",
+        "\\btelescope\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-04-D964",
+      "mission": "Kepler / K2",
+      "topic": "Instrument / system gate",
+      "claim": "The page names the photometer, detector array, or another principal observatory system.",
+      "official_source_name": "NASA Kepler / K2 official page",
+      "source_url": "https://science.nasa.gov/mission/kepler/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bphotometer\\w*",
+        "\\bdetector\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-05-D965",
+      "mission": "Kepler / K2",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes transiting exoplanets, planet sizes and periods, stellar populations, and habitable-zone statistics.",
+      "official_source_name": "NASA Kepler / K2 official page",
+      "source_url": "https://science.nasa.gov/mission/kepler/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\btransit\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-06-D966",
+      "mission": "Kepler / K2",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, end of operations, archive status, and the transition to K2.",
+      "official_source_name": "NASA Kepler / K2 official page",
+      "source_url": "https://science.nasa.gov/mission/kepler/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\boperation\\w*",
+        "\\barchive\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-07-D967",
+      "mission": "Kepler / K2",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The trajectory boundary includes an Earth-trailing heliocentric orbit rather than Earth orbit.",
+      "official_source_name": "NASA Kepler / K2 official page",
+      "source_url": "https://science.nasa.gov/mission/kepler/",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\bearth\\-trail\\w*",
+        "\\bheliocentric\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-08-D968",
+      "mission": "Kepler / K2",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, confirmed-planet count, candidate count, field size, mission duration, or detector fact.",
+      "official_source_name": "NASA Kepler / K2 official page",
+      "source_url": "https://science.nasa.gov/mission/kepler/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\bconfirmed\\-planet\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-09-D969",
+      "mission": "Kepler / K2",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to planet catalogs, light curves, data archives, mission results, images, or public resources.",
+      "official_source_name": "NASA Kepler / K2 official page",
+      "source_url": "https://science.nasa.gov/mission/kepler/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bplanet\\w*",
+        "\\bcatalog\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-KEPLER-10-D970",
+      "mission": "Kepler / K2",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as proof that every candidate is a planet or that a habitable-zone planet is inhabited; later reruns should capture catalog drift.",
+      "official_source_name": "NASA Kepler / K2 official page",
+      "source_url": "https://science.nasa.gov/mission/kepler/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-01-D971",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Roman as a wide-field infrared observatory for dark-energy, exoplanet, and general astrophysics investigations.",
+      "official_source_name": "NASA Nancy Grace Roman Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "required_patterns": [
+        "\\bwide\\-field\\w*",
+        "\\binfrar\\w*",
+        "\\bobservatory\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-02-D972",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies NASA management and partner or contributed-instrument boundaries.",
+      "official_source_name": "NASA Nancy Grace Roman Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "required_patterns": [
+        "\\bmanage\\w*",
+        "\\bpartner\\w*",
+        "\\bcontributed\\-instru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-03-D973",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Design / architecture gate",
+      "claim": "Roman is described as a space telescope with a Hubble-sized primary mirror and a much wider field of view.",
+      "official_source_name": "NASA Nancy Grace Roman Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "required_patterns": [
+        "\\bhubble\\-siz\\w*",
+        "\\bprimary\\w*",
+        "\\bmirror\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-04-D974",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Instrument / system gate",
+      "claim": "The page names the Wide Field Instrument and Coronagraph Instrument and distinguishes science from technology demonstration roles.",
+      "official_source_name": "NASA Nancy Grace Roman Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bfield\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-05-D975",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes cosmic expansion, large-scale structure, gravitational microlensing, exoplanets, and infrared sky surveys.",
+      "official_source_name": "NASA Nancy Grace Roman Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bcosmic\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-06-D976",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Status / timeline gate",
+      "claim": "The page states current integration, test, launch-preparation, planned launch, or mission status at access time.",
+      "official_source_name": "NASA Nancy Grace Roman Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "required_patterns": [
+        "\\bintegr\\w*",
+        "\\blaunch\\-prepar\\w*",
+        "\\bplann\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-07-D977",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The planned operating location includes the Sun-Earth L2 region.",
+      "official_source_name": "NASA Nancy Grace Roman Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "required_patterns": [
+        "\\bplann\\w*",
+        "\\boperat\\w*",
+        "\\blocation\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-08-D978",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit mirror diameter, field-of-view comparison, detector count, launch-readiness date, survey area, or planet-yield target.",
+      "official_source_name": "NASA Nancy Grace Roman Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bmirror\\w*",
+        "\\bdiameter\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-09-D979",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to mission design, survey plans, simulations, data-policy information, images, news, or public resources.",
+      "official_source_name": "NASA Nancy Grace Roman Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bdesign\\w*",
+        "\\bsurvey\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ROMAN-10-D980",
+      "mission": "Nancy Grace Roman Space Telescope",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as a guaranteed dark-energy solution or guaranteed planet yield; later reruns should capture launch and performance-target drift.",
+      "official_source_name": "NASA Nancy Grace Roman Space Telescope official page",
+      "source_url": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-01-D981",
+      "mission": "SPHEREx",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes SPHEREx as an all-sky spectral survey mission studying cosmic origins, galaxies, and water or organic material in the Milky Way.",
+      "official_source_name": "NASA SPHEREx official page",
+      "source_url": "https://science.nasa.gov/mission/spherex/",
+      "required_patterns": [
+        "\\ball\\-sky\\w*",
+        "\\bspectral\\w*",
+        "\\bsurvey\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-02-D982",
+      "mission": "SPHEREx",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places SPHEREx within NASA's Explorer programme and identifies partner boundaries.",
+      "official_source_name": "NASA SPHEREx official page",
+      "source_url": "https://science.nasa.gov/mission/spherex/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bexplorer\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-03-D983",
+      "mission": "SPHEREx",
+      "topic": "Design / architecture gate",
+      "claim": "SPHEREx is described as a cryogenic space observatory that maps the whole sky in many infrared spectral bands.",
+      "official_source_name": "NASA SPHEREx official page",
+      "source_url": "https://science.nasa.gov/mission/spherex/",
+      "required_patterns": [
+        "\\bcryogenic\\w*",
+        "\\bspace\\w*",
+        "\\bobservatory\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-04-D984",
+      "mission": "SPHEREx",
+      "topic": "Instrument / system gate",
+      "claim": "The page names its telescope, detector arrays, spectral channels, or passive-cooling system as principal payload elements.",
+      "official_source_name": "NASA SPHEREx official page",
+      "source_url": "https://science.nasa.gov/mission/spherex/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\btelescope\\w*",
+        "\\bdetector\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-05-D985",
+      "mission": "SPHEREx",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes inflation signatures, galaxy history, interstellar ices, and a spectral atlas of the sky.",
+      "official_source_name": "NASA SPHEREx official page",
+      "source_url": "https://science.nasa.gov/mission/spherex/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\binflation\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-06-D986",
+      "mission": "SPHEREx",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, commissioning, survey, active operations, or current mission status at access time.",
+      "official_source_name": "NASA SPHEREx official page",
+      "source_url": "https://science.nasa.gov/mission/spherex/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bcommission\\w*",
+        "\\bsurvey\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-07-D987",
+      "mission": "SPHEREx",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The observatory operates in an Earth orbit suited to repeated all-sky mapping.",
+      "official_source_name": "NASA SPHEREx official page",
+      "source_url": "https://science.nasa.gov/mission/spherex/",
+      "required_patterns": [
+        "\\bobservatory\\w*",
+        "\\boperat\\w*",
+        "\\bearth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-08-D988",
+      "mission": "SPHEREx",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit band or colour count, all-sky map count, wavelength range, launch date, mission duration, or galaxy-count target.",
+      "official_source_name": "NASA SPHEREx official page",
+      "source_url": "https://science.nasa.gov/mission/spherex/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bcolour\\w*",
+        "\\bcount\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-09-D989",
+      "mission": "SPHEREx",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to survey data, sky maps, mission images, science objectives, news, or public resources.",
+      "official_source_name": "NASA SPHEREx official page",
+      "source_url": "https://science.nasa.gov/mission/spherex/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bsurvey\\w*",
+        "\\bimage\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SPHEREX-10-D990",
+      "mission": "SPHEREx",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as high-resolution imaging of every object or direct proof of inflation; later reruns should capture survey and operations drift.",
+      "official_source_name": "NASA SPHEREx official page",
+      "source_url": "https://science.nasa.gov/mission/spherex/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-01-D991",
+      "mission": "NuSTAR",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes NuSTAR as the first focusing telescope to image the sky in high-energy or hard X-rays.",
+      "official_source_name": "NASA NuSTAR official page",
+      "source_url": "https://science.nasa.gov/mission/nustar/",
+      "required_patterns": [
+        "\\bfirst\\w*",
+        "\\bfocus\\w*",
+        "\\btelescope\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-02-D992",
+      "mission": "NuSTAR",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places NuSTAR within NASA's Small Explorer programme and identifies partner or operations boundaries.",
+      "official_source_name": "NASA NuSTAR official page",
+      "source_url": "https://science.nasa.gov/mission/nustar/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bsmall\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-03-D993",
+      "mission": "NuSTAR",
+      "topic": "Design / architecture gate",
+      "claim": "NuSTAR is described as an observatory with two co-aligned focusing telescopes on an extendable mast.",
+      "official_source_name": "NASA NuSTAR official page",
+      "source_url": "https://science.nasa.gov/mission/nustar/",
+      "required_patterns": [
+        "\\bobservatory\\w*",
+        "\\bco\\-align\\w*",
+        "\\bfocus\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-04-D994",
+      "mission": "NuSTAR",
+      "topic": "Instrument / system gate",
+      "claim": "The page names its optics modules, focal-plane detector modules, mast, or another principal observatory system.",
+      "official_source_name": "NASA NuSTAR official page",
+      "source_url": "https://science.nasa.gov/mission/nustar/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\boptic\\w*",
+        "\\bmodul\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-05-D995",
+      "mission": "NuSTAR",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes black holes, supernova remnants, neutron stars, the Sun, and high-energy cosmic sources.",
+      "official_source_name": "NASA NuSTAR official page",
+      "source_url": "https://science.nasa.gov/mission/nustar/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bblack\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-06-D996",
+      "mission": "NuSTAR",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, active or extended operations, and current mission status at access time.",
+      "official_source_name": "NASA NuSTAR official page",
+      "source_url": "https://science.nasa.gov/mission/nustar/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\bextend\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-07-D997",
+      "mission": "NuSTAR",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The observatory operates in low Earth orbit.",
+      "official_source_name": "NASA NuSTAR official page",
+      "source_url": "https://science.nasa.gov/mission/nustar/",
+      "required_patterns": [
+        "\\bobservatory\\w*",
+        "\\boperat\\w*",
+        "\\bearth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-08-D998",
+      "mission": "NuSTAR",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, energy range, telescope count, mast length, orbit, angular resolution, or mission-duration fact.",
+      "official_source_name": "NASA NuSTAR official page",
+      "source_url": "https://science.nasa.gov/mission/nustar/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\benergy\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-09-D999",
+      "mission": "NuSTAR",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to images, data archives, target lists, science results, mission updates, or public multimedia.",
+      "official_source_name": "NASA NuSTAR official page",
+      "source_url": "https://science.nasa.gov/mission/nustar/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\barchiv\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NUSTAR-10-D1000",
+      "mission": "NuSTAR",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as an all-sky continuous monitor or optical telescope; later reruns should capture operations and target drift.",
+      "official_source_name": "NASA NuSTAR official page",
+      "source_url": "https://science.nasa.gov/mission/nustar/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    }
+  ]
+}

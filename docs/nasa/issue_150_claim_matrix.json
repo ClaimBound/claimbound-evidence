@@ -1,0 +1,689 @@
+{
+  "version": "2026-07-16",
+  "issue_number": 150,
+  "source_issue_url": "https://github.com/ClaimBound/claimbound-evidence/issues/150",
+  "card_count": 50,
+  "claim_boundary": "Each card tests one frozen candidate against exactly one listed NASA page. The lexical patterns are selected from the pre-fetch candidate text only; they are a conservative source-boundary gate, not a scientific conclusion.",
+  "cards": [
+    {
+      "protocol_id": "NASA-DART-01-D851",
+      "mission": "DART",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes DART as a planetary-defense test of changing an asteroid moonlet's motion through kinetic impact.",
+      "official_source_name": "NASA DART official page",
+      "source_url": "https://science.nasa.gov/mission/dart/",
+      "required_patterns": [
+        "\\bplanetary\\-defense\\w*",
+        "\\bchang\\w*",
+        "\\basteroid\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DART-02-D852",
+      "mission": "DART",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places DART within NASA's Planetary Defense Coordination Office and identifies APL or international observation boundaries.",
+      "official_source_name": "NASA DART official page",
+      "source_url": "https://science.nasa.gov/mission/dart/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bplanetary\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DART-03-D853",
+      "mission": "DART",
+      "topic": "Design / architecture gate",
+      "claim": "The mission is described as an impactor spacecraft targeting Dimorphos in the Didymos binary asteroid system.",
+      "official_source_name": "NASA DART official page",
+      "source_url": "https://science.nasa.gov/mission/dart/",
+      "required_patterns": [
+        "\\bimpactor\\w*",
+        "\\bspacecraft\\w*",
+        "\\btarget\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DART-04-D854",
+      "mission": "DART",
+      "topic": "Instrument / system gate",
+      "claim": "The page names DRACO, SMART Nav, LICIACube, or another principal mission system and states its role.",
+      "official_source_name": "NASA DART official page",
+      "source_url": "https://science.nasa.gov/mission/dart/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bdraco\\w*",
+        "\\bsmart\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DART-05-D855",
+      "mission": "DART",
+      "topic": "Target / measurement gate",
+      "claim": "The measurement domain includes the change in Dimorphos' orbital period and the physical effects of the impact.",
+      "official_source_name": "NASA DART official page",
+      "source_url": "https://science.nasa.gov/mission/dart/",
+      "required_patterns": [
+        "\\bmeasure\\w*",
+        "\\bdomain\\w*",
+        "\\bchange\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DART-06-D856",
+      "mission": "DART",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, impact, completed-mission, or follow-up observation status and dates.",
+      "official_source_name": "NASA DART official page",
+      "source_url": "https://science.nasa.gov/mission/dart/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bimpact\\w*",
+        "\\bcompleted\\-mission\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DART-07-D857",
+      "mission": "DART",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The trajectory boundary ends in a deliberate impact with Dimorphos rather than orbit or sample return.",
+      "official_source_name": "NASA DART official page",
+      "source_url": "https://science.nasa.gov/mission/dart/",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\bdeliberate\\w*",
+        "\\bimpact\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DART-08-D858",
+      "mission": "DART",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit impact date, speed, target size, measured period change, distance, or first planetary-defense demonstration fact.",
+      "official_source_name": "NASA DART official page",
+      "source_url": "https://science.nasa.gov/mission/dart/",
+      "required_patterns": [
+        "\\bimpact\\w*",
+        "\\bspeed\\w*",
+        "\\btarget\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DART-09-D859",
+      "mission": "DART",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to impact images, data, investigation results, videos, or follow-up mission context.",
+      "official_source_name": "NASA DART official page",
+      "source_url": "https://science.nasa.gov/mission/dart/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimpact\\w*",
+        "\\bimage\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DART-10-D860",
+      "mission": "DART",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as proving Earth is protected from all asteroids or that DART destroyed Didymos; later reruns should capture refined measurements.",
+      "official_source_name": "NASA DART official page",
+      "source_url": "https://science.nasa.gov/mission/dart/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-OSIRISREX-01-D861",
+      "mission": "OSIRIS-REx / OSIRIS-APEX",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes OSIRIS-REx as a mission that collected a sample from asteroid Bennu and returned it to Earth.",
+      "official_source_name": "NASA OSIRIS-REx / OSIRIS-APEX official page",
+      "source_url": "https://science.nasa.gov/mission/osiris-rex/",
+      "required_patterns": [
+        "\\bosiris\\-rex\\w*",
+        "\\bcollect\\w*",
+        "\\bsample\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-OSIRISREX-02-D862",
+      "mission": "OSIRIS-REx / OSIRIS-APEX",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places the mission within NASA's New Frontiers programme and distinguishes the OSIRIS-APEX extended mission.",
+      "official_source_name": "NASA OSIRIS-REx / OSIRIS-APEX official page",
+      "source_url": "https://science.nasa.gov/mission/osiris-rex/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bfrontier\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-OSIRISREX-03-D863",
+      "mission": "OSIRIS-REx / OSIRIS-APEX",
+      "topic": "Design / architecture gate",
+      "claim": "The spacecraft is described through rendezvous, mapping, Touch-And-Go sampling, sample return, and extended-mission phases.",
+      "official_source_name": "NASA OSIRIS-REx / OSIRIS-APEX official page",
+      "source_url": "https://science.nasa.gov/mission/osiris-rex/",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\brendezvou\\w*",
+        "\\bmapping\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-OSIRISREX-04-D864",
+      "mission": "OSIRIS-REx / OSIRIS-APEX",
+      "topic": "Instrument / system gate",
+      "claim": "The page names TAGSAM, OCAMS, OLA, OTES, OVIRS, REXIS, or another principal payload.",
+      "official_source_name": "NASA OSIRIS-REx / OSIRIS-APEX official page",
+      "source_url": "https://science.nasa.gov/mission/osiris-rex/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\btagsam\\w*",
+        "\\bocams\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-OSIRISREX-05-D865",
+      "mission": "OSIRIS-REx / OSIRIS-APEX",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes Bennu's composition, geology, orbit, resources, and clues to early solar-system chemistry.",
+      "official_source_name": "NASA OSIRIS-REx / OSIRIS-APEX official page",
+      "source_url": "https://science.nasa.gov/mission/osiris-rex/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bbennu'\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-OSIRISREX-06-D866",
+      "mission": "OSIRIS-REx / OSIRIS-APEX",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, Bennu operations, sample-return date, curation status, or OSIRIS-APEX status at access time.",
+      "official_source_name": "NASA OSIRIS-REx / OSIRIS-APEX official page",
+      "source_url": "https://science.nasa.gov/mission/osiris-rex/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bbennu\\w*",
+        "\\boperation\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-OSIRISREX-07-D867",
+      "mission": "OSIRIS-REx / OSIRIS-APEX",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The trajectory boundary includes Bennu rendezvous, Earth sample delivery, and a later Apophis encounter rather than asteroid mining.",
+      "official_source_name": "NASA OSIRIS-REx / OSIRIS-APEX official page",
+      "source_url": "https://science.nasa.gov/mission/osiris-rex/",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\bbennu\\w*",
+        "\\brendezvou\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-OSIRISREX-08-D868",
+      "mission": "OSIRIS-REx / OSIRIS-APEX",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit sample mass, return date, asteroid size, mission distance, first U.S. asteroid-sample fact, or target date.",
+      "official_source_name": "NASA OSIRIS-REx / OSIRIS-APEX official page",
+      "source_url": "https://science.nasa.gov/mission/osiris-rex/",
+      "required_patterns": [
+        "\\bsample\\w*",
+        "\\breturn\\w*",
+        "\\basteroid\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-OSIRISREX-09-D869",
+      "mission": "OSIRIS-REx / OSIRIS-APEX",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to sample images, curation data, science results, mission archives, or public multimedia.",
+      "official_source_name": "NASA OSIRIS-REx / OSIRIS-APEX official page",
+      "source_url": "https://science.nasa.gov/mission/osiris-rex/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bsample\\w*",
+        "\\bimage\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-OSIRISREX-10-D870",
+      "mission": "OSIRIS-REx / OSIRIS-APEX",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as commercial resource extraction or proof that all Bennu material is biologically relevant; later reruns should capture sample and APEX drift.",
+      "official_source_name": "NASA OSIRIS-REx / OSIRIS-APEX official page",
+      "source_url": "https://science.nasa.gov/mission/osiris-rex/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-LUCY-01-D871",
+      "mission": "Lucy",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Lucy as a mission to study Jupiter Trojan asteroids and clues to solar-system formation.",
+      "official_source_name": "NASA Lucy official page",
+      "source_url": "https://science.nasa.gov/mission/lucy/",
+      "required_patterns": [
+        "\\bstudy\\w*",
+        "\\bjupiter\\w*",
+        "\\btrojan\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LUCY-02-D872",
+      "mission": "Lucy",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Lucy within NASA's Discovery Program and identifies partner or instrument-team boundaries.",
+      "official_source_name": "NASA Lucy official page",
+      "source_url": "https://science.nasa.gov/mission/lucy/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bdiscovery\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LUCY-03-D873",
+      "mission": "Lucy",
+      "topic": "Design / architecture gate",
+      "claim": "Lucy is described as a solar-powered flyby spacecraft visiting multiple asteroids rather than orbiting each target.",
+      "official_source_name": "NASA Lucy official page",
+      "source_url": "https://science.nasa.gov/mission/lucy/",
+      "required_patterns": [
+        "\\bsolar\\-power\\w*",
+        "\\bflyby\\w*",
+        "\\bspacecraft\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LUCY-04-D874",
+      "mission": "Lucy",
+      "topic": "Instrument / system gate",
+      "claim": "The page names L'Ralph, L'LORRI, L'TES, the high-gain antenna science investigation, or another principal system.",
+      "official_source_name": "NASA Lucy official page",
+      "source_url": "https://science.nasa.gov/mission/lucy/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bl'ralph\\w*",
+        "\\bl'lorri\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LUCY-05-D875",
+      "mission": "Lucy",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes main-belt and Trojan asteroid geology, composition, mass, density, and diversity.",
+      "official_source_name": "NASA Lucy official page",
+      "source_url": "https://science.nasa.gov/mission/lucy/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bmain\\-belt\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LUCY-06-D876",
+      "mission": "Lucy",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, Earth gravity assists, completed flybys, current cruise, or next encounter status at access time.",
+      "official_source_name": "NASA Lucy official page",
+      "source_url": "https://science.nasa.gov/mission/lucy/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bearth\\w*",
+        "\\bgravity\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LUCY-07-D877",
+      "mission": "Lucy",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The trajectory boundary includes repeated Earth assists and flybys of asteroids in Jupiter's Trojan swarms.",
+      "official_source_name": "NASA Lucy official page",
+      "source_url": "https://science.nasa.gov/mission/lucy/",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\brepeat\\w*",
+        "\\bearth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LUCY-08-D878",
+      "mission": "Lucy",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit target count, mission duration, launch date, encounter date, distance, or first Trojan survey fact.",
+      "official_source_name": "NASA Lucy official page",
+      "source_url": "https://science.nasa.gov/mission/lucy/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\btarget\\w*",
+        "\\bcount\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LUCY-09-D879",
+      "mission": "Lucy",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to encounter images, data, target pages, science results, trajectory material, or public multimedia.",
+      "official_source_name": "NASA Lucy official page",
+      "source_url": "https://science.nasa.gov/mission/lucy/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bencounter\\w*",
+        "\\bimage\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-LUCY-10-D880",
+      "mission": "Lucy",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as sampling or landing on the Trojan asteroids; later reruns should capture target list and encounter-status drift.",
+      "official_source_name": "NASA Lucy official page",
+      "source_url": "https://science.nasa.gov/mission/lucy/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-PSYCHE-01-D881",
+      "mission": "Psyche",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Psyche as a mission to explore the metal-rich asteroid 16 Psyche and investigate planetary formation.",
+      "official_source_name": "NASA Psyche official page",
+      "source_url": "https://science.nasa.gov/mission/psyche/",
+      "required_patterns": [
+        "\\bexplore\\w*",
+        "\\bmetal\\-rich\\w*",
+        "\\basteroid\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PSYCHE-02-D882",
+      "mission": "Psyche",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Psyche within NASA's Discovery Program and distinguishes the Deep Space Optical Communications technology demonstration.",
+      "official_source_name": "NASA Psyche official page",
+      "source_url": "https://science.nasa.gov/mission/psyche/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bdiscovery\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PSYCHE-03-D883",
+      "mission": "Psyche",
+      "topic": "Design / architecture gate",
+      "claim": "The spacecraft is described as a solar-electric-propulsion orbiter carrying remote-sensing and gravity-science payloads.",
+      "official_source_name": "NASA Psyche official page",
+      "source_url": "https://science.nasa.gov/mission/psyche/",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bsolar\\-electric\\-propulsion\\w*",
+        "\\borbiter\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PSYCHE-04-D884",
+      "mission": "Psyche",
+      "topic": "Instrument / system gate",
+      "claim": "The page names the multispectral imager, gamma-ray and neutron spectrometer, magnetometer, gravity science, or DSOC.",
+      "official_source_name": "NASA Psyche official page",
+      "source_url": "https://science.nasa.gov/mission/psyche/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bmultispectral\\w*",
+        "\\bimager\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PSYCHE-05-D885",
+      "mission": "Psyche",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes Psyche's composition, structure, magnetic history, geology, and possible relation to planetary cores.",
+      "official_source_name": "NASA Psyche official page",
+      "source_url": "https://science.nasa.gov/mission/psyche/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bpsyche'\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PSYCHE-06-D886",
+      "mission": "Psyche",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, cruise, gravity assist, arrival plan, or current mission status at access time.",
+      "official_source_name": "NASA Psyche official page",
+      "source_url": "https://science.nasa.gov/mission/psyche/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bcruise\\w*",
+        "\\bgravity\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PSYCHE-07-D887",
+      "mission": "Psyche",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The trajectory boundary includes a Mars gravity assist and eventual orbit around asteroid Psyche.",
+      "official_source_name": "NASA Psyche official page",
+      "source_url": "https://science.nasa.gov/mission/psyche/",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\bgravity\\w*",
+        "\\bassist\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PSYCHE-08-D888",
+      "mission": "Psyche",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit launch date, arrival date, asteroid dimensions, distance, orbit phase, or propulsion fact.",
+      "official_source_name": "NASA Psyche official page",
+      "source_url": "https://science.nasa.gov/mission/psyche/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\barrival\\w*",
+        "\\basteroid\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PSYCHE-09-D889",
+      "mission": "Psyche",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to images, mission data plans, science objectives, DSOC results, trajectory, or public multimedia.",
+      "official_source_name": "NASA Psyche official page",
+      "source_url": "https://science.nasa.gov/mission/psyche/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bplans\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PSYCHE-10-D890",
+      "mission": "Psyche",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as a mining mission or proof that Psyche is an exposed planetary core; later reruns should capture cruise and hypothesis drift.",
+      "official_source_name": "NASA Psyche official page",
+      "source_url": "https://science.nasa.gov/mission/psyche/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-NEOSURVEYOR-01-D891",
+      "mission": "NEO Surveyor",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes NEO Surveyor as a space-based infrared survey mission to discover and characterize near-Earth objects.",
+      "official_source_name": "NASA NEO Surveyor official page",
+      "source_url": "https://science.nasa.gov/mission/neo-surveyor/",
+      "required_patterns": [
+        "\\bspace\\-bas\\w*",
+        "\\binfrar\\w*",
+        "\\bsurvey\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEOSURVEYOR-02-D892",
+      "mission": "NEO Surveyor",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places the mission within NASA's planetary-defense programme and states management or partner boundaries.",
+      "official_source_name": "NASA NEO Surveyor official page",
+      "source_url": "https://science.nasa.gov/mission/neo-surveyor/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bplanetary\\-defense\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEOSURVEYOR-03-D893",
+      "mission": "NEO Surveyor",
+      "topic": "Design / architecture gate",
+      "claim": "The mission is described as an infrared telescope designed for systematic sky surveys.",
+      "official_source_name": "NASA NEO Surveyor official page",
+      "source_url": "https://science.nasa.gov/mission/neo-surveyor/",
+      "required_patterns": [
+        "\\binfrar\\w*",
+        "\\btelescope\\w*",
+        "\\bdesign\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEOSURVEYOR-04-D894",
+      "mission": "NEO Surveyor",
+      "topic": "Instrument / system gate",
+      "claim": "The page names its infrared telescope, detector channels, sunshade, or another principal observatory system.",
+      "official_source_name": "NASA NEO Surveyor official page",
+      "source_url": "https://science.nasa.gov/mission/neo-surveyor/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binfrar\\w*",
+        "\\btelescope\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEOSURVEYOR-05-D895",
+      "mission": "NEO Surveyor",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes potentially hazardous asteroids and comets, including objects difficult to detect in visible light.",
+      "official_source_name": "NASA NEO Surveyor official page",
+      "source_url": "https://science.nasa.gov/mission/neo-surveyor/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bpotentially\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEOSURVEYOR-06-D896",
+      "mission": "NEO Surveyor",
+      "topic": "Status / timeline gate",
+      "claim": "The page states current development, launch-readiness, planned launch, or mission status at access time.",
+      "official_source_name": "NASA NEO Surveyor official page",
+      "source_url": "https://science.nasa.gov/mission/neo-surveyor/",
+      "required_patterns": [
+        "\\bdevelop\\w*",
+        "\\blaunch\\-readines\\w*",
+        "\\bplann\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEOSURVEYOR-07-D897",
+      "mission": "NEO Surveyor",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The planned operating location or trajectory includes a Sun-Earth L1-region orbit or other stated survey geometry.",
+      "official_source_name": "NASA NEO Surveyor official page",
+      "source_url": "https://science.nasa.gov/mission/neo-surveyor/",
+      "required_patterns": [
+        "\\bplann\\w*",
+        "\\boperat\\w*",
+        "\\blocation\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEOSURVEYOR-08-D898",
+      "mission": "NEO Surveyor",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit aperture, wavelength, mission duration, discovery goal, object-size threshold, or completeness target.",
+      "official_source_name": "NASA NEO Surveyor official page",
+      "source_url": "https://science.nasa.gov/mission/neo-surveyor/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\baperture\\w*",
+        "\\bwavelength\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEOSURVEYOR-09-D899",
+      "mission": "NEO Surveyor",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to mission design, survey goals, planetary-defense data, news, images, or public resources.",
+      "official_source_name": "NASA NEO Surveyor official page",
+      "source_url": "https://science.nasa.gov/mission/neo-surveyor/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bdesign\\w*",
+        "\\bsurvey\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEOSURVEYOR-10-D900",
+      "mission": "NEO Surveyor",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as guaranteeing detection of every hazardous object or preventing impacts; later reruns should capture schedule and performance-target drift.",
+      "official_source_name": "NASA NEO Surveyor official page",
+      "source_url": "https://science.nasa.gov/mission/neo-surveyor/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    }
+  ]
+}

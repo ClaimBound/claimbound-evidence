@@ -1,0 +1,689 @@
+{
+  "version": "2026-07-16",
+  "issue_number": 147,
+  "source_issue_url": "https://github.com/ClaimBound/claimbound-evidence/issues/147",
+  "card_count": 50,
+  "claim_boundary": "Each card tests one frozen candidate against exactly one listed NASA page. The lexical patterns are selected from the pre-fetch candidate text only; they are a conservative source-boundary gate, not a scientific conclusion.",
+  "cards": [
+    {
+      "protocol_id": "NASA-ARTEMIS-01-D701",
+      "mission": "Artemis",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA presents Artemis as a campaign for sustained human exploration of the Moon.",
+      "official_source_name": "NASA Artemis official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "required_patterns": [
+        "\\bpresent\\w*",
+        "\\bcampaign\\w*",
+        "\\bsustain\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-02-D702",
+      "mission": "Artemis",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Artemis within a Moon-to-Mars architecture involving commercial and international partners.",
+      "official_source_name": "NASA Artemis official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bmoon\\-to\\-mar\\w*",
+        "\\barchitecture\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-03-D703",
+      "mission": "Artemis",
+      "topic": "Design / architecture gate",
+      "claim": "The architecture combines crewed missions, lunar surface systems, and supporting infrastructure rather than one spacecraft.",
+      "official_source_name": "NASA Artemis official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "required_patterns": [
+        "\\barchitecture\\w*",
+        "\\bcombin\\w*",
+        "\\bcrewed\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-04-D704",
+      "mission": "Artemis",
+      "topic": "Instrument / system gate",
+      "claim": "The page identifies Orion, the Space Launch System, or other named systems as Artemis elements.",
+      "official_source_name": "NASA Artemis official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "required_patterns": [
+        "\\borion\\w*",
+        "\\bspace\\w*",
+        "\\blaunch\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-05-D705",
+      "mission": "Artemis",
+      "topic": "Target / measurement gate",
+      "claim": "The stated target includes lunar science, exploration, or learning to live and work beyond Earth.",
+      "official_source_name": "NASA Artemis official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "required_patterns": [
+        "\\bstated\\w*",
+        "\\btarget\\w*",
+        "\\blunar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-06-D706",
+      "mission": "Artemis",
+      "topic": "Status / timeline gate",
+      "claim": "The page exposes the current Artemis mission sequence or current programme status at access time.",
+      "official_source_name": "NASA Artemis official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "required_patterns": [
+        "\\bexpos\\w*",
+        "\\bsequence\\w*",
+        "\\bprogramme\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-07-D707",
+      "mission": "Artemis",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The campaign destination is the Moon, with Mars framed as a later objective rather than the destination of the selected mission page.",
+      "official_source_name": "NASA Artemis official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "required_patterns": [
+        "\\bcampaign\\w*",
+        "\\bdestin\\w*",
+        "\\bframed\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-08-D708",
+      "mission": "Artemis",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes at least one explicit mission number, date, crew count, or other quantitative programme fact.",
+      "official_source_name": "NASA Artemis official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "required_patterns": [
+        "\\bleast\\w*",
+        "\\bnumber\\w*",
+        "\\bcount\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-09-D709",
+      "mission": "Artemis",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to mission, image, video, news, or public-information products.",
+      "official_source_name": "NASA Artemis official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bvideo\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ARTEMIS-10-D710",
+      "mission": "Artemis",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be widened into a guarantee of permanent settlement, mission success, or a fixed schedule; later reruns should record architecture and date drift.",
+      "official_source_name": "NASA Artemis official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/artemis/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-ORION-01-D711",
+      "mission": "Orion",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Orion as a spacecraft designed to carry astronauts on deep-space missions.",
+      "official_source_name": "NASA Orion official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bdesign\\w*",
+        "\\bcarry\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ORION-02-D712",
+      "mission": "Orion",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies NASA and ESA responsibilities or the European Service Module partnership boundary.",
+      "official_source_name": "NASA Orion official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "required_patterns": [
+        "\\bresponsibilit\\w*",
+        "\\beuropean\\w*",
+        "\\bservice\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ORION-03-D713",
+      "mission": "Orion",
+      "topic": "Design / architecture gate",
+      "claim": "Orion is described through named major elements such as the crew module, service module, launch abort system, or adapter.",
+      "official_source_name": "NASA Orion official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "required_patterns": [
+        "\\bnamed\\w*",
+        "\\bmajor\\w*",
+        "\\belement\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ORION-04-D714",
+      "mission": "Orion",
+      "topic": "Instrument / system gate",
+      "claim": "The page names the launch abort system or another principal Orion system and states its role.",
+      "official_source_name": "NASA Orion official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\blaunch\\w*",
+        "\\babort\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ORION-05-D715",
+      "mission": "Orion",
+      "topic": "Target / measurement gate",
+      "claim": "The spacecraft's domain includes crew transport, life support, navigation, or safe return from lunar missions.",
+      "official_source_name": "NASA Orion official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "required_patterns": [
+        "\\bspacecraft'\\w*",
+        "\\bdomain\\w*",
+        "\\btransport\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ORION-06-D716",
+      "mission": "Orion",
+      "topic": "Status / timeline gate",
+      "claim": "The page states Orion's current Artemis flight status, completed test status, or next planned use at access time.",
+      "official_source_name": "NASA Orion official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "required_patterns": [
+        "\\borion'\\w*",
+        "\\bartemi\\w*",
+        "\\bflight\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ORION-07-D717",
+      "mission": "Orion",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The trajectory boundary includes travel beyond low Earth orbit and return to an ocean splashdown.",
+      "official_source_name": "NASA Orion official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\btravel\\w*",
+        "\\bbeyond\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ORION-08-D718",
+      "mission": "Orion",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit crew-capacity, mission-duration, re-entry-speed, or distance fact.",
+      "official_source_name": "NASA Orion official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bcrew\\-capacity\\w*",
+        "\\bmission\\-dur\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ORION-09-D719",
+      "mission": "Orion",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to Orion images, videos, fact sheets, mission updates, or technical resources.",
+      "official_source_name": "NASA Orion official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bvideo\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ORION-10-D720",
+      "mission": "Orion",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The page must not be read as saying Orion is a lunar lander or a complete mission architecture; later reruns should record status and schedule drift.",
+      "official_source_name": "NASA Orion official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-SLS-01-D721",
+      "mission": "Space Launch System",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes the Space Launch System as a heavy-lift rocket for Artemis or deep-space exploration.",
+      "official_source_name": "NASA Space Launch System official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "required_patterns": [
+        "\\bheavy\\-lift\\w*",
+        "\\brocket\\w*",
+        "\\bartemi\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SLS-02-D722",
+      "mission": "Space Launch System",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places SLS inside NASA's Artemis architecture rather than describing it as a standalone exploration programme.",
+      "official_source_name": "NASA Space Launch System official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\binside\\w*",
+        "\\bnasa'\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SLS-03-D723",
+      "mission": "Space Launch System",
+      "topic": "Design / architecture gate",
+      "claim": "The vehicle is described through stages, configurations, boosters, engines, or an evolution path.",
+      "official_source_name": "NASA Space Launch System official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "required_patterns": [
+        "\\bvehicle\\w*",
+        "\\bstage\\w*",
+        "\\bconfiguration\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SLS-04-D724",
+      "mission": "Space Launch System",
+      "topic": "Instrument / system gate",
+      "claim": "The page names RS-25 engines, solid rocket boosters, the core stage, or another principal propulsion element.",
+      "official_source_name": "NASA Space Launch System official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\brs\\-25\\w*",
+        "\\bengin\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SLS-05-D725",
+      "mission": "Space Launch System",
+      "topic": "Target / measurement gate",
+      "claim": "The stated payload domain includes launching Orion, crew, cargo, or large exploration payloads beyond Earth orbit.",
+      "official_source_name": "NASA Space Launch System official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "required_patterns": [
+        "\\bstated\\w*",
+        "\\bpayload\\w*",
+        "\\bdomain\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SLS-06-D726",
+      "mission": "Space Launch System",
+      "topic": "Status / timeline gate",
+      "claim": "The page exposes the current flown or planned SLS configuration and mission status at access time.",
+      "official_source_name": "NASA Space Launch System official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "required_patterns": [
+        "\\bexpos\\w*",
+        "\\bflown\\w*",
+        "\\bplann\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SLS-07-D727",
+      "mission": "Space Launch System",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The destination or performance boundary includes translunar injection, the Moon, or deep-space trajectories.",
+      "official_source_name": "NASA Space Launch System official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "required_patterns": [
+        "\\bdestin\\w*",
+        "\\bperformance\\w*",
+        "\\btranslunar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SLS-08-D728",
+      "mission": "Space Launch System",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit thrust, payload-mass, height, engine-count, or configuration number.",
+      "official_source_name": "NASA Space Launch System official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "required_patterns": [
+        "\\bthrust\\w*",
+        "\\bpayload\\-mas\\w*",
+        "\\bheight\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SLS-09-D729",
+      "mission": "Space Launch System",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to SLS images, fact sheets, reference material, mission pages, or public technical resources.",
+      "official_source_name": "NASA Space Launch System official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bsheet\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SLS-10-D730",
+      "mission": "Space Launch System",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The selected page must not be read as proving launch reliability, reusability, or schedule certainty; later reruns should record configuration and date drift.",
+      "official_source_name": "NASA Space Launch System official page",
+      "source_url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-01-D731",
+      "mission": "Gateway",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Gateway as a lunar-orbiting outpost supporting Artemis exploration.",
+      "official_source_name": "NASA Gateway official page",
+      "source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "required_patterns": [
+        "\\blunar\\-orbit\\w*",
+        "\\boutpost\\w*",
+        "\\bsupport\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-02-D732",
+      "mission": "Gateway",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies international, commercial, or agency partners and keeps their roles source-bounded.",
+      "official_source_name": "NASA Gateway official page",
+      "source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "required_patterns": [
+        "\\binternational\\w*",
+        "\\bcommercial\\w*",
+        "\\bagency\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-03-D733",
+      "mission": "Gateway",
+      "topic": "Design / architecture gate",
+      "claim": "Gateway is described as a modular system assembled from named elements rather than a single spacecraft.",
+      "official_source_name": "NASA Gateway official page",
+      "source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "required_patterns": [
+        "\\bmodular\\w*",
+        "\\bsystem\\w*",
+        "\\bassembl\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-04-D734",
+      "mission": "Gateway",
+      "topic": "Instrument / system gate",
+      "claim": "The page names a principal element such as the Power and Propulsion Element, HALO, logistics modules, or an airlock.",
+      "official_source_name": "NASA Gateway official page",
+      "source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\belement\\w*",
+        "\\bpower\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-05-D735",
+      "mission": "Gateway",
+      "topic": "Target / measurement gate",
+      "claim": "The intended domain includes crew staging, science, communications, logistics, or lunar-surface support.",
+      "official_source_name": "NASA Gateway official page",
+      "source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "required_patterns": [
+        "\\bintend\\w*",
+        "\\bdomain\\w*",
+        "\\bstaging\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-06-D736",
+      "mission": "Gateway",
+      "topic": "Status / timeline gate",
+      "claim": "The page exposes the current development, assembly, launch, or mission-integration status at access time.",
+      "official_source_name": "NASA Gateway official page",
+      "source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "required_patterns": [
+        "\\bexpos\\w*",
+        "\\bdevelop\\w*",
+        "\\bassembly\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-07-D737",
+      "mission": "Gateway",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The planned operating location is a lunar orbit, potentially described as a near-rectilinear halo orbit.",
+      "official_source_name": "NASA Gateway official page",
+      "source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "required_patterns": [
+        "\\bplann\\w*",
+        "\\boperat\\w*",
+        "\\blocation\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-08-D738",
+      "mission": "Gateway",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit module count, mission duration, power, mass, orbit period, or partner-count fact.",
+      "official_source_name": "NASA Gateway official page",
+      "source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bmodule\\w*",
+        "\\bcount\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-09-D739",
+      "mission": "Gateway",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to Gateway imagery, reference pages, partner material, science information, or mission updates.",
+      "official_source_name": "NASA Gateway official page",
+      "source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimagery\\w*",
+        "\\breference\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-GATEWAY-10-D740",
+      "mission": "Gateway",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The page must not be read as saying Gateway is already continuously inhabited or guarantees lunar access; later reruns should capture architecture and schedule drift.",
+      "official_source_name": "NASA Gateway official page",
+      "source_url": "https://www.nasa.gov/reference/gateway-about/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-ISS-01-D741",
+      "mission": "International Space Station",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA presents the International Space Station as an orbiting laboratory and platform for research in microgravity.",
+      "official_source_name": "NASA International Space Station official page",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "required_patterns": [
+        "\\bpresent\\w*",
+        "\\borbit\\w*",
+        "\\blaboratory\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ISS-02-D742",
+      "mission": "International Space Station",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies the station as an international partnership rather than a NASA-only facility.",
+      "official_source_name": "NASA International Space Station official page",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "required_patterns": [
+        "\\bpartnership\\w*",
+        "\\bnasa\\-only\\w*",
+        "\\bfacility\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ISS-03-D743",
+      "mission": "International Space Station",
+      "topic": "Design / architecture gate",
+      "claim": "The station is described as an assembled orbital complex with laboratories, modules, truss, power, or visiting vehicles.",
+      "official_source_name": "NASA International Space Station official page",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "required_patterns": [
+        "\\bassembl\\w*",
+        "\\borbital\\w*",
+        "\\bcomplex\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ISS-04-D744",
+      "mission": "International Space Station",
+      "topic": "Instrument / system gate",
+      "claim": "The page names a principal research facility, module, robotic system, or station capability.",
+      "official_source_name": "NASA International Space Station official page",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bresearch\\w*",
+        "\\bfacility\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ISS-05-D745",
+      "mission": "International Space Station",
+      "topic": "Target / measurement gate",
+      "claim": "The measurement and application domain includes human research, physical science, Earth observation, technology, or biology.",
+      "official_source_name": "NASA International Space Station official page",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "required_patterns": [
+        "\\bmeasure\\w*",
+        "\\bapplic\\w*",
+        "\\bdomain\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ISS-06-D746",
+      "mission": "International Space Station",
+      "topic": "Status / timeline gate",
+      "claim": "The page exposes the current crew, expedition, operational status, or transition planning at access time.",
+      "official_source_name": "NASA International Space Station official page",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "required_patterns": [
+        "\\bexpos\\w*",
+        "\\bexpedition\\w*",
+        "\\boperational\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ISS-07-D747",
+      "mission": "International Space Station",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The station operates in low Earth orbit and the page provides an altitude, orbital period, or related orbit fact.",
+      "official_source_name": "NASA International Space Station official page",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "required_patterns": [
+        "\\boperat\\w*",
+        "\\bearth\\w*",
+        "\\borbit\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ISS-08-D748",
+      "mission": "International Space Station",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit continuous-occupation date, partner count, crew count, size, speed, or orbit number.",
+      "official_source_name": "NASA International Space Station official page",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "required_patterns": [
+        "\\bcontinuous\\-occup\\w*",
+        "\\bpartner\\w*",
+        "\\bcount\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ISS-09-D749",
+      "mission": "International Space Station",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to station research, live views, images, mission updates, datasets, or educational products.",
+      "official_source_name": "NASA International Space Station official page",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bresearch\\w*",
+        "\\bviews\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-ISS-10-D750",
+      "mission": "International Space Station",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The page must not be read as proving all station research benefits or a fixed end-of-life date; later reruns should capture crew and programme drift.",
+      "official_source_name": "NASA International Space Station official page",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    }
+  ]
+}

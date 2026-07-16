@@ -1,0 +1,689 @@
+{
+  "version": "2026-07-16",
+  "issue_number": 153,
+  "source_issue_url": "https://github.com/ClaimBound/claimbound-evidence/issues/153",
+  "card_count": 50,
+  "claim_boundary": "Each card tests one frozen candidate against exactly one listed NASA page. The lexical patterns are selected from the pre-fetch candidate text only; they are a conservative source-boundary gate, not a scientific conclusion.",
+  "cards": [
+    {
+      "protocol_id": "NASA-PARKER-01-D1001",
+      "mission": "Parker Solar Probe",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Parker Solar Probe as a mission to study the Sun's corona and solar wind at unprecedented proximity.",
+      "official_source_name": "NASA Parker Solar Probe official page",
+      "source_url": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "required_patterns": [
+        "\\bstudy\\w*",
+        "\\bsun's\\w*",
+        "\\bcorona\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PARKER-02-D1002",
+      "mission": "Parker Solar Probe",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies NASA and Johns Hopkins APL management or instrument-team boundaries.",
+      "official_source_name": "NASA Parker Solar Probe official page",
+      "source_url": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "required_patterns": [
+        "\\bjohns\\w*",
+        "\\bhopkin\\w*",
+        "\\bmanage\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PARKER-03-D1003",
+      "mission": "Parker Solar Probe",
+      "topic": "Design / architecture gate",
+      "claim": "The spacecraft is described with a heat shield, solar arrays, and repeated Venus gravity assists.",
+      "official_source_name": "NASA Parker Solar Probe official page",
+      "source_url": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bshield\\w*",
+        "\\barray\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PARKER-04-D1004",
+      "mission": "Parker Solar Probe",
+      "topic": "Instrument / system gate",
+      "claim": "The page names FIELDS, SWEAP, WISPR, ISʘIS, or another principal payload.",
+      "official_source_name": "NASA Parker Solar Probe official page",
+      "source_url": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bfield\\w*",
+        "\\bsweap\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PARKER-05-D1005",
+      "mission": "Parker Solar Probe",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes coronal heating, solar-wind acceleration, energetic particles, and near-Sun magnetic fields.",
+      "official_source_name": "NASA Parker Solar Probe official page",
+      "source_url": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bcoronal\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PARKER-06-D1006",
+      "mission": "Parker Solar Probe",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, completed perihelia, active mission, closest approach, or current status at access time.",
+      "official_source_name": "NASA Parker Solar Probe official page",
+      "source_url": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bcomplet\\w*",
+        "\\bperihelia\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PARKER-07-D1007",
+      "mission": "Parker Solar Probe",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The trajectory boundary includes repeated highly elliptical solar orbits and Venus assists rather than landing on the Sun.",
+      "official_source_name": "NASA Parker Solar Probe official page",
+      "source_url": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\brepeat\\w*",
+        "\\bhighly\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PARKER-08-D1008",
+      "mission": "Parker Solar Probe",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit closest-distance, speed, temperature, heat-shield thickness, launch date, or first-corona-crossing fact.",
+      "official_source_name": "NASA Parker Solar Probe official page",
+      "source_url": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bclosest\\-distance\\w*",
+        "\\bspeed\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PARKER-09-D1009",
+      "mission": "Parker Solar Probe",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to images, data archives, encounter summaries, science results, trajectory, or public multimedia.",
+      "official_source_name": "NASA Parker Solar Probe official page",
+      "source_url": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\barchiv\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-PARKER-10-D1010",
+      "mission": "Parker Solar Probe",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as touching the visible solar surface or solving all space-weather prediction; later reruns should capture record and encounter drift.",
+      "official_source_name": "NASA Parker Solar Probe official page",
+      "source_url": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-SDO-01-D1011",
+      "mission": "Solar Dynamics Observatory",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes SDO as observing the Sun to understand solar variability and its effects on Earth and near-Earth space.",
+      "official_source_name": "NASA Solar Dynamics Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/sdo/",
+      "required_patterns": [
+        "\\bobserv\\w*",
+        "\\bunderstand\\w*",
+        "\\bvariability\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SDO-02-D1012",
+      "mission": "Solar Dynamics Observatory",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places SDO within NASA's Living With a Star programme and identifies operations or institutional boundaries.",
+      "official_source_name": "NASA Solar Dynamics Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/sdo/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bliving\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SDO-03-D1013",
+      "mission": "Solar Dynamics Observatory",
+      "topic": "Design / architecture gate",
+      "claim": "SDO is described as a continuously observing solar spacecraft with high-cadence full-disk instruments.",
+      "official_source_name": "NASA Solar Dynamics Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/sdo/",
+      "required_patterns": [
+        "\\bcontinuously\\w*",
+        "\\bobserv\\w*",
+        "\\bspacecraft\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SDO-04-D1014",
+      "mission": "Solar Dynamics Observatory",
+      "topic": "Instrument / system gate",
+      "claim": "The page names AIA, HMI, and EVE and distinguishes their measurement roles.",
+      "official_source_name": "NASA Solar Dynamics Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/sdo/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bdistinguish\\w*",
+        "\\bmeasure\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SDO-05-D1015",
+      "mission": "Solar Dynamics Observatory",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes the solar atmosphere, magnetic field, interior, ultraviolet output, flares, and eruptions.",
+      "official_source_name": "NASA Solar Dynamics Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/sdo/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\batmosphere\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SDO-06-D1016",
+      "mission": "Solar Dynamics Observatory",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, active operations, mission longevity, or current observatory status at access time.",
+      "official_source_name": "NASA Solar Dynamics Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/sdo/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bactive\\w*",
+        "\\boperation\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SDO-07-D1017",
+      "mission": "Solar Dynamics Observatory",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes a geosynchronous or inclined geosynchronous Earth orbit selected for near-continuous solar viewing.",
+      "official_source_name": "NASA Solar Dynamics Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/sdo/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bgeosynchronou\\w*",
+        "\\binclin\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SDO-08-D1018",
+      "mission": "Solar Dynamics Observatory",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit image cadence, wavelength count, data rate, launch date, orbit fact, or mission-duration fact.",
+      "official_source_name": "NASA Solar Dynamics Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/sdo/",
+      "required_patterns": [
+        "\\bimage\\w*",
+        "\\bcadence\\w*",
+        "\\bwavelength\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SDO-09-D1019",
+      "mission": "Solar Dynamics Observatory",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to near-real-time images, data archives, solar events, science results, or public multimedia.",
+      "official_source_name": "NASA Solar Dynamics Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/sdo/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bnear\\-real\\-time\\w*",
+        "\\bimage\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SDO-10-D1020",
+      "mission": "Solar Dynamics Observatory",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as guaranteeing space-weather forecasts or observing the entire Sun at once; later reruns should capture operations and data drift.",
+      "official_source_name": "NASA Solar Dynamics Observatory official page",
+      "source_url": "https://science.nasa.gov/mission/sdo/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-SOHO-01-D1021",
+      "mission": "SOHO",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes SOHO as studying the Sun from its deep interior through the outer corona and solar wind.",
+      "official_source_name": "NASA SOHO official page",
+      "source_url": "https://science.nasa.gov/mission/soho/",
+      "required_patterns": [
+        "\\bstudy\\w*",
+        "\\binterior\\w*",
+        "\\bouter\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SOHO-02-D1022",
+      "mission": "SOHO",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies SOHO as an ESA-NASA cooperative mission and preserves agency-role boundaries.",
+      "official_source_name": "NASA SOHO official page",
+      "source_url": "https://science.nasa.gov/mission/soho/",
+      "required_patterns": [
+        "\\besa\\-nasa\\w*",
+        "\\bcooperative\\w*",
+        "\\bpreserv\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SOHO-03-D1023",
+      "mission": "SOHO",
+      "topic": "Design / architecture gate",
+      "claim": "SOHO is described as a multi-instrument solar observatory positioned for continuous Sun viewing.",
+      "official_source_name": "NASA SOHO official page",
+      "source_url": "https://science.nasa.gov/mission/soho/",
+      "required_patterns": [
+        "\\bmulti\\-instru\\w*",
+        "\\bsolar\\w*",
+        "\\bobservatory\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SOHO-04-D1024",
+      "mission": "SOHO",
+      "topic": "Instrument / system gate",
+      "claim": "The page names LASCO, EIT, MDI, SUMER, UVCS, GOLF, VIRGO, or another principal instrument.",
+      "official_source_name": "NASA SOHO official page",
+      "source_url": "https://science.nasa.gov/mission/soho/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\blasco\\w*",
+        "\\bsumer\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SOHO-05-D1025",
+      "mission": "SOHO",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes helioseismology, the corona, solar wind, eruptions, and sungrazing comets.",
+      "official_source_name": "NASA SOHO official page",
+      "source_url": "https://science.nasa.gov/mission/soho/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bhelioseismology\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SOHO-06-D1026",
+      "mission": "SOHO",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, current operations, mission longevity, or observatory status at access time.",
+      "official_source_name": "NASA SOHO official page",
+      "source_url": "https://science.nasa.gov/mission/soho/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\boperation\\w*",
+        "\\blongevity\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SOHO-07-D1027",
+      "mission": "SOHO",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The spacecraft operates near the Sun-Earth L1 point rather than in Earth orbit around the poles.",
+      "official_source_name": "NASA SOHO official page",
+      "source_url": "https://science.nasa.gov/mission/soho/",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\boperat\\w*",
+        "\\bsun\\-earth\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SOHO-08-D1028",
+      "mission": "SOHO",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, instrument count, comet-discovery count, distance from Earth, mission duration, or data milestone.",
+      "official_source_name": "NASA SOHO official page",
+      "source_url": "https://science.nasa.gov/mission/soho/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\binstru\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SOHO-09-D1029",
+      "mission": "SOHO",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to solar images, coronagraph data, comet records, archives, science results, or public multimedia.",
+      "official_source_name": "NASA SOHO official page",
+      "source_url": "https://science.nasa.gov/mission/soho/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bsolar\\w*",
+        "\\bimage\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-SOHO-10-D1030",
+      "mission": "SOHO",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as a dedicated comet mission or a guarantee of space-weather prediction; later reruns should capture comet-count and operations drift.",
+      "official_source_name": "NASA SOHO official page",
+      "source_url": "https://science.nasa.gov/mission/soho/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-MMS-01-D1031",
+      "mission": "Magnetospheric Multiscale",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes MMS as studying magnetic reconnection in Earth's magnetosphere.",
+      "official_source_name": "NASA Magnetospheric Multiscale official page",
+      "source_url": "https://science.nasa.gov/mission/mms/",
+      "required_patterns": [
+        "\\bstudy\\w*",
+        "\\bmagnetic\\w*",
+        "\\breconnection\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MMS-02-D1032",
+      "mission": "Magnetospheric Multiscale",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places MMS within NASA's Solar-Terrestrial Probes programme and identifies partner or instrument-team boundaries.",
+      "official_source_name": "NASA Magnetospheric Multiscale official page",
+      "source_url": "https://science.nasa.gov/mission/mms/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bsolar\\-terrestrial\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MMS-03-D1033",
+      "mission": "Magnetospheric Multiscale",
+      "topic": "Design / architecture gate",
+      "claim": "MMS is described as four identically instrumented spacecraft flying in a controlled tetrahedral formation.",
+      "official_source_name": "NASA Magnetospheric Multiscale official page",
+      "source_url": "https://science.nasa.gov/mission/mms/",
+      "required_patterns": [
+        "\\bidentically\\w*",
+        "\\binstrument\\w*",
+        "\\bspacecraft\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MMS-04-D1034",
+      "mission": "Magnetospheric Multiscale",
+      "topic": "Instrument / system gate",
+      "claim": "The page names the Fast Plasma Investigation, Fields suite, Energetic Particle Detector, Hot Plasma Composition Analyzer, or another payload.",
+      "official_source_name": "NASA Magnetospheric Multiscale official page",
+      "source_url": "https://science.nasa.gov/mission/mms/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\bplasma\\w*",
+        "\\binvestig\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MMS-05-D1035",
+      "mission": "Magnetospheric Multiscale",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes particle acceleration, energy transfer, and reconnection at the magnetopause and magnetotail.",
+      "official_source_name": "NASA Magnetospheric Multiscale official page",
+      "source_url": "https://science.nasa.gov/mission/mms/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bparticle\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MMS-06-D1036",
+      "mission": "Magnetospheric Multiscale",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, mission phase, formation changes, active operations, or current status at access time.",
+      "official_source_name": "NASA Magnetospheric Multiscale official page",
+      "source_url": "https://science.nasa.gov/mission/mms/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bphase\\w*",
+        "\\bformation\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MMS-07-D1037",
+      "mission": "Magnetospheric Multiscale",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes highly elliptical Earth orbits crossing reconnection regions.",
+      "official_source_name": "NASA Magnetospheric Multiscale official page",
+      "source_url": "https://science.nasa.gov/mission/mms/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bhighly\\w*",
+        "\\belliptical\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MMS-08-D1038",
+      "mission": "Magnetospheric Multiscale",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit spacecraft count, measurement cadence, separation distance, launch date, orbit, or record-resolution fact.",
+      "official_source_name": "NASA Magnetospheric Multiscale official page",
+      "source_url": "https://science.nasa.gov/mission/mms/",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bcount\\w*",
+        "\\bmeasure\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MMS-09-D1039",
+      "mission": "Magnetospheric Multiscale",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to data archives, visualizations, mission results, formation information, or public multimedia.",
+      "official_source_name": "NASA Magnetospheric Multiscale official page",
+      "source_url": "https://science.nasa.gov/mission/mms/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\barchiv\\w*",
+        "\\bvisualization\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-MMS-10-D1040",
+      "mission": "Magnetospheric Multiscale",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as measuring all magnetic reconnection everywhere or directly forecasting terrestrial weather; later reruns should capture formation and status drift.",
+      "official_source_name": "NASA Magnetospheric Multiscale official page",
+      "source_url": "https://science.nasa.gov/mission/mms/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-IMAP-01-D1041",
+      "mission": "IMAP",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes IMAP as mapping the boundary of the heliosphere and studying particles from the Sun, heliosphere, and local interstellar medium.",
+      "official_source_name": "NASA IMAP official page",
+      "source_url": "https://science.nasa.gov/mission/imap/",
+      "required_patterns": [
+        "\\bmapping\\w*",
+        "\\bheliosphere\\w*",
+        "\\bstudy\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IMAP-02-D1042",
+      "mission": "IMAP",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places IMAP within NASA's Solar Terrestrial Probes programme and identifies mission partners.",
+      "official_source_name": "NASA IMAP official page",
+      "source_url": "https://science.nasa.gov/mission/imap/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bsolar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IMAP-03-D1043",
+      "mission": "IMAP",
+      "topic": "Design / architecture gate",
+      "claim": "IMAP is described as a Sun-pointed spacecraft carrying a suite of in-situ and remote-sensing particle instruments.",
+      "official_source_name": "NASA IMAP official page",
+      "source_url": "https://science.nasa.gov/mission/imap/",
+      "required_patterns": [
+        "\\bsun\\-point\\w*",
+        "\\bspacecraft\\w*",
+        "\\bcarry\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IMAP-04-D1044",
+      "mission": "IMAP",
+      "topic": "Instrument / system gate",
+      "claim": "The page names one or more principal instruments such as IMAP-Lo, IMAP-Hi, IMAP-Ultra, MAG, SWAPI, CoDICE, HIT, SWE, GLOWS, or IDEX.",
+      "official_source_name": "NASA IMAP official page",
+      "source_url": "https://science.nasa.gov/mission/imap/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\bimap\\-lo\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IMAP-05-D1045",
+      "mission": "IMAP",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes energetic neutral atoms, solar wind, interstellar particles, dust, magnetic fields, and heliospheric boundaries.",
+      "official_source_name": "NASA IMAP official page",
+      "source_url": "https://science.nasa.gov/mission/imap/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\benergetic\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IMAP-06-D1046",
+      "mission": "IMAP",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, commissioning, cruise, active operations, or current mission status at access time.",
+      "official_source_name": "NASA IMAP official page",
+      "source_url": "https://science.nasa.gov/mission/imap/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bcommission\\w*",
+        "\\bcruise\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IMAP-07-D1047",
+      "mission": "IMAP",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The operating boundary includes an orbit around the Sun-Earth L1 point.",
+      "official_source_name": "NASA IMAP official page",
+      "source_url": "https://science.nasa.gov/mission/imap/",
+      "required_patterns": [
+        "\\boperat\\w*",
+        "\\borbit\\w*",
+        "\\baround\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IMAP-08-D1048",
+      "mission": "IMAP",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit instrument count, launch date, data-latency target, orbit, mission duration, or map-resolution fact.",
+      "official_source_name": "NASA IMAP official page",
+      "source_url": "https://science.nasa.gov/mission/imap/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\binstru\\w*",
+        "\\bcount\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IMAP-09-D1049",
+      "mission": "IMAP",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to mission data plans, space-weather products, instrument pages, images, news, or public resources.",
+      "official_source_name": "NASA IMAP official page",
+      "source_url": "https://science.nasa.gov/mission/imap/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bplans\\w*",
+        "\\bspace\\-weather\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-IMAP-10-D1050",
+      "mission": "IMAP",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as imaging the heliosphere like a visible-light camera or guaranteeing storm warnings; later reruns should capture commissioning and data-product drift.",
+      "official_source_name": "NASA IMAP official page",
+      "source_url": "https://science.nasa.gov/mission/imap/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    }
+  ]
+}

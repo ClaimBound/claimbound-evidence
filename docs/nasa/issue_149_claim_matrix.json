@@ -1,0 +1,689 @@
+{
+  "version": "2026-07-16",
+  "issue_number": 149,
+  "source_issue_url": "https://github.com/ClaimBound/claimbound-evidence/issues/149",
+  "card_count": 50,
+  "claim_boundary": "Each card tests one frozen candidate against exactly one listed NASA page. The lexical patterns are selected from the pre-fetch candidate text only; they are a conservative source-boundary gate, not a scientific conclusion.",
+  "cards": [
+    {
+      "protocol_id": "NASA-EUROPA-01-D801",
+      "mission": "Europa Clipper",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA states that Europa Clipper will investigate whether Jupiter's moon Europa has conditions suitable for life.",
+      "official_source_name": "NASA Europa Clipper official page",
+      "source_url": "https://science.nasa.gov/mission/europa-clipper/",
+      "required_patterns": [
+        "\\binvestigate\\w*",
+        "\\bjupiter'\\w*",
+        "\\bcondition\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EUROPA-02-D802",
+      "mission": "Europa Clipper",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies NASA, JPL, APL, or international contribution boundaries without turning them into broader endorsement.",
+      "official_source_name": "NASA Europa Clipper official page",
+      "source_url": "https://science.nasa.gov/mission/europa-clipper/",
+      "required_patterns": [
+        "\\binternational\\w*",
+        "\\bcontribution\\w*",
+        "\\bboundar\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EUROPA-03-D803",
+      "mission": "Europa Clipper",
+      "topic": "Design / architecture gate",
+      "claim": "The mission is described as a spacecraft making repeated close flybys of Europa while orbiting Jupiter.",
+      "official_source_name": "NASA Europa Clipper official page",
+      "source_url": "https://science.nasa.gov/mission/europa-clipper/",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bmaking\\w*",
+        "\\brepeat\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EUROPA-04-D804",
+      "mission": "Europa Clipper",
+      "topic": "Instrument / system gate",
+      "claim": "The page names a principal instrument such as REASON, EIS, E-THEMIS, MISE, MASPEX, SUDA, PIMS, ECM, or UVS.",
+      "official_source_name": "NASA Europa Clipper official page",
+      "source_url": "https://science.nasa.gov/mission/europa-clipper/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\breason\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EUROPA-05-D805",
+      "mission": "Europa Clipper",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes Europa's ice shell, ocean, composition, geology, and environment.",
+      "official_source_name": "NASA Europa Clipper official page",
+      "source_url": "https://science.nasa.gov/mission/europa-clipper/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\beuropa'\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EUROPA-06-D806",
+      "mission": "Europa Clipper",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, cruise, arrival, or current mission status at access time.",
+      "official_source_name": "NASA Europa Clipper official page",
+      "source_url": "https://science.nasa.gov/mission/europa-clipper/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bcruise\\w*",
+        "\\barrival\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EUROPA-07-D807",
+      "mission": "Europa Clipper",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The trajectory boundary includes gravity assists, Jupiter orbit, and multiple Europa flybys rather than orbiting Europa.",
+      "official_source_name": "NASA Europa Clipper official page",
+      "source_url": "https://science.nasa.gov/mission/europa-clipper/",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\bgravity\\w*",
+        "\\bassist\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EUROPA-08-D808",
+      "mission": "Europa Clipper",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page includes an explicit launch date, arrival date, flyby count, instrument count, distance, or radiation-related fact.",
+      "official_source_name": "NASA Europa Clipper official page",
+      "source_url": "https://science.nasa.gov/mission/europa-clipper/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\barrival\\w*",
+        "\\bflyby\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EUROPA-09-D809",
+      "mission": "Europa Clipper",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to mission images, data plans, science goals, trajectory information, or public multimedia.",
+      "official_source_name": "NASA Europa Clipper official page",
+      "source_url": "https://science.nasa.gov/mission/europa-clipper/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\bplans\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-EUROPA-10-D810",
+      "mission": "Europa Clipper",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as saying the mission will detect life or land on Europa; later reruns should capture cruise and schedule drift.",
+      "official_source_name": "NASA Europa Clipper official page",
+      "source_url": "https://science.nasa.gov/mission/europa-clipper/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-JUNO-01-D811",
+      "mission": "Juno",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Juno as investigating Jupiter's origin, interior, atmosphere, magnetic field, and magnetosphere.",
+      "official_source_name": "NASA Juno official page",
+      "source_url": "https://science.nasa.gov/mission/juno/",
+      "required_patterns": [
+        "\\binvestigat\\w*",
+        "\\bjupiter'\\w*",
+        "\\borigin\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-JUNO-02-D812",
+      "mission": "Juno",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Juno within NASA's New Frontiers programme and identifies partner or instrument-team boundaries.",
+      "official_source_name": "NASA Juno official page",
+      "source_url": "https://science.nasa.gov/mission/juno/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bfrontier\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-JUNO-03-D813",
+      "mission": "Juno",
+      "topic": "Design / architecture gate",
+      "claim": "Juno is described as a solar-powered spinning spacecraft in a polar Jupiter orbit.",
+      "official_source_name": "NASA Juno official page",
+      "source_url": "https://science.nasa.gov/mission/juno/",
+      "required_patterns": [
+        "\\bsolar\\-power\\w*",
+        "\\bspinn\\w*",
+        "\\bspacecraft\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-JUNO-04-D814",
+      "mission": "Juno",
+      "topic": "Instrument / system gate",
+      "claim": "The page names a principal instrument such as JIRAM, JunoCam, MWR, MAG, JADE, JEDI, Waves, UVS, or Gravity Science.",
+      "official_source_name": "NASA Juno official page",
+      "source_url": "https://science.nasa.gov/mission/juno/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\bjiram\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-JUNO-05-D815",
+      "mission": "Juno",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes the planet below its cloud tops, polar regions, aurorae, and deep atmospheric structure.",
+      "official_source_name": "NASA Juno official page",
+      "source_url": "https://science.nasa.gov/mission/juno/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bplanet\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-JUNO-06-D816",
+      "mission": "Juno",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, Jupiter arrival, prime or extended mission, and current operating status at access time.",
+      "official_source_name": "NASA Juno official page",
+      "source_url": "https://science.nasa.gov/mission/juno/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bjupiter\\w*",
+        "\\barrival\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-JUNO-07-D817",
+      "mission": "Juno",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The orbit boundary includes highly elliptical polar passes around Jupiter and close perijoves.",
+      "official_source_name": "NASA Juno official page",
+      "source_url": "https://science.nasa.gov/mission/juno/",
+      "required_patterns": [
+        "\\borbit\\w*",
+        "\\bhighly\\w*",
+        "\\belliptical\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-JUNO-08-D818",
+      "mission": "Juno",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, arrival date, orbit count, close-approach altitude, instrument count, or solar-power fact.",
+      "official_source_name": "NASA Juno official page",
+      "source_url": "https://science.nasa.gov/mission/juno/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\barrival\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-JUNO-09-D819",
+      "mission": "Juno",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to JunoCam images, raw or processed data, science results, mission updates, or public participation.",
+      "official_source_name": "NASA Juno official page",
+      "source_url": "https://science.nasa.gov/mission/juno/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bjunocam\\w*",
+        "\\bimage\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-JUNO-10-D820",
+      "mission": "Juno",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The page must not be read as a life-detection mission or a complete model of Jupiter's formation; later reruns should capture orbit and status drift.",
+      "official_source_name": "NASA Juno official page",
+      "source_url": "https://science.nasa.gov/mission/juno/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-CASSINI-01-D821",
+      "mission": "Cassini-Huygens",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Cassini-Huygens as a mission that explored Saturn, its rings, moons, and magnetosphere.",
+      "official_source_name": "NASA Cassini-Huygens official page",
+      "source_url": "https://science.nasa.gov/mission/cassini/",
+      "required_patterns": [
+        "\\bcassini\\-huygen\\w*",
+        "\\bexplor\\w*",
+        "\\bsaturn\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CASSINI-02-D822",
+      "mission": "Cassini-Huygens",
+      "topic": "Programme / partner boundary",
+      "claim": "The page identifies NASA, ESA, and the Italian Space Agency partnership boundary, including Huygens.",
+      "official_source_name": "NASA Cassini-Huygens official page",
+      "source_url": "https://science.nasa.gov/mission/cassini/",
+      "required_patterns": [
+        "\\bitalian\\w*",
+        "\\bspace\\w*",
+        "\\bagency\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CASSINI-03-D823",
+      "mission": "Cassini-Huygens",
+      "topic": "Design / architecture gate",
+      "claim": "Cassini is described as a Saturn orbiter paired with the Huygens Titan probe.",
+      "official_source_name": "NASA Cassini-Huygens official page",
+      "source_url": "https://science.nasa.gov/mission/cassini/",
+      "required_patterns": [
+        "\\bsaturn\\w*",
+        "\\borbiter\\w*",
+        "\\bpaired\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CASSINI-04-D824",
+      "mission": "Cassini-Huygens",
+      "topic": "Instrument / system gate",
+      "claim": "The page names a principal Cassini instrument or the Huygens probe and states its observational role.",
+      "official_source_name": "NASA Cassini-Huygens official page",
+      "source_url": "https://science.nasa.gov/mission/cassini/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\bprobe\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CASSINI-05-D825",
+      "mission": "Cassini-Huygens",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes Saturn, its rings, Titan, Enceladus, other moons, and the Saturn system.",
+      "official_source_name": "NASA Cassini-Huygens official page",
+      "source_url": "https://science.nasa.gov/mission/cassini/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bsaturn\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CASSINI-06-D826",
+      "mission": "Cassini-Huygens",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, Saturn arrival, mission end, or Grand Finale status and dates.",
+      "official_source_name": "NASA Cassini-Huygens official page",
+      "source_url": "https://science.nasa.gov/mission/cassini/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bsaturn\\w*",
+        "\\barrival\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CASSINI-07-D827",
+      "mission": "Cassini-Huygens",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The trajectory boundary includes years in Saturn orbit and the final atmospheric entry, not a continuing active mission.",
+      "official_source_name": "NASA Cassini-Huygens official page",
+      "source_url": "https://science.nasa.gov/mission/cassini/",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\byears\\w*",
+        "\\bsaturn\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CASSINI-08-D828",
+      "mission": "Cassini-Huygens",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit mission duration, orbit count, moon-flyby count, launch date, arrival date, or end date.",
+      "official_source_name": "NASA Cassini-Huygens official page",
+      "source_url": "https://science.nasa.gov/mission/cassini/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\bduration\\w*",
+        "\\borbit\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CASSINI-09-D829",
+      "mission": "Cassini-Huygens",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to archived images, data, discoveries, mission timelines, science results, or public multimedia.",
+      "official_source_name": "NASA Cassini-Huygens official page",
+      "source_url": "https://science.nasa.gov/mission/cassini/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\barchiv\\w*",
+        "\\bimage\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-CASSINI-10-D830",
+      "mission": "Cassini-Huygens",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as an active spacecraft status or direct proof of life on ocean worlds; later reruns should capture archive-page drift.",
+      "official_source_name": "NASA Cassini-Huygens official page",
+      "source_url": "https://science.nasa.gov/mission/cassini/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-DRAGONFLY-01-D831",
+      "mission": "Dragonfly",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes Dragonfly as a rotorcraft lander that will explore Saturn's moon Titan and investigate habitability or prebiotic chemistry.",
+      "official_source_name": "NASA Dragonfly official page",
+      "source_url": "https://science.nasa.gov/mission/dragonfly/",
+      "required_patterns": [
+        "\\brotorcraft\\w*",
+        "\\blander\\w*",
+        "\\bexplore\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DRAGONFLY-02-D832",
+      "mission": "Dragonfly",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places Dragonfly within NASA's New Frontiers programme and identifies partner or mission-management boundaries.",
+      "official_source_name": "NASA Dragonfly official page",
+      "source_url": "https://science.nasa.gov/mission/dragonfly/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bfrontier\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DRAGONFLY-03-D833",
+      "mission": "Dragonfly",
+      "topic": "Design / architecture gate",
+      "claim": "Dragonfly is described as a relocatable multi-rotor lander able to fly between sites on Titan.",
+      "official_source_name": "NASA Dragonfly official page",
+      "source_url": "https://science.nasa.gov/mission/dragonfly/",
+      "required_patterns": [
+        "\\brelocatable\\w*",
+        "\\bmulti\\-rotor\\w*",
+        "\\blander\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DRAGONFLY-04-D834",
+      "mission": "Dragonfly",
+      "topic": "Instrument / system gate",
+      "claim": "The page names a principal instrument or system such as DraMS, DraGNS, DraGMet, DragonCam, sampling drills, or its power system.",
+      "official_source_name": "NASA Dragonfly official page",
+      "source_url": "https://science.nasa.gov/mission/dragonfly/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\bsystem\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DRAGONFLY-05-D835",
+      "mission": "Dragonfly",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes Titan's surface materials, chemistry, geology, atmosphere, and potential habitability.",
+      "official_source_name": "NASA Dragonfly official page",
+      "source_url": "https://science.nasa.gov/mission/dragonfly/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\btitan'\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DRAGONFLY-06-D836",
+      "mission": "Dragonfly",
+      "topic": "Status / timeline gate",
+      "claim": "The page states the current development phase, launch window, arrival plan, or mission status at access time.",
+      "official_source_name": "NASA Dragonfly official page",
+      "source_url": "https://science.nasa.gov/mission/dragonfly/",
+      "required_patterns": [
+        "\\bdevelop\\w*",
+        "\\bphase\\w*",
+        "\\blaunch\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DRAGONFLY-07-D837",
+      "mission": "Dragonfly",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The destination is Titan's surface, reached by interplanetary cruise and atmospheric entry rather than Saturn orbit operations.",
+      "official_source_name": "NASA Dragonfly official page",
+      "source_url": "https://science.nasa.gov/mission/dragonfly/",
+      "required_patterns": [
+        "\\bdestin\\w*",
+        "\\btitan'\\w*",
+        "\\bsurface\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DRAGONFLY-08-D838",
+      "mission": "Dragonfly",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit rotor count, planned flight distance, launch date, arrival date, mission duration, or Titan environmental fact.",
+      "official_source_name": "NASA Dragonfly official page",
+      "source_url": "https://science.nasa.gov/mission/dragonfly/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\brotor\\w*",
+        "\\bcount\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DRAGONFLY-09-D839",
+      "mission": "Dragonfly",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to mission design, science objectives, images, videos, news, or public resources.",
+      "official_source_name": "NASA Dragonfly official page",
+      "source_url": "https://science.nasa.gov/mission/dragonfly/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bdesign\\w*",
+        "\\bscience\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-DRAGONFLY-10-D840",
+      "mission": "Dragonfly",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The page must not be read as promising life detection or access to Titan's subsurface ocean; later reruns should capture development and schedule drift.",
+      "official_source_name": "NASA Dragonfly official page",
+      "source_url": "https://science.nasa.gov/mission/dragonfly/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    },
+    {
+      "protocol_id": "NASA-NEWHORIZONS-01-D841",
+      "mission": "New Horizons",
+      "topic": "Purpose / primary gate",
+      "claim": "NASA describes New Horizons as exploring Pluto, its moons, and Kuiper Belt objects.",
+      "official_source_name": "NASA New Horizons official page",
+      "source_url": "https://science.nasa.gov/mission/new-horizons/",
+      "required_patterns": [
+        "\\bexplor\\w*",
+        "\\bpluto\\w*",
+        "\\bmoons\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEWHORIZONS-02-D842",
+      "mission": "New Horizons",
+      "topic": "Programme / partner boundary",
+      "claim": "The page places New Horizons within NASA's New Frontiers programme and identifies partner or instrument-team boundaries.",
+      "official_source_name": "NASA New Horizons official page",
+      "source_url": "https://science.nasa.gov/mission/new-horizons/",
+      "required_patterns": [
+        "\\bplace\\w*",
+        "\\bnasa'\\w*",
+        "\\bfrontier\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEWHORIZONS-03-D843",
+      "mission": "New Horizons",
+      "topic": "Design / architecture gate",
+      "claim": "The spacecraft is described as a fast flyby mission carrying a compact suite of remote-sensing and in-situ instruments.",
+      "official_source_name": "NASA New Horizons official page",
+      "source_url": "https://science.nasa.gov/mission/new-horizons/",
+      "required_patterns": [
+        "\\bspacecraft\\w*",
+        "\\bflyby\\w*",
+        "\\bcarry\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEWHORIZONS-04-D844",
+      "mission": "New Horizons",
+      "topic": "Instrument / system gate",
+      "claim": "The page names a principal instrument such as LORRI, Ralph, Alice, REX, SWAP, PEPSSI, or the Student Dust Counter.",
+      "official_source_name": "NASA New Horizons official page",
+      "source_url": "https://science.nasa.gov/mission/new-horizons/",
+      "required_patterns": [
+        "\\bnames\\w*",
+        "\\binstru\\w*",
+        "\\blorri\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEWHORIZONS-05-D845",
+      "mission": "New Horizons",
+      "topic": "Target / measurement gate",
+      "claim": "The target domain includes Pluto system geology and atmosphere, Arrokoth, and the Kuiper Belt environment.",
+      "official_source_name": "NASA New Horizons official page",
+      "source_url": "https://science.nasa.gov/mission/new-horizons/",
+      "required_patterns": [
+        "\\btarget\\w*",
+        "\\bdomain\\w*",
+        "\\bpluto\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEWHORIZONS-06-D846",
+      "mission": "New Horizons",
+      "topic": "Status / timeline gate",
+      "claim": "The page states launch, Pluto flyby, Arrokoth flyby, hibernation, or current extended-mission status at access time.",
+      "official_source_name": "NASA New Horizons official page",
+      "source_url": "https://science.nasa.gov/mission/new-horizons/",
+      "required_patterns": [
+        "\\blaunch\\w*",
+        "\\bpluto\\w*",
+        "\\bflyby\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEWHORIZONS-07-D847",
+      "mission": "New Horizons",
+      "topic": "Orbit / trajectory / destination gate",
+      "claim": "The trajectory boundary is a solar-system escape path with flybys rather than orbit around Pluto or Arrokoth.",
+      "official_source_name": "NASA New Horizons official page",
+      "source_url": "https://science.nasa.gov/mission/new-horizons/",
+      "required_patterns": [
+        "\\btrajectory\\w*",
+        "\\bsolar\\-system\\w*",
+        "\\bescape\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEWHORIZONS-08-D848",
+      "mission": "New Horizons",
+      "topic": "Numeric or first-of-kind fact gate",
+      "claim": "The page contains an explicit launch date, flyby date, distance, speed, instrument count, or data-return fact.",
+      "official_source_name": "NASA New Horizons official page",
+      "source_url": "https://science.nasa.gov/mission/new-horizons/",
+      "required_patterns": [
+        "\\bcontain\\w*",
+        "\\blaunch\\w*",
+        "\\bflyby\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEWHORIZONS-09-D849",
+      "mission": "New Horizons",
+      "topic": "Public output / data path gate",
+      "claim": "The page links to images, maps, archived data, discoveries, mission updates, or public multimedia.",
+      "official_source_name": "NASA New Horizons official page",
+      "source_url": "https://science.nasa.gov/mission/new-horizons/",
+      "required_patterns": [
+        "\\blinks\\w*",
+        "\\bimage\\w*",
+        "\\barchiv\\w*"
+      ],
+      "gate_type": "frozen_lexical_term_presence"
+    },
+    {
+      "protocol_id": "NASA-NEWHORIZONS-10-D850",
+      "mission": "New Horizons",
+      "topic": "Overclaim / later-drift boundary",
+      "claim": "The source must not be read as a Pluto orbiter or a complete survey of the Kuiper Belt; later reruns should capture extended-mission status drift.",
+      "official_source_name": "NASA New Horizons official page",
+      "source_url": "https://science.nasa.gov/mission/new-horizons/",
+      "required_patterns": [],
+      "gate_type": "manual_overclaim_boundary"
+    }
+  ]
+}
