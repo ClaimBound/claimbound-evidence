@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT=Path(__file__).resolve().parents[1]
-DATA=ROOT/'docs/public_claims/domain_catalog.json'
+DATA_DIR=ROOT/'docs/public_claims/domains'
 VERSION='2026-07-16-v1'; N_DOMAINS=100; PER_DOMAIN=70; N_CLAIMS=7000; BATCH_DOMAINS=3
 OUTCOMES=['PASSED_UNDER_PROTOCOL','INSUFFICIENT_COVERAGE','NEGATIVE_RESULT_UNDER_PROTOCOL','BLOCKED_SOURCE','SOURCE_DRIFT']
 GATES=[
@@ -23,8 +23,12 @@ GATES=[
 ]
 
 def domains()->list[dict[str,Any]]:
-    data=json.loads(DATA.read_text(encoding='utf-8'))
-    if not isinstance(data,list): raise SystemExit('ERROR: domain catalog must be a list')
+    data=[]
+    for path in sorted(DATA_DIR.glob('domain_catalog_*.json')):
+        part=json.loads(path.read_text(encoding='utf-8'))
+        if not isinstance(part,list): raise SystemExit(f'ERROR: {path} must contain a list')
+        data.extend(part)
+    if not data: raise SystemExit('ERROR: no domain catalog chunks found')
     return data
 
 def make_claims(ds:list[dict[str,Any]])->list[dict[str,Any]]:
