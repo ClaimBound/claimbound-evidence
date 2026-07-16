@@ -1,0 +1,319 @@
+{
+  "issue_number": 161,
+  "access_date": "2026-07-16",
+  "operator": "NeoZorK",
+  "raw_payload_committed": false,
+  "claim_boundary": "Same-source immediate rerun of all 12 frozen baseline claims; byte/access drift is separated from claim-support drift and no baseline card is overwritten.",
+  "result_counts": {
+    "BLOCKED_SOURCE": 4,
+    "PASSED_UNDER_PROTOCOL": 7,
+    "INSUFFICIENT_COVERAGE": 1
+  },
+  "source_records": [
+    {
+      "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2212948",
+      "canonical_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2212948",
+      "http_status": 403,
+      "sha256": "7ff952855df87c63d485bf677a868b416ab4fd5bcf94aa99f01f200e7184cc68",
+      "fetch_error": null
+    },
+    {
+      "source_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "canonical_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "http_status": 200,
+      "sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "fetch_error": null
+    },
+    {
+      "source_url": "https://clinicaltrials.gov/study/NCT03887455",
+      "canonical_url": "https://clinicaltrials.gov/study/NCT03887455",
+      "http_status": 200,
+      "sha256": "da0916c3c6c7549118c989f03d8870f213428cd97e9fd0420d9aedc57677c616",
+      "fetch_error": null
+    }
+  ],
+  "cards": [
+    {
+      "protocol_id": "MED-LEQ-01-D1201-R1",
+      "issue_number": 161,
+      "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2212948",
+      "source_name": "NEJM CLARITY AD primary paper",
+      "claim": "In CLARITY AD, lecanemab produced less decline than placebo over 18 months on the Clinical Dementia Rating Scale-Sum of Boxes (CDR-SB).",
+      "required_patterns": [
+        "18 months",
+        "CDR.SB",
+        "lecanemab",
+        "placebo",
+        "less decline|declined less"
+      ],
+      "matched_patterns": [],
+      "result_status": "BLOCKED_SOURCE",
+      "http_status": 403,
+      "canonical_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2212948",
+      "source_sha256": "7ff952855df87c63d485bf677a868b416ab4fd5bcf94aa99f01f200e7184cc68",
+      "baseline_protocol_id": "MED-LEQ-01-D1201",
+      "baseline_sha256": "dec889b404e9807ea8b893b07495936981b5166aec8b312716d5ef73a34317e0",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT"
+    },
+    {
+      "protocol_id": "MED-LEQ-02-D1202-R1",
+      "issue_number": 161,
+      "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2212948",
+      "source_name": "NEJM CLARITY AD primary paper",
+      "claim": "The reported mean CDR-SB change at 18 months was 1.21 with lecanemab and 1.66 with placebo, an adjusted mean difference of -0.45 points.",
+      "required_patterns": [
+        "1.21",
+        "1.66",
+        "0.45",
+        "18 months"
+      ],
+      "matched_patterns": [],
+      "result_status": "BLOCKED_SOURCE",
+      "http_status": 403,
+      "canonical_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2212948",
+      "source_sha256": "7ff952855df87c63d485bf677a868b416ab4fd5bcf94aa99f01f200e7184cc68",
+      "baseline_protocol_id": "MED-LEQ-02-D1202",
+      "baseline_sha256": "dec889b404e9807ea8b893b07495936981b5166aec8b312716d5ef73a34317e0",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT"
+    },
+    {
+      "protocol_id": "MED-LEQ-03-D1203-R1",
+      "issue_number": 161,
+      "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2212948",
+      "source_name": "NEJM CLARITY AD primary paper",
+      "claim": "The widely reported 27% is approximately the relative reduction in measured decline: 0.45 divided by the 1.66-point placebo decline equals 27.1%.",
+      "required_patterns": [
+        "1.66",
+        "0.45"
+      ],
+      "matched_patterns": [],
+      "result_status": "BLOCKED_SOURCE",
+      "http_status": 403,
+      "canonical_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2212948",
+      "source_sha256": "7ff952855df87c63d485bf677a868b416ab4fd5bcf94aa99f01f200e7184cc68",
+      "baseline_protocol_id": "MED-LEQ-03-D1203",
+      "baseline_sha256": "dec889b404e9807ea8b893b07495936981b5166aec8b312716d5ef73a34317e0",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT"
+    },
+    {
+      "protocol_id": "MED-LEQ-04-D1204-R1",
+      "issue_number": 161,
+      "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2212948",
+      "source_name": "NEJM CLARITY AD primary paper",
+      "claim": "On CDR-SB, both groups worsened on average over 18 months; lecanemab worsened less than placebo.",
+      "required_patterns": [
+        "1.21",
+        "1.66",
+        "18 months"
+      ],
+      "matched_patterns": [],
+      "result_status": "BLOCKED_SOURCE",
+      "http_status": 403,
+      "canonical_url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2212948",
+      "source_sha256": "7ff952855df87c63d485bf677a868b416ab4fd5bcf94aa99f01f200e7184cc68",
+      "baseline_protocol_id": "MED-LEQ-04-D1204",
+      "baseline_sha256": "dec889b404e9807ea8b893b07495936981b5166aec8b312716d5ef73a34317e0",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT"
+    },
+    {
+      "protocol_id": "MED-LEQ-05-D1205-R1",
+      "issue_number": 161,
+      "source_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_name": "FDA traditional-approval announcement (6 July 2023)",
+      "claim": "Study 301 initiated treatment in patients with mild cognitive impairment or mild dementia due to Alzheimer's disease.",
+      "required_patterns": [
+        "Study 301",
+        "mild cognitive impairment",
+        "mild dementia"
+      ],
+      "matched_patterns": [
+        "Study 301",
+        "mild cognitive impairment",
+        "mild dementia"
+      ],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "http_status": 200,
+      "canonical_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "baseline_protocol_id": "MED-LEQ-05-D1205",
+      "baseline_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME"
+    },
+    {
+      "protocol_id": "MED-LEQ-06-D1206-R1",
+      "issue_number": 161,
+      "source_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_name": "FDA traditional-approval announcement (6 July 2023)",
+      "claim": "The studied population had confirmed amyloid beta pathology.",
+      "required_patterns": [
+        "confirmed presence of amyloid beta pathology|confirmed amyloid beta pathology"
+      ],
+      "matched_patterns": [
+        "confirmed presence of amyloid beta pathology|confirmed amyloid beta pathology"
+      ],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "http_status": 200,
+      "canonical_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "baseline_protocol_id": "MED-LEQ-06-D1206",
+      "baseline_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME"
+    },
+    {
+      "protocol_id": "MED-LEQ-07-D1207-R1",
+      "issue_number": 161,
+      "source_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_name": "FDA traditional-approval announcement (6 July 2023)",
+      "claim": "The FDA page states there were no safety or effectiveness data for initiating treatment at earlier or later disease stages than those studied.",
+      "required_patterns": [
+        "no safety or effectiveness data",
+        "earlier or later stages"
+      ],
+      "matched_patterns": [
+        "no safety or effectiveness data",
+        "earlier or later stages"
+      ],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "http_status": 200,
+      "canonical_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "baseline_protocol_id": "MED-LEQ-07-D1207",
+      "baseline_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME"
+    },
+    {
+      "protocol_id": "MED-LEQ-08-D1208-R1",
+      "issue_number": 161,
+      "source_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_name": "FDA traditional-approval announcement (6 July 2023)",
+      "claim": "The selected FDA page does not establish cure, reversal, 27% memory improvement, or recovery of 27% of patients; it reports reduction of decline and verified clinical benefit.",
+      "required_patterns": [],
+      "matched_patterns": [],
+      "result_status": "INSUFFICIENT_COVERAGE",
+      "http_status": 200,
+      "canonical_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "baseline_protocol_id": "MED-LEQ-08-D1208",
+      "baseline_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME"
+    },
+    {
+      "protocol_id": "MED-LEQ-09-D1209-R1",
+      "issue_number": 161,
+      "source_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_name": "FDA traditional-approval announcement (6 July 2023)",
+      "claim": "ARIA can infrequently include serious and life-threatening brain edema, and intracerebral hemorrhages can be fatal.",
+      "required_patterns": [
+        "infrequently",
+        "serious and life-threatening",
+        "can be fatal"
+      ],
+      "matched_patterns": [
+        "infrequently",
+        "serious and life-threatening",
+        "can be fatal"
+      ],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "http_status": 200,
+      "canonical_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "baseline_protocol_id": "MED-LEQ-09-D1209",
+      "baseline_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME"
+    },
+    {
+      "protocol_id": "MED-LEQ-10-D1210-R1",
+      "issue_number": 161,
+      "source_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_name": "FDA traditional-approval announcement (6 July 2023)",
+      "claim": "The prescribing information includes a boxed warning about potential risks associated with ARIA.",
+      "required_patterns": [
+        "boxed warning",
+        "potential risks associated with ARIA"
+      ],
+      "matched_patterns": [
+        "boxed warning",
+        "potential risks associated with ARIA"
+      ],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "http_status": 200,
+      "canonical_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "baseline_protocol_id": "MED-LEQ-10-D1210",
+      "baseline_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME"
+    },
+    {
+      "protocol_id": "MED-LEQ-11-D1211-R1",
+      "issue_number": 161,
+      "source_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_name": "FDA traditional-approval announcement (6 July 2023)",
+      "claim": "ApoE epsilon 4 homozygotes had higher ARIA incidence, including symptomatic, serious, and severe ARIA; testing should be performed before treatment to inform risk.",
+      "required_patterns": [
+        "homozygous",
+        "higher incidence",
+        "testing.*before starting treatment"
+      ],
+      "matched_patterns": [
+        "homozygous",
+        "higher incidence",
+        "testing.*before starting treatment"
+      ],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "http_status": 200,
+      "canonical_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "baseline_protocol_id": "MED-LEQ-11-D1211",
+      "baseline_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME"
+    },
+    {
+      "protocol_id": "MED-LEQ-12-D1212-R1",
+      "issue_number": 161,
+      "source_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_name": "FDA traditional-approval announcement (6 July 2023)",
+      "claim": "Anticoagulant use was associated with more intracerebral hemorrhages with Leqembi than placebo; caution is recommended for anticoagulant use or other hemorrhage risk factors.",
+      "required_patterns": [
+        "anticoagulant",
+        "compared to placebo|compared with placebo",
+        "caution"
+      ],
+      "matched_patterns": [
+        "anticoagulant",
+        "compared to placebo|compared with placebo",
+        "caution"
+      ],
+      "result_status": "PASSED_UNDER_PROTOCOL",
+      "http_status": 200,
+      "canonical_url": "https://www.fda.gov/news-events/press-announcements/fda-converts-novel-alzheimers-disease-treatment-traditional-approval",
+      "source_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "baseline_protocol_id": "MED-LEQ-12-D1212",
+      "baseline_sha256": "8caa04a8ac586f974ae167ad5766b3b4b85156592170aed667a16d86365a4ebf",
+      "http_access_changed": false,
+      "claim_support_changed": false,
+      "reproduction_level": "REPRODUCED_OUTCOME"
+    }
+  ]
+}
