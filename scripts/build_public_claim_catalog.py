@@ -298,7 +298,7 @@ def build(
         page_body = (
             "<p>CLAIMBOUND / DOMAIN CANDIDATES</p>"
             f'<h1>{html.escape(domain["title"])}</h1>'
-            '<div class="note"><strong>70 pending candidates, not evidence.'</n            "strong> Initial status: <code>PENDING_SOURCE_SELECTION</code>. "
+            '<div class="note"><strong>70 pending candidates, not evidence.'</n            "</strong> Initial status: <code>PENDING_SOURCE_SELECTION</code>. "
             "Suggested source boundary: "
             f'{html.escape(domain["source_hint"])}. Freeze one exact URL before '
             "network access and keep every honest non-pass.</div>"
