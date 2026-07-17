@@ -23,12 +23,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
       - uses: actions/configure-pages@v6
-      - name: Assemble ESA and NASA atlas site
+      - name: Assemble ESA, NASA, Leqembi, and public-claim atlas site
         run: |
           mkdir -p _site
           cp -R docs/esa/atlas _site/esa
           cp -R docs/nasa/atlas _site/nasa
+          cp -R docs/leqembi _site/leqembi
+          python3 scripts/build_public_claim_catalog.py build --output _site/claims
           cp docs/atlas_home.html _site/index.html
       - uses: actions/upload-pages-artifact@v5
         with:
