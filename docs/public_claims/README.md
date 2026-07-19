@@ -53,6 +53,20 @@ python3 scripts/build_public_claim_catalog.py \
 Record the printed SHA-256 in the eventual protocol. Do not commit raw downloaded
 payloads.
 
+Before executing a batch, prepare a claim-level execution manifest. Every claim
+must name its exact URL, gate-specific evaluation method, frozen parameters,
+support rule and an explicit negative rule. A complete domain requires at least
+one independently selected URL for each of its seven topics; one generic URL for
+all 70 claims is rejected.
+
+```bash
+python3 scripts/build_public_claim_catalog.py \
+  validate-execution-manifest tmp/batch-01-execution-manifest.json
+```
+
+The validator deliberately does not require a quota of passes or negatives.
+Outcome diversity is not evidence; each status must follow its frozen gate.
+
 ## Publish issue batches
 
 Preview only:

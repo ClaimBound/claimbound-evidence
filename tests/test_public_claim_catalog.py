@@ -1,6 +1,8 @@
 from __future__ import annotations
 import importlib.util
+import json
 from pathlib import Path
+import pytest
 SCRIPT=Path(__file__).resolve().parents[1]/'scripts/build_public_claim_catalog.py'
 def mod():
     spec=importlib.util.spec_from_file_location('public_claim_catalog',SCRIPT); assert spec and spec.loader
@@ -20,3 +22,28 @@ def test_candidate_boundary_visible(tmp_path):
     assert 'not evidence' in page.lower()
     assert 'PENDING_SOURCE_SELECTION' in page
     assert 'Open one verification issue' in page
+
+def _manifest(m, claims, url_count):
+    entries=[]
+    for claim in claims:
+        entries.append({
+            'claim_id':claim['claim_id'],
+            'source_url':f"https://example.org/source-{((claim['topic_index']-1)%url_count)+1}",
+            'evaluation_method':m.GATE_METHODS[claim['gate']],
+            'frozen_parameters':{'version':'v1'},
+            'support_rule':'all preregistered gate conditions are met',
+            'negative_rule':'use negative only for an explicit protocol-defined contradiction',
+        })
+    return {'batch_issue':166,'entries':entries}
+
+def test_execution_manifest_rejects_one_generic_source_per_domain(tmp_path):
+    m=mod(); claims=[c for c in m.make_claims(m.domains()) if c['domain_code']=='DOM001']
+    path=tmp_path/'manifest.json'; path.write_text(json.dumps(_manifest(m,claims,1)))
+    with pytest.raises(SystemExit,match='7 URLs minimum'):
+        m.validate_execution_manifest(path)
+
+def test_execution_manifest_accepts_gate_specific_topic_sources(tmp_path,capsys):
+    m=mod(); claims=[c for c in m.make_claims(m.domains()) if c['domain_code']=='DOM001']
+    path=tmp_path/'manifest.json'; path.write_text(json.dumps(_manifest(m,claims,7)))
+    m.validate_execution_manifest(path)
+    assert 'execution_manifest_entries=70' in capsys.readouterr().out

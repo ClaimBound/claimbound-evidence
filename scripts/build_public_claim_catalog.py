@@ -9,6 +9,18 @@ ROOT=Path(__file__).resolve().parents[1]
 DATA_DIR=ROOT/'docs/public_claims/domains'
 VERSION='2026-07-16-v1'; N_DOMAINS=100; PER_DOMAIN=70; N_CLAIMS=7000; BATCH_DOMAINS=3
 OUTCOMES=['PASSED_UNDER_PROTOCOL','INSUFFICIENT_COVERAGE','NEGATIVE_RESULT_UNDER_PROTOCOL','BLOCKED_SOURCE','SOURCE_DRIFT']
+GATE_METHODS={
+    'source-integrity':'source_manifest_audit',
+    'numerator-denominator':'deterministic_numeric_reproduction',
+    'coverage':'coverage_boundary_audit',
+    'time-boundary':'version_and_date_audit',
+    'method-version':'method_version_reproduction',
+    'comparator':'comparator_boundary_audit',
+    'reproducibility':'independent_access_and_rerun',
+    'negative-evidence':'contradiction_and_adverse_evidence_audit',
+    'conflicts-disclosure':'disclosure_boundary_audit',
+    'overclaim-drift':'overclaim_and_drift_audit',
+}
 GATES=[
 ('source-integrity','The headline about {topic} can be traced to one exact public source version, canonical URL, access time, redirect chain, and SHA-256 hash.','Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result.'),
 ('numerator-denominator','The published number for {topic} reproduces from the disclosed numerator, denominator, units, exclusions, and rounding rule.','A nearby number or a recalculation with a different denominator is insufficient.'),
@@ -96,7 +108,7 @@ def build(output:Path,ds:list[dict[str,Any]],claims:list[dict[str,Any]])->None:
             lines += [f"## {d['title']} — `{d['slug']}`",'',f"Suggested source boundary: {d['source_hint']}.",'']
             for c in (x for x in bc if x['domain_slug']==d['slug']): lines.append(f"- [ ] `{c['claim_id']}` — **{c['topic']} / {c['gate']}** — {c['frozen_candidate_claim']}")
             lines.append('')
-        lines += ['## Honest completion gate','','- [ ] Exact source URL selected and frozen before fetch for each executed candidate.','- [ ] Canonical URL, redirects, access time, HTTP result, and SHA-256 recorded.','- [ ] No source widening or claim rewriting after observing the result.','- [ ] Every non-pass reviewed and retained.','- [ ] Raw source payload remains local.','- [ ] Published evidence cards pass `uv run claimbound validate-all` and tests.','']
+        lines += ['## Honest completion gate','','- [ ] Claim-level execution manifest passes `validate-execution-manifest`.','- [ ] Every complete domain uses at least seven independently frozen URLs: one or more per topic, never one generic domain URL.','- [ ] Each claim has its gate-specific method, frozen parameters, support rule, and negative rule.','- [ ] Exact source URL selected and frozen before fetch for each executed candidate.','- [ ] Canonical URL, redirects, access time, HTTP result, and SHA-256 recorded.','- [ ] No source widening or claim rewriting after observing the result.','- [ ] Every non-pass reviewed and retained; PASS/NEGATIVE quotas are forbidden.','- [ ] Raw source payload remains local.','- [ ] Published evidence cards pass `uv run claimbound validate-all` and tests.','']
         (output/'issues'/name).write_text('\n'.join(lines),encoding='utf-8')
     (output/'issues'/'README.md').write_text('\n'.join(idx)+'\n',encoding='utf-8')
     links=''.join(f'<article class="domain"><h2><a href="batch-{i:02d}.md">Batch {i:02d}</a></h2><p>{len(b)} domains · {len(b)*PER_DOMAIN} candidates</p></article>' for i,b in enumerate(batches,1))
@@ -109,6 +121,36 @@ def freeze(path:Path)->None:
         u=x.get('source_url')
         if not isinstance(u,str) or not u.startswith(('https://','http://')) or 'TODO' in u.upper() or 'FILL' in u.upper(): raise SystemExit(f'ERROR: invalid source #{i}')
     raw=json.dumps(payload,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode(); print(hashlib.sha256(raw).hexdigest())
+
+def validate_execution_manifest(path:Path)->None:
+    """Reject domain-level source reuse and gate-agnostic adjudication plans."""
+    payload=json.loads(path.read_text(encoding='utf-8'))
+    entries=payload.get('entries')
+    if not isinstance(entries,list) or not entries: raise SystemExit("ERROR: execution manifest needs non-empty 'entries'")
+    catalog={c['claim_id']:c for c in make_claims(domains())}
+    errors=[]; seen=set(); urls_by_domain={}; topics_by_domain={}
+    for i,e in enumerate(entries,1):
+        cid=e.get('claim_id'); url=e.get('source_url'); method=e.get('evaluation_method')
+        if cid not in catalog: errors.append(f'entry #{i}: unknown claim_id {cid!r}'); continue
+        if cid in seen: errors.append(f'{cid}: duplicate entry')
+        seen.add(cid); claim=catalog[cid]
+        if not isinstance(url,str) or not url.startswith(('https://','http://')): errors.append(f'{cid}: exact source_url required')
+        if method!=GATE_METHODS[claim['gate']]: errors.append(f"{cid}: evaluation_method must be {GATE_METHODS[claim['gate']]}")
+        if not isinstance(e.get('frozen_parameters'),dict) or not e['frozen_parameters']: errors.append(f'{cid}: non-empty frozen_parameters required before fetch')
+        if not isinstance(e.get('support_rule'),str) or not e['support_rule'].strip(): errors.append(f'{cid}: support_rule required')
+        if not isinstance(e.get('negative_rule'),str) or not e['negative_rule'].strip(): errors.append(f'{cid}: negative_rule required; absence alone is not negative')
+        urls_by_domain.setdefault(claim['domain_code'],set()).add(url)
+        topics_by_domain.setdefault(claim['domain_code'],set()).add(claim['topic_index'])
+    selected={catalog[cid]['domain_code'] for cid in seen if cid in catalog}
+    for domain in selected:
+        expected={c['claim_id'] for c in catalog.values() if c['domain_code']==domain}
+        actual={cid for cid in seen if cid in catalog and catalog[cid]['domain_code']==domain}
+        if actual!=expected: errors.append(f'{domain}: complete 70-claim domain manifest required, missing {len(expected-actual)}')
+        if len(urls_by_domain.get(domain,set()))<7: errors.append(f'{domain}: at least one independently frozen source per topic required (7 URLs minimum)')
+        if topics_by_domain.get(domain,set())!=set(range(1,8)): errors.append(f'{domain}: all seven topics required')
+    if errors: raise SystemExit('\n'.join('ERROR: '+x for x in errors))
+    raw=json.dumps(payload,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()
+    print(f'OK: execution_manifest_entries={len(entries)} sha256={hashlib.sha256(raw).hexdigest()}')
 
 def run_build(out:Path)->None:
     ds=domains(); cs=make_claims(ds); validate(ds,cs); build(out,ds,cs)
@@ -135,11 +177,13 @@ def main()->int:
     p=argparse.ArgumentParser(); s=p.add_subparsers(dest='cmd',required=True)
     b=s.add_parser('build'); b.add_argument('--output',type=Path,default=Path('tmp/public-claim-catalog'))
     s.add_parser('validate'); f=s.add_parser('freeze-manifest'); f.add_argument('manifest',type=Path)
+    x=s.add_parser('validate-execution-manifest'); x.add_argument('manifest',type=Path)
     u=s.add_parser('publish-issues'); u.add_argument('--output',type=Path,default=Path('tmp/public-claim-catalog')); u.add_argument('--repo',default='ClaimBound/claimbound-evidence'); u.add_argument('--publish',action='store_true')
     a=p.parse_args()
     if a.cmd=='build': run_build(a.output); print(f'Built 7000 candidates across 100 domains at {a.output}')
     elif a.cmd=='validate': command_validate()
     elif a.cmd=='freeze-manifest': freeze(a.manifest)
+    elif a.cmd=='validate-execution-manifest': validate_execution_manifest(a.manifest)
     else: publish(a.output,a.repo,a.publish)
     return 0
 if __name__=='__main__': raise SystemExit(main())
