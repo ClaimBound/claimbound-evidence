@@ -134,7 +134,8 @@ def validate_execution_manifest(path:Path)->None:
         if cid not in catalog: errors.append(f'entry #{i}: unknown claim_id {cid!r}'); continue
         if cid in seen: errors.append(f'{cid}: duplicate entry')
         seen.add(cid); claim=catalog[cid]
-        if not isinstance(url,str) or not url.startswith(('https://','http://')): errors.append(f'{cid}: exact source_url required')
+        if not isinstance(url,str) or not url.startswith('https://'): errors.append(f'{cid}: exact HTTPS source_url required')
+        elif any(marker in url.lower() for marker in ('example.', 'localhost', '127.0.0.1', 'todo', 'fill')): errors.append(f'{cid}: placeholder source_url forbidden')
         if method!=GATE_METHODS[claim['gate']]: errors.append(f"{cid}: evaluation_method must be {GATE_METHODS[claim['gate']]}")
         if not isinstance(e.get('frozen_parameters'),dict) or not e['frozen_parameters']: errors.append(f'{cid}: non-empty frozen_parameters required before fetch')
         if not isinstance(e.get('support_rule'),str) or not e['support_rule'].strip(): errors.append(f'{cid}: support_rule required')
@@ -148,6 +149,13 @@ def validate_execution_manifest(path:Path)->None:
         if actual!=expected: errors.append(f'{domain}: complete 70-claim domain manifest required, missing {len(expected-actual)}')
         if len(urls_by_domain.get(domain,set()))<7: errors.append(f'{domain}: at least one independently frozen source per topic required (7 URLs minimum)')
         if topics_by_domain.get(domain,set())!=set(range(1,8)): errors.append(f'{domain}: all seven topics required')
+        topic_urls={}
+        for cid in actual:
+            claim=catalog[cid]; entry=next((x for x in entries if x.get('claim_id')==cid),{})
+            topic_urls.setdefault(claim['topic_index'],set()).add(entry.get('source_url'))
+        if any(len(urls)!=1 for urls in topic_urls.values()): errors.append(f'{domain}: each topic must keep one frozen URL across its ten gates')
+        representatives=[next(iter(topic_urls[t])) for t in sorted(topic_urls) if topic_urls[t]]
+        if len(representatives)!=len(set(representatives)): errors.append(f'{domain}: topic source URLs must be independently selected')
     if errors: raise SystemExit('\n'.join('ERROR: '+x for x in errors))
     raw=json.dumps(payload,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()
     print(f'OK: execution_manifest_entries={len(entries)} sha256={hashlib.sha256(raw).hexdigest()}')

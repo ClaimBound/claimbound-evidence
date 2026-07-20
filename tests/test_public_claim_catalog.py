@@ -28,7 +28,7 @@ def _manifest(m, claims, url_count):
     for claim in claims:
         entries.append({
             'claim_id':claim['claim_id'],
-            'source_url':f"https://example.org/source-{((claim['topic_index']-1)%url_count)+1}",
+            'source_url':f"https://sources.claimbound.org/source-{((claim['topic_index']-1)%url_count)+1}",
             'evaluation_method':m.GATE_METHODS[claim['gate']],
             'frozen_parameters':{'version':'v1'},
             'support_rule':'all preregistered gate conditions are met',
@@ -47,3 +47,18 @@ def test_execution_manifest_accepts_gate_specific_topic_sources(tmp_path,capsys)
     path=tmp_path/'manifest.json'; path.write_text(json.dumps(_manifest(m,claims,7)))
     m.validate_execution_manifest(path)
     assert 'execution_manifest_entries=70' in capsys.readouterr().out
+
+def test_execution_manifest_rejects_placeholder_sources(tmp_path):
+    m=mod(); claims=[c for c in m.make_claims(m.domains()) if c['domain_code']=='DOM001']
+    payload=_manifest(m,claims,7)
+    for entry in payload['entries']: entry['source_url']=entry['source_url'].replace('sources.claimbound.org','example.org')
+    path=tmp_path/'manifest.json'; path.write_text(json.dumps(payload))
+    with pytest.raises(SystemExit,match='placeholder source_url forbidden'):
+        m.validate_execution_manifest(path)
+
+def test_execution_manifest_rejects_topic_url_drift(tmp_path):
+    m=mod(); claims=[c for c in m.make_claims(m.domains()) if c['domain_code']=='DOM001']
+    payload=_manifest(m,claims,7); payload['entries'][1]['source_url']='https://official.test/drift'
+    path=tmp_path/'manifest.json'; path.write_text(json.dumps(payload))
+    with pytest.raises(SystemExit,match='one frozen URL'):
+        m.validate_execution_manifest(path)
