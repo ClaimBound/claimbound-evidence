@@ -1,0 +1,3578 @@
+{
+  "issue_number": 166,
+  "protocol_version": "CB7K-ISSUE-166-CLAIM-LEVEL-2026-07-20-v2",
+  "frozen_before_fetch": true,
+  "entries": [
+    {
+      "claim_id": "CB7K-DOM001-T01-G01",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T01-G02",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T01-G03",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T01-G04",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T01-G05",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T01-G06",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T01-G07",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T01-G08",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T01-G09",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T01-G10",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T02-G01",
+      "source_name": "OpenAI GPT-5.5 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T02-G02",
+      "source_name": "OpenAI GPT-5.5 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T02-G03",
+      "source_name": "OpenAI GPT-5.5 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T02-G04",
+      "source_name": "OpenAI GPT-5.5 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T02-G05",
+      "source_name": "OpenAI GPT-5.5 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T02-G06",
+      "source_name": "OpenAI GPT-5.5 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T02-G07",
+      "source_name": "OpenAI GPT-5.5 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T02-G08",
+      "source_name": "OpenAI GPT-5.5 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T02-G09",
+      "source_name": "OpenAI GPT-5.5 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T02-G10",
+      "source_name": "OpenAI GPT-5.5 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T03-G01",
+      "source_name": "OpenAI GPT-4.1 release",
+      "source_url": "https://openai.com/index/gpt-4-1/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T03-G02",
+      "source_name": "OpenAI GPT-4.1 release",
+      "source_url": "https://openai.com/index/gpt-4-1/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T03-G03",
+      "source_name": "OpenAI GPT-4.1 release",
+      "source_url": "https://openai.com/index/gpt-4-1/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T03-G04",
+      "source_name": "OpenAI GPT-4.1 release",
+      "source_url": "https://openai.com/index/gpt-4-1/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T03-G05",
+      "source_name": "OpenAI GPT-4.1 release",
+      "source_url": "https://openai.com/index/gpt-4-1/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T03-G06",
+      "source_name": "OpenAI GPT-4.1 release",
+      "source_url": "https://openai.com/index/gpt-4-1/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T03-G07",
+      "source_name": "OpenAI GPT-4.1 release",
+      "source_url": "https://openai.com/index/gpt-4-1/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T03-G08",
+      "source_name": "OpenAI GPT-4.1 release",
+      "source_url": "https://openai.com/index/gpt-4-1/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T03-G09",
+      "source_name": "OpenAI GPT-4.1 release",
+      "source_url": "https://openai.com/index/gpt-4-1/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T03-G10",
+      "source_name": "OpenAI GPT-4.1 release",
+      "source_url": "https://openai.com/index/gpt-4-1/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T04-G01",
+      "source_name": "OpenAI API pricing",
+      "source_url": "https://openai.com/api/pricing/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T04-G02",
+      "source_name": "OpenAI API pricing",
+      "source_url": "https://openai.com/api/pricing/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T04-G03",
+      "source_name": "OpenAI API pricing",
+      "source_url": "https://openai.com/api/pricing/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T04-G04",
+      "source_name": "OpenAI API pricing",
+      "source_url": "https://openai.com/api/pricing/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T04-G05",
+      "source_name": "OpenAI API pricing",
+      "source_url": "https://openai.com/api/pricing/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T04-G06",
+      "source_name": "OpenAI API pricing",
+      "source_url": "https://openai.com/api/pricing/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T04-G07",
+      "source_name": "OpenAI API pricing",
+      "source_url": "https://openai.com/api/pricing/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T04-G08",
+      "source_name": "OpenAI API pricing",
+      "source_url": "https://openai.com/api/pricing/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T04-G09",
+      "source_name": "OpenAI API pricing",
+      "source_url": "https://openai.com/api/pricing/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T04-G10",
+      "source_name": "OpenAI API pricing",
+      "source_url": "https://openai.com/api/pricing/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T05-G01",
+      "source_name": "Google sustainability reports",
+      "source_url": "https://sustainability.google/reports/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T05-G02",
+      "source_name": "Google sustainability reports",
+      "source_url": "https://sustainability.google/reports/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T05-G03",
+      "source_name": "Google sustainability reports",
+      "source_url": "https://sustainability.google/reports/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T05-G04",
+      "source_name": "Google sustainability reports",
+      "source_url": "https://sustainability.google/reports/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T05-G05",
+      "source_name": "Google sustainability reports",
+      "source_url": "https://sustainability.google/reports/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T05-G06",
+      "source_name": "Google sustainability reports",
+      "source_url": "https://sustainability.google/reports/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T05-G07",
+      "source_name": "Google sustainability reports",
+      "source_url": "https://sustainability.google/reports/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T05-G08",
+      "source_name": "Google sustainability reports",
+      "source_url": "https://sustainability.google/reports/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T05-G09",
+      "source_name": "Google sustainability reports",
+      "source_url": "https://sustainability.google/reports/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T05-G10",
+      "source_name": "Google sustainability reports",
+      "source_url": "https://sustainability.google/reports/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T06-G01",
+      "source_name": "OpenAI GPT-5.6 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T06-G02",
+      "source_name": "OpenAI GPT-5.6 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T06-G03",
+      "source_name": "OpenAI GPT-5.6 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T06-G04",
+      "source_name": "OpenAI GPT-5.6 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T06-G05",
+      "source_name": "OpenAI GPT-5.6 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T06-G06",
+      "source_name": "OpenAI GPT-5.6 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T06-G07",
+      "source_name": "OpenAI GPT-5.6 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T06-G08",
+      "source_name": "OpenAI GPT-5.6 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T06-G09",
+      "source_name": "OpenAI GPT-5.6 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T06-G10",
+      "source_name": "OpenAI GPT-5.6 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6/safeguards",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T07-G01",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T07-G02",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T07-G03",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T07-G04",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T07-G05",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T07-G06",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T07-G07",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T07-G08",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T07-G09",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM001-T07-G10",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T01-G01",
+      "source_name": "Stanford CRFM HELM Classic",
+      "source_url": "https://crfm.stanford.edu/helm/latest/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T01-G02",
+      "source_name": "Stanford CRFM HELM Classic",
+      "source_url": "https://crfm.stanford.edu/helm/latest/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T01-G03",
+      "source_name": "Stanford CRFM HELM Classic",
+      "source_url": "https://crfm.stanford.edu/helm/latest/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T01-G04",
+      "source_name": "Stanford CRFM HELM Classic",
+      "source_url": "https://crfm.stanford.edu/helm/latest/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T01-G05",
+      "source_name": "Stanford CRFM HELM Classic",
+      "source_url": "https://crfm.stanford.edu/helm/latest/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T01-G06",
+      "source_name": "Stanford CRFM HELM Classic",
+      "source_url": "https://crfm.stanford.edu/helm/latest/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T01-G07",
+      "source_name": "Stanford CRFM HELM Classic",
+      "source_url": "https://crfm.stanford.edu/helm/latest/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T01-G08",
+      "source_name": "Stanford CRFM HELM Classic",
+      "source_url": "https://crfm.stanford.edu/helm/latest/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T01-G09",
+      "source_name": "Stanford CRFM HELM Classic",
+      "source_url": "https://crfm.stanford.edu/helm/latest/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T01-G10",
+      "source_name": "Stanford CRFM HELM Classic",
+      "source_url": "https://crfm.stanford.edu/helm/latest/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T02-G01",
+      "source_name": "Stanford CRFM HELM Lite",
+      "source_url": "https://crfm.stanford.edu/helm/lite/latest/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T02-G02",
+      "source_name": "Stanford CRFM HELM Lite",
+      "source_url": "https://crfm.stanford.edu/helm/lite/latest/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T02-G03",
+      "source_name": "Stanford CRFM HELM Lite",
+      "source_url": "https://crfm.stanford.edu/helm/lite/latest/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T02-G04",
+      "source_name": "Stanford CRFM HELM Lite",
+      "source_url": "https://crfm.stanford.edu/helm/lite/latest/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T02-G05",
+      "source_name": "Stanford CRFM HELM Lite",
+      "source_url": "https://crfm.stanford.edu/helm/lite/latest/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T02-G06",
+      "source_name": "Stanford CRFM HELM Lite",
+      "source_url": "https://crfm.stanford.edu/helm/lite/latest/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T02-G07",
+      "source_name": "Stanford CRFM HELM Lite",
+      "source_url": "https://crfm.stanford.edu/helm/lite/latest/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T02-G08",
+      "source_name": "Stanford CRFM HELM Lite",
+      "source_url": "https://crfm.stanford.edu/helm/lite/latest/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T02-G09",
+      "source_name": "Stanford CRFM HELM Lite",
+      "source_url": "https://crfm.stanford.edu/helm/lite/latest/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T02-G10",
+      "source_name": "Stanford CRFM HELM Lite",
+      "source_url": "https://crfm.stanford.edu/helm/lite/latest/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T03-G01",
+      "source_name": "Stanford CRFM HELM MMLU",
+      "source_url": "https://crfm.stanford.edu/helm/mmlu/latest/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T03-G02",
+      "source_name": "Stanford CRFM HELM MMLU",
+      "source_url": "https://crfm.stanford.edu/helm/mmlu/latest/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T03-G03",
+      "source_name": "Stanford CRFM HELM MMLU",
+      "source_url": "https://crfm.stanford.edu/helm/mmlu/latest/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T03-G04",
+      "source_name": "Stanford CRFM HELM MMLU",
+      "source_url": "https://crfm.stanford.edu/helm/mmlu/latest/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T03-G05",
+      "source_name": "Stanford CRFM HELM MMLU",
+      "source_url": "https://crfm.stanford.edu/helm/mmlu/latest/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T03-G06",
+      "source_name": "Stanford CRFM HELM MMLU",
+      "source_url": "https://crfm.stanford.edu/helm/mmlu/latest/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T03-G07",
+      "source_name": "Stanford CRFM HELM MMLU",
+      "source_url": "https://crfm.stanford.edu/helm/mmlu/latest/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T03-G08",
+      "source_name": "Stanford CRFM HELM MMLU",
+      "source_url": "https://crfm.stanford.edu/helm/mmlu/latest/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T03-G09",
+      "source_name": "Stanford CRFM HELM MMLU",
+      "source_url": "https://crfm.stanford.edu/helm/mmlu/latest/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T03-G10",
+      "source_name": "Stanford CRFM HELM MMLU",
+      "source_url": "https://crfm.stanford.edu/helm/mmlu/latest/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T04-G01",
+      "source_name": "Stanford CRFM VHELM",
+      "source_url": "https://crfm.stanford.edu/helm/vhelm/v2.0.0/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T04-G02",
+      "source_name": "Stanford CRFM VHELM",
+      "source_url": "https://crfm.stanford.edu/helm/vhelm/v2.0.0/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T04-G03",
+      "source_name": "Stanford CRFM VHELM",
+      "source_url": "https://crfm.stanford.edu/helm/vhelm/v2.0.0/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T04-G04",
+      "source_name": "Stanford CRFM VHELM",
+      "source_url": "https://crfm.stanford.edu/helm/vhelm/v2.0.0/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T04-G05",
+      "source_name": "Stanford CRFM VHELM",
+      "source_url": "https://crfm.stanford.edu/helm/vhelm/v2.0.0/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T04-G06",
+      "source_name": "Stanford CRFM VHELM",
+      "source_url": "https://crfm.stanford.edu/helm/vhelm/v2.0.0/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T04-G07",
+      "source_name": "Stanford CRFM VHELM",
+      "source_url": "https://crfm.stanford.edu/helm/vhelm/v2.0.0/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T04-G08",
+      "source_name": "Stanford CRFM VHELM",
+      "source_url": "https://crfm.stanford.edu/helm/vhelm/v2.0.0/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T04-G09",
+      "source_name": "Stanford CRFM VHELM",
+      "source_url": "https://crfm.stanford.edu/helm/vhelm/v2.0.0/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T04-G10",
+      "source_name": "Stanford CRFM VHELM",
+      "source_url": "https://crfm.stanford.edu/helm/vhelm/v2.0.0/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T05-G01",
+      "source_name": "Stanford CRFM HEIM",
+      "source_url": "https://crfm.stanford.edu/helm/heim/latest/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T05-G02",
+      "source_name": "Stanford CRFM HEIM",
+      "source_url": "https://crfm.stanford.edu/helm/heim/latest/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T05-G03",
+      "source_name": "Stanford CRFM HEIM",
+      "source_url": "https://crfm.stanford.edu/helm/heim/latest/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T05-G04",
+      "source_name": "Stanford CRFM HEIM",
+      "source_url": "https://crfm.stanford.edu/helm/heim/latest/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T05-G05",
+      "source_name": "Stanford CRFM HEIM",
+      "source_url": "https://crfm.stanford.edu/helm/heim/latest/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T05-G06",
+      "source_name": "Stanford CRFM HEIM",
+      "source_url": "https://crfm.stanford.edu/helm/heim/latest/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T05-G07",
+      "source_name": "Stanford CRFM HEIM",
+      "source_url": "https://crfm.stanford.edu/helm/heim/latest/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T05-G08",
+      "source_name": "Stanford CRFM HEIM",
+      "source_url": "https://crfm.stanford.edu/helm/heim/latest/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T05-G09",
+      "source_name": "Stanford CRFM HEIM",
+      "source_url": "https://crfm.stanford.edu/helm/heim/latest/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T05-G10",
+      "source_name": "Stanford CRFM HEIM",
+      "source_url": "https://crfm.stanford.edu/helm/heim/latest/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T06-G01",
+      "source_name": "Stanford CRFM AIR-Bench",
+      "source_url": "https://crfm.stanford.edu/helm/air-bench/latest/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T06-G02",
+      "source_name": "Stanford CRFM AIR-Bench",
+      "source_url": "https://crfm.stanford.edu/helm/air-bench/latest/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T06-G03",
+      "source_name": "Stanford CRFM AIR-Bench",
+      "source_url": "https://crfm.stanford.edu/helm/air-bench/latest/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T06-G04",
+      "source_name": "Stanford CRFM AIR-Bench",
+      "source_url": "https://crfm.stanford.edu/helm/air-bench/latest/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T06-G05",
+      "source_name": "Stanford CRFM AIR-Bench",
+      "source_url": "https://crfm.stanford.edu/helm/air-bench/latest/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T06-G06",
+      "source_name": "Stanford CRFM AIR-Bench",
+      "source_url": "https://crfm.stanford.edu/helm/air-bench/latest/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T06-G07",
+      "source_name": "Stanford CRFM AIR-Bench",
+      "source_url": "https://crfm.stanford.edu/helm/air-bench/latest/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T06-G08",
+      "source_name": "Stanford CRFM AIR-Bench",
+      "source_url": "https://crfm.stanford.edu/helm/air-bench/latest/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T06-G09",
+      "source_name": "Stanford CRFM AIR-Bench",
+      "source_url": "https://crfm.stanford.edu/helm/air-bench/latest/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T06-G10",
+      "source_name": "Stanford CRFM AIR-Bench",
+      "source_url": "https://crfm.stanford.edu/helm/air-bench/latest/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T07-G01",
+      "source_name": "Stanford CRFM HELM Safety",
+      "source_url": "https://crfm.stanford.edu/helm/safety/latest/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T07-G02",
+      "source_name": "Stanford CRFM HELM Safety",
+      "source_url": "https://crfm.stanford.edu/helm/safety/latest/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T07-G03",
+      "source_name": "Stanford CRFM HELM Safety",
+      "source_url": "https://crfm.stanford.edu/helm/safety/latest/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T07-G04",
+      "source_name": "Stanford CRFM HELM Safety",
+      "source_url": "https://crfm.stanford.edu/helm/safety/latest/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T07-G05",
+      "source_name": "Stanford CRFM HELM Safety",
+      "source_url": "https://crfm.stanford.edu/helm/safety/latest/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T07-G06",
+      "source_name": "Stanford CRFM HELM Safety",
+      "source_url": "https://crfm.stanford.edu/helm/safety/latest/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T07-G07",
+      "source_name": "Stanford CRFM HELM Safety",
+      "source_url": "https://crfm.stanford.edu/helm/safety/latest/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T07-G08",
+      "source_name": "Stanford CRFM HELM Safety",
+      "source_url": "https://crfm.stanford.edu/helm/safety/latest/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T07-G09",
+      "source_name": "Stanford CRFM HELM Safety",
+      "source_url": "https://crfm.stanford.edu/helm/safety/latest/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM002-T07-G10",
+      "source_name": "Stanford CRFM HELM Safety",
+      "source_url": "https://crfm.stanford.edu/helm/safety/latest/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T01-G01",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T01-G02",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T01-G03",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T01-G04",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T01-G05",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T01-G06",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T01-G07",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T01-G08",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T01-G09",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T01-G10",
+      "source_name": "OpenAI GPT-5.6 System Card",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-6",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T02-G01",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T02-G02",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T02-G03",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T02-G04",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T02-G05",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T02-G06",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T02-G07",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T02-G08",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T02-G09",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T02-G10",
+      "source_name": "OpenAI Operator System Card",
+      "source_url": "https://openai.com/index/operator-system-card/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T03-G01",
+      "source_name": "OpenAI GPT-5 biological risk evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/long-form-biological-risk-questions",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T03-G02",
+      "source_name": "OpenAI GPT-5 biological risk evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/long-form-biological-risk-questions",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T03-G03",
+      "source_name": "OpenAI GPT-5 biological risk evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/long-form-biological-risk-questions",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T03-G04",
+      "source_name": "OpenAI GPT-5 biological risk evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/long-form-biological-risk-questions",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T03-G05",
+      "source_name": "OpenAI GPT-5 biological risk evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/long-form-biological-risk-questions",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T03-G06",
+      "source_name": "OpenAI GPT-5 biological risk evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/long-form-biological-risk-questions",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T03-G07",
+      "source_name": "OpenAI GPT-5 biological risk evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/long-form-biological-risk-questions",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T03-G08",
+      "source_name": "OpenAI GPT-5 biological risk evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/long-form-biological-risk-questions",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T03-G09",
+      "source_name": "OpenAI GPT-5 biological risk evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/long-form-biological-risk-questions",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T03-G10",
+      "source_name": "OpenAI GPT-5 biological risk evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/long-form-biological-risk-questions",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T04-G01",
+      "source_name": "OpenAI GPT-5 cybersecurity evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/cybersecurity",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T04-G02",
+      "source_name": "OpenAI GPT-5 cybersecurity evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/cybersecurity",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T04-G03",
+      "source_name": "OpenAI GPT-5 cybersecurity evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/cybersecurity",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T04-G04",
+      "source_name": "OpenAI GPT-5 cybersecurity evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/cybersecurity",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T04-G05",
+      "source_name": "OpenAI GPT-5 cybersecurity evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/cybersecurity",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T04-G06",
+      "source_name": "OpenAI GPT-5 cybersecurity evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/cybersecurity",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T04-G07",
+      "source_name": "OpenAI GPT-5 cybersecurity evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/cybersecurity",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T04-G08",
+      "source_name": "OpenAI GPT-5 cybersecurity evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/cybersecurity",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T04-G09",
+      "source_name": "OpenAI GPT-5 cybersecurity evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/cybersecurity",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T04-G10",
+      "source_name": "OpenAI GPT-5 cybersecurity evaluation",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5/cybersecurity",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T05-G01",
+      "source_name": "OpenAI ChatGPT Agent System Card",
+      "source_url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T05-G02",
+      "source_name": "OpenAI ChatGPT Agent System Card",
+      "source_url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T05-G03",
+      "source_name": "OpenAI ChatGPT Agent System Card",
+      "source_url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T05-G04",
+      "source_name": "OpenAI ChatGPT Agent System Card",
+      "source_url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T05-G05",
+      "source_name": "OpenAI ChatGPT Agent System Card",
+      "source_url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T05-G06",
+      "source_name": "OpenAI ChatGPT Agent System Card",
+      "source_url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T05-G07",
+      "source_name": "OpenAI ChatGPT Agent System Card",
+      "source_url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T05-G08",
+      "source_name": "OpenAI ChatGPT Agent System Card",
+      "source_url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T05-G09",
+      "source_name": "OpenAI ChatGPT Agent System Card",
+      "source_url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T05-G10",
+      "source_name": "OpenAI ChatGPT Agent System Card",
+      "source_url": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T06-G01",
+      "source_name": "OpenAI o3 and o4-mini System Card",
+      "source_url": "https://deploymentsafety.openai.com/o3/appendix",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T06-G02",
+      "source_name": "OpenAI o3 and o4-mini System Card",
+      "source_url": "https://deploymentsafety.openai.com/o3/appendix",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T06-G03",
+      "source_name": "OpenAI o3 and o4-mini System Card",
+      "source_url": "https://deploymentsafety.openai.com/o3/appendix",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T06-G04",
+      "source_name": "OpenAI o3 and o4-mini System Card",
+      "source_url": "https://deploymentsafety.openai.com/o3/appendix",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T06-G05",
+      "source_name": "OpenAI o3 and o4-mini System Card",
+      "source_url": "https://deploymentsafety.openai.com/o3/appendix",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T06-G06",
+      "source_name": "OpenAI o3 and o4-mini System Card",
+      "source_url": "https://deploymentsafety.openai.com/o3/appendix",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T06-G07",
+      "source_name": "OpenAI o3 and o4-mini System Card",
+      "source_url": "https://deploymentsafety.openai.com/o3/appendix",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T06-G08",
+      "source_name": "OpenAI o3 and o4-mini System Card",
+      "source_url": "https://deploymentsafety.openai.com/o3/appendix",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T06-G09",
+      "source_name": "OpenAI o3 and o4-mini System Card",
+      "source_url": "https://deploymentsafety.openai.com/o3/appendix",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T06-G10",
+      "source_name": "OpenAI o3 and o4-mini System Card",
+      "source_url": "https://deploymentsafety.openai.com/o3/appendix",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T07-G01",
+      "source_name": "OpenAI GPT-5.5 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5/safeguards",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "required": [
+          "http_2xx",
+          "sha256",
+          "canonical_url"
+        ]
+      },
+      "support_rule": "retrieval succeeds and source identity fields are recorded",
+      "negative_rule": "retrieval is blocked or source identity cannot be fixed"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T07-G02",
+      "source_name": "OpenAI GPT-5.5 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5/safeguards",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "all_terms": [
+          "numerator",
+          "denominator"
+        ],
+        "numeric_token": true
+      },
+      "support_rule": "source explicitly discloses numerator and denominator with a numeric result",
+      "negative_rule": "an explicit disclosed recomputation contradicts the published result"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T07-G03",
+      "source_name": "OpenAI GPT-5.5 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5/safeguards",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "coverage",
+          "limitations",
+          "scope",
+          "dataset"
+        ]
+      },
+      "support_rule": "source explicitly states a coverage, scope, dataset, or limitations boundary",
+      "negative_rule": "source explicitly claims complete coverage while documenting an exclusion"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T07-G04",
+      "source_name": "OpenAI GPT-5.5 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5/safeguards",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "version",
+          "updated",
+          "published",
+          "release"
+        ]
+      },
+      "support_rule": "source exposes a version, publication, update, or release boundary",
+      "negative_rule": "source explicitly assigns the result to a conflicting version or period"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T07-G05",
+      "source_name": "OpenAI GPT-5.5 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5/safeguards",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "all_groups": [
+          [
+            "method",
+            "evaluation"
+          ],
+          [
+            "version",
+            "v1",
+            "v2",
+            "2024",
+            "2025",
+            "2026"
+          ]
+        ]
+      },
+      "support_rule": "source identifies an evaluation or method and a version marker",
+      "negative_rule": "a disclosed rerun under the exact method contradicts the claim"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T07-G06",
+      "source_name": "OpenAI GPT-5.5 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5/safeguards",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "baseline",
+          "compare",
+          "comparison",
+          "versus",
+          " vs "
+        ]
+      },
+      "support_rule": "source explicitly identifies a baseline or comparison",
+      "negative_rule": "source states that the compared populations or methods are not comparable"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T07-G07",
+      "source_name": "OpenAI GPT-5.5 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5/safeguards",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "required": [
+          "stable_refetch"
+        ]
+      },
+      "support_rule": "two independent public retrievals return identical bytes",
+      "negative_rule": "the second public retrieval returns conflicting bytes under the frozen URL"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T07-G08",
+      "source_name": "OpenAI GPT-5.5 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5/safeguards",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "failure",
+          "failed",
+          "risk",
+          "limitation",
+          "incident",
+          "harm",
+          "adverse"
+        ]
+      },
+      "support_rule": "source explicitly includes adverse, failed, risk, limitation, incident, or harm evidence",
+      "negative_rule": "source explicitly asserts absence of the preregistered adverse event under a disclosed complete register"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T07-G09",
+      "source_name": "OpenAI GPT-5.5 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5/safeguards",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "acknowledg",
+          "author",
+          "contributor",
+          "sponsor",
+          "financial support",
+          "disclosure"
+        ]
+      },
+      "support_rule": "source includes authorship, contributor, sponsor, financial support, or disclosure information",
+      "negative_rule": "an explicit disclosure contradicts the frozen statement"
+    },
+    {
+      "claim_id": "CB7K-DOM003-T07-G10",
+      "source_name": "OpenAI GPT-5.5 safeguards",
+      "source_url": "https://deploymentsafety.openai.com/gpt-5-5/safeguards",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "any_terms": [
+          "limitation",
+          "may not",
+          "does not guarantee",
+          "scope",
+          "risk"
+        ]
+      },
+      "support_rule": "source contains an explicit limitation or scope caveat and no universal certification is inferred",
+      "negative_rule": "source itself explicitly makes and then retracts a universal guarantee"
+    }
+  ],
+  "claim_boundary": "Claim-level execution plan for issue #166 only; it is not evidence and predeclares no outcome."
+}
