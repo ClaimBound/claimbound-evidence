@@ -97,6 +97,14 @@ def test_evidence_card_requires_registry_sequence() -> None:
     assert "registry_sequence must be a positive integer" in violations
 
 
+def test_source_drift_requires_reason() -> None:
+    card = _valid_card()
+    card["result_status"] = "SOURCE_DRIFT"
+    assert "source drift records must include drift_reason" in validate_evidence_card(card)
+    card["drift_reason"] = "The frozen URL redirected to a different canonical boundary."
+    assert validate_evidence_card(card) == []
+
+
 def test_evidence_card_requires_valid_verification_level() -> None:
     card = _valid_card()
     card["verification_level"] = "POPULAR_VOTE"
@@ -155,3 +163,4 @@ def test_evidence_card_cli_reports_violations(
     assert module.main() == 1
     captured = capsys.readouterr()
     assert "execution_mode must be one of" in captured.err
+
