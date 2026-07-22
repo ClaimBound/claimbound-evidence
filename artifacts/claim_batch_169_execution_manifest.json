@@ -1,0 +1,2318 @@
+{
+  "issue_number": 169,
+  "source_manifest_sha256": "e094fafb298ce4cc2c0da01aab0b0e371470bf5f1408a6bd9a9674e9f925876d",
+  "claim_boundary": "Claim-level execution plan for issue #169 only; it is not evidence and predeclares no outcome.",
+  "raw_payload_committed": false,
+  "entries": [
+    {
+      "claim_id": "CB7K-DOM010-T01-G01",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34181",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "vulnerability count",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for vulnerability count.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T01-G02",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34181",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "vulnerability count",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for vulnerability count discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T01-G03",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34181",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "vulnerability count",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for vulnerability count.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T01-G04",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34181",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "vulnerability count",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for vulnerability count.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T01-G05",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34181",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "vulnerability count",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for vulnerability count.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T01-G06",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34181",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "vulnerability count",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for vulnerability count.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T01-G07",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34181",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "vulnerability count",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the vulnerability count procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T01-G08",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34181",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "vulnerability count",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for vulnerability count.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T01-G09",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34181",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "vulnerability count",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the vulnerability count report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T01-G10",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34181",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "vulnerability count",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal vulnerability count guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T02-G01",
+      "source_url": "https://csrc.nist.gov/pubs/sp/1800/31/final",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "patch latency",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for patch latency.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T02-G02",
+      "source_url": "https://csrc.nist.gov/pubs/sp/1800/31/final",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "patch latency",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for patch latency discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T02-G03",
+      "source_url": "https://csrc.nist.gov/pubs/sp/1800/31/final",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "patch latency",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for patch latency.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T02-G04",
+      "source_url": "https://csrc.nist.gov/pubs/sp/1800/31/final",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "patch latency",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for patch latency.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T02-G05",
+      "source_url": "https://csrc.nist.gov/pubs/sp/1800/31/final",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "patch latency",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for patch latency.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T02-G06",
+      "source_url": "https://csrc.nist.gov/pubs/sp/1800/31/final",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "patch latency",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for patch latency.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T02-G07",
+      "source_url": "https://csrc.nist.gov/pubs/sp/1800/31/final",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "patch latency",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the patch latency procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T02-G08",
+      "source_url": "https://csrc.nist.gov/pubs/sp/1800/31/final",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "patch latency",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for patch latency.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T02-G09",
+      "source_url": "https://csrc.nist.gov/pubs/sp/1800/31/final",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "patch latency",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the patch latency report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T02-G10",
+      "source_url": "https://csrc.nist.gov/pubs/sp/1800/31/final",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "patch latency",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal patch latency guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T03-G01",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "zero-day exposure",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for zero-day exposure.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T03-G02",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "zero-day exposure",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for zero-day exposure discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T03-G03",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "zero-day exposure",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for zero-day exposure.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T03-G04",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "zero-day exposure",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for zero-day exposure.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T03-G05",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "zero-day exposure",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for zero-day exposure.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T03-G06",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "zero-day exposure",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for zero-day exposure.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T03-G07",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "zero-day exposure",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the zero-day exposure procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T03-G08",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "zero-day exposure",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for zero-day exposure.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T03-G09",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "zero-day exposure",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the zero-day exposure report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T03-G10",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "zero-day exposure",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal zero-day exposure guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T04-G01",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "penetration-test claim",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for penetration-test claim.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T04-G02",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "penetration-test claim",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for penetration-test claim discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T04-G03",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "penetration-test claim",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for penetration-test claim.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T04-G04",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "penetration-test claim",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for penetration-test claim.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T04-G05",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "penetration-test claim",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for penetration-test claim.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T04-G06",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "penetration-test claim",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for penetration-test claim.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T04-G07",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "penetration-test claim",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the penetration-test claim procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T04-G08",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "penetration-test claim",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for penetration-test claim.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T04-G09",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "penetration-test claim",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the penetration-test claim report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T04-G10",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/115/final",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "penetration-test claim",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal penetration-test claim guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T05-G01",
+      "source_url": "https://www.nccoe.nist.gov/publication/1800-16/VolB/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "encryption boundary",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for encryption boundary.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T05-G02",
+      "source_url": "https://www.nccoe.nist.gov/publication/1800-16/VolB/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "encryption boundary",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for encryption boundary discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T05-G03",
+      "source_url": "https://www.nccoe.nist.gov/publication/1800-16/VolB/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "encryption boundary",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for encryption boundary.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T05-G04",
+      "source_url": "https://www.nccoe.nist.gov/publication/1800-16/VolB/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "encryption boundary",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for encryption boundary.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T05-G05",
+      "source_url": "https://www.nccoe.nist.gov/publication/1800-16/VolB/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "encryption boundary",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for encryption boundary.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T05-G06",
+      "source_url": "https://www.nccoe.nist.gov/publication/1800-16/VolB/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "encryption boundary",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for encryption boundary.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T05-G07",
+      "source_url": "https://www.nccoe.nist.gov/publication/1800-16/VolB/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "encryption boundary",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the encryption boundary procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T05-G08",
+      "source_url": "https://www.nccoe.nist.gov/publication/1800-16/VolB/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "encryption boundary",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for encryption boundary.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T05-G09",
+      "source_url": "https://www.nccoe.nist.gov/publication/1800-16/VolB/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "encryption boundary",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the encryption boundary report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T05-G10",
+      "source_url": "https://www.nccoe.nist.gov/publication/1800-16/VolB/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "encryption boundary",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal encryption boundary guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T06-G01",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "breach scope",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for breach scope.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T06-G02",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "breach scope",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for breach scope discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T06-G03",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "breach scope",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for breach scope.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T06-G04",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "breach scope",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for breach scope.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T06-G05",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "breach scope",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for breach scope.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T06-G06",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "breach scope",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for breach scope.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T06-G07",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "breach scope",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the breach scope procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T06-G08",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "breach scope",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for breach scope.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T06-G09",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "breach scope",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the breach scope report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T06-G10",
+      "source_url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "breach scope",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal breach scope guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T07-G01",
+      "source_url": "https://csrc.nist.gov/Projects/cryptographic-module-validation-program/cmvp-flow",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "security certification",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for security certification.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T07-G02",
+      "source_url": "https://csrc.nist.gov/Projects/cryptographic-module-validation-program/cmvp-flow",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "security certification",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for security certification discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T07-G03",
+      "source_url": "https://csrc.nist.gov/Projects/cryptographic-module-validation-program/cmvp-flow",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "security certification",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for security certification.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T07-G04",
+      "source_url": "https://csrc.nist.gov/Projects/cryptographic-module-validation-program/cmvp-flow",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "security certification",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for security certification.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T07-G05",
+      "source_url": "https://csrc.nist.gov/Projects/cryptographic-module-validation-program/cmvp-flow",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "security certification",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for security certification.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T07-G06",
+      "source_url": "https://csrc.nist.gov/Projects/cryptographic-module-validation-program/cmvp-flow",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "security certification",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for security certification.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T07-G07",
+      "source_url": "https://csrc.nist.gov/Projects/cryptographic-module-validation-program/cmvp-flow",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "security certification",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the security certification procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T07-G08",
+      "source_url": "https://csrc.nist.gov/Projects/cryptographic-module-validation-program/cmvp-flow",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "security certification",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for security certification.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T07-G09",
+      "source_url": "https://csrc.nist.gov/Projects/cryptographic-module-validation-program/cmvp-flow",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "security certification",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the security certification report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM010-T07-G10",
+      "source_url": "https://csrc.nist.gov/Projects/cryptographic-module-validation-program/cmvp-flow",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "security certification",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal security certification guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T01-G01",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/sbom/sbomresourceslibrary",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "dependency completeness",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for dependency completeness.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T01-G02",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/sbom/sbomresourceslibrary",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "dependency completeness",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for dependency completeness discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T01-G03",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/sbom/sbomresourceslibrary",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dependency completeness",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for dependency completeness.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T01-G04",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/sbom/sbomresourceslibrary",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "dependency completeness",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for dependency completeness.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T01-G05",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/sbom/sbomresourceslibrary",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "dependency completeness",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for dependency completeness.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T01-G06",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/sbom/sbomresourceslibrary",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dependency completeness",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for dependency completeness.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T01-G07",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/sbom/sbomresourceslibrary",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "dependency completeness",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the dependency completeness procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T01-G08",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/sbom/sbomresourceslibrary",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "dependency completeness",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for dependency completeness.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T01-G09",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/sbom/sbomresourceslibrary",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dependency completeness",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the dependency completeness report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T01-G10",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/sbom/sbomresourceslibrary",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "dependency completeness",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal dependency completeness guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T02-G01",
+      "source_url": "https://slsa.dev/spec/v1.2/provenance",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "artifact provenance",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for artifact provenance.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T02-G02",
+      "source_url": "https://slsa.dev/spec/v1.2/provenance",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "artifact provenance",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for artifact provenance discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T02-G03",
+      "source_url": "https://slsa.dev/spec/v1.2/provenance",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "artifact provenance",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for artifact provenance.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T02-G04",
+      "source_url": "https://slsa.dev/spec/v1.2/provenance",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "artifact provenance",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for artifact provenance.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T02-G05",
+      "source_url": "https://slsa.dev/spec/v1.2/provenance",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "artifact provenance",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for artifact provenance.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T02-G06",
+      "source_url": "https://slsa.dev/spec/v1.2/provenance",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "artifact provenance",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for artifact provenance.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T02-G07",
+      "source_url": "https://slsa.dev/spec/v1.2/provenance",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "artifact provenance",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the artifact provenance procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T02-G08",
+      "source_url": "https://slsa.dev/spec/v1.2/provenance",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "artifact provenance",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for artifact provenance.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T02-G09",
+      "source_url": "https://slsa.dev/spec/v1.2/provenance",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "artifact provenance",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the artifact provenance report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T02-G10",
+      "source_url": "https://slsa.dev/spec/v1.2/provenance",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "artifact provenance",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal artifact provenance guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T03-G01",
+      "source_url": "https://docs.sigstore.dev/logging/verify-release/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "signed release",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for signed release.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T03-G02",
+      "source_url": "https://docs.sigstore.dev/logging/verify-release/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "signed release",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for signed release discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T03-G03",
+      "source_url": "https://docs.sigstore.dev/logging/verify-release/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "signed release",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for signed release.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T03-G04",
+      "source_url": "https://docs.sigstore.dev/logging/verify-release/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "signed release",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for signed release.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T03-G05",
+      "source_url": "https://docs.sigstore.dev/logging/verify-release/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "signed release",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for signed release.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T03-G06",
+      "source_url": "https://docs.sigstore.dev/logging/verify-release/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "signed release",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for signed release.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T03-G07",
+      "source_url": "https://docs.sigstore.dev/logging/verify-release/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "signed release",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the signed release procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T03-G08",
+      "source_url": "https://docs.sigstore.dev/logging/verify-release/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "signed release",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for signed release.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T03-G09",
+      "source_url": "https://docs.sigstore.dev/logging/verify-release/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "signed release",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the signed release report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T03-G10",
+      "source_url": "https://docs.sigstore.dev/logging/verify-release/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "signed release",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal signed release guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T04-G01",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "known vulnerability exposure",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for known vulnerability exposure.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T04-G02",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "known vulnerability exposure",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for known vulnerability exposure discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T04-G03",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "known vulnerability exposure",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for known vulnerability exposure.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T04-G04",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "known vulnerability exposure",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for known vulnerability exposure.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T04-G05",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "known vulnerability exposure",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for known vulnerability exposure.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T04-G06",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "known vulnerability exposure",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for known vulnerability exposure.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T04-G07",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "known vulnerability exposure",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the known vulnerability exposure procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T04-G08",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "known vulnerability exposure",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for known vulnerability exposure.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T04-G09",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "known vulnerability exposure",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the known vulnerability exposure report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T04-G10",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/SECURING_THE_SOFTWARE_SUPPLY_CHAIN_RECOMMENDED_PRACTICES_FOR_SOFTWARE_BILL_OF_MATERIALS_CONSUMPTION-508.pdf",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "known vulnerability exposure",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal known vulnerability exposure guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T05-G01",
+      "source_url": "https://www.cisa.gov/sites/default/files/2023-12/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.pdf",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "build environment",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for build environment.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T05-G02",
+      "source_url": "https://www.cisa.gov/sites/default/files/2023-12/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.pdf",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "build environment",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for build environment discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T05-G03",
+      "source_url": "https://www.cisa.gov/sites/default/files/2023-12/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.pdf",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "build environment",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for build environment.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T05-G04",
+      "source_url": "https://www.cisa.gov/sites/default/files/2023-12/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.pdf",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "build environment",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for build environment.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T05-G05",
+      "source_url": "https://www.cisa.gov/sites/default/files/2023-12/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.pdf",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "build environment",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for build environment.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T05-G06",
+      "source_url": "https://www.cisa.gov/sites/default/files/2023-12/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.pdf",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "build environment",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for build environment.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T05-G07",
+      "source_url": "https://www.cisa.gov/sites/default/files/2023-12/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.pdf",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "build environment",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the build environment procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T05-G08",
+      "source_url": "https://www.cisa.gov/sites/default/files/2023-12/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.pdf",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "build environment",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for build environment.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T05-G09",
+      "source_url": "https://www.cisa.gov/sites/default/files/2023-12/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.pdf",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "build environment",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the build environment report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T05-G10",
+      "source_url": "https://www.cisa.gov/sites/default/files/2023-12/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.pdf",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "build environment",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal build environment guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T06-G01",
+      "source_url": "https://slsa.dev/spec/v1.2/source-track-basics",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "maintainer identity",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for maintainer identity.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T06-G02",
+      "source_url": "https://slsa.dev/spec/v1.2/source-track-basics",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "maintainer identity",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for maintainer identity discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T06-G03",
+      "source_url": "https://slsa.dev/spec/v1.2/source-track-basics",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "maintainer identity",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for maintainer identity.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T06-G04",
+      "source_url": "https://slsa.dev/spec/v1.2/source-track-basics",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "maintainer identity",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for maintainer identity.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T06-G05",
+      "source_url": "https://slsa.dev/spec/v1.2/source-track-basics",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "maintainer identity",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for maintainer identity.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T06-G06",
+      "source_url": "https://slsa.dev/spec/v1.2/source-track-basics",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "maintainer identity",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for maintainer identity.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T06-G07",
+      "source_url": "https://slsa.dev/spec/v1.2/source-track-basics",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "maintainer identity",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the maintainer identity procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T06-G08",
+      "source_url": "https://slsa.dev/spec/v1.2/source-track-basics",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "maintainer identity",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for maintainer identity.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T06-G09",
+      "source_url": "https://slsa.dev/spec/v1.2/source-track-basics",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "maintainer identity",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the maintainer identity report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T06-G10",
+      "source_url": "https://slsa.dev/spec/v1.2/source-track-basics",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "maintainer identity",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal maintainer identity guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T07-G01",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN%20RECOMMENDED%20PRACTICES%20FOR%20MANAGING%20OPEN%20SOURCE%20SOFTWARE%20AND%20SOFTWARE%20BILL%20OF%20MATERIALS_508.pdf",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "dependency drift",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for dependency drift.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T07-G02",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN%20RECOMMENDED%20PRACTICES%20FOR%20MANAGING%20OPEN%20SOURCE%20SOFTWARE%20AND%20SOFTWARE%20BILL%20OF%20MATERIALS_508.pdf",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "dependency drift",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for dependency drift discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T07-G03",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN%20RECOMMENDED%20PRACTICES%20FOR%20MANAGING%20OPEN%20SOURCE%20SOFTWARE%20AND%20SOFTWARE%20BILL%20OF%20MATERIALS_508.pdf",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dependency drift",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for dependency drift.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T07-G04",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN%20RECOMMENDED%20PRACTICES%20FOR%20MANAGING%20OPEN%20SOURCE%20SOFTWARE%20AND%20SOFTWARE%20BILL%20OF%20MATERIALS_508.pdf",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "dependency drift",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for dependency drift.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T07-G05",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN%20RECOMMENDED%20PRACTICES%20FOR%20MANAGING%20OPEN%20SOURCE%20SOFTWARE%20AND%20SOFTWARE%20BILL%20OF%20MATERIALS_508.pdf",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "dependency drift",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for dependency drift.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T07-G06",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN%20RECOMMENDED%20PRACTICES%20FOR%20MANAGING%20OPEN%20SOURCE%20SOFTWARE%20AND%20SOFTWARE%20BILL%20OF%20MATERIALS_508.pdf",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dependency drift",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for dependency drift.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T07-G07",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN%20RECOMMENDED%20PRACTICES%20FOR%20MANAGING%20OPEN%20SOURCE%20SOFTWARE%20AND%20SOFTWARE%20BILL%20OF%20MATERIALS_508.pdf",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "dependency drift",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the dependency drift procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T07-G08",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN%20RECOMMENDED%20PRACTICES%20FOR%20MANAGING%20OPEN%20SOURCE%20SOFTWARE%20AND%20SOFTWARE%20BILL%20OF%20MATERIALS_508.pdf",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "dependency drift",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for dependency drift.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T07-G09",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN%20RECOMMENDED%20PRACTICES%20FOR%20MANAGING%20OPEN%20SOURCE%20SOFTWARE%20AND%20SOFTWARE%20BILL%20OF%20MATERIALS_508.pdf",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dependency drift",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the dependency drift report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM011-T07-G10",
+      "source_url": "https://www.cisa.gov/sites/default/files/2024-08/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN%20RECOMMENDED%20PRACTICES%20FOR%20MANAGING%20OPEN%20SOURCE%20SOFTWARE%20AND%20SOFTWARE%20BILL%20OF%20MATERIALS_508.pdf",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "dependency drift",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal dependency drift guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T01-G01",
+      "source_url": "https://reproducible-builds.org/docs/definition/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "bit-for-bit rebuild",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for bit-for-bit rebuild.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T01-G02",
+      "source_url": "https://reproducible-builds.org/docs/definition/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "bit-for-bit rebuild",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for bit-for-bit rebuild discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T01-G03",
+      "source_url": "https://reproducible-builds.org/docs/definition/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "bit-for-bit rebuild",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for bit-for-bit rebuild.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T01-G04",
+      "source_url": "https://reproducible-builds.org/docs/definition/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "bit-for-bit rebuild",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for bit-for-bit rebuild.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T01-G05",
+      "source_url": "https://reproducible-builds.org/docs/definition/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "bit-for-bit rebuild",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for bit-for-bit rebuild.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T01-G06",
+      "source_url": "https://reproducible-builds.org/docs/definition/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "bit-for-bit rebuild",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for bit-for-bit rebuild.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T01-G07",
+      "source_url": "https://reproducible-builds.org/docs/definition/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "bit-for-bit rebuild",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the bit-for-bit rebuild procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T01-G08",
+      "source_url": "https://reproducible-builds.org/docs/definition/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "bit-for-bit rebuild",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for bit-for-bit rebuild.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T01-G09",
+      "source_url": "https://reproducible-builds.org/docs/definition/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "bit-for-bit rebuild",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the bit-for-bit rebuild report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T01-G10",
+      "source_url": "https://reproducible-builds.org/docs/definition/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "bit-for-bit rebuild",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal bit-for-bit rebuild guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T02-G01",
+      "source_url": "https://reproducible-builds.org/docs/build-environment/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "compiler version",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for compiler version.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T02-G02",
+      "source_url": "https://reproducible-builds.org/docs/build-environment/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "compiler version",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for compiler version discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T02-G03",
+      "source_url": "https://reproducible-builds.org/docs/build-environment/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "compiler version",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for compiler version.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T02-G04",
+      "source_url": "https://reproducible-builds.org/docs/build-environment/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "compiler version",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for compiler version.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T02-G05",
+      "source_url": "https://reproducible-builds.org/docs/build-environment/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "compiler version",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for compiler version.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T02-G06",
+      "source_url": "https://reproducible-builds.org/docs/build-environment/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "compiler version",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for compiler version.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T02-G07",
+      "source_url": "https://reproducible-builds.org/docs/build-environment/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "compiler version",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the compiler version procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T02-G08",
+      "source_url": "https://reproducible-builds.org/docs/build-environment/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "compiler version",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for compiler version.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T02-G09",
+      "source_url": "https://reproducible-builds.org/docs/build-environment/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "compiler version",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the compiler version report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T02-G10",
+      "source_url": "https://reproducible-builds.org/docs/build-environment/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "compiler version",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal compiler version guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T03-G01",
+      "source_url": "https://reproducible-builds.org/docs/stable-inputs/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "dependency pinning",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for dependency pinning.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T03-G02",
+      "source_url": "https://reproducible-builds.org/docs/stable-inputs/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "dependency pinning",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for dependency pinning discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T03-G03",
+      "source_url": "https://reproducible-builds.org/docs/stable-inputs/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dependency pinning",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for dependency pinning.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T03-G04",
+      "source_url": "https://reproducible-builds.org/docs/stable-inputs/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "dependency pinning",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for dependency pinning.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T03-G05",
+      "source_url": "https://reproducible-builds.org/docs/stable-inputs/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "dependency pinning",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for dependency pinning.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T03-G06",
+      "source_url": "https://reproducible-builds.org/docs/stable-inputs/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dependency pinning",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for dependency pinning.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T03-G07",
+      "source_url": "https://reproducible-builds.org/docs/stable-inputs/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "dependency pinning",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the dependency pinning procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T03-G08",
+      "source_url": "https://reproducible-builds.org/docs/stable-inputs/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "dependency pinning",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for dependency pinning.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T03-G09",
+      "source_url": "https://reproducible-builds.org/docs/stable-inputs/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dependency pinning",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the dependency pinning report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T03-G10",
+      "source_url": "https://reproducible-builds.org/docs/stable-inputs/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "dependency pinning",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal dependency pinning guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T04-G01",
+      "source_url": "https://reproducible-builds.org/docs/timestamps/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "timestamp normalization",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for timestamp normalization.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T04-G02",
+      "source_url": "https://reproducible-builds.org/docs/timestamps/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "timestamp normalization",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for timestamp normalization discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T04-G03",
+      "source_url": "https://reproducible-builds.org/docs/timestamps/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "timestamp normalization",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for timestamp normalization.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T04-G04",
+      "source_url": "https://reproducible-builds.org/docs/timestamps/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "timestamp normalization",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for timestamp normalization.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T04-G05",
+      "source_url": "https://reproducible-builds.org/docs/timestamps/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "timestamp normalization",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for timestamp normalization.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T04-G06",
+      "source_url": "https://reproducible-builds.org/docs/timestamps/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "timestamp normalization",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for timestamp normalization.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T04-G07",
+      "source_url": "https://reproducible-builds.org/docs/timestamps/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "timestamp normalization",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the timestamp normalization procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T04-G08",
+      "source_url": "https://reproducible-builds.org/docs/timestamps/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "timestamp normalization",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for timestamp normalization.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T04-G09",
+      "source_url": "https://reproducible-builds.org/docs/timestamps/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "timestamp normalization",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the timestamp normalization report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T04-G10",
+      "source_url": "https://reproducible-builds.org/docs/timestamps/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "timestamp normalization",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal timestamp normalization guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T05-G01",
+      "source_url": "https://reproducible-builds.org/docs/system-images/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "platform parity",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for platform parity.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T05-G02",
+      "source_url": "https://reproducible-builds.org/docs/system-images/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "platform parity",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for platform parity discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T05-G03",
+      "source_url": "https://reproducible-builds.org/docs/system-images/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "platform parity",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for platform parity.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T05-G04",
+      "source_url": "https://reproducible-builds.org/docs/system-images/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "platform parity",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for platform parity.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T05-G05",
+      "source_url": "https://reproducible-builds.org/docs/system-images/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "platform parity",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for platform parity.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T05-G06",
+      "source_url": "https://reproducible-builds.org/docs/system-images/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "platform parity",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for platform parity.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T05-G07",
+      "source_url": "https://reproducible-builds.org/docs/system-images/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "platform parity",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the platform parity procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T05-G08",
+      "source_url": "https://reproducible-builds.org/docs/system-images/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "platform parity",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for platform parity.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T05-G09",
+      "source_url": "https://reproducible-builds.org/docs/system-images/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "platform parity",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the platform parity report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T05-G10",
+      "source_url": "https://reproducible-builds.org/docs/system-images/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "platform parity",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal platform parity guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T06-G01",
+      "source_url": "https://reproducible-builds.org/docs/embedded-signatures/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "binary signature",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for binary signature.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T06-G02",
+      "source_url": "https://reproducible-builds.org/docs/embedded-signatures/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "binary signature",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for binary signature discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T06-G03",
+      "source_url": "https://reproducible-builds.org/docs/embedded-signatures/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "binary signature",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for binary signature.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T06-G04",
+      "source_url": "https://reproducible-builds.org/docs/embedded-signatures/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "binary signature",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for binary signature.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T06-G05",
+      "source_url": "https://reproducible-builds.org/docs/embedded-signatures/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "binary signature",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for binary signature.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T06-G06",
+      "source_url": "https://reproducible-builds.org/docs/embedded-signatures/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "binary signature",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for binary signature.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T06-G07",
+      "source_url": "https://reproducible-builds.org/docs/embedded-signatures/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "binary signature",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the binary signature procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T06-G08",
+      "source_url": "https://reproducible-builds.org/docs/embedded-signatures/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "binary signature",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for binary signature.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T06-G09",
+      "source_url": "https://reproducible-builds.org/docs/embedded-signatures/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "binary signature",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the binary signature report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T06-G10",
+      "source_url": "https://reproducible-builds.org/docs/embedded-signatures/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "binary signature",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal binary signature guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T07-G01",
+      "source_url": "https://reproducible-builds.org/docs/version-information/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "release drift",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for release drift.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T07-G02",
+      "source_url": "https://reproducible-builds.org/docs/version-information/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "release drift",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for release drift discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T07-G03",
+      "source_url": "https://reproducible-builds.org/docs/version-information/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "release drift",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for release drift.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T07-G04",
+      "source_url": "https://reproducible-builds.org/docs/version-information/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "release drift",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for release drift.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T07-G05",
+      "source_url": "https://reproducible-builds.org/docs/version-information/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "release drift",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for release drift.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T07-G06",
+      "source_url": "https://reproducible-builds.org/docs/version-information/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "release drift",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for release drift.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T07-G07",
+      "source_url": "https://reproducible-builds.org/docs/version-information/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "release drift",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the release drift procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T07-G08",
+      "source_url": "https://reproducible-builds.org/docs/version-information/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "release drift",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for release drift.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T07-G09",
+      "source_url": "https://reproducible-builds.org/docs/version-information/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "release drift",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the release drift report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM012-T07-G10",
+      "source_url": "https://reproducible-builds.org/docs/version-information/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "release drift",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal release drift guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    }
+  ]
+}
