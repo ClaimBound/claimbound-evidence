@@ -17,6 +17,7 @@ ALLOWED_RESULT_STATUSES = {
     "NEGATIVE_RESULT_UNDER_PROTOCOL",
     "BLOCKED_SOURCE",
     "INSUFFICIENT_COVERAGE",
+    "SOURCE_DRIFT",
     "REPRODUCED_OUTCOME",
 }
 
@@ -178,6 +179,9 @@ def validate_evidence_card(card: dict[str, Any]) -> list[str]:
     if result_status == "BLOCKED_SOURCE" and _is_missing(card.get("block_reason")):
         violations.append("blocked records must include block_reason")
 
+    if result_status == "SOURCE_DRIFT" and _is_missing(card.get("drift_reason")):
+        violations.append("source drift records must include drift_reason")
+
     text = json.dumps(card, sort_keys=True).lower()
     for fragment in sorted(FORBIDDEN_CLAIM_FRAGMENTS):
         if fragment in text:
@@ -202,3 +206,4 @@ def _is_missing(value: object) -> bool:
     if isinstance(value, (list, tuple, dict, set)) and len(value) == 0:
         return True
     return False
+
