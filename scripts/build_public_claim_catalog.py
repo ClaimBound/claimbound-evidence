@@ -21,6 +21,18 @@ GATE_METHODS={
     'conflicts-disclosure':'disclosure_boundary_audit',
     'overclaim-drift':'overclaim_and_drift_audit',
 }
+GATE_SOURCE_ROLES={
+    'source-integrity':'official-record',
+    'numerator-denominator':'statistical-table',
+    'coverage':'methodology-scope',
+    'time-boundary':'versioned-release',
+    'method-version':'method-specification',
+    'comparator':'baseline-definition',
+    'reproducibility':'data-access-instructions',
+    'negative-evidence':'limitations-register',
+    'conflicts-disclosure':'institutional-interest-disclosure',
+    'overclaim-drift':'limitations-statement',
+}
 GATES=[
 ('source-integrity','The headline about {topic} can be traced to one exact public source version, canonical URL, access time, redirect chain, and SHA-256 hash.','Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result.'),
 ('numerator-denominator','The published number for {topic} reproduces from the disclosed numerator, denominator, units, exclusions, and rounding rule.','A nearby number or a recalculation with a different denominator is insufficient.'),
@@ -137,6 +149,17 @@ def validate_execution_manifest(path:Path)->None:
         if not isinstance(url,str) or not url.startswith('https://'): errors.append(f'{cid}: exact HTTPS source_url required')
         elif any(marker in url.lower() for marker in ('example.', 'localhost', '127.0.0.1', 'todo', 'fill')): errors.append(f'{cid}: placeholder source_url forbidden')
         if method!=GATE_METHODS[claim['gate']]: errors.append(f"{cid}: evaluation_method must be {GATE_METHODS[claim['gate']]}")
+        if e.get('source_role')!=GATE_SOURCE_ROLES[claim['gate']]:
+            errors.append(f"{cid}: source_role must be {GATE_SOURCE_ROLES[claim['gate']]}")
+        provenance=e.get('selection_provenance')
+        if not isinstance(provenance,dict):
+            errors.append(f'{cid}: selection_provenance required')
+        else:
+            discovery=provenance.get('discovery_url')
+            if not isinstance(discovery,str) or not discovery.startswith('https://'):
+                errors.append(f'{cid}: HTTPS discovery_url required')
+            if provenance.get('selected_before_evaluation') is not True:
+                errors.append(f'{cid}: selected_before_evaluation must be true')
         if not isinstance(e.get('frozen_parameters'),dict) or not e['frozen_parameters']: errors.append(f'{cid}: non-empty frozen_parameters required before fetch')
         if not isinstance(e.get('support_rule'),str) or not e['support_rule'].strip(): errors.append(f'{cid}: support_rule required')
         if not isinstance(e.get('negative_rule'),str) or not e['negative_rule'].strip(): errors.append(f'{cid}: negative_rule required; absence alone is not negative')

@@ -31,6 +31,11 @@ def _manifest(m, claims, url_count):
             'claim_id':claim['claim_id'],
             'source_url':f"https://sources.claimbound.org/source-{source_index}",
             'evaluation_method':m.GATE_METHODS[claim['gate']],
+            'source_role':m.GATE_SOURCE_ROLES[claim['gate']],
+            'selection_provenance':{
+                'discovery_url':f"https://sources.claimbound.org/discovery-{claim['topic_index']}",
+                'selected_before_evaluation':True,
+            },
             'frozen_parameters':{'version':'v1'},
             'support_rule':'all preregistered gate conditions are met',
             'negative_rule':'use negative only for an explicit protocol-defined contradiction',
