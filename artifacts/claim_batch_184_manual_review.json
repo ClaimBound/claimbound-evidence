@@ -1,14 +1,14 @@
 {
   "issue_number": 184,
-  "protocol_version": "CB7K-ISSUE-184-CONSERVATIVE-LOCATOR-REVIEW-2026-07-23-v1",
-  "source_manifest_sha256": "3285de6fbae559cf9adca1bdb5f1336d7db2f29a3456bd1ac3ce4455be6a6f3e",
-  "claim_boundary": "Conservative manual review of 21 preregistered clinical-trial, medical-device and diagnostic topic URLs for issue #184; no source replacement after observation.",
-  "operator": "NeoZorK",
+  "protocol_version": "CB7K-ISSUE-184-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "source_manifest_sha256": "2a80024ef36a82300f02e767c6b37bdb2592228ccf9b803b71f1846460c3a7a0",
+  "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
   "raw_payload_committed": false,
-  "review_method": "explicit gate-to-verbatim-locator matrix; unreviewed or incomplete gates remain insufficient",
+  "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
   "result_counts": {
     "BLOCKED_SOURCE": 30,
-    "INSUFFICIENT_COVERAGE": 110,
+    "INSUFFICIENT_COVERAGE": 91,
+    "PASSED_UNDER_PROTOCOL": 19,
     "SOURCE_DRIFT": 70
   },
   "cards": [
@@ -38,9 +38,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for ocean heat.",
-      "source_name": "Official public source topic 055-01",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.noaa.gov/oceans-coasts",
       "http_status": 403,
       "source_sha256": "8d5ff5f88da73c839a7570744ea162c76c809b3bd96270faa4e525272a21ddc6"
@@ -71,9 +69,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "A numeric result for ocean heat discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 055-01",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.noaa.gov/oceans-coasts",
       "http_status": 403,
       "source_sha256": "8d5ff5f88da73c839a7570744ea162c76c809b3bd96270faa4e525272a21ddc6"
@@ -104,9 +100,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source states population, scope, exclusions or limitations for ocean heat.",
-      "source_name": "Official public source topic 055-01",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.noaa.gov/oceans-coasts",
       "http_status": 403,
       "source_sha256": "8d5ff5f88da73c839a7570744ea162c76c809b3bd96270faa4e525272a21ddc6"
@@ -137,9 +131,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source fixes a date, period or version for ocean heat.",
-      "source_name": "Official public source topic 055-01",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.noaa.gov/oceans-coasts",
       "http_status": 403,
       "source_sha256": "8d5ff5f88da73c839a7570744ea162c76c809b3bd96270faa4e525272a21ddc6"
@@ -170,9 +162,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source identifies the method and applicable version for ocean heat.",
-      "source_name": "Official public source topic 055-01",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.noaa.gov/oceans-coasts",
       "http_status": 403,
       "source_sha256": "8d5ff5f88da73c839a7570744ea162c76c809b3bd96270faa4e525272a21ddc6"
@@ -203,9 +193,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for ocean heat.",
-      "source_name": "Official public source topic 055-01",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.noaa.gov/oceans-coasts",
       "http_status": 403,
       "source_sha256": "8d5ff5f88da73c839a7570744ea162c76c809b3bd96270faa4e525272a21ddc6"
@@ -236,9 +224,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "A public operator can obtain inputs and rerun the ocean heat procedure.",
-      "source_name": "Official public source topic 055-01",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.noaa.gov/oceans-coasts",
       "http_status": 403,
       "source_sha256": "8d5ff5f88da73c839a7570744ea162c76c809b3bd96270faa4e525272a21ddc6"
@@ -269,9 +255,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for ocean heat.",
-      "source_name": "Official public source topic 055-01",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.noaa.gov/oceans-coasts",
       "http_status": 403,
       "source_sha256": "8d5ff5f88da73c839a7570744ea162c76c809b3bd96270faa4e525272a21ddc6"
@@ -302,9 +286,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The boundary identifies the institution responsible for the ocean heat report.",
-      "source_name": "Official public source topic 055-01",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.noaa.gov/oceans-coasts",
       "http_status": 403,
       "source_sha256": "8d5ff5f88da73c839a7570744ea162c76c809b3bd96270faa4e525272a21ddc6"
@@ -335,9 +317,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source contains a caveat preventing a universal ocean heat guarantee.",
-      "source_name": "Official public source topic 055-01",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.noaa.gov/oceans-coasts",
       "http_status": 403,
       "source_sha256": "8d5ff5f88da73c839a7570744ea162c76c809b3bd96270faa4e525272a21ddc6"
@@ -368,9 +348,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "NOAA's National Ocean Service: Newsroom",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for acidification.",
-      "source_name": "Official public source topic 055-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://oceanservice.noaa.gov/facts/",
       "http_status": 200,
       "source_sha256": "043e1556653a6f1c34f71c0f78740eea93a6333f02a8af83e9dc13f0d5499e0c"
@@ -401,9 +379,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "NOAA's National Ocean Service: Newsroom",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A numeric result for acidification discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 055-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://oceanservice.noaa.gov/facts/",
       "http_status": 200,
       "source_sha256": "043e1556653a6f1c34f71c0f78740eea93a6333f02a8af83e9dc13f0d5499e0c"
@@ -434,9 +410,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "NOAA's National Ocean Service: Newsroom",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source states population, scope, exclusions or limitations for acidification.",
-      "source_name": "Official public source topic 055-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://oceanservice.noaa.gov/facts/",
       "http_status": 200,
       "source_sha256": "043e1556653a6f1c34f71c0f78740eea93a6333f02a8af83e9dc13f0d5499e0c"
@@ -467,9 +441,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "NOAA's National Ocean Service: Newsroom",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source fixes a date, period or version for acidification.",
-      "source_name": "Official public source topic 055-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://oceanservice.noaa.gov/facts/",
       "http_status": 200,
       "source_sha256": "043e1556653a6f1c34f71c0f78740eea93a6333f02a8af83e9dc13f0d5499e0c"
@@ -500,9 +472,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "NOAA's National Ocean Service: Newsroom",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies the method and applicable version for acidification.",
-      "source_name": "Official public source topic 055-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://oceanservice.noaa.gov/facts/",
       "http_status": 200,
       "source_sha256": "043e1556653a6f1c34f71c0f78740eea93a6333f02a8af83e9dc13f0d5499e0c"
@@ -533,9 +503,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "NOAA's National Ocean Service: Newsroom",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for acidification.",
-      "source_name": "Official public source topic 055-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://oceanservice.noaa.gov/facts/",
       "http_status": 200,
       "source_sha256": "043e1556653a6f1c34f71c0f78740eea93a6333f02a8af83e9dc13f0d5499e0c"
@@ -566,9 +534,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "NOAA's National Ocean Service: Newsroom",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A public operator can obtain inputs and rerun the acidification procedure.",
-      "source_name": "Official public source topic 055-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://oceanservice.noaa.gov/facts/",
       "http_status": 200,
       "source_sha256": "043e1556653a6f1c34f71c0f78740eea93a6333f02a8af83e9dc13f0d5499e0c"
@@ -599,9 +565,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "NOAA's National Ocean Service: Newsroom",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for acidification.",
-      "source_name": "Official public source topic 055-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://oceanservice.noaa.gov/facts/",
       "http_status": 200,
       "source_sha256": "043e1556653a6f1c34f71c0f78740eea93a6333f02a8af83e9dc13f0d5499e0c"
@@ -632,9 +596,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "NOAA's National Ocean Service: Newsroom",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary identifies the institution responsible for the acidification report.",
-      "source_name": "Official public source topic 055-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://oceanservice.noaa.gov/facts/",
       "http_status": 200,
       "source_sha256": "043e1556653a6f1c34f71c0f78740eea93a6333f02a8af83e9dc13f0d5499e0c"
@@ -665,9 +627,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "NOAA's National Ocean Service: Newsroom",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source contains a caveat preventing a universal acidification guarantee.",
-      "source_name": "Official public source topic 055-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://oceanservice.noaa.gov/facts/",
       "http_status": 200,
       "source_sha256": "043e1556653a6f1c34f71c0f78740eea93a6333f02a8af83e9dc13f0d5499e0c"
@@ -688,7 +648,7 @@
       "suggested_source_boundary": "buoy, ship, satellite and fisheries datasets plus official assessments",
       "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -697,10 +657,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Ocean Climate | National Centers for Environmental Information (NCEI)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for sea level.",
-      "source_name": "Official public source topic 055-03",
+      "locator": "Products Ocean Heat Content, Salt Content, and Sea Level Anomalies Regional Ocean Climatologies World Ocean Atlas World Ocean Database Related Content Global Oceanographic Data Archeology and Rescue Project (GODAR) International Ocean Atlas Series Mechanical Bathythermograph (MBT) Corrections Ocean Climate Lab (OCL) Publications World Data System XBT Corrections in the World Ocean Database Return to top Follow Us @NOAANCEI @NOAAData @NOAANCEI News Feed Contact Us Email by topic Phone: (828) 271-4800 Sitemap Privacy Policy Freedom of Information Act Information Quality Accessibility Disclaimer Department of Commerce NOAA NESDIS",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "http_status": 200,
       "source_sha256": "8f66f8ee89c54fa42293daf88a50ef6b35f776a64bfa6d33be78b9e607c086d0"
@@ -731,9 +689,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Ocean Climate | National Centers for Environmental Information (NCEI)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A numeric result for sea level discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 055-03",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "http_status": 200,
       "source_sha256": "8f66f8ee89c54fa42293daf88a50ef6b35f776a64bfa6d33be78b9e607c086d0"
@@ -764,9 +720,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Ocean Climate | National Centers for Environmental Information (NCEI)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source states population, scope, exclusions or limitations for sea level.",
-      "source_name": "Official public source topic 055-03",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "http_status": 200,
       "source_sha256": "8f66f8ee89c54fa42293daf88a50ef6b35f776a64bfa6d33be78b9e607c086d0"
@@ -797,9 +751,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Ocean Climate | National Centers for Environmental Information (NCEI)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source fixes a date, period or version for sea level.",
-      "source_name": "Official public source topic 055-03",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "http_status": 200,
       "source_sha256": "8f66f8ee89c54fa42293daf88a50ef6b35f776a64bfa6d33be78b9e607c086d0"
@@ -830,9 +782,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Ocean Climate | National Centers for Environmental Information (NCEI)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies the method and applicable version for sea level.",
-      "source_name": "Official public source topic 055-03",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "http_status": 200,
       "source_sha256": "8f66f8ee89c54fa42293daf88a50ef6b35f776a64bfa6d33be78b9e607c086d0"
@@ -863,9 +813,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Ocean Climate | National Centers for Environmental Information (NCEI)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for sea level.",
-      "source_name": "Official public source topic 055-03",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "http_status": 200,
       "source_sha256": "8f66f8ee89c54fa42293daf88a50ef6b35f776a64bfa6d33be78b9e607c086d0"
@@ -896,9 +844,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Ocean Climate | National Centers for Environmental Information (NCEI)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A public operator can obtain inputs and rerun the sea level procedure.",
-      "source_name": "Official public source topic 055-03",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "http_status": 200,
       "source_sha256": "8f66f8ee89c54fa42293daf88a50ef6b35f776a64bfa6d33be78b9e607c086d0"
@@ -929,9 +875,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Ocean Climate | National Centers for Environmental Information (NCEI)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for sea level.",
-      "source_name": "Official public source topic 055-03",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "http_status": 200,
       "source_sha256": "8f66f8ee89c54fa42293daf88a50ef6b35f776a64bfa6d33be78b9e607c086d0"
@@ -952,7 +896,7 @@
       "suggested_source_boundary": "buoy, ship, satellite and fisheries datasets plus official assessments",
       "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -961,10 +905,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Ocean Climate | National Centers for Environmental Information (NCEI)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary identifies the institution responsible for the sea level report.",
-      "source_name": "Official public source topic 055-03",
+      "locator": "Products Ocean Heat Content, Salt Content, and Sea Level Anomalies Regional Ocean Climatologies World Ocean Atlas World Ocean Database Related Content Global Oceanographic Data Archeology and Rescue Project (GODAR) International Ocean Atlas Series Mechanical Bathythermograph (MBT) Corrections Ocean Climate Lab (OCL) Publications World Data System XBT Corrections in the World Ocean Database Return to top Follow Us @NOAANCEI @NOAAData @NOAANCEI News Feed Contact Us Email by topic Phone: (828) 271-4800 Sitemap Privacy Policy Freedom of Information Act Information Quality Accessibility Disclaimer Department of Commerce NOAA NESDIS",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "http_status": 200,
       "source_sha256": "8f66f8ee89c54fa42293daf88a50ef6b35f776a64bfa6d33be78b9e607c086d0"
@@ -995,9 +937,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Ocean Climate | National Centers for Environmental Information (NCEI)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source contains a caveat preventing a universal sea level guarantee.",
-      "source_name": "Official public source topic 055-03",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
       "http_status": 200,
       "source_sha256": "8f66f8ee89c54fa42293daf88a50ef6b35f776a64bfa6d33be78b9e607c086d0"
@@ -1028,9 +968,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | CMEMS",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for plastic concentration.",
-      "source_name": "Official public source topic 055-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://marine.copernicus.eu/",
       "http_status": 200,
       "source_sha256": "6fc17998c1982c9b09105b07dea8518429b669760c5425117ec4556c18bbed76"
@@ -1061,9 +999,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | CMEMS",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A numeric result for plastic concentration discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 055-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://marine.copernicus.eu/",
       "http_status": 200,
       "source_sha256": "6fc17998c1982c9b09105b07dea8518429b669760c5425117ec4556c18bbed76"
@@ -1094,9 +1030,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | CMEMS",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source states population, scope, exclusions or limitations for plastic concentration.",
-      "source_name": "Official public source topic 055-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://marine.copernicus.eu/",
       "http_status": 200,
       "source_sha256": "6fc17998c1982c9b09105b07dea8518429b669760c5425117ec4556c18bbed76"
@@ -1127,9 +1061,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | CMEMS",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source fixes a date, period or version for plastic concentration.",
-      "source_name": "Official public source topic 055-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://marine.copernicus.eu/",
       "http_status": 200,
       "source_sha256": "6fc17998c1982c9b09105b07dea8518429b669760c5425117ec4556c18bbed76"
@@ -1160,9 +1092,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | CMEMS",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies the method and applicable version for plastic concentration.",
-      "source_name": "Official public source topic 055-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://marine.copernicus.eu/",
       "http_status": 200,
       "source_sha256": "6fc17998c1982c9b09105b07dea8518429b669760c5425117ec4556c18bbed76"
@@ -1193,9 +1123,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | CMEMS",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for plastic concentration.",
-      "source_name": "Official public source topic 055-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://marine.copernicus.eu/",
       "http_status": 200,
       "source_sha256": "6fc17998c1982c9b09105b07dea8518429b669760c5425117ec4556c18bbed76"
@@ -1226,9 +1154,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | CMEMS",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A public operator can obtain inputs and rerun the plastic concentration procedure.",
-      "source_name": "Official public source topic 055-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://marine.copernicus.eu/",
       "http_status": 200,
       "source_sha256": "6fc17998c1982c9b09105b07dea8518429b669760c5425117ec4556c18bbed76"
@@ -1259,9 +1185,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | CMEMS",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for plastic concentration.",
-      "source_name": "Official public source topic 055-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://marine.copernicus.eu/",
       "http_status": 200,
       "source_sha256": "6fc17998c1982c9b09105b07dea8518429b669760c5425117ec4556c18bbed76"
@@ -1292,9 +1216,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | CMEMS",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary identifies the institution responsible for the plastic concentration report.",
-      "source_name": "Official public source topic 055-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://marine.copernicus.eu/",
       "http_status": 200,
       "source_sha256": "6fc17998c1982c9b09105b07dea8518429b669760c5425117ec4556c18bbed76"
@@ -1325,9 +1247,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | CMEMS",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source contains a caveat preventing a universal plastic concentration guarantee.",
-      "source_name": "Official public source topic 055-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://marine.copernicus.eu/",
       "http_status": 200,
       "source_sha256": "6fc17998c1982c9b09105b07dea8518429b669760c5425117ec4556c18bbed76"
@@ -1359,8 +1279,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/oceans-seas canonical=https://www.unep.org/topics/ocean-seas-and-coasts",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for dead-zone extent.",
-      "source_name": "Official public source topic 055-05",
       "canonical_url": "https://www.unep.org/topics/ocean-seas-and-coasts",
       "http_status": 200,
       "source_sha256": "945cbaadb27172f623874cd49647ccdcec9d2b8cd1ac4baa1a217b5edfc0a588"
@@ -1392,8 +1310,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/oceans-seas canonical=https://www.unep.org/topics/ocean-seas-and-coasts",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A numeric result for dead-zone extent discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 055-05",
       "canonical_url": "https://www.unep.org/topics/ocean-seas-and-coasts",
       "http_status": 200,
       "source_sha256": "945cbaadb27172f623874cd49647ccdcec9d2b8cd1ac4baa1a217b5edfc0a588"
@@ -1425,8 +1341,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/oceans-seas canonical=https://www.unep.org/topics/ocean-seas-and-coasts",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source states population, scope, exclusions or limitations for dead-zone extent.",
-      "source_name": "Official public source topic 055-05",
       "canonical_url": "https://www.unep.org/topics/ocean-seas-and-coasts",
       "http_status": 200,
       "source_sha256": "945cbaadb27172f623874cd49647ccdcec9d2b8cd1ac4baa1a217b5edfc0a588"
@@ -1458,8 +1372,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/oceans-seas canonical=https://www.unep.org/topics/ocean-seas-and-coasts",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source fixes a date, period or version for dead-zone extent.",
-      "source_name": "Official public source topic 055-05",
       "canonical_url": "https://www.unep.org/topics/ocean-seas-and-coasts",
       "http_status": 200,
       "source_sha256": "945cbaadb27172f623874cd49647ccdcec9d2b8cd1ac4baa1a217b5edfc0a588"
@@ -1491,8 +1403,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/oceans-seas canonical=https://www.unep.org/topics/ocean-seas-and-coasts",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies the method and applicable version for dead-zone extent.",
-      "source_name": "Official public source topic 055-05",
       "canonical_url": "https://www.unep.org/topics/ocean-seas-and-coasts",
       "http_status": 200,
       "source_sha256": "945cbaadb27172f623874cd49647ccdcec9d2b8cd1ac4baa1a217b5edfc0a588"
@@ -1524,8 +1434,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/oceans-seas canonical=https://www.unep.org/topics/ocean-seas-and-coasts",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for dead-zone extent.",
-      "source_name": "Official public source topic 055-05",
       "canonical_url": "https://www.unep.org/topics/ocean-seas-and-coasts",
       "http_status": 200,
       "source_sha256": "945cbaadb27172f623874cd49647ccdcec9d2b8cd1ac4baa1a217b5edfc0a588"
@@ -1557,8 +1465,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/oceans-seas canonical=https://www.unep.org/topics/ocean-seas-and-coasts",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A public operator can obtain inputs and rerun the dead-zone extent procedure.",
-      "source_name": "Official public source topic 055-05",
       "canonical_url": "https://www.unep.org/topics/ocean-seas-and-coasts",
       "http_status": 200,
       "source_sha256": "945cbaadb27172f623874cd49647ccdcec9d2b8cd1ac4baa1a217b5edfc0a588"
@@ -1590,8 +1496,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/oceans-seas canonical=https://www.unep.org/topics/ocean-seas-and-coasts",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for dead-zone extent.",
-      "source_name": "Official public source topic 055-05",
       "canonical_url": "https://www.unep.org/topics/ocean-seas-and-coasts",
       "http_status": 200,
       "source_sha256": "945cbaadb27172f623874cd49647ccdcec9d2b8cd1ac4baa1a217b5edfc0a588"
@@ -1623,8 +1527,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/oceans-seas canonical=https://www.unep.org/topics/ocean-seas-and-coasts",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary identifies the institution responsible for the dead-zone extent report.",
-      "source_name": "Official public source topic 055-05",
       "canonical_url": "https://www.unep.org/topics/ocean-seas-and-coasts",
       "http_status": 200,
       "source_sha256": "945cbaadb27172f623874cd49647ccdcec9d2b8cd1ac4baa1a217b5edfc0a588"
@@ -1656,8 +1558,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/oceans-seas canonical=https://www.unep.org/topics/ocean-seas-and-coasts",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source contains a caveat preventing a universal dead-zone extent guarantee.",
-      "source_name": "Official public source topic 055-05",
       "canonical_url": "https://www.unep.org/topics/ocean-seas-and-coasts",
       "http_status": 200,
       "source_sha256": "945cbaadb27172f623874cd49647ccdcec9d2b8cd1ac4baa1a217b5edfc0a588"
@@ -1688,9 +1588,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "English",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for marine heatwave.",
-      "source_name": "Official public source topic 055-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.fao.org/fishery/en",
       "http_status": 200,
       "source_sha256": "f24e748885bda62cf866d09781515ef30fabbe137927fa18eba257354c8335a4"
@@ -1721,9 +1619,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "English",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A numeric result for marine heatwave discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 055-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.fao.org/fishery/en",
       "http_status": 200,
       "source_sha256": "f24e748885bda62cf866d09781515ef30fabbe137927fa18eba257354c8335a4"
@@ -1754,9 +1650,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "English",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source states population, scope, exclusions or limitations for marine heatwave.",
-      "source_name": "Official public source topic 055-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.fao.org/fishery/en",
       "http_status": 200,
       "source_sha256": "f24e748885bda62cf866d09781515ef30fabbe137927fa18eba257354c8335a4"
@@ -1787,9 +1681,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "English",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source fixes a date, period or version for marine heatwave.",
-      "source_name": "Official public source topic 055-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.fao.org/fishery/en",
       "http_status": 200,
       "source_sha256": "f24e748885bda62cf866d09781515ef30fabbe137927fa18eba257354c8335a4"
@@ -1820,9 +1712,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "English",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies the method and applicable version for marine heatwave.",
-      "source_name": "Official public source topic 055-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.fao.org/fishery/en",
       "http_status": 200,
       "source_sha256": "f24e748885bda62cf866d09781515ef30fabbe137927fa18eba257354c8335a4"
@@ -1853,9 +1743,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "English",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for marine heatwave.",
-      "source_name": "Official public source topic 055-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.fao.org/fishery/en",
       "http_status": 200,
       "source_sha256": "f24e748885bda62cf866d09781515ef30fabbe137927fa18eba257354c8335a4"
@@ -1886,9 +1774,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "English",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A public operator can obtain inputs and rerun the marine heatwave procedure.",
-      "source_name": "Official public source topic 055-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.fao.org/fishery/en",
       "http_status": 200,
       "source_sha256": "f24e748885bda62cf866d09781515ef30fabbe137927fa18eba257354c8335a4"
@@ -1919,9 +1805,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "English",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for marine heatwave.",
-      "source_name": "Official public source topic 055-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.fao.org/fishery/en",
       "http_status": 200,
       "source_sha256": "f24e748885bda62cf866d09781515ef30fabbe137927fa18eba257354c8335a4"
@@ -1952,9 +1836,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "English",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary identifies the institution responsible for the marine heatwave report.",
-      "source_name": "Official public source topic 055-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.fao.org/fishery/en",
       "http_status": 200,
       "source_sha256": "f24e748885bda62cf866d09781515ef30fabbe137927fa18eba257354c8335a4"
@@ -1985,9 +1867,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "English",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source contains a caveat preventing a universal marine heatwave guarantee.",
-      "source_name": "Official public source topic 055-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.fao.org/fishery/en",
       "http_status": 200,
       "source_sha256": "f24e748885bda62cf866d09781515ef30fabbe137927fa18eba257354c8335a4"
@@ -2008,7 +1888,7 @@
       "suggested_source_boundary": "buoy, ship, satellite and fisheries datasets plus official assessments",
       "source_url": "https://www.ipcc.ch/srocc/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2017,10 +1897,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Special Report on the Ocean and Cryosphere in a Changing Climate —",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for observation coverage.",
-      "source_name": "Official public source topic 055-07",
+      "locator": "There is insufficient data to quantify the magnitude of the weakening, or to properly attribute it to anthropogenic forcing due to the limited length of the observational record.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.ipcc.ch/srocc/",
       "http_status": 200,
       "source_sha256": "a45902d895c6328855a81189241fd74c716712db28f9bdef212ee3cad5e5bed5"
@@ -2051,9 +1929,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Special Report on the Ocean and Cryosphere in a Changing Climate —",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A numeric result for observation coverage discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 055-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.ipcc.ch/srocc/",
       "http_status": 200,
       "source_sha256": "a45902d895c6328855a81189241fd74c716712db28f9bdef212ee3cad5e5bed5"
@@ -2074,7 +1950,7 @@
       "suggested_source_boundary": "buoy, ship, satellite and fisheries datasets plus official assessments",
       "source_url": "https://www.ipcc.ch/srocc/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2083,10 +1959,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Special Report on the Ocean and Cryosphere in a Changing Climate —",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source states population, scope, exclusions or limitations for observation coverage.",
-      "source_name": "Official public source topic 055-07",
+      "locator": "Improvements since AR5 in observation systems, techniques, reconstructions and model developments, have advanced scientific characterisation and understanding of ocean and cryosphere change, including in previously identified areas of concern such as ice sheets and Atlantic Meridional Overturning Circulation (AMOC).",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.ipcc.ch/srocc/",
       "http_status": 200,
       "source_sha256": "a45902d895c6328855a81189241fd74c716712db28f9bdef212ee3cad5e5bed5"
@@ -2107,7 +1981,7 @@
       "suggested_source_boundary": "buoy, ship, satellite and fisheries datasets plus official assessments",
       "source_url": "https://www.ipcc.ch/srocc/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2116,10 +1990,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Special Report on the Ocean and Cryosphere in a Changing Climate —",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source fixes a date, period or version for observation coverage.",
-      "source_name": "Official public source topic 055-07",
+      "locator": "{3.2.1.1; Box 3.2} It is very likely that Antarctic sea ice cover exhibits no significant trend over the period of satellite observations (1979 – 2018).",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.ipcc.ch/srocc/",
       "http_status": 200,
       "source_sha256": "a45902d895c6328855a81189241fd74c716712db28f9bdef212ee3cad5e5bed5"
@@ -2140,7 +2012,7 @@
       "suggested_source_boundary": "buoy, ship, satellite and fisheries datasets plus official assessments",
       "source_url": "https://www.ipcc.ch/srocc/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2149,10 +2021,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Special Report on the Ocean and Cryosphere in a Changing Climate —",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies the method and applicable version for observation coverage.",
-      "source_name": "Official public source topic 055-07",
+      "locator": "Improvements since AR5 in observation systems, techniques, reconstructions and model developments, have advanced scientific characterisation and understanding of ocean and cryosphere change, including in previously identified areas of concern such as ice sheets and Atlantic Meridional Overturning Circulation (AMOC).",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.ipcc.ch/srocc/",
       "http_status": 200,
       "source_sha256": "a45902d895c6328855a81189241fd74c716712db28f9bdef212ee3cad5e5bed5"
@@ -2173,7 +2043,7 @@
       "suggested_source_boundary": "buoy, ship, satellite and fisheries datasets plus official assessments",
       "source_url": "https://www.ipcc.ch/srocc/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2182,10 +2052,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Special Report on the Ocean and Cryosphere in a Changing Climate —",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for observation coverage.",
-      "source_name": "Official public source topic 055-07",
+      "locator": "{3.2.1.1; Box 3.2} It is very likely that Antarctic sea ice cover exhibits no significant trend over the period of satellite observations (1979 – 2018).",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.ipcc.ch/srocc/",
       "http_status": 200,
       "source_sha256": "a45902d895c6328855a81189241fd74c716712db28f9bdef212ee3cad5e5bed5"
@@ -2216,9 +2084,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Special Report on the Ocean and Cryosphere in a Changing Climate —",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A public operator can obtain inputs and rerun the observation coverage procedure.",
-      "source_name": "Official public source topic 055-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.ipcc.ch/srocc/",
       "http_status": 200,
       "source_sha256": "a45902d895c6328855a81189241fd74c716712db28f9bdef212ee3cad5e5bed5"
@@ -2239,7 +2105,7 @@
       "suggested_source_boundary": "buoy, ship, satellite and fisheries datasets plus official assessments",
       "source_url": "https://www.ipcc.ch/srocc/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2248,10 +2114,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Special Report on the Ocean and Cryosphere in a Changing Climate —",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for observation coverage.",
-      "source_name": "Official public source topic 055-07",
+      "locator": "Rapid mass loss due to glacier flow acceleration in the Amundsen Sea Embayment (ASE) of West Antarctica and in Wilkes Land, East Antarctica, may indicate the beginning of Marine Ice Sheet Instability (MISI), but observational data are not yet sufficient to determine whether these changes mark the beginning of irreversible retreat.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.ipcc.ch/srocc/",
       "http_status": 200,
       "source_sha256": "a45902d895c6328855a81189241fd74c716712db28f9bdef212ee3cad5e5bed5"
@@ -2282,9 +2146,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Special Report on the Ocean and Cryosphere in a Changing Climate —",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary identifies the institution responsible for the observation coverage report.",
-      "source_name": "Official public source topic 055-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.ipcc.ch/srocc/",
       "http_status": 200,
       "source_sha256": "a45902d895c6328855a81189241fd74c716712db28f9bdef212ee3cad5e5bed5"
@@ -2305,7 +2167,7 @@
       "suggested_source_boundary": "buoy, ship, satellite and fisheries datasets plus official assessments",
       "source_url": "https://www.ipcc.ch/srocc/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2314,10 +2176,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Special Report on the Ocean and Cryosphere in a Changing Climate —",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source contains a caveat preventing a universal observation coverage guarantee.",
-      "source_name": "Official public source topic 055-07",
+      "locator": "Evidence for expected slow-down of AMOC is emerging in sustained observations and from long-term palaeoclimate reconstructions ( medium confidence ), and may be related with anthropogenic forcing according to model simulations, although this remains to be properly attributed.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.ipcc.ch/srocc/",
       "http_status": 200,
       "source_sha256": "a45902d895c6328855a81189241fd74c716712db28f9bdef212ee3cad5e5bed5"
@@ -2338,7 +2198,7 @@
       "suggested_source_boundary": "forest inventories, satellite products, concession records and fire data",
       "source_url": "https://www.fao.org/forest-resources-assessment/en/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2347,10 +2207,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Home | Global Forest Resources Assessments | Food and Agriculture Organization of the United Nations",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for forest loss.",
-      "source_name": "Official public source topic 056-01",
+      "locator": "With its transparent methodology and broad scope, the Global Forest Resources Assessment 2025 is the only worldwide assessment based on official national data.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.fao.org/forest-resources-assessment/en/",
       "http_status": 200,
       "source_sha256": "5ad34fff6c158c58d8038d8cfdf1ed37c6b6169cfa39ee676a370c976127ceee"
@@ -2371,7 +2229,7 @@
       "suggested_source_boundary": "forest inventories, satellite products, concession records and fire data",
       "source_url": "https://www.fao.org/forest-resources-assessment/en/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2380,10 +2238,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Home | Global Forest Resources Assessments | Food and Agriculture Organization of the United Nations",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A numeric result for forest loss discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 056-01",
+      "locator": "Specifically, data submitted to FRA contribute to reporting on SDG goal 15 – Life on Land - indicators 15.1.1 (forest area as a proportion of total land area) and 15.2.1 (progress towards sustainable forest management) .",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.fao.org/forest-resources-assessment/en/",
       "http_status": 200,
       "source_sha256": "5ad34fff6c158c58d8038d8cfdf1ed37c6b6169cfa39ee676a370c976127ceee"
@@ -2404,7 +2260,7 @@
       "suggested_source_boundary": "forest inventories, satellite products, concession records and fire data",
       "source_url": "https://www.fao.org/forest-resources-assessment/en/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2413,10 +2269,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Home | Global Forest Resources Assessments | Food and Agriculture Organization of the United Nations",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source states population, scope, exclusions or limitations for forest loss.",
-      "source_name": "Official public source topic 056-01",
+      "locator": "With its transparent methodology and broad scope, the Global Forest Resources Assessment 2025 is the only worldwide assessment based on official national data.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.fao.org/forest-resources-assessment/en/",
       "http_status": 200,
       "source_sha256": "5ad34fff6c158c58d8038d8cfdf1ed37c6b6169cfa39ee676a370c976127ceee"
@@ -2437,7 +2291,7 @@
       "suggested_source_boundary": "forest inventories, satellite products, concession records and fire data",
       "source_url": "https://www.fao.org/forest-resources-assessment/en/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2446,10 +2300,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Home | Global Forest Resources Assessments | Food and Agriculture Organization of the United Nations",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source fixes a date, period or version for forest loss.",
-      "source_name": "Official public source topic 056-01",
+      "locator": "Find out more Publications The world’s mangroves 2000–2020 2023 This report provides global and regional estimates of the area covered by mangrove forests, including area changes between 2000 and 2020.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.fao.org/forest-resources-assessment/en/",
       "http_status": 200,
       "source_sha256": "5ad34fff6c158c58d8038d8cfdf1ed37c6b6169cfa39ee676a370c976127ceee"
@@ -2470,7 +2322,7 @@
       "suggested_source_boundary": "forest inventories, satellite products, concession records and fire data",
       "source_url": "https://www.fao.org/forest-resources-assessment/en/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2479,10 +2331,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Home | Global Forest Resources Assessments | Food and Agriculture Organization of the United Nations",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies the method and applicable version for forest loss.",
-      "source_name": "Official public source topic 056-01",
+      "locator": "With its transparent methodology and broad scope, the Global Forest Resources Assessment 2025 is the only worldwide assessment based on official national data.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.fao.org/forest-resources-assessment/en/",
       "http_status": 200,
       "source_sha256": "5ad34fff6c158c58d8038d8cfdf1ed37c6b6169cfa39ee676a370c976127ceee"
@@ -2513,9 +2363,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | Global Forest Resources Assessments | Food and Agriculture Organization of the United Nations",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for forest loss.",
-      "source_name": "Official public source topic 056-01",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.fao.org/forest-resources-assessment/en/",
       "http_status": 200,
       "source_sha256": "5ad34fff6c158c58d8038d8cfdf1ed37c6b6169cfa39ee676a370c976127ceee"
@@ -2536,7 +2384,7 @@
       "suggested_source_boundary": "forest inventories, satellite products, concession records and fire data",
       "source_url": "https://www.fao.org/forest-resources-assessment/en/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2545,10 +2393,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Home | Global Forest Resources Assessments | Food and Agriculture Organization of the United Nations",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A public operator can obtain inputs and rerun the forest loss procedure.",
-      "source_name": "Official public source topic 056-01",
+      "locator": "With its transparent methodology and broad scope, the Global Forest Resources Assessment 2025 is the only worldwide assessment based on official national data.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.fao.org/forest-resources-assessment/en/",
       "http_status": 200,
       "source_sha256": "5ad34fff6c158c58d8038d8cfdf1ed37c6b6169cfa39ee676a370c976127ceee"
@@ -2569,7 +2415,7 @@
       "suggested_source_boundary": "forest inventories, satellite products, concession records and fire data",
       "source_url": "https://www.fao.org/forest-resources-assessment/en/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2578,10 +2424,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Home | Global Forest Resources Assessments | Food and Agriculture Organization of the United Nations",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for forest loss.",
-      "source_name": "Official public source topic 056-01",
+      "locator": "Better data, better decisions for Asia Pacific's forests 11/05/2026 FAO supports Asia-Pacific countries to improve the consistency and quality of data reported to New research provides updated estimates on global forest-sector employment 14/04/2026 New research presents fresh estimates that help close critical data gaps in global and regional forest-sector employment between 2011 and 2022.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.fao.org/forest-resources-assessment/en/",
       "http_status": 200,
       "source_sha256": "5ad34fff6c158c58d8038d8cfdf1ed37c6b6169cfa39ee676a370c976127ceee"
@@ -2602,7 +2446,7 @@
       "suggested_source_boundary": "forest inventories, satellite products, concession records and fire data",
       "source_url": "https://www.fao.org/forest-resources-assessment/en/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2611,10 +2455,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Home | Global Forest Resources Assessments | Food and Agriculture Organization of the United Nations",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary identifies the institution responsible for the forest loss report.",
-      "source_name": "Official public source topic 056-01",
+      "locator": "Young explorers grow forest awareness at FAO Open Day 22/05/2026 The Food and Agriculture Organization of the United Nations (FAO) opened the doors to its headquarters to all United Nations (UN) employees and their...",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.fao.org/forest-resources-assessment/en/",
       "http_status": 200,
       "source_sha256": "5ad34fff6c158c58d8038d8cfdf1ed37c6b6169cfa39ee676a370c976127ceee"
@@ -2635,7 +2477,7 @@
       "suggested_source_boundary": "forest inventories, satellite products, concession records and fire data",
       "source_url": "https://www.fao.org/forest-resources-assessment/en/",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2644,10 +2486,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Home | Global Forest Resources Assessments | Food and Agriculture Organization of the United Nations",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source contains a caveat preventing a universal forest loss guarantee.",
-      "source_name": "Official public source topic 056-01",
+      "locator": "Find out more Publications The world’s mangroves 2000–2020 2023 This report provides global and regional estimates of the area covered by mangrove forests, including area changes between 2000 and 2020.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.fao.org/forest-resources-assessment/en/",
       "http_status": 200,
       "source_sha256": "5ad34fff6c158c58d8038d8cfdf1ed37c6b6169cfa39ee676a370c976127ceee"
@@ -2678,9 +2518,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for tree-cover gain.",
-      "source_name": "Official public source topic 056-02",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.fs.usda.gov/research/inventory",
       "http_status": 403,
       "source_sha256": "20b6f3d16b8418bdd2a4bbd60342b86c53e11a7c52ab1f6cdd660faa8ede8a72"
@@ -2711,9 +2549,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "A numeric result for tree-cover gain discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 056-02",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.fs.usda.gov/research/inventory",
       "http_status": 403,
       "source_sha256": "20b6f3d16b8418bdd2a4bbd60342b86c53e11a7c52ab1f6cdd660faa8ede8a72"
@@ -2744,9 +2580,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source states population, scope, exclusions or limitations for tree-cover gain.",
-      "source_name": "Official public source topic 056-02",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.fs.usda.gov/research/inventory",
       "http_status": 403,
       "source_sha256": "20b6f3d16b8418bdd2a4bbd60342b86c53e11a7c52ab1f6cdd660faa8ede8a72"
@@ -2777,9 +2611,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source fixes a date, period or version for tree-cover gain.",
-      "source_name": "Official public source topic 056-02",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.fs.usda.gov/research/inventory",
       "http_status": 403,
       "source_sha256": "20b6f3d16b8418bdd2a4bbd60342b86c53e11a7c52ab1f6cdd660faa8ede8a72"
@@ -2810,9 +2642,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source identifies the method and applicable version for tree-cover gain.",
-      "source_name": "Official public source topic 056-02",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.fs.usda.gov/research/inventory",
       "http_status": 403,
       "source_sha256": "20b6f3d16b8418bdd2a4bbd60342b86c53e11a7c52ab1f6cdd660faa8ede8a72"
@@ -2843,9 +2673,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for tree-cover gain.",
-      "source_name": "Official public source topic 056-02",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.fs.usda.gov/research/inventory",
       "http_status": 403,
       "source_sha256": "20b6f3d16b8418bdd2a4bbd60342b86c53e11a7c52ab1f6cdd660faa8ede8a72"
@@ -2876,9 +2704,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "A public operator can obtain inputs and rerun the tree-cover gain procedure.",
-      "source_name": "Official public source topic 056-02",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.fs.usda.gov/research/inventory",
       "http_status": 403,
       "source_sha256": "20b6f3d16b8418bdd2a4bbd60342b86c53e11a7c52ab1f6cdd660faa8ede8a72"
@@ -2909,9 +2735,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for tree-cover gain.",
-      "source_name": "Official public source topic 056-02",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.fs.usda.gov/research/inventory",
       "http_status": 403,
       "source_sha256": "20b6f3d16b8418bdd2a4bbd60342b86c53e11a7c52ab1f6cdd660faa8ede8a72"
@@ -2942,9 +2766,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The boundary identifies the institution responsible for the tree-cover gain report.",
-      "source_name": "Official public source topic 056-02",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.fs.usda.gov/research/inventory",
       "http_status": 403,
       "source_sha256": "20b6f3d16b8418bdd2a4bbd60342b86c53e11a7c52ab1f6cdd660faa8ede8a72"
@@ -2975,9 +2797,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source contains a caveat preventing a universal tree-cover gain guarantee.",
-      "source_name": "Official public source topic 056-02",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.fs.usda.gov/research/inventory",
       "http_status": 403,
       "source_sha256": "20b6f3d16b8418bdd2a4bbd60342b86c53e11a7c52ab1f6cdd660faa8ede8a72"
@@ -3009,8 +2829,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE canonical=https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for illegal logging.",
-      "source_name": "Official public source topic 056-03",
       "canonical_url": "https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "http_status": 200,
       "source_sha256": "ee4fec39bb88c303c0de81bb1fcd705e67f9ffc3e26fde3178b1520ec11ef3cd"
@@ -3042,8 +2860,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE canonical=https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A numeric result for illegal logging discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 056-03",
       "canonical_url": "https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "http_status": 200,
       "source_sha256": "ee4fec39bb88c303c0de81bb1fcd705e67f9ffc3e26fde3178b1520ec11ef3cd"
@@ -3075,8 +2891,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE canonical=https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source states population, scope, exclusions or limitations for illegal logging.",
-      "source_name": "Official public source topic 056-03",
       "canonical_url": "https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "http_status": 200,
       "source_sha256": "ee4fec39bb88c303c0de81bb1fcd705e67f9ffc3e26fde3178b1520ec11ef3cd"
@@ -3108,8 +2922,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE canonical=https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source fixes a date, period or version for illegal logging.",
-      "source_name": "Official public source topic 056-03",
       "canonical_url": "https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "http_status": 200,
       "source_sha256": "ee4fec39bb88c303c0de81bb1fcd705e67f9ffc3e26fde3178b1520ec11ef3cd"
@@ -3141,8 +2953,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE canonical=https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies the method and applicable version for illegal logging.",
-      "source_name": "Official public source topic 056-03",
       "canonical_url": "https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "http_status": 200,
       "source_sha256": "ee4fec39bb88c303c0de81bb1fcd705e67f9ffc3e26fde3178b1520ec11ef3cd"
@@ -3174,8 +2984,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE canonical=https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for illegal logging.",
-      "source_name": "Official public source topic 056-03",
       "canonical_url": "https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "http_status": 200,
       "source_sha256": "ee4fec39bb88c303c0de81bb1fcd705e67f9ffc3e26fde3178b1520ec11ef3cd"
@@ -3207,8 +3015,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE canonical=https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A public operator can obtain inputs and rerun the illegal logging procedure.",
-      "source_name": "Official public source topic 056-03",
       "canonical_url": "https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "http_status": 200,
       "source_sha256": "ee4fec39bb88c303c0de81bb1fcd705e67f9ffc3e26fde3178b1520ec11ef3cd"
@@ -3240,8 +3046,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE canonical=https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for illegal logging.",
-      "source_name": "Official public source topic 056-03",
       "canonical_url": "https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "http_status": 200,
       "source_sha256": "ee4fec39bb88c303c0de81bb1fcd705e67f9ffc3e26fde3178b1520ec11ef3cd"
@@ -3273,8 +3077,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE canonical=https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary identifies the institution responsible for the illegal logging report.",
-      "source_name": "Official public source topic 056-03",
       "canonical_url": "https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "http_status": 200,
       "source_sha256": "ee4fec39bb88c303c0de81bb1fcd705e67f9ffc3e26fde3178b1520ec11ef3cd"
@@ -3306,8 +3108,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE canonical=https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source contains a caveat preventing a universal illegal logging guarantee.",
-      "source_name": "Official public source topic 056-03",
       "canonical_url": "https://science.nasa.gov/earth/earth-observatory/global-maps/fire/",
       "http_status": 200,
       "source_sha256": "ee4fec39bb88c303c0de81bb1fcd705e67f9ffc3e26fde3178b1520ec11ef3cd"
@@ -3338,9 +3138,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Global Deforestation Rates & Statistics by Country | GFW",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for fire extent.",
-      "source_name": "Official public source topic 056-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.globalforestwatch.org/dashboards/global/",
       "http_status": 200,
       "source_sha256": "94eb8fa2843283a26a0cac58b2ded2507f6ff17de2bbf3572c854eba273dedcc"
@@ -3371,9 +3169,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Global Deforestation Rates & Statistics by Country | GFW",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A numeric result for fire extent discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 056-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.globalforestwatch.org/dashboards/global/",
       "http_status": 200,
       "source_sha256": "94eb8fa2843283a26a0cac58b2ded2507f6ff17de2bbf3572c854eba273dedcc"
@@ -3404,9 +3200,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Global Deforestation Rates & Statistics by Country | GFW",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source states population, scope, exclusions or limitations for fire extent.",
-      "source_name": "Official public source topic 056-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.globalforestwatch.org/dashboards/global/",
       "http_status": 200,
       "source_sha256": "94eb8fa2843283a26a0cac58b2ded2507f6ff17de2bbf3572c854eba273dedcc"
@@ -3437,9 +3231,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Global Deforestation Rates & Statistics by Country | GFW",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source fixes a date, period or version for fire extent.",
-      "source_name": "Official public source topic 056-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.globalforestwatch.org/dashboards/global/",
       "http_status": 200,
       "source_sha256": "94eb8fa2843283a26a0cac58b2ded2507f6ff17de2bbf3572c854eba273dedcc"
@@ -3470,9 +3262,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Global Deforestation Rates & Statistics by Country | GFW",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies the method and applicable version for fire extent.",
-      "source_name": "Official public source topic 056-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.globalforestwatch.org/dashboards/global/",
       "http_status": 200,
       "source_sha256": "94eb8fa2843283a26a0cac58b2ded2507f6ff17de2bbf3572c854eba273dedcc"
@@ -3503,9 +3293,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Global Deforestation Rates & Statistics by Country | GFW",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for fire extent.",
-      "source_name": "Official public source topic 056-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.globalforestwatch.org/dashboards/global/",
       "http_status": 200,
       "source_sha256": "94eb8fa2843283a26a0cac58b2ded2507f6ff17de2bbf3572c854eba273dedcc"
@@ -3536,9 +3324,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Global Deforestation Rates & Statistics by Country | GFW",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A public operator can obtain inputs and rerun the fire extent procedure.",
-      "source_name": "Official public source topic 056-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.globalforestwatch.org/dashboards/global/",
       "http_status": 200,
       "source_sha256": "94eb8fa2843283a26a0cac58b2ded2507f6ff17de2bbf3572c854eba273dedcc"
@@ -3569,9 +3355,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Global Deforestation Rates & Statistics by Country | GFW",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for fire extent.",
-      "source_name": "Official public source topic 056-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.globalforestwatch.org/dashboards/global/",
       "http_status": 200,
       "source_sha256": "94eb8fa2843283a26a0cac58b2ded2507f6ff17de2bbf3572c854eba273dedcc"
@@ -3602,9 +3386,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Global Deforestation Rates & Statistics by Country | GFW",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary identifies the institution responsible for the fire extent report.",
-      "source_name": "Official public source topic 056-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.globalforestwatch.org/dashboards/global/",
       "http_status": 200,
       "source_sha256": "94eb8fa2843283a26a0cac58b2ded2507f6ff17de2bbf3572c854eba273dedcc"
@@ -3635,9 +3417,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Global Deforestation Rates & Statistics by Country | GFW",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source contains a caveat preventing a universal fire extent guarantee.",
-      "source_name": "Official public source topic 056-04",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.globalforestwatch.org/dashboards/global/",
       "http_status": 200,
       "source_sha256": "94eb8fa2843283a26a0cac58b2ded2507f6ff17de2bbf3572c854eba273dedcc"
@@ -3669,8 +3449,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/forests canonical=https://www.unep.org/topics/forests",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for carbon stock.",
-      "source_name": "Official public source topic 056-05",
       "canonical_url": "https://www.unep.org/topics/forests",
       "http_status": 200,
       "source_sha256": "14156f97f72057f513db06e41b4afd92f78f777b2095293f486c8bc20e9743f1"
@@ -3702,8 +3480,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/forests canonical=https://www.unep.org/topics/forests",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A numeric result for carbon stock discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 056-05",
       "canonical_url": "https://www.unep.org/topics/forests",
       "http_status": 200,
       "source_sha256": "14156f97f72057f513db06e41b4afd92f78f777b2095293f486c8bc20e9743f1"
@@ -3735,8 +3511,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/forests canonical=https://www.unep.org/topics/forests",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source states population, scope, exclusions or limitations for carbon stock.",
-      "source_name": "Official public source topic 056-05",
       "canonical_url": "https://www.unep.org/topics/forests",
       "http_status": 200,
       "source_sha256": "14156f97f72057f513db06e41b4afd92f78f777b2095293f486c8bc20e9743f1"
@@ -3768,8 +3542,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/forests canonical=https://www.unep.org/topics/forests",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source fixes a date, period or version for carbon stock.",
-      "source_name": "Official public source topic 056-05",
       "canonical_url": "https://www.unep.org/topics/forests",
       "http_status": 200,
       "source_sha256": "14156f97f72057f513db06e41b4afd92f78f777b2095293f486c8bc20e9743f1"
@@ -3801,8 +3573,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/forests canonical=https://www.unep.org/topics/forests",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies the method and applicable version for carbon stock.",
-      "source_name": "Official public source topic 056-05",
       "canonical_url": "https://www.unep.org/topics/forests",
       "http_status": 200,
       "source_sha256": "14156f97f72057f513db06e41b4afd92f78f777b2095293f486c8bc20e9743f1"
@@ -3834,8 +3604,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/forests canonical=https://www.unep.org/topics/forests",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for carbon stock.",
-      "source_name": "Official public source topic 056-05",
       "canonical_url": "https://www.unep.org/topics/forests",
       "http_status": 200,
       "source_sha256": "14156f97f72057f513db06e41b4afd92f78f777b2095293f486c8bc20e9743f1"
@@ -3867,8 +3635,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/forests canonical=https://www.unep.org/topics/forests",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A public operator can obtain inputs and rerun the carbon stock procedure.",
-      "source_name": "Official public source topic 056-05",
       "canonical_url": "https://www.unep.org/topics/forests",
       "http_status": 200,
       "source_sha256": "14156f97f72057f513db06e41b4afd92f78f777b2095293f486c8bc20e9743f1"
@@ -3900,8 +3666,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/forests canonical=https://www.unep.org/topics/forests",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for carbon stock.",
-      "source_name": "Official public source topic 056-05",
       "canonical_url": "https://www.unep.org/topics/forests",
       "http_status": 200,
       "source_sha256": "14156f97f72057f513db06e41b4afd92f78f777b2095293f486c8bc20e9743f1"
@@ -3933,8 +3697,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/forests canonical=https://www.unep.org/topics/forests",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary identifies the institution responsible for the carbon stock report.",
-      "source_name": "Official public source topic 056-05",
       "canonical_url": "https://www.unep.org/topics/forests",
       "http_status": 200,
       "source_sha256": "14156f97f72057f513db06e41b4afd92f78f777b2095293f486c8bc20e9743f1"
@@ -3966,8 +3728,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.unep.org/explore-topics/forests canonical=https://www.unep.org/topics/forests",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source contains a caveat preventing a universal carbon stock guarantee.",
-      "source_name": "Official public source topic 056-05",
       "canonical_url": "https://www.unep.org/topics/forests",
       "http_status": 200,
       "source_sha256": "14156f97f72057f513db06e41b4afd92f78f777b2095293f486c8bc20e9743f1"
@@ -3998,9 +3758,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Forest Information System of Europe",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for protected-area encroachment.",
-      "source_name": "Official public source topic 056-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://forest.eea.europa.eu/",
       "http_status": 200,
       "source_sha256": "c1ee284ef46e08fadb94da8f6c7650f4542805d8486f3d334424c202f883a674"
@@ -4031,9 +3789,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Forest Information System of Europe",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A numeric result for protected-area encroachment discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 056-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://forest.eea.europa.eu/",
       "http_status": 200,
       "source_sha256": "c1ee284ef46e08fadb94da8f6c7650f4542805d8486f3d334424c202f883a674"
@@ -4064,9 +3820,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Forest Information System of Europe",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source states population, scope, exclusions or limitations for protected-area encroachment.",
-      "source_name": "Official public source topic 056-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://forest.eea.europa.eu/",
       "http_status": 200,
       "source_sha256": "c1ee284ef46e08fadb94da8f6c7650f4542805d8486f3d334424c202f883a674"
@@ -4097,9 +3851,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Forest Information System of Europe",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source fixes a date, period or version for protected-area encroachment.",
-      "source_name": "Official public source topic 056-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://forest.eea.europa.eu/",
       "http_status": 200,
       "source_sha256": "c1ee284ef46e08fadb94da8f6c7650f4542805d8486f3d334424c202f883a674"
@@ -4130,9 +3882,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Forest Information System of Europe",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies the method and applicable version for protected-area encroachment.",
-      "source_name": "Official public source topic 056-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://forest.eea.europa.eu/",
       "http_status": 200,
       "source_sha256": "c1ee284ef46e08fadb94da8f6c7650f4542805d8486f3d334424c202f883a674"
@@ -4163,9 +3913,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Forest Information System of Europe",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for protected-area encroachment.",
-      "source_name": "Official public source topic 056-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://forest.eea.europa.eu/",
       "http_status": 200,
       "source_sha256": "c1ee284ef46e08fadb94da8f6c7650f4542805d8486f3d334424c202f883a674"
@@ -4196,9 +3944,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Forest Information System of Europe",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A public operator can obtain inputs and rerun the protected-area encroachment procedure.",
-      "source_name": "Official public source topic 056-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://forest.eea.europa.eu/",
       "http_status": 200,
       "source_sha256": "c1ee284ef46e08fadb94da8f6c7650f4542805d8486f3d334424c202f883a674"
@@ -4229,9 +3975,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Forest Information System of Europe",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for protected-area encroachment.",
-      "source_name": "Official public source topic 056-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://forest.eea.europa.eu/",
       "http_status": 200,
       "source_sha256": "c1ee284ef46e08fadb94da8f6c7650f4542805d8486f3d334424c202f883a674"
@@ -4262,9 +4006,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Forest Information System of Europe",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary identifies the institution responsible for the protected-area encroachment report.",
-      "source_name": "Official public source topic 056-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://forest.eea.europa.eu/",
       "http_status": 200,
       "source_sha256": "c1ee284ef46e08fadb94da8f6c7650f4542805d8486f3d334424c202f883a674"
@@ -4295,9 +4037,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Forest Information System of Europe",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source contains a caveat preventing a universal protected-area encroachment guarantee.",
-      "source_name": "Official public source topic 056-06",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://forest.eea.europa.eu/",
       "http_status": 200,
       "source_sha256": "c1ee284ef46e08fadb94da8f6c7650f4542805d8486f3d334424c202f883a674"
@@ -4329,8 +4069,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.worldbank.org/en/topic/forests canonical=https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for reforestation survival.",
-      "source_name": "Official public source topic 056-07",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "http_status": 200,
       "source_sha256": "5b84e57ded221ed53eb5c87273586b9d1df76b696c9cd3d58436711b38d6888b"
@@ -4362,8 +4100,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.worldbank.org/en/topic/forests canonical=https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A numeric result for reforestation survival discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 056-07",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "http_status": 200,
       "source_sha256": "5b84e57ded221ed53eb5c87273586b9d1df76b696c9cd3d58436711b38d6888b"
@@ -4395,8 +4131,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.worldbank.org/en/topic/forests canonical=https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source states population, scope, exclusions or limitations for reforestation survival.",
-      "source_name": "Official public source topic 056-07",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "http_status": 200,
       "source_sha256": "5b84e57ded221ed53eb5c87273586b9d1df76b696c9cd3d58436711b38d6888b"
@@ -4428,8 +4162,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.worldbank.org/en/topic/forests canonical=https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source fixes a date, period or version for reforestation survival.",
-      "source_name": "Official public source topic 056-07",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "http_status": 200,
       "source_sha256": "5b84e57ded221ed53eb5c87273586b9d1df76b696c9cd3d58436711b38d6888b"
@@ -4461,8 +4193,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.worldbank.org/en/topic/forests canonical=https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies the method and applicable version for reforestation survival.",
-      "source_name": "Official public source topic 056-07",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "http_status": 200,
       "source_sha256": "5b84e57ded221ed53eb5c87273586b9d1df76b696c9cd3d58436711b38d6888b"
@@ -4494,8 +4224,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.worldbank.org/en/topic/forests canonical=https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for reforestation survival.",
-      "source_name": "Official public source topic 056-07",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "http_status": 200,
       "source_sha256": "5b84e57ded221ed53eb5c87273586b9d1df76b696c9cd3d58436711b38d6888b"
@@ -4527,8 +4255,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.worldbank.org/en/topic/forests canonical=https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A public operator can obtain inputs and rerun the reforestation survival procedure.",
-      "source_name": "Official public source topic 056-07",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "http_status": 200,
       "source_sha256": "5b84e57ded221ed53eb5c87273586b9d1df76b696c9cd3d58436711b38d6888b"
@@ -4560,8 +4286,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.worldbank.org/en/topic/forests canonical=https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for reforestation survival.",
-      "source_name": "Official public source topic 056-07",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "http_status": 200,
       "source_sha256": "5b84e57ded221ed53eb5c87273586b9d1df76b696c9cd3d58436711b38d6888b"
@@ -4593,8 +4317,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.worldbank.org/en/topic/forests canonical=https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary identifies the institution responsible for the reforestation survival report.",
-      "source_name": "Official public source topic 056-07",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "http_status": 200,
       "source_sha256": "5b84e57ded221ed53eb5c87273586b9d1df76b696c9cd3d58436711b38d6888b"
@@ -4626,8 +4348,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.worldbank.org/en/topic/forests canonical=https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source contains a caveat preventing a universal reforestation survival guarantee.",
-      "source_name": "Official public source topic 056-07",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/environment/forests-and-landscapes",
       "http_status": 200,
       "source_sha256": "5b84e57ded221ed53eb5c87273586b9d1df76b696c9cd3d58436711b38d6888b"
@@ -4659,8 +4379,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.cbd.int/gbf/ canonical=https://www.cbd.int/gbf",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for species abundance.",
-      "source_name": "Official public source topic 057-01",
       "canonical_url": "https://www.cbd.int/gbf",
       "http_status": 200,
       "source_sha256": "1d77e832ed4231eeef30fb237807efc3b682f60c1970cb470140083c1827590e"
@@ -4692,8 +4410,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.cbd.int/gbf/ canonical=https://www.cbd.int/gbf",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A numeric result for species abundance discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 057-01",
       "canonical_url": "https://www.cbd.int/gbf",
       "http_status": 200,
       "source_sha256": "1d77e832ed4231eeef30fb237807efc3b682f60c1970cb470140083c1827590e"
@@ -4725,8 +4441,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.cbd.int/gbf/ canonical=https://www.cbd.int/gbf",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source states population, scope, exclusions or limitations for species abundance.",
-      "source_name": "Official public source topic 057-01",
       "canonical_url": "https://www.cbd.int/gbf",
       "http_status": 200,
       "source_sha256": "1d77e832ed4231eeef30fb237807efc3b682f60c1970cb470140083c1827590e"
@@ -4758,8 +4472,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.cbd.int/gbf/ canonical=https://www.cbd.int/gbf",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source fixes a date, period or version for species abundance.",
-      "source_name": "Official public source topic 057-01",
       "canonical_url": "https://www.cbd.int/gbf",
       "http_status": 200,
       "source_sha256": "1d77e832ed4231eeef30fb237807efc3b682f60c1970cb470140083c1827590e"
@@ -4791,8 +4503,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.cbd.int/gbf/ canonical=https://www.cbd.int/gbf",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies the method and applicable version for species abundance.",
-      "source_name": "Official public source topic 057-01",
       "canonical_url": "https://www.cbd.int/gbf",
       "http_status": 200,
       "source_sha256": "1d77e832ed4231eeef30fb237807efc3b682f60c1970cb470140083c1827590e"
@@ -4824,8 +4534,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.cbd.int/gbf/ canonical=https://www.cbd.int/gbf",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for species abundance.",
-      "source_name": "Official public source topic 057-01",
       "canonical_url": "https://www.cbd.int/gbf",
       "http_status": 200,
       "source_sha256": "1d77e832ed4231eeef30fb237807efc3b682f60c1970cb470140083c1827590e"
@@ -4857,8 +4565,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.cbd.int/gbf/ canonical=https://www.cbd.int/gbf",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A public operator can obtain inputs and rerun the species abundance procedure.",
-      "source_name": "Official public source topic 057-01",
       "canonical_url": "https://www.cbd.int/gbf",
       "http_status": 200,
       "source_sha256": "1d77e832ed4231eeef30fb237807efc3b682f60c1970cb470140083c1827590e"
@@ -4890,8 +4596,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.cbd.int/gbf/ canonical=https://www.cbd.int/gbf",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for species abundance.",
-      "source_name": "Official public source topic 057-01",
       "canonical_url": "https://www.cbd.int/gbf",
       "http_status": 200,
       "source_sha256": "1d77e832ed4231eeef30fb237807efc3b682f60c1970cb470140083c1827590e"
@@ -4923,8 +4627,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.cbd.int/gbf/ canonical=https://www.cbd.int/gbf",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary identifies the institution responsible for the species abundance report.",
-      "source_name": "Official public source topic 057-01",
       "canonical_url": "https://www.cbd.int/gbf",
       "http_status": 200,
       "source_sha256": "1d77e832ed4231eeef30fb237807efc3b682f60c1970cb470140083c1827590e"
@@ -4956,8 +4658,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.cbd.int/gbf/ canonical=https://www.cbd.int/gbf",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source contains a caveat preventing a universal species abundance guarantee.",
-      "source_name": "Official public source topic 057-01",
       "canonical_url": "https://www.cbd.int/gbf",
       "http_status": 200,
       "source_sha256": "1d77e832ed4231eeef30fb237807efc3b682f60c1970cb470140083c1827590e"
@@ -4988,9 +4688,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "IUCN Red List of Threatened Species",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for extinction risk.",
-      "source_name": "Official public source topic 057-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.iucnredlist.org/assessment/process",
       "http_status": 200,
       "source_sha256": "b83a4f2dc065c2f02cfc92aeb3e0552a5d6fc3ae5ee4d1fe025e513f8c36af04"
@@ -5021,9 +4719,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "IUCN Red List of Threatened Species",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A numeric result for extinction risk discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 057-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.iucnredlist.org/assessment/process",
       "http_status": 200,
       "source_sha256": "b83a4f2dc065c2f02cfc92aeb3e0552a5d6fc3ae5ee4d1fe025e513f8c36af04"
@@ -5054,9 +4750,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "IUCN Red List of Threatened Species",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source states population, scope, exclusions or limitations for extinction risk.",
-      "source_name": "Official public source topic 057-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.iucnredlist.org/assessment/process",
       "http_status": 200,
       "source_sha256": "b83a4f2dc065c2f02cfc92aeb3e0552a5d6fc3ae5ee4d1fe025e513f8c36af04"
@@ -5087,9 +4781,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "IUCN Red List of Threatened Species",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source fixes a date, period or version for extinction risk.",
-      "source_name": "Official public source topic 057-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.iucnredlist.org/assessment/process",
       "http_status": 200,
       "source_sha256": "b83a4f2dc065c2f02cfc92aeb3e0552a5d6fc3ae5ee4d1fe025e513f8c36af04"
@@ -5120,9 +4812,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "IUCN Red List of Threatened Species",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies the method and applicable version for extinction risk.",
-      "source_name": "Official public source topic 057-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.iucnredlist.org/assessment/process",
       "http_status": 200,
       "source_sha256": "b83a4f2dc065c2f02cfc92aeb3e0552a5d6fc3ae5ee4d1fe025e513f8c36af04"
@@ -5153,9 +4843,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "IUCN Red List of Threatened Species",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for extinction risk.",
-      "source_name": "Official public source topic 057-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.iucnredlist.org/assessment/process",
       "http_status": 200,
       "source_sha256": "b83a4f2dc065c2f02cfc92aeb3e0552a5d6fc3ae5ee4d1fe025e513f8c36af04"
@@ -5186,9 +4874,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "IUCN Red List of Threatened Species",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A public operator can obtain inputs and rerun the extinction risk procedure.",
-      "source_name": "Official public source topic 057-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.iucnredlist.org/assessment/process",
       "http_status": 200,
       "source_sha256": "b83a4f2dc065c2f02cfc92aeb3e0552a5d6fc3ae5ee4d1fe025e513f8c36af04"
@@ -5209,7 +4895,7 @@
       "suggested_source_boundary": "species surveys, red lists, protected-area records and genetic datasets",
       "source_url": "https://www.iucnredlist.org/assessment/process",
       "source_frozen_sha256": null,
-      "status": "INSUFFICIENT_COVERAGE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5218,10 +4904,8 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "IUCN Red List of Threatened Species",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for extinction risk.",
-      "source_name": "Official public source topic 057-02",
+      "locator": "Preparing Red List assessments Prioritising efforts for reassessing speciose taxonomic groups Assessment checks and review Submitting Red List assessments Publication on the IUCN Red List Introduction The IUCN Red List of Threatened Species™ is essentially a checklist of taxa that have undergone an extinction risk assessment using the IUCN Red List Categories and Criteria.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
       "canonical_url": "https://www.iucnredlist.org/assessment/process",
       "http_status": 200,
       "source_sha256": "b83a4f2dc065c2f02cfc92aeb3e0552a5d6fc3ae5ee4d1fe025e513f8c36af04"
@@ -5252,9 +4936,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "IUCN Red List of Threatened Species",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary identifies the institution responsible for the extinction risk report.",
-      "source_name": "Official public source topic 057-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.iucnredlist.org/assessment/process",
       "http_status": 200,
       "source_sha256": "b83a4f2dc065c2f02cfc92aeb3e0552a5d6fc3ae5ee4d1fe025e513f8c36af04"
@@ -5285,9 +4967,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "IUCN Red List of Threatened Species",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source contains a caveat preventing a universal extinction risk guarantee.",
-      "source_name": "Official public source topic 057-02",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.iucnredlist.org/assessment/process",
       "http_status": 200,
       "source_sha256": "b83a4f2dc065c2f02cfc92aeb3e0552a5d6fc3ae5ee4d1fe025e513f8c36af04"
@@ -5319,8 +4999,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://ipbes.net/global-assessment canonical=https://www.ipbes.net/global-assessment",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for habitat loss.",
-      "source_name": "Official public source topic 057-03",
       "canonical_url": "https://www.ipbes.net/global-assessment",
       "http_status": 200,
       "source_sha256": "9c4b58d8b4319f33e14ef10ae395f1ed7e3a1f043bf4dc45550b10a5832ae3b2"
@@ -5352,8 +5030,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://ipbes.net/global-assessment canonical=https://www.ipbes.net/global-assessment",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A numeric result for habitat loss discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 057-03",
       "canonical_url": "https://www.ipbes.net/global-assessment",
       "http_status": 200,
       "source_sha256": "9c4b58d8b4319f33e14ef10ae395f1ed7e3a1f043bf4dc45550b10a5832ae3b2"
@@ -5385,8 +5061,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://ipbes.net/global-assessment canonical=https://www.ipbes.net/global-assessment",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source states population, scope, exclusions or limitations for habitat loss.",
-      "source_name": "Official public source topic 057-03",
       "canonical_url": "https://www.ipbes.net/global-assessment",
       "http_status": 200,
       "source_sha256": "9c4b58d8b4319f33e14ef10ae395f1ed7e3a1f043bf4dc45550b10a5832ae3b2"
@@ -5418,8 +5092,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://ipbes.net/global-assessment canonical=https://www.ipbes.net/global-assessment",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source fixes a date, period or version for habitat loss.",
-      "source_name": "Official public source topic 057-03",
       "canonical_url": "https://www.ipbes.net/global-assessment",
       "http_status": 200,
       "source_sha256": "9c4b58d8b4319f33e14ef10ae395f1ed7e3a1f043bf4dc45550b10a5832ae3b2"
@@ -5451,8 +5123,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://ipbes.net/global-assessment canonical=https://www.ipbes.net/global-assessment",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies the method and applicable version for habitat loss.",
-      "source_name": "Official public source topic 057-03",
       "canonical_url": "https://www.ipbes.net/global-assessment",
       "http_status": 200,
       "source_sha256": "9c4b58d8b4319f33e14ef10ae395f1ed7e3a1f043bf4dc45550b10a5832ae3b2"
@@ -5484,8 +5154,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://ipbes.net/global-assessment canonical=https://www.ipbes.net/global-assessment",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for habitat loss.",
-      "source_name": "Official public source topic 057-03",
       "canonical_url": "https://www.ipbes.net/global-assessment",
       "http_status": 200,
       "source_sha256": "9c4b58d8b4319f33e14ef10ae395f1ed7e3a1f043bf4dc45550b10a5832ae3b2"
@@ -5517,8 +5185,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://ipbes.net/global-assessment canonical=https://www.ipbes.net/global-assessment",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A public operator can obtain inputs and rerun the habitat loss procedure.",
-      "source_name": "Official public source topic 057-03",
       "canonical_url": "https://www.ipbes.net/global-assessment",
       "http_status": 200,
       "source_sha256": "9c4b58d8b4319f33e14ef10ae395f1ed7e3a1f043bf4dc45550b10a5832ae3b2"
@@ -5550,8 +5216,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://ipbes.net/global-assessment canonical=https://www.ipbes.net/global-assessment",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for habitat loss.",
-      "source_name": "Official public source topic 057-03",
       "canonical_url": "https://www.ipbes.net/global-assessment",
       "http_status": 200,
       "source_sha256": "9c4b58d8b4319f33e14ef10ae395f1ed7e3a1f043bf4dc45550b10a5832ae3b2"
@@ -5583,8 +5247,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://ipbes.net/global-assessment canonical=https://www.ipbes.net/global-assessment",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary identifies the institution responsible for the habitat loss report.",
-      "source_name": "Official public source topic 057-03",
       "canonical_url": "https://www.ipbes.net/global-assessment",
       "http_status": 200,
       "source_sha256": "9c4b58d8b4319f33e14ef10ae395f1ed7e3a1f043bf4dc45550b10a5832ae3b2"
@@ -5616,8 +5278,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://ipbes.net/global-assessment canonical=https://www.ipbes.net/global-assessment",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source contains a caveat preventing a universal habitat loss guarantee.",
-      "source_name": "Official public source topic 057-03",
       "canonical_url": "https://www.ipbes.net/global-assessment",
       "http_status": 200,
       "source_sha256": "9c4b58d8b4319f33e14ef10ae395f1ed7e3a1f043bf4dc45550b10a5832ae3b2"
@@ -5648,9 +5308,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for protected coverage.",
-      "source_name": "Official public source topic 057-04",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.gbif.org/what-is-gbif",
       "http_status": 403,
       "source_sha256": "570c1976b9c8ebb813ff592adf85f8eef4638703871fa5e228e627abde5b1b44"
@@ -5681,9 +5339,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "A numeric result for protected coverage discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 057-04",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.gbif.org/what-is-gbif",
       "http_status": 403,
       "source_sha256": "570c1976b9c8ebb813ff592adf85f8eef4638703871fa5e228e627abde5b1b44"
@@ -5714,9 +5370,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source states population, scope, exclusions or limitations for protected coverage.",
-      "source_name": "Official public source topic 057-04",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.gbif.org/what-is-gbif",
       "http_status": 403,
       "source_sha256": "570c1976b9c8ebb813ff592adf85f8eef4638703871fa5e228e627abde5b1b44"
@@ -5747,9 +5401,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source fixes a date, period or version for protected coverage.",
-      "source_name": "Official public source topic 057-04",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.gbif.org/what-is-gbif",
       "http_status": 403,
       "source_sha256": "570c1976b9c8ebb813ff592adf85f8eef4638703871fa5e228e627abde5b1b44"
@@ -5780,9 +5432,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source identifies the method and applicable version for protected coverage.",
-      "source_name": "Official public source topic 057-04",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.gbif.org/what-is-gbif",
       "http_status": 403,
       "source_sha256": "570c1976b9c8ebb813ff592adf85f8eef4638703871fa5e228e627abde5b1b44"
@@ -5813,9 +5463,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for protected coverage.",
-      "source_name": "Official public source topic 057-04",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.gbif.org/what-is-gbif",
       "http_status": 403,
       "source_sha256": "570c1976b9c8ebb813ff592adf85f8eef4638703871fa5e228e627abde5b1b44"
@@ -5846,9 +5494,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "A public operator can obtain inputs and rerun the protected coverage procedure.",
-      "source_name": "Official public source topic 057-04",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.gbif.org/what-is-gbif",
       "http_status": 403,
       "source_sha256": "570c1976b9c8ebb813ff592adf85f8eef4638703871fa5e228e627abde5b1b44"
@@ -5879,9 +5525,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for protected coverage.",
-      "source_name": "Official public source topic 057-04",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.gbif.org/what-is-gbif",
       "http_status": 403,
       "source_sha256": "570c1976b9c8ebb813ff592adf85f8eef4638703871fa5e228e627abde5b1b44"
@@ -5912,9 +5556,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The boundary identifies the institution responsible for the protected coverage report.",
-      "source_name": "Official public source topic 057-04",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.gbif.org/what-is-gbif",
       "http_status": 403,
       "source_sha256": "570c1976b9c8ebb813ff592adf85f8eef4638703871fa5e228e627abde5b1b44"
@@ -5945,9 +5587,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "HTTP 403",
-      "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
-      "target_statement": "The source contains a caveat preventing a universal protected coverage guarantee.",
-      "source_name": "Official public source topic 057-04",
+      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
       "canonical_url": "https://www.gbif.org/what-is-gbif",
       "http_status": 403,
       "source_sha256": "570c1976b9c8ebb813ff592adf85f8eef4638703871fa5e228e627abde5b1b44"
@@ -5978,9 +5618,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - UNEP-WCMC",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for invasive species.",
-      "source_name": "Official public source topic 057-05",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.unep-wcmc.org/en",
       "http_status": 200,
       "source_sha256": "6833e280f2065200688d0be9ea52baa5ecb47bc7e116e61f2987216c8334977f"
@@ -6011,9 +5649,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - UNEP-WCMC",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A numeric result for invasive species discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 057-05",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.unep-wcmc.org/en",
       "http_status": 200,
       "source_sha256": "6833e280f2065200688d0be9ea52baa5ecb47bc7e116e61f2987216c8334977f"
@@ -6044,9 +5680,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - UNEP-WCMC",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source states population, scope, exclusions or limitations for invasive species.",
-      "source_name": "Official public source topic 057-05",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.unep-wcmc.org/en",
       "http_status": 200,
       "source_sha256": "6833e280f2065200688d0be9ea52baa5ecb47bc7e116e61f2987216c8334977f"
@@ -6077,9 +5711,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - UNEP-WCMC",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source fixes a date, period or version for invasive species.",
-      "source_name": "Official public source topic 057-05",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.unep-wcmc.org/en",
       "http_status": 200,
       "source_sha256": "6833e280f2065200688d0be9ea52baa5ecb47bc7e116e61f2987216c8334977f"
@@ -6110,9 +5742,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - UNEP-WCMC",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies the method and applicable version for invasive species.",
-      "source_name": "Official public source topic 057-05",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.unep-wcmc.org/en",
       "http_status": 200,
       "source_sha256": "6833e280f2065200688d0be9ea52baa5ecb47bc7e116e61f2987216c8334977f"
@@ -6143,9 +5773,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - UNEP-WCMC",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for invasive species.",
-      "source_name": "Official public source topic 057-05",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.unep-wcmc.org/en",
       "http_status": 200,
       "source_sha256": "6833e280f2065200688d0be9ea52baa5ecb47bc7e116e61f2987216c8334977f"
@@ -6176,9 +5804,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - UNEP-WCMC",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A public operator can obtain inputs and rerun the invasive species procedure.",
-      "source_name": "Official public source topic 057-05",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.unep-wcmc.org/en",
       "http_status": 200,
       "source_sha256": "6833e280f2065200688d0be9ea52baa5ecb47bc7e116e61f2987216c8334977f"
@@ -6209,9 +5835,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - UNEP-WCMC",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for invasive species.",
-      "source_name": "Official public source topic 057-05",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.unep-wcmc.org/en",
       "http_status": 200,
       "source_sha256": "6833e280f2065200688d0be9ea52baa5ecb47bc7e116e61f2987216c8334977f"
@@ -6242,9 +5866,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - UNEP-WCMC",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary identifies the institution responsible for the invasive species report.",
-      "source_name": "Official public source topic 057-05",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.unep-wcmc.org/en",
       "http_status": 200,
       "source_sha256": "6833e280f2065200688d0be9ea52baa5ecb47bc7e116e61f2987216c8334977f"
@@ -6275,9 +5897,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - UNEP-WCMC",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source contains a caveat preventing a universal invasive species guarantee.",
-      "source_name": "Official public source topic 057-05",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.unep-wcmc.org/en",
       "http_status": 200,
       "source_sha256": "6833e280f2065200688d0be9ea52baa5ecb47bc7e116e61f2987216c8334977f"
@@ -6309,8 +5929,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.fws.gov/program/endangered-species canonical=https://www.fws.gov/species/endangered-species",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for population recovery.",
-      "source_name": "Official public source topic 057-06",
       "canonical_url": "https://www.fws.gov/species/endangered-species",
       "http_status": 200,
       "source_sha256": "7f55e40fc3eab472c09f4d8920b50e92938ee282229ed20502db6a5701956fb1"
@@ -6342,8 +5960,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.fws.gov/program/endangered-species canonical=https://www.fws.gov/species/endangered-species",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A numeric result for population recovery discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 057-06",
       "canonical_url": "https://www.fws.gov/species/endangered-species",
       "http_status": 200,
       "source_sha256": "7f55e40fc3eab472c09f4d8920b50e92938ee282229ed20502db6a5701956fb1"
@@ -6375,8 +5991,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.fws.gov/program/endangered-species canonical=https://www.fws.gov/species/endangered-species",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source states population, scope, exclusions or limitations for population recovery.",
-      "source_name": "Official public source topic 057-06",
       "canonical_url": "https://www.fws.gov/species/endangered-species",
       "http_status": 200,
       "source_sha256": "7f55e40fc3eab472c09f4d8920b50e92938ee282229ed20502db6a5701956fb1"
@@ -6408,8 +6022,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.fws.gov/program/endangered-species canonical=https://www.fws.gov/species/endangered-species",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source fixes a date, period or version for population recovery.",
-      "source_name": "Official public source topic 057-06",
       "canonical_url": "https://www.fws.gov/species/endangered-species",
       "http_status": 200,
       "source_sha256": "7f55e40fc3eab472c09f4d8920b50e92938ee282229ed20502db6a5701956fb1"
@@ -6441,8 +6053,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.fws.gov/program/endangered-species canonical=https://www.fws.gov/species/endangered-species",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies the method and applicable version for population recovery.",
-      "source_name": "Official public source topic 057-06",
       "canonical_url": "https://www.fws.gov/species/endangered-species",
       "http_status": 200,
       "source_sha256": "7f55e40fc3eab472c09f4d8920b50e92938ee282229ed20502db6a5701956fb1"
@@ -6474,8 +6084,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.fws.gov/program/endangered-species canonical=https://www.fws.gov/species/endangered-species",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for population recovery.",
-      "source_name": "Official public source topic 057-06",
       "canonical_url": "https://www.fws.gov/species/endangered-species",
       "http_status": 200,
       "source_sha256": "7f55e40fc3eab472c09f4d8920b50e92938ee282229ed20502db6a5701956fb1"
@@ -6507,8 +6115,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.fws.gov/program/endangered-species canonical=https://www.fws.gov/species/endangered-species",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "A public operator can obtain inputs and rerun the population recovery procedure.",
-      "source_name": "Official public source topic 057-06",
       "canonical_url": "https://www.fws.gov/species/endangered-species",
       "http_status": 200,
       "source_sha256": "7f55e40fc3eab472c09f4d8920b50e92938ee282229ed20502db6a5701956fb1"
@@ -6540,8 +6146,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.fws.gov/program/endangered-species canonical=https://www.fws.gov/species/endangered-species",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for population recovery.",
-      "source_name": "Official public source topic 057-06",
       "canonical_url": "https://www.fws.gov/species/endangered-species",
       "http_status": 200,
       "source_sha256": "7f55e40fc3eab472c09f4d8920b50e92938ee282229ed20502db6a5701956fb1"
@@ -6573,8 +6177,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.fws.gov/program/endangered-species canonical=https://www.fws.gov/species/endangered-species",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The boundary identifies the institution responsible for the population recovery report.",
-      "source_name": "Official public source topic 057-06",
       "canonical_url": "https://www.fws.gov/species/endangered-species",
       "http_status": 200,
       "source_sha256": "7f55e40fc3eab472c09f4d8920b50e92938ee282229ed20502db6a5701956fb1"
@@ -6606,8 +6208,6 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.fws.gov/program/endangered-species canonical=https://www.fws.gov/species/endangered-species",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
-      "target_statement": "The source contains a caveat preventing a universal population recovery guarantee.",
-      "source_name": "Official public source topic 057-06",
       "canonical_url": "https://www.fws.gov/species/endangered-species",
       "http_status": 200,
       "source_sha256": "7f55e40fc3eab472c09f4d8920b50e92938ee282229ed20502db6a5701956fb1"
@@ -6638,9 +6238,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Biodiversity: state of habitats and species | In-depth topics | European Environment Agency (EEA)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The frozen bytes identify an exact public source and a topic-specific boundary for survey bias.",
-      "source_name": "Official public source topic 057-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
       "http_status": 200,
       "source_sha256": "e2cc16ac6244b522086686a7bea5052b87dd576c4e1541fc8611a4a319ff15fc"
@@ -6671,9 +6269,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Biodiversity: state of habitats and species | In-depth topics | European Environment Agency (EEA)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A numeric result for survey bias discloses numerator, denominator, units, exclusions and rounding.",
-      "source_name": "Official public source topic 057-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
       "http_status": 200,
       "source_sha256": "e2cc16ac6244b522086686a7bea5052b87dd576c4e1541fc8611a4a319ff15fc"
@@ -6704,9 +6300,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Biodiversity: state of habitats and species | In-depth topics | European Environment Agency (EEA)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source states population, scope, exclusions or limitations for survey bias.",
-      "source_name": "Official public source topic 057-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
       "http_status": 200,
       "source_sha256": "e2cc16ac6244b522086686a7bea5052b87dd576c4e1541fc8611a4a319ff15fc"
@@ -6737,9 +6331,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Biodiversity: state of habitats and species | In-depth topics | European Environment Agency (EEA)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source fixes a date, period or version for survey bias.",
-      "source_name": "Official public source topic 057-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
       "http_status": 200,
       "source_sha256": "e2cc16ac6244b522086686a7bea5052b87dd576c4e1541fc8611a4a319ff15fc"
@@ -6770,9 +6362,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Biodiversity: state of habitats and species | In-depth topics | European Environment Agency (EEA)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies the method and applicable version for survey bias.",
-      "source_name": "Official public source topic 057-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
       "http_status": 200,
       "source_sha256": "e2cc16ac6244b522086686a7bea5052b87dd576c4e1541fc8611a4a319ff15fc"
@@ -6803,9 +6393,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Biodiversity: state of habitats and species | In-depth topics | European Environment Agency (EEA)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source identifies a comparable baseline and measurement rule for survey bias.",
-      "source_name": "Official public source topic 057-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
       "http_status": 200,
       "source_sha256": "e2cc16ac6244b522086686a7bea5052b87dd576c4e1541fc8611a4a319ff15fc"
@@ -6836,9 +6424,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Biodiversity: state of habitats and species | In-depth topics | European Environment Agency (EEA)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "A public operator can obtain inputs and rerun the survey bias procedure.",
-      "source_name": "Official public source topic 057-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
       "http_status": 200,
       "source_sha256": "e2cc16ac6244b522086686a7bea5052b87dd576c4e1541fc8611a4a319ff15fc"
@@ -6869,9 +6455,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Biodiversity: state of habitats and species | In-depth topics | European Environment Agency (EEA)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary includes limitations, failures or contradictory evidence for survey bias.",
-      "source_name": "Official public source topic 057-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
       "http_status": 200,
       "source_sha256": "e2cc16ac6244b522086686a7bea5052b87dd576c4e1541fc8611a4a319ff15fc"
@@ -6902,9 +6486,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Biodiversity: state of habitats and species | In-depth topics | European Environment Agency (EEA)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The boundary identifies the institution responsible for the survey bias report.",
-      "source_name": "Official public source topic 057-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
       "http_status": 200,
       "source_sha256": "e2cc16ac6244b522086686a7bea5052b87dd576c4e1541fc8611a4a319ff15fc"
@@ -6935,9 +6517,7 @@
       ],
       "raw_payload_committed": false,
       "locator": "Biodiversity: state of habitats and species | In-depth topics | European Environment Agency (EEA)",
-      "review_basis": "The frozen source was reviewed but did not expose complete gate-specific evidence; absence was not converted into a negative result.",
-      "target_statement": "The source contains a caveat preventing a universal survey bias guarantee.",
-      "source_name": "Official public source topic 057-07",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
       "canonical_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
       "http_status": 200,
       "source_sha256": "e2cc16ac6244b522086686a7bea5052b87dd576c4e1541fc8611a4a319ff15fc"

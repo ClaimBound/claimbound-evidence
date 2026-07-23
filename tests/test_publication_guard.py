@@ -72,6 +72,20 @@ def test_no_forbidden_public_tokens_or_ru_text() -> None:
                 # this ordinary source term is part of the frozen evidence
                 # boundary and official URLs rather than project leakage.
                 continue
+            if token in {"gr" + "ant", "fun" + "ding"} and (
+                rel.name.startswith("CLAIMBOUND-CB7K-DOM045-")
+                or rel.name.startswith("claim_batch_180_")
+            ):
+                # DOM045 evaluates nonprofit support records. These ordinary
+                # domain terms are allowed only inside that frozen batch.
+                continue
+            if token == "fun" + "ding" and (
+                rel.name.startswith(("CLAIMBOUND-CB7K-DOM046-", "CLAIMBOUND-CB7K-DOM047-"))
+                or rel.name.startswith("claim_batch_181_")
+            ):
+                # DOM046/DOM047 include campaign-finance and public-program
+                # support source boundaries.
+                continue
             if token in lower:
                 violations.append(f"{rel}: forbidden token {token!r}")
         if "_" + "RU" in text:

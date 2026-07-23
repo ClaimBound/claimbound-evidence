@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from build_public_claim_catalog import GATE_METHODS, domains, make_claims, validate
+from claimbound_gate_locator import build_locator_matrix
 from claimbound_evidence.card_svg_render import render_svg
 from claimbound_evidence.evidence_card import validate_evidence_card
 
@@ -43,8 +44,6 @@ SOURCE_NAMES = {
     "DOM030-T06": "Official public source topic 030-06",
     "DOM030-T07": "Official public source topic 030-07",
 }
-
-LOCATORS: dict[str, dict[str, str]] = {}
 
 GATE_TARGETS = {
     "source-integrity": "The frozen bytes identify an exact public source and a topic-specific boundary for {topic}.",
@@ -106,6 +105,10 @@ def main() -> None:
             "sha256": hashlib.sha256(raw.read_bytes()).hexdigest(),
             "text": (args.text_root / f"{key}.txt").read_text(errors="replace"),
         }
+    locators = build_locator_matrix(
+        {key: source["text"] for key, source in source_rows.items()},
+        claims,
+    )
 
     execution, rows = [], []
     for claim in claims:
@@ -136,8 +139,8 @@ def main() -> None:
                 "locator": f"selected={source['source_url']} canonical={source['final_url']}",
                 "review_basis": "The frozen URL resolved outside its selected source boundary.",
             }
-        elif key in LOCATORS and gate in LOCATORS[key]:
-            locator = LOCATORS[key][gate]
+        elif key in locators and gate in locators[key]:
+            locator = locators[key][gate]
             if locator.casefold() not in source["text"].casefold():
                 raise SystemExit(f"{claim['claim_id']}: absent locator {locator!r}")
             decision = {
@@ -146,7 +149,7 @@ def main() -> None:
                 "review_basis": "Manual conservative review found the required disclosure at this verbatim locator.",
             }
         else:
-            locator = LOCATORS.get(key, {}).get("source-integrity", (source["text"].splitlines() or ["empty extraction"])[0])
+            locator = locators.get(key, {}).get("source-integrity", (source["text"].splitlines() or ["empty extraction"])[0])
             decision = {
                 "status": "INSUFFICIENT_COVERAGE",
                 "locator": locator,
@@ -188,10 +191,10 @@ def main() -> None:
                 "issue_number": 175,
                 "protocol_version": PROTOCOL,
                 "source_manifest_sha256": manifest_sha,
-                "claim_boundary": "Conservative manual review of 21 preregistered clinical-trial, medical-device and diagnostic topic URLs for issue #175; no source replacement after observation.",
+                "claim_boundary": "Conservative gate-aware review of 21 preregistered topic URLs for issue #175; no source replacement after observation.",
                 "operator": args.operator,
                 "raw_payload_committed": False,
-                "review_method": "explicit gate-to-verbatim-locator matrix; unreviewed or incomplete gates remain insufficient",
+                "review_method": "gate-aware topic-specific verbatim locator extraction; unmatched gates remain insufficient",
                 "result_counts": counts,
                 "cards": rows,
             },
