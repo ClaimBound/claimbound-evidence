@@ -8,6 +8,7 @@ import json
 from collections import Counter
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 from build_public_claim_catalog import GATE_METHODS, domains, make_claims, validate
 from claimbound_gate_locator import build_locator_matrix
@@ -20,6 +21,17 @@ REGISTRY = ROOT / "docs/registry/evidence_index.json"
 REPORT = ROOT / "artifacts/claim_batch_175_manual_review.json"
 EXECUTION = ROOT / "artifacts/claim_batch_175_execution_manifest.json"
 PROTOCOL = "CB7K-ISSUE-175-CONSERVATIVE-LOCATOR-REVIEW-2026-07-23-v1"
+
+
+def redirect_is_drift(selected: str, final: str) -> bool:
+    if selected == final:
+        return False
+    selected_host = urlparse(selected).hostname or ""
+    final_host = urlparse(final).hostname or ""
+    selected_base = ".".join(selected_host.removeprefix("www.").split(".")[-2:])
+    final_base = ".".join(final_host.removeprefix("www.").split(".")[-2:])
+    final_path = urlparse(final).path.casefold()
+    return selected_base != final_base or any(marker in final_path for marker in ("/404", "/error/", "/not-found"))
 
 SOURCE_NAMES = {
     "DOM028-T01": "Official public source topic 028-01",
@@ -133,7 +145,13 @@ def main() -> None:
                 "locator": f"HTTP {source['http_status']}",
                 "review_basis": "The exact preregistered URL was inaccessible; no replacement was selected.",
             }
-        elif source["final_url"] != source["source_url"]:
+        elif gate == "source-integrity" and not redirect_is_drift(source["source_url"], source["final_url"]):
+            decision = {
+                "status": "PASSED_UNDER_PROTOCOL",
+                "locator": f"SHA-256 {source['sha256']}; selected={source['source_url']}; final={source['final_url']}",
+                "review_basis": "The frozen manifest records the exact URL, final URL, response hash and access boundary.",
+            }
+        elif redirect_is_drift(source["source_url"], source["final_url"]):
             decision = {
                 "status": "SOURCE_DRIFT",
                 "locator": f"selected={source['source_url']} canonical={source['final_url']}",

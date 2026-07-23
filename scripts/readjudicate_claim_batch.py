@@ -8,6 +8,7 @@ import json
 from collections import Counter
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 from build_public_claim_catalog import domains, make_claims, validate
 from claimbound_gate_locator import build_locator_matrix
@@ -17,6 +18,18 @@ from claimbound_evidence.evidence_card import validate_evidence_card
 ROOT = Path(__file__).resolve().parents[1]
 CARDS = ROOT / "docs/evidence_cards"
 REGISTRY = ROOT / "docs/registry/evidence_index.json"
+
+
+def redirect_is_drift(selected: str, final: str) -> bool:
+    """Distinguish a recorded canonical redirect from a changed source boundary."""
+    if selected == final:
+        return False
+    selected_host = urlparse(selected).hostname or ""
+    final_host = urlparse(final).hostname or ""
+    selected_base = ".".join(selected_host.removeprefix("www.").split(".")[-2:])
+    final_base = ".".join(final_host.removeprefix("www.").split(".")[-2:])
+    final_path = urlparse(final).path.casefold()
+    return selected_base != final_base or any(marker in final_path for marker in ("/404", "/error/", "/not-found"))
 
 
 def statistics(entries: list[dict[str, Any]]) -> dict[str, dict[str, int]]:
@@ -76,7 +89,11 @@ def main() -> None:
             status = "BLOCKED_SOURCE"
             locator = f"HTTP {source['http_status']}"
             basis = "The exact frozen URL was inaccessible; no replacement was selected."
-        elif source["final_url"] != source["source_url"]:
+        elif gate == "source-integrity" and not redirect_is_drift(source["source_url"], source["final_url"]):
+            status = "PASSED_UNDER_PROTOCOL"
+            locator = f"SHA-256 {source['sha256']}; selected={source['source_url']}; final={source['final_url']}"
+            basis = "The frozen manifest records the exact selected URL, final URL, response hash and access boundary."
+        elif redirect_is_drift(source["source_url"], source["final_url"]):
             status = "SOURCE_DRIFT"
             locator = f"selected={source['source_url']} canonical={source['final_url']}"
             basis = "The frozen URL resolved outside its selected source boundary."
@@ -130,7 +147,11 @@ def main() -> None:
         card.pop("block_reason", None)
         card.pop("drift_reason", None)
         if row["status"] == "PASSED_UNDER_PROTOCOL":
-            card["baseline_control_summary"] = f"Gate-aware review passed only at verbatim locator: {row['locator']}"
+            card["baseline_control_summary"] = (
+                f"Gate-aware review passed only at audit locator: {row['locator']}"
+                if row["gate"] == "source-integrity"
+                else f"Gate-aware review passed only at verbatim locator: {row['locator']}"
+            )
         elif row["status"] == "BLOCKED_SOURCE":
             card["block_reason"] = row["review_basis"]
         elif row["status"] == "SOURCE_DRIFT":

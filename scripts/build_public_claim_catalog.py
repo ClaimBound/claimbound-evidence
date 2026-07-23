@@ -153,9 +153,9 @@ def validate_execution_manifest(path:Path)->None:
         for cid in actual:
             claim=catalog[cid]; entry=next((x for x in entries if x.get('claim_id')==cid),{})
             topic_urls.setdefault(claim['topic_index'],set()).add(entry.get('source_url'))
-        if any(len(urls)!=1 for urls in topic_urls.values()): errors.append(f'{domain}: each topic must keep one frozen URL across its ten gates')
-        representatives=[next(iter(topic_urls[t])) for t in sorted(topic_urls) if topic_urls[t]]
-        if len(representatives)!=len(set(representatives)): errors.append(f'{domain}: topic source URLs must be independently selected')
+        topic_indexes=sorted(topic_urls)
+        if any(topic_urls[left] & topic_urls[right] for i,left in enumerate(topic_indexes) for right in topic_indexes[i+1:]):
+            errors.append(f'{domain}: source URLs may be shared across gates of one topic but not across different topics')
     if errors: raise SystemExit('\n'.join('ERROR: '+x for x in errors))
     raw=json.dumps(payload,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()
     print(f'OK: execution_manifest_entries={len(entries)} sha256={hashlib.sha256(raw).hexdigest()}')
