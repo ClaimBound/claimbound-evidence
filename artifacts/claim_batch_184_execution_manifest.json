@@ -1,0 +1,2318 @@
+{
+  "issue_number": 184,
+  "source_manifest_sha256": "3285de6fbae559cf9adca1bdb5f1336d7db2f29a3456bd1ac3ce4455be6a6f3e",
+  "claim_boundary": "Claim-level execution plan for issue #184 only; it is not evidence and predeclares no outcome.",
+  "raw_payload_committed": false,
+  "entries": [
+    {
+      "claim_id": "CB7K-DOM055-T01-G01",
+      "source_url": "https://www.noaa.gov/oceans-coasts",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "ocean heat",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for ocean heat.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T01-G02",
+      "source_url": "https://www.noaa.gov/oceans-coasts",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "ocean heat",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for ocean heat discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T01-G03",
+      "source_url": "https://www.noaa.gov/oceans-coasts",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "ocean heat",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for ocean heat.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T01-G04",
+      "source_url": "https://www.noaa.gov/oceans-coasts",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "ocean heat",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for ocean heat.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T01-G05",
+      "source_url": "https://www.noaa.gov/oceans-coasts",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "ocean heat",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for ocean heat.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T01-G06",
+      "source_url": "https://www.noaa.gov/oceans-coasts",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "ocean heat",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for ocean heat.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T01-G07",
+      "source_url": "https://www.noaa.gov/oceans-coasts",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "ocean heat",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the ocean heat procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T01-G08",
+      "source_url": "https://www.noaa.gov/oceans-coasts",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "ocean heat",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for ocean heat.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T01-G09",
+      "source_url": "https://www.noaa.gov/oceans-coasts",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "ocean heat",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the ocean heat report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T01-G10",
+      "source_url": "https://www.noaa.gov/oceans-coasts",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "ocean heat",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal ocean heat guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T02-G01",
+      "source_url": "https://oceanservice.noaa.gov/facts/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "acidification",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for acidification.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T02-G02",
+      "source_url": "https://oceanservice.noaa.gov/facts/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "acidification",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for acidification discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T02-G03",
+      "source_url": "https://oceanservice.noaa.gov/facts/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "acidification",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for acidification.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T02-G04",
+      "source_url": "https://oceanservice.noaa.gov/facts/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "acidification",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for acidification.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T02-G05",
+      "source_url": "https://oceanservice.noaa.gov/facts/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "acidification",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for acidification.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T02-G06",
+      "source_url": "https://oceanservice.noaa.gov/facts/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "acidification",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for acidification.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T02-G07",
+      "source_url": "https://oceanservice.noaa.gov/facts/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "acidification",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the acidification procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T02-G08",
+      "source_url": "https://oceanservice.noaa.gov/facts/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "acidification",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for acidification.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T02-G09",
+      "source_url": "https://oceanservice.noaa.gov/facts/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "acidification",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the acidification report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T02-G10",
+      "source_url": "https://oceanservice.noaa.gov/facts/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "acidification",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal acidification guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T03-G01",
+      "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "sea level",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for sea level.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T03-G02",
+      "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "sea level",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for sea level discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T03-G03",
+      "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sea level",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for sea level.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T03-G04",
+      "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "sea level",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for sea level.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T03-G05",
+      "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "sea level",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for sea level.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T03-G06",
+      "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sea level",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for sea level.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T03-G07",
+      "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "sea level",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the sea level procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T03-G08",
+      "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "sea level",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for sea level.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T03-G09",
+      "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sea level",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the sea level report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T03-G10",
+      "source_url": "https://www.ncei.noaa.gov/products/ocean-climate-laboratory",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "sea level",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal sea level guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T04-G01",
+      "source_url": "https://marine.copernicus.eu/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "plastic concentration",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for plastic concentration.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T04-G02",
+      "source_url": "https://marine.copernicus.eu/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "plastic concentration",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for plastic concentration discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T04-G03",
+      "source_url": "https://marine.copernicus.eu/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "plastic concentration",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for plastic concentration.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T04-G04",
+      "source_url": "https://marine.copernicus.eu/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "plastic concentration",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for plastic concentration.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T04-G05",
+      "source_url": "https://marine.copernicus.eu/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "plastic concentration",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for plastic concentration.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T04-G06",
+      "source_url": "https://marine.copernicus.eu/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "plastic concentration",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for plastic concentration.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T04-G07",
+      "source_url": "https://marine.copernicus.eu/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "plastic concentration",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the plastic concentration procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T04-G08",
+      "source_url": "https://marine.copernicus.eu/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "plastic concentration",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for plastic concentration.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T04-G09",
+      "source_url": "https://marine.copernicus.eu/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "plastic concentration",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the plastic concentration report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T04-G10",
+      "source_url": "https://marine.copernicus.eu/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "plastic concentration",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal plastic concentration guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T05-G01",
+      "source_url": "https://www.unep.org/explore-topics/oceans-seas",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "dead-zone extent",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for dead-zone extent.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T05-G02",
+      "source_url": "https://www.unep.org/explore-topics/oceans-seas",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "dead-zone extent",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for dead-zone extent discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T05-G03",
+      "source_url": "https://www.unep.org/explore-topics/oceans-seas",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dead-zone extent",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for dead-zone extent.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T05-G04",
+      "source_url": "https://www.unep.org/explore-topics/oceans-seas",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "dead-zone extent",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for dead-zone extent.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T05-G05",
+      "source_url": "https://www.unep.org/explore-topics/oceans-seas",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "dead-zone extent",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for dead-zone extent.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T05-G06",
+      "source_url": "https://www.unep.org/explore-topics/oceans-seas",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dead-zone extent",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for dead-zone extent.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T05-G07",
+      "source_url": "https://www.unep.org/explore-topics/oceans-seas",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "dead-zone extent",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the dead-zone extent procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T05-G08",
+      "source_url": "https://www.unep.org/explore-topics/oceans-seas",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "dead-zone extent",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for dead-zone extent.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T05-G09",
+      "source_url": "https://www.unep.org/explore-topics/oceans-seas",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "dead-zone extent",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the dead-zone extent report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T05-G10",
+      "source_url": "https://www.unep.org/explore-topics/oceans-seas",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "dead-zone extent",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal dead-zone extent guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T06-G01",
+      "source_url": "https://www.fao.org/fishery/en",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "marine heatwave",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for marine heatwave.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T06-G02",
+      "source_url": "https://www.fao.org/fishery/en",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "marine heatwave",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for marine heatwave discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T06-G03",
+      "source_url": "https://www.fao.org/fishery/en",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "marine heatwave",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for marine heatwave.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T06-G04",
+      "source_url": "https://www.fao.org/fishery/en",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "marine heatwave",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for marine heatwave.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T06-G05",
+      "source_url": "https://www.fao.org/fishery/en",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "marine heatwave",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for marine heatwave.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T06-G06",
+      "source_url": "https://www.fao.org/fishery/en",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "marine heatwave",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for marine heatwave.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T06-G07",
+      "source_url": "https://www.fao.org/fishery/en",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "marine heatwave",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the marine heatwave procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T06-G08",
+      "source_url": "https://www.fao.org/fishery/en",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "marine heatwave",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for marine heatwave.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T06-G09",
+      "source_url": "https://www.fao.org/fishery/en",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "marine heatwave",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the marine heatwave report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T06-G10",
+      "source_url": "https://www.fao.org/fishery/en",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "marine heatwave",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal marine heatwave guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T07-G01",
+      "source_url": "https://www.ipcc.ch/srocc/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "observation coverage",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for observation coverage.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T07-G02",
+      "source_url": "https://www.ipcc.ch/srocc/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "observation coverage",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for observation coverage discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T07-G03",
+      "source_url": "https://www.ipcc.ch/srocc/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "observation coverage",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for observation coverage.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T07-G04",
+      "source_url": "https://www.ipcc.ch/srocc/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "observation coverage",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for observation coverage.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T07-G05",
+      "source_url": "https://www.ipcc.ch/srocc/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "observation coverage",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for observation coverage.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T07-G06",
+      "source_url": "https://www.ipcc.ch/srocc/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "observation coverage",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for observation coverage.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T07-G07",
+      "source_url": "https://www.ipcc.ch/srocc/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "observation coverage",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the observation coverage procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T07-G08",
+      "source_url": "https://www.ipcc.ch/srocc/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "observation coverage",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for observation coverage.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T07-G09",
+      "source_url": "https://www.ipcc.ch/srocc/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "observation coverage",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the observation coverage report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM055-T07-G10",
+      "source_url": "https://www.ipcc.ch/srocc/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "observation coverage",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal observation coverage guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T01-G01",
+      "source_url": "https://www.fao.org/forest-resources-assessment/en/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "forest loss",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for forest loss.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T01-G02",
+      "source_url": "https://www.fao.org/forest-resources-assessment/en/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "forest loss",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for forest loss discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T01-G03",
+      "source_url": "https://www.fao.org/forest-resources-assessment/en/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "forest loss",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for forest loss.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T01-G04",
+      "source_url": "https://www.fao.org/forest-resources-assessment/en/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "forest loss",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for forest loss.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T01-G05",
+      "source_url": "https://www.fao.org/forest-resources-assessment/en/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "forest loss",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for forest loss.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T01-G06",
+      "source_url": "https://www.fao.org/forest-resources-assessment/en/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "forest loss",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for forest loss.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T01-G07",
+      "source_url": "https://www.fao.org/forest-resources-assessment/en/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "forest loss",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the forest loss procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T01-G08",
+      "source_url": "https://www.fao.org/forest-resources-assessment/en/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "forest loss",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for forest loss.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T01-G09",
+      "source_url": "https://www.fao.org/forest-resources-assessment/en/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "forest loss",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the forest loss report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T01-G10",
+      "source_url": "https://www.fao.org/forest-resources-assessment/en/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "forest loss",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal forest loss guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T02-G01",
+      "source_url": "https://www.fs.usda.gov/research/inventory",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "tree-cover gain",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for tree-cover gain.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T02-G02",
+      "source_url": "https://www.fs.usda.gov/research/inventory",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "tree-cover gain",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for tree-cover gain discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T02-G03",
+      "source_url": "https://www.fs.usda.gov/research/inventory",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "tree-cover gain",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for tree-cover gain.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T02-G04",
+      "source_url": "https://www.fs.usda.gov/research/inventory",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "tree-cover gain",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for tree-cover gain.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T02-G05",
+      "source_url": "https://www.fs.usda.gov/research/inventory",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "tree-cover gain",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for tree-cover gain.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T02-G06",
+      "source_url": "https://www.fs.usda.gov/research/inventory",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "tree-cover gain",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for tree-cover gain.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T02-G07",
+      "source_url": "https://www.fs.usda.gov/research/inventory",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "tree-cover gain",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the tree-cover gain procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T02-G08",
+      "source_url": "https://www.fs.usda.gov/research/inventory",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "tree-cover gain",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for tree-cover gain.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T02-G09",
+      "source_url": "https://www.fs.usda.gov/research/inventory",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "tree-cover gain",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the tree-cover gain report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T02-G10",
+      "source_url": "https://www.fs.usda.gov/research/inventory",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "tree-cover gain",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal tree-cover gain guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T03-G01",
+      "source_url": "https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "illegal logging",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for illegal logging.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T03-G02",
+      "source_url": "https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "illegal logging",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for illegal logging discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T03-G03",
+      "source_url": "https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "illegal logging",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for illegal logging.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T03-G04",
+      "source_url": "https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "illegal logging",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for illegal logging.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T03-G05",
+      "source_url": "https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "illegal logging",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for illegal logging.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T03-G06",
+      "source_url": "https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "illegal logging",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for illegal logging.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T03-G07",
+      "source_url": "https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "illegal logging",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the illegal logging procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T03-G08",
+      "source_url": "https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "illegal logging",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for illegal logging.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T03-G09",
+      "source_url": "https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "illegal logging",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the illegal logging report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T03-G10",
+      "source_url": "https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "illegal logging",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal illegal logging guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T04-G01",
+      "source_url": "https://www.globalforestwatch.org/dashboards/global/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "fire extent",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for fire extent.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T04-G02",
+      "source_url": "https://www.globalforestwatch.org/dashboards/global/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "fire extent",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for fire extent discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T04-G03",
+      "source_url": "https://www.globalforestwatch.org/dashboards/global/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "fire extent",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for fire extent.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T04-G04",
+      "source_url": "https://www.globalforestwatch.org/dashboards/global/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "fire extent",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for fire extent.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T04-G05",
+      "source_url": "https://www.globalforestwatch.org/dashboards/global/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "fire extent",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for fire extent.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T04-G06",
+      "source_url": "https://www.globalforestwatch.org/dashboards/global/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "fire extent",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for fire extent.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T04-G07",
+      "source_url": "https://www.globalforestwatch.org/dashboards/global/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "fire extent",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the fire extent procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T04-G08",
+      "source_url": "https://www.globalforestwatch.org/dashboards/global/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "fire extent",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for fire extent.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T04-G09",
+      "source_url": "https://www.globalforestwatch.org/dashboards/global/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "fire extent",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the fire extent report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T04-G10",
+      "source_url": "https://www.globalforestwatch.org/dashboards/global/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "fire extent",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal fire extent guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T05-G01",
+      "source_url": "https://www.unep.org/explore-topics/forests",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "carbon stock",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for carbon stock.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T05-G02",
+      "source_url": "https://www.unep.org/explore-topics/forests",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "carbon stock",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for carbon stock discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T05-G03",
+      "source_url": "https://www.unep.org/explore-topics/forests",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "carbon stock",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for carbon stock.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T05-G04",
+      "source_url": "https://www.unep.org/explore-topics/forests",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "carbon stock",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for carbon stock.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T05-G05",
+      "source_url": "https://www.unep.org/explore-topics/forests",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "carbon stock",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for carbon stock.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T05-G06",
+      "source_url": "https://www.unep.org/explore-topics/forests",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "carbon stock",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for carbon stock.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T05-G07",
+      "source_url": "https://www.unep.org/explore-topics/forests",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "carbon stock",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the carbon stock procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T05-G08",
+      "source_url": "https://www.unep.org/explore-topics/forests",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "carbon stock",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for carbon stock.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T05-G09",
+      "source_url": "https://www.unep.org/explore-topics/forests",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "carbon stock",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the carbon stock report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T05-G10",
+      "source_url": "https://www.unep.org/explore-topics/forests",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "carbon stock",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal carbon stock guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T06-G01",
+      "source_url": "https://forest.eea.europa.eu/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "protected-area encroachment",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for protected-area encroachment.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T06-G02",
+      "source_url": "https://forest.eea.europa.eu/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "protected-area encroachment",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for protected-area encroachment discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T06-G03",
+      "source_url": "https://forest.eea.europa.eu/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protected-area encroachment",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for protected-area encroachment.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T06-G04",
+      "source_url": "https://forest.eea.europa.eu/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "protected-area encroachment",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for protected-area encroachment.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T06-G05",
+      "source_url": "https://forest.eea.europa.eu/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "protected-area encroachment",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for protected-area encroachment.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T06-G06",
+      "source_url": "https://forest.eea.europa.eu/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protected-area encroachment",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for protected-area encroachment.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T06-G07",
+      "source_url": "https://forest.eea.europa.eu/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "protected-area encroachment",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the protected-area encroachment procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T06-G08",
+      "source_url": "https://forest.eea.europa.eu/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "protected-area encroachment",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for protected-area encroachment.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T06-G09",
+      "source_url": "https://forest.eea.europa.eu/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protected-area encroachment",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the protected-area encroachment report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T06-G10",
+      "source_url": "https://forest.eea.europa.eu/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "protected-area encroachment",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal protected-area encroachment guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T07-G01",
+      "source_url": "https://www.worldbank.org/en/topic/forests",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "reforestation survival",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for reforestation survival.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T07-G02",
+      "source_url": "https://www.worldbank.org/en/topic/forests",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "reforestation survival",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for reforestation survival discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T07-G03",
+      "source_url": "https://www.worldbank.org/en/topic/forests",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "reforestation survival",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for reforestation survival.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T07-G04",
+      "source_url": "https://www.worldbank.org/en/topic/forests",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "reforestation survival",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for reforestation survival.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T07-G05",
+      "source_url": "https://www.worldbank.org/en/topic/forests",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "reforestation survival",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for reforestation survival.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T07-G06",
+      "source_url": "https://www.worldbank.org/en/topic/forests",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "reforestation survival",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for reforestation survival.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T07-G07",
+      "source_url": "https://www.worldbank.org/en/topic/forests",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "reforestation survival",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the reforestation survival procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T07-G08",
+      "source_url": "https://www.worldbank.org/en/topic/forests",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "reforestation survival",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for reforestation survival.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T07-G09",
+      "source_url": "https://www.worldbank.org/en/topic/forests",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "reforestation survival",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the reforestation survival report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM056-T07-G10",
+      "source_url": "https://www.worldbank.org/en/topic/forests",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "reforestation survival",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal reforestation survival guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T01-G01",
+      "source_url": "https://www.cbd.int/gbf/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "species abundance",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for species abundance.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T01-G02",
+      "source_url": "https://www.cbd.int/gbf/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "species abundance",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for species abundance discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T01-G03",
+      "source_url": "https://www.cbd.int/gbf/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "species abundance",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for species abundance.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T01-G04",
+      "source_url": "https://www.cbd.int/gbf/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "species abundance",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for species abundance.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T01-G05",
+      "source_url": "https://www.cbd.int/gbf/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "species abundance",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for species abundance.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T01-G06",
+      "source_url": "https://www.cbd.int/gbf/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "species abundance",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for species abundance.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T01-G07",
+      "source_url": "https://www.cbd.int/gbf/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "species abundance",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the species abundance procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T01-G08",
+      "source_url": "https://www.cbd.int/gbf/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "species abundance",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for species abundance.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T01-G09",
+      "source_url": "https://www.cbd.int/gbf/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "species abundance",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the species abundance report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T01-G10",
+      "source_url": "https://www.cbd.int/gbf/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "species abundance",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal species abundance guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T02-G01",
+      "source_url": "https://www.iucnredlist.org/assessment/process",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "extinction risk",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for extinction risk.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T02-G02",
+      "source_url": "https://www.iucnredlist.org/assessment/process",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "extinction risk",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for extinction risk discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T02-G03",
+      "source_url": "https://www.iucnredlist.org/assessment/process",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "extinction risk",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for extinction risk.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T02-G04",
+      "source_url": "https://www.iucnredlist.org/assessment/process",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "extinction risk",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for extinction risk.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T02-G05",
+      "source_url": "https://www.iucnredlist.org/assessment/process",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "extinction risk",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for extinction risk.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T02-G06",
+      "source_url": "https://www.iucnredlist.org/assessment/process",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "extinction risk",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for extinction risk.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T02-G07",
+      "source_url": "https://www.iucnredlist.org/assessment/process",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "extinction risk",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the extinction risk procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T02-G08",
+      "source_url": "https://www.iucnredlist.org/assessment/process",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "extinction risk",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for extinction risk.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T02-G09",
+      "source_url": "https://www.iucnredlist.org/assessment/process",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "extinction risk",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the extinction risk report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T02-G10",
+      "source_url": "https://www.iucnredlist.org/assessment/process",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "extinction risk",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal extinction risk guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T03-G01",
+      "source_url": "https://ipbes.net/global-assessment",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "habitat loss",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for habitat loss.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T03-G02",
+      "source_url": "https://ipbes.net/global-assessment",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "habitat loss",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for habitat loss discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T03-G03",
+      "source_url": "https://ipbes.net/global-assessment",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "habitat loss",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for habitat loss.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T03-G04",
+      "source_url": "https://ipbes.net/global-assessment",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "habitat loss",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for habitat loss.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T03-G05",
+      "source_url": "https://ipbes.net/global-assessment",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "habitat loss",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for habitat loss.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T03-G06",
+      "source_url": "https://ipbes.net/global-assessment",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "habitat loss",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for habitat loss.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T03-G07",
+      "source_url": "https://ipbes.net/global-assessment",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "habitat loss",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the habitat loss procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T03-G08",
+      "source_url": "https://ipbes.net/global-assessment",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "habitat loss",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for habitat loss.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T03-G09",
+      "source_url": "https://ipbes.net/global-assessment",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "habitat loss",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the habitat loss report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T03-G10",
+      "source_url": "https://ipbes.net/global-assessment",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "habitat loss",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal habitat loss guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T04-G01",
+      "source_url": "https://www.gbif.org/what-is-gbif",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "protected coverage",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for protected coverage.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T04-G02",
+      "source_url": "https://www.gbif.org/what-is-gbif",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "protected coverage",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for protected coverage discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T04-G03",
+      "source_url": "https://www.gbif.org/what-is-gbif",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protected coverage",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for protected coverage.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T04-G04",
+      "source_url": "https://www.gbif.org/what-is-gbif",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "protected coverage",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for protected coverage.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T04-G05",
+      "source_url": "https://www.gbif.org/what-is-gbif",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "protected coverage",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for protected coverage.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T04-G06",
+      "source_url": "https://www.gbif.org/what-is-gbif",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protected coverage",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for protected coverage.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T04-G07",
+      "source_url": "https://www.gbif.org/what-is-gbif",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "protected coverage",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the protected coverage procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T04-G08",
+      "source_url": "https://www.gbif.org/what-is-gbif",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "protected coverage",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for protected coverage.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T04-G09",
+      "source_url": "https://www.gbif.org/what-is-gbif",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protected coverage",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the protected coverage report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T04-G10",
+      "source_url": "https://www.gbif.org/what-is-gbif",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "protected coverage",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal protected coverage guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T05-G01",
+      "source_url": "https://www.unep-wcmc.org/en",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "invasive species",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for invasive species.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T05-G02",
+      "source_url": "https://www.unep-wcmc.org/en",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "invasive species",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for invasive species discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T05-G03",
+      "source_url": "https://www.unep-wcmc.org/en",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "invasive species",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for invasive species.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T05-G04",
+      "source_url": "https://www.unep-wcmc.org/en",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "invasive species",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for invasive species.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T05-G05",
+      "source_url": "https://www.unep-wcmc.org/en",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "invasive species",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for invasive species.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T05-G06",
+      "source_url": "https://www.unep-wcmc.org/en",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "invasive species",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for invasive species.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T05-G07",
+      "source_url": "https://www.unep-wcmc.org/en",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "invasive species",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the invasive species procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T05-G08",
+      "source_url": "https://www.unep-wcmc.org/en",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "invasive species",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for invasive species.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T05-G09",
+      "source_url": "https://www.unep-wcmc.org/en",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "invasive species",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the invasive species report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T05-G10",
+      "source_url": "https://www.unep-wcmc.org/en",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "invasive species",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal invasive species guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T06-G01",
+      "source_url": "https://www.fws.gov/program/endangered-species",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "population recovery",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for population recovery.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T06-G02",
+      "source_url": "https://www.fws.gov/program/endangered-species",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "population recovery",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for population recovery discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T06-G03",
+      "source_url": "https://www.fws.gov/program/endangered-species",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "population recovery",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for population recovery.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T06-G04",
+      "source_url": "https://www.fws.gov/program/endangered-species",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "population recovery",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for population recovery.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T06-G05",
+      "source_url": "https://www.fws.gov/program/endangered-species",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "population recovery",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for population recovery.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T06-G06",
+      "source_url": "https://www.fws.gov/program/endangered-species",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "population recovery",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for population recovery.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T06-G07",
+      "source_url": "https://www.fws.gov/program/endangered-species",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "population recovery",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the population recovery procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T06-G08",
+      "source_url": "https://www.fws.gov/program/endangered-species",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "population recovery",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for population recovery.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T06-G09",
+      "source_url": "https://www.fws.gov/program/endangered-species",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "population recovery",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the population recovery report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T06-G10",
+      "source_url": "https://www.fws.gov/program/endangered-species",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "population recovery",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal population recovery guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T07-G01",
+      "source_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "survey bias",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for survey bias.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T07-G02",
+      "source_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "survey bias",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for survey bias discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T07-G03",
+      "source_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "survey bias",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for survey bias.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T07-G04",
+      "source_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "survey bias",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for survey bias.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T07-G05",
+      "source_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "survey bias",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for survey bias.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T07-G06",
+      "source_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "survey bias",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for survey bias.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T07-G07",
+      "source_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "survey bias",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the survey bias procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T07-G08",
+      "source_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "survey bias",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for survey bias.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T07-G09",
+      "source_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "survey bias",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the survey bias report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM057-T07-G10",
+      "source_url": "https://www.eea.europa.eu/en/topics/in-depth/biodiversity",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "survey bias",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal survey bias guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    }
+  ]
+}
