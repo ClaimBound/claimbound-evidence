@@ -1,0 +1,2318 @@
+{
+  "issue_number": 177,
+  "source_manifest_sha256": "f6c97ddeacca00d68e245e1b73904ac0908c2a9f84900ce7a2ea2b0c7c093810",
+  "claim_boundary": "Claim-level execution plan for issue #177 only; it is not evidence and predeclares no outcome.",
+  "raw_payload_committed": false,
+  "entries": [
+    {
+      "claim_id": "CB7K-DOM034-T01-G01",
+      "source_url": "https://content.naic.org/consumer",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "claim payout rate",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for claim payout rate.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T01-G02",
+      "source_url": "https://content.naic.org/consumer",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "claim payout rate",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for claim payout rate discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T01-G03",
+      "source_url": "https://content.naic.org/consumer",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "claim payout rate",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for claim payout rate.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T01-G04",
+      "source_url": "https://content.naic.org/consumer",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "claim payout rate",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for claim payout rate.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T01-G05",
+      "source_url": "https://content.naic.org/consumer",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "claim payout rate",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for claim payout rate.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T01-G06",
+      "source_url": "https://content.naic.org/consumer",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "claim payout rate",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for claim payout rate.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T01-G07",
+      "source_url": "https://content.naic.org/consumer",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "claim payout rate",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the claim payout rate procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T01-G08",
+      "source_url": "https://content.naic.org/consumer",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "claim payout rate",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for claim payout rate.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T01-G09",
+      "source_url": "https://content.naic.org/consumer",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "claim payout rate",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the claim payout rate report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T01-G10",
+      "source_url": "https://content.naic.org/consumer",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "claim payout rate",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal claim payout rate guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T02-G01",
+      "source_url": "https://www.cms.gov/marketplace",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "exclusion boundary",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for exclusion boundary.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T02-G02",
+      "source_url": "https://www.cms.gov/marketplace",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "exclusion boundary",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for exclusion boundary discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T02-G03",
+      "source_url": "https://www.cms.gov/marketplace",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "exclusion boundary",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for exclusion boundary.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T02-G04",
+      "source_url": "https://www.cms.gov/marketplace",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "exclusion boundary",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for exclusion boundary.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T02-G05",
+      "source_url": "https://www.cms.gov/marketplace",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "exclusion boundary",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for exclusion boundary.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T02-G06",
+      "source_url": "https://www.cms.gov/marketplace",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "exclusion boundary",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for exclusion boundary.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T02-G07",
+      "source_url": "https://www.cms.gov/marketplace",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "exclusion boundary",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the exclusion boundary procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T02-G08",
+      "source_url": "https://www.cms.gov/marketplace",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "exclusion boundary",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for exclusion boundary.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T02-G09",
+      "source_url": "https://www.cms.gov/marketplace",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "exclusion boundary",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the exclusion boundary report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T02-G10",
+      "source_url": "https://www.cms.gov/marketplace",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "exclusion boundary",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal exclusion boundary guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T03-G01",
+      "source_url": "https://www.insurance.ca.gov/01-consumers/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "premium calculation",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for premium calculation.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T03-G02",
+      "source_url": "https://www.insurance.ca.gov/01-consumers/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "premium calculation",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for premium calculation discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T03-G03",
+      "source_url": "https://www.insurance.ca.gov/01-consumers/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "premium calculation",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for premium calculation.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T03-G04",
+      "source_url": "https://www.insurance.ca.gov/01-consumers/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "premium calculation",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for premium calculation.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T03-G05",
+      "source_url": "https://www.insurance.ca.gov/01-consumers/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "premium calculation",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for premium calculation.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T03-G06",
+      "source_url": "https://www.insurance.ca.gov/01-consumers/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "premium calculation",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for premium calculation.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T03-G07",
+      "source_url": "https://www.insurance.ca.gov/01-consumers/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "premium calculation",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the premium calculation procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T03-G08",
+      "source_url": "https://www.insurance.ca.gov/01-consumers/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "premium calculation",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for premium calculation.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T03-G09",
+      "source_url": "https://www.insurance.ca.gov/01-consumers/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "premium calculation",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the premium calculation report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T03-G10",
+      "source_url": "https://www.insurance.ca.gov/01-consumers/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "premium calculation",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal premium calculation guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T04-G01",
+      "source_url": "https://www.fca.org.uk/consumers/insurance",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "catastrophe exposure",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for catastrophe exposure.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T04-G02",
+      "source_url": "https://www.fca.org.uk/consumers/insurance",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "catastrophe exposure",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for catastrophe exposure discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T04-G03",
+      "source_url": "https://www.fca.org.uk/consumers/insurance",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "catastrophe exposure",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for catastrophe exposure.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T04-G04",
+      "source_url": "https://www.fca.org.uk/consumers/insurance",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "catastrophe exposure",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for catastrophe exposure.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T04-G05",
+      "source_url": "https://www.fca.org.uk/consumers/insurance",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "catastrophe exposure",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for catastrophe exposure.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T04-G06",
+      "source_url": "https://www.fca.org.uk/consumers/insurance",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "catastrophe exposure",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for catastrophe exposure.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T04-G07",
+      "source_url": "https://www.fca.org.uk/consumers/insurance",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "catastrophe exposure",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the catastrophe exposure procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T04-G08",
+      "source_url": "https://www.fca.org.uk/consumers/insurance",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "catastrophe exposure",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for catastrophe exposure.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T04-G09",
+      "source_url": "https://www.fca.org.uk/consumers/insurance",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "catastrophe exposure",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the catastrophe exposure report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T04-G10",
+      "source_url": "https://www.fca.org.uk/consumers/insurance",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "catastrophe exposure",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal catastrophe exposure guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T05-G01",
+      "source_url": "https://www.eiopa.europa.eu/consumers_en",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "solvency ratio",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for solvency ratio.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T05-G02",
+      "source_url": "https://www.eiopa.europa.eu/consumers_en",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "solvency ratio",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for solvency ratio discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T05-G03",
+      "source_url": "https://www.eiopa.europa.eu/consumers_en",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "solvency ratio",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for solvency ratio.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T05-G04",
+      "source_url": "https://www.eiopa.europa.eu/consumers_en",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "solvency ratio",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for solvency ratio.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T05-G05",
+      "source_url": "https://www.eiopa.europa.eu/consumers_en",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "solvency ratio",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for solvency ratio.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T05-G06",
+      "source_url": "https://www.eiopa.europa.eu/consumers_en",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "solvency ratio",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for solvency ratio.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T05-G07",
+      "source_url": "https://www.eiopa.europa.eu/consumers_en",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "solvency ratio",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the solvency ratio procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T05-G08",
+      "source_url": "https://www.eiopa.europa.eu/consumers_en",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "solvency ratio",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for solvency ratio.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T05-G09",
+      "source_url": "https://www.eiopa.europa.eu/consumers_en",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "solvency ratio",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the solvency ratio report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T05-G10",
+      "source_url": "https://www.eiopa.europa.eu/consumers_en",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "solvency ratio",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal solvency ratio guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T06-G01",
+      "source_url": "https://www.oecd.org/finance/insurance/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "complaint rate",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for complaint rate.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T06-G02",
+      "source_url": "https://www.oecd.org/finance/insurance/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "complaint rate",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for complaint rate discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T06-G03",
+      "source_url": "https://www.oecd.org/finance/insurance/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "complaint rate",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for complaint rate.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T06-G04",
+      "source_url": "https://www.oecd.org/finance/insurance/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "complaint rate",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for complaint rate.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T06-G05",
+      "source_url": "https://www.oecd.org/finance/insurance/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "complaint rate",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for complaint rate.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T06-G06",
+      "source_url": "https://www.oecd.org/finance/insurance/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "complaint rate",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for complaint rate.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T06-G07",
+      "source_url": "https://www.oecd.org/finance/insurance/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "complaint rate",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the complaint rate procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T06-G08",
+      "source_url": "https://www.oecd.org/finance/insurance/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "complaint rate",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for complaint rate.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T06-G09",
+      "source_url": "https://www.oecd.org/finance/insurance/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "complaint rate",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the complaint rate report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T06-G10",
+      "source_url": "https://www.oecd.org/finance/insurance/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "complaint rate",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal complaint rate guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T07-G01",
+      "source_url": "https://www.iais.org/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "settlement time",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for settlement time.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T07-G02",
+      "source_url": "https://www.iais.org/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "settlement time",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for settlement time discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T07-G03",
+      "source_url": "https://www.iais.org/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "settlement time",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for settlement time.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T07-G04",
+      "source_url": "https://www.iais.org/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "settlement time",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for settlement time.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T07-G05",
+      "source_url": "https://www.iais.org/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "settlement time",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for settlement time.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T07-G06",
+      "source_url": "https://www.iais.org/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "settlement time",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for settlement time.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T07-G07",
+      "source_url": "https://www.iais.org/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "settlement time",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the settlement time procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T07-G08",
+      "source_url": "https://www.iais.org/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "settlement time",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for settlement time.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T07-G09",
+      "source_url": "https://www.iais.org/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "settlement time",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the settlement time report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM034-T07-G10",
+      "source_url": "https://www.iais.org/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "settlement time",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal settlement time guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T01-G01",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "annual percentage rate",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for annual percentage rate.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T01-G02",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "annual percentage rate",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for annual percentage rate discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T01-G03",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "annual percentage rate",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for annual percentage rate.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T01-G04",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "annual percentage rate",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for annual percentage rate.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T01-G05",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "annual percentage rate",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for annual percentage rate.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T01-G06",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "annual percentage rate",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for annual percentage rate.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T01-G07",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "annual percentage rate",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the annual percentage rate procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T01-G08",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "annual percentage rate",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for annual percentage rate.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T01-G09",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "annual percentage rate",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the annual percentage rate report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T01-G10",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "annual percentage rate",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal annual percentage rate guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T02-G01",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "total repayment",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for total repayment.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T02-G02",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "total repayment",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for total repayment discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T02-G03",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "total repayment",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for total repayment.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T02-G04",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "total repayment",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for total repayment.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T02-G05",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "total repayment",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for total repayment.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T02-G06",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "total repayment",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for total repayment.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T02-G07",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "total repayment",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the total repayment procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T02-G08",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "total repayment",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for total repayment.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T02-G09",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "total repayment",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the total repayment report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T02-G10",
+      "source_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "total repayment",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal total repayment guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T03-G01",
+      "source_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "late fee",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for late fee.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T03-G02",
+      "source_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "late fee",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for late fee discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T03-G03",
+      "source_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "late fee",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for late fee.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T03-G04",
+      "source_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "late fee",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for late fee.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T03-G05",
+      "source_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "late fee",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for late fee.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T03-G06",
+      "source_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "late fee",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for late fee.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T03-G07",
+      "source_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "late fee",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the late fee procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T03-G08",
+      "source_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "late fee",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for late fee.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T03-G09",
+      "source_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "late fee",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the late fee report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T03-G10",
+      "source_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "late fee",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal late fee guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T04-G01",
+      "source_url": "https://www.federalreserve.gov/consumerscommunities.htm",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "default rate",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for default rate.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T04-G02",
+      "source_url": "https://www.federalreserve.gov/consumerscommunities.htm",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "default rate",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for default rate discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T04-G03",
+      "source_url": "https://www.federalreserve.gov/consumerscommunities.htm",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "default rate",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for default rate.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T04-G04",
+      "source_url": "https://www.federalreserve.gov/consumerscommunities.htm",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "default rate",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for default rate.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T04-G05",
+      "source_url": "https://www.federalreserve.gov/consumerscommunities.htm",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "default rate",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for default rate.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T04-G06",
+      "source_url": "https://www.federalreserve.gov/consumerscommunities.htm",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "default rate",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for default rate.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T04-G07",
+      "source_url": "https://www.federalreserve.gov/consumerscommunities.htm",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "default rate",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the default rate procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T04-G08",
+      "source_url": "https://www.federalreserve.gov/consumerscommunities.htm",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "default rate",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for default rate.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T04-G09",
+      "source_url": "https://www.federalreserve.gov/consumerscommunities.htm",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "default rate",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the default rate report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T04-G10",
+      "source_url": "https://www.federalreserve.gov/consumerscommunities.htm",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "default rate",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal default rate guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T05-G01",
+      "source_url": "https://www.fca.org.uk/consumers/credit",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "credit-score effect",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for credit-score effect.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T05-G02",
+      "source_url": "https://www.fca.org.uk/consumers/credit",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "credit-score effect",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for credit-score effect discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T05-G03",
+      "source_url": "https://www.fca.org.uk/consumers/credit",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "credit-score effect",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for credit-score effect.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T05-G04",
+      "source_url": "https://www.fca.org.uk/consumers/credit",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "credit-score effect",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for credit-score effect.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T05-G05",
+      "source_url": "https://www.fca.org.uk/consumers/credit",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "credit-score effect",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for credit-score effect.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T05-G06",
+      "source_url": "https://www.fca.org.uk/consumers/credit",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "credit-score effect",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for credit-score effect.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T05-G07",
+      "source_url": "https://www.fca.org.uk/consumers/credit",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "credit-score effect",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the credit-score effect procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T05-G08",
+      "source_url": "https://www.fca.org.uk/consumers/credit",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "credit-score effect",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for credit-score effect.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T05-G09",
+      "source_url": "https://www.fca.org.uk/consumers/credit",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "credit-score effect",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the credit-score effect report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T05-G10",
+      "source_url": "https://www.fca.org.uk/consumers/credit",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "credit-score effect",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal credit-score effect guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T06-G01",
+      "source_url": "https://www.oecd.org/finance/financial-education/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "collection practice",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for collection practice.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T06-G02",
+      "source_url": "https://www.oecd.org/finance/financial-education/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "collection practice",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for collection practice discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T06-G03",
+      "source_url": "https://www.oecd.org/finance/financial-education/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "collection practice",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for collection practice.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T06-G04",
+      "source_url": "https://www.oecd.org/finance/financial-education/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "collection practice",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for collection practice.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T06-G05",
+      "source_url": "https://www.oecd.org/finance/financial-education/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "collection practice",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for collection practice.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T06-G06",
+      "source_url": "https://www.oecd.org/finance/financial-education/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "collection practice",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for collection practice.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T06-G07",
+      "source_url": "https://www.oecd.org/finance/financial-education/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "collection practice",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the collection practice procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T06-G08",
+      "source_url": "https://www.oecd.org/finance/financial-education/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "collection practice",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for collection practice.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T06-G09",
+      "source_url": "https://www.oecd.org/finance/financial-education/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "collection practice",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the collection practice report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T06-G10",
+      "source_url": "https://www.oecd.org/finance/financial-education/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "collection practice",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal collection practice guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T07-G01",
+      "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "affordability assessment",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for affordability assessment.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T07-G02",
+      "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "affordability assessment",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for affordability assessment discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T07-G03",
+      "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "affordability assessment",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for affordability assessment.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T07-G04",
+      "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "affordability assessment",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for affordability assessment.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T07-G05",
+      "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "affordability assessment",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for affordability assessment.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T07-G06",
+      "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "affordability assessment",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for affordability assessment.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T07-G07",
+      "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "affordability assessment",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the affordability assessment procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T07-G08",
+      "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "affordability assessment",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for affordability assessment.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T07-G09",
+      "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "affordability assessment",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the affordability assessment report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM035-T07-G10",
+      "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "affordability assessment",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal affordability assessment guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T01-G01",
+      "source_url": "https://www.ssa.gov/retirement",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "actuarial coverage ratio",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for actuarial coverage ratio.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T01-G02",
+      "source_url": "https://www.ssa.gov/retirement",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "actuarial coverage ratio",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for actuarial coverage ratio discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T01-G03",
+      "source_url": "https://www.ssa.gov/retirement",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "actuarial coverage ratio",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for actuarial coverage ratio.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T01-G04",
+      "source_url": "https://www.ssa.gov/retirement",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "actuarial coverage ratio",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for actuarial coverage ratio.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T01-G05",
+      "source_url": "https://www.ssa.gov/retirement",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "actuarial coverage ratio",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for actuarial coverage ratio.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T01-G06",
+      "source_url": "https://www.ssa.gov/retirement",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "actuarial coverage ratio",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for actuarial coverage ratio.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T01-G07",
+      "source_url": "https://www.ssa.gov/retirement",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "actuarial coverage ratio",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the actuarial coverage ratio procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T01-G08",
+      "source_url": "https://www.ssa.gov/retirement",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "actuarial coverage ratio",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for actuarial coverage ratio.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T01-G09",
+      "source_url": "https://www.ssa.gov/retirement",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "actuarial coverage ratio",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the actuarial coverage ratio report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T01-G10",
+      "source_url": "https://www.ssa.gov/retirement",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "actuarial coverage ratio",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal actuarial coverage ratio guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T02-G01",
+      "source_url": "https://www.dol.gov/general/topic/retirement",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "investment return",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for investment return.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T02-G02",
+      "source_url": "https://www.dol.gov/general/topic/retirement",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "investment return",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for investment return discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T02-G03",
+      "source_url": "https://www.dol.gov/general/topic/retirement",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "investment return",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for investment return.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T02-G04",
+      "source_url": "https://www.dol.gov/general/topic/retirement",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "investment return",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for investment return.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T02-G05",
+      "source_url": "https://www.dol.gov/general/topic/retirement",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "investment return",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for investment return.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T02-G06",
+      "source_url": "https://www.dol.gov/general/topic/retirement",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "investment return",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for investment return.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T02-G07",
+      "source_url": "https://www.dol.gov/general/topic/retirement",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "investment return",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the investment return procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T02-G08",
+      "source_url": "https://www.dol.gov/general/topic/retirement",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "investment return",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for investment return.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T02-G09",
+      "source_url": "https://www.dol.gov/general/topic/retirement",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "investment return",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the investment return report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T02-G10",
+      "source_url": "https://www.dol.gov/general/topic/retirement",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "investment return",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal investment return guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T03-G01",
+      "source_url": "https://www.pbgc.gov/who-we-are",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "management fee",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for management fee.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T03-G02",
+      "source_url": "https://www.pbgc.gov/who-we-are",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "management fee",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for management fee discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T03-G03",
+      "source_url": "https://www.pbgc.gov/who-we-are",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "management fee",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for management fee.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T03-G04",
+      "source_url": "https://www.pbgc.gov/who-we-are",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "management fee",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for management fee.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T03-G05",
+      "source_url": "https://www.pbgc.gov/who-we-are",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "management fee",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for management fee.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T03-G06",
+      "source_url": "https://www.pbgc.gov/who-we-are",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "management fee",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for management fee.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T03-G07",
+      "source_url": "https://www.pbgc.gov/who-we-are",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "management fee",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the management fee procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T03-G08",
+      "source_url": "https://www.pbgc.gov/who-we-are",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "management fee",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for management fee.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T03-G09",
+      "source_url": "https://www.pbgc.gov/who-we-are",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "management fee",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the management fee report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T03-G10",
+      "source_url": "https://www.pbgc.gov/who-we-are",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "management fee",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal management fee guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T04-G01",
+      "source_url": "https://www.oecd.org/pensions/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "benefit indexation",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for benefit indexation.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T04-G02",
+      "source_url": "https://www.oecd.org/pensions/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "benefit indexation",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for benefit indexation discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T04-G03",
+      "source_url": "https://www.oecd.org/pensions/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "benefit indexation",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for benefit indexation.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T04-G04",
+      "source_url": "https://www.oecd.org/pensions/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "benefit indexation",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for benefit indexation.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T04-G05",
+      "source_url": "https://www.oecd.org/pensions/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "benefit indexation",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for benefit indexation.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T04-G06",
+      "source_url": "https://www.oecd.org/pensions/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "benefit indexation",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for benefit indexation.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T04-G07",
+      "source_url": "https://www.oecd.org/pensions/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "benefit indexation",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the benefit indexation procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T04-G08",
+      "source_url": "https://www.oecd.org/pensions/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "benefit indexation",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for benefit indexation.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T04-G09",
+      "source_url": "https://www.oecd.org/pensions/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "benefit indexation",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the benefit indexation report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T04-G10",
+      "source_url": "https://www.oecd.org/pensions/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "benefit indexation",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal benefit indexation guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T05-G01",
+      "source_url": "https://www.ilo.org/topics/pensions",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "retirement age",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for retirement age.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T05-G02",
+      "source_url": "https://www.ilo.org/topics/pensions",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "retirement age",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for retirement age discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T05-G03",
+      "source_url": "https://www.ilo.org/topics/pensions",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "retirement age",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for retirement age.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T05-G04",
+      "source_url": "https://www.ilo.org/topics/pensions",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "retirement age",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for retirement age.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T05-G05",
+      "source_url": "https://www.ilo.org/topics/pensions",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "retirement age",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for retirement age.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T05-G06",
+      "source_url": "https://www.ilo.org/topics/pensions",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "retirement age",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for retirement age.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T05-G07",
+      "source_url": "https://www.ilo.org/topics/pensions",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "retirement age",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the retirement age procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T05-G08",
+      "source_url": "https://www.ilo.org/topics/pensions",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "retirement age",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for retirement age.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T05-G09",
+      "source_url": "https://www.ilo.org/topics/pensions",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "retirement age",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the retirement age report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T05-G10",
+      "source_url": "https://www.ilo.org/topics/pensions",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "retirement age",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal retirement age guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T06-G01",
+      "source_url": "https://www.worldbank.org/en/topic/pensions",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "liability assumption",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for liability assumption.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T06-G02",
+      "source_url": "https://www.worldbank.org/en/topic/pensions",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "liability assumption",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for liability assumption discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T06-G03",
+      "source_url": "https://www.worldbank.org/en/topic/pensions",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "liability assumption",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for liability assumption.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T06-G04",
+      "source_url": "https://www.worldbank.org/en/topic/pensions",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "liability assumption",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for liability assumption.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T06-G05",
+      "source_url": "https://www.worldbank.org/en/topic/pensions",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "liability assumption",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for liability assumption.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T06-G06",
+      "source_url": "https://www.worldbank.org/en/topic/pensions",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "liability assumption",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for liability assumption.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T06-G07",
+      "source_url": "https://www.worldbank.org/en/topic/pensions",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "liability assumption",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the liability assumption procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T06-G08",
+      "source_url": "https://www.worldbank.org/en/topic/pensions",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "liability assumption",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for liability assumption.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T06-G09",
+      "source_url": "https://www.worldbank.org/en/topic/pensions",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "liability assumption",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the liability assumption report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T06-G10",
+      "source_url": "https://www.worldbank.org/en/topic/pensions",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "liability assumption",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal liability assumption guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T07-G01",
+      "source_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "member coverage",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for member coverage.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T07-G02",
+      "source_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "member coverage",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for member coverage discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T07-G03",
+      "source_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "member coverage",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for member coverage.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T07-G04",
+      "source_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "member coverage",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for member coverage.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T07-G05",
+      "source_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "member coverage",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for member coverage.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T07-G06",
+      "source_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "member coverage",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for member coverage.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T07-G07",
+      "source_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "member coverage",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the member coverage procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T07-G08",
+      "source_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "member coverage",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for member coverage.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T07-G09",
+      "source_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "member coverage",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the member coverage report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM036-T07-G10",
+      "source_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "member coverage",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal member coverage guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    }
+  ]
+}
