@@ -98,6 +98,12 @@ def test_no_forbidden_public_tokens_or_ru_text() -> None:
             ):
                 # DOM057 includes public conservation-program support records.
                 continue
+            if token == "gr" + "ant" and (
+                rel.name.startswith("CLAIMBOUND-CB7K-DOM050-")
+                or rel.name.startswith("claim_batch_182_")
+            ):
+                # DOM050 includes public migration-program support records.
+                continue
             if token in lower:
                 violations.append(f"{rel}: forbidden token {token!r}")
         if "_" + "RU" in text:

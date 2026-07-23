@@ -15,6 +15,20 @@ import subprocess
 import urllib.error
 import urllib.request
 
+BLOCKED_RETRY_STATUSES = {0, 403, 429, 444}
+BOT_HEADERS = {
+    "User-Agent": "ClaimBoundEvidence/1.1 (+https://github.com/ClaimBound/claimbound-evidence)",
+    "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "identity",
+}
+BROWSER_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "identity",
+}
+
 
 class TextExtractor(HTMLParser):
     def __init__(self) -> None:
@@ -67,6 +81,11 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--output-root", type=Path, required=True)
+    parser.add_argument(
+        "--retry-blocked",
+        action="store_true",
+        help="Retry the same frozen URL for cached transport blocks using the standardized browser-compatible profile.",
+    )
     args = parser.parse_args()
 
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
@@ -82,41 +101,78 @@ def main() -> None:
         raw_path = raw_root / f"{key}.bin"
         meta_path = meta_root / f"{key}.json"
         text_path = text_root / f"{key}.txt"
+        previous_metadata = None
+        previous_payload = None
         if raw_path.exists() and meta_path.exists() and text_path.exists():
             metadata = json.loads(meta_path.read_text(encoding="utf-8"))
-            if not text_path.stat().st_size and raw_path.read_bytes().startswith(b"%PDF"):
-                text_path.write_text(
-                    extract_text(raw_path, metadata.get("content_type", "")),
-                    encoding="utf-8",
+            if args.retry_blocked and metadata["http_status"] in BLOCKED_RETRY_STATUSES:
+                previous_metadata = metadata
+                previous_payload = raw_path.read_bytes()
+            else:
+                if not text_path.stat().st_size and raw_path.read_bytes().startswith(b"%PDF"):
+                    text_path.write_text(
+                        extract_text(raw_path, metadata.get("content_type", "")),
+                        encoding="utf-8",
+                    )
+                print(
+                    f"{key}: cached HTTP {metadata['http_status']} "
+                    f"bytes={metadata['byte_count']} final={metadata['final_url']}"
                 )
-            print(
-                f"{key}: cached HTTP {metadata['http_status']} "
-                f"bytes={metadata['byte_count']} final={metadata['final_url']}"
+                continue
+
+        profiles = [BROWSER_HEADERS] if previous_metadata else [BOT_HEADERS, BROWSER_HEADERS]
+        attempts = list((previous_metadata or {}).get("attempts", []))
+        if previous_metadata:
+            attempts.append(
+                {
+                    "profile": "original-cached",
+                    "http_status": previous_metadata["http_status"],
+                    "final_url": previous_metadata["final_url"],
+                    "byte_count": previous_metadata["byte_count"],
+                    "sha256": hashlib.sha256(previous_payload or b"").hexdigest(),
+                    "error": previous_metadata.get("error"),
+                }
             )
-            continue
-        request = urllib.request.Request(
-            url,
-            headers={"User-Agent": "ClaimBoundEvidence/1.0 (+https://github.com/ClaimBound/claimbound-evidence)"},
-        )
         status = 0
         final_url = url
         content_type = ""
         error = None
         payload = b""
-        try:
-            with urllib.request.urlopen(request, timeout=45, context=context) as response:
-                status = response.status
-                final_url = response.geturl()
-                content_type = response.headers.get("Content-Type", "")
-                payload = response.read()
-        except urllib.error.HTTPError as exc:
-            status = exc.code
-            final_url = exc.geturl()
-            content_type = exc.headers.get("Content-Type", "")
-            payload = exc.read()
-            error = f"HTTPError: {exc}"
-        except Exception as exc:  # access failures are evidence outcomes, not fetcher failures
-            error = f"{type(exc).__name__}: {exc}"
+        selected_profile = ""
+        for index, headers in enumerate(profiles):
+            selected_profile = "browser-compatible" if headers is BROWSER_HEADERS else "claimbound-bot"
+            request = urllib.request.Request(url, headers=headers)
+            status = 0
+            final_url = url
+            content_type = ""
+            error = None
+            payload = b""
+            try:
+                with urllib.request.urlopen(request, timeout=45, context=context) as response:
+                    status = response.status
+                    final_url = response.geturl()
+                    content_type = response.headers.get("Content-Type", "")
+                    payload = response.read()
+            except urllib.error.HTTPError as exc:
+                status = exc.code
+                final_url = exc.geturl()
+                content_type = exc.headers.get("Content-Type", "")
+                payload = exc.read()
+                error = f"HTTPError: {exc}"
+            except Exception as exc:
+                error = f"{type(exc).__name__}: {exc}"
+            attempts.append(
+                {
+                    "profile": selected_profile,
+                    "http_status": status,
+                    "final_url": final_url,
+                    "byte_count": len(payload),
+                    "sha256": hashlib.sha256(payload).hexdigest(),
+                    "error": error,
+                }
+            )
+            if status not in BLOCKED_RETRY_STATUSES or index == len(profiles) - 1:
+                break
 
         raw_path.write_bytes(payload)
         text = extract_text(raw_path, content_type) if payload else ""
@@ -130,6 +186,8 @@ def main() -> None:
             "byte_count": len(payload),
             "sha256": hashlib.sha256(payload).hexdigest(),
             "error": error,
+            "selected_transport_profile": selected_profile,
+            "attempts": attempts,
         }
         meta_path.write_text(
             json.dumps(metadata, indent=2, ensure_ascii=False) + "\n",

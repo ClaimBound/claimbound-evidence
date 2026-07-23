@@ -58,12 +58,17 @@ class LocatorDecision:
 
 
 def _sentences(text: str) -> list[str]:
-    cleaned = SPACE.sub(" ", text.replace("\x00", " ")).strip()
-    return [
-        sentence.strip(" \t\r\n-•")
-        for sentence in re.split(r"(?<=[.!?])\s+|\s*[|]\s*", cleaned)
-        if 24 <= len(sentence.strip()) <= 700
-    ]
+    candidates: list[str] = []
+    for raw_line in text.replace("\x00", " ").splitlines():
+        line = SPACE.sub(" ", raw_line).strip(" \t\r\n-•")
+        if not line:
+            continue
+        parts = re.split(r"(?<=[.!?])\s+|\s*[|]\s*", line)
+        if len(parts) == 1 and 24 <= len(line) <= 700:
+            candidates.append(line)
+        else:
+            candidates.extend(part.strip(" \t\r\n-•") for part in parts if 24 <= len(part.strip()) <= 700)
+    return candidates
 
 
 def _topic_terms(topic: str) -> tuple[str, ...]:
