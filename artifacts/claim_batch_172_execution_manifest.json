@@ -1,0 +1,2318 @@
+{
+  "issue_number": 172,
+  "source_manifest_sha256": "17f2c39dc5d37047a1041ee011bb118d0d0a341d9b789b1b41d75b21dc02779b",
+  "claim_boundary": "Claim-level execution plan for issue #172 only; it is not evidence and predeclares no outcome.",
+  "raw_payload_committed": false,
+  "entries": [
+    {
+      "claim_id": "CB7K-DOM019-T01-G01",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "primary endpoint",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for primary endpoint.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T01-G02",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "primary endpoint",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for primary endpoint discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T01-G03",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "primary endpoint",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for primary endpoint.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T01-G04",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "primary endpoint",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for primary endpoint.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T01-G05",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "primary endpoint",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for primary endpoint.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T01-G06",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "primary endpoint",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for primary endpoint.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T01-G07",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "primary endpoint",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the primary endpoint procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T01-G08",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "primary endpoint",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for primary endpoint.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T01-G09",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "primary endpoint",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the primary endpoint report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T01-G10",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "primary endpoint",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal primary endpoint guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T02-G01",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "sample size",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for sample size.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T02-G02",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "sample size",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for sample size discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T02-G03",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sample size",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for sample size.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T02-G04",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "sample size",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for sample size.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T02-G05",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "sample size",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for sample size.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T02-G06",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sample size",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for sample size.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T02-G07",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "sample size",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the sample size procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T02-G08",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "sample size",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for sample size.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T02-G09",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sample size",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the sample size report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T02-G10",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "sample size",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal sample size guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T03-G01",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "participant attrition",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for participant attrition.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T03-G02",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "participant attrition",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for participant attrition discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T03-G03",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "participant attrition",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for participant attrition.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T03-G04",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "participant attrition",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for participant attrition.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T03-G05",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "participant attrition",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for participant attrition.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T03-G06",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "participant attrition",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for participant attrition.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T03-G07",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "participant attrition",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the participant attrition procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T03-G08",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "participant attrition",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for participant attrition.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T03-G09",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "participant attrition",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the participant attrition report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T03-G10",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "participant attrition",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal participant attrition guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T04-G01",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "protocol deviation",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for protocol deviation.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T04-G02",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "protocol deviation",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for protocol deviation discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T04-G03",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protocol deviation",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for protocol deviation.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T04-G04",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "protocol deviation",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for protocol deviation.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T04-G05",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "protocol deviation",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for protocol deviation.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T04-G06",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protocol deviation",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for protocol deviation.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T04-G07",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "protocol deviation",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the protocol deviation procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T04-G08",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "protocol deviation",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for protocol deviation.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T04-G09",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protocol deviation",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the protocol deviation report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T04-G10",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "protocol deviation",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal protocol deviation guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T05-G01",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "subgroup result",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for subgroup result.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T05-G02",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "subgroup result",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for subgroup result discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T05-G03",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "subgroup result",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for subgroup result.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T05-G04",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "subgroup result",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for subgroup result.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T05-G05",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "subgroup result",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for subgroup result.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T05-G06",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "subgroup result",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for subgroup result.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T05-G07",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "subgroup result",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the subgroup result procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T05-G08",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "subgroup result",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for subgroup result.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T05-G09",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "subgroup result",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the subgroup result report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T05-G10",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "subgroup result",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal subgroup result guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T06-G01",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "adverse event",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for adverse event.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T06-G02",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "adverse event",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for adverse event discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T06-G03",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "adverse event",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for adverse event.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T06-G04",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "adverse event",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for adverse event.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T06-G05",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "adverse event",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for adverse event.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T06-G06",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "adverse event",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for adverse event.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T06-G07",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "adverse event",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the adverse event procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T06-G08",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "adverse event",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for adverse event.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T06-G09",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "adverse event",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the adverse event report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T06-G10",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "adverse event",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal adverse event guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T07-G01",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "result-reporting delay",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for result-reporting delay.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T07-G02",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "result-reporting delay",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for result-reporting delay discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T07-G03",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "result-reporting delay",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for result-reporting delay.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T07-G04",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "result-reporting delay",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for result-reporting delay.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T07-G05",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "result-reporting delay",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for result-reporting delay.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T07-G06",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "result-reporting delay",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for result-reporting delay.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T07-G07",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "result-reporting delay",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the result-reporting delay procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T07-G08",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "result-reporting delay",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for result-reporting delay.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T07-G09",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "result-reporting delay",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the result-reporting delay report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM019-T07-G10",
+      "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "result-reporting delay",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal result-reporting delay guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T01-G01",
+      "source_url": "https://www.fda.gov/medical-devices/510k-clearances",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "measurement accuracy",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for measurement accuracy.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T01-G02",
+      "source_url": "https://www.fda.gov/medical-devices/510k-clearances",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "measurement accuracy",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for measurement accuracy discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T01-G03",
+      "source_url": "https://www.fda.gov/medical-devices/510k-clearances",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "measurement accuracy",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for measurement accuracy.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T01-G04",
+      "source_url": "https://www.fda.gov/medical-devices/510k-clearances",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "measurement accuracy",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for measurement accuracy.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T01-G05",
+      "source_url": "https://www.fda.gov/medical-devices/510k-clearances",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "measurement accuracy",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for measurement accuracy.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T01-G06",
+      "source_url": "https://www.fda.gov/medical-devices/510k-clearances",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "measurement accuracy",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for measurement accuracy.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T01-G07",
+      "source_url": "https://www.fda.gov/medical-devices/510k-clearances",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "measurement accuracy",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the measurement accuracy procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T01-G08",
+      "source_url": "https://www.fda.gov/medical-devices/510k-clearances",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "measurement accuracy",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for measurement accuracy.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T01-G09",
+      "source_url": "https://www.fda.gov/medical-devices/510k-clearances",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "measurement accuracy",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the measurement accuracy report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T01-G10",
+      "source_url": "https://www.fda.gov/medical-devices/510k-clearances",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "measurement accuracy",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal measurement accuracy guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T02-G01",
+      "source_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "failure rate",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for failure rate.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T02-G02",
+      "source_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "failure rate",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for failure rate discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T02-G03",
+      "source_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "failure rate",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for failure rate.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T02-G04",
+      "source_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "failure rate",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for failure rate.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T02-G05",
+      "source_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "failure rate",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for failure rate.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T02-G06",
+      "source_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "failure rate",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for failure rate.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T02-G07",
+      "source_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "failure rate",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the failure rate procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T02-G08",
+      "source_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "failure rate",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for failure rate.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T02-G09",
+      "source_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "failure rate",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the failure rate report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T02-G10",
+      "source_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "failure rate",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal failure rate guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T03-G01",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "alarm sensitivity",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for alarm sensitivity.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T03-G02",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "alarm sensitivity",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for alarm sensitivity discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T03-G03",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "alarm sensitivity",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for alarm sensitivity.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T03-G04",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "alarm sensitivity",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for alarm sensitivity.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T03-G05",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "alarm sensitivity",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for alarm sensitivity.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T03-G06",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "alarm sensitivity",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for alarm sensitivity.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T03-G07",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "alarm sensitivity",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the alarm sensitivity procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T03-G08",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "alarm sensitivity",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for alarm sensitivity.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T03-G09",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "alarm sensitivity",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the alarm sensitivity report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T03-G10",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "alarm sensitivity",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal alarm sensitivity guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T04-G01",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-safety",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "software version",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for software version.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T04-G02",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-safety",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "software version",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for software version discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T04-G03",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-safety",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "software version",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for software version.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T04-G04",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-safety",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "software version",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for software version.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T04-G05",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-safety",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "software version",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for software version.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T04-G06",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-safety",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "software version",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for software version.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T04-G07",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-safety",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "software version",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the software version procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T04-G08",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-safety",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "software version",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for software version.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T04-G09",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-safety",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "software version",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the software version report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T04-G10",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-safety",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "software version",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal software version guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T05-G01",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for recall scope.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T05-G02",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for recall scope discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T05-G03",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for recall scope.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T05-G04",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for recall scope.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T05-G05",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for recall scope.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T05-G06",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for recall scope.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T05-G07",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the recall scope procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T05-G08",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for recall scope.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T05-G09",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the recall scope report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T05-G10",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal recall scope guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T06-G01",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "sterilization claim",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for sterilization claim.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T06-G02",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "sterilization claim",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for sterilization claim discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T06-G03",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sterilization claim",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for sterilization claim.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T06-G04",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "sterilization claim",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for sterilization claim.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T06-G05",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "sterilization claim",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for sterilization claim.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T06-G06",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sterilization claim",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for sterilization claim.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T06-G07",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "sterilization claim",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the sterilization claim procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T06-G08",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "sterilization claim",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for sterilization claim.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T06-G09",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sterilization claim",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the sterilization claim report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T06-G10",
+      "source_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "sterilization claim",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal sterilization claim guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T07-G01",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "clinical workflow limit",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for clinical workflow limit.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T07-G02",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "clinical workflow limit",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for clinical workflow limit discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T07-G03",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "clinical workflow limit",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for clinical workflow limit.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T07-G04",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "clinical workflow limit",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for clinical workflow limit.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T07-G05",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "clinical workflow limit",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for clinical workflow limit.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T07-G06",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "clinical workflow limit",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for clinical workflow limit.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T07-G07",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "clinical workflow limit",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the clinical workflow limit procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T07-G08",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "clinical workflow limit",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for clinical workflow limit.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T07-G09",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "clinical workflow limit",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the clinical workflow limit report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM020-T07-G10",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "clinical workflow limit",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal clinical workflow limit guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T01-G01",
+      "source_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "sensitivity",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for sensitivity.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T01-G02",
+      "source_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "sensitivity",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for sensitivity discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T01-G03",
+      "source_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sensitivity",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for sensitivity.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T01-G04",
+      "source_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "sensitivity",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for sensitivity.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T01-G05",
+      "source_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "sensitivity",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for sensitivity.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T01-G06",
+      "source_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sensitivity",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for sensitivity.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T01-G07",
+      "source_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "sensitivity",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the sensitivity procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T01-G08",
+      "source_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "sensitivity",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for sensitivity.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T01-G09",
+      "source_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sensitivity",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the sensitivity report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T01-G10",
+      "source_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "sensitivity",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal sensitivity guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T02-G01",
+      "source_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "specificity",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for specificity.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T02-G02",
+      "source_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "specificity",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for specificity discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T02-G03",
+      "source_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "specificity",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for specificity.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T02-G04",
+      "source_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "specificity",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for specificity.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T02-G05",
+      "source_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "specificity",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for specificity.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T02-G06",
+      "source_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "specificity",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for specificity.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T02-G07",
+      "source_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "specificity",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the specificity procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T02-G08",
+      "source_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "specificity",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for specificity.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T02-G09",
+      "source_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "specificity",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the specificity report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T02-G10",
+      "source_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "specificity",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal specificity guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T03-G01",
+      "source_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "positive predictive value",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for positive predictive value.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T03-G02",
+      "source_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "positive predictive value",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for positive predictive value discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T03-G03",
+      "source_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "positive predictive value",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for positive predictive value.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T03-G04",
+      "source_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "positive predictive value",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for positive predictive value.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T03-G05",
+      "source_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "positive predictive value",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for positive predictive value.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T03-G06",
+      "source_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "positive predictive value",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for positive predictive value.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T03-G07",
+      "source_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "positive predictive value",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the positive predictive value procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T03-G08",
+      "source_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "positive predictive value",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for positive predictive value.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T03-G09",
+      "source_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "positive predictive value",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the positive predictive value report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T03-G10",
+      "source_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "positive predictive value",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal positive predictive value guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T04-G01",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "negative predictive value",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for negative predictive value.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T04-G02",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "negative predictive value",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for negative predictive value discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T04-G03",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "negative predictive value",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for negative predictive value.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T04-G04",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "negative predictive value",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for negative predictive value.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T04-G05",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "negative predictive value",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for negative predictive value.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T04-G06",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "negative predictive value",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for negative predictive value.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T04-G07",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "negative predictive value",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the negative predictive value procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T04-G08",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "negative predictive value",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for negative predictive value.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T04-G09",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "negative predictive value",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the negative predictive value report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T04-G10",
+      "source_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "negative predictive value",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal negative predictive value guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T05-G01",
+      "source_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "limit of detection",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for limit of detection.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T05-G02",
+      "source_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "limit of detection",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for limit of detection discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T05-G03",
+      "source_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "limit of detection",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for limit of detection.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T05-G04",
+      "source_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "limit of detection",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for limit of detection.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T05-G05",
+      "source_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "limit of detection",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for limit of detection.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T05-G06",
+      "source_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "limit of detection",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for limit of detection.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T05-G07",
+      "source_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "limit of detection",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the limit of detection procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T05-G08",
+      "source_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "limit of detection",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for limit of detection.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T05-G09",
+      "source_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "limit of detection",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the limit of detection report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T05-G10",
+      "source_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "limit of detection",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal limit of detection guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T06-G01",
+      "source_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "population validation",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for population validation.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T06-G02",
+      "source_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "population validation",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for population validation discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T06-G03",
+      "source_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "population validation",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for population validation.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T06-G04",
+      "source_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "population validation",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for population validation.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T06-G05",
+      "source_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "population validation",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for population validation.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T06-G06",
+      "source_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "population validation",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for population validation.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T06-G07",
+      "source_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "population validation",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the population validation procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T06-G08",
+      "source_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "population validation",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for population validation.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T06-G09",
+      "source_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "population validation",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the population validation report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T06-G10",
+      "source_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "population validation",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal population validation guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T07-G01",
+      "source_url": "https://www.who.int/initiatives/genomic-surveillance",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "sample-type boundary",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for sample-type boundary.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T07-G02",
+      "source_url": "https://www.who.int/initiatives/genomic-surveillance",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "sample-type boundary",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for sample-type boundary discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T07-G03",
+      "source_url": "https://www.who.int/initiatives/genomic-surveillance",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sample-type boundary",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for sample-type boundary.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T07-G04",
+      "source_url": "https://www.who.int/initiatives/genomic-surveillance",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "sample-type boundary",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for sample-type boundary.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T07-G05",
+      "source_url": "https://www.who.int/initiatives/genomic-surveillance",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "sample-type boundary",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for sample-type boundary.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T07-G06",
+      "source_url": "https://www.who.int/initiatives/genomic-surveillance",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sample-type boundary",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for sample-type boundary.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T07-G07",
+      "source_url": "https://www.who.int/initiatives/genomic-surveillance",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "sample-type boundary",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the sample-type boundary procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T07-G08",
+      "source_url": "https://www.who.int/initiatives/genomic-surveillance",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "sample-type boundary",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for sample-type boundary.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T07-G09",
+      "source_url": "https://www.who.int/initiatives/genomic-surveillance",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sample-type boundary",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the sample-type boundary report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM021-T07-G10",
+      "source_url": "https://www.who.int/initiatives/genomic-surveillance",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "sample-type boundary",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal sample-type boundary guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    }
+  ]
+}
