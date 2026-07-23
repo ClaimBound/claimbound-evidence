@@ -1,0 +1,267 @@
+{
+  "claim_boundary": "Root-cause audit of already frozen batch reports and local response caches; this analysis does not replace sources or reclassify outcomes by target quota.",
+  "raw_payload_committed": false,
+  "scope": {
+    "issues": [
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184
+    ],
+    "cards": 2730,
+    "unique_topic_sources": 273
+  },
+  "status_counts": {
+    "BLOCKED_SOURCE": 920,
+    "INSUFFICIENT_COVERAGE": 1776,
+    "PASSED_UNDER_PROTOCOL": 24,
+    "SOURCE_DRIFT": 10
+  },
+  "blocked_source": {
+    "cards": 920,
+    "unique_sources": 92,
+    "by_http_status_cards": {
+      "0": 10,
+      "403": 420,
+      "404": 470,
+      "444": 20
+    },
+    "by_http_status_sources": {
+      "0": 1,
+      "403": 42,
+      "404": 47,
+      "444": 2
+    },
+    "by_cause_cards": {
+      "ACCESS_POLICY_OR_ANTI_BOT": 440,
+      "STALE_OR_INCORRECT_EXACT_URL": 470,
+      "TRANSPORT_FAILURE": 10
+    },
+    "by_cause_sources": {
+      "ACCESS_POLICY_OR_ANTI_BOT": 44,
+      "STALE_OR_INCORRECT_EXACT_URL": 47,
+      "TRANSPORT_FAILURE": 1
+    },
+    "top_hosts": [
+      {
+        "host": "cdc.gov",
+        "sources": 15,
+        "cards": 150
+      },
+      {
+        "host": "oecd.org",
+        "sources": 11,
+        "cards": 110
+      },
+      {
+        "host": "fda.gov",
+        "sources": 6,
+        "cards": 60
+      },
+      {
+        "host": "cms.gov",
+        "sources": 4,
+        "cards": 40
+      },
+      {
+        "host": "imf.org",
+        "sources": 4,
+        "cards": 40
+      },
+      {
+        "host": "sec.gov",
+        "sources": 4,
+        "cards": 40
+      },
+      {
+        "host": "acl.gov",
+        "sources": 3,
+        "cards": 30
+      },
+      {
+        "host": "fca.org.uk",
+        "sources": 3,
+        "cards": 30
+      },
+      {
+        "host": "gao.gov",
+        "sources": 3,
+        "cards": 30
+      },
+      {
+        "host": "who.int",
+        "sources": 2,
+        "cards": 20
+      },
+      {
+        "host": "fatf-gafi.org",
+        "sources": 2,
+        "cards": 20
+      },
+      {
+        "host": "unhcr.org",
+        "sources": 2,
+        "cards": 20
+      },
+      {
+        "host": "justice.gov",
+        "sources": 2,
+        "cards": 20
+      },
+      {
+        "host": "uscourts.gov",
+        "sources": 2,
+        "cards": 20
+      },
+      {
+        "host": "samhsa.gov",
+        "sources": 1,
+        "cards": 10
+      },
+      {
+        "host": "unicef.org",
+        "sources": 1,
+        "cards": 10
+      },
+      {
+        "host": "fns.usda.gov",
+        "sources": 1,
+        "cards": 10
+      },
+      {
+        "host": "fsis.usda.gov",
+        "sources": 1,
+        "cards": 10
+      },
+      {
+        "host": "healthcare.gov",
+        "sources": 1,
+        "cards": 10
+      },
+      {
+        "host": "kff.org",
+        "sources": 1,
+        "cards": 10
+      }
+    ],
+    "same_url_transport_recoveries": [
+      {
+        "issue": 178,
+        "source_key": "DOM037-T02",
+        "selected_transport_profile": "browser-compatible"
+      },
+      {
+        "issue": 179,
+        "source_key": "DOM040-T02",
+        "selected_transport_profile": "browser-compatible"
+      },
+      {
+        "issue": 180,
+        "source_key": "DOM044-T03",
+        "selected_transport_profile": "browser-compatible"
+      },
+      {
+        "issue": 182,
+        "source_key": "DOM051-T03",
+        "selected_transport_profile": "browser-compatible"
+      },
+      {
+        "issue": 183,
+        "source_key": "DOM054-T07",
+        "selected_transport_profile": "browser-compatible"
+      },
+      {
+        "issue": 184,
+        "source_key": "DOM055-T01",
+        "selected_transport_profile": "browser-compatible"
+      }
+    ]
+  },
+  "insufficient_coverage": {
+    "cards": 1776,
+    "by_gate": {
+      "comparator": 180,
+      "conflicts-disclosure": 180,
+      "coverage": 180,
+      "method-version": 180,
+      "negative-evidence": 175,
+      "numerator-denominator": 180,
+      "overclaim-drift": 176,
+      "reproducibility": 180,
+      "source-integrity": 180,
+      "time-boundary": 165
+    },
+    "by_extracted_text_length": {
+      "100_to_499_chars": 80,
+      "500_to_1999_chars": 50,
+      "at_least_2000_chars": 1596,
+      "under_100_chars": 50
+    },
+    "by_cause": {
+      "GATE_SPECIFIC_FACETS_MISSING": 1596,
+      "SHORT_EXTRACT_REQUIRES_REVIEW": 50,
+      "VERY_SHORT_OR_SHELL_EXTRACTION": 130
+    },
+    "by_recorded_reason_code": {
+      "EXECUTION_ARTIFACT_MISSING": 1,
+      "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING": 539,
+      "GATE_SPECIFIC_FACETS_MISSING": 978,
+      "SOURCE_INTEGRITY_METADATA_INCOMPLETE": 180,
+      "VERY_SHORT_OR_SHELL_EXTRACTION": 78
+    },
+    "missing_gate_facets": {
+      "comparator:baseline": 177,
+      "comparator:measurement-rule": 167,
+      "comparator:operating-condition": 173,
+      "comparator:population": 178,
+      "comparator:time-window": 160,
+      "conflicts-disclosure:interest-or-support-disclosure": 180,
+      "conflicts-disclosure:responsible-or-interested-party": 170,
+      "coverage:coverage-limits": 178,
+      "coverage:geography": 151,
+      "coverage:inclusion-rules": 173,
+      "coverage:missingness": 179,
+      "coverage:population": 168,
+      "method-version:method": 171,
+      "method-version:quality-controls": 179,
+      "method-version:software-or-version": 180,
+      "method-version:thresholds": 180,
+      "method-version:transformations-or-calibration": 178,
+      "negative-evidence:adverse-or-limiting-evidence": 163,
+      "negative-evidence:explicit-qualification": 169,
+      "numerator-denominator:denominator": 174,
+      "numerator-denominator:exclusions-or-missingness": 179,
+      "numerator-denominator:numerator": 172,
+      "numerator-denominator:numeric-value": 151,
+      "numerator-denominator:rounding-rule": 180,
+      "numerator-denominator:units-or-rate": 172,
+      "overclaim-drift:explicit-qualification": 168,
+      "overclaim-drift:limitation-or-uncertainty": 166,
+      "reproducibility:public-input-access": 178,
+      "reproducibility:rerun-procedure": 177,
+      "source-integrity:official-source-boundary": 163,
+      "time-boundary:date-or-period": 155,
+      "time-boundary:temporal-applicability": 159
+    },
+    "missing_cache_files": 0
+  },
+  "passed_by_gate": {
+    "negative-evidence": 5,
+    "overclaim-drift": 4,
+    "time-boundary": 15
+  },
+  "interpretation": [
+    "One topic source is reused by ten gate cards, so one inaccessible URL produces ten BLOCKED_SOURCE cards.",
+    "A long extraction can still be INSUFFICIENT_COVERAGE when it lacks one or more preregistered gate facets.",
+    "A transport or extraction failure must not be converted into a pass by substituting a source after evaluation."
+  ]
+}

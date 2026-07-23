@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import html
 from html.parser import HTMLParser
@@ -47,6 +48,32 @@ class TextExtractor(HTMLParser):
     def handle_data(self, data: str) -> None:
         if not self.hidden:
             self.parts.append(data)
+
+
+class RecordingRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Preserve the complete redirect provenance for source-integrity review."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.redirect_chain: list[dict[str, object]] = []
+
+    def redirect_request(
+        self,
+        req: urllib.request.Request,
+        fp: object,
+        code: int,
+        msg: str,
+        headers: object,
+        newurl: str,
+    ) -> urllib.request.Request | None:
+        self.redirect_chain.append(
+            {
+                "status": code,
+                "from_url": req.full_url,
+                "to_url": newurl,
+            }
+        )
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
 def html_text(payload: bytes) -> str:
@@ -139,16 +166,25 @@ def main() -> None:
         error = None
         payload = b""
         selected_profile = ""
+        accessed_at_utc = ""
+        redirect_chain: list[dict[str, object]] = []
         for index, headers in enumerate(profiles):
             selected_profile = "browser-compatible" if headers is BROWSER_HEADERS else "claimbound-bot"
             request = urllib.request.Request(url, headers=headers)
+            redirect_handler = RecordingRedirectHandler()
+            opener = urllib.request.build_opener(
+                redirect_handler,
+                urllib.request.HTTPSHandler(context=context),
+            )
             status = 0
             final_url = url
             content_type = ""
             error = None
             payload = b""
+            accessed_at_utc = datetime.now(timezone.utc).isoformat()
+            redirect_chain = []
             try:
-                with urllib.request.urlopen(request, timeout=45, context=context) as response:
+                with opener.open(request, timeout=45) as response:
                     status = response.status
                     final_url = response.geturl()
                     content_type = response.headers.get("Content-Type", "")
@@ -161,9 +197,12 @@ def main() -> None:
                 error = f"HTTPError: {exc}"
             except Exception as exc:
                 error = f"{type(exc).__name__}: {exc}"
+            redirect_chain = redirect_handler.redirect_chain
             attempts.append(
                 {
                     "profile": selected_profile,
+                    "accessed_at_utc": accessed_at_utc,
+                    "redirect_chain": redirect_chain,
                     "http_status": status,
                     "final_url": final_url,
                     "byte_count": len(payload),
@@ -187,6 +226,8 @@ def main() -> None:
             "sha256": hashlib.sha256(payload).hexdigest(),
             "error": error,
             "selected_transport_profile": selected_profile,
+            "accessed_at_utc": accessed_at_utc,
+            "redirect_chain": redirect_chain,
             "attempts": attempts,
         }
         meta_path.write_text(

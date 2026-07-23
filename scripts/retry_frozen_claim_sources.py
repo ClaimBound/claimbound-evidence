@@ -3,13 +3,45 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
 import subprocess
 import tempfile
+from urllib.parse import urljoin
 
 from fetch_frozen_claim_sources import BLOCKED_RETRY_STATUSES, extract_text
+
+
+def parse_redirect_chain(headers: str, selected_url: str) -> list[dict[str, object]]:
+    chain: list[dict[str, object]] = []
+    current_url = selected_url
+    for block in headers.replace("\r\n", "\n").split("\n\n"):
+        lines = [line.strip() for line in block.splitlines() if line.strip()]
+        if not lines or not lines[0].startswith("HTTP/"):
+            continue
+        parts = lines[0].split()
+        status = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else 0
+        location = next(
+            (
+                line.split(":", 1)[1].strip()
+                for line in lines[1:]
+                if line.casefold().startswith("location:")
+            ),
+            None,
+        )
+        if 300 <= status < 400 and location:
+            target = urljoin(current_url, location)
+            chain.append(
+                {
+                    "status": status,
+                    "from_url": current_url,
+                    "to_url": target,
+                }
+            )
+            current_url = target
+    return chain
 
 
 def main() -> None:
@@ -39,13 +71,18 @@ def main() -> None:
                     "error": metadata.get("error"),
                 }
             )
-        with tempfile.NamedTemporaryFile(prefix="claimbound-retry-", suffix=".bin") as target:
+        accessed_at_utc = datetime.now(timezone.utc).isoformat()
+        with (
+            tempfile.NamedTemporaryFile(prefix="claimbound-retry-", suffix=".bin") as target,
+            tempfile.NamedTemporaryFile(prefix="claimbound-retry-", suffix=".headers") as header_target,
+        ):
             completed = subprocess.run(
                 [
                     "curl", "-L", "--compressed", "--max-time", "45", "-sS",
                     "-A", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36",
                     "-H", "Accept: text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8",
                     "-H", "Accept-Language: en-US,en;q=0.9",
+                    "-D", header_target.name,
                     "-o", target.name,
                     "-w", "%{http_code}\n%{url_effective}\n%{content_type}",
                     url,
@@ -59,8 +96,14 @@ def main() -> None:
             final_url = parts[1] if len(parts) > 1 else url
             content_type = parts[2] if len(parts) > 2 else ""
             payload = Path(target.name).read_bytes()
+            redirect_chain = parse_redirect_chain(
+                Path(header_target.name).read_text(encoding="utf-8", errors="replace"),
+                url,
+            )
         attempt = {
             "profile": "curl-browser-compatible",
+            "accessed_at_utc": accessed_at_utc,
+            "redirect_chain": redirect_chain,
             "http_status": status,
             "final_url": final_url,
             "byte_count": len(payload),
@@ -80,6 +123,8 @@ def main() -> None:
                     "sha256": attempt["sha256"],
                     "error": None,
                     "selected_transport_profile": attempt["profile"],
+                    "accessed_at_utc": accessed_at_utc,
+                    "redirect_chain": redirect_chain,
                 }
             )
         metadata["attempts"] = attempts

@@ -49,4 +49,32 @@ def test_numerator_denominator_requires_all_facets() -> None:
         "numerator-denominator",
     )
     assert weak.locator is None
+    assert "denominator" in weak.missing_facets
+    assert "rounding-rule" in weak.missing_facets
     assert complete.locator is not None
+
+
+def test_numerator_denominator_requires_rounding_separately() -> None:
+    decision = locate_gate(
+        "The number of forest loss events was 70 out of 1,000 sites, a rate of 7%; missing sites were excluded.",
+        "forest loss",
+        "numerator-denominator",
+    )
+    assert decision.locator is None
+    assert decision.missing_facets == ("rounding-rule",)
+
+
+def test_conflicts_disclosure_requires_an_actual_disclosure() -> None:
+    institutional_footer = locate_gate(
+        "The forest loss report was published by the national agency.",
+        "forest loss",
+        "conflicts-disclosure",
+    )
+    disclosed = locate_gate(
+        "The forest loss report was authored by the agency. The forest loss report was funded by the agency.",
+        "forest loss",
+        "conflicts-disclosure",
+    )
+    assert institutional_footer.locator is None
+    assert "interest-or-support-disclosure" in institutional_footer.missing_facets
+    assert disclosed.locator is not None

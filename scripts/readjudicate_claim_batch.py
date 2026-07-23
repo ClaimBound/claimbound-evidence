@@ -11,13 +11,18 @@ from typing import Any
 from urllib.parse import urlparse
 
 from build_public_claim_catalog import domains, make_claims, validate
-from claimbound_gate_locator import build_locator_matrix
+from claimbound_gate_locator import locate_gate
 from claimbound_evidence.card_svg_render import render_svg
 from claimbound_evidence.evidence_card import validate_evidence_card
 
 ROOT = Path(__file__).resolve().parents[1]
 CARDS = ROOT / "docs/evidence_cards"
 REGISTRY = ROOT / "docs/registry/evidence_index.json"
+EXECUTION_REQUIRED_GATES = {
+    "numerator-denominator",
+    "method-version",
+    "reproducibility",
+}
 
 
 def redirect_is_drift(selected: str, final: str) -> bool:
@@ -42,6 +47,33 @@ def statistics(entries: list[dict[str, Any]]) -> dict[str, dict[str, int]]:
             ("by_source", "official_source_name"),
         )
     }
+
+
+def extraction_quality(text: str) -> str:
+    length = len(text.strip())
+    if length < 100:
+        return "EMPTY_OR_SHELL_UNDER_100_CHARS"
+    if length < 500:
+        return "VERY_SHORT_UNDER_500_CHARS"
+    if length < 2_000:
+        return "SHORT_UNDER_2000_CHARS"
+    return "TEXT_EXTRACT_AT_LEAST_2000_CHARS"
+
+
+def missing_source_integrity_fields(source: dict[str, Any]) -> list[str]:
+    missing = []
+    if not source.get("accessed_at_utc"):
+        missing.append("accessed-at-utc")
+    redirect_chain = source.get("redirect_chain")
+    if not isinstance(redirect_chain, list):
+        missing.append("redirect-chain")
+    elif source.get("source_url") != source.get("final_url") and not redirect_chain:
+        missing.append("redirect-chain")
+    if not source.get("sha256"):
+        missing.append("response-sha256")
+    if not source.get("source_url") or not source.get("final_url"):
+        missing.append("selected-and-final-url")
+    return missing
 
 
 def main() -> None:
@@ -75,41 +107,86 @@ def main() -> None:
             "text": (args.text_root / f"{key}.txt").read_text(errors="replace"),
         }
 
-    locators = build_locator_matrix(
-        {key: source["text"] for key, source in source_rows.items()},
-        claims,
-    )
     rows: list[dict[str, Any]] = []
     for claim in claims:
         key = f"{claim['domain_code']}-T{claim['topic_index']:02d}"
         source = source_rows[key]
         gate = claim["gate"]
-        locator = locators.get(key, {}).get(gate)
+        gate_decision = locate_gate(source["text"], str(claim["topic"]), str(gate))
+        locator = gate_decision.locator
+        missing_facets = list(gate_decision.missing_facets)
         if source["http_status"] != 200:
             status = "BLOCKED_SOURCE"
             locator = f"HTTP {source['http_status']}"
             basis = "The exact frozen URL was inaccessible; no replacement was selected."
-        elif gate == "source-integrity" and not redirect_is_drift(source["source_url"], source["final_url"]):
-            status = "PASSED_UNDER_PROTOCOL"
-            locator = f"SHA-256 {source['sha256']}; selected={source['source_url']}; final={source['final_url']}"
-            basis = "The frozen manifest records the exact selected URL, final URL, response hash and access boundary."
+            reason_code = (
+                "STALE_OR_INCORRECT_EXACT_URL"
+                if source["http_status"] == 404
+                else "ACCESS_POLICY_OR_ANTI_BOT"
+                if source["http_status"] in {401, 403, 429, 444}
+                else "TRANSPORT_FAILURE"
+                if source["http_status"] == 0
+                else "OTHER_HTTP_FAILURE"
+            )
         elif redirect_is_drift(source["source_url"], source["final_url"]):
             status = "SOURCE_DRIFT"
             locator = f"selected={source['source_url']} canonical={source['final_url']}"
             basis = "The frozen URL resolved outside its selected source boundary."
+            reason_code = "SOURCE_BOUNDARY_DRIFT"
+        elif gate == "source-integrity":
+            missing_facets = missing_source_integrity_fields(source)
+            locator = (
+                f"SHA-256 {source['sha256']}; selected={source['source_url']}; "
+                f"final={source['final_url']}"
+            )
+            if missing_facets:
+                status = "INSUFFICIENT_COVERAGE"
+                basis = (
+                    "The response bytes were frozen, but the source-integrity "
+                    "provenance record is incomplete."
+                )
+                reason_code = "SOURCE_INTEGRITY_METADATA_INCOMPLETE"
+            else:
+                status = "PASSED_UNDER_PROTOCOL"
+                basis = (
+                    "The frozen manifest records the exact selected URL, final URL, "
+                    "redirect chain, access timestamp, and response hash."
+                )
+                reason_code = "SOURCE_BOUNDARY_VERIFIED"
+        elif gate in EXECUTION_REQUIRED_GATES:
+            status = "INSUFFICIENT_COVERAGE"
+            locator = locator or (source["text"].splitlines() or ["empty extraction"])[0]
+            reason_code = (
+                "EXECUTION_ARTIFACT_MISSING"
+                if gate_decision.locator
+                else "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING"
+            )
+            basis = (
+                "Text disclosure alone cannot pass this executable gate; no independent "
+                "numeric reproduction, method execution, or rerun artifact was recorded."
+            )
         elif locator:
             status = "PASSED_UNDER_PROTOCOL"
             basis = "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate."
+            reason_code = "COMPLETE_TEXTUAL_GATE_FACETS"
         else:
             status = "INSUFFICIENT_COVERAGE"
             locator = (source["text"].splitlines() or ["empty extraction"])[0]
             basis = "No topic-specific verbatim sentence satisfied the gate predicate."
+            reason_code = (
+                "VERY_SHORT_OR_SHELL_EXTRACTION"
+                if len(source["text"].strip()) < 500
+                else "GATE_SPECIFIC_FACETS_MISSING"
+            )
         rows.append(
             {
                 **claim,
                 "status": status,
                 "locator": locator,
                 "review_basis": basis,
+                "reason_code": reason_code,
+                "missing_facets": missing_facets,
+                "extraction_quality": extraction_quality(source["text"]),
                 "source_url": source["source_url"],
                 "canonical_url": source["final_url"],
                 "http_status": source["http_status"],
@@ -120,11 +197,15 @@ def main() -> None:
     report_path = ROOT / f"artifacts/claim_batch_{args.issue}_manual_review.json"
     report = {
         "issue_number": args.issue,
-        "protocol_version": f"CB7K-ISSUE-{args.issue}-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+        "protocol_version": f"CB7K-ISSUE-{args.issue}-GATE-AWARE-READJUDICATION-2026-07-23-v3",
         "source_manifest_sha256": hashlib.sha256(args.manifest.read_bytes()).hexdigest(),
         "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
         "raw_payload_committed": False,
-        "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
+        "review_method": (
+            "complete topic-specific textual gate facets with verbatim locators; "
+            "numerator-denominator, method-version, and reproducibility additionally "
+            "require an independent execution artifact"
+        ),
         "result_counts": dict(Counter(row["status"] for row in rows)),
         "cards": rows,
     }
@@ -141,7 +222,15 @@ def main() -> None:
         card = json.loads(path.read_text())
         card["result_status"] = row["status"]
         card["protocol_version"] = report["protocol_version"]
-        card["manual_review"] = row["review_basis"] + f" Locator: {row['locator']}"
+        missing = (
+            f" Missing facets: {', '.join(row['missing_facets'])}."
+            if row["missing_facets"]
+            else ""
+        )
+        card["manual_review"] = (
+            f"{row['review_basis']} Reason: {row['reason_code']}."
+            f"{missing} Extraction: {row['extraction_quality']}. Locator: {row['locator']}"
+        )
         card["sanitized_report_sha256"] = report_sha
         card.pop("baseline_control_summary", None)
         card.pop("block_reason", None)

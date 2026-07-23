@@ -17,23 +17,22 @@
     "Insufficient coverage is not a negative result."
   ],
   "last_verified_date": "2026-07-23",
-  "manual_review": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary. Locator: SHA-256 709381b086f1087f14c291294bccaf0c2b6f4212950cab67ce56370573709df7; selected=https://www.osha.gov/recordkeeping; final=https://www.osha.gov/recordkeeping",
+  "manual_review": "The response bytes were frozen, but the source-integrity provenance record is incomplete. Reason: SOURCE_INTEGRITY_METADATA_INCOMPLETE. Missing facets: accessed-at-utc, redirect-chain. Extraction: TEXT_EXTRACT_AT_LEAST_2000_CHARS. Locator: SHA-256 709381b086f1087f14c291294bccaf0c2b6f4212950cab67ce56370573709df7; selected=https://www.osha.gov/recordkeeping; final=https://www.osha.gov/recordkeeping",
   "official_source_name": "Official public source topic 030-05",
   "official_source_url": "https://www.osha.gov/recordkeeping",
   "operator": "NeoZorK",
   "protocol_id": "CB7K-DOM030-T05-G01",
-  "protocol_version": "CB7K-ISSUE-175-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-175-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "raw_payload_committed": false,
   "raw_payload_manifest": "HTTP 200; canonical https://www.osha.gov/recordkeeping; SHA-256 709381b086f1087f14c291294bccaf0c2b6f4212950cab67ce56370573709df7; source manifest 7b01049771cfdcf4a850f1ae7f89be1a6284b992b62745120ccb199084b7f50f; raw bytes retained locally only",
   "record_type": "source_audit",
   "registry_sequence": 3143,
   "reproduction_level": "not independently reproduced",
-  "result_status": "PASSED_UNDER_PROTOCOL",
+  "result_status": "INSUFFICIENT_COVERAGE",
   "runner_command": "python scripts/claimbound_review_claim_batch_175.py --manifest <local> --raw-root <local> --meta-root <local> --text-root <local> --operator <handle>",
   "sanitized_report_path": "artifacts/claim_batch_175_manual_review.json",
-  "sanitized_report_sha256": "6f94f3a24d7bbae3f453a9b023b634f90385c449c3eef18e3a292dbb06842c55",
+  "sanitized_report_sha256": "c9fbb8ee347faca086a4f9f93124b23ce137be249e568624c4c116396ed793f2",
   "source_rights_note": "Public documentation source; raw response bytes are not committed.",
   "verification_count": 1,
-  "verification_level": "SINGLE_OPERATOR",
-  "baseline_control_summary": "Gate-aware review passed only at audit locator: SHA-256 709381b086f1087f14c291294bccaf0c2b6f4212950cab67ce56370573709df7; selected=https://www.osha.gov/recordkeeping; final=https://www.osha.gov/recordkeeping"
+  "verification_level": "SINGLE_OPERATOR"
 }

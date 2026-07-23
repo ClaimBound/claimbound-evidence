@@ -1,14 +1,14 @@
 {
   "issue_number": 172,
-  "protocol_version": "CB7K-ISSUE-172-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-172-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "source_manifest_sha256": "a040167df9d1fda328c923cdea798c5328eae18703247bdc7319585d9f638ba1",
   "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
   "raw_payload_committed": false,
-  "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
+  "review_method": "complete topic-specific textual gate facets with verbatim locators; numerator-denominator, method-version, and reproducibility additionally require an independent execution artifact",
   "result_counts": {
-    "PASSED_UNDER_PROTOCOL": 11,
-    "INSUFFICIENT_COVERAGE": 89,
-    "BLOCKED_SOURCE": 110
+    "INSUFFICIENT_COVERAGE": 99,
+    "BLOCKED_SOURCE": 110,
+    "PASSED_UNDER_PROTOCOL": 1
   },
   "cards": [
     {
@@ -27,7 +27,7 @@
       "suggested_source_boundary": "trial registrations, protocols, statistical analysis plans and publications",
       "source_url": "https://clinicaltrials.gov/study/NCT04368728",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -37,7 +37,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16; selected=https://clinicaltrials.gov/study/NCT04368728; final=https://clinicaltrials.gov/study/NCT04368728",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -68,7 +74,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -100,6 +116,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -131,6 +156,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -161,7 +192,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -193,6 +233,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -223,7 +272,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -255,6 +310,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -286,6 +347,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -317,6 +384,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -337,7 +410,7 @@
       "suggested_source_boundary": "trial registrations, protocols, statistical analysis plans and publications",
       "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -347,7 +420,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16; selected=https://clinicaltrials.gov/study/NCT04368728?tab=history; final=https://clinicaltrials.gov/study/NCT04368728?tab=history",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -378,7 +457,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -410,6 +499,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -441,6 +539,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -471,7 +575,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -503,6 +616,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -533,7 +655,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -565,6 +693,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -596,6 +730,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -627,6 +767,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -647,7 +793,7 @@
       "suggested_source_boundary": "trial registrations, protocols, statistical analysis plans and publications",
       "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -657,7 +803,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16; selected=https://clinicaltrials.gov/study/NCT04368728?tab=results; final=https://clinicaltrials.gov/study/NCT04368728?tab=results",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -688,7 +840,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -720,6 +882,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -751,6 +922,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -781,7 +958,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -813,6 +999,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -843,7 +1038,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -875,6 +1076,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -906,6 +1113,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -937,6 +1150,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -957,7 +1176,7 @@
       "suggested_source_boundary": "trial registrations, protocols, statistical analysis plans and publications",
       "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -967,7 +1186,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16; selected=https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4; final=https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -998,7 +1223,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1030,6 +1265,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1061,6 +1305,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1091,7 +1341,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1123,6 +1382,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1153,7 +1421,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1185,6 +1459,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1216,6 +1496,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1247,6 +1533,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=history#a3c4",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1267,7 +1559,7 @@
       "suggested_source_boundary": "trial registrations, protocols, statistical analysis plans and publications",
       "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1277,7 +1569,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16; selected=https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures; final=https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1308,7 +1606,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1340,6 +1648,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1371,6 +1688,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1401,7 +1724,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1433,6 +1765,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1463,7 +1804,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1495,6 +1842,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1526,6 +1879,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1557,6 +1916,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#outcome-measures",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1577,7 +1942,7 @@
       "suggested_source_boundary": "trial registrations, protocols, statistical analysis plans and publications",
       "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1587,7 +1952,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16; selected=https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow; final=https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1618,7 +1989,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1650,6 +2031,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1681,6 +2071,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1711,7 +2107,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1743,6 +2148,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1773,7 +2187,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1805,6 +2225,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1836,6 +2262,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1867,6 +2299,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#participant-flow",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1887,7 +2325,7 @@
       "suggested_source_boundary": "trial registrations, protocols, statistical analysis plans and publications",
       "source_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1897,7 +2335,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16; selected=https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics; final=https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1928,7 +2372,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1960,6 +2414,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -1991,6 +2454,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -2021,7 +2490,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -2053,6 +2531,15 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -2083,7 +2570,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -2115,6 +2608,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -2146,6 +2645,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -2177,6 +2682,12 @@
       "raw_payload_committed": false,
       "locator": "ClinicalTrials.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://clinicaltrials.gov/study/NCT04368728?tab=results#baseline-characteristics",
       "http_status": 200,
       "source_sha256": "e6e64acd2df5a4459205bd1aa476d09fc4d6d18d47f4f48fa04a4a1908f73d16"
@@ -2208,6 +2719,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/510k-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2239,6 +2755,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/510k-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2270,6 +2796,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/510k-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2301,6 +2836,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/510k-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2332,6 +2873,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/510k-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2363,6 +2913,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/510k-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2394,6 +2953,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/510k-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2425,6 +2990,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/510k-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2456,6 +3027,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/510k-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2487,6 +3064,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/510k-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2518,6 +3101,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2549,6 +3137,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2580,6 +3178,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2611,6 +3218,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2642,6 +3255,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2673,6 +3295,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2704,6 +3335,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2735,6 +3372,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2766,6 +3409,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2797,6 +3446,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/device-approvals-denials-and-clearances",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2828,6 +3483,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2859,6 +3519,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2890,6 +3560,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2921,6 +3600,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2952,6 +3637,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -2983,6 +3677,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3014,6 +3717,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3045,6 +3754,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3076,6 +3791,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3107,6 +3828,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-recalls",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3127,7 +3854,7 @@
       "suggested_source_boundary": "regulatory clearances, validation reports, recalls and post-market surveillance",
       "source_url": "https://www.fda.gov/medical-devices/medical-device-safety",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3137,7 +3864,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 eafd773b298c85eeda63286dbd29de258bd3a8c09e238d40c4fd444bed3c9c3d; selected=https://www.fda.gov/medical-devices/medical-device-safety; final=https://www.fda.gov/medical-devices/medical-device-safety",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-safety",
       "http_status": 200,
       "source_sha256": "eafd773b298c85eeda63286dbd29de258bd3a8c09e238d40c4fd444bed3c9c3d"
@@ -3168,7 +3901,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Medical Device Safety | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-safety",
       "http_status": 200,
       "source_sha256": "eafd773b298c85eeda63286dbd29de258bd3a8c09e238d40c4fd444bed3c9c3d"
@@ -3200,6 +3943,15 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Safety | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-safety",
       "http_status": 200,
       "source_sha256": "eafd773b298c85eeda63286dbd29de258bd3a8c09e238d40c4fd444bed3c9c3d"
@@ -3231,6 +3983,12 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Safety | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-safety",
       "http_status": 200,
       "source_sha256": "eafd773b298c85eeda63286dbd29de258bd3a8c09e238d40c4fd444bed3c9c3d"
@@ -3261,7 +4019,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Medical Device Safety | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-safety",
       "http_status": 200,
       "source_sha256": "eafd773b298c85eeda63286dbd29de258bd3a8c09e238d40c4fd444bed3c9c3d"
@@ -3293,6 +4060,15 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Safety | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-safety",
       "http_status": 200,
       "source_sha256": "eafd773b298c85eeda63286dbd29de258bd3a8c09e238d40c4fd444bed3c9c3d"
@@ -3323,7 +4099,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Medical Device Safety | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-safety",
       "http_status": 200,
       "source_sha256": "eafd773b298c85eeda63286dbd29de258bd3a8c09e238d40c4fd444bed3c9c3d"
@@ -3355,6 +4137,12 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Safety | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-safety",
       "http_status": 200,
       "source_sha256": "eafd773b298c85eeda63286dbd29de258bd3a8c09e238d40c4fd444bed3c9c3d"
@@ -3386,6 +4174,12 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Safety | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-safety",
       "http_status": 200,
       "source_sha256": "eafd773b298c85eeda63286dbd29de258bd3a8c09e238d40c4fd444bed3c9c3d"
@@ -3417,6 +4211,12 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Safety | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-safety",
       "http_status": 200,
       "source_sha256": "eafd773b298c85eeda63286dbd29de258bd3a8c09e238d40c4fd444bed3c9c3d"
@@ -3448,6 +4248,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3479,6 +4284,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3510,6 +4325,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3541,6 +4365,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3572,6 +4402,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3603,6 +4442,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3634,6 +4482,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3665,6 +4519,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3696,6 +4556,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3727,6 +4593,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-reporting-mdr-how-report-medical-device-problems",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -3747,7 +4619,7 @@
       "suggested_source_boundary": "regulatory clearances, validation reports, recalls and post-market surveillance",
       "source_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3757,7 +4629,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 acbb6851c3cf96fd204b46b813deb5d2353dcbf8a44d4fb0cd22cfe95a907759; selected=https://www.fda.gov/medical-devices/medical-device-development-tools-mddt; final=https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
       "http_status": 200,
       "source_sha256": "acbb6851c3cf96fd204b46b813deb5d2353dcbf8a44d4fb0cd22cfe95a907759"
@@ -3788,7 +4666,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Medical Device Development Tools (MDDT) | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
       "http_status": 200,
       "source_sha256": "acbb6851c3cf96fd204b46b813deb5d2353dcbf8a44d4fb0cd22cfe95a907759"
@@ -3820,6 +4708,15 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Development Tools (MDDT) | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
       "http_status": 200,
       "source_sha256": "acbb6851c3cf96fd204b46b813deb5d2353dcbf8a44d4fb0cd22cfe95a907759"
@@ -3851,6 +4748,12 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Development Tools (MDDT) | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
       "http_status": 200,
       "source_sha256": "acbb6851c3cf96fd204b46b813deb5d2353dcbf8a44d4fb0cd22cfe95a907759"
@@ -3881,7 +4784,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Medical Device Development Tools (MDDT) | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
       "http_status": 200,
       "source_sha256": "acbb6851c3cf96fd204b46b813deb5d2353dcbf8a44d4fb0cd22cfe95a907759"
@@ -3913,6 +4825,15 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Development Tools (MDDT) | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
       "http_status": 200,
       "source_sha256": "acbb6851c3cf96fd204b46b813deb5d2353dcbf8a44d4fb0cd22cfe95a907759"
@@ -3943,7 +4864,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Medical Device Development Tools (MDDT) | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
       "http_status": 200,
       "source_sha256": "acbb6851c3cf96fd204b46b813deb5d2353dcbf8a44d4fb0cd22cfe95a907759"
@@ -3975,6 +4902,12 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Development Tools (MDDT) | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
       "http_status": 200,
       "source_sha256": "acbb6851c3cf96fd204b46b813deb5d2353dcbf8a44d4fb0cd22cfe95a907759"
@@ -4006,6 +4939,12 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Development Tools (MDDT) | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
       "http_status": 200,
       "source_sha256": "acbb6851c3cf96fd204b46b813deb5d2353dcbf8a44d4fb0cd22cfe95a907759"
@@ -4037,6 +4976,12 @@
       "raw_payload_committed": false,
       "locator": "Medical Device Development Tools (MDDT) | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/medical-device-development-tools-mddt",
       "http_status": 200,
       "source_sha256": "acbb6851c3cf96fd204b46b813deb5d2353dcbf8a44d4fb0cd22cfe95a907759"
@@ -4068,6 +5013,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -4099,6 +5049,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -4130,6 +5090,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -4161,6 +5130,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -4192,6 +5167,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -4223,6 +5207,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -4254,6 +5247,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -4285,6 +5284,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -4316,6 +5321,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -4347,6 +5358,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -4378,6 +5395,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4409,6 +5431,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4440,6 +5472,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4471,6 +5512,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4502,6 +5549,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4533,6 +5589,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4564,6 +5629,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4595,6 +5666,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4626,6 +5703,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4657,6 +5740,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/laboratory-quality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4677,7 +5766,7 @@
       "suggested_source_boundary": "regulatory reviews, lab validations, reference-method comparisons and proficiency tests",
       "source_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4687,7 +5776,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 8e6080e2e157ff5b1d9ead31296ad6306de14867333244c402ca7957b67ea661; selected=https://www.cdc.gov/flu/hcp/testing-methods/index.html; final=https://www.cdc.gov/flu/hcp/testing-methods/index.html",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
       "http_status": 200,
       "source_sha256": "8e6080e2e157ff5b1d9ead31296ad6306de14867333244c402ca7957b67ea661"
@@ -4718,7 +5813,14 @@
       ],
       "raw_payload_committed": false,
       "locator": "Overview of Influenza Testing Methods | Influenza (Flu) | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
       "http_status": 200,
       "source_sha256": "8e6080e2e157ff5b1d9ead31296ad6306de14867333244c402ca7957b67ea661"
@@ -4750,6 +5852,14 @@
       "raw_payload_committed": false,
       "locator": "Overview of Influenza Testing Methods | Influenza (Flu) | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
       "http_status": 200,
       "source_sha256": "8e6080e2e157ff5b1d9ead31296ad6306de14867333244c402ca7957b67ea661"
@@ -4781,6 +5891,11 @@
       "raw_payload_committed": false,
       "locator": "Overview of Influenza Testing Methods | Influenza (Flu) | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
       "http_status": 200,
       "source_sha256": "8e6080e2e157ff5b1d9ead31296ad6306de14867333244c402ca7957b67ea661"
@@ -4811,7 +5926,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Overview of Influenza Testing Methods | Influenza (Flu) | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
       "http_status": 200,
       "source_sha256": "8e6080e2e157ff5b1d9ead31296ad6306de14867333244c402ca7957b67ea661"
@@ -4843,6 +5966,13 @@
       "raw_payload_committed": false,
       "locator": "Overview of Influenza Testing Methods | Influenza (Flu) | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "operating-condition",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
       "http_status": 200,
       "source_sha256": "8e6080e2e157ff5b1d9ead31296ad6306de14867333244c402ca7957b67ea661"
@@ -4873,7 +6003,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Overview of Influenza Testing Methods | Influenza (Flu) | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
       "http_status": 200,
       "source_sha256": "8e6080e2e157ff5b1d9ead31296ad6306de14867333244c402ca7957b67ea661"
@@ -4905,6 +6041,11 @@
       "raw_payload_committed": false,
       "locator": "Overview of Influenza Testing Methods | Influenza (Flu) | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
       "http_status": 200,
       "source_sha256": "8e6080e2e157ff5b1d9ead31296ad6306de14867333244c402ca7957b67ea661"
@@ -4936,6 +6077,12 @@
       "raw_payload_committed": false,
       "locator": "Overview of Influenza Testing Methods | Influenza (Flu) | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
       "http_status": 200,
       "source_sha256": "8e6080e2e157ff5b1d9ead31296ad6306de14867333244c402ca7957b67ea661"
@@ -4967,6 +6114,9 @@
       "raw_payload_committed": false,
       "locator": "Sensitivity and specificity of any test for influenza viruses in respiratory specimens might vary by the type of testing used, the time from illness onset to specimen collection, the quality of the specimen collected, the respiratory source of the specimen, handling and processing of the specimen, and the time from specimen collection to testing.",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/flu/hcp/testing-methods/index.html",
       "http_status": 200,
       "source_sha256": "8e6080e2e157ff5b1d9ead31296ad6306de14867333244c402ca7957b67ea661"
@@ -4998,6 +6148,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5029,6 +6184,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5060,6 +6225,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5091,6 +6265,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5122,6 +6302,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5153,6 +6342,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5184,6 +6382,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5215,6 +6419,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5246,6 +6456,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5277,6 +6493,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/covid/hcp/clinical-care/diagnostic-testing/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5308,6 +6530,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -5339,6 +6566,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -5370,6 +6607,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -5401,6 +6647,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -5432,6 +6684,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -5463,6 +6724,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -5494,6 +6764,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -5525,6 +6801,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -5556,6 +6838,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -5587,6 +6875,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fda.gov/medical-devices/in-vitro-diagnostics/covid-19-emergency-use-authorizations-medical-devices",
       "http_status": 404,
       "source_sha256": "a5036b8e2a0a3bc679a1303dd27aad6093097a6067ba06007db73572db296e6f"
@@ -5618,6 +6912,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5649,6 +6948,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5680,6 +6989,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5711,6 +7029,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5742,6 +7066,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5773,6 +7106,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5804,6 +7146,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5835,6 +7183,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5866,6 +7220,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5897,6 +7257,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/testing-foodborne-illness.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5928,6 +7294,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5959,6 +7330,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5990,6 +7371,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6021,6 +7411,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6052,6 +7448,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6083,6 +7488,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6114,6 +7528,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6145,6 +7565,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6176,6 +7602,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6207,6 +7639,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/antimicrobial-resistance/php/lab-resources/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6238,6 +7676,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/initiatives/genomic-surveillance",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -6269,6 +7712,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/initiatives/genomic-surveillance",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -6300,6 +7753,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/initiatives/genomic-surveillance",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -6331,6 +7793,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/initiatives/genomic-surveillance",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -6362,6 +7830,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/initiatives/genomic-surveillance",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -6393,6 +7870,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/initiatives/genomic-surveillance",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -6424,6 +7910,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/initiatives/genomic-surveillance",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -6455,6 +7947,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/initiatives/genomic-surveillance",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -6486,6 +7984,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/initiatives/genomic-surveillance",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -6517,6 +8021,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/initiatives/genomic-surveillance",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"

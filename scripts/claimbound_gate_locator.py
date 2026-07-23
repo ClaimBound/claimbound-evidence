@@ -18,12 +18,15 @@ GATE_FACETS: dict[str, tuple[re.Pattern[str], ...]] = {
         re.compile(r"\b(?:numerator|cases?|events?|count|number)\b", re.I),
         re.compile(r"\b(?:denominator|total|sample|population|out of|per\s+\d+)\b", re.I),
         re.compile(r"(?:%|\bpercent(?:age)?\b|\brate\b|\bratio\b|\bunits?\b)", re.I),
-        re.compile(r"\b(?:exclud|round|missing|unknown|not included)\w*\b", re.I),
+        re.compile(r"\b(?:exclud|missing|unknown|not included)\w*\b", re.I),
+        re.compile(r"\b(?:round|precision|decimal place)\w*\b", re.I),
     ),
     "coverage": (
         re.compile(r"\b(?:population|people|participants?|patients?|species|facilities|sites?|observations?)\b", re.I),
         re.compile(r"\b(?:geograph|region|area|country|countries|state|states|national|global|scope)\w*\b", re.I),
-        re.compile(r"\b(?:includes?|excludes?|eligible|missing|coverage|limitations?)\b", re.I),
+        re.compile(r"\b(?:includes?|eligible|criteria|scope)\b", re.I),
+        re.compile(r"\b(?:missing|unreported|unknown|incomplete)\w*\b", re.I),
+        re.compile(r"\b(?:limit|exclud|not covered|does not cover)\w*\b", re.I),
     ),
     "time-boundary": (
         re.compile(r"\b(?:19|20)\d{2}\b|\b(?:january|february|march|april|may|june|july|august|september|october|november|december)\b", re.I),
@@ -31,11 +34,17 @@ GATE_FACETS: dict[str, tuple[re.Pattern[str], ...]] = {
     ),
     "method-version": (
         re.compile(r"\b(?:method|methodology|standard|protocol|procedure|classification|model)\w*\b", re.I),
-        re.compile(r"\b(?:version|threshold|transform|calibrat|validation|quality control|software|revision)\w*\b", re.I),
+        re.compile(r"\b(?:version|software|revision|release)\w*\b", re.I),
+        re.compile(r"\bthresholds?\b", re.I),
+        re.compile(r"\b(?:transform|adjust|normaliz|calibrat)\w*\b", re.I),
+        re.compile(r"\b(?:quality control|validation|verification)\b", re.I),
     ),
     "comparator": (
         re.compile(r"\b(?:baseline|compar|reference|control|versus|relative to|change from|trend)\b", re.I),
-        re.compile(r"\b(?:population|condition|period|year|region|method|measure|definition)\w*\b", re.I),
+        re.compile(r"\b(?:population|participants?|patients?|sample|cohort)\b", re.I),
+        re.compile(r"\b(?:condition|setting|scenario|operating)\w*\b", re.I),
+        re.compile(r"\b(?:period|year|window|from|through|between)\b", re.I),
+        re.compile(r"\b(?:method|measure|metric|definition|units?)\w*\b", re.I),
     ),
     "reproducibility": (
         re.compile(r"\b(?:download|api|dataset|data available|repository|access tool)\b", re.I),
@@ -46,12 +55,56 @@ GATE_FACETS: dict[str, tuple[re.Pattern[str], ...]] = {
         re.compile(r"\b(?:may|might|cannot|incomplete|subject to)\b", re.I),
     ),
     "conflicts-disclosure": (
-        re.compile(r"\b(?:published by|prepared by|managed by|responsible|agency|department|commission|organization|authority)\b", re.I),
+        re.compile(r"\b(?:sponsor|vendor|author|owner|funder|contractor|agency|department|commission|organization|authority)\w*\b", re.I),
+        re.compile(
+            r"\b(?:conflicts? of interest|financial disclosure|funded by|"
+            r"fund" r"ing (?:was )?provided by|sponsored by|contracted by|"
+            r"supported by|no conflicts?)\b",
+            re.I,
+        ),
     ),
     "overclaim-drift": (
         re.compile(r"\b(?:may|might|cannot|does not|not necessarily|subject to)\b", re.I),
         re.compile(r"\b(?:limit|uncertain|estimate|risk|vary|incomplete|assumption)\w*\b", re.I),
     ),
+}
+
+GATE_FACET_NAMES: dict[str, tuple[str, ...]] = {
+    "source-integrity": ("official-source-boundary",),
+    "numerator-denominator": (
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule",
+    ),
+    "coverage": (
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits",
+    ),
+    "time-boundary": ("date-or-period", "temporal-applicability"),
+    "method-version": (
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls",
+    ),
+    "comparator": (
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule",
+    ),
+    "reproducibility": ("public-input-access", "rerun-procedure"),
+    "negative-evidence": ("adverse-or-limiting-evidence", "explicit-qualification"),
+    "conflicts-disclosure": ("responsible-or-interested-party", "interest-or-support-disclosure"),
+    "overclaim-drift": ("explicit-qualification", "limitation-or-uncertainty"),
 }
 
 STOPWORDS = {
@@ -65,6 +118,7 @@ STOPWORDS = {
 class LocatorDecision:
     locator: str | None
     basis: str
+    missing_facets: tuple[str, ...] = ()
 
 
 def _sentences(text: str) -> list[str]:
@@ -107,8 +161,17 @@ def locate_gate(text: str, topic: str, gate: str) -> LocatorDecision:
             if facet.search(sentence):
                 score = topic_hits * 10 + total_facet_hits * 3 - max(0, len(sentence) - 280) // 40
                 facet_candidates[index].append((score, sentence))
-    if any(not candidates for candidates in facet_candidates):
-        return LocatorDecision(None, "The frozen source did not satisfy every required gate facet.")
+    missing = tuple(
+        name
+        for name, candidates in zip(GATE_FACET_NAMES[gate], facet_candidates, strict=True)
+        if not candidates
+    )
+    if missing:
+        return LocatorDecision(
+            None,
+            "The frozen source did not satisfy every required gate facet.",
+            missing,
+        )
     selected = [max(candidates, key=lambda item: item[0])[1] for candidates in facet_candidates]
     locator = " || ".join(dict.fromkeys(selected))
     return LocatorDecision(locator, "Topic-specific verbatim sentences satisfied every required gate facet.")

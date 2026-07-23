@@ -34,6 +34,10 @@ def _manifest(m, claims, url_count):
             'source_role':m.GATE_SOURCE_ROLES[claim['gate']],
             'selection_provenance':{
                 'discovery_url':f"https://sources.claimbound.org/discovery-{claim['topic_index']}",
+                'discovery_http_status':200,
+                'discovery_sha256':f"{index + 1:064x}",
+                'source_role_locator':f"Role-specific locator for {claim['gate']} evidence.",
+                'shared_source_justification':'This official document contains separate sections for the mapped source roles.',
                 'selected_before_evaluation':True,
             },
             'frozen_parameters':{'version':'v1'},
@@ -60,6 +64,23 @@ def test_execution_manifest_rejects_placeholder_sources(tmp_path):
     for entry in payload['entries']: entry['source_url']=entry['source_url'].replace('sources.claimbound.org','example.org')
     path=tmp_path/'manifest.json'; path.write_text(json.dumps(payload))
     with pytest.raises(SystemExit,match='placeholder source_url forbidden'):
+        m.validate_execution_manifest(path)
+
+def test_execution_manifest_rejects_unverified_discovery(tmp_path):
+    m=mod(); claims=[c for c in m.make_claims(m.domains()) if c['domain_code']=='DOM001']
+    payload=_manifest(m,claims,70)
+    del payload['entries'][0]['selection_provenance']['discovery_sha256']
+    path=tmp_path/'manifest.json'; path.write_text(json.dumps(payload))
+    with pytest.raises(SystemExit,match='discovery_sha256 required'):
+        m.validate_execution_manifest(path)
+
+def test_execution_manifest_rejects_unjustified_multi_role_source(tmp_path):
+    m=mod(); claims=[c for c in m.make_claims(m.domains()) if c['domain_code']=='DOM001']
+    payload=_manifest(m,claims,7)
+    for entry in payload['entries']:
+        entry['selection_provenance'].pop('shared_source_justification')
+    path=tmp_path/'manifest.json'; path.write_text(json.dumps(payload))
+    with pytest.raises(SystemExit,match='shared URL across 10 source roles'):
         m.validate_execution_manifest(path)
 
 def test_execution_manifest_accepts_multiple_frozen_urls_within_one_topic(tmp_path,capsys):

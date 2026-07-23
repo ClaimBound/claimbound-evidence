@@ -1,14 +1,14 @@
 {
   "issue_number": 173,
-  "protocol_version": "CB7K-ISSUE-173-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-173-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "source_manifest_sha256": "afd5b7e03487cdb91985b40cd502eef645dd59954ba176201ff0614626c82fcc",
   "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
   "raw_payload_committed": false,
-  "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
+  "review_method": "complete topic-specific textual gate facets with verbatim locators; numerator-denominator, method-version, and reproducibility additionally require an independent execution artifact",
   "result_counts": {
-    "PASSED_UNDER_PROTOCOL": 14,
-    "INSUFFICIENT_COVERAGE": 116,
-    "BLOCKED_SOURCE": 80
+    "INSUFFICIENT_COVERAGE": 129,
+    "BLOCKED_SOURCE": 80,
+    "PASSED_UNDER_PROTOCOL": 1
   },
   "cards": [
     {
@@ -27,7 +27,7 @@
       "suggested_source_boundary": "regulatory assessments, trial reports, surveillance data and product labels",
       "source_url": "https://www.cdc.gov/vaccines/vac-gen/imz-basics.htm",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -37,7 +37,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 237d7181235fe6b1100c1b063b7644de4cbae12ada4352b8a3ddf36cbfacadf3; selected=https://www.cdc.gov/vaccines/vac-gen/imz-basics.htm; final=https://www.cdc.gov/vaccines/glossary/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/glossary/",
       "http_status": 200,
       "source_sha256": "237d7181235fe6b1100c1b063b7644de4cbae12ada4352b8a3ddf36cbfacadf3"
@@ -68,7 +74,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccine Glossary | Vaccines & Immunizations | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/glossary/",
       "http_status": 200,
       "source_sha256": "237d7181235fe6b1100c1b063b7644de4cbae12ada4352b8a3ddf36cbfacadf3"
@@ -100,6 +116,14 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Glossary | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/glossary/",
       "http_status": 200,
       "source_sha256": "237d7181235fe6b1100c1b063b7644de4cbae12ada4352b8a3ddf36cbfacadf3"
@@ -131,6 +155,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Glossary | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/glossary/",
       "http_status": 200,
       "source_sha256": "237d7181235fe6b1100c1b063b7644de4cbae12ada4352b8a3ddf36cbfacadf3"
@@ -161,7 +191,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccine Glossary | Vaccines & Immunizations | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/glossary/",
       "http_status": 200,
       "source_sha256": "237d7181235fe6b1100c1b063b7644de4cbae12ada4352b8a3ddf36cbfacadf3"
@@ -193,6 +232,14 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Glossary | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/glossary/",
       "http_status": 200,
       "source_sha256": "237d7181235fe6b1100c1b063b7644de4cbae12ada4352b8a3ddf36cbfacadf3"
@@ -223,7 +270,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccine Glossary | Vaccines & Immunizations | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/glossary/",
       "http_status": 200,
       "source_sha256": "237d7181235fe6b1100c1b063b7644de4cbae12ada4352b8a3ddf36cbfacadf3"
@@ -255,6 +308,11 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Glossary | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/glossary/",
       "http_status": 200,
       "source_sha256": "237d7181235fe6b1100c1b063b7644de4cbae12ada4352b8a3ddf36cbfacadf3"
@@ -286,6 +344,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Glossary | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/glossary/",
       "http_status": 200,
       "source_sha256": "237d7181235fe6b1100c1b063b7644de4cbae12ada4352b8a3ddf36cbfacadf3"
@@ -317,6 +381,11 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Glossary | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/glossary/",
       "http_status": 200,
       "source_sha256": "237d7181235fe6b1100c1b063b7644de4cbae12ada4352b8a3ddf36cbfacadf3"
@@ -337,7 +406,7 @@
       "suggested_source_boundary": "regulatory assessments, trial reports, surveillance data and product labels",
       "source_url": "https://www.cdc.gov/vaccines/acip/recs/grade/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -347,7 +416,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 74f417768e45b69ea8b43fee9e7182b1b7de85c1ce85919d6287101c95725a88; selected=https://www.cdc.gov/vaccines/acip/recs/grade/; final=https://www.cdc.gov/acip/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip/",
       "http_status": 200,
       "source_sha256": "74f417768e45b69ea8b43fee9e7182b1b7de85c1ce85919d6287101c95725a88"
@@ -378,7 +453,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Advisory Committee on Immunization Practices (ACIP) | ACIP | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip/",
       "http_status": 200,
       "source_sha256": "74f417768e45b69ea8b43fee9e7182b1b7de85c1ce85919d6287101c95725a88"
@@ -410,6 +495,15 @@
       "raw_payload_committed": false,
       "locator": "Advisory Committee on Immunization Practices (ACIP) | ACIP | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip/",
       "http_status": 200,
       "source_sha256": "74f417768e45b69ea8b43fee9e7182b1b7de85c1ce85919d6287101c95725a88"
@@ -441,6 +535,12 @@
       "raw_payload_committed": false,
       "locator": "Advisory Committee on Immunization Practices (ACIP) | ACIP | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip/",
       "http_status": 200,
       "source_sha256": "74f417768e45b69ea8b43fee9e7182b1b7de85c1ce85919d6287101c95725a88"
@@ -471,7 +571,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Advisory Committee on Immunization Practices (ACIP) | ACIP | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip/",
       "http_status": 200,
       "source_sha256": "74f417768e45b69ea8b43fee9e7182b1b7de85c1ce85919d6287101c95725a88"
@@ -503,6 +612,15 @@
       "raw_payload_committed": false,
       "locator": "Advisory Committee on Immunization Practices (ACIP) | ACIP | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip/",
       "http_status": 200,
       "source_sha256": "74f417768e45b69ea8b43fee9e7182b1b7de85c1ce85919d6287101c95725a88"
@@ -533,7 +651,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Advisory Committee on Immunization Practices (ACIP) | ACIP | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip/",
       "http_status": 200,
       "source_sha256": "74f417768e45b69ea8b43fee9e7182b1b7de85c1ce85919d6287101c95725a88"
@@ -565,6 +689,12 @@
       "raw_payload_committed": false,
       "locator": "Advisory Committee on Immunization Practices (ACIP) | ACIP | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip/",
       "http_status": 200,
       "source_sha256": "74f417768e45b69ea8b43fee9e7182b1b7de85c1ce85919d6287101c95725a88"
@@ -596,6 +726,12 @@
       "raw_payload_committed": false,
       "locator": "Advisory Committee on Immunization Practices (ACIP) | ACIP | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip/",
       "http_status": 200,
       "source_sha256": "74f417768e45b69ea8b43fee9e7182b1b7de85c1ce85919d6287101c95725a88"
@@ -627,6 +763,12 @@
       "raw_payload_committed": false,
       "locator": "Advisory Committee on Immunization Practices (ACIP) | ACIP | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip/",
       "http_status": 200,
       "source_sha256": "74f417768e45b69ea8b43fee9e7182b1b7de85c1ce85919d6287101c95725a88"
@@ -647,7 +789,7 @@
       "suggested_source_boundary": "regulatory assessments, trial reports, surveillance data and product labels",
       "source_url": "https://www.cdc.gov/vaccinesafety/ensuringsafety/monitoring/index.html",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -657,7 +799,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 3b23b6e7c72797f3cc81f6ed0a566ee3fcf28446eb7775402265d8ce0d13c036; selected=https://www.cdc.gov/vaccinesafety/ensuringsafety/monitoring/index.html; final=https://www.cdc.gov/vaccine-safety/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccine-safety/",
       "http_status": 200,
       "source_sha256": "3b23b6e7c72797f3cc81f6ed0a566ee3fcf28446eb7775402265d8ce0d13c036"
@@ -688,7 +836,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccine Safety | Vaccine Safety | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccine-safety/",
       "http_status": 200,
       "source_sha256": "3b23b6e7c72797f3cc81f6ed0a566ee3fcf28446eb7775402265d8ce0d13c036"
@@ -720,6 +878,15 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Safety | Vaccine Safety | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccine-safety/",
       "http_status": 200,
       "source_sha256": "3b23b6e7c72797f3cc81f6ed0a566ee3fcf28446eb7775402265d8ce0d13c036"
@@ -751,6 +918,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Safety | Vaccine Safety | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccine-safety/",
       "http_status": 200,
       "source_sha256": "3b23b6e7c72797f3cc81f6ed0a566ee3fcf28446eb7775402265d8ce0d13c036"
@@ -781,7 +954,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccine Safety | Vaccine Safety | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccine-safety/",
       "http_status": 200,
       "source_sha256": "3b23b6e7c72797f3cc81f6ed0a566ee3fcf28446eb7775402265d8ce0d13c036"
@@ -813,6 +995,15 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Safety | Vaccine Safety | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccine-safety/",
       "http_status": 200,
       "source_sha256": "3b23b6e7c72797f3cc81f6ed0a566ee3fcf28446eb7775402265d8ce0d13c036"
@@ -843,7 +1034,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccine Safety | Vaccine Safety | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccine-safety/",
       "http_status": 200,
       "source_sha256": "3b23b6e7c72797f3cc81f6ed0a566ee3fcf28446eb7775402265d8ce0d13c036"
@@ -875,6 +1072,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Safety | Vaccine Safety | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccine-safety/",
       "http_status": 200,
       "source_sha256": "3b23b6e7c72797f3cc81f6ed0a566ee3fcf28446eb7775402265d8ce0d13c036"
@@ -906,6 +1109,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Safety | Vaccine Safety | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccine-safety/",
       "http_status": 200,
       "source_sha256": "3b23b6e7c72797f3cc81f6ed0a566ee3fcf28446eb7775402265d8ce0d13c036"
@@ -937,6 +1146,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccine Safety | Vaccine Safety | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccine-safety/",
       "http_status": 200,
       "source_sha256": "3b23b6e7c72797f3cc81f6ed0a566ee3fcf28446eb7775402265d8ce0d13c036"
@@ -957,7 +1172,7 @@
       "suggested_source_boundary": "regulatory assessments, trial reports, surveillance data and product labels",
       "source_url": "https://www.cdc.gov/vaccines/hcp/acip-recs/general-recs.html",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -967,7 +1182,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 1bf18147a318a068f338a3248aa7bab20c3d6fb6f3aa17fb7a7fe70cccf285f1; selected=https://www.cdc.gov/vaccines/hcp/acip-recs/general-recs.html; final=https://www.cdc.gov/acip-recs/site.html",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip-recs/site.html",
       "http_status": 200,
       "source_sha256": "1bf18147a318a068f338a3248aa7bab20c3d6fb6f3aa17fb7a7fe70cccf285f1"
@@ -998,7 +1219,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Site Index | ACIP Recommendations | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip-recs/site.html",
       "http_status": 200,
       "source_sha256": "1bf18147a318a068f338a3248aa7bab20c3d6fb6f3aa17fb7a7fe70cccf285f1"
@@ -1030,6 +1261,15 @@
       "raw_payload_committed": false,
       "locator": "Site Index | ACIP Recommendations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip-recs/site.html",
       "http_status": 200,
       "source_sha256": "1bf18147a318a068f338a3248aa7bab20c3d6fb6f3aa17fb7a7fe70cccf285f1"
@@ -1061,6 +1301,12 @@
       "raw_payload_committed": false,
       "locator": "Site Index | ACIP Recommendations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip-recs/site.html",
       "http_status": 200,
       "source_sha256": "1bf18147a318a068f338a3248aa7bab20c3d6fb6f3aa17fb7a7fe70cccf285f1"
@@ -1091,7 +1337,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Site Index | ACIP Recommendations | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip-recs/site.html",
       "http_status": 200,
       "source_sha256": "1bf18147a318a068f338a3248aa7bab20c3d6fb6f3aa17fb7a7fe70cccf285f1"
@@ -1123,6 +1378,15 @@
       "raw_payload_committed": false,
       "locator": "Site Index | ACIP Recommendations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip-recs/site.html",
       "http_status": 200,
       "source_sha256": "1bf18147a318a068f338a3248aa7bab20c3d6fb6f3aa17fb7a7fe70cccf285f1"
@@ -1153,7 +1417,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Site Index | ACIP Recommendations | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip-recs/site.html",
       "http_status": 200,
       "source_sha256": "1bf18147a318a068f338a3248aa7bab20c3d6fb6f3aa17fb7a7fe70cccf285f1"
@@ -1185,6 +1455,12 @@
       "raw_payload_committed": false,
       "locator": "Site Index | ACIP Recommendations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip-recs/site.html",
       "http_status": 200,
       "source_sha256": "1bf18147a318a068f338a3248aa7bab20c3d6fb6f3aa17fb7a7fe70cccf285f1"
@@ -1216,6 +1492,12 @@
       "raw_payload_committed": false,
       "locator": "Site Index | ACIP Recommendations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip-recs/site.html",
       "http_status": 200,
       "source_sha256": "1bf18147a318a068f338a3248aa7bab20c3d6fb6f3aa17fb7a7fe70cccf285f1"
@@ -1247,6 +1529,12 @@
       "raw_payload_committed": false,
       "locator": "Site Index | ACIP Recommendations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/acip-recs/site.html",
       "http_status": 200,
       "source_sha256": "1bf18147a318a068f338a3248aa7bab20c3d6fb6f3aa17fb7a7fe70cccf285f1"
@@ -1267,7 +1555,7 @@
       "suggested_source_boundary": "regulatory assessments, trial reports, surveillance data and product labels",
       "source_url": "https://www.cdc.gov/vaccines/vpd/vaccines-diseases.html",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1277,7 +1565,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 27c831b1543b47e81e8e87eaa28b6b9cad4e1b57582f6502e6087aa0e947af4a; selected=https://www.cdc.gov/vaccines/vpd/vaccines-diseases.html; final=https://www.cdc.gov/vaccines/hcp/by-disease/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/hcp/by-disease/",
       "http_status": 200,
       "source_sha256": "27c831b1543b47e81e8e87eaa28b6b9cad4e1b57582f6502e6087aa0e947af4a"
@@ -1308,7 +1602,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccines By Disease | Vaccines & Immunizations | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/hcp/by-disease/",
       "http_status": 200,
       "source_sha256": "27c831b1543b47e81e8e87eaa28b6b9cad4e1b57582f6502e6087aa0e947af4a"
@@ -1340,6 +1644,15 @@
       "raw_payload_committed": false,
       "locator": "Vaccines By Disease | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/hcp/by-disease/",
       "http_status": 200,
       "source_sha256": "27c831b1543b47e81e8e87eaa28b6b9cad4e1b57582f6502e6087aa0e947af4a"
@@ -1371,6 +1684,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccines By Disease | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/hcp/by-disease/",
       "http_status": 200,
       "source_sha256": "27c831b1543b47e81e8e87eaa28b6b9cad4e1b57582f6502e6087aa0e947af4a"
@@ -1401,7 +1720,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccines By Disease | Vaccines & Immunizations | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/hcp/by-disease/",
       "http_status": 200,
       "source_sha256": "27c831b1543b47e81e8e87eaa28b6b9cad4e1b57582f6502e6087aa0e947af4a"
@@ -1433,6 +1761,15 @@
       "raw_payload_committed": false,
       "locator": "Vaccines By Disease | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/hcp/by-disease/",
       "http_status": 200,
       "source_sha256": "27c831b1543b47e81e8e87eaa28b6b9cad4e1b57582f6502e6087aa0e947af4a"
@@ -1463,7 +1800,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccines By Disease | Vaccines & Immunizations | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/hcp/by-disease/",
       "http_status": 200,
       "source_sha256": "27c831b1543b47e81e8e87eaa28b6b9cad4e1b57582f6502e6087aa0e947af4a"
@@ -1495,6 +1838,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccines By Disease | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/hcp/by-disease/",
       "http_status": 200,
       "source_sha256": "27c831b1543b47e81e8e87eaa28b6b9cad4e1b57582f6502e6087aa0e947af4a"
@@ -1526,6 +1875,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccines By Disease | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/hcp/by-disease/",
       "http_status": 200,
       "source_sha256": "27c831b1543b47e81e8e87eaa28b6b9cad4e1b57582f6502e6087aa0e947af4a"
@@ -1557,6 +1912,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccines By Disease | Vaccines & Immunizations | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines/hcp/by-disease/",
       "http_status": 200,
       "source_sha256": "27c831b1543b47e81e8e87eaa28b6b9cad4e1b57582f6502e6087aa0e947af4a"
@@ -1577,7 +1938,7 @@
       "suggested_source_boundary": "regulatory assessments, trial reports, surveillance data and product labels",
       "source_url": "https://www.cdc.gov/vaccines/parents/why-vaccinate/index.html",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1587,7 +1948,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 c332e45a05b814668dc63ea2966ea30588b664cb8aad2753a71a961506af726d; selected=https://www.cdc.gov/vaccines/parents/why-vaccinate/index.html; final=https://www.cdc.gov/vaccines-children/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines-children/",
       "http_status": 200,
       "source_sha256": "c332e45a05b814668dc63ea2966ea30588b664cb8aad2753a71a961506af726d"
@@ -1618,7 +1985,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccines for Your Children | Childhood Vaccines | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines-children/",
       "http_status": 200,
       "source_sha256": "c332e45a05b814668dc63ea2966ea30588b664cb8aad2753a71a961506af726d"
@@ -1650,6 +2027,15 @@
       "raw_payload_committed": false,
       "locator": "Vaccines for Your Children | Childhood Vaccines | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines-children/",
       "http_status": 200,
       "source_sha256": "c332e45a05b814668dc63ea2966ea30588b664cb8aad2753a71a961506af726d"
@@ -1681,6 +2067,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccines for Your Children | Childhood Vaccines | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines-children/",
       "http_status": 200,
       "source_sha256": "c332e45a05b814668dc63ea2966ea30588b664cb8aad2753a71a961506af726d"
@@ -1711,7 +2103,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccines for Your Children | Childhood Vaccines | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines-children/",
       "http_status": 200,
       "source_sha256": "c332e45a05b814668dc63ea2966ea30588b664cb8aad2753a71a961506af726d"
@@ -1743,6 +2144,15 @@
       "raw_payload_committed": false,
       "locator": "Vaccines for Your Children | Childhood Vaccines | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines-children/",
       "http_status": 200,
       "source_sha256": "c332e45a05b814668dc63ea2966ea30588b664cb8aad2753a71a961506af726d"
@@ -1773,7 +2183,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Vaccines for Your Children | Childhood Vaccines | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines-children/",
       "http_status": 200,
       "source_sha256": "c332e45a05b814668dc63ea2966ea30588b664cb8aad2753a71a961506af726d"
@@ -1805,6 +2221,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccines for Your Children | Childhood Vaccines | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines-children/",
       "http_status": 200,
       "source_sha256": "c332e45a05b814668dc63ea2966ea30588b664cb8aad2753a71a961506af726d"
@@ -1836,6 +2258,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccines for Your Children | Childhood Vaccines | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines-children/",
       "http_status": 200,
       "source_sha256": "c332e45a05b814668dc63ea2966ea30588b664cb8aad2753a71a961506af726d"
@@ -1867,6 +2295,12 @@
       "raw_payload_committed": false,
       "locator": "Vaccines for Your Children | Childhood Vaccines | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/vaccines-children/",
       "http_status": 200,
       "source_sha256": "c332e45a05b814668dc63ea2966ea30588b664cb8aad2753a71a961506af726d"
@@ -1898,6 +2332,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/regulation-prequalification/regulation-and-safety/pharmacovigilance/vaccine-safety-net",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -1929,6 +2368,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/regulation-prequalification/regulation-and-safety/pharmacovigilance/vaccine-safety-net",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -1960,6 +2409,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/regulation-prequalification/regulation-and-safety/pharmacovigilance/vaccine-safety-net",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -1991,6 +2449,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/regulation-prequalification/regulation-and-safety/pharmacovigilance/vaccine-safety-net",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -2022,6 +2486,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/regulation-prequalification/regulation-and-safety/pharmacovigilance/vaccine-safety-net",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -2053,6 +2526,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/regulation-prequalification/regulation-and-safety/pharmacovigilance/vaccine-safety-net",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -2084,6 +2566,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/regulation-prequalification/regulation-and-safety/pharmacovigilance/vaccine-safety-net",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -2115,6 +2603,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/regulation-prequalification/regulation-and-safety/pharmacovigilance/vaccine-safety-net",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -2146,6 +2640,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/regulation-prequalification/regulation-and-safety/pharmacovigilance/vaccine-safety-net",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -2177,6 +2677,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/regulation-prequalification/regulation-and-safety/pharmacovigilance/vaccine-safety-net",
       "http_status": 404,
       "source_sha256": "57bf2b22449c8d05e018ebd15d42339c01e3f16d3200486d5c63e57e4f795d23"
@@ -2197,7 +2703,7 @@
       "suggested_source_boundary": "clinical guidelines, service statistics, trial reports and safety data",
       "source_url": "https://www.nimh.nih.gov/health/statistics/mental-illness",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2207,7 +2713,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5; selected=https://www.nimh.nih.gov/health/statistics/mental-illness; final=https://www.nimh.nih.gov/health/statistics/mental-illness",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2238,7 +2750,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2270,6 +2792,15 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2301,6 +2832,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2331,7 +2868,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2363,6 +2908,15 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2393,7 +2947,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2425,6 +2985,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2456,6 +3022,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2487,6 +3059,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2507,7 +3085,7 @@
       "suggested_source_boundary": "clinical guidelines, service statistics, trial reports and safety data",
       "source_url": "https://www.nimh.nih.gov/health/statistics/suicide",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2517,7 +3095,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 5d654c4851b6869b270cfda853a10a30f325a2a0ef76d69dafec027e0dab5409; selected=https://www.nimh.nih.gov/health/statistics/suicide; final=https://www.nimh.nih.gov/health/statistics/suicide",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/suicide",
       "http_status": 200,
       "source_sha256": "5d654c4851b6869b270cfda853a10a30f325a2a0ef76d69dafec027e0dab5409"
@@ -2548,7 +3132,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Suicide - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/suicide",
       "http_status": 200,
       "source_sha256": "5d654c4851b6869b270cfda853a10a30f325a2a0ef76d69dafec027e0dab5409"
@@ -2580,6 +3174,15 @@
       "raw_payload_committed": false,
       "locator": "Suicide - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/suicide",
       "http_status": 200,
       "source_sha256": "5d654c4851b6869b270cfda853a10a30f325a2a0ef76d69dafec027e0dab5409"
@@ -2611,6 +3214,12 @@
       "raw_payload_committed": false,
       "locator": "Suicide - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/suicide",
       "http_status": 200,
       "source_sha256": "5d654c4851b6869b270cfda853a10a30f325a2a0ef76d69dafec027e0dab5409"
@@ -2641,7 +3250,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Suicide - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/suicide",
       "http_status": 200,
       "source_sha256": "5d654c4851b6869b270cfda853a10a30f325a2a0ef76d69dafec027e0dab5409"
@@ -2673,6 +3291,15 @@
       "raw_payload_committed": false,
       "locator": "Suicide - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/suicide",
       "http_status": 200,
       "source_sha256": "5d654c4851b6869b270cfda853a10a30f325a2a0ef76d69dafec027e0dab5409"
@@ -2703,7 +3330,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Suicide - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/suicide",
       "http_status": 200,
       "source_sha256": "5d654c4851b6869b270cfda853a10a30f325a2a0ef76d69dafec027e0dab5409"
@@ -2735,6 +3368,12 @@
       "raw_payload_committed": false,
       "locator": "Suicide - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/suicide",
       "http_status": 200,
       "source_sha256": "5d654c4851b6869b270cfda853a10a30f325a2a0ef76d69dafec027e0dab5409"
@@ -2766,6 +3405,12 @@
       "raw_payload_committed": false,
       "locator": "Suicide - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/suicide",
       "http_status": 200,
       "source_sha256": "5d654c4851b6869b270cfda853a10a30f325a2a0ef76d69dafec027e0dab5409"
@@ -2797,6 +3442,12 @@
       "raw_payload_committed": false,
       "locator": "Suicide - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/suicide",
       "http_status": 200,
       "source_sha256": "5d654c4851b6869b270cfda853a10a30f325a2a0ef76d69dafec027e0dab5409"
@@ -2817,7 +3468,7 @@
       "suggested_source_boundary": "clinical guidelines, service statistics, trial reports and safety data",
       "source_url": "https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2827,7 +3478,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5; selected=https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556; final=https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2858,7 +3515,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2890,6 +3557,15 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2921,6 +3597,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2951,7 +3633,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -2983,6 +3674,15 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -3013,7 +3713,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -3045,6 +3751,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -3076,6 +3788,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -3107,6 +3825,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Illness - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/statistics/mental-illness#part_2556",
       "http_status": 200,
       "source_sha256": "ed79805383d813f2d313380dbb6ae05b2bc037d48d90716bf15de12d61b6aad5"
@@ -3127,7 +3851,7 @@
       "suggested_source_boundary": "clinical guidelines, service statistics, trial reports and safety data",
       "source_url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3137,7 +3861,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 633d66a7de6d542fce59638ce045433b2d5e4f41e58bef3c2093f9c8c25ad5e3; selected=https://www.nimh.nih.gov/health/topics/psychotherapies; final=https://www.nimh.nih.gov/health/topics/psychotherapies",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
       "http_status": 200,
       "source_sha256": "633d66a7de6d542fce59638ce045433b2d5e4f41e58bef3c2093f9c8c25ad5e3"
@@ -3168,7 +3898,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Psychotherapies - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
       "http_status": 200,
       "source_sha256": "633d66a7de6d542fce59638ce045433b2d5e4f41e58bef3c2093f9c8c25ad5e3"
@@ -3200,6 +3939,15 @@
       "raw_payload_committed": false,
       "locator": "Psychotherapies - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
       "http_status": 200,
       "source_sha256": "633d66a7de6d542fce59638ce045433b2d5e4f41e58bef3c2093f9c8c25ad5e3"
@@ -3231,6 +3979,12 @@
       "raw_payload_committed": false,
       "locator": "Psychotherapies - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
       "http_status": 200,
       "source_sha256": "633d66a7de6d542fce59638ce045433b2d5e4f41e58bef3c2093f9c8c25ad5e3"
@@ -3261,7 +4015,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Psychotherapies - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
       "http_status": 200,
       "source_sha256": "633d66a7de6d542fce59638ce045433b2d5e4f41e58bef3c2093f9c8c25ad5e3"
@@ -3293,6 +4056,14 @@
       "raw_payload_committed": false,
       "locator": "Psychotherapies - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
       "http_status": 200,
       "source_sha256": "633d66a7de6d542fce59638ce045433b2d5e4f41e58bef3c2093f9c8c25ad5e3"
@@ -3323,7 +4094,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Psychotherapies - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
       "http_status": 200,
       "source_sha256": "633d66a7de6d542fce59638ce045433b2d5e4f41e58bef3c2093f9c8c25ad5e3"
@@ -3355,6 +4132,12 @@
       "raw_payload_committed": false,
       "locator": "Psychotherapies - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
       "http_status": 200,
       "source_sha256": "633d66a7de6d542fce59638ce045433b2d5e4f41e58bef3c2093f9c8c25ad5e3"
@@ -3386,6 +4169,12 @@
       "raw_payload_committed": false,
       "locator": "Psychotherapies - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
       "http_status": 200,
       "source_sha256": "633d66a7de6d542fce59638ce045433b2d5e4f41e58bef3c2093f9c8c25ad5e3"
@@ -3417,6 +4206,12 @@
       "raw_payload_committed": false,
       "locator": "Psychotherapies - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/psychotherapies",
       "http_status": 200,
       "source_sha256": "633d66a7de6d542fce59638ce045433b2d5e4f41e58bef3c2093f9c8c25ad5e3"
@@ -3437,7 +4232,7 @@
       "suggested_source_boundary": "clinical guidelines, service statistics, trial reports and safety data",
       "source_url": "https://www.nimh.nih.gov/health/topics/mental-health-medications",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3447,7 +4242,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 f2508b6eb59f9d0b794f9823084a63a39e0a57bd484ca7a39cc9d1a1e8d5fba9; selected=https://www.nimh.nih.gov/health/topics/mental-health-medications; final=https://www.nimh.nih.gov/health/topics/mental-health-medications",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/mental-health-medications",
       "http_status": 200,
       "source_sha256": "f2508b6eb59f9d0b794f9823084a63a39e0a57bd484ca7a39cc9d1a1e8d5fba9"
@@ -3478,7 +4279,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental Health Medications - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/mental-health-medications",
       "http_status": 200,
       "source_sha256": "f2508b6eb59f9d0b794f9823084a63a39e0a57bd484ca7a39cc9d1a1e8d5fba9"
@@ -3510,6 +4321,15 @@
       "raw_payload_committed": false,
       "locator": "Mental Health Medications - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/mental-health-medications",
       "http_status": 200,
       "source_sha256": "f2508b6eb59f9d0b794f9823084a63a39e0a57bd484ca7a39cc9d1a1e8d5fba9"
@@ -3541,6 +4361,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Health Medications - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/mental-health-medications",
       "http_status": 200,
       "source_sha256": "f2508b6eb59f9d0b794f9823084a63a39e0a57bd484ca7a39cc9d1a1e8d5fba9"
@@ -3571,7 +4397,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental Health Medications - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/mental-health-medications",
       "http_status": 200,
       "source_sha256": "f2508b6eb59f9d0b794f9823084a63a39e0a57bd484ca7a39cc9d1a1e8d5fba9"
@@ -3603,6 +4438,15 @@
       "raw_payload_committed": false,
       "locator": "Mental Health Medications - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/mental-health-medications",
       "http_status": 200,
       "source_sha256": "f2508b6eb59f9d0b794f9823084a63a39e0a57bd484ca7a39cc9d1a1e8d5fba9"
@@ -3633,7 +4477,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental Health Medications - National Institute of Mental Health (NIMH)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/mental-health-medications",
       "http_status": 200,
       "source_sha256": "f2508b6eb59f9d0b794f9823084a63a39e0a57bd484ca7a39cc9d1a1e8d5fba9"
@@ -3665,6 +4515,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Health Medications - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/mental-health-medications",
       "http_status": 200,
       "source_sha256": "f2508b6eb59f9d0b794f9823084a63a39e0a57bd484ca7a39cc9d1a1e8d5fba9"
@@ -3696,6 +4552,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Health Medications - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/mental-health-medications",
       "http_status": 200,
       "source_sha256": "f2508b6eb59f9d0b794f9823084a63a39e0a57bd484ca7a39cc9d1a1e8d5fba9"
@@ -3727,6 +4589,12 @@
       "raw_payload_committed": false,
       "locator": "Mental Health Medications - National Institute of Mental Health (NIMH)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nimh.nih.gov/health/topics/mental-health-medications",
       "http_status": 200,
       "source_sha256": "f2508b6eb59f9d0b794f9823084a63a39e0a57bd484ca7a39cc9d1a1e8d5fba9"
@@ -3758,6 +4626,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.samhsa.gov/data/data-we-collect/national-survey-drug-use-and-health-nsduh",
       "http_status": 403,
       "source_sha256": "8b73b6ccd7091d6d9d23adaab2baae3c4abf6de06df8efdd03215ee9376fa035"
@@ -3789,6 +4662,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.samhsa.gov/data/data-we-collect/national-survey-drug-use-and-health-nsduh",
       "http_status": 403,
       "source_sha256": "8b73b6ccd7091d6d9d23adaab2baae3c4abf6de06df8efdd03215ee9376fa035"
@@ -3820,6 +4703,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.samhsa.gov/data/data-we-collect/national-survey-drug-use-and-health-nsduh",
       "http_status": 403,
       "source_sha256": "8b73b6ccd7091d6d9d23adaab2baae3c4abf6de06df8efdd03215ee9376fa035"
@@ -3851,6 +4743,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.samhsa.gov/data/data-we-collect/national-survey-drug-use-and-health-nsduh",
       "http_status": 403,
       "source_sha256": "8b73b6ccd7091d6d9d23adaab2baae3c4abf6de06df8efdd03215ee9376fa035"
@@ -3882,6 +4780,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.samhsa.gov/data/data-we-collect/national-survey-drug-use-and-health-nsduh",
       "http_status": 403,
       "source_sha256": "8b73b6ccd7091d6d9d23adaab2baae3c4abf6de06df8efdd03215ee9376fa035"
@@ -3913,6 +4820,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.samhsa.gov/data/data-we-collect/national-survey-drug-use-and-health-nsduh",
       "http_status": 403,
       "source_sha256": "8b73b6ccd7091d6d9d23adaab2baae3c4abf6de06df8efdd03215ee9376fa035"
@@ -3944,6 +4860,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.samhsa.gov/data/data-we-collect/national-survey-drug-use-and-health-nsduh",
       "http_status": 403,
       "source_sha256": "8b73b6ccd7091d6d9d23adaab2baae3c4abf6de06df8efdd03215ee9376fa035"
@@ -3975,6 +4897,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.samhsa.gov/data/data-we-collect/national-survey-drug-use-and-health-nsduh",
       "http_status": 403,
       "source_sha256": "8b73b6ccd7091d6d9d23adaab2baae3c4abf6de06df8efdd03215ee9376fa035"
@@ -4006,6 +4934,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.samhsa.gov/data/data-we-collect/national-survey-drug-use-and-health-nsduh",
       "http_status": 403,
       "source_sha256": "8b73b6ccd7091d6d9d23adaab2baae3c4abf6de06df8efdd03215ee9376fa035"
@@ -4037,6 +4971,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.samhsa.gov/data/data-we-collect/national-survey-drug-use-and-health-nsduh",
       "http_status": 403,
       "source_sha256": "8b73b6ccd7091d6d9d23adaab2baae3c4abf6de06df8efdd03215ee9376fa035"
@@ -4057,7 +4997,7 @@
       "suggested_source_boundary": "clinical guidelines, service statistics, trial reports and safety data",
       "source_url": "https://www.who.int/health-topics/mental-health",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4067,7 +5007,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 552aef72f6e2cea29dcdade5231d4f26509d70071d3e7afca5970f11256b18d8; selected=https://www.who.int/health-topics/mental-health; final=https://www.who.int/health-topics/mental-health",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/mental-health",
       "http_status": 200,
       "source_sha256": "552aef72f6e2cea29dcdade5231d4f26509d70071d3e7afca5970f11256b18d8"
@@ -4098,7 +5044,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental health",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/mental-health",
       "http_status": 200,
       "source_sha256": "552aef72f6e2cea29dcdade5231d4f26509d70071d3e7afca5970f11256b18d8"
@@ -4130,6 +5084,14 @@
       "raw_payload_committed": false,
       "locator": "Mental health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/mental-health",
       "http_status": 200,
       "source_sha256": "552aef72f6e2cea29dcdade5231d4f26509d70071d3e7afca5970f11256b18d8"
@@ -4161,6 +5123,12 @@
       "raw_payload_committed": false,
       "locator": "Mental health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/mental-health",
       "http_status": 200,
       "source_sha256": "552aef72f6e2cea29dcdade5231d4f26509d70071d3e7afca5970f11256b18d8"
@@ -4191,7 +5159,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental health",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/mental-health",
       "http_status": 200,
       "source_sha256": "552aef72f6e2cea29dcdade5231d4f26509d70071d3e7afca5970f11256b18d8"
@@ -4223,6 +5200,13 @@
       "raw_payload_committed": false,
       "locator": "Mental health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/mental-health",
       "http_status": 200,
       "source_sha256": "552aef72f6e2cea29dcdade5231d4f26509d70071d3e7afca5970f11256b18d8"
@@ -4253,7 +5237,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Mental health",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/mental-health",
       "http_status": 200,
       "source_sha256": "552aef72f6e2cea29dcdade5231d4f26509d70071d3e7afca5970f11256b18d8"
@@ -4285,6 +5275,12 @@
       "raw_payload_committed": false,
       "locator": "Mental health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/mental-health",
       "http_status": 200,
       "source_sha256": "552aef72f6e2cea29dcdade5231d4f26509d70071d3e7afca5970f11256b18d8"
@@ -4316,6 +5312,12 @@
       "raw_payload_committed": false,
       "locator": "Mental health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/mental-health",
       "http_status": 200,
       "source_sha256": "552aef72f6e2cea29dcdade5231d4f26509d70071d3e7afca5970f11256b18d8"
@@ -4347,6 +5349,12 @@
       "raw_payload_committed": false,
       "locator": "Mental health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/mental-health",
       "http_status": 200,
       "source_sha256": "552aef72f6e2cea29dcdade5231d4f26509d70071d3e7afca5970f11256b18d8"
@@ -4378,6 +5386,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-mortality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4409,6 +5422,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-mortality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4440,6 +5463,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-mortality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4471,6 +5503,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-mortality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4502,6 +5540,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-mortality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4533,6 +5580,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-mortality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4564,6 +5620,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-mortality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4595,6 +5657,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-mortality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4626,6 +5694,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-mortality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4657,6 +5731,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-mortality/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4688,6 +5768,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/reproductive-health/data-statistics/maternal-mortality.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4719,6 +5804,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/reproductive-health/data-statistics/maternal-mortality.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4750,6 +5845,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/reproductive-health/data-statistics/maternal-mortality.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4781,6 +5885,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/reproductive-health/data-statistics/maternal-mortality.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4812,6 +5922,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/reproductive-health/data-statistics/maternal-mortality.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4843,6 +5962,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/reproductive-health/data-statistics/maternal-mortality.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4874,6 +6002,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/reproductive-health/data-statistics/maternal-mortality.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4905,6 +6039,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/reproductive-health/data-statistics/maternal-mortality.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4936,6 +6076,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/reproductive-health/data-statistics/maternal-mortality.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4967,6 +6113,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/reproductive-health/data-statistics/maternal-mortality.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4998,6 +6150,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5029,6 +6186,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5060,6 +6227,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5091,6 +6267,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5122,6 +6304,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5153,6 +6344,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5184,6 +6384,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5215,6 +6421,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5246,6 +6458,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5277,6 +6495,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5308,6 +6532,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/hear-her/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5339,6 +6568,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/hear-her/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5370,6 +6609,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/hear-her/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5401,6 +6649,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/hear-her/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5432,6 +6686,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/hear-her/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5463,6 +6726,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/hear-her/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5494,6 +6766,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/hear-her/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5525,6 +6803,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/hear-her/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5556,6 +6840,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/hear-her/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5587,6 +6877,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/hear-her/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5607,7 +6903,7 @@
       "suggested_source_boundary": "vital statistics, hospital data, clinical guidelines and surveillance reports",
       "source_url": "https://www.who.int/health-topics/maternal-health",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5617,7 +6913,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 ea744795e4380ee264b5ceda9d79e956adf27e3acd676d6a46a0ebeec49c009c; selected=https://www.who.int/health-topics/maternal-health; final=https://www.who.int/health-topics/maternal-health",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/maternal-health",
       "http_status": 200,
       "source_sha256": "ea744795e4380ee264b5ceda9d79e956adf27e3acd676d6a46a0ebeec49c009c"
@@ -5648,7 +6950,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Maternal health",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/maternal-health",
       "http_status": 200,
       "source_sha256": "ea744795e4380ee264b5ceda9d79e956adf27e3acd676d6a46a0ebeec49c009c"
@@ -5680,6 +6991,14 @@
       "raw_payload_committed": false,
       "locator": "Maternal health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/maternal-health",
       "http_status": 200,
       "source_sha256": "ea744795e4380ee264b5ceda9d79e956adf27e3acd676d6a46a0ebeec49c009c"
@@ -5711,6 +7030,9 @@
       "raw_payload_committed": false,
       "locator": "Although important progress has been made in the last two decades, about 287 000 women died during and following pregnancy and childbirth in 2020.",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/maternal-health",
       "http_status": 200,
       "source_sha256": "ea744795e4380ee264b5ceda9d79e956adf27e3acd676d6a46a0ebeec49c009c"
@@ -5741,7 +7063,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Maternal health",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/maternal-health",
       "http_status": 200,
       "source_sha256": "ea744795e4380ee264b5ceda9d79e956adf27e3acd676d6a46a0ebeec49c009c"
@@ -5773,6 +7104,14 @@
       "raw_payload_committed": false,
       "locator": "Maternal health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/maternal-health",
       "http_status": 200,
       "source_sha256": "ea744795e4380ee264b5ceda9d79e956adf27e3acd676d6a46a0ebeec49c009c"
@@ -5803,7 +7142,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Maternal health",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/maternal-health",
       "http_status": 200,
       "source_sha256": "ea744795e4380ee264b5ceda9d79e956adf27e3acd676d6a46a0ebeec49c009c"
@@ -5835,6 +7180,12 @@
       "raw_payload_committed": false,
       "locator": "Maternal health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/maternal-health",
       "http_status": 200,
       "source_sha256": "ea744795e4380ee264b5ceda9d79e956adf27e3acd676d6a46a0ebeec49c009c"
@@ -5866,6 +7217,12 @@
       "raw_payload_committed": false,
       "locator": "Maternal health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/maternal-health",
       "http_status": 200,
       "source_sha256": "ea744795e4380ee264b5ceda9d79e956adf27e3acd676d6a46a0ebeec49c009c"
@@ -5897,6 +7254,12 @@
       "raw_payload_committed": false,
       "locator": "Maternal health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/maternal-health",
       "http_status": 200,
       "source_sha256": "ea744795e4380ee264b5ceda9d79e956adf27e3acd676d6a46a0ebeec49c009c"
@@ -5928,6 +7291,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/pregnancy-related-deaths/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5959,6 +7327,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/pregnancy-related-deaths/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -5990,6 +7368,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/pregnancy-related-deaths/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6021,6 +7408,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/pregnancy-related-deaths/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6052,6 +7445,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/pregnancy-related-deaths/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6083,6 +7485,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/pregnancy-related-deaths/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6114,6 +7525,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/pregnancy-related-deaths/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6145,6 +7562,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/pregnancy-related-deaths/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6176,6 +7599,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/pregnancy-related-deaths/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6207,6 +7636,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/pregnancy-related-deaths/about/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6238,6 +7673,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/pregnancy-related-deaths.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6269,6 +7709,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/pregnancy-related-deaths.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6300,6 +7750,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/pregnancy-related-deaths.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6331,6 +7790,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/pregnancy-related-deaths.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6362,6 +7827,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/pregnancy-related-deaths.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6393,6 +7867,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/pregnancy-related-deaths.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6424,6 +7907,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/pregnancy-related-deaths.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6455,6 +7944,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/pregnancy-related-deaths.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6486,6 +7981,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/pregnancy-related-deaths.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -6517,6 +8018,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/maternal-infant-health/php/data-research/pregnancy-related-deaths.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"

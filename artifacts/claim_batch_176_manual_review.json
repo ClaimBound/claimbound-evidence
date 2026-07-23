@@ -1,13 +1,13 @@
 {
   "issue_number": 176,
-  "protocol_version": "CB7K-ISSUE-176-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-176-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "source_manifest_sha256": "bc70278e2747e1a8076c025d0d03d73c82c4b599f8607fba490b6feec620ba23",
   "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
   "raw_payload_committed": false,
-  "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
+  "review_method": "complete topic-specific textual gate facets with verbatim locators; numerator-denominator, method-version, and reproducibility additionally require an independent execution artifact",
   "result_counts": {
-    "PASSED_UNDER_PROTOCOL": 15,
-    "INSUFFICIENT_COVERAGE": 115,
+    "INSUFFICIENT_COVERAGE": 129,
+    "PASSED_UNDER_PROTOCOL": 1,
     "SOURCE_DRIFT": 10,
     "BLOCKED_SOURCE": 70
   },
@@ -28,7 +28,7 @@
       "suggested_source_boundary": "audited financial statements, regulatory filings, fee schedules and outage reports",
       "source_url": "https://www.fdic.gov/resources/resolutions/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -38,7 +38,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 46d00f0e74f44eee60d3e05203dae7513a4a754d9a7a5733c8b4849dbcad20c4; selected=https://www.fdic.gov/resources/resolutions/; final=https://www.fdic.gov/resolutions",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/resolutions",
       "http_status": 200,
       "source_sha256": "46d00f0e74f44eee60d3e05203dae7513a4a754d9a7a5733c8b4849dbcad20c4"
@@ -69,7 +75,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Failing Bank Resolutions | FDIC.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/resolutions",
       "http_status": 200,
       "source_sha256": "46d00f0e74f44eee60d3e05203dae7513a4a754d9a7a5733c8b4849dbcad20c4"
@@ -101,6 +115,15 @@
       "raw_payload_committed": false,
       "locator": "Failing Bank Resolutions | FDIC.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/resolutions",
       "http_status": 200,
       "source_sha256": "46d00f0e74f44eee60d3e05203dae7513a4a754d9a7a5733c8b4849dbcad20c4"
@@ -132,6 +155,11 @@
       "raw_payload_committed": false,
       "locator": "Failing Bank Resolutions | FDIC.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/resolutions",
       "http_status": 200,
       "source_sha256": "46d00f0e74f44eee60d3e05203dae7513a4a754d9a7a5733c8b4849dbcad20c4"
@@ -162,7 +190,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Failing Bank Resolutions | FDIC.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/resolutions",
       "http_status": 200,
       "source_sha256": "46d00f0e74f44eee60d3e05203dae7513a4a754d9a7a5733c8b4849dbcad20c4"
@@ -194,6 +231,15 @@
       "raw_payload_committed": false,
       "locator": "Failing Bank Resolutions | FDIC.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/resolutions",
       "http_status": 200,
       "source_sha256": "46d00f0e74f44eee60d3e05203dae7513a4a754d9a7a5733c8b4849dbcad20c4"
@@ -224,7 +270,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Failing Bank Resolutions | FDIC.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/resolutions",
       "http_status": 200,
       "source_sha256": "46d00f0e74f44eee60d3e05203dae7513a4a754d9a7a5733c8b4849dbcad20c4"
@@ -256,6 +308,9 @@
       "raw_payload_committed": false,
       "locator": "The FDIC encourages troubled insured depository institutions to resolve problems that may lead to failure on their own by seeking a merger partner or additional capital.",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/resolutions",
       "http_status": 200,
       "source_sha256": "46d00f0e74f44eee60d3e05203dae7513a4a754d9a7a5733c8b4849dbcad20c4"
@@ -276,7 +331,7 @@
       "suggested_source_boundary": "audited financial statements, regulatory filings, fee schedules and outage reports",
       "source_url": "https://www.fdic.gov/resources/resolutions/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -285,8 +340,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "The Federal Deposit Insurance Corporation (FDIC) is an independent agency created by the Congress to maintain stability and public confidence in the nation’s financial system.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Failing Bank Resolutions | FDIC.gov",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/resolutions",
       "http_status": 200,
       "source_sha256": "46d00f0e74f44eee60d3e05203dae7513a4a754d9a7a5733c8b4849dbcad20c4"
@@ -318,6 +378,11 @@
       "raw_payload_committed": false,
       "locator": "Failing Bank Resolutions | FDIC.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/resolutions",
       "http_status": 200,
       "source_sha256": "46d00f0e74f44eee60d3e05203dae7513a4a754d9a7a5733c8b4849dbcad20c4"
@@ -338,7 +403,7 @@
       "suggested_source_boundary": "audited financial statements, regulatory filings, fee schedules and outage reports",
       "source_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -348,7 +413,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 4acefdc1a1f89f16af6aee18af4009e76a8abaf44909bc6797528bc649a2aee3; selected=https://www.federalreserve.gov/consumerscommunities.htm; final=https://www.federalreserve.gov/consumerscommunities.htm",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "4acefdc1a1f89f16af6aee18af4009e76a8abaf44909bc6797528bc649a2aee3"
@@ -379,7 +450,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "﻿",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "4acefdc1a1f89f16af6aee18af4009e76a8abaf44909bc6797528bc649a2aee3"
@@ -411,6 +492,15 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "4acefdc1a1f89f16af6aee18af4009e76a8abaf44909bc6797528bc649a2aee3"
@@ -442,6 +532,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "4acefdc1a1f89f16af6aee18af4009e76a8abaf44909bc6797528bc649a2aee3"
@@ -472,7 +568,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "﻿",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "4acefdc1a1f89f16af6aee18af4009e76a8abaf44909bc6797528bc649a2aee3"
@@ -504,6 +609,15 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "4acefdc1a1f89f16af6aee18af4009e76a8abaf44909bc6797528bc649a2aee3"
@@ -534,7 +648,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "﻿",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "4acefdc1a1f89f16af6aee18af4009e76a8abaf44909bc6797528bc649a2aee3"
@@ -566,6 +686,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "4acefdc1a1f89f16af6aee18af4009e76a8abaf44909bc6797528bc649a2aee3"
@@ -597,6 +723,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "4acefdc1a1f89f16af6aee18af4009e76a8abaf44909bc6797528bc649a2aee3"
@@ -628,6 +760,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "4acefdc1a1f89f16af6aee18af4009e76a8abaf44909bc6797528bc649a2aee3"
@@ -648,7 +786,7 @@
       "suggested_source_boundary": "audited financial statements, regulatory filings, fee schedules and outage reports",
       "source_url": "https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -658,7 +796,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 9238412af547d874da5f96519ef577e8f17a8e0d1e69192f7a1257e55ce10962; selected=https://www.consumerfinance.gov/consumer-tools/bank-accounts/; final=https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
       "http_status": 200,
       "source_sha256": "9238412af547d874da5f96519ef577e8f17a8e0d1e69192f7a1257e55ce10962"
@@ -689,7 +833,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Bank accounts and services | Consumer Financial Protection Bureau",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
       "http_status": 200,
       "source_sha256": "9238412af547d874da5f96519ef577e8f17a8e0d1e69192f7a1257e55ce10962"
@@ -721,6 +875,15 @@
       "raw_payload_committed": false,
       "locator": "Bank accounts and services | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
       "http_status": 200,
       "source_sha256": "9238412af547d874da5f96519ef577e8f17a8e0d1e69192f7a1257e55ce10962"
@@ -752,6 +915,11 @@
       "raw_payload_committed": false,
       "locator": "Bank accounts and services | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
       "http_status": 200,
       "source_sha256": "9238412af547d874da5f96519ef577e8f17a8e0d1e69192f7a1257e55ce10962"
@@ -782,7 +950,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Bank accounts and services | Consumer Financial Protection Bureau",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
       "http_status": 200,
       "source_sha256": "9238412af547d874da5f96519ef577e8f17a8e0d1e69192f7a1257e55ce10962"
@@ -814,6 +991,14 @@
       "raw_payload_committed": false,
       "locator": "Bank accounts and services | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
       "http_status": 200,
       "source_sha256": "9238412af547d874da5f96519ef577e8f17a8e0d1e69192f7a1257e55ce10962"
@@ -844,7 +1029,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Bank accounts and services | Consumer Financial Protection Bureau",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
       "http_status": 200,
       "source_sha256": "9238412af547d874da5f96519ef577e8f17a8e0d1e69192f7a1257e55ce10962"
@@ -876,6 +1067,12 @@
       "raw_payload_committed": false,
       "locator": "Bank accounts and services | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
       "http_status": 200,
       "source_sha256": "9238412af547d874da5f96519ef577e8f17a8e0d1e69192f7a1257e55ce10962"
@@ -907,6 +1104,12 @@
       "raw_payload_committed": false,
       "locator": "Bank accounts and services | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
       "http_status": 200,
       "source_sha256": "9238412af547d874da5f96519ef577e8f17a8e0d1e69192f7a1257e55ce10962"
@@ -938,6 +1141,12 @@
       "raw_payload_committed": false,
       "locator": "Bank accounts and services | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/bank-accounts/",
       "http_status": 200,
       "source_sha256": "9238412af547d874da5f96519ef577e8f17a8e0d1e69192f7a1257e55ce10962"
@@ -958,7 +1167,7 @@
       "suggested_source_boundary": "audited financial statements, regulatory filings, fee schedules and outage reports",
       "source_url": "https://www.fdic.gov/resources/supervision-and-examinations/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -968,7 +1177,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 ef2a564fc4812f9ce8a8671a790afaecbee3654b11a64f4ba28b70b1c58eb044; selected=https://www.fdic.gov/resources/supervision-and-examinations/; final=https://www.fdic.gov/bank-examinations",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/bank-examinations",
       "http_status": 200,
       "source_sha256": "ef2a564fc4812f9ce8a8671a790afaecbee3654b11a64f4ba28b70b1c58eb044"
@@ -999,7 +1214,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Bank Examinations | FDIC.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/bank-examinations",
       "http_status": 200,
       "source_sha256": "ef2a564fc4812f9ce8a8671a790afaecbee3654b11a64f4ba28b70b1c58eb044"
@@ -1031,6 +1256,15 @@
       "raw_payload_committed": false,
       "locator": "Bank Examinations | FDIC.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/bank-examinations",
       "http_status": 200,
       "source_sha256": "ef2a564fc4812f9ce8a8671a790afaecbee3654b11a64f4ba28b70b1c58eb044"
@@ -1062,6 +1296,12 @@
       "raw_payload_committed": false,
       "locator": "Bank Examinations | FDIC.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/bank-examinations",
       "http_status": 200,
       "source_sha256": "ef2a564fc4812f9ce8a8671a790afaecbee3654b11a64f4ba28b70b1c58eb044"
@@ -1092,7 +1332,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Bank Examinations | FDIC.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/bank-examinations",
       "http_status": 200,
       "source_sha256": "ef2a564fc4812f9ce8a8671a790afaecbee3654b11a64f4ba28b70b1c58eb044"
@@ -1124,6 +1373,15 @@
       "raw_payload_committed": false,
       "locator": "Bank Examinations | FDIC.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/bank-examinations",
       "http_status": 200,
       "source_sha256": "ef2a564fc4812f9ce8a8671a790afaecbee3654b11a64f4ba28b70b1c58eb044"
@@ -1154,7 +1412,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Bank Examinations | FDIC.gov",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/bank-examinations",
       "http_status": 200,
       "source_sha256": "ef2a564fc4812f9ce8a8671a790afaecbee3654b11a64f4ba28b70b1c58eb044"
@@ -1186,6 +1450,12 @@
       "raw_payload_committed": false,
       "locator": "Bank Examinations | FDIC.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/bank-examinations",
       "http_status": 200,
       "source_sha256": "ef2a564fc4812f9ce8a8671a790afaecbee3654b11a64f4ba28b70b1c58eb044"
@@ -1217,6 +1487,12 @@
       "raw_payload_committed": false,
       "locator": "Bank Examinations | FDIC.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/bank-examinations",
       "http_status": 200,
       "source_sha256": "ef2a564fc4812f9ce8a8671a790afaecbee3654b11a64f4ba28b70b1c58eb044"
@@ -1248,6 +1524,12 @@
       "raw_payload_committed": false,
       "locator": "Bank Examinations | FDIC.gov",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fdic.gov/bank-examinations",
       "http_status": 200,
       "source_sha256": "ef2a564fc4812f9ce8a8671a790afaecbee3654b11a64f4ba28b70b1c58eb044"
@@ -1279,6 +1561,11 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.occ.treas.gov/topics/supervision-and-examination/ canonical=https://www.occ.treas.gov/404.html",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "reason_code": "SOURCE_BOUNDARY_DRIFT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.occ.treas.gov/404.html",
       "http_status": 200,
       "source_sha256": "8652a7343baa113151797138743a89204ffdf942ef820c807bf41ea9f9c87ee7"
@@ -1310,6 +1597,16 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.occ.treas.gov/topics/supervision-and-examination/ canonical=https://www.occ.treas.gov/404.html",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "reason_code": "SOURCE_BOUNDARY_DRIFT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.occ.treas.gov/404.html",
       "http_status": 200,
       "source_sha256": "8652a7343baa113151797138743a89204ffdf942ef820c807bf41ea9f9c87ee7"
@@ -1341,6 +1638,15 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.occ.treas.gov/topics/supervision-and-examination/ canonical=https://www.occ.treas.gov/404.html",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "reason_code": "SOURCE_BOUNDARY_DRIFT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.occ.treas.gov/404.html",
       "http_status": 200,
       "source_sha256": "8652a7343baa113151797138743a89204ffdf942ef820c807bf41ea9f9c87ee7"
@@ -1372,6 +1678,12 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.occ.treas.gov/topics/supervision-and-examination/ canonical=https://www.occ.treas.gov/404.html",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "reason_code": "SOURCE_BOUNDARY_DRIFT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.occ.treas.gov/404.html",
       "http_status": 200,
       "source_sha256": "8652a7343baa113151797138743a89204ffdf942ef820c807bf41ea9f9c87ee7"
@@ -1403,6 +1715,15 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.occ.treas.gov/topics/supervision-and-examination/ canonical=https://www.occ.treas.gov/404.html",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "reason_code": "SOURCE_BOUNDARY_DRIFT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.occ.treas.gov/404.html",
       "http_status": 200,
       "source_sha256": "8652a7343baa113151797138743a89204ffdf942ef820c807bf41ea9f9c87ee7"
@@ -1434,6 +1755,15 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.occ.treas.gov/topics/supervision-and-examination/ canonical=https://www.occ.treas.gov/404.html",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "reason_code": "SOURCE_BOUNDARY_DRIFT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.occ.treas.gov/404.html",
       "http_status": 200,
       "source_sha256": "8652a7343baa113151797138743a89204ffdf942ef820c807bf41ea9f9c87ee7"
@@ -1465,6 +1795,12 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.occ.treas.gov/topics/supervision-and-examination/ canonical=https://www.occ.treas.gov/404.html",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "reason_code": "SOURCE_BOUNDARY_DRIFT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.occ.treas.gov/404.html",
       "http_status": 200,
       "source_sha256": "8652a7343baa113151797138743a89204ffdf942ef820c807bf41ea9f9c87ee7"
@@ -1496,6 +1832,12 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.occ.treas.gov/topics/supervision-and-examination/ canonical=https://www.occ.treas.gov/404.html",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "reason_code": "SOURCE_BOUNDARY_DRIFT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.occ.treas.gov/404.html",
       "http_status": 200,
       "source_sha256": "8652a7343baa113151797138743a89204ffdf942ef820c807bf41ea9f9c87ee7"
@@ -1527,6 +1869,12 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.occ.treas.gov/topics/supervision-and-examination/ canonical=https://www.occ.treas.gov/404.html",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "reason_code": "SOURCE_BOUNDARY_DRIFT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.occ.treas.gov/404.html",
       "http_status": 200,
       "source_sha256": "8652a7343baa113151797138743a89204ffdf942ef820c807bf41ea9f9c87ee7"
@@ -1558,6 +1906,12 @@
       "raw_payload_committed": false,
       "locator": "selected=https://www.occ.treas.gov/topics/supervision-and-examination/ canonical=https://www.occ.treas.gov/404.html",
       "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "reason_code": "SOURCE_BOUNDARY_DRIFT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.occ.treas.gov/404.html",
       "http_status": 200,
       "source_sha256": "8652a7343baa113151797138743a89204ffdf942ef820c807bf41ea9f9c87ee7"
@@ -1578,7 +1932,7 @@
       "suggested_source_boundary": "audited financial statements, regulatory filings, fee schedules and outage reports",
       "source_url": "https://www.bis.org/bcbs/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1588,7 +1942,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 3509a85ef9a56c33b1d683808bcda328845336fa6ee6cb3257cfddf314a57f48; selected=https://www.bis.org/bcbs/; final=https://www.bis.org/bcbs/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.bis.org/bcbs/",
       "http_status": 200,
       "source_sha256": "3509a85ef9a56c33b1d683808bcda328845336fa6ee6cb3257cfddf314a57f48"
@@ -1619,7 +1979,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "The Basel Committee - overview",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.bis.org/bcbs/",
       "http_status": 200,
       "source_sha256": "3509a85ef9a56c33b1d683808bcda328845336fa6ee6cb3257cfddf314a57f48"
@@ -1651,6 +2021,15 @@
       "raw_payload_committed": false,
       "locator": "The Basel Committee - overview",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.bis.org/bcbs/",
       "http_status": 200,
       "source_sha256": "3509a85ef9a56c33b1d683808bcda328845336fa6ee6cb3257cfddf314a57f48"
@@ -1682,6 +2061,12 @@
       "raw_payload_committed": false,
       "locator": "The Basel Committee - overview",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.bis.org/bcbs/",
       "http_status": 200,
       "source_sha256": "3509a85ef9a56c33b1d683808bcda328845336fa6ee6cb3257cfddf314a57f48"
@@ -1712,7 +2097,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "The Basel Committee - overview",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.bis.org/bcbs/",
       "http_status": 200,
       "source_sha256": "3509a85ef9a56c33b1d683808bcda328845336fa6ee6cb3257cfddf314a57f48"
@@ -1744,6 +2138,15 @@
       "raw_payload_committed": false,
       "locator": "The Basel Committee - overview",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.bis.org/bcbs/",
       "http_status": 200,
       "source_sha256": "3509a85ef9a56c33b1d683808bcda328845336fa6ee6cb3257cfddf314a57f48"
@@ -1774,7 +2177,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "The Basel Committee - overview",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.bis.org/bcbs/",
       "http_status": 200,
       "source_sha256": "3509a85ef9a56c33b1d683808bcda328845336fa6ee6cb3257cfddf314a57f48"
@@ -1806,6 +2215,12 @@
       "raw_payload_committed": false,
       "locator": "The Basel Committee - overview",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.bis.org/bcbs/",
       "http_status": 200,
       "source_sha256": "3509a85ef9a56c33b1d683808bcda328845336fa6ee6cb3257cfddf314a57f48"
@@ -1837,6 +2252,12 @@
       "raw_payload_committed": false,
       "locator": "The Basel Committee - overview",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.bis.org/bcbs/",
       "http_status": 200,
       "source_sha256": "3509a85ef9a56c33b1d683808bcda328845336fa6ee6cb3257cfddf314a57f48"
@@ -1868,6 +2289,12 @@
       "raw_payload_committed": false,
       "locator": "The Basel Committee - overview",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.bis.org/bcbs/",
       "http_status": 200,
       "source_sha256": "3509a85ef9a56c33b1d683808bcda328845336fa6ee6cb3257cfddf314a57f48"
@@ -1899,6 +2326,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/financial-sector",
       "http_status": 403,
       "source_sha256": "3f05389d3b66298fcd3f0ae055b517b8b334919dbc939fe5bb18e0922f01c7ae"
@@ -1930,6 +2362,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/financial-sector",
       "http_status": 403,
       "source_sha256": "3f05389d3b66298fcd3f0ae055b517b8b334919dbc939fe5bb18e0922f01c7ae"
@@ -1961,6 +2403,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/financial-sector",
       "http_status": 403,
       "source_sha256": "3f05389d3b66298fcd3f0ae055b517b8b334919dbc939fe5bb18e0922f01c7ae"
@@ -1992,6 +2443,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/financial-sector",
       "http_status": 403,
       "source_sha256": "3f05389d3b66298fcd3f0ae055b517b8b334919dbc939fe5bb18e0922f01c7ae"
@@ -2023,6 +2480,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/financial-sector",
       "http_status": 403,
       "source_sha256": "3f05389d3b66298fcd3f0ae055b517b8b334919dbc939fe5bb18e0922f01c7ae"
@@ -2054,6 +2520,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/financial-sector",
       "http_status": 403,
       "source_sha256": "3f05389d3b66298fcd3f0ae055b517b8b334919dbc939fe5bb18e0922f01c7ae"
@@ -2085,6 +2560,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/financial-sector",
       "http_status": 403,
       "source_sha256": "3f05389d3b66298fcd3f0ae055b517b8b334919dbc939fe5bb18e0922f01c7ae"
@@ -2116,6 +2597,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/financial-sector",
       "http_status": 403,
       "source_sha256": "3f05389d3b66298fcd3f0ae055b517b8b334919dbc939fe5bb18e0922f01c7ae"
@@ -2147,6 +2634,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/financial-sector",
       "http_status": 403,
       "source_sha256": "3f05389d3b66298fcd3f0ae055b517b8b334919dbc939fe5bb18e0922f01c7ae"
@@ -2178,6 +2671,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/financial-sector",
       "http_status": 403,
       "source_sha256": "3f05389d3b66298fcd3f0ae055b517b8b334919dbc939fe5bb18e0922f01c7ae"
@@ -2198,7 +2697,7 @@
       "suggested_source_boundary": "reserve attestations, token supply records, custody disclosures and redemption terms",
       "source_url": "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2208,7 +2707,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 d2d3151b29675a6e26fd4ebc34c7978dcebcadc9678cccb7f404bdb033528dba; selected=https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/; final=https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
       "http_status": 200,
       "source_sha256": "d2d3151b29675a6e26fd4ebc34c7978dcebcadc9678cccb7f404bdb033528dba"
@@ -2239,7 +2744,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Financial Innovation and Structural Change - Financial Stability Board",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
       "http_status": 200,
       "source_sha256": "d2d3151b29675a6e26fd4ebc34c7978dcebcadc9678cccb7f404bdb033528dba"
@@ -2271,6 +2786,15 @@
       "raw_payload_committed": false,
       "locator": "Financial Innovation and Structural Change - Financial Stability Board",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
       "http_status": 200,
       "source_sha256": "d2d3151b29675a6e26fd4ebc34c7978dcebcadc9678cccb7f404bdb033528dba"
@@ -2302,6 +2826,12 @@
       "raw_payload_committed": false,
       "locator": "Financial Innovation and Structural Change - Financial Stability Board",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
       "http_status": 200,
       "source_sha256": "d2d3151b29675a6e26fd4ebc34c7978dcebcadc9678cccb7f404bdb033528dba"
@@ -2332,7 +2862,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Financial Innovation and Structural Change - Financial Stability Board",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
       "http_status": 200,
       "source_sha256": "d2d3151b29675a6e26fd4ebc34c7978dcebcadc9678cccb7f404bdb033528dba"
@@ -2364,6 +2903,15 @@
       "raw_payload_committed": false,
       "locator": "Financial Innovation and Structural Change - Financial Stability Board",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
       "http_status": 200,
       "source_sha256": "d2d3151b29675a6e26fd4ebc34c7978dcebcadc9678cccb7f404bdb033528dba"
@@ -2394,7 +2942,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Financial Innovation and Structural Change - Financial Stability Board",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
       "http_status": 200,
       "source_sha256": "d2d3151b29675a6e26fd4ebc34c7978dcebcadc9678cccb7f404bdb033528dba"
@@ -2426,6 +2980,12 @@
       "raw_payload_committed": false,
       "locator": "Financial Innovation and Structural Change - Financial Stability Board",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
       "http_status": 200,
       "source_sha256": "d2d3151b29675a6e26fd4ebc34c7978dcebcadc9678cccb7f404bdb033528dba"
@@ -2457,6 +3017,12 @@
       "raw_payload_committed": false,
       "locator": "Financial Innovation and Structural Change - Financial Stability Board",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
       "http_status": 200,
       "source_sha256": "d2d3151b29675a6e26fd4ebc34c7978dcebcadc9678cccb7f404bdb033528dba"
@@ -2488,6 +3054,12 @@
       "raw_payload_committed": false,
       "locator": "Financial Innovation and Structural Change - Financial Stability Board",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fsb.org/work-of-the-fsb/financial-innovation-and-structural-change/",
       "http_status": 200,
       "source_sha256": "d2d3151b29675a6e26fd4ebc34c7978dcebcadc9678cccb7f404bdb033528dba"
@@ -2508,7 +3080,7 @@
       "suggested_source_boundary": "reserve attestations, token supply records, custody disclosures and redemption terms",
       "source_url": "https://www.federalreserve.gov/central-bank-digital-currency.htm",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2518,7 +3090,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 f57062a29d0e8256eea2bfe99ec466bb054ce09983b8324fb59fecb6760b9ead; selected=https://www.federalreserve.gov/central-bank-digital-currency.htm; final=https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
       "http_status": 200,
       "source_sha256": "f57062a29d0e8256eea2bfe99ec466bb054ce09983b8324fb59fecb6760b9ead"
@@ -2549,7 +3127,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "﻿",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
       "http_status": 200,
       "source_sha256": "f57062a29d0e8256eea2bfe99ec466bb054ce09983b8324fb59fecb6760b9ead"
@@ -2581,6 +3169,15 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
       "http_status": 200,
       "source_sha256": "f57062a29d0e8256eea2bfe99ec466bb054ce09983b8324fb59fecb6760b9ead"
@@ -2612,6 +3209,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
       "http_status": 200,
       "source_sha256": "f57062a29d0e8256eea2bfe99ec466bb054ce09983b8324fb59fecb6760b9ead"
@@ -2642,7 +3245,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "﻿",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
       "http_status": 200,
       "source_sha256": "f57062a29d0e8256eea2bfe99ec466bb054ce09983b8324fb59fecb6760b9ead"
@@ -2674,6 +3286,15 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
       "http_status": 200,
       "source_sha256": "f57062a29d0e8256eea2bfe99ec466bb054ce09983b8324fb59fecb6760b9ead"
@@ -2704,7 +3325,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "﻿",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
       "http_status": 200,
       "source_sha256": "f57062a29d0e8256eea2bfe99ec466bb054ce09983b8324fb59fecb6760b9ead"
@@ -2736,6 +3363,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
       "http_status": 200,
       "source_sha256": "f57062a29d0e8256eea2bfe99ec466bb054ce09983b8324fb59fecb6760b9ead"
@@ -2767,6 +3400,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
       "http_status": 200,
       "source_sha256": "f57062a29d0e8256eea2bfe99ec466bb054ce09983b8324fb59fecb6760b9ead"
@@ -2798,6 +3437,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
       "http_status": 200,
       "source_sha256": "f57062a29d0e8256eea2bfe99ec466bb054ce09983b8324fb59fecb6760b9ead"
@@ -2818,7 +3463,7 @@
       "suggested_source_boundary": "reserve attestations, token supply records, custody disclosures and redemption terms",
       "source_url": "https://www.bis.org/cpmi/publ/d206.htm",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2828,7 +3473,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 301c81cebd46356ff8c1eb118b0fc94385d9e2b31c88a1ebf31dd60c248fe9a1; selected=https://www.bis.org/cpmi/publ/d206.htm; final=https://www.bis.org/cpmi/publ/d206.htm",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bis.org/cpmi/publ/d206.htm",
       "http_status": 200,
       "source_sha256": "301c81cebd46356ff8c1eb118b0fc94385d9e2b31c88a1ebf31dd60c248fe9a1"
@@ -2859,7 +3510,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Application of the Principles for Financial Market Infrastructures to stablecoin arrangements",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bis.org/cpmi/publ/d206.htm",
       "http_status": 200,
       "source_sha256": "301c81cebd46356ff8c1eb118b0fc94385d9e2b31c88a1ebf31dd60c248fe9a1"
@@ -2891,6 +3552,15 @@
       "raw_payload_committed": false,
       "locator": "Application of the Principles for Financial Market Infrastructures to stablecoin arrangements",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bis.org/cpmi/publ/d206.htm",
       "http_status": 200,
       "source_sha256": "301c81cebd46356ff8c1eb118b0fc94385d9e2b31c88a1ebf31dd60c248fe9a1"
@@ -2922,6 +3592,12 @@
       "raw_payload_committed": false,
       "locator": "Application of the Principles for Financial Market Infrastructures to stablecoin arrangements",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bis.org/cpmi/publ/d206.htm",
       "http_status": 200,
       "source_sha256": "301c81cebd46356ff8c1eb118b0fc94385d9e2b31c88a1ebf31dd60c248fe9a1"
@@ -2952,7 +3628,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Application of the Principles for Financial Market Infrastructures to stablecoin arrangements",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bis.org/cpmi/publ/d206.htm",
       "http_status": 200,
       "source_sha256": "301c81cebd46356ff8c1eb118b0fc94385d9e2b31c88a1ebf31dd60c248fe9a1"
@@ -2984,6 +3669,15 @@
       "raw_payload_committed": false,
       "locator": "Application of the Principles for Financial Market Infrastructures to stablecoin arrangements",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bis.org/cpmi/publ/d206.htm",
       "http_status": 200,
       "source_sha256": "301c81cebd46356ff8c1eb118b0fc94385d9e2b31c88a1ebf31dd60c248fe9a1"
@@ -3014,7 +3708,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Application of the Principles for Financial Market Infrastructures to stablecoin arrangements",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bis.org/cpmi/publ/d206.htm",
       "http_status": 200,
       "source_sha256": "301c81cebd46356ff8c1eb118b0fc94385d9e2b31c88a1ebf31dd60c248fe9a1"
@@ -3046,6 +3746,12 @@
       "raw_payload_committed": false,
       "locator": "Application of the Principles for Financial Market Infrastructures to stablecoin arrangements",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bis.org/cpmi/publ/d206.htm",
       "http_status": 200,
       "source_sha256": "301c81cebd46356ff8c1eb118b0fc94385d9e2b31c88a1ebf31dd60c248fe9a1"
@@ -3077,6 +3783,12 @@
       "raw_payload_committed": false,
       "locator": "Application of the Principles for Financial Market Infrastructures to stablecoin arrangements",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bis.org/cpmi/publ/d206.htm",
       "http_status": 200,
       "source_sha256": "301c81cebd46356ff8c1eb118b0fc94385d9e2b31c88a1ebf31dd60c248fe9a1"
@@ -3108,6 +3820,12 @@
       "raw_payload_committed": false,
       "locator": "Application of the Principles for Financial Market Infrastructures to stablecoin arrangements",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bis.org/cpmi/publ/d206.htm",
       "http_status": 200,
       "source_sha256": "301c81cebd46356ff8c1eb118b0fc94385d9e2b31c88a1ebf31dd60c248fe9a1"
@@ -3139,6 +3857,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/virtual-assets.html",
       "http_status": 403,
       "source_sha256": "240911e6015ee7423d7e359703a88f258dde3e9bc4cfa4a7f08e1cd9cab9c1e1"
@@ -3170,6 +3893,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/virtual-assets.html",
       "http_status": 403,
       "source_sha256": "240911e6015ee7423d7e359703a88f258dde3e9bc4cfa4a7f08e1cd9cab9c1e1"
@@ -3201,6 +3934,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/virtual-assets.html",
       "http_status": 403,
       "source_sha256": "240911e6015ee7423d7e359703a88f258dde3e9bc4cfa4a7f08e1cd9cab9c1e1"
@@ -3232,6 +3974,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/virtual-assets.html",
       "http_status": 403,
       "source_sha256": "240911e6015ee7423d7e359703a88f258dde3e9bc4cfa4a7f08e1cd9cab9c1e1"
@@ -3263,6 +4011,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/virtual-assets.html",
       "http_status": 403,
       "source_sha256": "240911e6015ee7423d7e359703a88f258dde3e9bc4cfa4a7f08e1cd9cab9c1e1"
@@ -3294,6 +4051,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/virtual-assets.html",
       "http_status": 403,
       "source_sha256": "240911e6015ee7423d7e359703a88f258dde3e9bc4cfa4a7f08e1cd9cab9c1e1"
@@ -3325,6 +4091,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/virtual-assets.html",
       "http_status": 403,
       "source_sha256": "240911e6015ee7423d7e359703a88f258dde3e9bc4cfa4a7f08e1cd9cab9c1e1"
@@ -3356,6 +4128,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/virtual-assets.html",
       "http_status": 403,
       "source_sha256": "240911e6015ee7423d7e359703a88f258dde3e9bc4cfa4a7f08e1cd9cab9c1e1"
@@ -3387,6 +4165,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/virtual-assets.html",
       "http_status": 403,
       "source_sha256": "240911e6015ee7423d7e359703a88f258dde3e9bc4cfa4a7f08e1cd9cab9c1e1"
@@ -3418,6 +4202,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/virtual-assets.html",
       "http_status": 403,
       "source_sha256": "240911e6015ee7423d7e359703a88f258dde3e9bc4cfa4a7f08e1cd9cab9c1e1"
@@ -3449,6 +4239,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/spotlight/cybersecurity",
       "http_status": 403,
       "source_sha256": "717da80766482061ba31e272c7aa79363d6042d7fcc4adf6a155278c81ba80c6"
@@ -3480,6 +4275,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/spotlight/cybersecurity",
       "http_status": 403,
       "source_sha256": "717da80766482061ba31e272c7aa79363d6042d7fcc4adf6a155278c81ba80c6"
@@ -3511,6 +4316,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/spotlight/cybersecurity",
       "http_status": 403,
       "source_sha256": "717da80766482061ba31e272c7aa79363d6042d7fcc4adf6a155278c81ba80c6"
@@ -3542,6 +4356,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/spotlight/cybersecurity",
       "http_status": 403,
       "source_sha256": "717da80766482061ba31e272c7aa79363d6042d7fcc4adf6a155278c81ba80c6"
@@ -3573,6 +4393,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/spotlight/cybersecurity",
       "http_status": 403,
       "source_sha256": "717da80766482061ba31e272c7aa79363d6042d7fcc4adf6a155278c81ba80c6"
@@ -3604,6 +4433,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/spotlight/cybersecurity",
       "http_status": 403,
       "source_sha256": "717da80766482061ba31e272c7aa79363d6042d7fcc4adf6a155278c81ba80c6"
@@ -3635,6 +4473,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/spotlight/cybersecurity",
       "http_status": 403,
       "source_sha256": "717da80766482061ba31e272c7aa79363d6042d7fcc4adf6a155278c81ba80c6"
@@ -3666,6 +4510,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/spotlight/cybersecurity",
       "http_status": 403,
       "source_sha256": "717da80766482061ba31e272c7aa79363d6042d7fcc4adf6a155278c81ba80c6"
@@ -3697,6 +4547,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/spotlight/cybersecurity",
       "http_status": 403,
       "source_sha256": "717da80766482061ba31e272c7aa79363d6042d7fcc4adf6a155278c81ba80c6"
@@ -3728,6 +4584,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/spotlight/cybersecurity",
       "http_status": 403,
       "source_sha256": "717da80766482061ba31e272c7aa79363d6042d7fcc4adf6a155278c81ba80c6"
@@ -3748,7 +4610,7 @@
       "suggested_source_boundary": "reserve attestations, token supply records, custody disclosures and redemption terms",
       "source_url": "https://www.ecb.europa.eu/paym/digital_euro/html/index.en.html",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3758,7 +4620,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 043a72977500371cf8c830989cd53384a6be12d788e800d529bbec27aa968e78; selected=https://www.ecb.europa.eu/paym/digital_euro/html/index.en.html; final=https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html",
       "http_status": 200,
       "source_sha256": "043a72977500371cf8c830989cd53384a6be12d788e800d529bbec27aa968e78"
@@ -3789,7 +4657,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Digital euro",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html",
       "http_status": 200,
       "source_sha256": "043a72977500371cf8c830989cd53384a6be12d788e800d529bbec27aa968e78"
@@ -3821,6 +4699,14 @@
       "raw_payload_committed": false,
       "locator": "Digital euro",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html",
       "http_status": 200,
       "source_sha256": "043a72977500371cf8c830989cd53384a6be12d788e800d529bbec27aa968e78"
@@ -3852,6 +4738,12 @@
       "raw_payload_committed": false,
       "locator": "Digital euro",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html",
       "http_status": 200,
       "source_sha256": "043a72977500371cf8c830989cd53384a6be12d788e800d529bbec27aa968e78"
@@ -3882,7 +4774,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Digital euro",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html",
       "http_status": 200,
       "source_sha256": "043a72977500371cf8c830989cd53384a6be12d788e800d529bbec27aa968e78"
@@ -3914,6 +4815,15 @@
       "raw_payload_committed": false,
       "locator": "Digital euro",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html",
       "http_status": 200,
       "source_sha256": "043a72977500371cf8c830989cd53384a6be12d788e800d529bbec27aa968e78"
@@ -3944,7 +4854,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Digital euro",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html",
       "http_status": 200,
       "source_sha256": "043a72977500371cf8c830989cd53384a6be12d788e800d529bbec27aa968e78"
@@ -3976,6 +4892,11 @@
       "raw_payload_committed": false,
       "locator": "Digital euro",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html",
       "http_status": 200,
       "source_sha256": "043a72977500371cf8c830989cd53384a6be12d788e800d529bbec27aa968e78"
@@ -4007,6 +4928,12 @@
       "raw_payload_committed": false,
       "locator": "Digital euro",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html",
       "http_status": 200,
       "source_sha256": "043a72977500371cf8c830989cd53384a6be12d788e800d529bbec27aa968e78"
@@ -4038,6 +4965,11 @@
       "raw_payload_committed": false,
       "locator": "Digital euro",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/euro/digital_euro/html/index.en.html",
       "http_status": 200,
       "source_sha256": "043a72977500371cf8c830989cd53384a6be12d788e800d529bbec27aa968e78"
@@ -4069,6 +5001,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bankofengland.co.uk/error/404.html?item=%2fresearch%2fdigital-pound",
       "http_status": 404,
       "source_sha256": "501afc49d340027cee455e2d424816a0f5cbab82e7954548ba4c37d8efc2c0d8"
@@ -4100,6 +5037,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bankofengland.co.uk/error/404.html?item=%2fresearch%2fdigital-pound",
       "http_status": 404,
       "source_sha256": "501afc49d340027cee455e2d424816a0f5cbab82e7954548ba4c37d8efc2c0d8"
@@ -4131,6 +5078,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bankofengland.co.uk/error/404.html?item=%2fresearch%2fdigital-pound",
       "http_status": 404,
       "source_sha256": "501afc49d340027cee455e2d424816a0f5cbab82e7954548ba4c37d8efc2c0d8"
@@ -4162,6 +5118,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bankofengland.co.uk/error/404.html?item=%2fresearch%2fdigital-pound",
       "http_status": 404,
       "source_sha256": "501afc49d340027cee455e2d424816a0f5cbab82e7954548ba4c37d8efc2c0d8"
@@ -4193,6 +5155,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bankofengland.co.uk/error/404.html?item=%2fresearch%2fdigital-pound",
       "http_status": 404,
       "source_sha256": "501afc49d340027cee455e2d424816a0f5cbab82e7954548ba4c37d8efc2c0d8"
@@ -4224,6 +5195,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bankofengland.co.uk/error/404.html?item=%2fresearch%2fdigital-pound",
       "http_status": 404,
       "source_sha256": "501afc49d340027cee455e2d424816a0f5cbab82e7954548ba4c37d8efc2c0d8"
@@ -4255,6 +5235,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bankofengland.co.uk/error/404.html?item=%2fresearch%2fdigital-pound",
       "http_status": 404,
       "source_sha256": "501afc49d340027cee455e2d424816a0f5cbab82e7954548ba4c37d8efc2c0d8"
@@ -4286,6 +5272,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bankofengland.co.uk/error/404.html?item=%2fresearch%2fdigital-pound",
       "http_status": 404,
       "source_sha256": "501afc49d340027cee455e2d424816a0f5cbab82e7954548ba4c37d8efc2c0d8"
@@ -4317,6 +5309,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bankofengland.co.uk/error/404.html?item=%2fresearch%2fdigital-pound",
       "http_status": 404,
       "source_sha256": "501afc49d340027cee455e2d424816a0f5cbab82e7954548ba4c37d8efc2c0d8"
@@ -4348,6 +5346,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bankofengland.co.uk/error/404.html?item=%2fresearch%2fdigital-pound",
       "http_status": 404,
       "source_sha256": "501afc49d340027cee455e2d424816a0f5cbab82e7954548ba4c37d8efc2c0d8"
@@ -4379,6 +5383,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/crypto",
       "http_status": 403,
       "source_sha256": "60d9adbdfb48a87603a8ca0d11f27ef8a09e4c93e5d26144a5e7e37c713f9cfe"
@@ -4410,6 +5419,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/crypto",
       "http_status": 403,
       "source_sha256": "60d9adbdfb48a87603a8ca0d11f27ef8a09e4c93e5d26144a5e7e37c713f9cfe"
@@ -4441,6 +5460,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/crypto",
       "http_status": 403,
       "source_sha256": "60d9adbdfb48a87603a8ca0d11f27ef8a09e4c93e5d26144a5e7e37c713f9cfe"
@@ -4472,6 +5500,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/crypto",
       "http_status": 403,
       "source_sha256": "60d9adbdfb48a87603a8ca0d11f27ef8a09e4c93e5d26144a5e7e37c713f9cfe"
@@ -4503,6 +5537,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/crypto",
       "http_status": 403,
       "source_sha256": "60d9adbdfb48a87603a8ca0d11f27ef8a09e4c93e5d26144a5e7e37c713f9cfe"
@@ -4534,6 +5577,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/crypto",
       "http_status": 403,
       "source_sha256": "60d9adbdfb48a87603a8ca0d11f27ef8a09e4c93e5d26144a5e7e37c713f9cfe"
@@ -4565,6 +5617,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/crypto",
       "http_status": 403,
       "source_sha256": "60d9adbdfb48a87603a8ca0d11f27ef8a09e4c93e5d26144a5e7e37c713f9cfe"
@@ -4596,6 +5654,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/crypto",
       "http_status": 403,
       "source_sha256": "60d9adbdfb48a87603a8ca0d11f27ef8a09e4c93e5d26144a5e7e37c713f9cfe"
@@ -4627,6 +5691,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/crypto",
       "http_status": 403,
       "source_sha256": "60d9adbdfb48a87603a8ca0d11f27ef8a09e4c93e5d26144a5e7e37c713f9cfe"
@@ -4658,6 +5728,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/crypto",
       "http_status": 403,
       "source_sha256": "60d9adbdfb48a87603a8ca0d11f27ef8a09e4c93e5d26144a5e7e37c713f9cfe"
@@ -4689,6 +5765,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/bitcoinbasics.html",
       "http_status": 404,
       "source_sha256": "c55bfb6d858d393976c7554cf9ecaa3c78de407537298353c6c76dd2cccae893"
@@ -4720,6 +5801,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/bitcoinbasics.html",
       "http_status": 404,
       "source_sha256": "c55bfb6d858d393976c7554cf9ecaa3c78de407537298353c6c76dd2cccae893"
@@ -4751,6 +5842,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/bitcoinbasics.html",
       "http_status": 404,
       "source_sha256": "c55bfb6d858d393976c7554cf9ecaa3c78de407537298353c6c76dd2cccae893"
@@ -4782,6 +5882,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/bitcoinbasics.html",
       "http_status": 404,
       "source_sha256": "c55bfb6d858d393976c7554cf9ecaa3c78de407537298353c6c76dd2cccae893"
@@ -4813,6 +5919,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/bitcoinbasics.html",
       "http_status": 404,
       "source_sha256": "c55bfb6d858d393976c7554cf9ecaa3c78de407537298353c6c76dd2cccae893"
@@ -4844,6 +5959,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/bitcoinbasics.html",
       "http_status": 404,
       "source_sha256": "c55bfb6d858d393976c7554cf9ecaa3c78de407537298353c6c76dd2cccae893"
@@ -4875,6 +5999,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/bitcoinbasics.html",
       "http_status": 404,
       "source_sha256": "c55bfb6d858d393976c7554cf9ecaa3c78de407537298353c6c76dd2cccae893"
@@ -4906,6 +6036,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/bitcoinbasics.html",
       "http_status": 404,
       "source_sha256": "c55bfb6d858d393976c7554cf9ecaa3c78de407537298353c6c76dd2cccae893"
@@ -4937,6 +6073,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/bitcoinbasics.html",
       "http_status": 404,
       "source_sha256": "c55bfb6d858d393976c7554cf9ecaa3c78de407537298353c6c76dd2cccae893"
@@ -4968,6 +6110,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/bitcoinbasics.html",
       "http_status": 404,
       "source_sha256": "c55bfb6d858d393976c7554cf9ecaa3c78de407537298353c6c76dd2cccae893"
@@ -4999,6 +6147,9 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fincen.gov/financial-crimes-enforcement-network",
       "http_status": 404,
       "source_sha256": "2234f5ca75612fa2cf45be4a63905ee6230701d44908ccf104d80e5abaf48a03"
@@ -5030,6 +6181,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fincen.gov/financial-crimes-enforcement-network",
       "http_status": 404,
       "source_sha256": "2234f5ca75612fa2cf45be4a63905ee6230701d44908ccf104d80e5abaf48a03"
@@ -5061,6 +6222,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fincen.gov/financial-crimes-enforcement-network",
       "http_status": 404,
       "source_sha256": "2234f5ca75612fa2cf45be4a63905ee6230701d44908ccf104d80e5abaf48a03"
@@ -5092,6 +6262,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fincen.gov/financial-crimes-enforcement-network",
       "http_status": 404,
       "source_sha256": "2234f5ca75612fa2cf45be4a63905ee6230701d44908ccf104d80e5abaf48a03"
@@ -5123,6 +6299,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fincen.gov/financial-crimes-enforcement-network",
       "http_status": 404,
       "source_sha256": "2234f5ca75612fa2cf45be4a63905ee6230701d44908ccf104d80e5abaf48a03"
@@ -5154,6 +6339,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fincen.gov/financial-crimes-enforcement-network",
       "http_status": 404,
       "source_sha256": "2234f5ca75612fa2cf45be4a63905ee6230701d44908ccf104d80e5abaf48a03"
@@ -5185,6 +6379,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fincen.gov/financial-crimes-enforcement-network",
       "http_status": 404,
       "source_sha256": "2234f5ca75612fa2cf45be4a63905ee6230701d44908ccf104d80e5abaf48a03"
@@ -5216,6 +6416,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fincen.gov/financial-crimes-enforcement-network",
       "http_status": 404,
       "source_sha256": "2234f5ca75612fa2cf45be4a63905ee6230701d44908ccf104d80e5abaf48a03"
@@ -5247,6 +6453,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fincen.gov/financial-crimes-enforcement-network",
       "http_status": 404,
       "source_sha256": "2234f5ca75612fa2cf45be4a63905ee6230701d44908ccf104d80e5abaf48a03"
@@ -5278,6 +6490,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.fincen.gov/financial-crimes-enforcement-network",
       "http_status": 404,
       "source_sha256": "2234f5ca75612fa2cf45be4a63905ee6230701d44908ccf104d80e5abaf48a03"
@@ -5298,7 +6516,7 @@
       "suggested_source_boundary": "proof-of-reserves reports, wallet records, terms, audits and incident disclosures",
       "source_url": "https://www.fca.org.uk/consumers/cryptoassets",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5308,7 +6526,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 b57ab7bb3e4478a5625fd9fb0f4c5d9f563bbdf97e18a4cee16d8aac726461f0; selected=https://www.fca.org.uk/consumers/cryptoassets; final=https://www.fca.org.uk/investsmart/crypto-basics",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investsmart/crypto-basics",
       "http_status": 200,
       "source_sha256": "b57ab7bb3e4478a5625fd9fb0f4c5d9f563bbdf97e18a4cee16d8aac726461f0"
@@ -5339,7 +6563,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Crypto: The basics | FCA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investsmart/crypto-basics",
       "http_status": 200,
       "source_sha256": "b57ab7bb3e4478a5625fd9fb0f4c5d9f563bbdf97e18a4cee16d8aac726461f0"
@@ -5371,6 +6604,15 @@
       "raw_payload_committed": false,
       "locator": "Crypto: The basics | FCA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investsmart/crypto-basics",
       "http_status": 200,
       "source_sha256": "b57ab7bb3e4478a5625fd9fb0f4c5d9f563bbdf97e18a4cee16d8aac726461f0"
@@ -5402,6 +6644,11 @@
       "raw_payload_committed": false,
       "locator": "Crypto: The basics | FCA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investsmart/crypto-basics",
       "http_status": 200,
       "source_sha256": "b57ab7bb3e4478a5625fd9fb0f4c5d9f563bbdf97e18a4cee16d8aac726461f0"
@@ -5432,7 +6679,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Crypto: The basics | FCA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investsmart/crypto-basics",
       "http_status": 200,
       "source_sha256": "b57ab7bb3e4478a5625fd9fb0f4c5d9f563bbdf97e18a4cee16d8aac726461f0"
@@ -5464,6 +6720,14 @@
       "raw_payload_committed": false,
       "locator": "Crypto: The basics | FCA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investsmart/crypto-basics",
       "http_status": 200,
       "source_sha256": "b57ab7bb3e4478a5625fd9fb0f4c5d9f563bbdf97e18a4cee16d8aac726461f0"
@@ -5494,7 +6758,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Crypto: The basics | FCA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investsmart/crypto-basics",
       "http_status": 200,
       "source_sha256": "b57ab7bb3e4478a5625fd9fb0f4c5d9f563bbdf97e18a4cee16d8aac726461f0"
@@ -5526,6 +6796,11 @@
       "raw_payload_committed": false,
       "locator": "Crypto: The basics | FCA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investsmart/crypto-basics",
       "http_status": 200,
       "source_sha256": "b57ab7bb3e4478a5625fd9fb0f4c5d9f563bbdf97e18a4cee16d8aac726461f0"
@@ -5557,6 +6832,12 @@
       "raw_payload_committed": false,
       "locator": "Crypto: The basics | FCA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investsmart/crypto-basics",
       "http_status": 200,
       "source_sha256": "b57ab7bb3e4478a5625fd9fb0f4c5d9f563bbdf97e18a4cee16d8aac726461f0"
@@ -5588,6 +6869,12 @@
       "raw_payload_committed": false,
       "locator": "Crypto: The basics | FCA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investsmart/crypto-basics",
       "http_status": 200,
       "source_sha256": "b57ab7bb3e4478a5625fd9fb0f4c5d9f563bbdf97e18a4cee16d8aac726461f0"
@@ -5608,7 +6895,7 @@
       "suggested_source_boundary": "proof-of-reserves reports, wallet records, terms, audits and incident disclosures",
       "source_url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5618,7 +6905,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 3d3f48464c8008e7cfa63cfe023da7839000384198e6fc88512c835cfff04220; selected=https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation; final=https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
       "http_status": 200,
       "source_sha256": "3d3f48464c8008e7cfa63cfe023da7839000384198e6fc88512c835cfff04220"
@@ -5649,7 +6942,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Digital Finance and Innovation",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
       "http_status": 200,
       "source_sha256": "3d3f48464c8008e7cfa63cfe023da7839000384198e6fc88512c835cfff04220"
@@ -5681,6 +6984,15 @@
       "raw_payload_committed": false,
       "locator": "Digital Finance and Innovation",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
       "http_status": 200,
       "source_sha256": "3d3f48464c8008e7cfa63cfe023da7839000384198e6fc88512c835cfff04220"
@@ -5712,6 +7024,12 @@
       "raw_payload_committed": false,
       "locator": "Digital Finance and Innovation",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
       "http_status": 200,
       "source_sha256": "3d3f48464c8008e7cfa63cfe023da7839000384198e6fc88512c835cfff04220"
@@ -5742,7 +7060,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Digital Finance and Innovation",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
       "http_status": 200,
       "source_sha256": "3d3f48464c8008e7cfa63cfe023da7839000384198e6fc88512c835cfff04220"
@@ -5774,6 +7101,15 @@
       "raw_payload_committed": false,
       "locator": "Digital Finance and Innovation",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
       "http_status": 200,
       "source_sha256": "3d3f48464c8008e7cfa63cfe023da7839000384198e6fc88512c835cfff04220"
@@ -5804,7 +7140,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Digital Finance and Innovation",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
       "http_status": 200,
       "source_sha256": "3d3f48464c8008e7cfa63cfe023da7839000384198e6fc88512c835cfff04220"
@@ -5836,6 +7178,12 @@
       "raw_payload_committed": false,
       "locator": "Digital Finance and Innovation",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
       "http_status": 200,
       "source_sha256": "3d3f48464c8008e7cfa63cfe023da7839000384198e6fc88512c835cfff04220"
@@ -5867,6 +7215,12 @@
       "raw_payload_committed": false,
       "locator": "Digital Finance and Innovation",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
       "http_status": 200,
       "source_sha256": "3d3f48464c8008e7cfa63cfe023da7839000384198e6fc88512c835cfff04220"
@@ -5898,6 +7252,12 @@
       "raw_payload_committed": false,
       "locator": "Digital Finance and Innovation",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation",
       "http_status": 200,
       "source_sha256": "3d3f48464c8008e7cfa63cfe023da7839000384198e6fc88512c835cfff04220"
@@ -5918,7 +7278,7 @@
       "suggested_source_boundary": "proof-of-reserves reports, wallet records, terms, audits and incident disclosures",
       "source_url": "https://www.coinbase.com/legal/user_agreement",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5928,7 +7288,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 8099f9f85286ffafa2fe6de337c4ef76627bcdc2022e88b854863f8ad1b5a68c; selected=https://www.coinbase.com/legal/user_agreement; final=https://www.coinbase.com/nl/legal/user_agreement",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.coinbase.com/nl/legal/user_agreement",
       "http_status": 200,
       "source_sha256": "8099f9f85286ffafa2fe6de337c4ef76627bcdc2022e88b854863f8ad1b5a68c"
@@ -5959,7 +7325,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "empty extraction",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.coinbase.com/nl/legal/user_agreement",
       "http_status": 200,
       "source_sha256": "8099f9f85286ffafa2fe6de337c4ef76627bcdc2022e88b854863f8ad1b5a68c"
@@ -5991,6 +7367,15 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.coinbase.com/nl/legal/user_agreement",
       "http_status": 200,
       "source_sha256": "8099f9f85286ffafa2fe6de337c4ef76627bcdc2022e88b854863f8ad1b5a68c"
@@ -6022,6 +7407,12 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.coinbase.com/nl/legal/user_agreement",
       "http_status": 200,
       "source_sha256": "8099f9f85286ffafa2fe6de337c4ef76627bcdc2022e88b854863f8ad1b5a68c"
@@ -6052,7 +7443,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "empty extraction",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.coinbase.com/nl/legal/user_agreement",
       "http_status": 200,
       "source_sha256": "8099f9f85286ffafa2fe6de337c4ef76627bcdc2022e88b854863f8ad1b5a68c"
@@ -6084,6 +7484,15 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.coinbase.com/nl/legal/user_agreement",
       "http_status": 200,
       "source_sha256": "8099f9f85286ffafa2fe6de337c4ef76627bcdc2022e88b854863f8ad1b5a68c"
@@ -6114,7 +7523,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "empty extraction",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.coinbase.com/nl/legal/user_agreement",
       "http_status": 200,
       "source_sha256": "8099f9f85286ffafa2fe6de337c4ef76627bcdc2022e88b854863f8ad1b5a68c"
@@ -6146,6 +7561,12 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.coinbase.com/nl/legal/user_agreement",
       "http_status": 200,
       "source_sha256": "8099f9f85286ffafa2fe6de337c4ef76627bcdc2022e88b854863f8ad1b5a68c"
@@ -6177,6 +7598,12 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.coinbase.com/nl/legal/user_agreement",
       "http_status": 200,
       "source_sha256": "8099f9f85286ffafa2fe6de337c4ef76627bcdc2022e88b854863f8ad1b5a68c"
@@ -6208,6 +7635,12 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.coinbase.com/nl/legal/user_agreement",
       "http_status": 200,
       "source_sha256": "8099f9f85286ffafa2fe6de337c4ef76627bcdc2022e88b854863f8ad1b5a68c"
@@ -6228,7 +7661,7 @@
       "suggested_source_boundary": "proof-of-reserves reports, wallet records, terms, audits and incident disclosures",
       "source_url": "https://www.kraken.com/legal",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6238,7 +7671,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 41dc5b2deab74f5b13fc7afdbd2076740193721a5b48cad2c7807fa8651f0cae; selected=https://www.kraken.com/legal; final=https://www.kraken.com/legal",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.kraken.com/legal",
       "http_status": 200,
       "source_sha256": "41dc5b2deab74f5b13fc7afdbd2076740193721a5b48cad2c7807fa8651f0cae"
@@ -6269,7 +7708,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Terms of Service",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.kraken.com/legal",
       "http_status": 200,
       "source_sha256": "41dc5b2deab74f5b13fc7afdbd2076740193721a5b48cad2c7807fa8651f0cae"
@@ -6301,6 +7750,15 @@
       "raw_payload_committed": false,
       "locator": "Terms of Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.kraken.com/legal",
       "http_status": 200,
       "source_sha256": "41dc5b2deab74f5b13fc7afdbd2076740193721a5b48cad2c7807fa8651f0cae"
@@ -6332,6 +7790,12 @@
       "raw_payload_committed": false,
       "locator": "Terms of Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.kraken.com/legal",
       "http_status": 200,
       "source_sha256": "41dc5b2deab74f5b13fc7afdbd2076740193721a5b48cad2c7807fa8651f0cae"
@@ -6362,7 +7826,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Terms of Service",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.kraken.com/legal",
       "http_status": 200,
       "source_sha256": "41dc5b2deab74f5b13fc7afdbd2076740193721a5b48cad2c7807fa8651f0cae"
@@ -6394,6 +7867,15 @@
       "raw_payload_committed": false,
       "locator": "Terms of Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.kraken.com/legal",
       "http_status": 200,
       "source_sha256": "41dc5b2deab74f5b13fc7afdbd2076740193721a5b48cad2c7807fa8651f0cae"
@@ -6424,7 +7906,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Terms of Service",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.kraken.com/legal",
       "http_status": 200,
       "source_sha256": "41dc5b2deab74f5b13fc7afdbd2076740193721a5b48cad2c7807fa8651f0cae"
@@ -6456,6 +7944,12 @@
       "raw_payload_committed": false,
       "locator": "Terms of Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.kraken.com/legal",
       "http_status": 200,
       "source_sha256": "41dc5b2deab74f5b13fc7afdbd2076740193721a5b48cad2c7807fa8651f0cae"
@@ -6487,6 +7981,12 @@
       "raw_payload_committed": false,
       "locator": "Terms of Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.kraken.com/legal",
       "http_status": 200,
       "source_sha256": "41dc5b2deab74f5b13fc7afdbd2076740193721a5b48cad2c7807fa8651f0cae"
@@ -6518,6 +8018,12 @@
       "raw_payload_committed": false,
       "locator": "Terms of Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.kraken.com/legal",
       "http_status": 200,
       "source_sha256": "41dc5b2deab74f5b13fc7afdbd2076740193721a5b48cad2c7807fa8651f0cae"

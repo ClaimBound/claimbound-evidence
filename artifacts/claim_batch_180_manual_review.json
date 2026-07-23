@@ -1,13 +1,12 @@
 {
   "issue_number": 180,
-  "protocol_version": "CB7K-ISSUE-180-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-180-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "source_manifest_sha256": "0370eccfe4950b26cf09a1ea05171c9b35557c4f09f9164e98aba2b8c26333cd",
   "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
   "raw_payload_committed": false,
-  "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
+  "review_method": "complete topic-specific textual gate facets with verbatim locators; numerator-denominator, method-version, and reproducibility additionally require an independent execution artifact",
   "result_counts": {
-    "PASSED_UNDER_PROTOCOL": 12,
-    "INSUFFICIENT_COVERAGE": 108,
+    "INSUFFICIENT_COVERAGE": 120,
     "BLOCKED_SOURCE": 90
   },
   "cards": [
@@ -27,7 +26,7 @@
       "suggested_source_boundary": "asset declarations, procurement data, court records and audit reports",
       "source_url": "https://www.unodc.org/unodc/en/corruption/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -37,7 +36,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 42631d34be601b3b987ff082c3bbd8cb7a83da07c37ddb39394f45dc26b91de0; selected=https://www.unodc.org/unodc/en/corruption/; final=https://www.unodc.org/corruption/en/index.html",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.unodc.org/corruption/en/index.html",
       "http_status": 200,
       "source_sha256": "42631d34be601b3b987ff082c3bbd8cb7a83da07c37ddb39394f45dc26b91de0"
@@ -68,7 +73,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "UNODC Corruption and Financial Crime Branch",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.unodc.org/corruption/en/index.html",
       "http_status": 200,
       "source_sha256": "42631d34be601b3b987ff082c3bbd8cb7a83da07c37ddb39394f45dc26b91de0"
@@ -100,6 +115,15 @@
       "raw_payload_committed": false,
       "locator": "UNODC Corruption and Financial Crime Branch",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.unodc.org/corruption/en/index.html",
       "http_status": 200,
       "source_sha256": "42631d34be601b3b987ff082c3bbd8cb7a83da07c37ddb39394f45dc26b91de0"
@@ -131,6 +155,12 @@
       "raw_payload_committed": false,
       "locator": "UNODC Corruption and Financial Crime Branch",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.unodc.org/corruption/en/index.html",
       "http_status": 200,
       "source_sha256": "42631d34be601b3b987ff082c3bbd8cb7a83da07c37ddb39394f45dc26b91de0"
@@ -161,7 +191,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "UNODC Corruption and Financial Crime Branch",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.unodc.org/corruption/en/index.html",
       "http_status": 200,
       "source_sha256": "42631d34be601b3b987ff082c3bbd8cb7a83da07c37ddb39394f45dc26b91de0"
@@ -193,6 +232,15 @@
       "raw_payload_committed": false,
       "locator": "UNODC Corruption and Financial Crime Branch",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.unodc.org/corruption/en/index.html",
       "http_status": 200,
       "source_sha256": "42631d34be601b3b987ff082c3bbd8cb7a83da07c37ddb39394f45dc26b91de0"
@@ -223,7 +271,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "UNODC Corruption and Financial Crime Branch",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.unodc.org/corruption/en/index.html",
       "http_status": 200,
       "source_sha256": "42631d34be601b3b987ff082c3bbd8cb7a83da07c37ddb39394f45dc26b91de0"
@@ -255,6 +309,12 @@
       "raw_payload_committed": false,
       "locator": "UNODC Corruption and Financial Crime Branch",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.unodc.org/corruption/en/index.html",
       "http_status": 200,
       "source_sha256": "42631d34be601b3b987ff082c3bbd8cb7a83da07c37ddb39394f45dc26b91de0"
@@ -286,6 +346,12 @@
       "raw_payload_committed": false,
       "locator": "UNODC Corruption and Financial Crime Branch",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.unodc.org/corruption/en/index.html",
       "http_status": 200,
       "source_sha256": "42631d34be601b3b987ff082c3bbd8cb7a83da07c37ddb39394f45dc26b91de0"
@@ -317,6 +383,12 @@
       "raw_payload_committed": false,
       "locator": "UNODC Corruption and Financial Crime Branch",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.unodc.org/corruption/en/index.html",
       "http_status": 200,
       "source_sha256": "42631d34be601b3b987ff082c3bbd8cb7a83da07c37ddb39394f45dc26b91de0"
@@ -337,7 +409,7 @@
       "suggested_source_boundary": "asset declarations, procurement data, court records and audit reports",
       "source_url": "https://www.transparency.org/en/what-is-corruption",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -347,7 +419,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 20abbaa14df365f091e28d592822cd50e704a8d16058276e7696e2567803d9d5; selected=https://www.transparency.org/en/what-is-corruption; final=https://www.transparency.org/en/what-is-corruption",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.transparency.org/en/what-is-corruption",
       "http_status": 200,
       "source_sha256": "20abbaa14df365f091e28d592822cd50e704a8d16058276e7696e2567803d9d5"
@@ -378,7 +456,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "What is corruption? - Transparency.org",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.transparency.org/en/what-is-corruption",
       "http_status": 200,
       "source_sha256": "20abbaa14df365f091e28d592822cd50e704a8d16058276e7696e2567803d9d5"
@@ -410,6 +498,15 @@
       "raw_payload_committed": false,
       "locator": "What is corruption? - Transparency.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.transparency.org/en/what-is-corruption",
       "http_status": 200,
       "source_sha256": "20abbaa14df365f091e28d592822cd50e704a8d16058276e7696e2567803d9d5"
@@ -441,6 +538,12 @@
       "raw_payload_committed": false,
       "locator": "What is corruption? - Transparency.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.transparency.org/en/what-is-corruption",
       "http_status": 200,
       "source_sha256": "20abbaa14df365f091e28d592822cd50e704a8d16058276e7696e2567803d9d5"
@@ -471,7 +574,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "What is corruption? - Transparency.org",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.transparency.org/en/what-is-corruption",
       "http_status": 200,
       "source_sha256": "20abbaa14df365f091e28d592822cd50e704a8d16058276e7696e2567803d9d5"
@@ -503,6 +615,15 @@
       "raw_payload_committed": false,
       "locator": "What is corruption? - Transparency.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.transparency.org/en/what-is-corruption",
       "http_status": 200,
       "source_sha256": "20abbaa14df365f091e28d592822cd50e704a8d16058276e7696e2567803d9d5"
@@ -533,7 +654,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "What is corruption? - Transparency.org",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.transparency.org/en/what-is-corruption",
       "http_status": 200,
       "source_sha256": "20abbaa14df365f091e28d592822cd50e704a8d16058276e7696e2567803d9d5"
@@ -565,6 +692,12 @@
       "raw_payload_committed": false,
       "locator": "What is corruption? - Transparency.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.transparency.org/en/what-is-corruption",
       "http_status": 200,
       "source_sha256": "20abbaa14df365f091e28d592822cd50e704a8d16058276e7696e2567803d9d5"
@@ -596,6 +729,12 @@
       "raw_payload_committed": false,
       "locator": "What is corruption? - Transparency.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.transparency.org/en/what-is-corruption",
       "http_status": 200,
       "source_sha256": "20abbaa14df365f091e28d592822cd50e704a8d16058276e7696e2567803d9d5"
@@ -627,6 +766,12 @@
       "raw_payload_committed": false,
       "locator": "What is corruption? - Transparency.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.transparency.org/en/what-is-corruption",
       "http_status": 200,
       "source_sha256": "20abbaa14df365f091e28d592822cd50e704a8d16058276e7696e2567803d9d5"
@@ -647,7 +792,7 @@
       "suggested_source_boundary": "asset declarations, procurement data, court records and audit reports",
       "source_url": "https://www.worldbank.org/en/topic/governance/brief/anticorruption",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -657,7 +802,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 b43bf09972af02a6336d49e67f07de451f45a4efd449aa10975af3d3b82bf1f0; selected=https://www.worldbank.org/en/topic/governance/brief/anticorruption; final=https://www.worldbank.org/ext/en/development-topics",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "b43bf09972af02a6336d49e67f07de451f45a4efd449aa10975af3d3b82bf1f0"
@@ -688,7 +839,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "b43bf09972af02a6336d49e67f07de451f45a4efd449aa10975af3d3b82bf1f0"
@@ -720,6 +881,15 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "b43bf09972af02a6336d49e67f07de451f45a4efd449aa10975af3d3b82bf1f0"
@@ -751,6 +921,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "b43bf09972af02a6336d49e67f07de451f45a4efd449aa10975af3d3b82bf1f0"
@@ -781,7 +957,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "b43bf09972af02a6336d49e67f07de451f45a4efd449aa10975af3d3b82bf1f0"
@@ -813,6 +998,15 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "b43bf09972af02a6336d49e67f07de451f45a4efd449aa10975af3d3b82bf1f0"
@@ -843,7 +1037,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "b43bf09972af02a6336d49e67f07de451f45a4efd449aa10975af3d3b82bf1f0"
@@ -875,6 +1075,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "b43bf09972af02a6336d49e67f07de451f45a4efd449aa10975af3d3b82bf1f0"
@@ -906,6 +1112,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "b43bf09972af02a6336d49e67f07de451f45a4efd449aa10975af3d3b82bf1f0"
@@ -937,6 +1149,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "b43bf09972af02a6336d49e67f07de451f45a4efd449aa10975af3d3b82bf1f0"
@@ -968,6 +1186,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corruption/",
       "http_status": 403,
       "source_sha256": "2fd7d7c4807fefdcf6d32154b14fa2806c4fc98aed2debefdd4fb72bc2521e52"
@@ -999,6 +1222,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corruption/",
       "http_status": 403,
       "source_sha256": "2fd7d7c4807fefdcf6d32154b14fa2806c4fc98aed2debefdd4fb72bc2521e52"
@@ -1030,6 +1263,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corruption/",
       "http_status": 403,
       "source_sha256": "2fd7d7c4807fefdcf6d32154b14fa2806c4fc98aed2debefdd4fb72bc2521e52"
@@ -1061,6 +1303,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corruption/",
       "http_status": 403,
       "source_sha256": "2fd7d7c4807fefdcf6d32154b14fa2806c4fc98aed2debefdd4fb72bc2521e52"
@@ -1092,6 +1340,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corruption/",
       "http_status": 403,
       "source_sha256": "2fd7d7c4807fefdcf6d32154b14fa2806c4fc98aed2debefdd4fb72bc2521e52"
@@ -1123,6 +1380,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corruption/",
       "http_status": 403,
       "source_sha256": "2fd7d7c4807fefdcf6d32154b14fa2806c4fc98aed2debefdd4fb72bc2521e52"
@@ -1154,6 +1420,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corruption/",
       "http_status": 403,
       "source_sha256": "2fd7d7c4807fefdcf6d32154b14fa2806c4fc98aed2debefdd4fb72bc2521e52"
@@ -1185,6 +1457,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corruption/",
       "http_status": 403,
       "source_sha256": "2fd7d7c4807fefdcf6d32154b14fa2806c4fc98aed2debefdd4fb72bc2521e52"
@@ -1216,6 +1494,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corruption/",
       "http_status": 403,
       "source_sha256": "2fd7d7c4807fefdcf6d32154b14fa2806c4fc98aed2debefdd4fb72bc2521e52"
@@ -1247,6 +1531,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corruption/",
       "http_status": 403,
       "source_sha256": "2fd7d7c4807fefdcf6d32154b14fa2806c4fc98aed2debefdd4fb72bc2521e52"
@@ -1278,6 +1568,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/corruption.html",
       "http_status": 403,
       "source_sha256": "49fddabab8110da557689d3fac815958a1d14a229e4d6f3cfc190c2e09ccbe4e"
@@ -1309,6 +1604,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/corruption.html",
       "http_status": 403,
       "source_sha256": "49fddabab8110da557689d3fac815958a1d14a229e4d6f3cfc190c2e09ccbe4e"
@@ -1340,6 +1645,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/corruption.html",
       "http_status": 403,
       "source_sha256": "49fddabab8110da557689d3fac815958a1d14a229e4d6f3cfc190c2e09ccbe4e"
@@ -1371,6 +1685,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/corruption.html",
       "http_status": 403,
       "source_sha256": "49fddabab8110da557689d3fac815958a1d14a229e4d6f3cfc190c2e09ccbe4e"
@@ -1402,6 +1722,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/corruption.html",
       "http_status": 403,
       "source_sha256": "49fddabab8110da557689d3fac815958a1d14a229e4d6f3cfc190c2e09ccbe4e"
@@ -1433,6 +1762,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/corruption.html",
       "http_status": 403,
       "source_sha256": "49fddabab8110da557689d3fac815958a1d14a229e4d6f3cfc190c2e09ccbe4e"
@@ -1464,6 +1802,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/corruption.html",
       "http_status": 403,
       "source_sha256": "49fddabab8110da557689d3fac815958a1d14a229e4d6f3cfc190c2e09ccbe4e"
@@ -1495,6 +1839,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/corruption.html",
       "http_status": 403,
       "source_sha256": "49fddabab8110da557689d3fac815958a1d14a229e4d6f3cfc190c2e09ccbe4e"
@@ -1526,6 +1876,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/corruption.html",
       "http_status": 403,
       "source_sha256": "49fddabab8110da557689d3fac815958a1d14a229e4d6f3cfc190c2e09ccbe4e"
@@ -1557,6 +1913,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fatf-gafi.org/en/topics/corruption.html",
       "http_status": 403,
       "source_sha256": "49fddabab8110da557689d3fac815958a1d14a229e4d6f3cfc190c2e09ccbe4e"
@@ -1577,7 +1939,7 @@
       "suggested_source_boundary": "asset declarations, procurement data, court records and audit reports",
       "source_url": "https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1587,7 +1949,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 bf17009e889d1a0ec43ba71f03a12b51eb13eeff3aa258a686091cf5bca5f09a; selected=https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/; final=https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
       "http_status": 200,
       "source_sha256": "bf17009e889d1a0ec43ba71f03a12b51eb13eeff3aa258a686091cf5bca5f09a"
@@ -1618,7 +1986,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Corruption - United Nations and the Rule of Law",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
       "http_status": 200,
       "source_sha256": "bf17009e889d1a0ec43ba71f03a12b51eb13eeff3aa258a686091cf5bca5f09a"
@@ -1650,6 +2028,15 @@
       "raw_payload_committed": false,
       "locator": "Corruption - United Nations and the Rule of Law",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
       "http_status": 200,
       "source_sha256": "bf17009e889d1a0ec43ba71f03a12b51eb13eeff3aa258a686091cf5bca5f09a"
@@ -1681,6 +2068,12 @@
       "raw_payload_committed": false,
       "locator": "Corruption - United Nations and the Rule of Law",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
       "http_status": 200,
       "source_sha256": "bf17009e889d1a0ec43ba71f03a12b51eb13eeff3aa258a686091cf5bca5f09a"
@@ -1711,7 +2104,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Corruption - United Nations and the Rule of Law",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
       "http_status": 200,
       "source_sha256": "bf17009e889d1a0ec43ba71f03a12b51eb13eeff3aa258a686091cf5bca5f09a"
@@ -1743,6 +2145,15 @@
       "raw_payload_committed": false,
       "locator": "Corruption - United Nations and the Rule of Law",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
       "http_status": 200,
       "source_sha256": "bf17009e889d1a0ec43ba71f03a12b51eb13eeff3aa258a686091cf5bca5f09a"
@@ -1773,7 +2184,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Corruption - United Nations and the Rule of Law",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
       "http_status": 200,
       "source_sha256": "bf17009e889d1a0ec43ba71f03a12b51eb13eeff3aa258a686091cf5bca5f09a"
@@ -1805,6 +2222,12 @@
       "raw_payload_committed": false,
       "locator": "Corruption - United Nations and the Rule of Law",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
       "http_status": 200,
       "source_sha256": "bf17009e889d1a0ec43ba71f03a12b51eb13eeff3aa258a686091cf5bca5f09a"
@@ -1836,6 +2259,12 @@
       "raw_payload_committed": false,
       "locator": "Corruption - United Nations and the Rule of Law",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
       "http_status": 200,
       "source_sha256": "bf17009e889d1a0ec43ba71f03a12b51eb13eeff3aa258a686091cf5bca5f09a"
@@ -1867,6 +2296,12 @@
       "raw_payload_committed": false,
       "locator": "Corruption - United Nations and the Rule of Law",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/ruleoflaw/thematic-areas/governance/corruption/",
       "http_status": 200,
       "source_sha256": "bf17009e889d1a0ec43ba71f03a12b51eb13eeff3aa258a686091cf5bca5f09a"
@@ -1898,6 +2333,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/highrisk/2023-fraud-risk-management",
       "http_status": 403,
       "source_sha256": "5ff0de29e7bf5786b7e5ca9584a2d475773c1c85934ea8246213223675c58798"
@@ -1929,6 +2369,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/highrisk/2023-fraud-risk-management",
       "http_status": 403,
       "source_sha256": "5ff0de29e7bf5786b7e5ca9584a2d475773c1c85934ea8246213223675c58798"
@@ -1960,6 +2410,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/highrisk/2023-fraud-risk-management",
       "http_status": 403,
       "source_sha256": "5ff0de29e7bf5786b7e5ca9584a2d475773c1c85934ea8246213223675c58798"
@@ -1991,6 +2450,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/highrisk/2023-fraud-risk-management",
       "http_status": 403,
       "source_sha256": "5ff0de29e7bf5786b7e5ca9584a2d475773c1c85934ea8246213223675c58798"
@@ -2022,6 +2487,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/highrisk/2023-fraud-risk-management",
       "http_status": 403,
       "source_sha256": "5ff0de29e7bf5786b7e5ca9584a2d475773c1c85934ea8246213223675c58798"
@@ -2053,6 +2527,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/highrisk/2023-fraud-risk-management",
       "http_status": 403,
       "source_sha256": "5ff0de29e7bf5786b7e5ca9584a2d475773c1c85934ea8246213223675c58798"
@@ -2084,6 +2567,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/highrisk/2023-fraud-risk-management",
       "http_status": 403,
       "source_sha256": "5ff0de29e7bf5786b7e5ca9584a2d475773c1c85934ea8246213223675c58798"
@@ -2115,6 +2604,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/highrisk/2023-fraud-risk-management",
       "http_status": 403,
       "source_sha256": "5ff0de29e7bf5786b7e5ca9584a2d475773c1c85934ea8246213223675c58798"
@@ -2146,6 +2641,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/highrisk/2023-fraud-risk-management",
       "http_status": 403,
       "source_sha256": "5ff0de29e7bf5786b7e5ca9584a2d475773c1c85934ea8246213223675c58798"
@@ -2177,6 +2678,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/highrisk/2023-fraud-risk-management",
       "http_status": 403,
       "source_sha256": "5ff0de29e7bf5786b7e5ca9584a2d475773c1c85934ea8246213223675c58798"
@@ -2208,6 +2715,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.unocha.org/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -2239,6 +2751,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.unocha.org/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -2270,6 +2792,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.unocha.org/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -2301,6 +2832,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.unocha.org/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -2332,6 +2869,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.unocha.org/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -2363,6 +2909,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.unocha.org/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -2394,6 +2949,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.unocha.org/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -2425,6 +2986,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.unocha.org/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -2456,6 +3023,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.unocha.org/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -2487,6 +3060,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.unocha.org/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -2518,6 +3097,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/data",
       "http_status": 403,
       "source_sha256": "aa6cf16ca94c7c918f2ff6393a8e9bd1e6b138ec96c13c4dc131ed94435b7023"
@@ -2549,6 +3133,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/data",
       "http_status": 403,
       "source_sha256": "aa6cf16ca94c7c918f2ff6393a8e9bd1e6b138ec96c13c4dc131ed94435b7023"
@@ -2580,6 +3174,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/data",
       "http_status": 403,
       "source_sha256": "aa6cf16ca94c7c918f2ff6393a8e9bd1e6b138ec96c13c4dc131ed94435b7023"
@@ -2611,6 +3214,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/data",
       "http_status": 403,
       "source_sha256": "aa6cf16ca94c7c918f2ff6393a8e9bd1e6b138ec96c13c4dc131ed94435b7023"
@@ -2642,6 +3251,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/data",
       "http_status": 403,
       "source_sha256": "aa6cf16ca94c7c918f2ff6393a8e9bd1e6b138ec96c13c4dc131ed94435b7023"
@@ -2673,6 +3291,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/data",
       "http_status": 403,
       "source_sha256": "aa6cf16ca94c7c918f2ff6393a8e9bd1e6b138ec96c13c4dc131ed94435b7023"
@@ -2704,6 +3331,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/data",
       "http_status": 403,
       "source_sha256": "aa6cf16ca94c7c918f2ff6393a8e9bd1e6b138ec96c13c4dc131ed94435b7023"
@@ -2735,6 +3368,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/data",
       "http_status": 403,
       "source_sha256": "aa6cf16ca94c7c918f2ff6393a8e9bd1e6b138ec96c13c4dc131ed94435b7023"
@@ -2766,6 +3405,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/data",
       "http_status": 403,
       "source_sha256": "aa6cf16ca94c7c918f2ff6393a8e9bd1e6b138ec96c13c4dc131ed94435b7023"
@@ -2797,6 +3442,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/data",
       "http_status": 403,
       "source_sha256": "aa6cf16ca94c7c918f2ff6393a8e9bd1e6b138ec96c13c4dc131ed94435b7023"
@@ -2817,7 +3468,7 @@
       "suggested_source_boundary": "programme dashboards, distribution records, needs assessments and audits",
       "source_url": "https://www.wfp.org/publications",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2827,7 +3478,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 a807a4d2908538f73cb1336fd3791370d195cbaad77189998604eb0d6841e70a; selected=https://www.wfp.org/publications; final=https://www.wfp.org/publications",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.wfp.org/publications",
       "http_status": 200,
       "source_sha256": "a807a4d2908538f73cb1336fd3791370d195cbaad77189998604eb0d6841e70a"
@@ -2858,7 +3515,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Publications | World Food Programme",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.wfp.org/publications",
       "http_status": 200,
       "source_sha256": "a807a4d2908538f73cb1336fd3791370d195cbaad77189998604eb0d6841e70a"
@@ -2890,6 +3556,15 @@
       "raw_payload_committed": false,
       "locator": "Publications | World Food Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.wfp.org/publications",
       "http_status": 200,
       "source_sha256": "a807a4d2908538f73cb1336fd3791370d195cbaad77189998604eb0d6841e70a"
@@ -2921,6 +3596,12 @@
       "raw_payload_committed": false,
       "locator": "Publications | World Food Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.wfp.org/publications",
       "http_status": 200,
       "source_sha256": "a807a4d2908538f73cb1336fd3791370d195cbaad77189998604eb0d6841e70a"
@@ -2951,7 +3632,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Publications | World Food Programme",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.wfp.org/publications",
       "http_status": 200,
       "source_sha256": "a807a4d2908538f73cb1336fd3791370d195cbaad77189998604eb0d6841e70a"
@@ -2983,6 +3673,15 @@
       "raw_payload_committed": false,
       "locator": "Publications | World Food Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.wfp.org/publications",
       "http_status": 200,
       "source_sha256": "a807a4d2908538f73cb1336fd3791370d195cbaad77189998604eb0d6841e70a"
@@ -3013,7 +3712,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Publications | World Food Programme",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.wfp.org/publications",
       "http_status": 200,
       "source_sha256": "a807a4d2908538f73cb1336fd3791370d195cbaad77189998604eb0d6841e70a"
@@ -3045,6 +3750,12 @@
       "raw_payload_committed": false,
       "locator": "Publications | World Food Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.wfp.org/publications",
       "http_status": 200,
       "source_sha256": "a807a4d2908538f73cb1336fd3791370d195cbaad77189998604eb0d6841e70a"
@@ -3076,6 +3787,12 @@
       "raw_payload_committed": false,
       "locator": "Publications | World Food Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.wfp.org/publications",
       "http_status": 200,
       "source_sha256": "a807a4d2908538f73cb1336fd3791370d195cbaad77189998604eb0d6841e70a"
@@ -3107,6 +3824,12 @@
       "raw_payload_committed": false,
       "locator": "Publications | World Food Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.wfp.org/publications",
       "http_status": 200,
       "source_sha256": "a807a4d2908538f73cb1336fd3791370d195cbaad77189998604eb0d6841e70a"
@@ -3127,7 +3850,7 @@
       "suggested_source_boundary": "programme dashboards, distribution records, needs assessments and audits",
       "source_url": "https://www.who.int/emergencies",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3137,7 +3860,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 cdee5e66623ca7c6719328f5f4d7f62907ee5f0dd494a59dec3f4bb2c9350141; selected=https://www.who.int/emergencies; final=https://www.who.int/emergencies/overview",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/emergencies/overview",
       "http_status": 200,
       "source_sha256": "cdee5e66623ca7c6719328f5f4d7f62907ee5f0dd494a59dec3f4bb2c9350141"
@@ -3168,7 +3897,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "World Health Organization Emergencies Programme",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/emergencies/overview",
       "http_status": 200,
       "source_sha256": "cdee5e66623ca7c6719328f5f4d7f62907ee5f0dd494a59dec3f4bb2c9350141"
@@ -3200,6 +3939,14 @@
       "raw_payload_committed": false,
       "locator": "World Health Organization Emergencies Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/emergencies/overview",
       "http_status": 200,
       "source_sha256": "cdee5e66623ca7c6719328f5f4d7f62907ee5f0dd494a59dec3f4bb2c9350141"
@@ -3231,6 +3978,12 @@
       "raw_payload_committed": false,
       "locator": "World Health Organization Emergencies Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/emergencies/overview",
       "http_status": 200,
       "source_sha256": "cdee5e66623ca7c6719328f5f4d7f62907ee5f0dd494a59dec3f4bb2c9350141"
@@ -3261,7 +4014,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "World Health Organization Emergencies Programme",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/emergencies/overview",
       "http_status": 200,
       "source_sha256": "cdee5e66623ca7c6719328f5f4d7f62907ee5f0dd494a59dec3f4bb2c9350141"
@@ -3293,6 +4055,15 @@
       "raw_payload_committed": false,
       "locator": "World Health Organization Emergencies Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/emergencies/overview",
       "http_status": 200,
       "source_sha256": "cdee5e66623ca7c6719328f5f4d7f62907ee5f0dd494a59dec3f4bb2c9350141"
@@ -3323,7 +4094,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "World Health Organization Emergencies Programme",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/emergencies/overview",
       "http_status": 200,
       "source_sha256": "cdee5e66623ca7c6719328f5f4d7f62907ee5f0dd494a59dec3f4bb2c9350141"
@@ -3355,6 +4132,11 @@
       "raw_payload_committed": false,
       "locator": "World Health Organization Emergencies Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/emergencies/overview",
       "http_status": 200,
       "source_sha256": "cdee5e66623ca7c6719328f5f4d7f62907ee5f0dd494a59dec3f4bb2c9350141"
@@ -3386,6 +4168,12 @@
       "raw_payload_committed": false,
       "locator": "World Health Organization Emergencies Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/emergencies/overview",
       "http_status": 200,
       "source_sha256": "cdee5e66623ca7c6719328f5f4d7f62907ee5f0dd494a59dec3f4bb2c9350141"
@@ -3417,6 +4205,11 @@
       "raw_payload_committed": false,
       "locator": "World Health Organization Emergencies Programme",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/emergencies/overview",
       "http_status": 200,
       "source_sha256": "cdee5e66623ca7c6719328f5f4d7f62907ee5f0dd494a59dec3f4bb2c9350141"
@@ -3437,7 +4230,7 @@
       "suggested_source_boundary": "programme dashboards, distribution records, needs assessments and audits",
       "source_url": "https://www.worldbank.org/en/topic/socialprotection",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3447,7 +4240,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 16e649b01567c48a0ff3f901ad1d0de9a5fffa13ff5f4a6a70709391d0d08ad3; selected=https://www.worldbank.org/en/topic/socialprotection; final=https://www.worldbank.org/ext/en/topic/social-protection",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection",
       "http_status": 200,
       "source_sha256": "16e649b01567c48a0ff3f901ad1d0de9a5fffa13ff5f4a6a70709391d0d08ad3"
@@ -3478,7 +4277,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Social Protection and Labor | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection",
       "http_status": 200,
       "source_sha256": "16e649b01567c48a0ff3f901ad1d0de9a5fffa13ff5f4a6a70709391d0d08ad3"
@@ -3510,6 +4319,15 @@
       "raw_payload_committed": false,
       "locator": "Social Protection and Labor | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection",
       "http_status": 200,
       "source_sha256": "16e649b01567c48a0ff3f901ad1d0de9a5fffa13ff5f4a6a70709391d0d08ad3"
@@ -3541,6 +4359,12 @@
       "raw_payload_committed": false,
       "locator": "Social Protection and Labor | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection",
       "http_status": 200,
       "source_sha256": "16e649b01567c48a0ff3f901ad1d0de9a5fffa13ff5f4a6a70709391d0d08ad3"
@@ -3571,7 +4395,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Social Protection and Labor | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection",
       "http_status": 200,
       "source_sha256": "16e649b01567c48a0ff3f901ad1d0de9a5fffa13ff5f4a6a70709391d0d08ad3"
@@ -3603,6 +4436,15 @@
       "raw_payload_committed": false,
       "locator": "Social Protection and Labor | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection",
       "http_status": 200,
       "source_sha256": "16e649b01567c48a0ff3f901ad1d0de9a5fffa13ff5f4a6a70709391d0d08ad3"
@@ -3633,7 +4475,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Social Protection and Labor | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection",
       "http_status": 200,
       "source_sha256": "16e649b01567c48a0ff3f901ad1d0de9a5fffa13ff5f4a6a70709391d0d08ad3"
@@ -3665,6 +4513,12 @@
       "raw_payload_committed": false,
       "locator": "Social Protection and Labor | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection",
       "http_status": 200,
       "source_sha256": "16e649b01567c48a0ff3f901ad1d0de9a5fffa13ff5f4a6a70709391d0d08ad3"
@@ -3696,6 +4550,12 @@
       "raw_payload_committed": false,
       "locator": "Social Protection and Labor | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection",
       "http_status": 200,
       "source_sha256": "16e649b01567c48a0ff3f901ad1d0de9a5fffa13ff5f4a6a70709391d0d08ad3"
@@ -3727,6 +4587,12 @@
       "raw_payload_committed": false,
       "locator": "Social Protection and Labor | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection",
       "http_status": 200,
       "source_sha256": "16e649b01567c48a0ff3f901ad1d0de9a5fffa13ff5f4a6a70709391d0d08ad3"
@@ -3758,6 +4624,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://reliefweb.int/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -3789,6 +4660,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://reliefweb.int/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -3820,6 +4701,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://reliefweb.int/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -3851,6 +4741,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://reliefweb.int/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -3882,6 +4778,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://reliefweb.int/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -3913,6 +4818,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://reliefweb.int/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -3944,6 +4858,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://reliefweb.int/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -3975,6 +4895,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://reliefweb.int/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -4006,6 +4932,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://reliefweb.int/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -4037,6 +4969,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 444",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://reliefweb.int/",
       "http_status": 444,
       "source_sha256": "6e585d5b00c5e7f1a43ffe1479ba9cb6c8814c5281f149f45dfc5e691f926237"
@@ -4068,6 +5006,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/development/humanitarian-assistance/",
       "http_status": 403,
       "source_sha256": "d8154d3a637afeaee08a5a3986790bc46674b6836ac038d21b1ec370dad6c1aa"
@@ -4099,6 +5042,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/development/humanitarian-assistance/",
       "http_status": 403,
       "source_sha256": "d8154d3a637afeaee08a5a3986790bc46674b6836ac038d21b1ec370dad6c1aa"
@@ -4130,6 +5083,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/development/humanitarian-assistance/",
       "http_status": 403,
       "source_sha256": "d8154d3a637afeaee08a5a3986790bc46674b6836ac038d21b1ec370dad6c1aa"
@@ -4161,6 +5123,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/development/humanitarian-assistance/",
       "http_status": 403,
       "source_sha256": "d8154d3a637afeaee08a5a3986790bc46674b6836ac038d21b1ec370dad6c1aa"
@@ -4192,6 +5160,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/development/humanitarian-assistance/",
       "http_status": 403,
       "source_sha256": "d8154d3a637afeaee08a5a3986790bc46674b6836ac038d21b1ec370dad6c1aa"
@@ -4223,6 +5200,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/development/humanitarian-assistance/",
       "http_status": 403,
       "source_sha256": "d8154d3a637afeaee08a5a3986790bc46674b6836ac038d21b1ec370dad6c1aa"
@@ -4254,6 +5240,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/development/humanitarian-assistance/",
       "http_status": 403,
       "source_sha256": "d8154d3a637afeaee08a5a3986790bc46674b6836ac038d21b1ec370dad6c1aa"
@@ -4285,6 +5277,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/development/humanitarian-assistance/",
       "http_status": 403,
       "source_sha256": "d8154d3a637afeaee08a5a3986790bc46674b6836ac038d21b1ec370dad6c1aa"
@@ -4316,6 +5314,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/development/humanitarian-assistance/",
       "http_status": 403,
       "source_sha256": "d8154d3a637afeaee08a5a3986790bc46674b6836ac038d21b1ec370dad6c1aa"
@@ -4347,6 +5351,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/development/humanitarian-assistance/",
       "http_status": 403,
       "source_sha256": "d8154d3a637afeaee08a5a3986790bc46674b6836ac038d21b1ec370dad6c1aa"
@@ -4367,7 +5377,7 @@
       "suggested_source_boundary": "programme evaluations, audited accounts, beneficiary records and methodology notes",
       "source_url": "https://www.councilofnonprofits.org/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4377,7 +5387,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 b772c6bbe0548333e36cb5b44a79397f52b4719fcbcb29b1cabf72224a7d0c02; selected=https://www.councilofnonprofits.org/; final=https://www.councilofnonprofits.org/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.councilofnonprofits.org/",
       "http_status": 200,
       "source_sha256": "b772c6bbe0548333e36cb5b44a79397f52b4719fcbcb29b1cabf72224a7d0c02"
@@ -4408,7 +5424,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "National Council of Nonprofits",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.councilofnonprofits.org/",
       "http_status": 200,
       "source_sha256": "b772c6bbe0548333e36cb5b44a79397f52b4719fcbcb29b1cabf72224a7d0c02"
@@ -4440,6 +5466,15 @@
       "raw_payload_committed": false,
       "locator": "National Council of Nonprofits",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.councilofnonprofits.org/",
       "http_status": 200,
       "source_sha256": "b772c6bbe0548333e36cb5b44a79397f52b4719fcbcb29b1cabf72224a7d0c02"
@@ -4471,6 +5506,12 @@
       "raw_payload_committed": false,
       "locator": "National Council of Nonprofits",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.councilofnonprofits.org/",
       "http_status": 200,
       "source_sha256": "b772c6bbe0548333e36cb5b44a79397f52b4719fcbcb29b1cabf72224a7d0c02"
@@ -4501,7 +5542,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "National Council of Nonprofits",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.councilofnonprofits.org/",
       "http_status": 200,
       "source_sha256": "b772c6bbe0548333e36cb5b44a79397f52b4719fcbcb29b1cabf72224a7d0c02"
@@ -4533,6 +5583,15 @@
       "raw_payload_committed": false,
       "locator": "National Council of Nonprofits",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.councilofnonprofits.org/",
       "http_status": 200,
       "source_sha256": "b772c6bbe0548333e36cb5b44a79397f52b4719fcbcb29b1cabf72224a7d0c02"
@@ -4563,7 +5622,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "National Council of Nonprofits",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.councilofnonprofits.org/",
       "http_status": 200,
       "source_sha256": "b772c6bbe0548333e36cb5b44a79397f52b4719fcbcb29b1cabf72224a7d0c02"
@@ -4595,6 +5660,12 @@
       "raw_payload_committed": false,
       "locator": "National Council of Nonprofits",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.councilofnonprofits.org/",
       "http_status": 200,
       "source_sha256": "b772c6bbe0548333e36cb5b44a79397f52b4719fcbcb29b1cabf72224a7d0c02"
@@ -4626,6 +5697,12 @@
       "raw_payload_committed": false,
       "locator": "National Council of Nonprofits",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.councilofnonprofits.org/",
       "http_status": 200,
       "source_sha256": "b772c6bbe0548333e36cb5b44a79397f52b4719fcbcb29b1cabf72224a7d0c02"
@@ -4657,6 +5734,12 @@
       "raw_payload_committed": false,
       "locator": "National Council of Nonprofits",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.councilofnonprofits.org/",
       "http_status": 200,
       "source_sha256": "b772c6bbe0548333e36cb5b44a79397f52b4719fcbcb29b1cabf72224a7d0c02"
@@ -4677,7 +5760,7 @@
       "suggested_source_boundary": "programme evaluations, audited accounts, beneficiary records and methodology notes",
       "source_url": "https://www.irs.gov/charities-non-profits",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4687,7 +5770,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 cc1f759c8b76f42f3d02ff7eaf90403f9ef0bcec2a6419774f4369ce4b197cd5; selected=https://www.irs.gov/charities-non-profits; final=https://www.irs.gov/charities-and-nonprofits",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/charities-and-nonprofits",
       "http_status": 200,
       "source_sha256": "cc1f759c8b76f42f3d02ff7eaf90403f9ef0bcec2a6419774f4369ce4b197cd5"
@@ -4718,7 +5807,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Charities and nonprofits | Internal Revenue Service",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/charities-and-nonprofits",
       "http_status": 200,
       "source_sha256": "cc1f759c8b76f42f3d02ff7eaf90403f9ef0bcec2a6419774f4369ce4b197cd5"
@@ -4750,6 +5849,15 @@
       "raw_payload_committed": false,
       "locator": "Charities and nonprofits | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/charities-and-nonprofits",
       "http_status": 200,
       "source_sha256": "cc1f759c8b76f42f3d02ff7eaf90403f9ef0bcec2a6419774f4369ce4b197cd5"
@@ -4781,6 +5889,12 @@
       "raw_payload_committed": false,
       "locator": "Charities and nonprofits | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/charities-and-nonprofits",
       "http_status": 200,
       "source_sha256": "cc1f759c8b76f42f3d02ff7eaf90403f9ef0bcec2a6419774f4369ce4b197cd5"
@@ -4811,7 +5925,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Charities and nonprofits | Internal Revenue Service",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/charities-and-nonprofits",
       "http_status": 200,
       "source_sha256": "cc1f759c8b76f42f3d02ff7eaf90403f9ef0bcec2a6419774f4369ce4b197cd5"
@@ -4843,6 +5966,15 @@
       "raw_payload_committed": false,
       "locator": "Charities and nonprofits | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/charities-and-nonprofits",
       "http_status": 200,
       "source_sha256": "cc1f759c8b76f42f3d02ff7eaf90403f9ef0bcec2a6419774f4369ce4b197cd5"
@@ -4873,7 +6005,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Charities and nonprofits | Internal Revenue Service",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/charities-and-nonprofits",
       "http_status": 200,
       "source_sha256": "cc1f759c8b76f42f3d02ff7eaf90403f9ef0bcec2a6419774f4369ce4b197cd5"
@@ -4905,6 +6043,12 @@
       "raw_payload_committed": false,
       "locator": "Charities and nonprofits | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/charities-and-nonprofits",
       "http_status": 200,
       "source_sha256": "cc1f759c8b76f42f3d02ff7eaf90403f9ef0bcec2a6419774f4369ce4b197cd5"
@@ -4936,6 +6080,12 @@
       "raw_payload_committed": false,
       "locator": "Charities and nonprofits | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/charities-and-nonprofits",
       "http_status": 200,
       "source_sha256": "cc1f759c8b76f42f3d02ff7eaf90403f9ef0bcec2a6419774f4369ce4b197cd5"
@@ -4967,6 +6117,12 @@
       "raw_payload_committed": false,
       "locator": "Charities and nonprofits | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/charities-and-nonprofits",
       "http_status": 200,
       "source_sha256": "cc1f759c8b76f42f3d02ff7eaf90403f9ef0bcec2a6419774f4369ce4b197cd5"
@@ -4987,7 +6143,7 @@
       "suggested_source_boundary": "programme evaluations, audited accounts, beneficiary records and methodology notes",
       "source_url": "https://www.charitynavigator.org/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4997,7 +6153,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 49c846d7056e22ac918c0715742c5416c8d6f741623df0bae6f1835eb70b8789; selected=https://www.charitynavigator.org/; final=https://www.charitynavigator.org/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.charitynavigator.org/",
       "http_status": 200,
       "source_sha256": "49c846d7056e22ac918c0715742c5416c8d6f741623df0bae6f1835eb70b8789"
@@ -5028,7 +6190,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Charity Ratings and Donor Resources | Charity Navigator",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.charitynavigator.org/",
       "http_status": 200,
       "source_sha256": "49c846d7056e22ac918c0715742c5416c8d6f741623df0bae6f1835eb70b8789"
@@ -5060,6 +6232,15 @@
       "raw_payload_committed": false,
       "locator": "Charity Ratings and Donor Resources | Charity Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.charitynavigator.org/",
       "http_status": 200,
       "source_sha256": "49c846d7056e22ac918c0715742c5416c8d6f741623df0bae6f1835eb70b8789"
@@ -5091,6 +6272,12 @@
       "raw_payload_committed": false,
       "locator": "Charity Ratings and Donor Resources | Charity Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.charitynavigator.org/",
       "http_status": 200,
       "source_sha256": "49c846d7056e22ac918c0715742c5416c8d6f741623df0bae6f1835eb70b8789"
@@ -5121,7 +6308,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Charity Ratings and Donor Resources | Charity Navigator",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.charitynavigator.org/",
       "http_status": 200,
       "source_sha256": "49c846d7056e22ac918c0715742c5416c8d6f741623df0bae6f1835eb70b8789"
@@ -5153,6 +6349,15 @@
       "raw_payload_committed": false,
       "locator": "Charity Ratings and Donor Resources | Charity Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.charitynavigator.org/",
       "http_status": 200,
       "source_sha256": "49c846d7056e22ac918c0715742c5416c8d6f741623df0bae6f1835eb70b8789"
@@ -5183,7 +6388,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Charity Ratings and Donor Resources | Charity Navigator",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.charitynavigator.org/",
       "http_status": 200,
       "source_sha256": "49c846d7056e22ac918c0715742c5416c8d6f741623df0bae6f1835eb70b8789"
@@ -5215,6 +6426,12 @@
       "raw_payload_committed": false,
       "locator": "Charity Ratings and Donor Resources | Charity Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.charitynavigator.org/",
       "http_status": 200,
       "source_sha256": "49c846d7056e22ac918c0715742c5416c8d6f741623df0bae6f1835eb70b8789"
@@ -5246,6 +6463,12 @@
       "raw_payload_committed": false,
       "locator": "Charity Ratings and Donor Resources | Charity Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.charitynavigator.org/",
       "http_status": 200,
       "source_sha256": "49c846d7056e22ac918c0715742c5416c8d6f741623df0bae6f1835eb70b8789"
@@ -5277,6 +6500,12 @@
       "raw_payload_committed": false,
       "locator": "Charity Ratings and Donor Resources | Charity Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.charitynavigator.org/",
       "http_status": 200,
       "source_sha256": "49c846d7056e22ac918c0715742c5416c8d6f741623df0bae6f1835eb70b8789"
@@ -5297,7 +6526,7 @@
       "suggested_source_boundary": "programme evaluations, audited accounts, beneficiary records and methodology notes",
       "source_url": "https://www.guidestar.org/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5307,7 +6536,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 ca18cef314dfb5c280f953ecca08fb26dd3194571c8b0b2936294c370576cdc3; selected=https://www.guidestar.org/; final=https://www.guidestar.org/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.guidestar.org/",
       "http_status": 200,
       "source_sha256": "ca18cef314dfb5c280f953ecca08fb26dd3194571c8b0b2936294c370576cdc3"
@@ -5338,7 +6573,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Nonprofit data for donors, grantmakers, and businesses | GuideStar | Candid",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.guidestar.org/",
       "http_status": 200,
       "source_sha256": "ca18cef314dfb5c280f953ecca08fb26dd3194571c8b0b2936294c370576cdc3"
@@ -5370,6 +6615,15 @@
       "raw_payload_committed": false,
       "locator": "Nonprofit data for donors, grantmakers, and businesses | GuideStar | Candid",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.guidestar.org/",
       "http_status": 200,
       "source_sha256": "ca18cef314dfb5c280f953ecca08fb26dd3194571c8b0b2936294c370576cdc3"
@@ -5401,6 +6655,12 @@
       "raw_payload_committed": false,
       "locator": "Nonprofit data for donors, grantmakers, and businesses | GuideStar | Candid",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.guidestar.org/",
       "http_status": 200,
       "source_sha256": "ca18cef314dfb5c280f953ecca08fb26dd3194571c8b0b2936294c370576cdc3"
@@ -5431,7 +6691,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Nonprofit data for donors, grantmakers, and businesses | GuideStar | Candid",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.guidestar.org/",
       "http_status": 200,
       "source_sha256": "ca18cef314dfb5c280f953ecca08fb26dd3194571c8b0b2936294c370576cdc3"
@@ -5463,6 +6732,15 @@
       "raw_payload_committed": false,
       "locator": "Nonprofit data for donors, grantmakers, and businesses | GuideStar | Candid",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.guidestar.org/",
       "http_status": 200,
       "source_sha256": "ca18cef314dfb5c280f953ecca08fb26dd3194571c8b0b2936294c370576cdc3"
@@ -5493,7 +6771,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Nonprofit data for donors, grantmakers, and businesses | GuideStar | Candid",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.guidestar.org/",
       "http_status": 200,
       "source_sha256": "ca18cef314dfb5c280f953ecca08fb26dd3194571c8b0b2936294c370576cdc3"
@@ -5525,6 +6809,12 @@
       "raw_payload_committed": false,
       "locator": "Nonprofit data for donors, grantmakers, and businesses | GuideStar | Candid",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.guidestar.org/",
       "http_status": 200,
       "source_sha256": "ca18cef314dfb5c280f953ecca08fb26dd3194571c8b0b2936294c370576cdc3"
@@ -5556,6 +6846,12 @@
       "raw_payload_committed": false,
       "locator": "Nonprofit data for donors, grantmakers, and businesses | GuideStar | Candid",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.guidestar.org/",
       "http_status": 200,
       "source_sha256": "ca18cef314dfb5c280f953ecca08fb26dd3194571c8b0b2936294c370576cdc3"
@@ -5587,6 +6883,12 @@
       "raw_payload_committed": false,
       "locator": "Nonprofit data for donors, grantmakers, and businesses | GuideStar | Candid",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.guidestar.org/",
       "http_status": 200,
       "source_sha256": "ca18cef314dfb5c280f953ecca08fb26dd3194571c8b0b2936294c370576cdc3"
@@ -5618,6 +6920,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.un.org/en/civil-society",
       "http_status": 404,
       "source_sha256": "02c8c33740c4e06208e914ec2077e64c6ca0ef1ae43885c04d3969fd4a2dd0e0"
@@ -5649,6 +6956,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.un.org/en/civil-society",
       "http_status": 404,
       "source_sha256": "02c8c33740c4e06208e914ec2077e64c6ca0ef1ae43885c04d3969fd4a2dd0e0"
@@ -5680,6 +6997,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.un.org/en/civil-society",
       "http_status": 404,
       "source_sha256": "02c8c33740c4e06208e914ec2077e64c6ca0ef1ae43885c04d3969fd4a2dd0e0"
@@ -5711,6 +7037,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.un.org/en/civil-society",
       "http_status": 404,
       "source_sha256": "02c8c33740c4e06208e914ec2077e64c6ca0ef1ae43885c04d3969fd4a2dd0e0"
@@ -5742,6 +7074,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.un.org/en/civil-society",
       "http_status": 404,
       "source_sha256": "02c8c33740c4e06208e914ec2077e64c6ca0ef1ae43885c04d3969fd4a2dd0e0"
@@ -5773,6 +7114,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.un.org/en/civil-society",
       "http_status": 404,
       "source_sha256": "02c8c33740c4e06208e914ec2077e64c6ca0ef1ae43885c04d3969fd4a2dd0e0"
@@ -5804,6 +7154,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.un.org/en/civil-society",
       "http_status": 404,
       "source_sha256": "02c8c33740c4e06208e914ec2077e64c6ca0ef1ae43885c04d3969fd4a2dd0e0"
@@ -5835,6 +7191,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.un.org/en/civil-society",
       "http_status": 404,
       "source_sha256": "02c8c33740c4e06208e914ec2077e64c6ca0ef1ae43885c04d3969fd4a2dd0e0"
@@ -5866,6 +7228,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.un.org/en/civil-society",
       "http_status": 404,
       "source_sha256": "02c8c33740c4e06208e914ec2077e64c6ca0ef1ae43885c04d3969fd4a2dd0e0"
@@ -5897,6 +7265,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.un.org/en/civil-society",
       "http_status": 404,
       "source_sha256": "02c8c33740c4e06208e914ec2077e64c6ca0ef1ae43885c04d3969fd4a2dd0e0"
@@ -5928,6 +7302,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/social/",
       "http_status": 403,
       "source_sha256": "46f46680edbaca54638022648bcf8ab2bd552bbf9979a7ec1d5077c696e28953"
@@ -5959,6 +7338,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/social/",
       "http_status": 403,
       "source_sha256": "46f46680edbaca54638022648bcf8ab2bd552bbf9979a7ec1d5077c696e28953"
@@ -5990,6 +7379,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/social/",
       "http_status": 403,
       "source_sha256": "46f46680edbaca54638022648bcf8ab2bd552bbf9979a7ec1d5077c696e28953"
@@ -6021,6 +7419,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/social/",
       "http_status": 403,
       "source_sha256": "46f46680edbaca54638022648bcf8ab2bd552bbf9979a7ec1d5077c696e28953"
@@ -6052,6 +7456,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/social/",
       "http_status": 403,
       "source_sha256": "46f46680edbaca54638022648bcf8ab2bd552bbf9979a7ec1d5077c696e28953"
@@ -6083,6 +7496,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/social/",
       "http_status": 403,
       "source_sha256": "46f46680edbaca54638022648bcf8ab2bd552bbf9979a7ec1d5077c696e28953"
@@ -6114,6 +7536,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/social/",
       "http_status": 403,
       "source_sha256": "46f46680edbaca54638022648bcf8ab2bd552bbf9979a7ec1d5077c696e28953"
@@ -6145,6 +7573,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/social/",
       "http_status": 403,
       "source_sha256": "46f46680edbaca54638022648bcf8ab2bd552bbf9979a7ec1d5077c696e28953"
@@ -6176,6 +7610,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/social/",
       "http_status": 403,
       "source_sha256": "46f46680edbaca54638022648bcf8ab2bd552bbf9979a7ec1d5077c696e28953"
@@ -6207,6 +7647,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/social/",
       "http_status": 403,
       "source_sha256": "46f46680edbaca54638022648bcf8ab2bd552bbf9979a7ec1d5077c696e28953"
@@ -6227,7 +7673,7 @@
       "suggested_source_boundary": "programme evaluations, audited accounts, beneficiary records and methodology notes",
       "source_url": "https://www.worldbank.org/en/topic/socialdevelopment",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6237,7 +7683,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 39cc4248981b483d9a413ad745b300a5c39106837f87eb37ca467688120127a0; selected=https://www.worldbank.org/en/topic/socialdevelopment; final=https://www.worldbank.org/ext/en/topic/social-development",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-development",
       "http_status": 200,
       "source_sha256": "39cc4248981b483d9a413ad745b300a5c39106837f87eb37ca467688120127a0"
@@ -6268,7 +7720,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Social Development | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-development",
       "http_status": 200,
       "source_sha256": "39cc4248981b483d9a413ad745b300a5c39106837f87eb37ca467688120127a0"
@@ -6300,6 +7760,15 @@
       "raw_payload_committed": false,
       "locator": "Social Development | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-development",
       "http_status": 200,
       "source_sha256": "39cc4248981b483d9a413ad745b300a5c39106837f87eb37ca467688120127a0"
@@ -6331,6 +7800,11 @@
       "raw_payload_committed": false,
       "locator": "Social Development | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-development",
       "http_status": 200,
       "source_sha256": "39cc4248981b483d9a413ad745b300a5c39106837f87eb37ca467688120127a0"
@@ -6361,7 +7835,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Social Development | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-development",
       "http_status": 200,
       "source_sha256": "39cc4248981b483d9a413ad745b300a5c39106837f87eb37ca467688120127a0"
@@ -6393,6 +7876,15 @@
       "raw_payload_committed": false,
       "locator": "Social Development | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-development",
       "http_status": 200,
       "source_sha256": "39cc4248981b483d9a413ad745b300a5c39106837f87eb37ca467688120127a0"
@@ -6423,7 +7915,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Social Development | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-development",
       "http_status": 200,
       "source_sha256": "39cc4248981b483d9a413ad745b300a5c39106837f87eb37ca467688120127a0"
@@ -6455,6 +7953,12 @@
       "raw_payload_committed": false,
       "locator": "Social Development | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-development",
       "http_status": 200,
       "source_sha256": "39cc4248981b483d9a413ad745b300a5c39106837f87eb37ca467688120127a0"
@@ -6486,6 +7990,12 @@
       "raw_payload_committed": false,
       "locator": "Social Development | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-development",
       "http_status": 200,
       "source_sha256": "39cc4248981b483d9a413ad745b300a5c39106837f87eb37ca467688120127a0"
@@ -6517,6 +8027,12 @@
       "raw_payload_committed": false,
       "locator": "Social Development | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-development",
       "http_status": 200,
       "source_sha256": "39cc4248981b483d9a413ad745b300a5c39106837f87eb37ca467688120127a0"

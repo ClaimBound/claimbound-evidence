@@ -1,14 +1,14 @@
 {
   "issue_number": 179,
-  "protocol_version": "CB7K-ISSUE-179-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-179-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "source_manifest_sha256": "8091e857669666f38ffa134882782c7f280b28bcbe203589d6f8fdc5d1612072",
   "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
   "raw_payload_committed": false,
-  "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
+  "review_method": "complete topic-specific textual gate facets with verbatim locators; numerator-denominator, method-version, and reproducibility additionally require an independent execution artifact",
   "result_counts": {
     "BLOCKED_SOURCE": 80,
-    "PASSED_UNDER_PROTOCOL": 16,
-    "INSUFFICIENT_COVERAGE": 114
+    "INSUFFICIENT_COVERAGE": 128,
+    "PASSED_UNDER_PROTOCOL": 2
   },
   "cards": [
     {
@@ -38,6 +38,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.cbo.gov/topics/budget",
       "http_status": 403,
       "source_sha256": "b7c303fb7a5fef2c07a794a944f895b8c01c6132328d71842d16ffe460e3731e"
@@ -69,6 +74,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.cbo.gov/topics/budget",
       "http_status": 403,
       "source_sha256": "b7c303fb7a5fef2c07a794a944f895b8c01c6132328d71842d16ffe460e3731e"
@@ -100,6 +115,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.cbo.gov/topics/budget",
       "http_status": 403,
       "source_sha256": "b7c303fb7a5fef2c07a794a944f895b8c01c6132328d71842d16ffe460e3731e"
@@ -131,6 +155,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.cbo.gov/topics/budget",
       "http_status": 403,
       "source_sha256": "b7c303fb7a5fef2c07a794a944f895b8c01c6132328d71842d16ffe460e3731e"
@@ -162,6 +192,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.cbo.gov/topics/budget",
       "http_status": 403,
       "source_sha256": "b7c303fb7a5fef2c07a794a944f895b8c01c6132328d71842d16ffe460e3731e"
@@ -193,6 +232,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.cbo.gov/topics/budget",
       "http_status": 403,
       "source_sha256": "b7c303fb7a5fef2c07a794a944f895b8c01c6132328d71842d16ffe460e3731e"
@@ -224,6 +272,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.cbo.gov/topics/budget",
       "http_status": 403,
       "source_sha256": "b7c303fb7a5fef2c07a794a944f895b8c01c6132328d71842d16ffe460e3731e"
@@ -255,6 +309,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.cbo.gov/topics/budget",
       "http_status": 403,
       "source_sha256": "b7c303fb7a5fef2c07a794a944f895b8c01c6132328d71842d16ffe460e3731e"
@@ -286,6 +346,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.cbo.gov/topics/budget",
       "http_status": 403,
       "source_sha256": "b7c303fb7a5fef2c07a794a944f895b8c01c6132328d71842d16ffe460e3731e"
@@ -317,6 +383,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.cbo.gov/topics/budget",
       "http_status": 403,
       "source_sha256": "b7c303fb7a5fef2c07a794a944f895b8c01c6132328d71842d16ffe460e3731e"
@@ -337,7 +409,7 @@
       "suggested_source_boundary": "appropriation laws, treasury reports, spending portals and audit findings",
       "source_url": "https://www.whitehouse.gov/omb/budget/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -347,7 +419,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 54c0d80c4cc1ba25b50ea0309dccd4d2063d04e9304d8e493a29c818e8724d7f; selected=https://www.whitehouse.gov/omb/budget/; final=https://www.whitehouse.gov/omb/information-resources/budget/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.whitehouse.gov/omb/information-resources/budget/",
       "http_status": 200,
       "source_sha256": "54c0d80c4cc1ba25b50ea0309dccd4d2063d04e9304d8e493a29c818e8724d7f"
@@ -378,7 +456,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "President’s Budget – OMB – The White House",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.whitehouse.gov/omb/information-resources/budget/",
       "http_status": 200,
       "source_sha256": "54c0d80c4cc1ba25b50ea0309dccd4d2063d04e9304d8e493a29c818e8724d7f"
@@ -410,6 +498,15 @@
       "raw_payload_committed": false,
       "locator": "President’s Budget – OMB – The White House",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.whitehouse.gov/omb/information-resources/budget/",
       "http_status": 200,
       "source_sha256": "54c0d80c4cc1ba25b50ea0309dccd4d2063d04e9304d8e493a29c818e8724d7f"
@@ -441,6 +538,12 @@
       "raw_payload_committed": false,
       "locator": "President’s Budget – OMB – The White House",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.whitehouse.gov/omb/information-resources/budget/",
       "http_status": 200,
       "source_sha256": "54c0d80c4cc1ba25b50ea0309dccd4d2063d04e9304d8e493a29c818e8724d7f"
@@ -471,7 +574,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "President’s Budget – OMB – The White House",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.whitehouse.gov/omb/information-resources/budget/",
       "http_status": 200,
       "source_sha256": "54c0d80c4cc1ba25b50ea0309dccd4d2063d04e9304d8e493a29c818e8724d7f"
@@ -503,6 +615,15 @@
       "raw_payload_committed": false,
       "locator": "President’s Budget – OMB – The White House",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.whitehouse.gov/omb/information-resources/budget/",
       "http_status": 200,
       "source_sha256": "54c0d80c4cc1ba25b50ea0309dccd4d2063d04e9304d8e493a29c818e8724d7f"
@@ -533,7 +654,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "President’s Budget – OMB – The White House",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.whitehouse.gov/omb/information-resources/budget/",
       "http_status": 200,
       "source_sha256": "54c0d80c4cc1ba25b50ea0309dccd4d2063d04e9304d8e493a29c818e8724d7f"
@@ -565,6 +692,12 @@
       "raw_payload_committed": false,
       "locator": "President’s Budget – OMB – The White House",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.whitehouse.gov/omb/information-resources/budget/",
       "http_status": 200,
       "source_sha256": "54c0d80c4cc1ba25b50ea0309dccd4d2063d04e9304d8e493a29c818e8724d7f"
@@ -596,6 +729,12 @@
       "raw_payload_committed": false,
       "locator": "President’s Budget – OMB – The White House",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.whitehouse.gov/omb/information-resources/budget/",
       "http_status": 200,
       "source_sha256": "54c0d80c4cc1ba25b50ea0309dccd4d2063d04e9304d8e493a29c818e8724d7f"
@@ -627,6 +766,12 @@
       "raw_payload_committed": false,
       "locator": "President’s Budget – OMB – The White House",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.whitehouse.gov/omb/information-resources/budget/",
       "http_status": 200,
       "source_sha256": "54c0d80c4cc1ba25b50ea0309dccd4d2063d04e9304d8e493a29c818e8724d7f"
@@ -658,6 +803,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/budgets",
       "http_status": 403,
       "source_sha256": "7d6b9806abb885cb07a8520c8b1b68d9a2eab26d6d0ca754d3a8a91506a825cb"
@@ -689,6 +839,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/budgets",
       "http_status": 403,
       "source_sha256": "7d6b9806abb885cb07a8520c8b1b68d9a2eab26d6d0ca754d3a8a91506a825cb"
@@ -720,6 +880,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/budgets",
       "http_status": 403,
       "source_sha256": "7d6b9806abb885cb07a8520c8b1b68d9a2eab26d6d0ca754d3a8a91506a825cb"
@@ -751,6 +920,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/budgets",
       "http_status": 403,
       "source_sha256": "7d6b9806abb885cb07a8520c8b1b68d9a2eab26d6d0ca754d3a8a91506a825cb"
@@ -782,6 +957,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/budgets",
       "http_status": 403,
       "source_sha256": "7d6b9806abb885cb07a8520c8b1b68d9a2eab26d6d0ca754d3a8a91506a825cb"
@@ -813,6 +997,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/budgets",
       "http_status": 403,
       "source_sha256": "7d6b9806abb885cb07a8520c8b1b68d9a2eab26d6d0ca754d3a8a91506a825cb"
@@ -844,6 +1037,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/budgets",
       "http_status": 403,
       "source_sha256": "7d6b9806abb885cb07a8520c8b1b68d9a2eab26d6d0ca754d3a8a91506a825cb"
@@ -875,6 +1074,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/budgets",
       "http_status": 403,
       "source_sha256": "7d6b9806abb885cb07a8520c8b1b68d9a2eab26d6d0ca754d3a8a91506a825cb"
@@ -906,6 +1111,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/budgets",
       "http_status": 403,
       "source_sha256": "7d6b9806abb885cb07a8520c8b1b68d9a2eab26d6d0ca754d3a8a91506a825cb"
@@ -937,6 +1148,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/budgets",
       "http_status": 403,
       "source_sha256": "7d6b9806abb885cb07a8520c8b1b68d9a2eab26d6d0ca754d3a8a91506a825cb"
@@ -957,7 +1174,7 @@
       "suggested_source_boundary": "appropriation laws, treasury reports, spending portals and audit findings",
       "source_url": "https://ec.europa.eu/info/strategy/eu-budget_en",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -967,7 +1184,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 f905b35183bdddb1bf8f402d8ef9a5a2a2d82eec8df29787db128ad0eb951a0c; selected=https://ec.europa.eu/info/strategy/eu-budget_en; final=https://commission.europa.eu/strategy-and-policy/eu-budget_en",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://commission.europa.eu/strategy-and-policy/eu-budget_en",
       "http_status": 200,
       "source_sha256": "f905b35183bdddb1bf8f402d8ef9a5a2a2d82eec8df29787db128ad0eb951a0c"
@@ -998,7 +1221,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "The budgetary system of the European Union",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://commission.europa.eu/strategy-and-policy/eu-budget_en",
       "http_status": 200,
       "source_sha256": "f905b35183bdddb1bf8f402d8ef9a5a2a2d82eec8df29787db128ad0eb951a0c"
@@ -1030,6 +1263,15 @@
       "raw_payload_committed": false,
       "locator": "The budgetary system of the European Union",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://commission.europa.eu/strategy-and-policy/eu-budget_en",
       "http_status": 200,
       "source_sha256": "f905b35183bdddb1bf8f402d8ef9a5a2a2d82eec8df29787db128ad0eb951a0c"
@@ -1061,6 +1303,12 @@
       "raw_payload_committed": false,
       "locator": "The budgetary system of the European Union",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://commission.europa.eu/strategy-and-policy/eu-budget_en",
       "http_status": 200,
       "source_sha256": "f905b35183bdddb1bf8f402d8ef9a5a2a2d82eec8df29787db128ad0eb951a0c"
@@ -1091,7 +1339,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "The budgetary system of the European Union",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://commission.europa.eu/strategy-and-policy/eu-budget_en",
       "http_status": 200,
       "source_sha256": "f905b35183bdddb1bf8f402d8ef9a5a2a2d82eec8df29787db128ad0eb951a0c"
@@ -1123,6 +1380,15 @@
       "raw_payload_committed": false,
       "locator": "The budgetary system of the European Union",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://commission.europa.eu/strategy-and-policy/eu-budget_en",
       "http_status": 200,
       "source_sha256": "f905b35183bdddb1bf8f402d8ef9a5a2a2d82eec8df29787db128ad0eb951a0c"
@@ -1153,7 +1419,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "The budgetary system of the European Union",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://commission.europa.eu/strategy-and-policy/eu-budget_en",
       "http_status": 200,
       "source_sha256": "f905b35183bdddb1bf8f402d8ef9a5a2a2d82eec8df29787db128ad0eb951a0c"
@@ -1185,6 +1457,12 @@
       "raw_payload_committed": false,
       "locator": "The budgetary system of the European Union",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://commission.europa.eu/strategy-and-policy/eu-budget_en",
       "http_status": 200,
       "source_sha256": "f905b35183bdddb1bf8f402d8ef9a5a2a2d82eec8df29787db128ad0eb951a0c"
@@ -1216,6 +1494,12 @@
       "raw_payload_committed": false,
       "locator": "The budgetary system of the European Union",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://commission.europa.eu/strategy-and-policy/eu-budget_en",
       "http_status": 200,
       "source_sha256": "f905b35183bdddb1bf8f402d8ef9a5a2a2d82eec8df29787db128ad0eb951a0c"
@@ -1247,6 +1531,12 @@
       "raw_payload_committed": false,
       "locator": "The budgetary system of the European Union",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://commission.europa.eu/strategy-and-policy/eu-budget_en",
       "http_status": 200,
       "source_sha256": "f905b35183bdddb1bf8f402d8ef9a5a2a2d82eec8df29787db128ad0eb951a0c"
@@ -1278,6 +1568,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Fiscal-Policies",
       "http_status": 403,
       "source_sha256": "2b59d96a53d2262eb32f3e34ce8866d312d8b19a41a3605fc37a5459cfd262ae"
@@ -1309,6 +1604,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Fiscal-Policies",
       "http_status": 403,
       "source_sha256": "2b59d96a53d2262eb32f3e34ce8866d312d8b19a41a3605fc37a5459cfd262ae"
@@ -1340,6 +1645,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Fiscal-Policies",
       "http_status": 403,
       "source_sha256": "2b59d96a53d2262eb32f3e34ce8866d312d8b19a41a3605fc37a5459cfd262ae"
@@ -1371,6 +1685,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Fiscal-Policies",
       "http_status": 403,
       "source_sha256": "2b59d96a53d2262eb32f3e34ce8866d312d8b19a41a3605fc37a5459cfd262ae"
@@ -1402,6 +1722,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Fiscal-Policies",
       "http_status": 403,
       "source_sha256": "2b59d96a53d2262eb32f3e34ce8866d312d8b19a41a3605fc37a5459cfd262ae"
@@ -1433,6 +1762,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Fiscal-Policies",
       "http_status": 403,
       "source_sha256": "2b59d96a53d2262eb32f3e34ce8866d312d8b19a41a3605fc37a5459cfd262ae"
@@ -1464,6 +1802,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Fiscal-Policies",
       "http_status": 403,
       "source_sha256": "2b59d96a53d2262eb32f3e34ce8866d312d8b19a41a3605fc37a5459cfd262ae"
@@ -1495,6 +1839,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Fiscal-Policies",
       "http_status": 403,
       "source_sha256": "2b59d96a53d2262eb32f3e34ce8866d312d8b19a41a3605fc37a5459cfd262ae"
@@ -1526,6 +1876,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Fiscal-Policies",
       "http_status": 403,
       "source_sha256": "2b59d96a53d2262eb32f3e34ce8866d312d8b19a41a3605fc37a5459cfd262ae"
@@ -1557,6 +1913,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Fiscal-Policies",
       "http_status": 403,
       "source_sha256": "2b59d96a53d2262eb32f3e34ce8866d312d8b19a41a3605fc37a5459cfd262ae"
@@ -1588,6 +1950,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/budgeting/",
       "http_status": 403,
       "source_sha256": "747f7e7493ff789e58ec1a6e4845204e37237a07cedfc6822c5e92d7a0a39c91"
@@ -1619,6 +1986,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/budgeting/",
       "http_status": 403,
       "source_sha256": "747f7e7493ff789e58ec1a6e4845204e37237a07cedfc6822c5e92d7a0a39c91"
@@ -1650,6 +2027,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/budgeting/",
       "http_status": 403,
       "source_sha256": "747f7e7493ff789e58ec1a6e4845204e37237a07cedfc6822c5e92d7a0a39c91"
@@ -1681,6 +2067,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/budgeting/",
       "http_status": 403,
       "source_sha256": "747f7e7493ff789e58ec1a6e4845204e37237a07cedfc6822c5e92d7a0a39c91"
@@ -1712,6 +2104,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/budgeting/",
       "http_status": 403,
       "source_sha256": "747f7e7493ff789e58ec1a6e4845204e37237a07cedfc6822c5e92d7a0a39c91"
@@ -1743,6 +2144,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/budgeting/",
       "http_status": 403,
       "source_sha256": "747f7e7493ff789e58ec1a6e4845204e37237a07cedfc6822c5e92d7a0a39c91"
@@ -1774,6 +2184,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/budgeting/",
       "http_status": 403,
       "source_sha256": "747f7e7493ff789e58ec1a6e4845204e37237a07cedfc6822c5e92d7a0a39c91"
@@ -1805,6 +2221,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/budgeting/",
       "http_status": 403,
       "source_sha256": "747f7e7493ff789e58ec1a6e4845204e37237a07cedfc6822c5e92d7a0a39c91"
@@ -1836,6 +2258,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/budgeting/",
       "http_status": 403,
       "source_sha256": "747f7e7493ff789e58ec1a6e4845204e37237a07cedfc6822c5e92d7a0a39c91"
@@ -1867,6 +2295,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/budgeting/",
       "http_status": 403,
       "source_sha256": "747f7e7493ff789e58ec1a6e4845204e37237a07cedfc6822c5e92d7a0a39c91"
@@ -1887,7 +2321,7 @@
       "suggested_source_boundary": "appropriation laws, treasury reports, spending portals and audit findings",
       "source_url": "https://www.worldbank.org/en/topic/governance",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1897,7 +2331,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 05593c875e35a9b574167c0ed2e46a7a93f2748ab6fb8b08741c872a747e2590; selected=https://www.worldbank.org/en/topic/governance; final=https://www.worldbank.org/ext/en/topic/governance",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/governance",
       "http_status": 200,
       "source_sha256": "05593c875e35a9b574167c0ed2e46a7a93f2748ab6fb8b08741c872a747e2590"
@@ -1928,7 +2368,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Governance | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/governance",
       "http_status": 200,
       "source_sha256": "05593c875e35a9b574167c0ed2e46a7a93f2748ab6fb8b08741c872a747e2590"
@@ -1960,6 +2408,14 @@
       "raw_payload_committed": false,
       "locator": "Governance | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/governance",
       "http_status": 200,
       "source_sha256": "05593c875e35a9b574167c0ed2e46a7a93f2748ab6fb8b08741c872a747e2590"
@@ -1991,6 +2447,9 @@
       "raw_payload_committed": false,
       "locator": ", a multi-donor trust fund established in 2022, focuses on supporting client countries in improving public sector performance and strengthening institutional reform, leveraging the power of digital and technology solutions in the public sector, and enhancing transparency and accountability. || With its convening power and expertise, the World Bank supports countries in addressing public sector governance challenges through evidence-based reforms.",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/governance",
       "http_status": 200,
       "source_sha256": "05593c875e35a9b574167c0ed2e46a7a93f2748ab6fb8b08741c872a747e2590"
@@ -2021,7 +2480,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Governance | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/governance",
       "http_status": 200,
       "source_sha256": "05593c875e35a9b574167c0ed2e46a7a93f2748ab6fb8b08741c872a747e2590"
@@ -2053,6 +2520,13 @@
       "raw_payload_committed": false,
       "locator": "Governance | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/governance",
       "http_status": 200,
       "source_sha256": "05593c875e35a9b574167c0ed2e46a7a93f2748ab6fb8b08741c872a747e2590"
@@ -2083,7 +2557,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Governance | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/governance",
       "http_status": 200,
       "source_sha256": "05593c875e35a9b574167c0ed2e46a7a93f2748ab6fb8b08741c872a747e2590"
@@ -2115,6 +2595,11 @@
       "raw_payload_committed": false,
       "locator": "Governance | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/governance",
       "http_status": 200,
       "source_sha256": "05593c875e35a9b574167c0ed2e46a7a93f2748ab6fb8b08741c872a747e2590"
@@ -2135,7 +2620,7 @@
       "suggested_source_boundary": "appropriation laws, treasury reports, spending portals and audit findings",
       "source_url": "https://www.worldbank.org/en/topic/governance",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2144,8 +2629,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "The Governance Global Department supports countries in building institutions that are capable, efficient, resilient, sustainable, inclusive, and accountable so they are better equipped to meet today’s pressing challenges.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Governance | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/governance",
       "http_status": 200,
       "source_sha256": "05593c875e35a9b574167c0ed2e46a7a93f2748ab6fb8b08741c872a747e2590"
@@ -2177,6 +2667,11 @@
       "raw_payload_committed": false,
       "locator": "Governance | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/governance",
       "http_status": 200,
       "source_sha256": "05593c875e35a9b574167c0ed2e46a7a93f2748ab6fb8b08741c872a747e2590"
@@ -2197,7 +2692,7 @@
       "suggested_source_boundary": "tax laws, revenue reports, administrative guidance and distributional analyses",
       "source_url": "https://www.irs.gov/tax-professionals",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2207,7 +2702,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 1e9c962bb324f9ef56f470361ec99f226cf12e30e6b9f9cb5bad8c4e00c2146d; selected=https://www.irs.gov/tax-professionals; final=https://www.irs.gov/tax-professionals",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/tax-professionals",
       "http_status": 200,
       "source_sha256": "1e9c962bb324f9ef56f470361ec99f226cf12e30e6b9f9cb5bad8c4e00c2146d"
@@ -2238,7 +2739,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Tax professionals | Internal Revenue Service",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/tax-professionals",
       "http_status": 200,
       "source_sha256": "1e9c962bb324f9ef56f470361ec99f226cf12e30e6b9f9cb5bad8c4e00c2146d"
@@ -2270,6 +2781,15 @@
       "raw_payload_committed": false,
       "locator": "Tax professionals | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/tax-professionals",
       "http_status": 200,
       "source_sha256": "1e9c962bb324f9ef56f470361ec99f226cf12e30e6b9f9cb5bad8c4e00c2146d"
@@ -2301,6 +2821,12 @@
       "raw_payload_committed": false,
       "locator": "Tax professionals | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/tax-professionals",
       "http_status": 200,
       "source_sha256": "1e9c962bb324f9ef56f470361ec99f226cf12e30e6b9f9cb5bad8c4e00c2146d"
@@ -2331,7 +2857,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Tax professionals | Internal Revenue Service",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/tax-professionals",
       "http_status": 200,
       "source_sha256": "1e9c962bb324f9ef56f470361ec99f226cf12e30e6b9f9cb5bad8c4e00c2146d"
@@ -2363,6 +2898,15 @@
       "raw_payload_committed": false,
       "locator": "Tax professionals | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/tax-professionals",
       "http_status": 200,
       "source_sha256": "1e9c962bb324f9ef56f470361ec99f226cf12e30e6b9f9cb5bad8c4e00c2146d"
@@ -2393,7 +2937,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Tax professionals | Internal Revenue Service",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/tax-professionals",
       "http_status": 200,
       "source_sha256": "1e9c962bb324f9ef56f470361ec99f226cf12e30e6b9f9cb5bad8c4e00c2146d"
@@ -2425,6 +2975,12 @@
       "raw_payload_committed": false,
       "locator": "Tax professionals | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/tax-professionals",
       "http_status": 200,
       "source_sha256": "1e9c962bb324f9ef56f470361ec99f226cf12e30e6b9f9cb5bad8c4e00c2146d"
@@ -2456,6 +3012,12 @@
       "raw_payload_committed": false,
       "locator": "Tax professionals | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/tax-professionals",
       "http_status": 200,
       "source_sha256": "1e9c962bb324f9ef56f470361ec99f226cf12e30e6b9f9cb5bad8c4e00c2146d"
@@ -2487,6 +3049,12 @@
       "raw_payload_committed": false,
       "locator": "Tax professionals | Internal Revenue Service",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.irs.gov/tax-professionals",
       "http_status": 200,
       "source_sha256": "1e9c962bb324f9ef56f470361ec99f226cf12e30e6b9f9cb5bad8c4e00c2146d"
@@ -2518,6 +3086,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/tax/",
       "http_status": 403,
       "source_sha256": "cbce984837f8f6b55ab13402b2d3a007bb459cfe3457894fb25c50ff718a1ff7"
@@ -2549,6 +3122,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/tax/",
       "http_status": 403,
       "source_sha256": "cbce984837f8f6b55ab13402b2d3a007bb459cfe3457894fb25c50ff718a1ff7"
@@ -2580,6 +3163,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/tax/",
       "http_status": 403,
       "source_sha256": "cbce984837f8f6b55ab13402b2d3a007bb459cfe3457894fb25c50ff718a1ff7"
@@ -2611,6 +3203,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/tax/",
       "http_status": 403,
       "source_sha256": "cbce984837f8f6b55ab13402b2d3a007bb459cfe3457894fb25c50ff718a1ff7"
@@ -2642,6 +3240,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/tax/",
       "http_status": 403,
       "source_sha256": "cbce984837f8f6b55ab13402b2d3a007bb459cfe3457894fb25c50ff718a1ff7"
@@ -2673,6 +3280,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/tax/",
       "http_status": 403,
       "source_sha256": "cbce984837f8f6b55ab13402b2d3a007bb459cfe3457894fb25c50ff718a1ff7"
@@ -2704,6 +3320,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/tax/",
       "http_status": 403,
       "source_sha256": "cbce984837f8f6b55ab13402b2d3a007bb459cfe3457894fb25c50ff718a1ff7"
@@ -2735,6 +3357,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/tax/",
       "http_status": 403,
       "source_sha256": "cbce984837f8f6b55ab13402b2d3a007bb459cfe3457894fb25c50ff718a1ff7"
@@ -2766,6 +3394,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/tax/",
       "http_status": 403,
       "source_sha256": "cbce984837f8f6b55ab13402b2d3a007bb459cfe3457894fb25c50ff718a1ff7"
@@ -2797,6 +3431,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/tax/",
       "http_status": 403,
       "source_sha256": "cbce984837f8f6b55ab13402b2d3a007bb459cfe3457894fb25c50ff718a1ff7"
@@ -2817,7 +3457,7 @@
       "suggested_source_boundary": "tax laws, revenue reports, administrative guidance and distributional analyses",
       "source_url": "https://taxation-customs.ec.europa.eu/taxation_en",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2827,7 +3467,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 87ef79b7ea6d4dd1a384245b1a7867249019ce2890c08e6480a550bdc610ce3c; selected=https://taxation-customs.ec.europa.eu/taxation_en; final=https://taxation-customs.ec.europa.eu/taxation_en",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://taxation-customs.ec.europa.eu/taxation_en",
       "http_status": 200,
       "source_sha256": "87ef79b7ea6d4dd1a384245b1a7867249019ce2890c08e6480a550bdc610ce3c"
@@ -2858,7 +3504,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Taxation - Taxation and Customs Union - European Commission",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://taxation-customs.ec.europa.eu/taxation_en",
       "http_status": 200,
       "source_sha256": "87ef79b7ea6d4dd1a384245b1a7867249019ce2890c08e6480a550bdc610ce3c"
@@ -2890,6 +3546,15 @@
       "raw_payload_committed": false,
       "locator": "Taxation - Taxation and Customs Union - European Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://taxation-customs.ec.europa.eu/taxation_en",
       "http_status": 200,
       "source_sha256": "87ef79b7ea6d4dd1a384245b1a7867249019ce2890c08e6480a550bdc610ce3c"
@@ -2921,6 +3586,12 @@
       "raw_payload_committed": false,
       "locator": "Taxation - Taxation and Customs Union - European Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://taxation-customs.ec.europa.eu/taxation_en",
       "http_status": 200,
       "source_sha256": "87ef79b7ea6d4dd1a384245b1a7867249019ce2890c08e6480a550bdc610ce3c"
@@ -2951,7 +3622,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Taxation - Taxation and Customs Union - European Commission",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://taxation-customs.ec.europa.eu/taxation_en",
       "http_status": 200,
       "source_sha256": "87ef79b7ea6d4dd1a384245b1a7867249019ce2890c08e6480a550bdc610ce3c"
@@ -2983,6 +3663,15 @@
       "raw_payload_committed": false,
       "locator": "Taxation - Taxation and Customs Union - European Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://taxation-customs.ec.europa.eu/taxation_en",
       "http_status": 200,
       "source_sha256": "87ef79b7ea6d4dd1a384245b1a7867249019ce2890c08e6480a550bdc610ce3c"
@@ -3013,7 +3702,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Taxation - Taxation and Customs Union - European Commission",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://taxation-customs.ec.europa.eu/taxation_en",
       "http_status": 200,
       "source_sha256": "87ef79b7ea6d4dd1a384245b1a7867249019ce2890c08e6480a550bdc610ce3c"
@@ -3045,6 +3740,12 @@
       "raw_payload_committed": false,
       "locator": "Taxation - Taxation and Customs Union - European Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://taxation-customs.ec.europa.eu/taxation_en",
       "http_status": 200,
       "source_sha256": "87ef79b7ea6d4dd1a384245b1a7867249019ce2890c08e6480a550bdc610ce3c"
@@ -3076,6 +3777,12 @@
       "raw_payload_committed": false,
       "locator": "Taxation - Taxation and Customs Union - European Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://taxation-customs.ec.europa.eu/taxation_en",
       "http_status": 200,
       "source_sha256": "87ef79b7ea6d4dd1a384245b1a7867249019ce2890c08e6480a550bdc610ce3c"
@@ -3107,6 +3814,12 @@
       "raw_payload_committed": false,
       "locator": "Taxation - Taxation and Customs Union - European Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://taxation-customs.ec.europa.eu/taxation_en",
       "http_status": 200,
       "source_sha256": "87ef79b7ea6d4dd1a384245b1a7867249019ce2890c08e6480a550bdc610ce3c"
@@ -3127,7 +3840,7 @@
       "suggested_source_boundary": "tax laws, revenue reports, administrative guidance and distributional analyses",
       "source_url": "https://www.gov.uk/topic/business-tax",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3137,7 +3850,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 7b03e7e8c5d82b86cfdd03930ee41b6bd23176a6e91a17af6e1aeedf9579e7ec; selected=https://www.gov.uk/topic/business-tax; final=https://www.gov.uk/browse/business/business-tax-returns",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.gov.uk/browse/business/business-tax-returns",
       "http_status": 200,
       "source_sha256": "7b03e7e8c5d82b86cfdd03930ee41b6bd23176a6e91a17af6e1aeedf9579e7ec"
@@ -3168,7 +3887,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Business tax and returns - GOV.UK",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.gov.uk/browse/business/business-tax-returns",
       "http_status": 200,
       "source_sha256": "7b03e7e8c5d82b86cfdd03930ee41b6bd23176a6e91a17af6e1aeedf9579e7ec"
@@ -3200,6 +3929,15 @@
       "raw_payload_committed": false,
       "locator": "Business tax and returns - GOV.UK",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.gov.uk/browse/business/business-tax-returns",
       "http_status": 200,
       "source_sha256": "7b03e7e8c5d82b86cfdd03930ee41b6bd23176a6e91a17af6e1aeedf9579e7ec"
@@ -3231,6 +3969,12 @@
       "raw_payload_committed": false,
       "locator": "Business tax and returns - GOV.UK",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.gov.uk/browse/business/business-tax-returns",
       "http_status": 200,
       "source_sha256": "7b03e7e8c5d82b86cfdd03930ee41b6bd23176a6e91a17af6e1aeedf9579e7ec"
@@ -3261,7 +4005,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Business tax and returns - GOV.UK",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.gov.uk/browse/business/business-tax-returns",
       "http_status": 200,
       "source_sha256": "7b03e7e8c5d82b86cfdd03930ee41b6bd23176a6e91a17af6e1aeedf9579e7ec"
@@ -3293,6 +4046,15 @@
       "raw_payload_committed": false,
       "locator": "Business tax and returns - GOV.UK",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.gov.uk/browse/business/business-tax-returns",
       "http_status": 200,
       "source_sha256": "7b03e7e8c5d82b86cfdd03930ee41b6bd23176a6e91a17af6e1aeedf9579e7ec"
@@ -3323,7 +4085,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Business tax and returns - GOV.UK",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.gov.uk/browse/business/business-tax-returns",
       "http_status": 200,
       "source_sha256": "7b03e7e8c5d82b86cfdd03930ee41b6bd23176a6e91a17af6e1aeedf9579e7ec"
@@ -3355,6 +4123,12 @@
       "raw_payload_committed": false,
       "locator": "Business tax and returns - GOV.UK",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.gov.uk/browse/business/business-tax-returns",
       "http_status": 200,
       "source_sha256": "7b03e7e8c5d82b86cfdd03930ee41b6bd23176a6e91a17af6e1aeedf9579e7ec"
@@ -3386,6 +4160,12 @@
       "raw_payload_committed": false,
       "locator": "Business tax and returns - GOV.UK",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.gov.uk/browse/business/business-tax-returns",
       "http_status": 200,
       "source_sha256": "7b03e7e8c5d82b86cfdd03930ee41b6bd23176a6e91a17af6e1aeedf9579e7ec"
@@ -3417,6 +4197,12 @@
       "raw_payload_committed": false,
       "locator": "Business tax and returns - GOV.UK",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.gov.uk/browse/business/business-tax-returns",
       "http_status": 200,
       "source_sha256": "7b03e7e8c5d82b86cfdd03930ee41b6bd23176a6e91a17af6e1aeedf9579e7ec"
@@ -3448,6 +4234,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Taxation",
       "http_status": 403,
       "source_sha256": "ac8e7e43df89c1b73bfe6984fff23714ecc5fc24f8579d473ce2b18c6c459549"
@@ -3479,6 +4270,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Taxation",
       "http_status": 403,
       "source_sha256": "ac8e7e43df89c1b73bfe6984fff23714ecc5fc24f8579d473ce2b18c6c459549"
@@ -3510,6 +4311,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Taxation",
       "http_status": 403,
       "source_sha256": "ac8e7e43df89c1b73bfe6984fff23714ecc5fc24f8579d473ce2b18c6c459549"
@@ -3541,6 +4351,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Taxation",
       "http_status": 403,
       "source_sha256": "ac8e7e43df89c1b73bfe6984fff23714ecc5fc24f8579d473ce2b18c6c459549"
@@ -3572,6 +4388,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Taxation",
       "http_status": 403,
       "source_sha256": "ac8e7e43df89c1b73bfe6984fff23714ecc5fc24f8579d473ce2b18c6c459549"
@@ -3603,6 +4428,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Taxation",
       "http_status": 403,
       "source_sha256": "ac8e7e43df89c1b73bfe6984fff23714ecc5fc24f8579d473ce2b18c6c459549"
@@ -3634,6 +4468,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Taxation",
       "http_status": 403,
       "source_sha256": "ac8e7e43df89c1b73bfe6984fff23714ecc5fc24f8579d473ce2b18c6c459549"
@@ -3665,6 +4505,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Taxation",
       "http_status": 403,
       "source_sha256": "ac8e7e43df89c1b73bfe6984fff23714ecc5fc24f8579d473ce2b18c6c459549"
@@ -3696,6 +4542,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Taxation",
       "http_status": 403,
       "source_sha256": "ac8e7e43df89c1b73bfe6984fff23714ecc5fc24f8579d473ce2b18c6c459549"
@@ -3727,6 +4579,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Taxation",
       "http_status": 403,
       "source_sha256": "ac8e7e43df89c1b73bfe6984fff23714ecc5fc24f8579d473ce2b18c6c459549"
@@ -3747,7 +4605,7 @@
       "suggested_source_boundary": "tax laws, revenue reports, administrative guidance and distributional analyses",
       "source_url": "https://www.worldbank.org/en/topic/taxation",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3757,7 +4615,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53; selected=https://www.worldbank.org/en/topic/taxation; final=https://www.worldbank.org/ext/en/development-topics",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -3788,7 +4652,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -3820,6 +4694,15 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -3851,6 +4734,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -3881,7 +4770,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -3913,6 +4811,15 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -3943,7 +4850,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -3975,6 +4888,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -4006,6 +4925,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -4037,6 +4962,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -4057,7 +4988,7 @@
       "suggested_source_boundary": "tax laws, revenue reports, administrative guidance and distributional analyses",
       "source_url": "https://www.un.org/esa/ffd/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4067,7 +4998,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 bb08275429cfd97ffe5b85845915f573a37875680970a03318ad48eabf0b6c20; selected=https://www.un.org/esa/ffd/; final=https://www.un.org/esa/ffd/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.un.org/esa/ffd/",
       "http_status": 200,
       "source_sha256": "bb08275429cfd97ffe5b85845915f573a37875680970a03318ad48eabf0b6c20"
@@ -4098,7 +5035,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "empty extraction",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.un.org/esa/ffd/",
       "http_status": 200,
       "source_sha256": "bb08275429cfd97ffe5b85845915f573a37875680970a03318ad48eabf0b6c20"
@@ -4130,6 +5077,15 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.un.org/esa/ffd/",
       "http_status": 200,
       "source_sha256": "bb08275429cfd97ffe5b85845915f573a37875680970a03318ad48eabf0b6c20"
@@ -4161,6 +5117,12 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.un.org/esa/ffd/",
       "http_status": 200,
       "source_sha256": "bb08275429cfd97ffe5b85845915f573a37875680970a03318ad48eabf0b6c20"
@@ -4191,7 +5153,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "empty extraction",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.un.org/esa/ffd/",
       "http_status": 200,
       "source_sha256": "bb08275429cfd97ffe5b85845915f573a37875680970a03318ad48eabf0b6c20"
@@ -4223,6 +5194,15 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.un.org/esa/ffd/",
       "http_status": 200,
       "source_sha256": "bb08275429cfd97ffe5b85845915f573a37875680970a03318ad48eabf0b6c20"
@@ -4253,7 +5233,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "empty extraction",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.un.org/esa/ffd/",
       "http_status": 200,
       "source_sha256": "bb08275429cfd97ffe5b85845915f573a37875680970a03318ad48eabf0b6c20"
@@ -4285,6 +5271,12 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.un.org/esa/ffd/",
       "http_status": 200,
       "source_sha256": "bb08275429cfd97ffe5b85845915f573a37875680970a03318ad48eabf0b6c20"
@@ -4316,6 +5308,12 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.un.org/esa/ffd/",
       "http_status": 200,
       "source_sha256": "bb08275429cfd97ffe5b85845915f573a37875680970a03318ad48eabf0b6c20"
@@ -4347,6 +5345,12 @@
       "raw_payload_committed": false,
       "locator": "empty extraction",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.un.org/esa/ffd/",
       "http_status": 200,
       "source_sha256": "bb08275429cfd97ffe5b85845915f573a37875680970a03318ad48eabf0b6c20"
@@ -4367,7 +5371,7 @@
       "suggested_source_boundary": "tender documents, contracts, bid evaluations, delivery records and audits",
       "source_url": "https://www.acquisition.gov/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4377,7 +5381,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 57c2a89432d35ea198cc546b1cd25b6fdf8e9aebc53fd1c1a149f3db2a89dac9; selected=https://www.acquisition.gov/; final=https://www.acquisition.gov/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.acquisition.gov/",
       "http_status": 200,
       "source_sha256": "57c2a89432d35ea198cc546b1cd25b6fdf8e9aebc53fd1c1a149f3db2a89dac9"
@@ -4408,7 +5418,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | Acquisition.GOV",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.acquisition.gov/",
       "http_status": 200,
       "source_sha256": "57c2a89432d35ea198cc546b1cd25b6fdf8e9aebc53fd1c1a149f3db2a89dac9"
@@ -4440,6 +5459,15 @@
       "raw_payload_committed": false,
       "locator": "Home | Acquisition.GOV",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.acquisition.gov/",
       "http_status": 200,
       "source_sha256": "57c2a89432d35ea198cc546b1cd25b6fdf8e9aebc53fd1c1a149f3db2a89dac9"
@@ -4471,6 +5499,12 @@
       "raw_payload_committed": false,
       "locator": "Home | Acquisition.GOV",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.acquisition.gov/",
       "http_status": 200,
       "source_sha256": "57c2a89432d35ea198cc546b1cd25b6fdf8e9aebc53fd1c1a149f3db2a89dac9"
@@ -4501,7 +5535,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | Acquisition.GOV",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.acquisition.gov/",
       "http_status": 200,
       "source_sha256": "57c2a89432d35ea198cc546b1cd25b6fdf8e9aebc53fd1c1a149f3db2a89dac9"
@@ -4533,6 +5576,15 @@
       "raw_payload_committed": false,
       "locator": "Home | Acquisition.GOV",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.acquisition.gov/",
       "http_status": 200,
       "source_sha256": "57c2a89432d35ea198cc546b1cd25b6fdf8e9aebc53fd1c1a149f3db2a89dac9"
@@ -4563,7 +5615,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home | Acquisition.GOV",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.acquisition.gov/",
       "http_status": 200,
       "source_sha256": "57c2a89432d35ea198cc546b1cd25b6fdf8e9aebc53fd1c1a149f3db2a89dac9"
@@ -4595,6 +5653,12 @@
       "raw_payload_committed": false,
       "locator": "Home | Acquisition.GOV",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.acquisition.gov/",
       "http_status": 200,
       "source_sha256": "57c2a89432d35ea198cc546b1cd25b6fdf8e9aebc53fd1c1a149f3db2a89dac9"
@@ -4626,6 +5690,12 @@
       "raw_payload_committed": false,
       "locator": "Home | Acquisition.GOV",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.acquisition.gov/",
       "http_status": 200,
       "source_sha256": "57c2a89432d35ea198cc546b1cd25b6fdf8e9aebc53fd1c1a149f3db2a89dac9"
@@ -4657,6 +5727,12 @@
       "raw_payload_committed": false,
       "locator": "Home | Acquisition.GOV",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.acquisition.gov/",
       "http_status": 200,
       "source_sha256": "57c2a89432d35ea198cc546b1cd25b6fdf8e9aebc53fd1c1a149f3db2a89dac9"
@@ -4688,6 +5764,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/buying",
       "http_status": 403,
       "source_sha256": "da37092e72fe300e8f8f7f0ebd1c1c586e4802b0cbcb03a5643bdedfdedc5523"
@@ -4719,6 +5800,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/buying",
       "http_status": 403,
       "source_sha256": "da37092e72fe300e8f8f7f0ebd1c1c586e4802b0cbcb03a5643bdedfdedc5523"
@@ -4750,6 +5841,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/buying",
       "http_status": 403,
       "source_sha256": "da37092e72fe300e8f8f7f0ebd1c1c586e4802b0cbcb03a5643bdedfdedc5523"
@@ -4781,6 +5881,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/buying",
       "http_status": 403,
       "source_sha256": "da37092e72fe300e8f8f7f0ebd1c1c586e4802b0cbcb03a5643bdedfdedc5523"
@@ -4812,6 +5918,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/buying",
       "http_status": 403,
       "source_sha256": "da37092e72fe300e8f8f7f0ebd1c1c586e4802b0cbcb03a5643bdedfdedc5523"
@@ -4843,6 +5958,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/buying",
       "http_status": 403,
       "source_sha256": "da37092e72fe300e8f8f7f0ebd1c1c586e4802b0cbcb03a5643bdedfdedc5523"
@@ -4874,6 +5998,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/buying",
       "http_status": 403,
       "source_sha256": "da37092e72fe300e8f8f7f0ebd1c1c586e4802b0cbcb03a5643bdedfdedc5523"
@@ -4905,6 +6035,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/buying",
       "http_status": 403,
       "source_sha256": "da37092e72fe300e8f8f7f0ebd1c1c586e4802b0cbcb03a5643bdedfdedc5523"
@@ -4936,6 +6072,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/buying",
       "http_status": 403,
       "source_sha256": "da37092e72fe300e8f8f7f0ebd1c1c586e4802b0cbcb03a5643bdedfdedc5523"
@@ -4967,6 +6109,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.gao.gov/buying",
       "http_status": 403,
       "source_sha256": "da37092e72fe300e8f8f7f0ebd1c1c586e4802b0cbcb03a5643bdedfdedc5523"
@@ -4987,7 +6135,7 @@
       "suggested_source_boundary": "tender documents, contracts, bid evaluations, delivery records and audits",
       "source_url": "https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4997,7 +6145,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 24dff40bf96497d386087556be52e63102e1c69269439a073652114fb715b115; selected=https://single-market-economy.ec.europa.eu/single-market/public-procurement_en; final=https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
       "http_status": 200,
       "source_sha256": "24dff40bf96497d386087556be52e63102e1c69269439a073652114fb715b115"
@@ -5028,7 +6182,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Public procurement - Internal Market, Industry, Entrepreneurship and SMEs",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
       "http_status": 200,
       "source_sha256": "24dff40bf96497d386087556be52e63102e1c69269439a073652114fb715b115"
@@ -5060,6 +6224,15 @@
       "raw_payload_committed": false,
       "locator": "Public procurement - Internal Market, Industry, Entrepreneurship and SMEs",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
       "http_status": 200,
       "source_sha256": "24dff40bf96497d386087556be52e63102e1c69269439a073652114fb715b115"
@@ -5091,6 +6264,12 @@
       "raw_payload_committed": false,
       "locator": "Public procurement - Internal Market, Industry, Entrepreneurship and SMEs",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
       "http_status": 200,
       "source_sha256": "24dff40bf96497d386087556be52e63102e1c69269439a073652114fb715b115"
@@ -5121,7 +6300,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Public procurement - Internal Market, Industry, Entrepreneurship and SMEs",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
       "http_status": 200,
       "source_sha256": "24dff40bf96497d386087556be52e63102e1c69269439a073652114fb715b115"
@@ -5153,6 +6341,15 @@
       "raw_payload_committed": false,
       "locator": "Public procurement - Internal Market, Industry, Entrepreneurship and SMEs",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
       "http_status": 200,
       "source_sha256": "24dff40bf96497d386087556be52e63102e1c69269439a073652114fb715b115"
@@ -5183,7 +6380,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Public procurement - Internal Market, Industry, Entrepreneurship and SMEs",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
       "http_status": 200,
       "source_sha256": "24dff40bf96497d386087556be52e63102e1c69269439a073652114fb715b115"
@@ -5215,6 +6418,12 @@
       "raw_payload_committed": false,
       "locator": "Public procurement - Internal Market, Industry, Entrepreneurship and SMEs",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
       "http_status": 200,
       "source_sha256": "24dff40bf96497d386087556be52e63102e1c69269439a073652114fb715b115"
@@ -5246,6 +6455,12 @@
       "raw_payload_committed": false,
       "locator": "Public procurement - Internal Market, Industry, Entrepreneurship and SMEs",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
       "http_status": 200,
       "source_sha256": "24dff40bf96497d386087556be52e63102e1c69269439a073652114fb715b115"
@@ -5277,6 +6492,12 @@
       "raw_payload_committed": false,
       "locator": "Public procurement - Internal Market, Industry, Entrepreneurship and SMEs",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://single-market-economy.ec.europa.eu/single-market/public-procurement_en",
       "http_status": 200,
       "source_sha256": "24dff40bf96497d386087556be52e63102e1c69269439a073652114fb715b115"
@@ -5308,6 +6529,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/public-procurement/",
       "http_status": 403,
       "source_sha256": "f3104c96c67c9fb4cb189444fe08a5e895e0f8c4974176e13455c60e1fb3aed5"
@@ -5339,6 +6565,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/public-procurement/",
       "http_status": 403,
       "source_sha256": "f3104c96c67c9fb4cb189444fe08a5e895e0f8c4974176e13455c60e1fb3aed5"
@@ -5370,6 +6606,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/public-procurement/",
       "http_status": 403,
       "source_sha256": "f3104c96c67c9fb4cb189444fe08a5e895e0f8c4974176e13455c60e1fb3aed5"
@@ -5401,6 +6646,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/public-procurement/",
       "http_status": 403,
       "source_sha256": "f3104c96c67c9fb4cb189444fe08a5e895e0f8c4974176e13455c60e1fb3aed5"
@@ -5432,6 +6683,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/public-procurement/",
       "http_status": 403,
       "source_sha256": "f3104c96c67c9fb4cb189444fe08a5e895e0f8c4974176e13455c60e1fb3aed5"
@@ -5463,6 +6723,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/public-procurement/",
       "http_status": 403,
       "source_sha256": "f3104c96c67c9fb4cb189444fe08a5e895e0f8c4974176e13455c60e1fb3aed5"
@@ -5494,6 +6763,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/public-procurement/",
       "http_status": 403,
       "source_sha256": "f3104c96c67c9fb4cb189444fe08a5e895e0f8c4974176e13455c60e1fb3aed5"
@@ -5525,6 +6800,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/public-procurement/",
       "http_status": 403,
       "source_sha256": "f3104c96c67c9fb4cb189444fe08a5e895e0f8c4974176e13455c60e1fb3aed5"
@@ -5556,6 +6837,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/public-procurement/",
       "http_status": 403,
       "source_sha256": "f3104c96c67c9fb4cb189444fe08a5e895e0f8c4974176e13455c60e1fb3aed5"
@@ -5587,6 +6874,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/gov/public-procurement/",
       "http_status": 403,
       "source_sha256": "f3104c96c67c9fb4cb189444fe08a5e895e0f8c4974176e13455c60e1fb3aed5"
@@ -5607,7 +6900,7 @@
       "suggested_source_boundary": "tender documents, contracts, bid evaluations, delivery records and audits",
       "source_url": "https://www.worldbank.org/en/topic/governance/brief/procurement",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5617,7 +6910,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53; selected=https://www.worldbank.org/en/topic/governance/brief/procurement; final=https://www.worldbank.org/ext/en/development-topics",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -5648,7 +6947,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -5680,6 +6989,15 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -5711,6 +7029,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -5741,7 +7065,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -5773,6 +7106,15 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -5803,7 +7145,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -5835,6 +7183,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -5866,6 +7220,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -5897,6 +7257,12 @@
       "raw_payload_committed": false,
       "locator": "Development Topics | World Bank Group",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/development-topics",
       "http_status": 200,
       "source_sha256": "645e2354b3cadbdad39ae9f8a3a4292bb56336bba506f227e692293cd362eb53"
@@ -5917,7 +7283,7 @@
       "suggested_source_boundary": "tender documents, contracts, bid evaluations, delivery records and audits",
       "source_url": "https://www.ungm.org/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5927,7 +7293,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 a648d2960fd0e912430ee4e8bfb363ff3943df4d7a2ae58d43971ed2d207b962; selected=https://www.ungm.org/; final=https://www.ungm.org/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ungm.org/",
       "http_status": 200,
       "source_sha256": "a648d2960fd0e912430ee4e8bfb363ff3943df4d7a2ae58d43971ed2d207b962"
@@ -5958,7 +7330,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Welcome to the UNGM",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ungm.org/",
       "http_status": 200,
       "source_sha256": "a648d2960fd0e912430ee4e8bfb363ff3943df4d7a2ae58d43971ed2d207b962"
@@ -5990,6 +7371,14 @@
       "raw_payload_committed": false,
       "locator": "Welcome to the UNGM",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ungm.org/",
       "http_status": 200,
       "source_sha256": "a648d2960fd0e912430ee4e8bfb363ff3943df4d7a2ae58d43971ed2d207b962"
@@ -6021,6 +7410,9 @@
       "raw_payload_committed": false,
       "locator": "©2026 United Nations Global Marketplace || Receive a daily email with opportunities of your interest, save notices and your favorite searches, share the benefits with your colleagues...",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ungm.org/",
       "http_status": 200,
       "source_sha256": "a648d2960fd0e912430ee4e8bfb363ff3943df4d7a2ae58d43971ed2d207b962"
@@ -6051,7 +7443,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Welcome to the UNGM",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ungm.org/",
       "http_status": 200,
       "source_sha256": "a648d2960fd0e912430ee4e8bfb363ff3943df4d7a2ae58d43971ed2d207b962"
@@ -6083,6 +7484,14 @@
       "raw_payload_committed": false,
       "locator": "Welcome to the UNGM",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ungm.org/",
       "http_status": 200,
       "source_sha256": "a648d2960fd0e912430ee4e8bfb363ff3943df4d7a2ae58d43971ed2d207b962"
@@ -6113,7 +7522,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Welcome to the UNGM",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ungm.org/",
       "http_status": 200,
       "source_sha256": "a648d2960fd0e912430ee4e8bfb363ff3943df4d7a2ae58d43971ed2d207b962"
@@ -6145,6 +7560,12 @@
       "raw_payload_committed": false,
       "locator": "Welcome to the UNGM",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ungm.org/",
       "http_status": 200,
       "source_sha256": "a648d2960fd0e912430ee4e8bfb363ff3943df4d7a2ae58d43971ed2d207b962"
@@ -6176,6 +7597,11 @@
       "raw_payload_committed": false,
       "locator": "Welcome to the UNGM",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ungm.org/",
       "http_status": 200,
       "source_sha256": "a648d2960fd0e912430ee4e8bfb363ff3943df4d7a2ae58d43971ed2d207b962"
@@ -6207,6 +7633,12 @@
       "raw_payload_committed": false,
       "locator": "Welcome to the UNGM",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ungm.org/",
       "http_status": 200,
       "source_sha256": "a648d2960fd0e912430ee4e8bfb363ff3943df4d7a2ae58d43971ed2d207b962"
@@ -6227,7 +7659,7 @@
       "suggested_source_boundary": "tender documents, contracts, bid evaluations, delivery records and audits",
       "source_url": "https://www.open-contracting.org/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6237,7 +7669,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 fffdbae4b09c798f4501060854dfcc476f87b0d53b7acab6eb895433d347fad2; selected=https://www.open-contracting.org/; final=https://www.open-contracting.org/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.open-contracting.org/",
       "http_status": 200,
       "source_sha256": "fffdbae4b09c798f4501060854dfcc476f87b0d53b7acab6eb895433d347fad2"
@@ -6268,7 +7706,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Open Contracting Partnership: open, fair & efficient public contracting",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.open-contracting.org/",
       "http_status": 200,
       "source_sha256": "fffdbae4b09c798f4501060854dfcc476f87b0d53b7acab6eb895433d347fad2"
@@ -6300,6 +7748,15 @@
       "raw_payload_committed": false,
       "locator": "Open Contracting Partnership: open, fair & efficient public contracting",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.open-contracting.org/",
       "http_status": 200,
       "source_sha256": "fffdbae4b09c798f4501060854dfcc476f87b0d53b7acab6eb895433d347fad2"
@@ -6331,6 +7788,12 @@
       "raw_payload_committed": false,
       "locator": "Open Contracting Partnership: open, fair & efficient public contracting",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.open-contracting.org/",
       "http_status": 200,
       "source_sha256": "fffdbae4b09c798f4501060854dfcc476f87b0d53b7acab6eb895433d347fad2"
@@ -6361,7 +7824,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Open Contracting Partnership: open, fair & efficient public contracting",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.open-contracting.org/",
       "http_status": 200,
       "source_sha256": "fffdbae4b09c798f4501060854dfcc476f87b0d53b7acab6eb895433d347fad2"
@@ -6393,6 +7865,15 @@
       "raw_payload_committed": false,
       "locator": "Open Contracting Partnership: open, fair & efficient public contracting",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.open-contracting.org/",
       "http_status": 200,
       "source_sha256": "fffdbae4b09c798f4501060854dfcc476f87b0d53b7acab6eb895433d347fad2"
@@ -6423,7 +7904,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Open Contracting Partnership: open, fair & efficient public contracting",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.open-contracting.org/",
       "http_status": 200,
       "source_sha256": "fffdbae4b09c798f4501060854dfcc476f87b0d53b7acab6eb895433d347fad2"
@@ -6455,6 +7942,12 @@
       "raw_payload_committed": false,
       "locator": "Open Contracting Partnership: open, fair & efficient public contracting",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.open-contracting.org/",
       "http_status": 200,
       "source_sha256": "fffdbae4b09c798f4501060854dfcc476f87b0d53b7acab6eb895433d347fad2"
@@ -6486,6 +7979,12 @@
       "raw_payload_committed": false,
       "locator": "Open Contracting Partnership: open, fair & efficient public contracting",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.open-contracting.org/",
       "http_status": 200,
       "source_sha256": "fffdbae4b09c798f4501060854dfcc476f87b0d53b7acab6eb895433d347fad2"
@@ -6517,6 +8016,12 @@
       "raw_payload_committed": false,
       "locator": "Open Contracting Partnership: open, fair & efficient public contracting",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.open-contracting.org/",
       "http_status": 200,
       "source_sha256": "fffdbae4b09c798f4501060854dfcc476f87b0d53b7acab6eb895433d347fad2"

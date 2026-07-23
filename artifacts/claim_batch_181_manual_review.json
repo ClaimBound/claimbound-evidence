@@ -1,14 +1,14 @@
 {
   "issue_number": 181,
-  "protocol_version": "CB7K-ISSUE-181-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-181-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "source_manifest_sha256": "6e8303c477abbd4a905ec7d79627b368eb4e9988be38978ae92276cf9fb6b595",
   "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
   "raw_payload_committed": false,
-  "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
+  "review_method": "complete topic-specific textual gate facets with verbatim locators; numerator-denominator, method-version, and reproducibility additionally require an independent execution artifact",
   "result_counts": {
     "BLOCKED_SOURCE": 50,
-    "PASSED_UNDER_PROTOCOL": 22,
-    "INSUFFICIENT_COVERAGE": 138
+    "INSUFFICIENT_COVERAGE": 156,
+    "PASSED_UNDER_PROTOCOL": 4
   },
   "cards": [
     {
@@ -38,6 +38,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-results",
       "http_status": 404,
       "source_sha256": "d4d3f73ff5c8907e9c74b1cde200eb408b8c839d8a9d701af363a9ef902e00c8"
@@ -69,6 +74,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-results",
       "http_status": 404,
       "source_sha256": "d4d3f73ff5c8907e9c74b1cde200eb408b8c839d8a9d701af363a9ef902e00c8"
@@ -100,6 +115,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-results",
       "http_status": 404,
       "source_sha256": "d4d3f73ff5c8907e9c74b1cde200eb408b8c839d8a9d701af363a9ef902e00c8"
@@ -131,6 +155,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-results",
       "http_status": 404,
       "source_sha256": "d4d3f73ff5c8907e9c74b1cde200eb408b8c839d8a9d701af363a9ef902e00c8"
@@ -162,6 +192,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-results",
       "http_status": 404,
       "source_sha256": "d4d3f73ff5c8907e9c74b1cde200eb408b8c839d8a9d701af363a9ef902e00c8"
@@ -193,6 +232,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-results",
       "http_status": 404,
       "source_sha256": "d4d3f73ff5c8907e9c74b1cde200eb408b8c839d8a9d701af363a9ef902e00c8"
@@ -224,6 +272,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-results",
       "http_status": 404,
       "source_sha256": "d4d3f73ff5c8907e9c74b1cde200eb408b8c839d8a9d701af363a9ef902e00c8"
@@ -255,6 +309,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-results",
       "http_status": 404,
       "source_sha256": "d4d3f73ff5c8907e9c74b1cde200eb408b8c839d8a9d701af363a9ef902e00c8"
@@ -286,6 +346,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-results",
       "http_status": 404,
       "source_sha256": "d4d3f73ff5c8907e9c74b1cde200eb408b8c839d8a9d701af363a9ef902e00c8"
@@ -317,6 +383,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-results",
       "http_status": 404,
       "source_sha256": "d4d3f73ff5c8907e9c74b1cde200eb408b8c839d8a9d701af363a9ef902e00c8"
@@ -337,7 +409,7 @@
       "suggested_source_boundary": "official election procedures, machine tests, turnout records and audit reports",
       "source_url": "https://www.eac.gov/voters/voter-faqs",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -347,7 +419,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 2e17914944c470918e09be3d29e8ff07151fbb157eb8c0afaa89228dd7c14843; selected=https://www.eac.gov/voters/voter-faqs; final=https://www.eac.gov/voters/voter-faqs",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/voters/voter-faqs",
       "http_status": 200,
       "source_sha256": "2e17914944c470918e09be3d29e8ff07151fbb157eb8c0afaa89228dd7c14843"
@@ -378,7 +456,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Voter FAQs | U.S. Election Assistance Commission",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/voters/voter-faqs",
       "http_status": 200,
       "source_sha256": "2e17914944c470918e09be3d29e8ff07151fbb157eb8c0afaa89228dd7c14843"
@@ -410,6 +496,14 @@
       "raw_payload_committed": false,
       "locator": "Voter FAQs | U.S. Election Assistance Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/voters/voter-faqs",
       "http_status": 200,
       "source_sha256": "2e17914944c470918e09be3d29e8ff07151fbb157eb8c0afaa89228dd7c14843"
@@ -441,6 +535,11 @@
       "raw_payload_committed": false,
       "locator": "Voter FAQs | U.S. Election Assistance Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/voters/voter-faqs",
       "http_status": 200,
       "source_sha256": "2e17914944c470918e09be3d29e8ff07151fbb157eb8c0afaa89228dd7c14843"
@@ -471,7 +570,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Voter FAQs | U.S. Election Assistance Commission",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/voters/voter-faqs",
       "http_status": 200,
       "source_sha256": "2e17914944c470918e09be3d29e8ff07151fbb157eb8c0afaa89228dd7c14843"
@@ -503,6 +611,14 @@
       "raw_payload_committed": false,
       "locator": "Voter FAQs | U.S. Election Assistance Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/voters/voter-faqs",
       "http_status": 200,
       "source_sha256": "2e17914944c470918e09be3d29e8ff07151fbb157eb8c0afaa89228dd7c14843"
@@ -533,7 +649,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Voter FAQs | U.S. Election Assistance Commission",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/voters/voter-faqs",
       "http_status": 200,
       "source_sha256": "2e17914944c470918e09be3d29e8ff07151fbb157eb8c0afaa89228dd7c14843"
@@ -565,6 +687,12 @@
       "raw_payload_committed": false,
       "locator": "Voter FAQs | U.S. Election Assistance Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/voters/voter-faqs",
       "http_status": 200,
       "source_sha256": "2e17914944c470918e09be3d29e8ff07151fbb157eb8c0afaa89228dd7c14843"
@@ -596,6 +724,12 @@
       "raw_payload_committed": false,
       "locator": "Voter FAQs | U.S. Election Assistance Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/voters/voter-faqs",
       "http_status": 200,
       "source_sha256": "2e17914944c470918e09be3d29e8ff07151fbb157eb8c0afaa89228dd7c14843"
@@ -627,6 +761,12 @@
       "raw_payload_committed": false,
       "locator": "Voter FAQs | U.S. Election Assistance Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/voters/voter-faqs",
       "http_status": 200,
       "source_sha256": "2e17914944c470918e09be3d29e8ff07151fbb157eb8c0afaa89228dd7c14843"
@@ -647,7 +787,7 @@
       "suggested_source_boundary": "official election procedures, machine tests, turnout records and audit reports",
       "source_url": "https://www.eac.gov/election-officials/election-security-preparedness",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -657,7 +797,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 d8a3f0585dbeb527c48c267de3833560b2b1194fa5bdd9e3b68a473d93dcab76; selected=https://www.eac.gov/election-officials/election-security-preparedness; final=https://www.eac.gov/election-officials/election-security-preparedness",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-security-preparedness",
       "http_status": 200,
       "source_sha256": "d8a3f0585dbeb527c48c267de3833560b2b1194fa5bdd9e3b68a473d93dcab76"
@@ -688,7 +834,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Election Security Preparedness | U.S. Election Assistance Commission",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-security-preparedness",
       "http_status": 200,
       "source_sha256": "d8a3f0585dbeb527c48c267de3833560b2b1194fa5bdd9e3b68a473d93dcab76"
@@ -720,6 +876,12 @@
       "raw_payload_committed": false,
       "locator": "Election Security Preparedness | U.S. Election Assistance Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "missingness"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-security-preparedness",
       "http_status": 200,
       "source_sha256": "d8a3f0585dbeb527c48c267de3833560b2b1194fa5bdd9e3b68a473d93dcab76"
@@ -751,6 +913,11 @@
       "raw_payload_committed": false,
       "locator": "Election Security Preparedness | U.S. Election Assistance Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-security-preparedness",
       "http_status": 200,
       "source_sha256": "d8a3f0585dbeb527c48c267de3833560b2b1194fa5bdd9e3b68a473d93dcab76"
@@ -781,7 +948,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Election Security Preparedness | U.S. Election Assistance Commission",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-security-preparedness",
       "http_status": 200,
       "source_sha256": "d8a3f0585dbeb527c48c267de3833560b2b1194fa5bdd9e3b68a473d93dcab76"
@@ -813,6 +988,14 @@
       "raw_payload_committed": false,
       "locator": "Election Security Preparedness | U.S. Election Assistance Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-security-preparedness",
       "http_status": 200,
       "source_sha256": "d8a3f0585dbeb527c48c267de3833560b2b1194fa5bdd9e3b68a473d93dcab76"
@@ -843,7 +1026,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Election Security Preparedness | U.S. Election Assistance Commission",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-security-preparedness",
       "http_status": 200,
       "source_sha256": "d8a3f0585dbeb527c48c267de3833560b2b1194fa5bdd9e3b68a473d93dcab76"
@@ -875,6 +1064,9 @@
       "raw_payload_committed": false,
       "locator": "– This report examines electronic transmission options (telephone, fax, e-mail, web) for UOCAVA voting that are in limited use or have been proposed as methods for improving UOCAVA voting, and analyzes the security-related threats to these transmission options. || EAC website, election offices may submit requests here (email link to",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-security-preparedness",
       "http_status": 200,
       "source_sha256": "d8a3f0585dbeb527c48c267de3833560b2b1194fa5bdd9e3b68a473d93dcab76"
@@ -906,6 +1098,12 @@
       "raw_payload_committed": false,
       "locator": "Election Security Preparedness | U.S. Election Assistance Commission",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-security-preparedness",
       "http_status": 200,
       "source_sha256": "d8a3f0585dbeb527c48c267de3833560b2b1194fa5bdd9e3b68a473d93dcab76"
@@ -937,6 +1135,9 @@
       "raw_payload_committed": false,
       "locator": "EAC website, election offices may submit requests here (email link to || – This report examines electronic transmission options (telephone, fax, e-mail, web) for UOCAVA voting that are in limited use or have been proposed as methods for improving UOCAVA voting, and analyzes the security-related threats to these transmission options.",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eac.gov/election-officials/election-security-preparedness",
       "http_status": 200,
       "source_sha256": "d8a3f0585dbeb527c48c267de3833560b2b1194fa5bdd9e3b68a473d93dcab76"
@@ -968,6 +1169,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
       "http_status": 404,
       "source_sha256": "8a776a219a9471ffaf99e5521180d448996077beb13b35cd7caf2d838c605263"
@@ -999,6 +1205,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
       "http_status": 404,
       "source_sha256": "8a776a219a9471ffaf99e5521180d448996077beb13b35cd7caf2d838c605263"
@@ -1030,6 +1246,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
       "http_status": 404,
       "source_sha256": "8a776a219a9471ffaf99e5521180d448996077beb13b35cd7caf2d838c605263"
@@ -1061,6 +1286,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
       "http_status": 404,
       "source_sha256": "8a776a219a9471ffaf99e5521180d448996077beb13b35cd7caf2d838c605263"
@@ -1092,6 +1323,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
       "http_status": 404,
       "source_sha256": "8a776a219a9471ffaf99e5521180d448996077beb13b35cd7caf2d838c605263"
@@ -1123,6 +1363,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
       "http_status": 404,
       "source_sha256": "8a776a219a9471ffaf99e5521180d448996077beb13b35cd7caf2d838c605263"
@@ -1154,6 +1403,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
       "http_status": 404,
       "source_sha256": "8a776a219a9471ffaf99e5521180d448996077beb13b35cd7caf2d838c605263"
@@ -1185,6 +1440,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
       "http_status": 404,
       "source_sha256": "8a776a219a9471ffaf99e5521180d448996077beb13b35cd7caf2d838c605263"
@@ -1216,6 +1477,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
       "http_status": 404,
       "source_sha256": "8a776a219a9471ffaf99e5521180d448996077beb13b35cd7caf2d838c605263"
@@ -1247,6 +1514,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
       "http_status": 404,
       "source_sha256": "8a776a219a9471ffaf99e5521180d448996077beb13b35cd7caf2d838c605263"
@@ -1267,7 +1540,7 @@
       "suggested_source_boundary": "official election procedures, machine tests, turnout records and audit reports",
       "source_url": "https://www.nist.gov/itl/voting",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1277,7 +1550,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 2b5a3313e612233b0ead1bf730893e8bde114e1ae38016e5e186ab45ab320e39; selected=https://www.nist.gov/itl/voting; final=https://www.nist.gov/itl/voting",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nist.gov/itl/voting",
       "http_status": 200,
       "source_sha256": "2b5a3313e612233b0ead1bf730893e8bde114e1ae38016e5e186ab45ab320e39"
@@ -1308,7 +1587,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Voting | NIST",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nist.gov/itl/voting",
       "http_status": 200,
       "source_sha256": "2b5a3313e612233b0ead1bf730893e8bde114e1ae38016e5e186ab45ab320e39"
@@ -1340,6 +1629,15 @@
       "raw_payload_committed": false,
       "locator": "Voting | NIST",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nist.gov/itl/voting",
       "http_status": 200,
       "source_sha256": "2b5a3313e612233b0ead1bf730893e8bde114e1ae38016e5e186ab45ab320e39"
@@ -1371,6 +1669,12 @@
       "raw_payload_committed": false,
       "locator": "Voting | NIST",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nist.gov/itl/voting",
       "http_status": 200,
       "source_sha256": "2b5a3313e612233b0ead1bf730893e8bde114e1ae38016e5e186ab45ab320e39"
@@ -1401,7 +1705,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Voting | NIST",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nist.gov/itl/voting",
       "http_status": 200,
       "source_sha256": "2b5a3313e612233b0ead1bf730893e8bde114e1ae38016e5e186ab45ab320e39"
@@ -1433,6 +1746,15 @@
       "raw_payload_committed": false,
       "locator": "Voting | NIST",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nist.gov/itl/voting",
       "http_status": 200,
       "source_sha256": "2b5a3313e612233b0ead1bf730893e8bde114e1ae38016e5e186ab45ab320e39"
@@ -1463,7 +1785,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Voting | NIST",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nist.gov/itl/voting",
       "http_status": 200,
       "source_sha256": "2b5a3313e612233b0ead1bf730893e8bde114e1ae38016e5e186ab45ab320e39"
@@ -1495,6 +1823,11 @@
       "raw_payload_committed": false,
       "locator": "Voting | NIST",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nist.gov/itl/voting",
       "http_status": 200,
       "source_sha256": "2b5a3313e612233b0ead1bf730893e8bde114e1ae38016e5e186ab45ab320e39"
@@ -1526,6 +1859,12 @@
       "raw_payload_committed": false,
       "locator": "Voting | NIST",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nist.gov/itl/voting",
       "http_status": 200,
       "source_sha256": "2b5a3313e612233b0ead1bf730893e8bde114e1ae38016e5e186ab45ab320e39"
@@ -1557,6 +1896,11 @@
       "raw_payload_committed": false,
       "locator": "Voting | NIST",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.nist.gov/itl/voting",
       "http_status": 200,
       "source_sha256": "2b5a3313e612233b0ead1bf730893e8bde114e1ae38016e5e186ab45ab320e39"
@@ -1577,7 +1921,7 @@
       "suggested_source_boundary": "official election procedures, machine tests, turnout records and audit reports",
       "source_url": "https://www.justice.gov/crt/voting-section",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1587,7 +1931,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 18605369fca038e4d45b216e80c24a6766ede7bc3dd597c0619a9f915e98256b; selected=https://www.justice.gov/crt/voting-section; final=https://www.justice.gov/crt/voting-section",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/voting-section",
       "http_status": 200,
       "source_sha256": "18605369fca038e4d45b216e80c24a6766ede7bc3dd597c0619a9f915e98256b"
@@ -1618,7 +1968,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Voting Section | United States Department of Justice",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/voting-section",
       "http_status": 200,
       "source_sha256": "18605369fca038e4d45b216e80c24a6766ede7bc3dd597c0619a9f915e98256b"
@@ -1650,6 +2010,13 @@
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Voting Section | United States Department of Justice",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/voting-section",
       "http_status": 200,
       "source_sha256": "18605369fca038e4d45b216e80c24a6766ede7bc3dd597c0619a9f915e98256b"
@@ -1681,6 +2048,12 @@
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Voting Section | United States Department of Justice",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/voting-section",
       "http_status": 200,
       "source_sha256": "18605369fca038e4d45b216e80c24a6766ede7bc3dd597c0619a9f915e98256b"
@@ -1711,7 +2084,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Voting Section | United States Department of Justice",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/voting-section",
       "http_status": 200,
       "source_sha256": "18605369fca038e4d45b216e80c24a6766ede7bc3dd597c0619a9f915e98256b"
@@ -1743,6 +2125,15 @@
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Voting Section | United States Department of Justice",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/voting-section",
       "http_status": 200,
       "source_sha256": "18605369fca038e4d45b216e80c24a6766ede7bc3dd597c0619a9f915e98256b"
@@ -1773,7 +2164,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Voting Section | United States Department of Justice",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/voting-section",
       "http_status": 200,
       "source_sha256": "18605369fca038e4d45b216e80c24a6766ede7bc3dd597c0619a9f915e98256b"
@@ -1805,6 +2202,12 @@
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Voting Section | United States Department of Justice",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/voting-section",
       "http_status": 200,
       "source_sha256": "18605369fca038e4d45b216e80c24a6766ede7bc3dd597c0619a9f915e98256b"
@@ -1825,7 +2228,7 @@
       "suggested_source_boundary": "official election procedures, machine tests, turnout records and audit reports",
       "source_url": "https://www.justice.gov/crt/voting-section",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1834,8 +2237,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Justice Department Announces Monitoring of Polling Sites in Three Arizona Counties",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Civil Rights Division | Voting Section | United States Department of Justice",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/voting-section",
       "http_status": 200,
       "source_sha256": "18605369fca038e4d45b216e80c24a6766ede7bc3dd597c0619a9f915e98256b"
@@ -1867,6 +2275,12 @@
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Voting Section | United States Department of Justice",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/voting-section",
       "http_status": 200,
       "source_sha256": "18605369fca038e4d45b216e80c24a6766ede7bc3dd597c0619a9f915e98256b"
@@ -1887,7 +2301,7 @@
       "suggested_source_boundary": "official election procedures, machine tests, turnout records and audit reports",
       "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1897,7 +2311,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 10b2996c9c123a6e5bd9d6cc26193092fe22199d5ba2d82d6651641099725b6f; selected=https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/; final=https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "http_status": 200,
       "source_sha256": "10b2996c9c123a6e5bd9d6cc26193092fe22199d5ba2d82d6651641099725b6f"
@@ -1928,7 +2348,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "FEC | Election and voting information",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "http_status": 200,
       "source_sha256": "10b2996c9c123a6e5bd9d6cc26193092fe22199d5ba2d82d6651641099725b6f"
@@ -1960,6 +2389,13 @@
       "raw_payload_committed": false,
       "locator": "FEC | Election and voting information",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "http_status": 200,
       "source_sha256": "10b2996c9c123a6e5bd9d6cc26193092fe22199d5ba2d82d6651641099725b6f"
@@ -1991,6 +2427,9 @@
       "raw_payload_committed": false,
       "locator": "Official 2024 Presidential General Election Results, compiled from state election offices (",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "http_status": 200,
       "source_sha256": "10b2996c9c123a6e5bd9d6cc26193092fe22199d5ba2d82d6651641099725b6f"
@@ -2021,7 +2460,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "FEC | Election and voting information",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "http_status": 200,
       "source_sha256": "10b2996c9c123a6e5bd9d6cc26193092fe22199d5ba2d82d6651641099725b6f"
@@ -2053,6 +2501,14 @@
       "raw_payload_committed": false,
       "locator": "FEC | Election and voting information",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "http_status": 200,
       "source_sha256": "10b2996c9c123a6e5bd9d6cc26193092fe22199d5ba2d82d6651641099725b6f"
@@ -2083,7 +2539,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "FEC | Election and voting information",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "http_status": 200,
       "source_sha256": "10b2996c9c123a6e5bd9d6cc26193092fe22199d5ba2d82d6651641099725b6f"
@@ -2115,6 +2577,12 @@
       "raw_payload_committed": false,
       "locator": "FEC | Election and voting information",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "http_status": 200,
       "source_sha256": "10b2996c9c123a6e5bd9d6cc26193092fe22199d5ba2d82d6651641099725b6f"
@@ -2135,7 +2603,7 @@
       "suggested_source_boundary": "official election procedures, machine tests, turnout records and audit reports",
       "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2144,8 +2612,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Instead, state election offices are responsible for certifying results.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "FEC | Election and voting information",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "http_status": 200,
       "source_sha256": "10b2996c9c123a6e5bd9d6cc26193092fe22199d5ba2d82d6651641099725b6f"
@@ -2177,6 +2651,12 @@
       "raw_payload_committed": false,
       "locator": "FEC | Election and voting information",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
       "http_status": 200,
       "source_sha256": "10b2996c9c123a6e5bd9d6cc26193092fe22199d5ba2d82d6651641099725b6f"
@@ -2197,7 +2677,7 @@
       "suggested_source_boundary": "department records, body-camera policies, stop data and oversight reports",
       "source_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2207,7 +2687,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 202871a82ee2b4f67be9890c4d7e0abdbf4f02e10c0b8d9779fa4a1143f7e378; selected=https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home; final=https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
       "http_status": 200,
       "source_sha256": "202871a82ee2b4f67be9890c4d7e0abdbf4f02e10c0b8d9779fa4a1143f7e378"
@@ -2238,7 +2724,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Loading...",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
       "http_status": 200,
       "source_sha256": "202871a82ee2b4f67be9890c4d7e0abdbf4f02e10c0b8d9779fa4a1143f7e378"
@@ -2270,6 +2766,15 @@
       "raw_payload_committed": false,
       "locator": "Loading...",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
       "http_status": 200,
       "source_sha256": "202871a82ee2b4f67be9890c4d7e0abdbf4f02e10c0b8d9779fa4a1143f7e378"
@@ -2301,6 +2806,12 @@
       "raw_payload_committed": false,
       "locator": "Loading...",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
       "http_status": 200,
       "source_sha256": "202871a82ee2b4f67be9890c4d7e0abdbf4f02e10c0b8d9779fa4a1143f7e378"
@@ -2331,7 +2842,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Loading...",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
       "http_status": 200,
       "source_sha256": "202871a82ee2b4f67be9890c4d7e0abdbf4f02e10c0b8d9779fa4a1143f7e378"
@@ -2363,6 +2883,15 @@
       "raw_payload_committed": false,
       "locator": "Loading...",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
       "http_status": 200,
       "source_sha256": "202871a82ee2b4f67be9890c4d7e0abdbf4f02e10c0b8d9779fa4a1143f7e378"
@@ -2393,7 +2922,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Loading...",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
       "http_status": 200,
       "source_sha256": "202871a82ee2b4f67be9890c4d7e0abdbf4f02e10c0b8d9779fa4a1143f7e378"
@@ -2425,6 +2960,12 @@
       "raw_payload_committed": false,
       "locator": "Loading...",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
       "http_status": 200,
       "source_sha256": "202871a82ee2b4f67be9890c4d7e0abdbf4f02e10c0b8d9779fa4a1143f7e378"
@@ -2456,6 +2997,12 @@
       "raw_payload_committed": false,
       "locator": "Loading...",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
       "http_status": 200,
       "source_sha256": "202871a82ee2b4f67be9890c4d7e0abdbf4f02e10c0b8d9779fa4a1143f7e378"
@@ -2487,6 +3034,12 @@
       "raw_payload_committed": false,
       "locator": "Loading...",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "VERY_SHORT_OR_SHELL_EXTRACTION",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
       "http_status": 200,
       "source_sha256": "202871a82ee2b4f67be9890c4d7e0abdbf4f02e10c0b8d9779fa4a1143f7e378"
@@ -2507,7 +3060,7 @@
       "suggested_source_boundary": "department records, body-camera policies, stop data and oversight reports",
       "source_url": "https://bjs.ojp.gov/topics/law-enforcement",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2517,7 +3070,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 9729b38640784d3e409d2e41b4e300513d24ccbe12311083511e1be2ead8e662; selected=https://bjs.ojp.gov/topics/law-enforcement; final=https://bjs.ojp.gov/topics/law-enforcement",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/law-enforcement",
       "http_status": 200,
       "source_sha256": "9729b38640784d3e409d2e41b4e300513d24ccbe12311083511e1be2ead8e662"
@@ -2548,7 +3107,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Law Enforcement | Bureau of Justice Statistics",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/law-enforcement",
       "http_status": 200,
       "source_sha256": "9729b38640784d3e409d2e41b4e300513d24ccbe12311083511e1be2ead8e662"
@@ -2580,6 +3149,15 @@
       "raw_payload_committed": false,
       "locator": "Law Enforcement | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/law-enforcement",
       "http_status": 200,
       "source_sha256": "9729b38640784d3e409d2e41b4e300513d24ccbe12311083511e1be2ead8e662"
@@ -2611,6 +3189,12 @@
       "raw_payload_committed": false,
       "locator": "Law Enforcement | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/law-enforcement",
       "http_status": 200,
       "source_sha256": "9729b38640784d3e409d2e41b4e300513d24ccbe12311083511e1be2ead8e662"
@@ -2641,7 +3225,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Law Enforcement | Bureau of Justice Statistics",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/law-enforcement",
       "http_status": 200,
       "source_sha256": "9729b38640784d3e409d2e41b4e300513d24ccbe12311083511e1be2ead8e662"
@@ -2673,6 +3266,15 @@
       "raw_payload_committed": false,
       "locator": "Law Enforcement | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/law-enforcement",
       "http_status": 200,
       "source_sha256": "9729b38640784d3e409d2e41b4e300513d24ccbe12311083511e1be2ead8e662"
@@ -2703,7 +3305,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Law Enforcement | Bureau of Justice Statistics",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/law-enforcement",
       "http_status": 200,
       "source_sha256": "9729b38640784d3e409d2e41b4e300513d24ccbe12311083511e1be2ead8e662"
@@ -2735,6 +3343,12 @@
       "raw_payload_committed": false,
       "locator": "Law Enforcement | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/law-enforcement",
       "http_status": 200,
       "source_sha256": "9729b38640784d3e409d2e41b4e300513d24ccbe12311083511e1be2ead8e662"
@@ -2766,6 +3380,12 @@
       "raw_payload_committed": false,
       "locator": "Law Enforcement | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/law-enforcement",
       "http_status": 200,
       "source_sha256": "9729b38640784d3e409d2e41b4e300513d24ccbe12311083511e1be2ead8e662"
@@ -2797,6 +3417,12 @@
       "raw_payload_committed": false,
       "locator": "Law Enforcement | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/law-enforcement",
       "http_status": 200,
       "source_sha256": "9729b38640784d3e409d2e41b4e300513d24ccbe12311083511e1be2ead8e662"
@@ -2817,7 +3443,7 @@
       "suggested_source_boundary": "department records, body-camera policies, stop data and oversight reports",
       "source_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2827,7 +3453,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 9fae8225809f732cf20b0b278fcf65ed6c7e1cc37c2a9dfc04a752e35a098168; selected=https://www.justice.gov/crt/special-litigation-section-cases-and-matters; final=https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
       "http_status": 200,
       "source_sha256": "9fae8225809f732cf20b0b278fcf65ed6c7e1cc37c2a9dfc04a752e35a098168"
@@ -2858,7 +3490,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Special Litigation Section Cases and Matters",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
       "http_status": 200,
       "source_sha256": "9fae8225809f732cf20b0b278fcf65ed6c7e1cc37c2a9dfc04a752e35a098168"
@@ -2890,6 +3531,15 @@
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Special Litigation Section Cases and Matters",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
       "http_status": 200,
       "source_sha256": "9fae8225809f732cf20b0b278fcf65ed6c7e1cc37c2a9dfc04a752e35a098168"
@@ -2921,6 +3571,11 @@
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Special Litigation Section Cases and Matters",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
       "http_status": 200,
       "source_sha256": "9fae8225809f732cf20b0b278fcf65ed6c7e1cc37c2a9dfc04a752e35a098168"
@@ -2951,7 +3606,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Special Litigation Section Cases and Matters",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
       "http_status": 200,
       "source_sha256": "9fae8225809f732cf20b0b278fcf65ed6c7e1cc37c2a9dfc04a752e35a098168"
@@ -2983,6 +3647,15 @@
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Special Litigation Section Cases and Matters",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
       "http_status": 200,
       "source_sha256": "9fae8225809f732cf20b0b278fcf65ed6c7e1cc37c2a9dfc04a752e35a098168"
@@ -3013,7 +3686,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Special Litigation Section Cases and Matters",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
       "http_status": 200,
       "source_sha256": "9fae8225809f732cf20b0b278fcf65ed6c7e1cc37c2a9dfc04a752e35a098168"
@@ -3045,6 +3724,12 @@
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Special Litigation Section Cases and Matters",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
       "http_status": 200,
       "source_sha256": "9fae8225809f732cf20b0b278fcf65ed6c7e1cc37c2a9dfc04a752e35a098168"
@@ -3076,6 +3761,12 @@
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Special Litigation Section Cases and Matters",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
       "http_status": 200,
       "source_sha256": "9fae8225809f732cf20b0b278fcf65ed6c7e1cc37c2a9dfc04a752e35a098168"
@@ -3107,6 +3798,12 @@
       "raw_payload_committed": false,
       "locator": "Civil Rights Division | Special Litigation Section Cases and Matters",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
       "http_status": 200,
       "source_sha256": "9fae8225809f732cf20b0b278fcf65ed6c7e1cc37c2a9dfc04a752e35a098168"
@@ -3138,6 +3835,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
       "http_status": 404,
       "source_sha256": "56b9b9f443494983257e4f8b37c4151b5630f7a18d3bde2ac1c404f261ca6563"
@@ -3169,6 +3871,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
       "http_status": 404,
       "source_sha256": "56b9b9f443494983257e4f8b37c4151b5630f7a18d3bde2ac1c404f261ca6563"
@@ -3200,6 +3912,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
       "http_status": 404,
       "source_sha256": "56b9b9f443494983257e4f8b37c4151b5630f7a18d3bde2ac1c404f261ca6563"
@@ -3231,6 +3952,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
       "http_status": 404,
       "source_sha256": "56b9b9f443494983257e4f8b37c4151b5630f7a18d3bde2ac1c404f261ca6563"
@@ -3262,6 +3989,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
       "http_status": 404,
       "source_sha256": "56b9b9f443494983257e4f8b37c4151b5630f7a18d3bde2ac1c404f261ca6563"
@@ -3293,6 +4029,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
       "http_status": 404,
       "source_sha256": "56b9b9f443494983257e4f8b37c4151b5630f7a18d3bde2ac1c404f261ca6563"
@@ -3324,6 +4069,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
       "http_status": 404,
       "source_sha256": "56b9b9f443494983257e4f8b37c4151b5630f7a18d3bde2ac1c404f261ca6563"
@@ -3355,6 +4106,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
       "http_status": 404,
       "source_sha256": "56b9b9f443494983257e4f8b37c4151b5630f7a18d3bde2ac1c404f261ca6563"
@@ -3386,6 +4143,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
       "http_status": 404,
       "source_sha256": "56b9b9f443494983257e4f8b37c4151b5630f7a18d3bde2ac1c404f261ca6563"
@@ -3417,6 +4180,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
       "http_status": 404,
       "source_sha256": "56b9b9f443494983257e4f8b37c4151b5630f7a18d3bde2ac1c404f261ca6563"
@@ -3437,7 +4206,7 @@
       "suggested_source_boundary": "department records, body-camera policies, stop data and oversight reports",
       "source_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3447,7 +4216,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 8c0147640e7695659c9cab5bc190b2ed331ffd4eef61716bf49d39ddd41dc8b2; selected=https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us; final=https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
       "http_status": 200,
       "source_sha256": "8c0147640e7695659c9cab5bc190b2ed331ffd4eef61716bf49d39ddd41dc8b2"
@@ -3478,7 +4253,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Body-Worn Cameras: What the Evidence Tells Us | National Institute of Justice",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
       "http_status": 200,
       "source_sha256": "8c0147640e7695659c9cab5bc190b2ed331ffd4eef61716bf49d39ddd41dc8b2"
@@ -3510,6 +4294,13 @@
       "raw_payload_committed": false,
       "locator": "Body-Worn Cameras: What the Evidence Tells Us | National Institute of Justice",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
       "http_status": 200,
       "source_sha256": "8c0147640e7695659c9cab5bc190b2ed331ffd4eef61716bf49d39ddd41dc8b2"
@@ -3541,6 +4332,9 @@
       "raw_payload_committed": false,
       "locator": "Proponents have suggested that video captured by body-worn cameras may help document the occurrence and nature of various types of crime, reduce the overall amount of time required for officers to complete paperwork for case files, corroborate evidence presented by prosecutors, and lead to higher numbers of guilty pleas in court proceedings. || From an efficiency standpoint, the use of the technology reportedly enabled officers to resolve criminal cases faster and spend less time preparing paperwork, and it resulted in fewer people choosing to go to trial.",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
       "http_status": 200,
       "source_sha256": "8c0147640e7695659c9cab5bc190b2ed331ffd4eef61716bf49d39ddd41dc8b2"
@@ -3571,7 +4365,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Body-Worn Cameras: What the Evidence Tells Us | National Institute of Justice",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
       "http_status": 200,
       "source_sha256": "8c0147640e7695659c9cab5bc190b2ed331ffd4eef61716bf49d39ddd41dc8b2"
@@ -3603,6 +4406,14 @@
       "raw_payload_committed": false,
       "locator": "Body-Worn Cameras: What the Evidence Tells Us | National Institute of Justice",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
       "http_status": 200,
       "source_sha256": "8c0147640e7695659c9cab5bc190b2ed331ffd4eef61716bf49d39ddd41dc8b2"
@@ -3633,7 +4444,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Body-Worn Cameras: What the Evidence Tells Us | National Institute of Justice",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
       "http_status": 200,
       "source_sha256": "8c0147640e7695659c9cab5bc190b2ed331ffd4eef61716bf49d39ddd41dc8b2"
@@ -3665,6 +4482,11 @@
       "raw_payload_committed": false,
       "locator": "Body-Worn Cameras: What the Evidence Tells Us | National Institute of Justice",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
       "http_status": 200,
       "source_sha256": "8c0147640e7695659c9cab5bc190b2ed331ffd4eef61716bf49d39ddd41dc8b2"
@@ -3696,6 +4518,12 @@
       "raw_payload_committed": false,
       "locator": "Body-Worn Cameras: What the Evidence Tells Us | National Institute of Justice",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
       "http_status": 200,
       "source_sha256": "8c0147640e7695659c9cab5bc190b2ed331ffd4eef61716bf49d39ddd41dc8b2"
@@ -3727,6 +4555,11 @@
       "raw_payload_committed": false,
       "locator": "Body-Worn Cameras: What the Evidence Tells Us | National Institute of Justice",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
       "http_status": 200,
       "source_sha256": "8c0147640e7695659c9cab5bc190b2ed331ffd4eef61716bf49d39ddd41dc8b2"
@@ -3758,6 +4591,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
       "http_status": 403,
       "source_sha256": "1535cdfdc4bc7ea3cbdbbadfc4076ef591a761f3c6c6b5acc776d9e66e6496f3"
@@ -3789,6 +4627,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
       "http_status": 403,
       "source_sha256": "1535cdfdc4bc7ea3cbdbbadfc4076ef591a761f3c6c6b5acc776d9e66e6496f3"
@@ -3820,6 +4668,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
       "http_status": 403,
       "source_sha256": "1535cdfdc4bc7ea3cbdbbadfc4076ef591a761f3c6c6b5acc776d9e66e6496f3"
@@ -3851,6 +4708,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
       "http_status": 403,
       "source_sha256": "1535cdfdc4bc7ea3cbdbbadfc4076ef591a761f3c6c6b5acc776d9e66e6496f3"
@@ -3882,6 +4745,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
       "http_status": 403,
       "source_sha256": "1535cdfdc4bc7ea3cbdbbadfc4076ef591a761f3c6c6b5acc776d9e66e6496f3"
@@ -3913,6 +4785,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
       "http_status": 403,
       "source_sha256": "1535cdfdc4bc7ea3cbdbbadfc4076ef591a761f3c6c6b5acc776d9e66e6496f3"
@@ -3944,6 +4825,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
       "http_status": 403,
       "source_sha256": "1535cdfdc4bc7ea3cbdbbadfc4076ef591a761f3c6c6b5acc776d9e66e6496f3"
@@ -3975,6 +4862,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
       "http_status": 403,
       "source_sha256": "1535cdfdc4bc7ea3cbdbbadfc4076ef591a761f3c6c6b5acc776d9e66e6496f3"
@@ -4006,6 +4899,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
       "http_status": 403,
       "source_sha256": "1535cdfdc4bc7ea3cbdbbadfc4076ef591a761f3c6c6b5acc776d9e66e6496f3"
@@ -4037,6 +4936,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
       "http_status": 403,
       "source_sha256": "1535cdfdc4bc7ea3cbdbbadfc4076ef591a761f3c6c6b5acc776d9e66e6496f3"
@@ -4057,7 +4962,7 @@
       "suggested_source_boundary": "department records, body-camera policies, stop data and oversight reports",
       "source_url": "https://www.census.gov/programs-surveys/acs",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4067,7 +4972,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 341ae40fe81538272e5938d967ba6d5c483b9ee4524b447e584020e74ca90254; selected=https://www.census.gov/programs-surveys/acs; final=https://www.census.gov/programs-surveys/acs",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.census.gov/programs-surveys/acs",
       "http_status": 200,
       "source_sha256": "341ae40fe81538272e5938d967ba6d5c483b9ee4524b447e584020e74ca90254"
@@ -4098,7 +5009,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "American Community Survey (ACS)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.census.gov/programs-surveys/acs",
       "http_status": 200,
       "source_sha256": "341ae40fe81538272e5938d967ba6d5c483b9ee4524b447e584020e74ca90254"
@@ -4130,6 +5051,15 @@
       "raw_payload_committed": false,
       "locator": "American Community Survey (ACS)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.census.gov/programs-surveys/acs",
       "http_status": 200,
       "source_sha256": "341ae40fe81538272e5938d967ba6d5c483b9ee4524b447e584020e74ca90254"
@@ -4161,6 +5091,12 @@
       "raw_payload_committed": false,
       "locator": "American Community Survey (ACS)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.census.gov/programs-surveys/acs",
       "http_status": 200,
       "source_sha256": "341ae40fe81538272e5938d967ba6d5c483b9ee4524b447e584020e74ca90254"
@@ -4191,7 +5127,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "American Community Survey (ACS)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.census.gov/programs-surveys/acs",
       "http_status": 200,
       "source_sha256": "341ae40fe81538272e5938d967ba6d5c483b9ee4524b447e584020e74ca90254"
@@ -4223,6 +5168,15 @@
       "raw_payload_committed": false,
       "locator": "American Community Survey (ACS)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.census.gov/programs-surveys/acs",
       "http_status": 200,
       "source_sha256": "341ae40fe81538272e5938d967ba6d5c483b9ee4524b447e584020e74ca90254"
@@ -4253,7 +5207,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "American Community Survey (ACS)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.census.gov/programs-surveys/acs",
       "http_status": 200,
       "source_sha256": "341ae40fe81538272e5938d967ba6d5c483b9ee4524b447e584020e74ca90254"
@@ -4285,6 +5245,12 @@
       "raw_payload_committed": false,
       "locator": "American Community Survey (ACS)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.census.gov/programs-surveys/acs",
       "http_status": 200,
       "source_sha256": "341ae40fe81538272e5938d967ba6d5c483b9ee4524b447e584020e74ca90254"
@@ -4316,6 +5282,12 @@
       "raw_payload_committed": false,
       "locator": "American Community Survey (ACS)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.census.gov/programs-surveys/acs",
       "http_status": 200,
       "source_sha256": "341ae40fe81538272e5938d967ba6d5c483b9ee4524b447e584020e74ca90254"
@@ -4347,6 +5319,12 @@
       "raw_payload_committed": false,
       "locator": "American Community Survey (ACS)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.census.gov/programs-surveys/acs",
       "http_status": 200,
       "source_sha256": "341ae40fe81538272e5938d967ba6d5c483b9ee4524b447e584020e74ca90254"
@@ -4378,6 +5356,9 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-programs/court-statistics",
       "http_status": 404,
       "source_sha256": "4f0cdfa01a73f64e1a81c4309fe26d07af8ac515757a80e5e5ddae19239155cb"
@@ -4409,6 +5390,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-programs/court-statistics",
       "http_status": 404,
       "source_sha256": "4f0cdfa01a73f64e1a81c4309fe26d07af8ac515757a80e5e5ddae19239155cb"
@@ -4440,6 +5430,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-programs/court-statistics",
       "http_status": 404,
       "source_sha256": "4f0cdfa01a73f64e1a81c4309fe26d07af8ac515757a80e5e5ddae19239155cb"
@@ -4471,6 +5469,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-programs/court-statistics",
       "http_status": 404,
       "source_sha256": "4f0cdfa01a73f64e1a81c4309fe26d07af8ac515757a80e5e5ddae19239155cb"
@@ -4502,6 +5505,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-programs/court-statistics",
       "http_status": 404,
       "source_sha256": "4f0cdfa01a73f64e1a81c4309fe26d07af8ac515757a80e5e5ddae19239155cb"
@@ -4533,6 +5545,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-programs/court-statistics",
       "http_status": 404,
       "source_sha256": "4f0cdfa01a73f64e1a81c4309fe26d07af8ac515757a80e5e5ddae19239155cb"
@@ -4564,6 +5585,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-programs/court-statistics",
       "http_status": 404,
       "source_sha256": "4f0cdfa01a73f64e1a81c4309fe26d07af8ac515757a80e5e5ddae19239155cb"
@@ -4595,6 +5622,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-programs/court-statistics",
       "http_status": 404,
       "source_sha256": "4f0cdfa01a73f64e1a81c4309fe26d07af8ac515757a80e5e5ddae19239155cb"
@@ -4626,6 +5659,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-programs/court-statistics",
       "http_status": 404,
       "source_sha256": "4f0cdfa01a73f64e1a81c4309fe26d07af8ac515757a80e5e5ddae19239155cb"
@@ -4657,6 +5696,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-programs/court-statistics",
       "http_status": 404,
       "source_sha256": "4f0cdfa01a73f64e1a81c4309fe26d07af8ac515757a80e5e5ddae19239155cb"
@@ -4677,7 +5722,7 @@
       "suggested_source_boundary": "court statistics, case files, sentencing data and administrative reports",
       "source_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4687,7 +5732,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 7f83644cab333e41d22948e3a561365055e02190ad3c4abdfac68f833511c1f0; selected=https://www.uscourts.gov/about-federal-courts/court-role-and-structure; final=https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
       "http_status": 200,
       "source_sha256": "7f83644cab333e41d22948e3a561365055e02190ad3c4abdfac68f833511c1f0"
@@ -4718,7 +5769,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Court Role and Structure",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
       "http_status": 200,
       "source_sha256": "7f83644cab333e41d22948e3a561365055e02190ad3c4abdfac68f833511c1f0"
@@ -4750,6 +5810,14 @@
       "raw_payload_committed": false,
       "locator": "Court Role and Structure",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
       "http_status": 200,
       "source_sha256": "7f83644cab333e41d22948e3a561365055e02190ad3c4abdfac68f833511c1f0"
@@ -4781,6 +5849,12 @@
       "raw_payload_committed": false,
       "locator": "Court Role and Structure",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
       "http_status": 200,
       "source_sha256": "7f83644cab333e41d22948e3a561365055e02190ad3c4abdfac68f833511c1f0"
@@ -4811,7 +5885,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Court Role and Structure",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
       "http_status": 200,
       "source_sha256": "7f83644cab333e41d22948e3a561365055e02190ad3c4abdfac68f833511c1f0"
@@ -4843,6 +5926,15 @@
       "raw_payload_committed": false,
       "locator": "Court Role and Structure",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
       "http_status": 200,
       "source_sha256": "7f83644cab333e41d22948e3a561365055e02190ad3c4abdfac68f833511c1f0"
@@ -4873,7 +5965,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Court Role and Structure",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
       "http_status": 200,
       "source_sha256": "7f83644cab333e41d22948e3a561365055e02190ad3c4abdfac68f833511c1f0"
@@ -4905,6 +6003,12 @@
       "raw_payload_committed": false,
       "locator": "Court Role and Structure",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
       "http_status": 200,
       "source_sha256": "7f83644cab333e41d22948e3a561365055e02190ad3c4abdfac68f833511c1f0"
@@ -4936,6 +6040,12 @@
       "raw_payload_committed": false,
       "locator": "Court Role and Structure",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
       "http_status": 200,
       "source_sha256": "7f83644cab333e41d22948e3a561365055e02190ad3c4abdfac68f833511c1f0"
@@ -4967,6 +6077,12 @@
       "raw_payload_committed": false,
       "locator": "Court Role and Structure",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
       "http_status": 200,
       "source_sha256": "7f83644cab333e41d22948e3a561365055e02190ad3c4abdfac68f833511c1f0"
@@ -4987,7 +6103,7 @@
       "suggested_source_boundary": "court statistics, case files, sentencing data and administrative reports",
       "source_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4997,7 +6113,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 3dbf9a2d4f9b3b9e0df6358707de8eb403476d33cbf1523ec3c2543a7da60200; selected=https://www.supremecourt.gov/opinions/opinions.aspx; final=https://www.supremecourt.gov/opinions/opinions.aspx",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
       "http_status": 200,
       "source_sha256": "3dbf9a2d4f9b3b9e0df6358707de8eb403476d33cbf1523ec3c2543a7da60200"
@@ -5028,7 +6150,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Opinions - Supreme Court of the United States",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
       "http_status": 200,
       "source_sha256": "3dbf9a2d4f9b3b9e0df6358707de8eb403476d33cbf1523ec3c2543a7da60200"
@@ -5060,6 +6192,15 @@
       "raw_payload_committed": false,
       "locator": "Opinions - Supreme Court of the United States",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
       "http_status": 200,
       "source_sha256": "3dbf9a2d4f9b3b9e0df6358707de8eb403476d33cbf1523ec3c2543a7da60200"
@@ -5091,6 +6232,12 @@
       "raw_payload_committed": false,
       "locator": "Opinions - Supreme Court of the United States",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
       "http_status": 200,
       "source_sha256": "3dbf9a2d4f9b3b9e0df6358707de8eb403476d33cbf1523ec3c2543a7da60200"
@@ -5121,7 +6268,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Opinions - Supreme Court of the United States",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
       "http_status": 200,
       "source_sha256": "3dbf9a2d4f9b3b9e0df6358707de8eb403476d33cbf1523ec3c2543a7da60200"
@@ -5153,6 +6309,15 @@
       "raw_payload_committed": false,
       "locator": "Opinions - Supreme Court of the United States",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
       "http_status": 200,
       "source_sha256": "3dbf9a2d4f9b3b9e0df6358707de8eb403476d33cbf1523ec3c2543a7da60200"
@@ -5183,7 +6348,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Opinions - Supreme Court of the United States",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
       "http_status": 200,
       "source_sha256": "3dbf9a2d4f9b3b9e0df6358707de8eb403476d33cbf1523ec3c2543a7da60200"
@@ -5215,6 +6386,12 @@
       "raw_payload_committed": false,
       "locator": "Opinions - Supreme Court of the United States",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
       "http_status": 200,
       "source_sha256": "3dbf9a2d4f9b3b9e0df6358707de8eb403476d33cbf1523ec3c2543a7da60200"
@@ -5246,6 +6423,12 @@
       "raw_payload_committed": false,
       "locator": "Opinions - Supreme Court of the United States",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
       "http_status": 200,
       "source_sha256": "3dbf9a2d4f9b3b9e0df6358707de8eb403476d33cbf1523ec3c2543a7da60200"
@@ -5277,6 +6460,12 @@
       "raw_payload_committed": false,
       "locator": "Opinions - Supreme Court of the United States",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
       "http_status": 200,
       "source_sha256": "3dbf9a2d4f9b3b9e0df6358707de8eb403476d33cbf1523ec3c2543a7da60200"
@@ -5297,7 +6486,7 @@
       "suggested_source_boundary": "court statistics, case files, sentencing data and administrative reports",
       "source_url": "https://www.uscourts.gov/court-records/find-case-pacer",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5307,7 +6496,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 07fc36249947e1ea8c49495abe641bc6c6894824ad2256d4f673562c48d5feff; selected=https://www.uscourts.gov/court-records/find-case-pacer; final=https://www.uscourts.gov/court-records/find-a-case-pacer",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-records/find-a-case-pacer",
       "http_status": 200,
       "source_sha256": "07fc36249947e1ea8c49495abe641bc6c6894824ad2256d4f673562c48d5feff"
@@ -5338,7 +6533,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Find a Case (PACER)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-records/find-a-case-pacer",
       "http_status": 200,
       "source_sha256": "07fc36249947e1ea8c49495abe641bc6c6894824ad2256d4f673562c48d5feff"
@@ -5370,6 +6575,15 @@
       "raw_payload_committed": false,
       "locator": "Find a Case (PACER)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-records/find-a-case-pacer",
       "http_status": 200,
       "source_sha256": "07fc36249947e1ea8c49495abe641bc6c6894824ad2256d4f673562c48d5feff"
@@ -5401,6 +6615,12 @@
       "raw_payload_committed": false,
       "locator": "Find a Case (PACER)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-records/find-a-case-pacer",
       "http_status": 200,
       "source_sha256": "07fc36249947e1ea8c49495abe641bc6c6894824ad2256d4f673562c48d5feff"
@@ -5431,7 +6651,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Find a Case (PACER)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-records/find-a-case-pacer",
       "http_status": 200,
       "source_sha256": "07fc36249947e1ea8c49495abe641bc6c6894824ad2256d4f673562c48d5feff"
@@ -5463,6 +6692,15 @@
       "raw_payload_committed": false,
       "locator": "Find a Case (PACER)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-records/find-a-case-pacer",
       "http_status": 200,
       "source_sha256": "07fc36249947e1ea8c49495abe641bc6c6894824ad2256d4f673562c48d5feff"
@@ -5493,7 +6731,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Find a Case (PACER)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-records/find-a-case-pacer",
       "http_status": 200,
       "source_sha256": "07fc36249947e1ea8c49495abe641bc6c6894824ad2256d4f673562c48d5feff"
@@ -5525,6 +6769,12 @@
       "raw_payload_committed": false,
       "locator": "Find a Case (PACER)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-records/find-a-case-pacer",
       "http_status": 200,
       "source_sha256": "07fc36249947e1ea8c49495abe641bc6c6894824ad2256d4f673562c48d5feff"
@@ -5556,6 +6806,12 @@
       "raw_payload_committed": false,
       "locator": "Find a Case (PACER)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-records/find-a-case-pacer",
       "http_status": 200,
       "source_sha256": "07fc36249947e1ea8c49495abe641bc6c6894824ad2256d4f673562c48d5feff"
@@ -5587,6 +6843,12 @@
       "raw_payload_committed": false,
       "locator": "Find a Case (PACER)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/court-records/find-a-case-pacer",
       "http_status": 200,
       "source_sha256": "07fc36249947e1ea8c49495abe641bc6c6894824ad2256d4f673562c48d5feff"
@@ -5607,7 +6869,7 @@
       "suggested_source_boundary": "court statistics, case files, sentencing data and administrative reports",
       "source_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5617,7 +6879,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 cc90cfedb08c47dec89bb9ac630898ecc87abc9996aff8f005fca53fcd7753ea; selected=https://www.justice.gov/usao/resources/annual-statistical-reports; final=https://www.justice.gov/usao/resources/annual-statistical-reports",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
       "http_status": 200,
       "source_sha256": "cc90cfedb08c47dec89bb9ac630898ecc87abc9996aff8f005fca53fcd7753ea"
@@ -5648,7 +6916,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "U.S. Attorneys | Annual Statistical Reports",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
       "http_status": 200,
       "source_sha256": "cc90cfedb08c47dec89bb9ac630898ecc87abc9996aff8f005fca53fcd7753ea"
@@ -5680,6 +6958,15 @@
       "raw_payload_committed": false,
       "locator": "U.S. Attorneys | Annual Statistical Reports",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
       "http_status": 200,
       "source_sha256": "cc90cfedb08c47dec89bb9ac630898ecc87abc9996aff8f005fca53fcd7753ea"
@@ -5711,6 +6998,12 @@
       "raw_payload_committed": false,
       "locator": "U.S. Attorneys | Annual Statistical Reports",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
       "http_status": 200,
       "source_sha256": "cc90cfedb08c47dec89bb9ac630898ecc87abc9996aff8f005fca53fcd7753ea"
@@ -5741,7 +7034,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "U.S. Attorneys | Annual Statistical Reports",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
       "http_status": 200,
       "source_sha256": "cc90cfedb08c47dec89bb9ac630898ecc87abc9996aff8f005fca53fcd7753ea"
@@ -5773,6 +7075,15 @@
       "raw_payload_committed": false,
       "locator": "U.S. Attorneys | Annual Statistical Reports",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
       "http_status": 200,
       "source_sha256": "cc90cfedb08c47dec89bb9ac630898ecc87abc9996aff8f005fca53fcd7753ea"
@@ -5803,7 +7114,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "U.S. Attorneys | Annual Statistical Reports",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
       "http_status": 200,
       "source_sha256": "cc90cfedb08c47dec89bb9ac630898ecc87abc9996aff8f005fca53fcd7753ea"
@@ -5835,6 +7152,12 @@
       "raw_payload_committed": false,
       "locator": "U.S. Attorneys | Annual Statistical Reports",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
       "http_status": 200,
       "source_sha256": "cc90cfedb08c47dec89bb9ac630898ecc87abc9996aff8f005fca53fcd7753ea"
@@ -5866,6 +7189,12 @@
       "raw_payload_committed": false,
       "locator": "U.S. Attorneys | Annual Statistical Reports",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
       "http_status": 200,
       "source_sha256": "cc90cfedb08c47dec89bb9ac630898ecc87abc9996aff8f005fca53fcd7753ea"
@@ -5897,6 +7226,12 @@
       "raw_payload_committed": false,
       "locator": "U.S. Attorneys | Annual Statistical Reports",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
       "http_status": 200,
       "source_sha256": "cc90cfedb08c47dec89bb9ac630898ecc87abc9996aff8f005fca53fcd7753ea"
@@ -5917,7 +7252,7 @@
       "suggested_source_boundary": "court statistics, case files, sentencing data and administrative reports",
       "source_url": "https://bjs.ojp.gov/topics/courts",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5927,7 +7262,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 47218c7207dc0255de192c46ab364890f2edf12e9f5d31a12fc66ee3d006520d; selected=https://bjs.ojp.gov/topics/courts; final=https://bjs.ojp.gov/topics/courts",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/courts",
       "http_status": 200,
       "source_sha256": "47218c7207dc0255de192c46ab364890f2edf12e9f5d31a12fc66ee3d006520d"
@@ -5958,7 +7299,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Courts | Bureau of Justice Statistics",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/courts",
       "http_status": 200,
       "source_sha256": "47218c7207dc0255de192c46ab364890f2edf12e9f5d31a12fc66ee3d006520d"
@@ -5990,6 +7341,15 @@
       "raw_payload_committed": false,
       "locator": "Courts | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/courts",
       "http_status": 200,
       "source_sha256": "47218c7207dc0255de192c46ab364890f2edf12e9f5d31a12fc66ee3d006520d"
@@ -6021,6 +7381,12 @@
       "raw_payload_committed": false,
       "locator": "Courts | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/courts",
       "http_status": 200,
       "source_sha256": "47218c7207dc0255de192c46ab364890f2edf12e9f5d31a12fc66ee3d006520d"
@@ -6051,7 +7417,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Courts | Bureau of Justice Statistics",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/courts",
       "http_status": 200,
       "source_sha256": "47218c7207dc0255de192c46ab364890f2edf12e9f5d31a12fc66ee3d006520d"
@@ -6083,6 +7458,15 @@
       "raw_payload_committed": false,
       "locator": "Courts | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/courts",
       "http_status": 200,
       "source_sha256": "47218c7207dc0255de192c46ab364890f2edf12e9f5d31a12fc66ee3d006520d"
@@ -6113,7 +7497,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Courts | Bureau of Justice Statistics",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/courts",
       "http_status": 200,
       "source_sha256": "47218c7207dc0255de192c46ab364890f2edf12e9f5d31a12fc66ee3d006520d"
@@ -6145,6 +7535,12 @@
       "raw_payload_committed": false,
       "locator": "Courts | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/courts",
       "http_status": 200,
       "source_sha256": "47218c7207dc0255de192c46ab364890f2edf12e9f5d31a12fc66ee3d006520d"
@@ -6176,6 +7572,12 @@
       "raw_payload_committed": false,
       "locator": "Courts | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/courts",
       "http_status": 200,
       "source_sha256": "47218c7207dc0255de192c46ab364890f2edf12e9f5d31a12fc66ee3d006520d"
@@ -6207,6 +7609,12 @@
       "raw_payload_committed": false,
       "locator": "Courts | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/courts",
       "http_status": 200,
       "source_sha256": "47218c7207dc0255de192c46ab364890f2edf12e9f5d31a12fc66ee3d006520d"
@@ -6227,7 +7635,7 @@
       "suggested_source_boundary": "court statistics, case files, sentencing data and administrative reports",
       "source_url": "https://www.uscourts.gov/data-news/judiciary-news",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6237,7 +7645,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "SHA-256 e1c51d119be7bc4e5a0d7f71275aa6805a71b3fab53fea7ad5c83e7d9d95b68c; selected=https://www.uscourts.gov/data-news/judiciary-news; final=https://www.uscourts.gov/data-news/judiciary-news",
-      "review_basis": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary.",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/judiciary-news",
       "http_status": 200,
       "source_sha256": "e1c51d119be7bc4e5a0d7f71275aa6805a71b3fab53fea7ad5c83e7d9d95b68c"
@@ -6268,7 +7682,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Judiciary News",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/judiciary-news",
       "http_status": 200,
       "source_sha256": "e1c51d119be7bc4e5a0d7f71275aa6805a71b3fab53fea7ad5c83e7d9d95b68c"
@@ -6300,6 +7724,15 @@
       "raw_payload_committed": false,
       "locator": "Judiciary News",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/judiciary-news",
       "http_status": 200,
       "source_sha256": "e1c51d119be7bc4e5a0d7f71275aa6805a71b3fab53fea7ad5c83e7d9d95b68c"
@@ -6331,6 +7764,12 @@
       "raw_payload_committed": false,
       "locator": "Judiciary News",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/judiciary-news",
       "http_status": 200,
       "source_sha256": "e1c51d119be7bc4e5a0d7f71275aa6805a71b3fab53fea7ad5c83e7d9d95b68c"
@@ -6361,7 +7800,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Judiciary News",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/judiciary-news",
       "http_status": 200,
       "source_sha256": "e1c51d119be7bc4e5a0d7f71275aa6805a71b3fab53fea7ad5c83e7d9d95b68c"
@@ -6393,6 +7841,15 @@
       "raw_payload_committed": false,
       "locator": "Judiciary News",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/judiciary-news",
       "http_status": 200,
       "source_sha256": "e1c51d119be7bc4e5a0d7f71275aa6805a71b3fab53fea7ad5c83e7d9d95b68c"
@@ -6423,7 +7880,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Judiciary News",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/judiciary-news",
       "http_status": 200,
       "source_sha256": "e1c51d119be7bc4e5a0d7f71275aa6805a71b3fab53fea7ad5c83e7d9d95b68c"
@@ -6455,6 +7918,12 @@
       "raw_payload_committed": false,
       "locator": "Judiciary News",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/judiciary-news",
       "http_status": 200,
       "source_sha256": "e1c51d119be7bc4e5a0d7f71275aa6805a71b3fab53fea7ad5c83e7d9d95b68c"
@@ -6486,6 +7955,12 @@
       "raw_payload_committed": false,
       "locator": "Judiciary News",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/judiciary-news",
       "http_status": 200,
       "source_sha256": "e1c51d119be7bc4e5a0d7f71275aa6805a71b3fab53fea7ad5c83e7d9d95b68c"
@@ -6517,6 +7992,12 @@
       "raw_payload_committed": false,
       "locator": "Judiciary News",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/judiciary-news",
       "http_status": 200,
       "source_sha256": "e1c51d119be7bc4e5a0d7f71275aa6805a71b3fab53fea7ad5c83e7d9d95b68c"

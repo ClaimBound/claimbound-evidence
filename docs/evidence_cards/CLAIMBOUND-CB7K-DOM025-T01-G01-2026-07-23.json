@@ -17,23 +17,22 @@
     "Insufficient coverage is not a negative result."
   ],
   "last_verified_date": "2026-07-23",
-  "manual_review": "The frozen manifest records the exact selected URL, final URL, response hash and access boundary. Locator: SHA-256 c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063; selected=https://www.cdc.gov/child-development/about/index.html; final=https://www.cdc.gov/child-development/about/index.html",
+  "manual_review": "The response bytes were frozen, but the source-integrity provenance record is incomplete. Reason: SOURCE_INTEGRITY_METADATA_INCOMPLETE. Missing facets: accessed-at-utc, redirect-chain. Extraction: TEXT_EXTRACT_AT_LEAST_2000_CHARS. Locator: SHA-256 c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063; selected=https://www.cdc.gov/child-development/about/index.html; final=https://www.cdc.gov/child-development/about/index.html",
   "official_source_name": "Official public source topic 025-01",
   "official_source_url": "https://www.cdc.gov/child-development/about/index.html",
   "operator": "NeoZorK",
   "protocol_id": "CB7K-DOM025-T01-G01",
-  "protocol_version": "CB7K-ISSUE-174-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-174-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "raw_payload_committed": false,
   "raw_payload_manifest": "HTTP 200; canonical https://www.cdc.gov/child-development/about/index.html; SHA-256 c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063; source manifest 266b78b7a34f11c27ddf8a37f39ab49d977cba65975c3432c861741a005ba069; raw bytes retained locally only",
   "record_type": "source_audit",
   "registry_sequence": 2753,
   "reproduction_level": "not independently reproduced",
-  "result_status": "PASSED_UNDER_PROTOCOL",
+  "result_status": "INSUFFICIENT_COVERAGE",
   "runner_command": "python scripts/claimbound_review_claim_batch_174.py --manifest <local> --raw-root <local> --meta-root <local> --text-root <local> --operator <handle>",
   "sanitized_report_path": "artifacts/claim_batch_174_manual_review.json",
-  "sanitized_report_sha256": "d9ac437a6b29566c1fec307dd172964036043ac843c278152c6f150b92591447",
+  "sanitized_report_sha256": "7b61c469bfa8ca9c89680d97c76022130a5b8b7c66970f8de6c2fd1897182eb3",
   "source_rights_note": "Public documentation source; raw response bytes are not committed.",
   "verification_count": 1,
-  "verification_level": "SINGLE_OPERATOR",
-  "baseline_control_summary": "Gate-aware review passed only at audit locator: SHA-256 c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063; selected=https://www.cdc.gov/child-development/about/index.html; final=https://www.cdc.gov/child-development/about/index.html"
+  "verification_level": "SINGLE_OPERATOR"
 }
