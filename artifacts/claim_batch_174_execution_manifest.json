@@ -1,0 +1,2318 @@
+{
+  "issue_number": 174,
+  "source_manifest_sha256": "266b78b7a34f11c27ddf8a37f39ab49d977cba65975c3432c861741a005ba069",
+  "claim_boundary": "Claim-level execution plan for issue #174 only; it is not evidence and predeclares no outcome.",
+  "raw_payload_committed": false,
+  "entries": [
+    {
+      "claim_id": "CB7K-DOM025-T01-G01",
+      "source_url": "https://www.cdc.gov/child-development/about/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "infant mortality",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for infant mortality.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T01-G02",
+      "source_url": "https://www.cdc.gov/child-development/about/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "infant mortality",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for infant mortality discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T01-G03",
+      "source_url": "https://www.cdc.gov/child-development/about/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "infant mortality",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for infant mortality.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T01-G04",
+      "source_url": "https://www.cdc.gov/child-development/about/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "infant mortality",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for infant mortality.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T01-G05",
+      "source_url": "https://www.cdc.gov/child-development/about/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "infant mortality",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for infant mortality.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T01-G06",
+      "source_url": "https://www.cdc.gov/child-development/about/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "infant mortality",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for infant mortality.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T01-G07",
+      "source_url": "https://www.cdc.gov/child-development/about/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "infant mortality",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the infant mortality procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T01-G08",
+      "source_url": "https://www.cdc.gov/child-development/about/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "infant mortality",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for infant mortality.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T01-G09",
+      "source_url": "https://www.cdc.gov/child-development/about/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "infant mortality",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the infant mortality report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T01-G10",
+      "source_url": "https://www.cdc.gov/child-development/about/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "infant mortality",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal infant mortality guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T02-G01",
+      "source_url": "https://www.cdc.gov/child-development/data-research/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "vaccination uptake",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for vaccination uptake.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T02-G02",
+      "source_url": "https://www.cdc.gov/child-development/data-research/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "vaccination uptake",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for vaccination uptake discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T02-G03",
+      "source_url": "https://www.cdc.gov/child-development/data-research/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "vaccination uptake",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for vaccination uptake.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T02-G04",
+      "source_url": "https://www.cdc.gov/child-development/data-research/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "vaccination uptake",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for vaccination uptake.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T02-G05",
+      "source_url": "https://www.cdc.gov/child-development/data-research/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "vaccination uptake",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for vaccination uptake.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T02-G06",
+      "source_url": "https://www.cdc.gov/child-development/data-research/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "vaccination uptake",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for vaccination uptake.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T02-G07",
+      "source_url": "https://www.cdc.gov/child-development/data-research/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "vaccination uptake",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the vaccination uptake procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T02-G08",
+      "source_url": "https://www.cdc.gov/child-development/data-research/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "vaccination uptake",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for vaccination uptake.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T02-G09",
+      "source_url": "https://www.cdc.gov/child-development/data-research/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "vaccination uptake",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the vaccination uptake report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T02-G10",
+      "source_url": "https://www.cdc.gov/child-development/data-research/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "vaccination uptake",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal vaccination uptake guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T03-G01",
+      "source_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "development screening",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for development screening.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T03-G02",
+      "source_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "development screening",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for development screening discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T03-G03",
+      "source_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "development screening",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for development screening.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T03-G04",
+      "source_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "development screening",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for development screening.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T03-G05",
+      "source_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "development screening",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for development screening.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T03-G06",
+      "source_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "development screening",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for development screening.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T03-G07",
+      "source_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "development screening",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the development screening procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T03-G08",
+      "source_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "development screening",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for development screening.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T03-G09",
+      "source_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "development screening",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the development screening report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T03-G10",
+      "source_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "development screening",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal development screening guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T04-G01",
+      "source_url": "https://www.who.int/health-topics/child-health",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "childhood obesity",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for childhood obesity.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T04-G02",
+      "source_url": "https://www.who.int/health-topics/child-health",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "childhood obesity",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for childhood obesity discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T04-G03",
+      "source_url": "https://www.who.int/health-topics/child-health",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "childhood obesity",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for childhood obesity.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T04-G04",
+      "source_url": "https://www.who.int/health-topics/child-health",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "childhood obesity",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for childhood obesity.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T04-G05",
+      "source_url": "https://www.who.int/health-topics/child-health",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "childhood obesity",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for childhood obesity.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T04-G06",
+      "source_url": "https://www.who.int/health-topics/child-health",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "childhood obesity",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for childhood obesity.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T04-G07",
+      "source_url": "https://www.who.int/health-topics/child-health",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "childhood obesity",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the childhood obesity procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T04-G08",
+      "source_url": "https://www.who.int/health-topics/child-health",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "childhood obesity",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for childhood obesity.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T04-G09",
+      "source_url": "https://www.who.int/health-topics/child-health",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "childhood obesity",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the childhood obesity report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T04-G10",
+      "source_url": "https://www.who.int/health-topics/child-health",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "childhood obesity",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal childhood obesity guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T05-G01",
+      "source_url": "https://www.unicef.org/reports/state-worlds-children",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "hospital admission",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for hospital admission.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T05-G02",
+      "source_url": "https://www.unicef.org/reports/state-worlds-children",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "hospital admission",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for hospital admission discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T05-G03",
+      "source_url": "https://www.unicef.org/reports/state-worlds-children",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "hospital admission",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for hospital admission.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T05-G04",
+      "source_url": "https://www.unicef.org/reports/state-worlds-children",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "hospital admission",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for hospital admission.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T05-G05",
+      "source_url": "https://www.unicef.org/reports/state-worlds-children",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "hospital admission",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for hospital admission.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T05-G06",
+      "source_url": "https://www.unicef.org/reports/state-worlds-children",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "hospital admission",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for hospital admission.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T05-G07",
+      "source_url": "https://www.unicef.org/reports/state-worlds-children",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "hospital admission",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the hospital admission procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T05-G08",
+      "source_url": "https://www.unicef.org/reports/state-worlds-children",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "hospital admission",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for hospital admission.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T05-G09",
+      "source_url": "https://www.unicef.org/reports/state-worlds-children",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "hospital admission",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the hospital admission report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T05-G10",
+      "source_url": "https://www.unicef.org/reports/state-worlds-children",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "hospital admission",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal hospital admission guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T06-G01",
+      "source_url": "https://www.cdc.gov/violence-prevention/about/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "lead exposure",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for lead exposure.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T06-G02",
+      "source_url": "https://www.cdc.gov/violence-prevention/about/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "lead exposure",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for lead exposure discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T06-G03",
+      "source_url": "https://www.cdc.gov/violence-prevention/about/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "lead exposure",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for lead exposure.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T06-G04",
+      "source_url": "https://www.cdc.gov/violence-prevention/about/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "lead exposure",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for lead exposure.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T06-G05",
+      "source_url": "https://www.cdc.gov/violence-prevention/about/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "lead exposure",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for lead exposure.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T06-G06",
+      "source_url": "https://www.cdc.gov/violence-prevention/about/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "lead exposure",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for lead exposure.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T06-G07",
+      "source_url": "https://www.cdc.gov/violence-prevention/about/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "lead exposure",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the lead exposure procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T06-G08",
+      "source_url": "https://www.cdc.gov/violence-prevention/about/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "lead exposure",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for lead exposure.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T06-G09",
+      "source_url": "https://www.cdc.gov/violence-prevention/about/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "lead exposure",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the lead exposure report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T06-G10",
+      "source_url": "https://www.cdc.gov/violence-prevention/about/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "lead exposure",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal lead exposure guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T07-G01",
+      "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "programme coverage",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for programme coverage.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T07-G02",
+      "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "programme coverage",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for programme coverage discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T07-G03",
+      "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "programme coverage",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for programme coverage.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T07-G04",
+      "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "programme coverage",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for programme coverage.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T07-G05",
+      "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "programme coverage",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for programme coverage.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T07-G06",
+      "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "programme coverage",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for programme coverage.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T07-G07",
+      "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "programme coverage",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the programme coverage procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T07-G08",
+      "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "programme coverage",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for programme coverage.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T07-G09",
+      "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "programme coverage",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the programme coverage report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM025-T07-G10",
+      "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "programme coverage",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal programme coverage guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T01-G01",
+      "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "calorie claim",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for calorie claim.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T01-G02",
+      "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "calorie claim",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for calorie claim discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T01-G03",
+      "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "calorie claim",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for calorie claim.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T01-G04",
+      "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "calorie claim",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for calorie claim.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T01-G05",
+      "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "calorie claim",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for calorie claim.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T01-G06",
+      "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "calorie claim",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for calorie claim.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T01-G07",
+      "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "calorie claim",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the calorie claim procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T01-G08",
+      "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "calorie claim",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for calorie claim.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T01-G09",
+      "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "calorie claim",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the calorie claim report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T01-G10",
+      "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "calorie claim",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal calorie claim guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T02-G01",
+      "source_url": "https://www.who.int/health-topics/malnutrition",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "sugar content",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for sugar content.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T02-G02",
+      "source_url": "https://www.who.int/health-topics/malnutrition",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "sugar content",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for sugar content discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T02-G03",
+      "source_url": "https://www.who.int/health-topics/malnutrition",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sugar content",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for sugar content.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T02-G04",
+      "source_url": "https://www.who.int/health-topics/malnutrition",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "sugar content",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for sugar content.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T02-G05",
+      "source_url": "https://www.who.int/health-topics/malnutrition",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "sugar content",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for sugar content.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T02-G06",
+      "source_url": "https://www.who.int/health-topics/malnutrition",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sugar content",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for sugar content.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T02-G07",
+      "source_url": "https://www.who.int/health-topics/malnutrition",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "sugar content",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the sugar content procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T02-G08",
+      "source_url": "https://www.who.int/health-topics/malnutrition",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "sugar content",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for sugar content.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T02-G09",
+      "source_url": "https://www.who.int/health-topics/malnutrition",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sugar content",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the sugar content report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T02-G10",
+      "source_url": "https://www.who.int/health-topics/malnutrition",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "sugar content",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal sugar content guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T03-G01",
+      "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "protein content",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for protein content.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T03-G02",
+      "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "protein content",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for protein content discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T03-G03",
+      "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protein content",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for protein content.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T03-G04",
+      "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "protein content",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for protein content.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T03-G05",
+      "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "protein content",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for protein content.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T03-G06",
+      "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protein content",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for protein content.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T03-G07",
+      "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "protein content",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the protein content procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T03-G08",
+      "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "protein content",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for protein content.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T03-G09",
+      "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protein content",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the protein content report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T03-G10",
+      "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "protein content",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal protein content guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T04-G01",
+      "source_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "weight-loss effect",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for weight-loss effect.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T04-G02",
+      "source_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "weight-loss effect",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for weight-loss effect discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T04-G03",
+      "source_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "weight-loss effect",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for weight-loss effect.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T04-G04",
+      "source_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "weight-loss effect",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for weight-loss effect.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T04-G05",
+      "source_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "weight-loss effect",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for weight-loss effect.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T04-G06",
+      "source_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "weight-loss effect",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for weight-loss effect.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T04-G07",
+      "source_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "weight-loss effect",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the weight-loss effect procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T04-G08",
+      "source_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "weight-loss effect",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for weight-loss effect.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T04-G09",
+      "source_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "weight-loss effect",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the weight-loss effect report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T04-G10",
+      "source_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "weight-loss effect",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal weight-loss effect guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T05-G01",
+      "source_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "micronutrient adequacy",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for micronutrient adequacy.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T05-G02",
+      "source_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "micronutrient adequacy",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for micronutrient adequacy discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T05-G03",
+      "source_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "micronutrient adequacy",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for micronutrient adequacy.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T05-G04",
+      "source_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "micronutrient adequacy",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for micronutrient adequacy.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T05-G05",
+      "source_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "micronutrient adequacy",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for micronutrient adequacy.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T05-G06",
+      "source_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "micronutrient adequacy",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for micronutrient adequacy.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T05-G07",
+      "source_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "micronutrient adequacy",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the micronutrient adequacy procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T05-G08",
+      "source_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "micronutrient adequacy",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for micronutrient adequacy.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T05-G09",
+      "source_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "micronutrient adequacy",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the micronutrient adequacy report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T05-G10",
+      "source_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "micronutrient adequacy",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal micronutrient adequacy guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T06-G01",
+      "source_url": "https://www.fns.usda.gov/wic",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "serving-size boundary",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for serving-size boundary.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T06-G02",
+      "source_url": "https://www.fns.usda.gov/wic",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "serving-size boundary",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for serving-size boundary discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T06-G03",
+      "source_url": "https://www.fns.usda.gov/wic",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "serving-size boundary",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for serving-size boundary.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T06-G04",
+      "source_url": "https://www.fns.usda.gov/wic",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "serving-size boundary",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for serving-size boundary.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T06-G05",
+      "source_url": "https://www.fns.usda.gov/wic",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "serving-size boundary",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for serving-size boundary.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T06-G06",
+      "source_url": "https://www.fns.usda.gov/wic",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "serving-size boundary",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for serving-size boundary.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T06-G07",
+      "source_url": "https://www.fns.usda.gov/wic",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "serving-size boundary",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the serving-size boundary procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T06-G08",
+      "source_url": "https://www.fns.usda.gov/wic",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "serving-size boundary",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for serving-size boundary.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T06-G09",
+      "source_url": "https://www.fns.usda.gov/wic",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "serving-size boundary",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the serving-size boundary report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T06-G10",
+      "source_url": "https://www.fns.usda.gov/wic",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "serving-size boundary",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal serving-size boundary guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T07-G01",
+      "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "health-outcome claim",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for health-outcome claim.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T07-G02",
+      "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "health-outcome claim",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for health-outcome claim discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T07-G03",
+      "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "health-outcome claim",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for health-outcome claim.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T07-G04",
+      "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "health-outcome claim",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for health-outcome claim.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T07-G05",
+      "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "health-outcome claim",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for health-outcome claim.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T07-G06",
+      "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "health-outcome claim",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for health-outcome claim.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T07-G07",
+      "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "health-outcome claim",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the health-outcome claim procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T07-G08",
+      "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "health-outcome claim",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for health-outcome claim.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T07-G09",
+      "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "health-outcome claim",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the health-outcome claim report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM026-T07-G10",
+      "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "health-outcome claim",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal health-outcome claim guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T01-G01",
+      "source_url": "https://www.cdc.gov/food-safety/about/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "contamination rate",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for contamination rate.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T01-G02",
+      "source_url": "https://www.cdc.gov/food-safety/about/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "contamination rate",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for contamination rate discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T01-G03",
+      "source_url": "https://www.cdc.gov/food-safety/about/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "contamination rate",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for contamination rate.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T01-G04",
+      "source_url": "https://www.cdc.gov/food-safety/about/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "contamination rate",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for contamination rate.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T01-G05",
+      "source_url": "https://www.cdc.gov/food-safety/about/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "contamination rate",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for contamination rate.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T01-G06",
+      "source_url": "https://www.cdc.gov/food-safety/about/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "contamination rate",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for contamination rate.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T01-G07",
+      "source_url": "https://www.cdc.gov/food-safety/about/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "contamination rate",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the contamination rate procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T01-G08",
+      "source_url": "https://www.cdc.gov/food-safety/about/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "contamination rate",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for contamination rate.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T01-G09",
+      "source_url": "https://www.cdc.gov/food-safety/about/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "contamination rate",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the contamination rate report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T01-G10",
+      "source_url": "https://www.cdc.gov/food-safety/about/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "contamination rate",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal contamination rate guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T02-G01",
+      "source_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for recall scope.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T02-G02",
+      "source_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for recall scope discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T02-G03",
+      "source_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for recall scope.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T02-G04",
+      "source_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for recall scope.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T02-G05",
+      "source_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for recall scope.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T02-G06",
+      "source_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for recall scope.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T02-G07",
+      "source_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the recall scope procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T02-G08",
+      "source_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for recall scope.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T02-G09",
+      "source_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the recall scope report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T02-G10",
+      "source_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "recall scope",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal recall scope guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T03-G01",
+      "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "allergen disclosure",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for allergen disclosure.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T03-G02",
+      "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "allergen disclosure",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for allergen disclosure discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T03-G03",
+      "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "allergen disclosure",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for allergen disclosure.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T03-G04",
+      "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "allergen disclosure",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for allergen disclosure.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T03-G05",
+      "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "allergen disclosure",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for allergen disclosure.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T03-G06",
+      "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "allergen disclosure",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for allergen disclosure.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T03-G07",
+      "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "allergen disclosure",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the allergen disclosure procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T03-G08",
+      "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "allergen disclosure",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for allergen disclosure.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T03-G09",
+      "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "allergen disclosure",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the allergen disclosure report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T03-G10",
+      "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "allergen disclosure",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal allergen disclosure guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T04-G01",
+      "source_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "inspection pass",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for inspection pass.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T04-G02",
+      "source_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "inspection pass",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for inspection pass discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T04-G03",
+      "source_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "inspection pass",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for inspection pass.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T04-G04",
+      "source_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "inspection pass",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for inspection pass.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T04-G05",
+      "source_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "inspection pass",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for inspection pass.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T04-G06",
+      "source_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "inspection pass",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for inspection pass.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T04-G07",
+      "source_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "inspection pass",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the inspection pass procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T04-G08",
+      "source_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "inspection pass",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for inspection pass.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T04-G09",
+      "source_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "inspection pass",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the inspection pass report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T04-G10",
+      "source_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "inspection pass",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal inspection pass guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T05-G01",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "outbreak attribution",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for outbreak attribution.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T05-G02",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "outbreak attribution",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for outbreak attribution discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T05-G03",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "outbreak attribution",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for outbreak attribution.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T05-G04",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "outbreak attribution",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for outbreak attribution.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T05-G05",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "outbreak attribution",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for outbreak attribution.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T05-G06",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "outbreak attribution",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for outbreak attribution.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T05-G07",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "outbreak attribution",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the outbreak attribution procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T05-G08",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "outbreak attribution",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for outbreak attribution.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T05-G09",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "outbreak attribution",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the outbreak attribution report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T05-G10",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "outbreak attribution",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal outbreak attribution guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T06-G01",
+      "source_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "cold-chain compliance",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for cold-chain compliance.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T06-G02",
+      "source_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "cold-chain compliance",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for cold-chain compliance discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T06-G03",
+      "source_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "cold-chain compliance",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for cold-chain compliance.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T06-G04",
+      "source_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "cold-chain compliance",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for cold-chain compliance.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T06-G05",
+      "source_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "cold-chain compliance",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for cold-chain compliance.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T06-G06",
+      "source_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "cold-chain compliance",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for cold-chain compliance.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T06-G07",
+      "source_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "cold-chain compliance",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the cold-chain compliance procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T06-G08",
+      "source_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "cold-chain compliance",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for cold-chain compliance.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T06-G09",
+      "source_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "cold-chain compliance",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the cold-chain compliance report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T06-G10",
+      "source_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "cold-chain compliance",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal cold-chain compliance guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T07-G01",
+      "source_url": "https://www.who.int/health-topics/food-safety",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "origin traceability",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for origin traceability.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T07-G02",
+      "source_url": "https://www.who.int/health-topics/food-safety",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "origin traceability",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for origin traceability discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T07-G03",
+      "source_url": "https://www.who.int/health-topics/food-safety",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "origin traceability",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for origin traceability.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T07-G04",
+      "source_url": "https://www.who.int/health-topics/food-safety",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "origin traceability",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for origin traceability.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T07-G05",
+      "source_url": "https://www.who.int/health-topics/food-safety",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "origin traceability",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for origin traceability.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T07-G06",
+      "source_url": "https://www.who.int/health-topics/food-safety",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "origin traceability",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for origin traceability.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T07-G07",
+      "source_url": "https://www.who.int/health-topics/food-safety",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "origin traceability",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the origin traceability procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T07-G08",
+      "source_url": "https://www.who.int/health-topics/food-safety",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "origin traceability",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for origin traceability.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T07-G09",
+      "source_url": "https://www.who.int/health-topics/food-safety",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "origin traceability",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the origin traceability report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM027-T07-G10",
+      "source_url": "https://www.who.int/health-topics/food-safety",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "origin traceability",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal origin traceability guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    }
+  ]
+}
