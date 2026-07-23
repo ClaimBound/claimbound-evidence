@@ -1,0 +1,2318 @@
+{
+  "issue_number": 181,
+  "source_manifest_sha256": "b94e18c78f44555408b0d56ca643ec4d09db112a59116a1df0d948ec5dd842ba",
+  "claim_boundary": "Claim-level execution plan for issue #181 only; it is not evidence and predeclares no outcome.",
+  "raw_payload_committed": false,
+  "entries": [
+    {
+      "claim_id": "CB7K-DOM046-T01-G01",
+      "source_url": "https://www.eac.gov/election-officials/election-results",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "ballot count reconciliation",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for ballot count reconciliation.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T01-G02",
+      "source_url": "https://www.eac.gov/election-officials/election-results",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "ballot count reconciliation",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for ballot count reconciliation discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T01-G03",
+      "source_url": "https://www.eac.gov/election-officials/election-results",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "ballot count reconciliation",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for ballot count reconciliation.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T01-G04",
+      "source_url": "https://www.eac.gov/election-officials/election-results",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "ballot count reconciliation",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for ballot count reconciliation.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T01-G05",
+      "source_url": "https://www.eac.gov/election-officials/election-results",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "ballot count reconciliation",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for ballot count reconciliation.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T01-G06",
+      "source_url": "https://www.eac.gov/election-officials/election-results",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "ballot count reconciliation",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for ballot count reconciliation.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T01-G07",
+      "source_url": "https://www.eac.gov/election-officials/election-results",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "ballot count reconciliation",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the ballot count reconciliation procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T01-G08",
+      "source_url": "https://www.eac.gov/election-officials/election-results",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "ballot count reconciliation",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for ballot count reconciliation.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T01-G09",
+      "source_url": "https://www.eac.gov/election-officials/election-results",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "ballot count reconciliation",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the ballot count reconciliation report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T01-G10",
+      "source_url": "https://www.eac.gov/election-officials/election-results",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "ballot count reconciliation",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal ballot count reconciliation guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T02-G01",
+      "source_url": "https://www.eac.gov/voters/voter-faqs",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "turnout total",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for turnout total.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T02-G02",
+      "source_url": "https://www.eac.gov/voters/voter-faqs",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "turnout total",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for turnout total discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T02-G03",
+      "source_url": "https://www.eac.gov/voters/voter-faqs",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "turnout total",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for turnout total.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T02-G04",
+      "source_url": "https://www.eac.gov/voters/voter-faqs",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "turnout total",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for turnout total.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T02-G05",
+      "source_url": "https://www.eac.gov/voters/voter-faqs",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "turnout total",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for turnout total.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T02-G06",
+      "source_url": "https://www.eac.gov/voters/voter-faqs",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "turnout total",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for turnout total.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T02-G07",
+      "source_url": "https://www.eac.gov/voters/voter-faqs",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "turnout total",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the turnout total procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T02-G08",
+      "source_url": "https://www.eac.gov/voters/voter-faqs",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "turnout total",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for turnout total.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T02-G09",
+      "source_url": "https://www.eac.gov/voters/voter-faqs",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "turnout total",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the turnout total report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T02-G10",
+      "source_url": "https://www.eac.gov/voters/voter-faqs",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "turnout total",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal turnout total guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T03-G01",
+      "source_url": "https://www.eac.gov/election-officials/election-security-preparedness",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "mail-ballot rejection",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for mail-ballot rejection.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T03-G02",
+      "source_url": "https://www.eac.gov/election-officials/election-security-preparedness",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "mail-ballot rejection",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for mail-ballot rejection discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T03-G03",
+      "source_url": "https://www.eac.gov/election-officials/election-security-preparedness",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "mail-ballot rejection",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for mail-ballot rejection.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T03-G04",
+      "source_url": "https://www.eac.gov/election-officials/election-security-preparedness",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "mail-ballot rejection",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for mail-ballot rejection.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T03-G05",
+      "source_url": "https://www.eac.gov/election-officials/election-security-preparedness",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "mail-ballot rejection",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for mail-ballot rejection.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T03-G06",
+      "source_url": "https://www.eac.gov/election-officials/election-security-preparedness",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "mail-ballot rejection",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for mail-ballot rejection.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T03-G07",
+      "source_url": "https://www.eac.gov/election-officials/election-security-preparedness",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "mail-ballot rejection",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the mail-ballot rejection procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T03-G08",
+      "source_url": "https://www.eac.gov/election-officials/election-security-preparedness",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "mail-ballot rejection",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for mail-ballot rejection.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T03-G09",
+      "source_url": "https://www.eac.gov/election-officials/election-security-preparedness",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "mail-ballot rejection",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the mail-ballot rejection report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T03-G10",
+      "source_url": "https://www.eac.gov/election-officials/election-security-preparedness",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "mail-ballot rejection",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal mail-ballot rejection guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T04-G01",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "machine certification",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for machine certification.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T04-G02",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "machine certification",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for machine certification discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T04-G03",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "machine certification",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for machine certification.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T04-G04",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "machine certification",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for machine certification.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T04-G05",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "machine certification",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for machine certification.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T04-G06",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "machine certification",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for machine certification.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T04-G07",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "machine certification",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the machine certification procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T04-G08",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "machine certification",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for machine certification.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T04-G09",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "machine certification",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the machine certification report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T04-G10",
+      "source_url": "https://www.cisa.gov/topics/cyber-threats-and-advisories/election-security",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "machine certification",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal machine certification guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T05-G01",
+      "source_url": "https://www.nist.gov/itl/voting",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "risk-limiting audit",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for risk-limiting audit.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T05-G02",
+      "source_url": "https://www.nist.gov/itl/voting",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "risk-limiting audit",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for risk-limiting audit discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T05-G03",
+      "source_url": "https://www.nist.gov/itl/voting",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "risk-limiting audit",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for risk-limiting audit.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T05-G04",
+      "source_url": "https://www.nist.gov/itl/voting",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "risk-limiting audit",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for risk-limiting audit.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T05-G05",
+      "source_url": "https://www.nist.gov/itl/voting",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "risk-limiting audit",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for risk-limiting audit.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T05-G06",
+      "source_url": "https://www.nist.gov/itl/voting",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "risk-limiting audit",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for risk-limiting audit.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T05-G07",
+      "source_url": "https://www.nist.gov/itl/voting",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "risk-limiting audit",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the risk-limiting audit procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T05-G08",
+      "source_url": "https://www.nist.gov/itl/voting",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "risk-limiting audit",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for risk-limiting audit.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T05-G09",
+      "source_url": "https://www.nist.gov/itl/voting",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "risk-limiting audit",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the risk-limiting audit report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T05-G10",
+      "source_url": "https://www.nist.gov/itl/voting",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "risk-limiting audit",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal risk-limiting audit guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T06-G01",
+      "source_url": "https://www.justice.gov/crt/voting-section",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "polling-place access",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for polling-place access.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T06-G02",
+      "source_url": "https://www.justice.gov/crt/voting-section",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "polling-place access",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for polling-place access discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T06-G03",
+      "source_url": "https://www.justice.gov/crt/voting-section",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "polling-place access",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for polling-place access.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T06-G04",
+      "source_url": "https://www.justice.gov/crt/voting-section",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "polling-place access",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for polling-place access.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T06-G05",
+      "source_url": "https://www.justice.gov/crt/voting-section",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "polling-place access",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for polling-place access.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T06-G06",
+      "source_url": "https://www.justice.gov/crt/voting-section",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "polling-place access",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for polling-place access.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T06-G07",
+      "source_url": "https://www.justice.gov/crt/voting-section",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "polling-place access",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the polling-place access procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T06-G08",
+      "source_url": "https://www.justice.gov/crt/voting-section",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "polling-place access",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for polling-place access.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T06-G09",
+      "source_url": "https://www.justice.gov/crt/voting-section",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "polling-place access",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the polling-place access report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T06-G10",
+      "source_url": "https://www.justice.gov/crt/voting-section",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "polling-place access",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal polling-place access guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T07-G01",
+      "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "result correction",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for result correction.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T07-G02",
+      "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "result correction",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for result correction discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T07-G03",
+      "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "result correction",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for result correction.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T07-G04",
+      "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "result correction",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for result correction.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T07-G05",
+      "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "result correction",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for result correction.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T07-G06",
+      "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "result correction",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for result correction.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T07-G07",
+      "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "result correction",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the result correction procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T07-G08",
+      "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "result correction",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for result correction.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T07-G09",
+      "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "result correction",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the result correction report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM046-T07-G10",
+      "source_url": "https://www.fec.gov/introduction-campaign-finance/election-results-and-voting-information/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "result correction",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal result correction guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T01-G01",
+      "source_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "use-of-force rate",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for use-of-force rate.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T01-G02",
+      "source_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "use-of-force rate",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for use-of-force rate discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T01-G03",
+      "source_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "use-of-force rate",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for use-of-force rate.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T01-G04",
+      "source_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "use-of-force rate",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for use-of-force rate.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T01-G05",
+      "source_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "use-of-force rate",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for use-of-force rate.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T01-G06",
+      "source_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "use-of-force rate",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for use-of-force rate.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T01-G07",
+      "source_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "use-of-force rate",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the use-of-force rate procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T01-G08",
+      "source_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "use-of-force rate",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for use-of-force rate.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T01-G09",
+      "source_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "use-of-force rate",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the use-of-force rate report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T01-G10",
+      "source_url": "https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/home",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "use-of-force rate",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal use-of-force rate guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T02-G01",
+      "source_url": "https://bjs.ojp.gov/topics/law-enforcement",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "stop disparity",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for stop disparity.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T02-G02",
+      "source_url": "https://bjs.ojp.gov/topics/law-enforcement",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "stop disparity",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for stop disparity discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T02-G03",
+      "source_url": "https://bjs.ojp.gov/topics/law-enforcement",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "stop disparity",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for stop disparity.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T02-G04",
+      "source_url": "https://bjs.ojp.gov/topics/law-enforcement",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "stop disparity",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for stop disparity.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T02-G05",
+      "source_url": "https://bjs.ojp.gov/topics/law-enforcement",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "stop disparity",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for stop disparity.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T02-G06",
+      "source_url": "https://bjs.ojp.gov/topics/law-enforcement",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "stop disparity",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for stop disparity.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T02-G07",
+      "source_url": "https://bjs.ojp.gov/topics/law-enforcement",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "stop disparity",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the stop disparity procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T02-G08",
+      "source_url": "https://bjs.ojp.gov/topics/law-enforcement",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "stop disparity",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for stop disparity.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T02-G09",
+      "source_url": "https://bjs.ojp.gov/topics/law-enforcement",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "stop disparity",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the stop disparity report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T02-G10",
+      "source_url": "https://bjs.ojp.gov/topics/law-enforcement",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "stop disparity",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal stop disparity guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T03-G01",
+      "source_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "complaint outcome",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for complaint outcome.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T03-G02",
+      "source_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "complaint outcome",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for complaint outcome discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T03-G03",
+      "source_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "complaint outcome",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for complaint outcome.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T03-G04",
+      "source_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "complaint outcome",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for complaint outcome.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T03-G05",
+      "source_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "complaint outcome",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for complaint outcome.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T03-G06",
+      "source_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "complaint outcome",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for complaint outcome.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T03-G07",
+      "source_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "complaint outcome",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the complaint outcome procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T03-G08",
+      "source_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "complaint outcome",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for complaint outcome.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T03-G09",
+      "source_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "complaint outcome",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the complaint outcome report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T03-G10",
+      "source_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "complaint outcome",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal complaint outcome guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T04-G01",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "body-camera activation",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for body-camera activation.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T04-G02",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "body-camera activation",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for body-camera activation discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T04-G03",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "body-camera activation",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for body-camera activation.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T04-G04",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "body-camera activation",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for body-camera activation.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T04-G05",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "body-camera activation",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for body-camera activation.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T04-G06",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "body-camera activation",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for body-camera activation.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T04-G07",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "body-camera activation",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the body-camera activation procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T04-G08",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "body-camera activation",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for body-camera activation.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T04-G09",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "body-camera activation",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the body-camera activation report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T04-G10",
+      "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-first-ever-national-law-enforcement-accountability-database",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "body-camera activation",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal body-camera activation guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T05-G01",
+      "source_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "response time",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for response time.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T05-G02",
+      "source_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "response time",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for response time discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T05-G03",
+      "source_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "response time",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for response time.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T05-G04",
+      "source_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "response time",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for response time.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T05-G05",
+      "source_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "response time",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for response time.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T05-G06",
+      "source_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "response time",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for response time.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T05-G07",
+      "source_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "response time",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the response time procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T05-G08",
+      "source_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "response time",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for response time.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T05-G09",
+      "source_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "response time",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the response time report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T05-G10",
+      "source_url": "https://nij.ojp.gov/topics/articles/body-worn-cameras-what-evidence-tells-us",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "response time",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal response time guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T06-G01",
+      "source_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "arrest clearance",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for arrest clearance.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T06-G02",
+      "source_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "arrest clearance",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for arrest clearance discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T06-G03",
+      "source_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "arrest clearance",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for arrest clearance.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T06-G04",
+      "source_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "arrest clearance",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for arrest clearance.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T06-G05",
+      "source_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "arrest clearance",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for arrest clearance.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T06-G06",
+      "source_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "arrest clearance",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for arrest clearance.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T06-G07",
+      "source_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "arrest clearance",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the arrest clearance procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T06-G08",
+      "source_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "arrest clearance",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for arrest clearance.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T06-G09",
+      "source_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "arrest clearance",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the arrest clearance report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T06-G10",
+      "source_url": "https://www.fbi.gov/how-we-can-help-you/more-fbi-services-and-information/ucr",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "arrest clearance",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal arrest clearance guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T07-G01",
+      "source_url": "https://www.census.gov/programs-surveys/acs",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "data completeness",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for data completeness.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T07-G02",
+      "source_url": "https://www.census.gov/programs-surveys/acs",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "data completeness",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for data completeness discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T07-G03",
+      "source_url": "https://www.census.gov/programs-surveys/acs",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "data completeness",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for data completeness.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T07-G04",
+      "source_url": "https://www.census.gov/programs-surveys/acs",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "data completeness",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for data completeness.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T07-G05",
+      "source_url": "https://www.census.gov/programs-surveys/acs",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "data completeness",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for data completeness.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T07-G06",
+      "source_url": "https://www.census.gov/programs-surveys/acs",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "data completeness",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for data completeness.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T07-G07",
+      "source_url": "https://www.census.gov/programs-surveys/acs",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "data completeness",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the data completeness procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T07-G08",
+      "source_url": "https://www.census.gov/programs-surveys/acs",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "data completeness",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for data completeness.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T07-G09",
+      "source_url": "https://www.census.gov/programs-surveys/acs",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "data completeness",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the data completeness report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM047-T07-G10",
+      "source_url": "https://www.census.gov/programs-surveys/acs",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "data completeness",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal data completeness guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T01-G01",
+      "source_url": "https://www.uscourts.gov/court-programs/court-statistics",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "case backlog",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for case backlog.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T01-G02",
+      "source_url": "https://www.uscourts.gov/court-programs/court-statistics",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "case backlog",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for case backlog discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T01-G03",
+      "source_url": "https://www.uscourts.gov/court-programs/court-statistics",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "case backlog",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for case backlog.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T01-G04",
+      "source_url": "https://www.uscourts.gov/court-programs/court-statistics",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "case backlog",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for case backlog.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T01-G05",
+      "source_url": "https://www.uscourts.gov/court-programs/court-statistics",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "case backlog",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for case backlog.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T01-G06",
+      "source_url": "https://www.uscourts.gov/court-programs/court-statistics",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "case backlog",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for case backlog.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T01-G07",
+      "source_url": "https://www.uscourts.gov/court-programs/court-statistics",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "case backlog",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the case backlog procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T01-G08",
+      "source_url": "https://www.uscourts.gov/court-programs/court-statistics",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "case backlog",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for case backlog.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T01-G09",
+      "source_url": "https://www.uscourts.gov/court-programs/court-statistics",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "case backlog",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the case backlog report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T01-G10",
+      "source_url": "https://www.uscourts.gov/court-programs/court-statistics",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "case backlog",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal case backlog guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T02-G01",
+      "source_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "time to disposition",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for time to disposition.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T02-G02",
+      "source_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "time to disposition",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for time to disposition discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T02-G03",
+      "source_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "time to disposition",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for time to disposition.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T02-G04",
+      "source_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "time to disposition",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for time to disposition.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T02-G05",
+      "source_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "time to disposition",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for time to disposition.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T02-G06",
+      "source_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "time to disposition",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for time to disposition.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T02-G07",
+      "source_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "time to disposition",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the time to disposition procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T02-G08",
+      "source_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "time to disposition",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for time to disposition.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T02-G09",
+      "source_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "time to disposition",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the time to disposition report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T02-G10",
+      "source_url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "time to disposition",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal time to disposition guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T03-G01",
+      "source_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "pretrial detention",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for pretrial detention.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T03-G02",
+      "source_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "pretrial detention",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for pretrial detention discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T03-G03",
+      "source_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "pretrial detention",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for pretrial detention.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T03-G04",
+      "source_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "pretrial detention",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for pretrial detention.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T03-G05",
+      "source_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "pretrial detention",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for pretrial detention.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T03-G06",
+      "source_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "pretrial detention",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for pretrial detention.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T03-G07",
+      "source_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "pretrial detention",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the pretrial detention procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T03-G08",
+      "source_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "pretrial detention",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for pretrial detention.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T03-G09",
+      "source_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "pretrial detention",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the pretrial detention report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T03-G10",
+      "source_url": "https://www.supremecourt.gov/opinions/opinions.aspx",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "pretrial detention",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal pretrial detention guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T04-G01",
+      "source_url": "https://www.uscourts.gov/court-records/find-case-pacer",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "appeal reversal",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for appeal reversal.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T04-G02",
+      "source_url": "https://www.uscourts.gov/court-records/find-case-pacer",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "appeal reversal",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for appeal reversal discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T04-G03",
+      "source_url": "https://www.uscourts.gov/court-records/find-case-pacer",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "appeal reversal",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for appeal reversal.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T04-G04",
+      "source_url": "https://www.uscourts.gov/court-records/find-case-pacer",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "appeal reversal",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for appeal reversal.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T04-G05",
+      "source_url": "https://www.uscourts.gov/court-records/find-case-pacer",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "appeal reversal",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for appeal reversal.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T04-G06",
+      "source_url": "https://www.uscourts.gov/court-records/find-case-pacer",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "appeal reversal",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for appeal reversal.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T04-G07",
+      "source_url": "https://www.uscourts.gov/court-records/find-case-pacer",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "appeal reversal",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the appeal reversal procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T04-G08",
+      "source_url": "https://www.uscourts.gov/court-records/find-case-pacer",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "appeal reversal",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for appeal reversal.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T04-G09",
+      "source_url": "https://www.uscourts.gov/court-records/find-case-pacer",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "appeal reversal",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the appeal reversal report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T04-G10",
+      "source_url": "https://www.uscourts.gov/court-records/find-case-pacer",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "appeal reversal",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal appeal reversal guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T05-G01",
+      "source_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "legal-aid coverage",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for legal-aid coverage.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T05-G02",
+      "source_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "legal-aid coverage",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for legal-aid coverage discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T05-G03",
+      "source_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "legal-aid coverage",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for legal-aid coverage.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T05-G04",
+      "source_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "legal-aid coverage",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for legal-aid coverage.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T05-G05",
+      "source_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "legal-aid coverage",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for legal-aid coverage.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T05-G06",
+      "source_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "legal-aid coverage",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for legal-aid coverage.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T05-G07",
+      "source_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "legal-aid coverage",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the legal-aid coverage procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T05-G08",
+      "source_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "legal-aid coverage",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for legal-aid coverage.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T05-G09",
+      "source_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "legal-aid coverage",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the legal-aid coverage report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T05-G10",
+      "source_url": "https://www.justice.gov/usao/resources/annual-statistical-reports",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "legal-aid coverage",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal legal-aid coverage guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T06-G01",
+      "source_url": "https://bjs.ojp.gov/topics/courts",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "sentencing disparity",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for sentencing disparity.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T06-G02",
+      "source_url": "https://bjs.ojp.gov/topics/courts",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "sentencing disparity",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for sentencing disparity discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T06-G03",
+      "source_url": "https://bjs.ojp.gov/topics/courts",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sentencing disparity",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for sentencing disparity.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T06-G04",
+      "source_url": "https://bjs.ojp.gov/topics/courts",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "sentencing disparity",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for sentencing disparity.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T06-G05",
+      "source_url": "https://bjs.ojp.gov/topics/courts",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "sentencing disparity",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for sentencing disparity.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T06-G06",
+      "source_url": "https://bjs.ojp.gov/topics/courts",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sentencing disparity",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for sentencing disparity.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T06-G07",
+      "source_url": "https://bjs.ojp.gov/topics/courts",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "sentencing disparity",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the sentencing disparity procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T06-G08",
+      "source_url": "https://bjs.ojp.gov/topics/courts",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "sentencing disparity",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for sentencing disparity.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T06-G09",
+      "source_url": "https://bjs.ojp.gov/topics/courts",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "sentencing disparity",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the sentencing disparity report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T06-G10",
+      "source_url": "https://bjs.ojp.gov/topics/courts",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "sentencing disparity",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal sentencing disparity guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T07-G01",
+      "source_url": "https://www.uscourts.gov/data-news/judiciary-news",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "publication completeness",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for publication completeness.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T07-G02",
+      "source_url": "https://www.uscourts.gov/data-news/judiciary-news",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "publication completeness",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for publication completeness discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T07-G03",
+      "source_url": "https://www.uscourts.gov/data-news/judiciary-news",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "publication completeness",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for publication completeness.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T07-G04",
+      "source_url": "https://www.uscourts.gov/data-news/judiciary-news",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "publication completeness",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for publication completeness.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T07-G05",
+      "source_url": "https://www.uscourts.gov/data-news/judiciary-news",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "publication completeness",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for publication completeness.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T07-G06",
+      "source_url": "https://www.uscourts.gov/data-news/judiciary-news",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "publication completeness",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for publication completeness.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T07-G07",
+      "source_url": "https://www.uscourts.gov/data-news/judiciary-news",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "publication completeness",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the publication completeness procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T07-G08",
+      "source_url": "https://www.uscourts.gov/data-news/judiciary-news",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "publication completeness",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for publication completeness.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T07-G09",
+      "source_url": "https://www.uscourts.gov/data-news/judiciary-news",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "publication completeness",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the publication completeness report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM048-T07-G10",
+      "source_url": "https://www.uscourts.gov/data-news/judiciary-news",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "publication completeness",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal publication completeness guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    }
+  ]
+}
