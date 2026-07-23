@@ -1,0 +1,2318 @@
+{
+  "issue_number": 175,
+  "source_manifest_sha256": "7b01049771cfdcf4a850f1ae7f89be1a6284b992b62745120ccb199084b7f50f",
+  "claim_boundary": "Claim-level execution plan for issue #175 only; it is not evidence and predeclares no outcome.",
+  "raw_payload_committed": false,
+  "entries": [
+    {
+      "claim_id": "CB7K-DOM028-T01-G01",
+      "source_url": "https://www.healthcare.gov/glossary/health-insurance/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "claim denial rate",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for claim denial rate.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T01-G02",
+      "source_url": "https://www.healthcare.gov/glossary/health-insurance/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "claim denial rate",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for claim denial rate discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T01-G03",
+      "source_url": "https://www.healthcare.gov/glossary/health-insurance/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "claim denial rate",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for claim denial rate.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T01-G04",
+      "source_url": "https://www.healthcare.gov/glossary/health-insurance/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "claim denial rate",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for claim denial rate.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T01-G05",
+      "source_url": "https://www.healthcare.gov/glossary/health-insurance/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "claim denial rate",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for claim denial rate.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T01-G06",
+      "source_url": "https://www.healthcare.gov/glossary/health-insurance/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "claim denial rate",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for claim denial rate.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T01-G07",
+      "source_url": "https://www.healthcare.gov/glossary/health-insurance/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "claim denial rate",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the claim denial rate procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T01-G08",
+      "source_url": "https://www.healthcare.gov/glossary/health-insurance/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "claim denial rate",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for claim denial rate.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T01-G09",
+      "source_url": "https://www.healthcare.gov/glossary/health-insurance/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "claim denial rate",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the claim denial rate report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T01-G10",
+      "source_url": "https://www.healthcare.gov/glossary/health-insurance/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "claim denial rate",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal claim denial rate guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T02-G01",
+      "source_url": "https://www.cms.gov/marketplace/private-health-insurance/health-insurance-marketplace-2026",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "network adequacy",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for network adequacy.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T02-G02",
+      "source_url": "https://www.cms.gov/marketplace/private-health-insurance/health-insurance-marketplace-2026",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "network adequacy",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for network adequacy discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T02-G03",
+      "source_url": "https://www.cms.gov/marketplace/private-health-insurance/health-insurance-marketplace-2026",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "network adequacy",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for network adequacy.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T02-G04",
+      "source_url": "https://www.cms.gov/marketplace/private-health-insurance/health-insurance-marketplace-2026",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "network adequacy",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for network adequacy.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T02-G05",
+      "source_url": "https://www.cms.gov/marketplace/private-health-insurance/health-insurance-marketplace-2026",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "network adequacy",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for network adequacy.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T02-G06",
+      "source_url": "https://www.cms.gov/marketplace/private-health-insurance/health-insurance-marketplace-2026",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "network adequacy",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for network adequacy.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T02-G07",
+      "source_url": "https://www.cms.gov/marketplace/private-health-insurance/health-insurance-marketplace-2026",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "network adequacy",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the network adequacy procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T02-G08",
+      "source_url": "https://www.cms.gov/marketplace/private-health-insurance/health-insurance-marketplace-2026",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "network adequacy",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for network adequacy.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T02-G09",
+      "source_url": "https://www.cms.gov/marketplace/private-health-insurance/health-insurance-marketplace-2026",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "network adequacy",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the network adequacy report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T02-G10",
+      "source_url": "https://www.cms.gov/marketplace/private-health-insurance/health-insurance-marketplace-2026",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "network adequacy",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal network adequacy guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T03-G01",
+      "source_url": "https://www.cms.gov/medicare/health-drug-plans/part-d/coverage-gap",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "out-of-pocket cost",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for out-of-pocket cost.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T03-G02",
+      "source_url": "https://www.cms.gov/medicare/health-drug-plans/part-d/coverage-gap",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "out-of-pocket cost",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for out-of-pocket cost discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T03-G03",
+      "source_url": "https://www.cms.gov/medicare/health-drug-plans/part-d/coverage-gap",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "out-of-pocket cost",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for out-of-pocket cost.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T03-G04",
+      "source_url": "https://www.cms.gov/medicare/health-drug-plans/part-d/coverage-gap",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "out-of-pocket cost",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for out-of-pocket cost.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T03-G05",
+      "source_url": "https://www.cms.gov/medicare/health-drug-plans/part-d/coverage-gap",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "out-of-pocket cost",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for out-of-pocket cost.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T03-G06",
+      "source_url": "https://www.cms.gov/medicare/health-drug-plans/part-d/coverage-gap",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "out-of-pocket cost",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for out-of-pocket cost.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T03-G07",
+      "source_url": "https://www.cms.gov/medicare/health-drug-plans/part-d/coverage-gap",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "out-of-pocket cost",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the out-of-pocket cost procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T03-G08",
+      "source_url": "https://www.cms.gov/medicare/health-drug-plans/part-d/coverage-gap",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "out-of-pocket cost",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for out-of-pocket cost.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T03-G09",
+      "source_url": "https://www.cms.gov/medicare/health-drug-plans/part-d/coverage-gap",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "out-of-pocket cost",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the out-of-pocket cost report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T03-G10",
+      "source_url": "https://www.cms.gov/medicare/health-drug-plans/part-d/coverage-gap",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "out-of-pocket cost",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal out-of-pocket cost guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T04-G01",
+      "source_url": "https://www.cms.gov/medicare/appeals-grievances",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "prior authorization",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for prior authorization.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T04-G02",
+      "source_url": "https://www.cms.gov/medicare/appeals-grievances",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "prior authorization",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for prior authorization discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T04-G03",
+      "source_url": "https://www.cms.gov/medicare/appeals-grievances",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "prior authorization",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for prior authorization.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T04-G04",
+      "source_url": "https://www.cms.gov/medicare/appeals-grievances",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "prior authorization",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for prior authorization.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T04-G05",
+      "source_url": "https://www.cms.gov/medicare/appeals-grievances",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "prior authorization",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for prior authorization.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T04-G06",
+      "source_url": "https://www.cms.gov/medicare/appeals-grievances",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "prior authorization",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for prior authorization.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T04-G07",
+      "source_url": "https://www.cms.gov/medicare/appeals-grievances",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "prior authorization",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the prior authorization procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T04-G08",
+      "source_url": "https://www.cms.gov/medicare/appeals-grievances",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "prior authorization",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for prior authorization.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T04-G09",
+      "source_url": "https://www.cms.gov/medicare/appeals-grievances",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "prior authorization",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the prior authorization report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T04-G10",
+      "source_url": "https://www.cms.gov/medicare/appeals-grievances",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "prior authorization",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal prior authorization guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T05-G01",
+      "source_url": "https://www.cms.gov/medical-billing",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "appeal success",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for appeal success.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T05-G02",
+      "source_url": "https://www.cms.gov/medical-billing",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "appeal success",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for appeal success discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T05-G03",
+      "source_url": "https://www.cms.gov/medical-billing",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "appeal success",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for appeal success.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T05-G04",
+      "source_url": "https://www.cms.gov/medical-billing",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "appeal success",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for appeal success.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T05-G05",
+      "source_url": "https://www.cms.gov/medical-billing",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "appeal success",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for appeal success.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T05-G06",
+      "source_url": "https://www.cms.gov/medical-billing",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "appeal success",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for appeal success.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T05-G07",
+      "source_url": "https://www.cms.gov/medical-billing",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "appeal success",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the appeal success procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T05-G08",
+      "source_url": "https://www.cms.gov/medical-billing",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "appeal success",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for appeal success.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T05-G09",
+      "source_url": "https://www.cms.gov/medical-billing",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "appeal success",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the appeal success report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T05-G10",
+      "source_url": "https://www.cms.gov/medical-billing",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "appeal success",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal appeal success guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T06-G01",
+      "source_url": "https://www.healthcare.gov/how-to-file-an-appeal/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "coverage exclusion",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for coverage exclusion.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T06-G02",
+      "source_url": "https://www.healthcare.gov/how-to-file-an-appeal/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "coverage exclusion",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for coverage exclusion discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T06-G03",
+      "source_url": "https://www.healthcare.gov/how-to-file-an-appeal/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "coverage exclusion",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for coverage exclusion.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T06-G04",
+      "source_url": "https://www.healthcare.gov/how-to-file-an-appeal/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "coverage exclusion",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for coverage exclusion.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T06-G05",
+      "source_url": "https://www.healthcare.gov/how-to-file-an-appeal/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "coverage exclusion",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for coverage exclusion.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T06-G06",
+      "source_url": "https://www.healthcare.gov/how-to-file-an-appeal/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "coverage exclusion",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for coverage exclusion.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T06-G07",
+      "source_url": "https://www.healthcare.gov/how-to-file-an-appeal/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "coverage exclusion",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the coverage exclusion procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T06-G08",
+      "source_url": "https://www.healthcare.gov/how-to-file-an-appeal/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "coverage exclusion",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for coverage exclusion.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T06-G09",
+      "source_url": "https://www.healthcare.gov/how-to-file-an-appeal/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "coverage exclusion",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the coverage exclusion report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T06-G10",
+      "source_url": "https://www.healthcare.gov/how-to-file-an-appeal/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "coverage exclusion",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal coverage exclusion guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T07-G01",
+      "source_url": "https://www.kff.org/health-reform/state-indicator/health-insurance-coverage-of-the-total-population/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "premium increase",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for premium increase.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T07-G02",
+      "source_url": "https://www.kff.org/health-reform/state-indicator/health-insurance-coverage-of-the-total-population/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "premium increase",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for premium increase discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T07-G03",
+      "source_url": "https://www.kff.org/health-reform/state-indicator/health-insurance-coverage-of-the-total-population/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "premium increase",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for premium increase.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T07-G04",
+      "source_url": "https://www.kff.org/health-reform/state-indicator/health-insurance-coverage-of-the-total-population/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "premium increase",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for premium increase.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T07-G05",
+      "source_url": "https://www.kff.org/health-reform/state-indicator/health-insurance-coverage-of-the-total-population/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "premium increase",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for premium increase.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T07-G06",
+      "source_url": "https://www.kff.org/health-reform/state-indicator/health-insurance-coverage-of-the-total-population/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "premium increase",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for premium increase.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T07-G07",
+      "source_url": "https://www.kff.org/health-reform/state-indicator/health-insurance-coverage-of-the-total-population/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "premium increase",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the premium increase procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T07-G08",
+      "source_url": "https://www.kff.org/health-reform/state-indicator/health-insurance-coverage-of-the-total-population/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "premium increase",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for premium increase.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T07-G09",
+      "source_url": "https://www.kff.org/health-reform/state-indicator/health-insurance-coverage-of-the-total-population/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "premium increase",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the premium increase report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM028-T07-G10",
+      "source_url": "https://www.kff.org/health-reform/state-indicator/health-insurance-coverage-of-the-total-population/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "premium increase",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal premium increase guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T01-G01",
+      "source_url": "https://acl.gov/programs/aging-and-disability-networks/aging-network",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "staffing hours",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for staffing hours.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T01-G02",
+      "source_url": "https://acl.gov/programs/aging-and-disability-networks/aging-network",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "staffing hours",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for staffing hours discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T01-G03",
+      "source_url": "https://acl.gov/programs/aging-and-disability-networks/aging-network",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "staffing hours",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for staffing hours.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T01-G04",
+      "source_url": "https://acl.gov/programs/aging-and-disability-networks/aging-network",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "staffing hours",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for staffing hours.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T01-G05",
+      "source_url": "https://acl.gov/programs/aging-and-disability-networks/aging-network",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "staffing hours",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for staffing hours.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T01-G06",
+      "source_url": "https://acl.gov/programs/aging-and-disability-networks/aging-network",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "staffing hours",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for staffing hours.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T01-G07",
+      "source_url": "https://acl.gov/programs/aging-and-disability-networks/aging-network",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "staffing hours",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the staffing hours procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T01-G08",
+      "source_url": "https://acl.gov/programs/aging-and-disability-networks/aging-network",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "staffing hours",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for staffing hours.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T01-G09",
+      "source_url": "https://acl.gov/programs/aging-and-disability-networks/aging-network",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "staffing hours",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the staffing hours report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T01-G10",
+      "source_url": "https://acl.gov/programs/aging-and-disability-networks/aging-network",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "staffing hours",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal staffing hours guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T02-G01",
+      "source_url": "https://acl.gov/programs/long-term-services-and-supports",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "fall rate",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for fall rate.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T02-G02",
+      "source_url": "https://acl.gov/programs/long-term-services-and-supports",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "fall rate",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for fall rate discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T02-G03",
+      "source_url": "https://acl.gov/programs/long-term-services-and-supports",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "fall rate",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for fall rate.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T02-G04",
+      "source_url": "https://acl.gov/programs/long-term-services-and-supports",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "fall rate",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for fall rate.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T02-G05",
+      "source_url": "https://acl.gov/programs/long-term-services-and-supports",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "fall rate",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for fall rate.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T02-G06",
+      "source_url": "https://acl.gov/programs/long-term-services-and-supports",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "fall rate",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for fall rate.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T02-G07",
+      "source_url": "https://acl.gov/programs/long-term-services-and-supports",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "fall rate",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the fall rate procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T02-G08",
+      "source_url": "https://acl.gov/programs/long-term-services-and-supports",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "fall rate",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for fall rate.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T02-G09",
+      "source_url": "https://acl.gov/programs/long-term-services-and-supports",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "fall rate",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the fall rate report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T02-G10",
+      "source_url": "https://acl.gov/programs/long-term-services-and-supports",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "fall rate",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal fall rate guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T03-G01",
+      "source_url": "https://www.medicare.gov/coverage/long-term-care",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "pressure injury",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for pressure injury.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T03-G02",
+      "source_url": "https://www.medicare.gov/coverage/long-term-care",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "pressure injury",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for pressure injury discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T03-G03",
+      "source_url": "https://www.medicare.gov/coverage/long-term-care",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "pressure injury",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for pressure injury.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T03-G04",
+      "source_url": "https://www.medicare.gov/coverage/long-term-care",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "pressure injury",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for pressure injury.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T03-G05",
+      "source_url": "https://www.medicare.gov/coverage/long-term-care",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "pressure injury",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for pressure injury.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T03-G06",
+      "source_url": "https://www.medicare.gov/coverage/long-term-care",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "pressure injury",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for pressure injury.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T03-G07",
+      "source_url": "https://www.medicare.gov/coverage/long-term-care",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "pressure injury",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the pressure injury procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T03-G08",
+      "source_url": "https://www.medicare.gov/coverage/long-term-care",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "pressure injury",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for pressure injury.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T03-G09",
+      "source_url": "https://www.medicare.gov/coverage/long-term-care",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "pressure injury",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the pressure injury report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T03-G10",
+      "source_url": "https://www.medicare.gov/coverage/long-term-care",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "pressure injury",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal pressure injury guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T04-G01",
+      "source_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/nursing-homes",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "medication error",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for medication error.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T04-G02",
+      "source_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/nursing-homes",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "medication error",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for medication error discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T04-G03",
+      "source_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/nursing-homes",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "medication error",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for medication error.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T04-G04",
+      "source_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/nursing-homes",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "medication error",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for medication error.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T04-G05",
+      "source_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/nursing-homes",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "medication error",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for medication error.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T04-G06",
+      "source_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/nursing-homes",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "medication error",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for medication error.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T04-G07",
+      "source_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/nursing-homes",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "medication error",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the medication error procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T04-G08",
+      "source_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/nursing-homes",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "medication error",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for medication error.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T04-G09",
+      "source_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/nursing-homes",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "medication error",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the medication error report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T04-G10",
+      "source_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/nursing-homes",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "medication error",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal medication error guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T05-G01",
+      "source_url": "https://acl.gov/programs/elder-justice",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "resident complaint",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for resident complaint.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T05-G02",
+      "source_url": "https://acl.gov/programs/elder-justice",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "resident complaint",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for resident complaint discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T05-G03",
+      "source_url": "https://acl.gov/programs/elder-justice",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "resident complaint",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for resident complaint.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T05-G04",
+      "source_url": "https://acl.gov/programs/elder-justice",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "resident complaint",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for resident complaint.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T05-G05",
+      "source_url": "https://acl.gov/programs/elder-justice",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "resident complaint",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for resident complaint.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T05-G06",
+      "source_url": "https://acl.gov/programs/elder-justice",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "resident complaint",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for resident complaint.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T05-G07",
+      "source_url": "https://acl.gov/programs/elder-justice",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "resident complaint",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the resident complaint procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T05-G08",
+      "source_url": "https://acl.gov/programs/elder-justice",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "resident complaint",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for resident complaint.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T05-G09",
+      "source_url": "https://acl.gov/programs/elder-justice",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "resident complaint",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the resident complaint report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T05-G10",
+      "source_url": "https://acl.gov/programs/elder-justice",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "resident complaint",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal resident complaint guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T06-G01",
+      "source_url": "https://www.cdc.gov/aging/data/index.html",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "infection control",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for infection control.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T06-G02",
+      "source_url": "https://www.cdc.gov/aging/data/index.html",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "infection control",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for infection control discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T06-G03",
+      "source_url": "https://www.cdc.gov/aging/data/index.html",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "infection control",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for infection control.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T06-G04",
+      "source_url": "https://www.cdc.gov/aging/data/index.html",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "infection control",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for infection control.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T06-G05",
+      "source_url": "https://www.cdc.gov/aging/data/index.html",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "infection control",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for infection control.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T06-G06",
+      "source_url": "https://www.cdc.gov/aging/data/index.html",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "infection control",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for infection control.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T06-G07",
+      "source_url": "https://www.cdc.gov/aging/data/index.html",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "infection control",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the infection control procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T06-G08",
+      "source_url": "https://www.cdc.gov/aging/data/index.html",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "infection control",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for infection control.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T06-G09",
+      "source_url": "https://www.cdc.gov/aging/data/index.html",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "infection control",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the infection control report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T06-G10",
+      "source_url": "https://www.cdc.gov/aging/data/index.html",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "infection control",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal infection control guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T07-G01",
+      "source_url": "https://www.who.int/health-topics/ageing",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "facility ownership",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for facility ownership.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T07-G02",
+      "source_url": "https://www.who.int/health-topics/ageing",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "facility ownership",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for facility ownership discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T07-G03",
+      "source_url": "https://www.who.int/health-topics/ageing",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "facility ownership",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for facility ownership.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T07-G04",
+      "source_url": "https://www.who.int/health-topics/ageing",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "facility ownership",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for facility ownership.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T07-G05",
+      "source_url": "https://www.who.int/health-topics/ageing",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "facility ownership",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for facility ownership.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T07-G06",
+      "source_url": "https://www.who.int/health-topics/ageing",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "facility ownership",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for facility ownership.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T07-G07",
+      "source_url": "https://www.who.int/health-topics/ageing",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "facility ownership",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the facility ownership procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T07-G08",
+      "source_url": "https://www.who.int/health-topics/ageing",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "facility ownership",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for facility ownership.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T07-G09",
+      "source_url": "https://www.who.int/health-topics/ageing",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "facility ownership",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the facility ownership report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM029-T07-G10",
+      "source_url": "https://www.who.int/health-topics/ageing",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "facility ownership",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal facility ownership guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T01-G01",
+      "source_url": "https://www.osha.gov/workers",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "exposure limit",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for exposure limit.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T01-G02",
+      "source_url": "https://www.osha.gov/workers",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "exposure limit",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for exposure limit discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T01-G03",
+      "source_url": "https://www.osha.gov/workers",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "exposure limit",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for exposure limit.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T01-G04",
+      "source_url": "https://www.osha.gov/workers",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "exposure limit",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for exposure limit.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T01-G05",
+      "source_url": "https://www.osha.gov/workers",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "exposure limit",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for exposure limit.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T01-G06",
+      "source_url": "https://www.osha.gov/workers",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "exposure limit",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for exposure limit.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T01-G07",
+      "source_url": "https://www.osha.gov/workers",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "exposure limit",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the exposure limit procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T01-G08",
+      "source_url": "https://www.osha.gov/workers",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "exposure limit",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for exposure limit.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T01-G09",
+      "source_url": "https://www.osha.gov/workers",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "exposure limit",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the exposure limit report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T01-G10",
+      "source_url": "https://www.osha.gov/workers",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "exposure limit",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal exposure limit guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T02-G01",
+      "source_url": "https://www.osha.gov/laws-regs/regulations/standardnumber",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "injury rate",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for injury rate.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T02-G02",
+      "source_url": "https://www.osha.gov/laws-regs/regulations/standardnumber",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "injury rate",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for injury rate discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T02-G03",
+      "source_url": "https://www.osha.gov/laws-regs/regulations/standardnumber",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "injury rate",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for injury rate.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T02-G04",
+      "source_url": "https://www.osha.gov/laws-regs/regulations/standardnumber",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "injury rate",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for injury rate.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T02-G05",
+      "source_url": "https://www.osha.gov/laws-regs/regulations/standardnumber",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "injury rate",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for injury rate.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T02-G06",
+      "source_url": "https://www.osha.gov/laws-regs/regulations/standardnumber",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "injury rate",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for injury rate.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T02-G07",
+      "source_url": "https://www.osha.gov/laws-regs/regulations/standardnumber",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "injury rate",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the injury rate procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T02-G08",
+      "source_url": "https://www.osha.gov/laws-regs/regulations/standardnumber",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "injury rate",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for injury rate.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T02-G09",
+      "source_url": "https://www.osha.gov/laws-regs/regulations/standardnumber",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "injury rate",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the injury rate report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T02-G10",
+      "source_url": "https://www.osha.gov/laws-regs/regulations/standardnumber",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "injury rate",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal injury rate guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T03-G01",
+      "source_url": "https://www.cdc.gov/niosh/data/datasets/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "protective-equipment compliance",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for protective-equipment compliance.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T03-G02",
+      "source_url": "https://www.cdc.gov/niosh/data/datasets/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "protective-equipment compliance",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for protective-equipment compliance discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T03-G03",
+      "source_url": "https://www.cdc.gov/niosh/data/datasets/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protective-equipment compliance",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for protective-equipment compliance.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T03-G04",
+      "source_url": "https://www.cdc.gov/niosh/data/datasets/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "protective-equipment compliance",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for protective-equipment compliance.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T03-G05",
+      "source_url": "https://www.cdc.gov/niosh/data/datasets/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "protective-equipment compliance",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for protective-equipment compliance.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T03-G06",
+      "source_url": "https://www.cdc.gov/niosh/data/datasets/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protective-equipment compliance",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for protective-equipment compliance.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T03-G07",
+      "source_url": "https://www.cdc.gov/niosh/data/datasets/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "protective-equipment compliance",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the protective-equipment compliance procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T03-G08",
+      "source_url": "https://www.cdc.gov/niosh/data/datasets/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "protective-equipment compliance",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for protective-equipment compliance.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T03-G09",
+      "source_url": "https://www.cdc.gov/niosh/data/datasets/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "protective-equipment compliance",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the protective-equipment compliance report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T03-G10",
+      "source_url": "https://www.cdc.gov/niosh/data/datasets/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "protective-equipment compliance",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal protective-equipment compliance guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T04-G01",
+      "source_url": "https://www.bls.gov/iif/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "hearing loss",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for hearing loss.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T04-G02",
+      "source_url": "https://www.bls.gov/iif/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "hearing loss",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for hearing loss discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T04-G03",
+      "source_url": "https://www.bls.gov/iif/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "hearing loss",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for hearing loss.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T04-G04",
+      "source_url": "https://www.bls.gov/iif/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "hearing loss",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for hearing loss.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T04-G05",
+      "source_url": "https://www.bls.gov/iif/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "hearing loss",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for hearing loss.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T04-G06",
+      "source_url": "https://www.bls.gov/iif/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "hearing loss",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for hearing loss.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T04-G07",
+      "source_url": "https://www.bls.gov/iif/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "hearing loss",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the hearing loss procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T04-G08",
+      "source_url": "https://www.bls.gov/iif/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "hearing loss",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for hearing loss.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T04-G09",
+      "source_url": "https://www.bls.gov/iif/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "hearing loss",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the hearing loss report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T04-G10",
+      "source_url": "https://www.bls.gov/iif/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "hearing loss",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal hearing loss guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T05-G01",
+      "source_url": "https://www.osha.gov/recordkeeping",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "respiratory risk",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for respiratory risk.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T05-G02",
+      "source_url": "https://www.osha.gov/recordkeeping",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "respiratory risk",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for respiratory risk discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T05-G03",
+      "source_url": "https://www.osha.gov/recordkeeping",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "respiratory risk",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for respiratory risk.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T05-G04",
+      "source_url": "https://www.osha.gov/recordkeeping",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "respiratory risk",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for respiratory risk.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T05-G05",
+      "source_url": "https://www.osha.gov/recordkeeping",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "respiratory risk",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for respiratory risk.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T05-G06",
+      "source_url": "https://www.osha.gov/recordkeeping",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "respiratory risk",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for respiratory risk.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T05-G07",
+      "source_url": "https://www.osha.gov/recordkeeping",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "respiratory risk",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the respiratory risk procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T05-G08",
+      "source_url": "https://www.osha.gov/recordkeeping",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "respiratory risk",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for respiratory risk.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T05-G09",
+      "source_url": "https://www.osha.gov/recordkeeping",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "respiratory risk",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the respiratory risk report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T05-G10",
+      "source_url": "https://www.osha.gov/recordkeeping",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "respiratory risk",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal respiratory risk guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T06-G01",
+      "source_url": "https://www.cdc.gov/niosh/topics/workplace-health-promotion/",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "heat stress",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for heat stress.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T06-G02",
+      "source_url": "https://www.cdc.gov/niosh/topics/workplace-health-promotion/",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "heat stress",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for heat stress discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T06-G03",
+      "source_url": "https://www.cdc.gov/niosh/topics/workplace-health-promotion/",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "heat stress",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for heat stress.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T06-G04",
+      "source_url": "https://www.cdc.gov/niosh/topics/workplace-health-promotion/",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "heat stress",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for heat stress.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T06-G05",
+      "source_url": "https://www.cdc.gov/niosh/topics/workplace-health-promotion/",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "heat stress",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for heat stress.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T06-G06",
+      "source_url": "https://www.cdc.gov/niosh/topics/workplace-health-promotion/",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "heat stress",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for heat stress.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T06-G07",
+      "source_url": "https://www.cdc.gov/niosh/topics/workplace-health-promotion/",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "heat stress",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the heat stress procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T06-G08",
+      "source_url": "https://www.cdc.gov/niosh/topics/workplace-health-promotion/",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "heat stress",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for heat stress.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T06-G09",
+      "source_url": "https://www.cdc.gov/niosh/topics/workplace-health-promotion/",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "heat stress",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the heat stress report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T06-G10",
+      "source_url": "https://www.cdc.gov/niosh/topics/workplace-health-promotion/",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "heat stress",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal heat stress guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T07-G01",
+      "source_url": "https://www.ilo.org/global/topics/safety-and-health-at-work/lang--en/index.htm",
+      "evaluation_method": "source_manifest_audit",
+      "frozen_parameters": {
+        "topic": "return-to-work outcome",
+        "gate": "source-integrity"
+      },
+      "support_rule": "The frozen bytes identify an exact public source and a topic-specific boundary for return-to-work outcome.",
+      "negative_rule": "Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T07-G02",
+      "source_url": "https://www.ilo.org/global/topics/safety-and-health-at-work/lang--en/index.htm",
+      "evaluation_method": "deterministic_numeric_reproduction",
+      "frozen_parameters": {
+        "topic": "return-to-work outcome",
+        "gate": "numerator-denominator"
+      },
+      "support_rule": "A numeric result for return-to-work outcome discloses numerator, denominator, units, exclusions and rounding.",
+      "negative_rule": "A nearby number or a recalculation with a different denominator is insufficient."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T07-G03",
+      "source_url": "https://www.ilo.org/global/topics/safety-and-health-at-work/lang--en/index.htm",
+      "evaluation_method": "coverage_boundary_audit",
+      "frozen_parameters": {
+        "topic": "return-to-work outcome",
+        "gate": "coverage"
+      },
+      "support_rule": "The source states population, scope, exclusions or limitations for return-to-work outcome.",
+      "negative_rule": "Record the population, geography, inclusion rules, missingness, and known coverage limits."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T07-G04",
+      "source_url": "https://www.ilo.org/global/topics/safety-and-health-at-work/lang--en/index.htm",
+      "evaluation_method": "version_and_date_audit",
+      "frozen_parameters": {
+        "topic": "return-to-work outcome",
+        "gate": "time-boundary"
+      },
+      "support_rule": "The source fixes a date, period or version for return-to-work outcome.",
+      "negative_rule": "Historical and current claims require separate cards; later drift must not rewrite the baseline."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T07-G05",
+      "source_url": "https://www.ilo.org/global/topics/safety-and-health-at-work/lang--en/index.htm",
+      "evaluation_method": "method_version_reproduction",
+      "frozen_parameters": {
+        "topic": "return-to-work outcome",
+        "gate": "method-version"
+      },
+      "support_rule": "The source identifies the method and applicable version for return-to-work outcome.",
+      "negative_rule": "Freeze the method before execution and preserve version or implementation drift."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T07-G06",
+      "source_url": "https://www.ilo.org/global/topics/safety-and-health-at-work/lang--en/index.htm",
+      "evaluation_method": "comparator_boundary_audit",
+      "frozen_parameters": {
+        "topic": "return-to-work outcome",
+        "gate": "comparator"
+      },
+      "support_rule": "The source identifies a comparable baseline and measurement rule for return-to-work outcome.",
+      "negative_rule": "Do not compare unlike populations, definitions, roads, hospitals, models, years, products, or geographies."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T07-G07",
+      "source_url": "https://www.ilo.org/global/topics/safety-and-health-at-work/lang--en/index.htm",
+      "evaluation_method": "independent_access_and_rerun",
+      "frozen_parameters": {
+        "topic": "return-to-work outcome",
+        "gate": "reproducibility"
+      },
+      "support_rule": "A public operator can obtain inputs and rerun the return-to-work outcome procedure.",
+      "negative_rule": "If access, licensing, paywalls, robots rules, missing files, or private inputs prevent this, preserve BLOCKED_SOURCE."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T07-G08",
+      "source_url": "https://www.ilo.org/global/topics/safety-and-health-at-work/lang--en/index.htm",
+      "evaluation_method": "contradiction_and_adverse_evidence_audit",
+      "frozen_parameters": {
+        "topic": "return-to-work outcome",
+        "gate": "negative-evidence"
+      },
+      "support_rule": "The boundary includes limitations, failures or contradictory evidence for return-to-work outcome.",
+      "negative_rule": "Absence alone is not a negative result; record INSUFFICIENT_COVERAGE unless the frozen protocol establishes contradiction."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T07-G09",
+      "source_url": "https://www.ilo.org/global/topics/safety-and-health-at-work/lang--en/index.htm",
+      "evaluation_method": "disclosure_boundary_audit",
+      "frozen_parameters": {
+        "topic": "return-to-work outcome",
+        "gate": "conflicts-disclosure"
+      },
+      "support_rule": "The boundary identifies the institution responsible for the return-to-work outcome report.",
+      "negative_rule": "Disclosure is not proof of bias; missing disclosure is not proof of misconduct."
+    },
+    {
+      "claim_id": "CB7K-DOM030-T07-G10",
+      "source_url": "https://www.ilo.org/global/topics/safety-and-health-at-work/lang--en/index.htm",
+      "evaluation_method": "overclaim_and_drift_audit",
+      "frozen_parameters": {
+        "topic": "return-to-work outcome",
+        "gate": "overclaim-drift"
+      },
+      "support_rule": "The source contains a caveat preventing a universal return-to-work outcome guarantee.",
+      "negative_rule": "A pass is only source support for the narrow wording. It is never domain-wide certification or endorsement."
+    }
+  ]
+}
