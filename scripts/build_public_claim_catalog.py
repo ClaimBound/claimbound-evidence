@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build a 7,000-candidate ClaimBound backlog and domain-separated static atlas."""
 from __future__ import annotations
-import argparse, hashlib, html, json, shutil, subprocess, tempfile, urllib.parse
+import argparse, hashlib, html, json, re, shutil, subprocess, tempfile, urllib.parse
 from pathlib import Path
 from typing import Any
 
@@ -20,6 +20,18 @@ GATE_METHODS={
     'negative-evidence':'contradiction_and_adverse_evidence_audit',
     'conflicts-disclosure':'disclosure_boundary_audit',
     'overclaim-drift':'overclaim_and_drift_audit',
+}
+GATE_SOURCE_ROLES={
+    'source-integrity':'official-record',
+    'numerator-denominator':'statistical-table',
+    'coverage':'methodology-scope',
+    'time-boundary':'versioned-release',
+    'method-version':'method-specification',
+    'comparator':'baseline-definition',
+    'reproducibility':'data-access-instructions',
+    'negative-evidence':'limitations-register',
+    'conflicts-disclosure':'institutional-interest-disclosure',
+    'overclaim-drift':'limitations-statement',
 }
 GATES=[
 ('source-integrity','The headline about {topic} can be traced to one exact public source version, canonical URL, access time, redirect chain, and SHA-256 hash.','Freeze the exact source before the first fetch; do not replace a blocked or weak source after seeing the result.'),
@@ -74,7 +86,7 @@ def validate(ds:list[dict[str,Any]],claims:list[dict[str,Any]])->None:
     if errors: raise SystemExit('\n'.join('ERROR: '+x for x in errors))
 
 def issue_url(c:dict[str,Any])->str:
-    body=(f"Candidate ID: `{c['claim_id']}`\n\nDomain: **{c['domain_title']}**\n\nFrozen candidate claim:\n\n> {c['frozen_candidate_claim']}\n\nBefore the first network fetch, add one exact canonical public source URL and record the frozen source-manifest SHA-256.\n\nHonest outcomes: `PASSED_UNDER_PROTOCOL`, `INSUFFICIENT_COVERAGE`, `NEGATIVE_RESULT_UNDER_PROTOCOL`, `BLOCKED_SOURCE`, or `SOURCE_DRIFT`.\n")
+    body=(f"Candidate ID: `{c['claim_id']}`\n\nDomain: **{c['domain_title']}**\n\nFrozen candidate claim:\n\n> {c['frozen_candidate_claim']}\n\nRun a separate official-source discovery phase. Record the discovery URL, response SHA-256, HTTP status, and a role-specific locator; then freeze the exact adjudication URL before evaluating the outcome.\n\nHonest outcomes: `PASSED_UNDER_PROTOCOL`, `INSUFFICIENT_COVERAGE`, `NEGATIVE_RESULT_UNDER_PROTOCOL`, `BLOCKED_SOURCE`, or `SOURCE_DRIFT`.\n")
     return 'https://github.com/ClaimBound/claimbound-evidence/issues/new?'+urllib.parse.urlencode({'title':f"Verify {c['claim_id']}: {c['topic']}",'body':body})
 
 def shell(title:str,body:str,root:str='')->str:
@@ -95,20 +107,20 @@ def build(output:Path,ds:list[dict[str,Any]],claims:list[dict[str,Any]])->None:
         for c in dc:
             s=html.escape((c['claim_id']+' '+c['topic']+' '+c['gate']).lower())
             blocks.append(f'<article class="claim" data-search="{s}"><span class="tag">{c["claim_id"]}</span><span class="tag">{html.escape(c["gate"])}</span><h2>{html.escape(c["topic"])}</h2><blockquote>{html.escape(c["frozen_candidate_claim"])}</blockquote><p><strong>Before fetch:</strong> {html.escape(c["adjudication_rule"])}</p><p><a href="{html.escape(issue_url(c),quote=True)}">Open one verification issue</a></p></article>')
-        body=f'<p>CLAIMBOUND / DOMAIN CANDIDATES</p><h1>{html.escape(d["title"])}</h1><div class="note"><strong>70 pending candidates, not evidence.</strong> Initial status: <code>PENDING_SOURCE_SELECTION</code>. Suggested source boundary: {html.escape(d["source_hint"])}. Freeze one exact URL before network access and keep every honest non-pass.</div><input id="q" placeholder="Filter 70 candidates">'+''.join(blocks)+"<script>const q=document.querySelector('#q');q.oninput=()=>document.querySelectorAll('.claim').forEach(x=>x.hidden=!x.dataset.search.includes(q.value.toLowerCase()))</script>"
+        body=f'<p>CLAIMBOUND / DOMAIN CANDIDATES</p><h1>{html.escape(d["title"])}</h1><div class="note"><strong>70 pending candidates, not evidence.</strong> Initial status: <code>PENDING_SOURCE_SELECTION</code>. Suggested source boundary: {html.escape(d["source_hint"])}. First perform recorded source discovery; then freeze one exact role-appropriate adjudication URL before outcome evaluation and keep every honest non-pass.</div><input id="q" placeholder="Filter 70 candidates">'+''.join(blocks)+"<script>const q=document.querySelector('#q');q.oninput=()=>document.querySelectorAll('.claim').forEach(x=>x.hidden=!x.dataset.search.includes(q.value.toLowerCase()))</script>"
         (p/'index.html').write_text(shell(d['title'],body,'../../'),encoding='utf-8')
-    home='<p>CLAIMBOUND / PUBLIC CLAIM CANDIDATE ATLAS</p><h1>7,000 claims across 100 domains</h1><div class="note"><strong>This is a preregistered backlog, not evidence.</strong> Every candidate begins at <code>PENDING_SOURCE_SELECTION</code>. Freeze one exact source before fetching; preserve PASS, INSUFFICIENT, NEGATIVE, BLOCKED, or DRIFT without rewriting.</div><p><a href="catalog.json">JSON</a> · <a href="catalog.jsonl">JSONL</a> · <a href="issues/">Issue-ready batches</a></p><input id="q" placeholder="Filter 100 domains"><section class="grid">'+''.join(cards)+"</section><script>const q=document.querySelector('#q');q.oninput=()=>document.querySelectorAll('.domain').forEach(x=>x.hidden=!x.dataset.search.includes(q.value.toLowerCase()))</script>"
+    home='<p>CLAIMBOUND / PUBLIC CLAIM CANDIDATE ATLAS</p><h1>7,000 claims across 100 domains</h1><div class="note"><strong>This is a preregistered backlog, not evidence.</strong> Every candidate begins at <code>PENDING_SOURCE_SELECTION</code>. Keep discovery separate from adjudication, freeze the selected role-appropriate source before evaluating the outcome, and preserve PASS, INSUFFICIENT, NEGATIVE, BLOCKED, or DRIFT without rewriting.</div><p><a href="catalog.json">JSON</a> · <a href="catalog.jsonl">JSONL</a> · <a href="issues/">Issue-ready batches</a></p><input id="q" placeholder="Filter 100 domains"><section class="grid">'+''.join(cards)+"</section><script>const q=document.querySelector('#q');q.oninput=()=>document.querySelectorAll('.domain').forEach(x=>x.hidden=!x.dataset.search.includes(q.value.toLowerCase()))</script>"
     (output/'index.html').write_text(shell('7,000 public claim candidates',home),encoding='utf-8')
     batches=[ds[i:i+BATCH_DOMAINS] for i in range(0,len(ds),BATCH_DOMAINS)]; idx=['# Issue-ready candidate batches','','> Candidate backlog only; no result is predeclared.','']
     for bi,bds in enumerate(batches,1):
         slugs={d['slug'] for d in bds}; bc=[c for c in claims if c['domain_slug'] in slugs]; name=f'batch-{bi:02d}.md'
         idx.append(f"- [Batch {bi:02d}]({name}) — {', '.join(d['title'] for d in bds)} ({len(bc)} candidates)")
-        lines=[f'# Public claim catalog batch {bi:02d}/{len(batches):02d}','',f'**Scope:** {len(bds)} domains × 70 candidates = {len(bc)} locally verifiable candidate claims.','', '> [!IMPORTANT]','> These are frozen candidate questions, not evidence. Every entry starts at `PENDING_SOURCE_SELECTION`.','> Freeze one exact public source URL before the first network fetch. Never replace a blocked or weak source after seeing the result.','', 'Honest outcomes: `PASSED_UNDER_PROTOCOL`, `INSUFFICIENT_COVERAGE`, `NEGATIVE_RESULT_UNDER_PROTOCOL`, `BLOCKED_SOURCE`, `SOURCE_DRIFT`.','', '## Local preparation','', '```bash','python3 scripts/build_public_claim_catalog.py validate','python3 scripts/build_public_claim_catalog.py build --output tmp/public-claim-catalog',f'cat tmp/public-claim-catalog/issues/{name}','```','']
+        lines=[f'# Public claim catalog batch {bi:02d}/{len(batches):02d}','',f'**Scope:** {len(bds)} domains × 70 candidates = {len(bc)} locally verifiable candidate claims.','', '> [!IMPORTANT]','> These are frozen candidate questions, not evidence. Every entry starts at `PENDING_SOURCE_SELECTION`.','> Perform and record official-source discovery first. Freeze the exact role-appropriate adjudication URL before outcome evaluation. Never replace a blocked or weak source after seeing the result.','', 'Honest outcomes: `PASSED_UNDER_PROTOCOL`, `INSUFFICIENT_COVERAGE`, `NEGATIVE_RESULT_UNDER_PROTOCOL`, `BLOCKED_SOURCE`, `SOURCE_DRIFT`.','', '## Local preparation','', '```bash','python3 scripts/build_public_claim_catalog.py validate','python3 scripts/build_public_claim_catalog.py build --output tmp/public-claim-catalog',f'cat tmp/public-claim-catalog/issues/{name}','```','']
         for d in bds:
             lines += [f"## {d['title']} — `{d['slug']}`",'',f"Suggested source boundary: {d['source_hint']}.",'']
             for c in (x for x in bc if x['domain_slug']==d['slug']): lines.append(f"- [ ] `{c['claim_id']}` — **{c['topic']} / {c['gate']}** — {c['frozen_candidate_claim']}")
             lines.append('')
-        lines += ['## Honest completion gate','','- [ ] Claim-level execution manifest passes `validate-execution-manifest`.','- [ ] Every complete domain uses at least seven independently frozen URLs: one or more per topic, never one generic domain URL.','- [ ] Each claim has its gate-specific method, frozen parameters, support rule, and negative rule.','- [ ] Exact source URL selected and frozen before fetch for each executed candidate.','- [ ] Canonical URL, redirects, access time, HTTP result, and SHA-256 recorded.','- [ ] No source widening or claim rewriting after observing the result.','- [ ] Every non-pass reviewed and retained; PASS/NEGATIVE quotas are forbidden.','- [ ] Raw source payload remains local.','- [ ] Published evidence cards pass `uv run claimbound validate-all` and tests.','']
+        lines += ['## Honest completion gate','','- [ ] Claim-level execution manifest passes `validate-execution-manifest`.','- [ ] Every complete domain uses at least seven independently frozen URLs: one or more per topic, never one generic domain URL.','- [ ] Each claim has its gate-specific method, source role, frozen parameters, support rule, and negative rule.','- [ ] Discovery URL, HTTP 200 response SHA-256, and a role-specific discovery locator are recorded before adjudication.','- [ ] Exact source URL is frozen after discovery and before outcome evaluation for each executed candidate.','- [ ] Reuse of one URL for multiple gate roles has an explicit justification and a distinct role locator for every role.','- [ ] Canonical URL, redirects, access time, HTTP result, and SHA-256 recorded.','- [ ] No source widening or claim rewriting after observing the result.','- [ ] Every non-pass reviewed and retained; PASS/NEGATIVE quotas are forbidden.','- [ ] Raw source payload remains local.','- [ ] Published evidence cards pass `uv run claimbound validate-all` and tests.','']
         (output/'issues'/name).write_text('\n'.join(lines),encoding='utf-8')
     (output/'issues'/'README.md').write_text('\n'.join(idx)+'\n',encoding='utf-8')
     links=''.join(f'<article class="domain"><h2><a href="batch-{i:02d}.md">Batch {i:02d}</a></h2><p>{len(b)} domains · {len(b)*PER_DOMAIN} candidates</p></article>' for i,b in enumerate(batches,1))
@@ -128,7 +140,7 @@ def validate_execution_manifest(path:Path)->None:
     entries=payload.get('entries')
     if not isinstance(entries,list) or not entries: raise SystemExit("ERROR: execution manifest needs non-empty 'entries'")
     catalog={c['claim_id']:c for c in make_claims(domains())}
-    errors=[]; seen=set(); urls_by_domain={}; topics_by_domain={}
+    errors=[]; seen=set(); urls_by_domain={}; topics_by_domain={}; entries_by_topic_url={}
     for i,e in enumerate(entries,1):
         cid=e.get('claim_id'); url=e.get('source_url'); method=e.get('evaluation_method')
         if cid not in catalog: errors.append(f'entry #{i}: unknown claim_id {cid!r}'); continue
@@ -137,11 +149,31 @@ def validate_execution_manifest(path:Path)->None:
         if not isinstance(url,str) or not url.startswith('https://'): errors.append(f'{cid}: exact HTTPS source_url required')
         elif any(marker in url.lower() for marker in ('example.', 'localhost', '127.0.0.1', 'todo', 'fill')): errors.append(f'{cid}: placeholder source_url forbidden')
         if method!=GATE_METHODS[claim['gate']]: errors.append(f"{cid}: evaluation_method must be {GATE_METHODS[claim['gate']]}")
+        if e.get('source_role')!=GATE_SOURCE_ROLES[claim['gate']]:
+            errors.append(f"{cid}: source_role must be {GATE_SOURCE_ROLES[claim['gate']]}")
+        provenance=e.get('selection_provenance')
+        if not isinstance(provenance,dict):
+            errors.append(f'{cid}: selection_provenance required')
+        else:
+            discovery=provenance.get('discovery_url')
+            if not isinstance(discovery,str) or not discovery.startswith('https://'):
+                errors.append(f'{cid}: HTTPS discovery_url required')
+            if provenance.get('selected_before_evaluation') is not True:
+                errors.append(f'{cid}: selected_before_evaluation must be true')
+            if provenance.get('discovery_http_status') != 200:
+                errors.append(f'{cid}: discovery_http_status must be 200')
+            discovery_sha=provenance.get('discovery_sha256')
+            if not isinstance(discovery_sha,str) or re.fullmatch(r'[0-9a-f]{64}',discovery_sha) is None:
+                errors.append(f'{cid}: 64-character lowercase discovery_sha256 required')
+            role_locator=provenance.get('source_role_locator')
+            if not isinstance(role_locator,str) or len(role_locator.strip()) < 20:
+                errors.append(f'{cid}: source_role_locator of at least 20 characters required')
         if not isinstance(e.get('frozen_parameters'),dict) or not e['frozen_parameters']: errors.append(f'{cid}: non-empty frozen_parameters required before fetch')
         if not isinstance(e.get('support_rule'),str) or not e['support_rule'].strip(): errors.append(f'{cid}: support_rule required')
         if not isinstance(e.get('negative_rule'),str) or not e['negative_rule'].strip(): errors.append(f'{cid}: negative_rule required; absence alone is not negative')
         urls_by_domain.setdefault(claim['domain_code'],set()).add(url)
         topics_by_domain.setdefault(claim['domain_code'],set()).add(claim['topic_index'])
+        entries_by_topic_url.setdefault((claim['domain_code'],claim['topic_index'],url),[]).append(e)
     selected={catalog[cid]['domain_code'] for cid in seen if cid in catalog}
     for domain in selected:
         expected={c['claim_id'] for c in catalog.values() if c['domain_code']==domain}
@@ -153,9 +185,25 @@ def validate_execution_manifest(path:Path)->None:
         for cid in actual:
             claim=catalog[cid]; entry=next((x for x in entries if x.get('claim_id')==cid),{})
             topic_urls.setdefault(claim['topic_index'],set()).add(entry.get('source_url'))
-        if any(len(urls)!=1 for urls in topic_urls.values()): errors.append(f'{domain}: each topic must keep one frozen URL across its ten gates')
-        representatives=[next(iter(topic_urls[t])) for t in sorted(topic_urls) if topic_urls[t]]
-        if len(representatives)!=len(set(representatives)): errors.append(f'{domain}: topic source URLs must be independently selected')
+        topic_indexes=sorted(topic_urls)
+        if any(topic_urls[left] & topic_urls[right] for i,left in enumerate(topic_indexes) for right in topic_indexes[i+1:]):
+            errors.append(f'{domain}: source URLs may be shared across gates of one topic but not across different topics')
+    for (domain,topic,url),shared_entries in entries_by_topic_url.items():
+        roles={entry.get('source_role') for entry in shared_entries}
+        if len(roles) <= 1:
+            continue
+        if any(
+            not isinstance(entry.get('selection_provenance'),dict)
+            or len(str(entry['selection_provenance'].get('shared_source_justification','')).strip()) < 20
+            for entry in shared_entries
+        ):
+            errors.append(f'{domain}-T{topic:02d}: shared URL across {len(roles)} source roles requires shared_source_justification')
+        locators={
+            str(entry.get('selection_provenance',{}).get('source_role_locator','')).strip()
+            for entry in shared_entries
+        }
+        if len(locators) != len(roles):
+            errors.append(f'{domain}-T{topic:02d}: shared URL requires one distinct source_role_locator per source role')
     if errors: raise SystemExit('\n'.join('ERROR: '+x for x in errors))
     raw=json.dumps(payload,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()
     print(f'OK: execution_manifest_entries={len(entries)} sha256={hashlib.sha256(raw).hexdigest()}')

@@ -25,11 +25,21 @@ def test_candidate_boundary_visible(tmp_path):
 
 def _manifest(m, claims, url_count):
     entries=[]
-    for claim in claims:
+    for index,claim in enumerate(claims):
+        source_index = index + 1 if url_count == 70 else ((claim['topic_index']-1)%url_count)+1
         entries.append({
             'claim_id':claim['claim_id'],
-            'source_url':f"https://sources.claimbound.org/source-{((claim['topic_index']-1)%url_count)+1}",
+            'source_url':f"https://sources.claimbound.org/source-{source_index}",
             'evaluation_method':m.GATE_METHODS[claim['gate']],
+            'source_role':m.GATE_SOURCE_ROLES[claim['gate']],
+            'selection_provenance':{
+                'discovery_url':f"https://sources.claimbound.org/discovery-{claim['topic_index']}",
+                'discovery_http_status':200,
+                'discovery_sha256':f"{index + 1:064x}",
+                'source_role_locator':f"Role-specific locator for {claim['gate']} evidence.",
+                'shared_source_justification':'This official document contains separate sections for the mapped source roles.',
+                'selected_before_evaluation':True,
+            },
             'frozen_parameters':{'version':'v1'},
             'support_rule':'all preregistered gate conditions are met',
             'negative_rule':'use negative only for an explicit protocol-defined contradiction',
@@ -44,7 +54,7 @@ def test_execution_manifest_rejects_one_generic_source_per_domain(tmp_path):
 
 def test_execution_manifest_accepts_gate_specific_topic_sources(tmp_path,capsys):
     m=mod(); claims=[c for c in m.make_claims(m.domains()) if c['domain_code']=='DOM001']
-    path=tmp_path/'manifest.json'; path.write_text(json.dumps(_manifest(m,claims,7)))
+    path=tmp_path/'manifest.json'; path.write_text(json.dumps(_manifest(m,claims,70)))
     m.validate_execution_manifest(path)
     assert 'execution_manifest_entries=70' in capsys.readouterr().out
 
@@ -56,9 +66,26 @@ def test_execution_manifest_rejects_placeholder_sources(tmp_path):
     with pytest.raises(SystemExit,match='placeholder source_url forbidden'):
         m.validate_execution_manifest(path)
 
-def test_execution_manifest_rejects_topic_url_drift(tmp_path):
+def test_execution_manifest_rejects_unverified_discovery(tmp_path):
+    m=mod(); claims=[c for c in m.make_claims(m.domains()) if c['domain_code']=='DOM001']
+    payload=_manifest(m,claims,70)
+    del payload['entries'][0]['selection_provenance']['discovery_sha256']
+    path=tmp_path/'manifest.json'; path.write_text(json.dumps(payload))
+    with pytest.raises(SystemExit,match='discovery_sha256 required'):
+        m.validate_execution_manifest(path)
+
+def test_execution_manifest_rejects_unjustified_multi_role_source(tmp_path):
+    m=mod(); claims=[c for c in m.make_claims(m.domains()) if c['domain_code']=='DOM001']
+    payload=_manifest(m,claims,7)
+    for entry in payload['entries']:
+        entry['selection_provenance'].pop('shared_source_justification')
+    path=tmp_path/'manifest.json'; path.write_text(json.dumps(payload))
+    with pytest.raises(SystemExit,match='shared URL across 10 source roles'):
+        m.validate_execution_manifest(path)
+
+def test_execution_manifest_accepts_multiple_frozen_urls_within_one_topic(tmp_path,capsys):
     m=mod(); claims=[c for c in m.make_claims(m.domains()) if c['domain_code']=='DOM001']
     payload=_manifest(m,claims,7); payload['entries'][1]['source_url']='https://official.test/drift'
     path=tmp_path/'manifest.json'; path.write_text(json.dumps(payload))
-    with pytest.raises(SystemExit,match='one frozen URL'):
-        m.validate_execution_manifest(path)
+    m.validate_execution_manifest(path)
+    assert 'execution_manifest_entries=70' in capsys.readouterr().out

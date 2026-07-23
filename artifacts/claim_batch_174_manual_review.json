@@ -1,15 +1,13 @@
 {
   "issue_number": 174,
-  "protocol_version": "CB7K-ISSUE-174-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-174-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "source_manifest_sha256": "2f54c65068805ee32943831fd61f557f923fe9cc611c07812685054d235e412d",
   "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
   "raw_payload_committed": false,
-  "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
+  "review_method": "complete topic-specific textual gate facets with verbatim locators; numerator-denominator, method-version, and reproducibility additionally require an independent execution artifact",
   "result_counts": {
-    "INSUFFICIENT_COVERAGE": 102,
-    "PASSED_UNDER_PROTOCOL": 18,
-    "BLOCKED_SOURCE": 60,
-    "SOURCE_DRIFT": 30
+    "INSUFFICIENT_COVERAGE": 150,
+    "BLOCKED_SOURCE": 60
   },
   "cards": [
     {
@@ -37,8 +35,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Healthy Habits: Child Development | Child Development | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063; selected=https://www.cdc.gov/child-development/about/index.html; final=https://www.cdc.gov/child-development/about/index.html",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/about/index.html",
       "http_status": 200,
       "source_sha256": "c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063"
@@ -69,7 +73,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Healthy Habits: Child Development | Child Development | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/about/index.html",
       "http_status": 200,
       "source_sha256": "c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063"
@@ -101,6 +114,14 @@
       "raw_payload_committed": false,
       "locator": "Healthy Habits: Child Development | Child Development | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/about/index.html",
       "http_status": 200,
       "source_sha256": "c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063"
@@ -121,7 +142,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.cdc.gov/child-development/about/index.html",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -130,8 +151,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Learn more: Short Sleep Duration Among Infants, Children, and Adolescents Aged 4 Months–17 Years — United States, 2016–2018 Developmental milestones Skills such as taking a first step, smiling for the first time, and waving \"bye-bye\" are called developmental milestones.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Healthy Habits: Child Development | Child Development | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/about/index.html",
       "http_status": 200,
       "source_sha256": "c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063"
@@ -162,7 +188,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Healthy Habits: Child Development | Child Development | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/about/index.html",
       "http_status": 200,
       "source_sha256": "c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063"
@@ -194,6 +229,14 @@
       "raw_payload_committed": false,
       "locator": "Healthy Habits: Child Development | Child Development | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/about/index.html",
       "http_status": 200,
       "source_sha256": "c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063"
@@ -224,7 +267,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Healthy Habits: Child Development | Child Development | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/about/index.html",
       "http_status": 200,
       "source_sha256": "c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063"
@@ -256,6 +305,12 @@
       "raw_payload_committed": false,
       "locator": "Healthy Habits: Child Development | Child Development | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/about/index.html",
       "http_status": 200,
       "source_sha256": "c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063"
@@ -287,6 +342,12 @@
       "raw_payload_committed": false,
       "locator": "Healthy Habits: Child Development | Child Development | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/about/index.html",
       "http_status": 200,
       "source_sha256": "c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063"
@@ -318,6 +379,12 @@
       "raw_payload_committed": false,
       "locator": "Healthy Habits: Child Development | Child Development | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/about/index.html",
       "http_status": 200,
       "source_sha256": "c836392081b0a2935debe455c247b2703ab80ef294ab2fc96dacce5a6df0d063"
@@ -347,8 +414,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Child Development Data and Statistics | Child Development | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 d754835f4d82f9b20392de43bc87e91047e9adaa2991d4fb6c4f882fa59eef35; selected=https://www.cdc.gov/child-development/data-research/index.html; final=https://www.cdc.gov/child-development/data-research/index.html",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/index.html",
       "http_status": 200,
       "source_sha256": "d754835f4d82f9b20392de43bc87e91047e9adaa2991d4fb6c4f882fa59eef35"
@@ -379,7 +452,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Child Development Data and Statistics | Child Development | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/index.html",
       "http_status": 200,
       "source_sha256": "d754835f4d82f9b20392de43bc87e91047e9adaa2991d4fb6c4f882fa59eef35"
@@ -411,6 +494,15 @@
       "raw_payload_committed": false,
       "locator": "Child Development Data and Statistics | Child Development | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/index.html",
       "http_status": 200,
       "source_sha256": "d754835f4d82f9b20392de43bc87e91047e9adaa2991d4fb6c4f882fa59eef35"
@@ -442,6 +534,12 @@
       "raw_payload_committed": false,
       "locator": "Child Development Data and Statistics | Child Development | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/index.html",
       "http_status": 200,
       "source_sha256": "d754835f4d82f9b20392de43bc87e91047e9adaa2991d4fb6c4f882fa59eef35"
@@ -472,7 +570,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Child Development Data and Statistics | Child Development | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/index.html",
       "http_status": 200,
       "source_sha256": "d754835f4d82f9b20392de43bc87e91047e9adaa2991d4fb6c4f882fa59eef35"
@@ -504,6 +611,15 @@
       "raw_payload_committed": false,
       "locator": "Child Development Data and Statistics | Child Development | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/index.html",
       "http_status": 200,
       "source_sha256": "d754835f4d82f9b20392de43bc87e91047e9adaa2991d4fb6c4f882fa59eef35"
@@ -534,7 +650,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Child Development Data and Statistics | Child Development | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/index.html",
       "http_status": 200,
       "source_sha256": "d754835f4d82f9b20392de43bc87e91047e9adaa2991d4fb6c4f882fa59eef35"
@@ -566,6 +688,12 @@
       "raw_payload_committed": false,
       "locator": "Child Development Data and Statistics | Child Development | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/index.html",
       "http_status": 200,
       "source_sha256": "d754835f4d82f9b20392de43bc87e91047e9adaa2991d4fb6c4f882fa59eef35"
@@ -597,6 +725,12 @@
       "raw_payload_committed": false,
       "locator": "Child Development Data and Statistics | Child Development | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/index.html",
       "http_status": 200,
       "source_sha256": "d754835f4d82f9b20392de43bc87e91047e9adaa2991d4fb6c4f882fa59eef35"
@@ -628,6 +762,12 @@
       "raw_payload_committed": false,
       "locator": "Child Development Data and Statistics | Child Development | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/index.html",
       "http_status": 200,
       "source_sha256": "d754835f4d82f9b20392de43bc87e91047e9adaa2991d4fb6c4f882fa59eef35"
@@ -659,6 +799,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -690,6 +835,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -721,6 +876,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -752,6 +916,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -783,6 +953,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -814,6 +993,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -845,6 +1033,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -876,6 +1070,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -907,6 +1107,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -938,6 +1144,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/child-development/data-research/early-childhood.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -967,8 +1179,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Child health",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 a6a1e15dc1e586366cbc7a74223b36a01b714fae4002979c8809477971865088; selected=https://www.who.int/health-topics/child-health; final=https://www.who.int/health-topics/child-health",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/child-health",
       "http_status": 200,
       "source_sha256": "a6a1e15dc1e586366cbc7a74223b36a01b714fae4002979c8809477971865088"
@@ -999,7 +1217,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Child health",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/child-health",
       "http_status": 200,
       "source_sha256": "a6a1e15dc1e586366cbc7a74223b36a01b714fae4002979c8809477971865088"
@@ -1020,7 +1247,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.who.int/health-topics/child-health",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1029,8 +1256,16 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "WHO advocates for health equity through universal health coverage (UHC) and the global availability of vaccines to prevent some of the deadliest childhood diseases.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Child health",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/child-health",
       "http_status": 200,
       "source_sha256": "a6a1e15dc1e586366cbc7a74223b36a01b714fae4002979c8809477971865088"
@@ -1051,7 +1286,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.who.int/health-topics/child-health",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1060,8 +1295,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Download Read More 7 May 2026 WHO consolidated guidelines for the management of common childhood illness: management of sickle-cell...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Child health",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/child-health",
       "http_status": 200,
       "source_sha256": "a6a1e15dc1e586366cbc7a74223b36a01b714fae4002979c8809477971865088"
@@ -1092,7 +1332,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Child health",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/child-health",
       "http_status": 200,
       "source_sha256": "a6a1e15dc1e586366cbc7a74223b36a01b714fae4002979c8809477971865088"
@@ -1124,6 +1373,14 @@
       "raw_payload_committed": false,
       "locator": "Child health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/child-health",
       "http_status": 200,
       "source_sha256": "a6a1e15dc1e586366cbc7a74223b36a01b714fae4002979c8809477971865088"
@@ -1144,7 +1401,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.who.int/health-topics/child-health",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1153,8 +1410,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Download Read More 7 May 2026 WHO consolidated guidelines for the management of common childhood illness: management of sickle-cell...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Child health",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/child-health",
       "http_status": 200,
       "source_sha256": "a6a1e15dc1e586366cbc7a74223b36a01b714fae4002979c8809477971865088"
@@ -1175,7 +1438,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.who.int/health-topics/child-health",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1184,8 +1447,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "It has developed and promotes an integrated approach to managing childhood illness that considers all aspects of a child’s health, and a continuum of care throughout the early years to safeguard their developmental outcomes, including the reduction of risk factors for diseases that can arise later in life.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Child health",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/child-health",
       "http_status": 200,
       "source_sha256": "a6a1e15dc1e586366cbc7a74223b36a01b714fae4002979c8809477971865088"
@@ -1217,6 +1485,12 @@
       "raw_payload_committed": false,
       "locator": "Child health",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/child-health",
       "http_status": 200,
       "source_sha256": "a6a1e15dc1e586366cbc7a74223b36a01b714fae4002979c8809477971865088"
@@ -1237,7 +1511,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.who.int/health-topics/child-health",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1246,8 +1520,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "It has developed and promotes an integrated approach to managing childhood illness that considers all aspects of a child’s health, and a continuum of care throughout the early years to safeguard their developmental outcomes, including the reduction of risk factors for diseases that can arise later in life.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Child health",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/child-health",
       "http_status": 200,
       "source_sha256": "a6a1e15dc1e586366cbc7a74223b36a01b714fae4002979c8809477971865088"
@@ -1279,9 +1558,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.unicef.org/reports/state-worlds-children",
       "http_status": 403,
-      "source_sha256": "16d379947a3985248a538a9c870aaf7739dd5caa3eeed33a3a8761c95d333d02"
+      "source_sha256": "0b1eb4ffe6020b88987a4907d66ece4792b20c6c260588fa71800dbe55b0b55c"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1310,9 +1594,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.unicef.org/reports/state-worlds-children",
       "http_status": 403,
-      "source_sha256": "16d379947a3985248a538a9c870aaf7739dd5caa3eeed33a3a8761c95d333d02"
+      "source_sha256": "0b1eb4ffe6020b88987a4907d66ece4792b20c6c260588fa71800dbe55b0b55c"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1341,9 +1635,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.unicef.org/reports/state-worlds-children",
       "http_status": 403,
-      "source_sha256": "16d379947a3985248a538a9c870aaf7739dd5caa3eeed33a3a8761c95d333d02"
+      "source_sha256": "0b1eb4ffe6020b88987a4907d66ece4792b20c6c260588fa71800dbe55b0b55c"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1372,9 +1675,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.unicef.org/reports/state-worlds-children",
       "http_status": 403,
-      "source_sha256": "16d379947a3985248a538a9c870aaf7739dd5caa3eeed33a3a8761c95d333d02"
+      "source_sha256": "0b1eb4ffe6020b88987a4907d66ece4792b20c6c260588fa71800dbe55b0b55c"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1403,9 +1712,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.unicef.org/reports/state-worlds-children",
       "http_status": 403,
-      "source_sha256": "16d379947a3985248a538a9c870aaf7739dd5caa3eeed33a3a8761c95d333d02"
+      "source_sha256": "0b1eb4ffe6020b88987a4907d66ece4792b20c6c260588fa71800dbe55b0b55c"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1434,9 +1752,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.unicef.org/reports/state-worlds-children",
       "http_status": 403,
-      "source_sha256": "16d379947a3985248a538a9c870aaf7739dd5caa3eeed33a3a8761c95d333d02"
+      "source_sha256": "0b1eb4ffe6020b88987a4907d66ece4792b20c6c260588fa71800dbe55b0b55c"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1465,9 +1792,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.unicef.org/reports/state-worlds-children",
       "http_status": 403,
-      "source_sha256": "16d379947a3985248a538a9c870aaf7739dd5caa3eeed33a3a8761c95d333d02"
+      "source_sha256": "0b1eb4ffe6020b88987a4907d66ece4792b20c6c260588fa71800dbe55b0b55c"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1496,9 +1829,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.unicef.org/reports/state-worlds-children",
       "http_status": 403,
-      "source_sha256": "16d379947a3985248a538a9c870aaf7739dd5caa3eeed33a3a8761c95d333d02"
+      "source_sha256": "0b1eb4ffe6020b88987a4907d66ece4792b20c6c260588fa71800dbe55b0b55c"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1527,9 +1866,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.unicef.org/reports/state-worlds-children",
       "http_status": 403,
-      "source_sha256": "16d379947a3985248a538a9c870aaf7739dd5caa3eeed33a3a8761c95d333d02"
+      "source_sha256": "0b1eb4ffe6020b88987a4907d66ece4792b20c6c260588fa71800dbe55b0b55c"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1558,9 +1903,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.unicef.org/reports/state-worlds-children",
       "http_status": 403,
-      "source_sha256": "16d379947a3985248a538a9c870aaf7739dd5caa3eeed33a3a8761c95d333d02"
+      "source_sha256": "0b1eb4ffe6020b88987a4907d66ece4792b20c6c260588fa71800dbe55b0b55c"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1587,8 +1938,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "About Violence Prevention | Violence Prevention | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 24073f4320fafb06731b922a29d1b0998d592bf351fb257ccf3076303aa35f10; selected=https://www.cdc.gov/violence-prevention/about/index.html; final=https://www.cdc.gov/violence-prevention/about/index.html",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/violence-prevention/about/index.html",
       "http_status": 200,
       "source_sha256": "24073f4320fafb06731b922a29d1b0998d592bf351fb257ccf3076303aa35f10"
@@ -1619,7 +1976,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "About Violence Prevention | Violence Prevention | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/violence-prevention/about/index.html",
       "http_status": 200,
       "source_sha256": "24073f4320fafb06731b922a29d1b0998d592bf351fb257ccf3076303aa35f10"
@@ -1651,6 +2018,15 @@
       "raw_payload_committed": false,
       "locator": "About Violence Prevention | Violence Prevention | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/violence-prevention/about/index.html",
       "http_status": 200,
       "source_sha256": "24073f4320fafb06731b922a29d1b0998d592bf351fb257ccf3076303aa35f10"
@@ -1682,6 +2058,12 @@
       "raw_payload_committed": false,
       "locator": "About Violence Prevention | Violence Prevention | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/violence-prevention/about/index.html",
       "http_status": 200,
       "source_sha256": "24073f4320fafb06731b922a29d1b0998d592bf351fb257ccf3076303aa35f10"
@@ -1712,7 +2094,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "About Violence Prevention | Violence Prevention | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/violence-prevention/about/index.html",
       "http_status": 200,
       "source_sha256": "24073f4320fafb06731b922a29d1b0998d592bf351fb257ccf3076303aa35f10"
@@ -1744,6 +2135,15 @@
       "raw_payload_committed": false,
       "locator": "About Violence Prevention | Violence Prevention | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/violence-prevention/about/index.html",
       "http_status": 200,
       "source_sha256": "24073f4320fafb06731b922a29d1b0998d592bf351fb257ccf3076303aa35f10"
@@ -1774,7 +2174,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "About Violence Prevention | Violence Prevention | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/violence-prevention/about/index.html",
       "http_status": 200,
       "source_sha256": "24073f4320fafb06731b922a29d1b0998d592bf351fb257ccf3076303aa35f10"
@@ -1806,6 +2212,12 @@
       "raw_payload_committed": false,
       "locator": "About Violence Prevention | Violence Prevention | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/violence-prevention/about/index.html",
       "http_status": 200,
       "source_sha256": "24073f4320fafb06731b922a29d1b0998d592bf351fb257ccf3076303aa35f10"
@@ -1837,6 +2249,12 @@
       "raw_payload_committed": false,
       "locator": "About Violence Prevention | Violence Prevention | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/violence-prevention/about/index.html",
       "http_status": 200,
       "source_sha256": "24073f4320fafb06731b922a29d1b0998d592bf351fb257ccf3076303aa35f10"
@@ -1868,6 +2286,12 @@
       "raw_payload_committed": false,
       "locator": "About Violence Prevention | Violence Prevention | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/violence-prevention/about/index.html",
       "http_status": 200,
       "source_sha256": "24073f4320fafb06731b922a29d1b0998d592bf351fb257ccf3076303aa35f10"
@@ -1888,7 +2312,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1897,8 +2321,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/childrensmentalhealth/data.html canonical=https://www.cdc.gov/children-mental-health/about/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 765897e8d4d0037fc451da864aee5e016f80a13e99aafdbcb4f085a25b6610c5; selected=https://www.cdc.gov/childrensmentalhealth/data.html; final=https://www.cdc.gov/children-mental-health/about/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/children-mental-health/about/",
       "http_status": 200,
       "source_sha256": "765897e8d4d0037fc451da864aee5e016f80a13e99aafdbcb4f085a25b6610c5"
@@ -1919,7 +2349,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1928,8 +2358,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/childrensmentalhealth/data.html canonical=https://www.cdc.gov/children-mental-health/about/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "About Children's Mental Health | Children’s Mental Health | CDC",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/children-mental-health/about/",
       "http_status": 200,
       "source_sha256": "765897e8d4d0037fc451da864aee5e016f80a13e99aafdbcb4f085a25b6610c5"
@@ -1950,7 +2390,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1959,8 +2399,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/childrensmentalhealth/data.html canonical=https://www.cdc.gov/children-mental-health/about/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "About Children's Mental Health | Children’s Mental Health | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/children-mental-health/about/",
       "http_status": 200,
       "source_sha256": "765897e8d4d0037fc451da864aee5e016f80a13e99aafdbcb4f085a25b6610c5"
@@ -1981,7 +2430,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1990,8 +2439,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/childrensmentalhealth/data.html canonical=https://www.cdc.gov/children-mental-health/about/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "About Children's Mental Health | Children’s Mental Health | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/children-mental-health/about/",
       "http_status": 200,
       "source_sha256": "765897e8d4d0037fc451da864aee5e016f80a13e99aafdbcb4f085a25b6610c5"
@@ -2012,7 +2467,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2021,8 +2476,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/childrensmentalhealth/data.html canonical=https://www.cdc.gov/children-mental-health/about/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "About Children's Mental Health | Children’s Mental Health | CDC",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/children-mental-health/about/",
       "http_status": 200,
       "source_sha256": "765897e8d4d0037fc451da864aee5e016f80a13e99aafdbcb4f085a25b6610c5"
@@ -2043,7 +2507,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2052,8 +2516,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/childrensmentalhealth/data.html canonical=https://www.cdc.gov/children-mental-health/about/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "About Children's Mental Health | Children’s Mental Health | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/children-mental-health/about/",
       "http_status": 200,
       "source_sha256": "765897e8d4d0037fc451da864aee5e016f80a13e99aafdbcb4f085a25b6610c5"
@@ -2074,7 +2547,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2083,8 +2556,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/childrensmentalhealth/data.html canonical=https://www.cdc.gov/children-mental-health/about/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "About Children's Mental Health | Children’s Mental Health | CDC",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/children-mental-health/about/",
       "http_status": 200,
       "source_sha256": "765897e8d4d0037fc451da864aee5e016f80a13e99aafdbcb4f085a25b6610c5"
@@ -2105,7 +2584,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2114,8 +2593,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/childrensmentalhealth/data.html canonical=https://www.cdc.gov/children-mental-health/about/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "About Children's Mental Health | Children’s Mental Health | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/children-mental-health/about/",
       "http_status": 200,
       "source_sha256": "765897e8d4d0037fc451da864aee5e016f80a13e99aafdbcb4f085a25b6610c5"
@@ -2136,7 +2621,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2145,8 +2630,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/childrensmentalhealth/data.html canonical=https://www.cdc.gov/children-mental-health/about/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "About Children's Mental Health | Children’s Mental Health | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/children-mental-health/about/",
       "http_status": 200,
       "source_sha256": "765897e8d4d0037fc451da864aee5e016f80a13e99aafdbcb4f085a25b6610c5"
@@ -2167,7 +2658,7 @@
       "suggested_source_boundary": "official health surveys, clinical records, surveillance reports and programme evaluations",
       "source_url": "https://www.cdc.gov/childrensmentalhealth/data.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2176,8 +2667,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/childrensmentalhealth/data.html canonical=https://www.cdc.gov/children-mental-health/about/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "About Children's Mental Health | Children’s Mental Health | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/children-mental-health/about/",
       "http_status": 200,
       "source_sha256": "765897e8d4d0037fc451da864aee5e016f80a13e99aafdbcb4f085a25b6610c5"
@@ -2198,7 +2695,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2207,8 +2704,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/nutrition/data-statistics/index.html canonical=https://www.cdc.gov/nutrition/php/data-research/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 54549dacc1d755b90f07e36b8cdb2499ed4173ea91ebe2c3a73a1e328e741155; selected=https://www.cdc.gov/nutrition/data-statistics/index.html; final=https://www.cdc.gov/nutrition/php/data-research/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/nutrition/php/data-research/",
       "http_status": 200,
       "source_sha256": "54549dacc1d755b90f07e36b8cdb2499ed4173ea91ebe2c3a73a1e328e741155"
@@ -2229,7 +2732,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2238,8 +2741,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/nutrition/data-statistics/index.html canonical=https://www.cdc.gov/nutrition/php/data-research/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Nutrition Data and Statistics | Nutrition | CDC",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/nutrition/php/data-research/",
       "http_status": 200,
       "source_sha256": "54549dacc1d755b90f07e36b8cdb2499ed4173ea91ebe2c3a73a1e328e741155"
@@ -2260,7 +2773,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2269,8 +2782,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/nutrition/data-statistics/index.html canonical=https://www.cdc.gov/nutrition/php/data-research/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Nutrition Data and Statistics | Nutrition | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/nutrition/php/data-research/",
       "http_status": 200,
       "source_sha256": "54549dacc1d755b90f07e36b8cdb2499ed4173ea91ebe2c3a73a1e328e741155"
@@ -2291,7 +2813,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2300,8 +2822,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/nutrition/data-statistics/index.html canonical=https://www.cdc.gov/nutrition/php/data-research/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Nutrition Data and Statistics | Nutrition | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/nutrition/php/data-research/",
       "http_status": 200,
       "source_sha256": "54549dacc1d755b90f07e36b8cdb2499ed4173ea91ebe2c3a73a1e328e741155"
@@ -2322,7 +2850,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2331,8 +2859,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/nutrition/data-statistics/index.html canonical=https://www.cdc.gov/nutrition/php/data-research/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Nutrition Data and Statistics | Nutrition | CDC",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/nutrition/php/data-research/",
       "http_status": 200,
       "source_sha256": "54549dacc1d755b90f07e36b8cdb2499ed4173ea91ebe2c3a73a1e328e741155"
@@ -2353,7 +2890,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2362,8 +2899,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/nutrition/data-statistics/index.html canonical=https://www.cdc.gov/nutrition/php/data-research/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Nutrition Data and Statistics | Nutrition | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/nutrition/php/data-research/",
       "http_status": 200,
       "source_sha256": "54549dacc1d755b90f07e36b8cdb2499ed4173ea91ebe2c3a73a1e328e741155"
@@ -2384,7 +2930,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2393,8 +2939,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/nutrition/data-statistics/index.html canonical=https://www.cdc.gov/nutrition/php/data-research/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Nutrition Data and Statistics | Nutrition | CDC",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/nutrition/php/data-research/",
       "http_status": 200,
       "source_sha256": "54549dacc1d755b90f07e36b8cdb2499ed4173ea91ebe2c3a73a1e328e741155"
@@ -2415,7 +2967,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2424,8 +2976,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/nutrition/data-statistics/index.html canonical=https://www.cdc.gov/nutrition/php/data-research/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Nutrition Data and Statistics | Nutrition | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/nutrition/php/data-research/",
       "http_status": 200,
       "source_sha256": "54549dacc1d755b90f07e36b8cdb2499ed4173ea91ebe2c3a73a1e328e741155"
@@ -2446,7 +3004,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2455,8 +3013,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/nutrition/data-statistics/index.html canonical=https://www.cdc.gov/nutrition/php/data-research/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Nutrition Data and Statistics | Nutrition | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/nutrition/php/data-research/",
       "http_status": 200,
       "source_sha256": "54549dacc1d755b90f07e36b8cdb2499ed4173ea91ebe2c3a73a1e328e741155"
@@ -2477,7 +3041,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.cdc.gov/nutrition/data-statistics/index.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2486,8 +3050,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cdc.gov/nutrition/data-statistics/index.html canonical=https://www.cdc.gov/nutrition/php/data-research/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Nutrition Data and Statistics | Nutrition | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/nutrition/php/data-research/",
       "http_status": 200,
       "source_sha256": "54549dacc1d755b90f07e36b8cdb2499ed4173ea91ebe2c3a73a1e328e741155"
@@ -2517,8 +3087,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Malnutrition",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 c06cc566e603350e49bef7e5610eab20fe7de7e9c0c9f898c4a09fb046694175; selected=https://www.who.int/health-topics/malnutrition; final=https://www.who.int/health-topics/malnutrition",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/malnutrition",
       "http_status": 200,
       "source_sha256": "c06cc566e603350e49bef7e5610eab20fe7de7e9c0c9f898c4a09fb046694175"
@@ -2549,7 +3125,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Malnutrition",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/malnutrition",
       "http_status": 200,
       "source_sha256": "c06cc566e603350e49bef7e5610eab20fe7de7e9c0c9f898c4a09fb046694175"
@@ -2581,6 +3167,15 @@
       "raw_payload_committed": false,
       "locator": "Malnutrition",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/malnutrition",
       "http_status": 200,
       "source_sha256": "c06cc566e603350e49bef7e5610eab20fe7de7e9c0c9f898c4a09fb046694175"
@@ -2612,6 +3207,12 @@
       "raw_payload_committed": false,
       "locator": "Malnutrition",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/malnutrition",
       "http_status": 200,
       "source_sha256": "c06cc566e603350e49bef7e5610eab20fe7de7e9c0c9f898c4a09fb046694175"
@@ -2642,7 +3243,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Malnutrition",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/malnutrition",
       "http_status": 200,
       "source_sha256": "c06cc566e603350e49bef7e5610eab20fe7de7e9c0c9f898c4a09fb046694175"
@@ -2674,6 +3284,15 @@
       "raw_payload_committed": false,
       "locator": "Malnutrition",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/malnutrition",
       "http_status": 200,
       "source_sha256": "c06cc566e603350e49bef7e5610eab20fe7de7e9c0c9f898c4a09fb046694175"
@@ -2704,7 +3323,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Malnutrition",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/malnutrition",
       "http_status": 200,
       "source_sha256": "c06cc566e603350e49bef7e5610eab20fe7de7e9c0c9f898c4a09fb046694175"
@@ -2736,6 +3361,12 @@
       "raw_payload_committed": false,
       "locator": "Malnutrition",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/malnutrition",
       "http_status": 200,
       "source_sha256": "c06cc566e603350e49bef7e5610eab20fe7de7e9c0c9f898c4a09fb046694175"
@@ -2767,6 +3398,12 @@
       "raw_payload_committed": false,
       "locator": "Malnutrition",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/malnutrition",
       "http_status": 200,
       "source_sha256": "c06cc566e603350e49bef7e5610eab20fe7de7e9c0c9f898c4a09fb046694175"
@@ -2798,6 +3435,12 @@
       "raw_payload_committed": false,
       "locator": "Malnutrition",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/malnutrition",
       "http_status": 200,
       "source_sha256": "c06cc566e603350e49bef7e5610eab20fe7de7e9c0c9f898c4a09fb046694175"
@@ -2818,7 +3461,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2827,8 +3470,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s canonical=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 27a3c1bd6acb88eb9d876d90a20b641de7c5479022142850d806fecf6be096ac; selected=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s; final=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
       "http_status": 200,
       "source_sha256": "27a3c1bd6acb88eb9d876d90a20b641de7c5479022142850d806fecf6be096ac"
@@ -2849,7 +3498,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2858,8 +3507,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s canonical=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Food Security in the U.S. | Economic Research Service",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
       "http_status": 200,
       "source_sha256": "27a3c1bd6acb88eb9d876d90a20b641de7c5479022142850d806fecf6be096ac"
@@ -2880,7 +3539,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2889,8 +3548,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s canonical=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Food Security in the U.S. | Economic Research Service",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
       "http_status": 200,
       "source_sha256": "27a3c1bd6acb88eb9d876d90a20b641de7c5479022142850d806fecf6be096ac"
@@ -2911,7 +3579,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2920,8 +3588,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s canonical=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Food Security in the U.S. | Economic Research Service",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
       "http_status": 200,
       "source_sha256": "27a3c1bd6acb88eb9d876d90a20b641de7c5479022142850d806fecf6be096ac"
@@ -2942,7 +3616,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2951,8 +3625,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s canonical=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Food Security in the U.S. | Economic Research Service",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
       "http_status": 200,
       "source_sha256": "27a3c1bd6acb88eb9d876d90a20b641de7c5479022142850d806fecf6be096ac"
@@ -2973,7 +3656,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2982,8 +3665,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s canonical=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Food Security in the U.S. | Economic Research Service",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
       "http_status": 200,
       "source_sha256": "27a3c1bd6acb88eb9d876d90a20b641de7c5479022142850d806fecf6be096ac"
@@ -3004,7 +3696,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3013,8 +3705,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s canonical=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Food Security in the U.S. | Economic Research Service",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
       "http_status": 200,
       "source_sha256": "27a3c1bd6acb88eb9d876d90a20b641de7c5479022142850d806fecf6be096ac"
@@ -3035,7 +3733,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3044,8 +3742,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s canonical=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Food Security in the U.S. | Economic Research Service",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
       "http_status": 200,
       "source_sha256": "27a3c1bd6acb88eb9d876d90a20b641de7c5479022142850d806fecf6be096ac"
@@ -3066,7 +3770,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3075,8 +3779,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s canonical=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Food Security in the U.S. | Economic Research Service",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
       "http_status": 200,
       "source_sha256": "27a3c1bd6acb88eb9d876d90a20b641de7c5479022142850d806fecf6be096ac"
@@ -3097,7 +3807,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3106,8 +3816,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s canonical=https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Food Security in the U.S. | Economic Research Service",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us",
       "http_status": 200,
       "source_sha256": "27a3c1bd6acb88eb9d876d90a20b641de7c5479022142850d806fecf6be096ac"
@@ -3139,6 +3855,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -3170,6 +3891,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -3201,6 +3932,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -3232,6 +3972,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -3263,6 +4009,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -3294,6 +4049,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -3325,6 +4089,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -3356,6 +4126,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -3387,6 +4163,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -3418,6 +4200,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/healthy-weight-growth/children/index.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -3447,8 +4235,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Breastfeeding: Diet, Vitamins, and Minerals | Breastfeeding special circumstances | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 d49908c1c461b7f8cc46a4727bf57eeeead6bbc28eb2d632bc6ce88a63b2efc2; selected=https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html; final=https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
       "http_status": 200,
       "source_sha256": "d49908c1c461b7f8cc46a4727bf57eeeead6bbc28eb2d632bc6ce88a63b2efc2"
@@ -3479,7 +4273,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Breastfeeding: Diet, Vitamins, and Minerals | Breastfeeding special circumstances | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
       "http_status": 200,
       "source_sha256": "d49908c1c461b7f8cc46a4727bf57eeeead6bbc28eb2d632bc6ce88a63b2efc2"
@@ -3511,6 +4315,15 @@
       "raw_payload_committed": false,
       "locator": "Breastfeeding: Diet, Vitamins, and Minerals | Breastfeeding special circumstances | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
       "http_status": 200,
       "source_sha256": "d49908c1c461b7f8cc46a4727bf57eeeead6bbc28eb2d632bc6ce88a63b2efc2"
@@ -3542,6 +4355,12 @@
       "raw_payload_committed": false,
       "locator": "Breastfeeding: Diet, Vitamins, and Minerals | Breastfeeding special circumstances | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
       "http_status": 200,
       "source_sha256": "d49908c1c461b7f8cc46a4727bf57eeeead6bbc28eb2d632bc6ce88a63b2efc2"
@@ -3572,7 +4391,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Breastfeeding: Diet, Vitamins, and Minerals | Breastfeeding special circumstances | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
       "http_status": 200,
       "source_sha256": "d49908c1c461b7f8cc46a4727bf57eeeead6bbc28eb2d632bc6ce88a63b2efc2"
@@ -3604,6 +4432,15 @@
       "raw_payload_committed": false,
       "locator": "Breastfeeding: Diet, Vitamins, and Minerals | Breastfeeding special circumstances | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
       "http_status": 200,
       "source_sha256": "d49908c1c461b7f8cc46a4727bf57eeeead6bbc28eb2d632bc6ce88a63b2efc2"
@@ -3634,7 +4471,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Breastfeeding: Diet, Vitamins, and Minerals | Breastfeeding special circumstances | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
       "http_status": 200,
       "source_sha256": "d49908c1c461b7f8cc46a4727bf57eeeead6bbc28eb2d632bc6ce88a63b2efc2"
@@ -3666,6 +4509,12 @@
       "raw_payload_committed": false,
       "locator": "Breastfeeding: Diet, Vitamins, and Minerals | Breastfeeding special circumstances | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
       "http_status": 200,
       "source_sha256": "d49908c1c461b7f8cc46a4727bf57eeeead6bbc28eb2d632bc6ce88a63b2efc2"
@@ -3697,6 +4546,12 @@
       "raw_payload_committed": false,
       "locator": "Breastfeeding: Diet, Vitamins, and Minerals | Breastfeeding special circumstances | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
       "http_status": 200,
       "source_sha256": "d49908c1c461b7f8cc46a4727bf57eeeead6bbc28eb2d632bc6ce88a63b2efc2"
@@ -3728,6 +4583,12 @@
       "raw_payload_committed": false,
       "locator": "Breastfeeding: Diet, Vitamins, and Minerals | Breastfeeding special circumstances | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/index.html",
       "http_status": 200,
       "source_sha256": "d49908c1c461b7f8cc46a4727bf57eeeead6bbc28eb2d632bc6ce88a63b2efc2"
@@ -3759,9 +4620,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fns.usda.gov/wic",
       "http_status": 403,
-      "source_sha256": "42f12bfcc13c68ed3be64b0111f84459528031bc4fa88371507027ddc3cbfa4d"
+      "source_sha256": "742f432c7a4bdfbe3b9cdc5efbf1aa7d92a9c024fe7754e5487c2815ec39c631"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3790,9 +4656,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fns.usda.gov/wic",
       "http_status": 403,
-      "source_sha256": "42f12bfcc13c68ed3be64b0111f84459528031bc4fa88371507027ddc3cbfa4d"
+      "source_sha256": "742f432c7a4bdfbe3b9cdc5efbf1aa7d92a9c024fe7754e5487c2815ec39c631"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3821,9 +4697,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fns.usda.gov/wic",
       "http_status": 403,
-      "source_sha256": "42f12bfcc13c68ed3be64b0111f84459528031bc4fa88371507027ddc3cbfa4d"
+      "source_sha256": "742f432c7a4bdfbe3b9cdc5efbf1aa7d92a9c024fe7754e5487c2815ec39c631"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3852,9 +4737,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fns.usda.gov/wic",
       "http_status": 403,
-      "source_sha256": "42f12bfcc13c68ed3be64b0111f84459528031bc4fa88371507027ddc3cbfa4d"
+      "source_sha256": "742f432c7a4bdfbe3b9cdc5efbf1aa7d92a9c024fe7754e5487c2815ec39c631"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3883,9 +4774,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fns.usda.gov/wic",
       "http_status": 403,
-      "source_sha256": "42f12bfcc13c68ed3be64b0111f84459528031bc4fa88371507027ddc3cbfa4d"
+      "source_sha256": "742f432c7a4bdfbe3b9cdc5efbf1aa7d92a9c024fe7754e5487c2815ec39c631"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3914,9 +4814,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fns.usda.gov/wic",
       "http_status": 403,
-      "source_sha256": "42f12bfcc13c68ed3be64b0111f84459528031bc4fa88371507027ddc3cbfa4d"
+      "source_sha256": "742f432c7a4bdfbe3b9cdc5efbf1aa7d92a9c024fe7754e5487c2815ec39c631"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3945,9 +4854,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fns.usda.gov/wic",
       "http_status": 403,
-      "source_sha256": "42f12bfcc13c68ed3be64b0111f84459528031bc4fa88371507027ddc3cbfa4d"
+      "source_sha256": "742f432c7a4bdfbe3b9cdc5efbf1aa7d92a9c024fe7754e5487c2815ec39c631"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3976,9 +4891,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fns.usda.gov/wic",
       "http_status": 403,
-      "source_sha256": "42f12bfcc13c68ed3be64b0111f84459528031bc4fa88371507027ddc3cbfa4d"
+      "source_sha256": "742f432c7a4bdfbe3b9cdc5efbf1aa7d92a9c024fe7754e5487c2815ec39c631"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4007,9 +4928,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fns.usda.gov/wic",
       "http_status": 403,
-      "source_sha256": "42f12bfcc13c68ed3be64b0111f84459528031bc4fa88371507027ddc3cbfa4d"
+      "source_sha256": "742f432c7a4bdfbe3b9cdc5efbf1aa7d92a9c024fe7754e5487c2815ec39c631"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4038,9 +4965,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fns.usda.gov/wic",
       "http_status": 403,
-      "source_sha256": "42f12bfcc13c68ed3be64b0111f84459528031bc4fa88371507027ddc3cbfa4d"
+      "source_sha256": "742f432c7a4bdfbe3b9cdc5efbf1aa7d92a9c024fe7754e5487c2815ec39c631"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4058,7 +4991,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4067,8 +5000,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Download Read More Key achievements 11 March 2024 Department of Nutrition and Food Safety key achievements 2023 This brochure of our main 2023 achievements highlights the value of global health leadership in setting objectives, aligning partners, and driving change...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "SHA-256 99122c239b98921c8b152f735a356b134b61c3a42cc5f82417e912ae48038e01; selected=https://www.who.int/teams/nutrition-and-food-safety; final=https://www.who.int/teams/nutrition-and-food-safety",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "http_status": 200,
       "source_sha256": "99122c239b98921c8b152f735a356b134b61c3a42cc5f82417e912ae48038e01"
@@ -4099,7 +5038,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Nutrition and Food Safety",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "http_status": 200,
       "source_sha256": "99122c239b98921c8b152f735a356b134b61c3a42cc5f82417e912ae48038e01"
@@ -4131,6 +5079,14 @@
       "raw_payload_committed": false,
       "locator": "Nutrition and Food Safety",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "http_status": 200,
       "source_sha256": "99122c239b98921c8b152f735a356b134b61c3a42cc5f82417e912ae48038e01"
@@ -4151,7 +5107,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4160,8 +5116,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Download Read More Key achievements 11 March 2024 Department of Nutrition and Food Safety key achievements 2023 This brochure of our main 2023 achievements highlights the value of global health leadership in setting objectives, aligning partners, and driving change...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Nutrition and Food Safety",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "http_status": 200,
       "source_sha256": "99122c239b98921c8b152f735a356b134b61c3a42cc5f82417e912ae48038e01"
@@ -4192,7 +5153,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Nutrition and Food Safety",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "http_status": 200,
       "source_sha256": "99122c239b98921c8b152f735a356b134b61c3a42cc5f82417e912ae48038e01"
@@ -4224,6 +5193,14 @@
       "raw_payload_committed": false,
       "locator": "Nutrition and Food Safety",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "http_status": 200,
       "source_sha256": "99122c239b98921c8b152f735a356b134b61c3a42cc5f82417e912ae48038e01"
@@ -4244,7 +5221,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4253,8 +5230,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Download Read More Key achievements 11 March 2024 Department of Nutrition and Food Safety key achievements 2023 This brochure of our main 2023 achievements highlights the value of global health leadership in setting objectives, aligning partners, and driving change...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Nutrition and Food Safety",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "http_status": 200,
       "source_sha256": "99122c239b98921c8b152f735a356b134b61c3a42cc5f82417e912ae48038e01"
@@ -4275,7 +5258,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4284,8 +5267,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Download Read More 29 May 2026 Pesticide residues in food: report 2025: Joint FAO/WHO Meeting on Pesticide Residues This report presents the outcomes of the 2025 Joint FAO/WHO Meeting on Pesticide Residues (JMPR), including evaluations of pesticide residues in food,...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Nutrition and Food Safety",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "http_status": 200,
       "source_sha256": "99122c239b98921c8b152f735a356b134b61c3a42cc5f82417e912ae48038e01"
@@ -4306,7 +5294,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4315,8 +5303,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Download Read More Key achievements 11 March 2024 Department of Nutrition and Food Safety key achievements 2023 This brochure of our main 2023 achievements highlights the value of global health leadership in setting objectives, aligning partners, and driving change...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Nutrition and Food Safety",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "http_status": 200,
       "source_sha256": "99122c239b98921c8b152f735a356b134b61c3a42cc5f82417e912ae48038e01"
@@ -4337,7 +5330,7 @@
       "suggested_source_boundary": "dietary surveys, food composition data, intervention trials and official guidance",
       "source_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4346,8 +5339,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Download Read More 29 May 2026 Pesticide residues in food: report 2025: Joint FAO/WHO Meeting on Pesticide Residues This report presents the outcomes of the 2025 Joint FAO/WHO Meeting on Pesticide Residues (JMPR), including evaluations of pesticide residues in food,...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Nutrition and Food Safety",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/teams/nutrition-and-food-safety",
       "http_status": 200,
       "source_sha256": "99122c239b98921c8b152f735a356b134b61c3a42cc5f82417e912ae48038e01"
@@ -4377,8 +5375,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Food Safety Basics | Food Safety | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 b648eae37e71c5ac3155e78042defaf501cb6477a01971f60e77ec28e93d555b; selected=https://www.cdc.gov/food-safety/about/index.html; final=https://www.cdc.gov/food-safety/about/index.html",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/about/index.html",
       "http_status": 200,
       "source_sha256": "b648eae37e71c5ac3155e78042defaf501cb6477a01971f60e77ec28e93d555b"
@@ -4409,7 +5413,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Food Safety Basics | Food Safety | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/about/index.html",
       "http_status": 200,
       "source_sha256": "b648eae37e71c5ac3155e78042defaf501cb6477a01971f60e77ec28e93d555b"
@@ -4441,6 +5455,15 @@
       "raw_payload_committed": false,
       "locator": "Food Safety Basics | Food Safety | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/about/index.html",
       "http_status": 200,
       "source_sha256": "b648eae37e71c5ac3155e78042defaf501cb6477a01971f60e77ec28e93d555b"
@@ -4472,6 +5495,11 @@
       "raw_payload_committed": false,
       "locator": "Food Safety Basics | Food Safety | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/about/index.html",
       "http_status": 200,
       "source_sha256": "b648eae37e71c5ac3155e78042defaf501cb6477a01971f60e77ec28e93d555b"
@@ -4502,7 +5530,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Food Safety Basics | Food Safety | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/about/index.html",
       "http_status": 200,
       "source_sha256": "b648eae37e71c5ac3155e78042defaf501cb6477a01971f60e77ec28e93d555b"
@@ -4534,6 +5571,14 @@
       "raw_payload_committed": false,
       "locator": "Food Safety Basics | Food Safety | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/about/index.html",
       "http_status": 200,
       "source_sha256": "b648eae37e71c5ac3155e78042defaf501cb6477a01971f60e77ec28e93d555b"
@@ -4564,7 +5609,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Food Safety Basics | Food Safety | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/about/index.html",
       "http_status": 200,
       "source_sha256": "b648eae37e71c5ac3155e78042defaf501cb6477a01971f60e77ec28e93d555b"
@@ -4585,7 +5636,7 @@
       "suggested_source_boundary": "inspection records, recall notices, laboratory results and outbreak investigations",
       "source_url": "https://www.cdc.gov/food-safety/about/index.html",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4594,8 +5645,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Separating riskier foods, like raw meat and eggs, from other foods to avoid cross-contamination.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Food Safety Basics | Food Safety | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/about/index.html",
       "http_status": 200,
       "source_sha256": "b648eae37e71c5ac3155e78042defaf501cb6477a01971f60e77ec28e93d555b"
@@ -4627,6 +5683,12 @@
       "raw_payload_committed": false,
       "locator": "Food Safety Basics | Food Safety | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/about/index.html",
       "http_status": 200,
       "source_sha256": "b648eae37e71c5ac3155e78042defaf501cb6477a01971f60e77ec28e93d555b"
@@ -4647,7 +5709,7 @@
       "suggested_source_boundary": "inspection records, recall notices, laboratory results and outbreak investigations",
       "source_url": "https://www.cdc.gov/food-safety/about/index.html",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4656,8 +5718,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "You may swallow these germs when: Eating foods that aren't cooked properly Germs from food spread to your hands, surfaces, or other foods (called cross-contamination) Food is not refrigerated properly after cooking There are many different types of foodborne germs that can cause illness, hospitalization, and even death.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Food Safety Basics | Food Safety | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/about/index.html",
       "http_status": 200,
       "source_sha256": "b648eae37e71c5ac3155e78042defaf501cb6477a01971f60e77ec28e93d555b"
@@ -4689,6 +5756,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4720,6 +5792,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4751,6 +5833,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4782,6 +5873,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4813,6 +5910,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4844,6 +5950,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4875,6 +5990,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4906,6 +6027,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4937,6 +6064,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4968,6 +6101,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/food-safety/communication/food-safety-at-home.html",
       "http_status": 404,
       "source_sha256": "a6b66cdebef567c41fa89c8ee3a601dac20060d81d83738b60efcd680b7ecb93"
@@ -4997,8 +6136,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "What You Need to Know about Foodborne Illnesses | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 fb632e85f9f2e0fec149db03899e3328a6112b3d73654e9fa1b6daaf7476c586; selected=https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses; final=https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "http_status": 200,
       "source_sha256": "fb632e85f9f2e0fec149db03899e3328a6112b3d73654e9fa1b6daaf7476c586"
@@ -5019,7 +6164,7 @@
       "suggested_source_boundary": "inspection records, recall notices, laboratory results and outbreak investigations",
       "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5028,8 +6173,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Related Content Causes of Foodborne Illness: Bad Bug Book (Second Edition) People at Risk Content current as of: 02/17/2022 Regulated Product(s) Food & Beverages Feedback FDA Archive About FDA Accessibility Visitor Information Website Policies / Privacy No FEAR Act Vulnerability Disclosure Policy FOIA HHS.gov USA.gov Contact FDA Follow FDA on Facebook Follow FDA on X Follow FDA on Instagram Follow FDA on LinkedIn View FDA videos on YouTube Subscribe to FDA RSS feeds Contact Number 1-888-INFO-FDA (1-888-463-6332) Back to Top",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "What You Need to Know about Foodborne Illnesses | FDA",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "http_status": 200,
       "source_sha256": "fb632e85f9f2e0fec149db03899e3328a6112b3d73654e9fa1b6daaf7476c586"
@@ -5061,6 +6216,15 @@
       "raw_payload_committed": false,
       "locator": "What You Need to Know about Foodborne Illnesses | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "http_status": 200,
       "source_sha256": "fb632e85f9f2e0fec149db03899e3328a6112b3d73654e9fa1b6daaf7476c586"
@@ -5081,7 +6245,7 @@
       "suggested_source_boundary": "inspection records, recall notices, laboratory results and outbreak investigations",
       "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5090,8 +6254,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Related Content Causes of Foodborne Illness: Bad Bug Book (Second Edition) People at Risk Content current as of: 02/17/2022 Regulated Product(s) Food & Beverages Feedback FDA Archive About FDA Accessibility Visitor Information Website Policies / Privacy No FEAR Act Vulnerability Disclosure Policy FOIA HHS.gov USA.gov Contact FDA Follow FDA on Facebook Follow FDA on X Follow FDA on Instagram Follow FDA on LinkedIn View FDA videos on YouTube Subscribe to FDA RSS feeds Contact Number 1-888-INFO-FDA (1-888-463-6332) Back to Top",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "What You Need to Know about Foodborne Illnesses | FDA",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "http_status": 200,
       "source_sha256": "fb632e85f9f2e0fec149db03899e3328a6112b3d73654e9fa1b6daaf7476c586"
@@ -5122,7 +6292,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "What You Need to Know about Foodborne Illnesses | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "http_status": 200,
       "source_sha256": "fb632e85f9f2e0fec149db03899e3328a6112b3d73654e9fa1b6daaf7476c586"
@@ -5154,6 +6333,15 @@
       "raw_payload_committed": false,
       "locator": "What You Need to Know about Foodborne Illnesses | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "http_status": 200,
       "source_sha256": "fb632e85f9f2e0fec149db03899e3328a6112b3d73654e9fa1b6daaf7476c586"
@@ -5184,7 +6372,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "What You Need to Know about Foodborne Illnesses | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "http_status": 200,
       "source_sha256": "fb632e85f9f2e0fec149db03899e3328a6112b3d73654e9fa1b6daaf7476c586"
@@ -5205,7 +6399,7 @@
       "suggested_source_boundary": "inspection records, recall notices, laboratory results and outbreak investigations",
       "source_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5214,8 +6408,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Related Content Causes of Foodborne Illness: Bad Bug Book (Second Edition) People at Risk Content current as of: 02/17/2022 Regulated Product(s) Food & Beverages Feedback FDA Archive About FDA Accessibility Visitor Information Website Policies / Privacy No FEAR Act Vulnerability Disclosure Policy FOIA HHS.gov USA.gov Contact FDA Follow FDA on Facebook Follow FDA on X Follow FDA on Instagram Follow FDA on LinkedIn View FDA videos on YouTube Subscribe to FDA RSS feeds Contact Number 1-888-INFO-FDA (1-888-463-6332) Back to Top",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "What You Need to Know about Foodborne Illnesses | FDA",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "http_status": 200,
       "source_sha256": "fb632e85f9f2e0fec149db03899e3328a6112b3d73654e9fa1b6daaf7476c586"
@@ -5247,6 +6447,12 @@
       "raw_payload_committed": false,
       "locator": "What You Need to Know about Foodborne Illnesses | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "http_status": 200,
       "source_sha256": "fb632e85f9f2e0fec149db03899e3328a6112b3d73654e9fa1b6daaf7476c586"
@@ -5278,6 +6484,12 @@
       "raw_payload_committed": false,
       "locator": "What You Need to Know about Foodborne Illnesses | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/food/consumers/what-you-need-know-about-foodborne-illnesses",
       "http_status": 200,
       "source_sha256": "fb632e85f9f2e0fec149db03899e3328a6112b3d73654e9fa1b6daaf7476c586"
@@ -5307,8 +6519,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "How Foodborne Outbreaks Happen | Foodborne Outbreaks | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 44ed9dbada51f73072ae714beb0db62a85626736e789a09aad6ae2beb0b53ee0; selected=https://www.cdc.gov/foodborne-outbreaks/about/index.html; final=https://www.cdc.gov/foodborne-outbreaks/about/index.html",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
       "http_status": 200,
       "source_sha256": "44ed9dbada51f73072ae714beb0db62a85626736e789a09aad6ae2beb0b53ee0"
@@ -5339,7 +6557,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "How Foodborne Outbreaks Happen | Foodborne Outbreaks | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
       "http_status": 200,
       "source_sha256": "44ed9dbada51f73072ae714beb0db62a85626736e789a09aad6ae2beb0b53ee0"
@@ -5371,6 +6599,15 @@
       "raw_payload_committed": false,
       "locator": "How Foodborne Outbreaks Happen | Foodborne Outbreaks | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
       "http_status": 200,
       "source_sha256": "44ed9dbada51f73072ae714beb0db62a85626736e789a09aad6ae2beb0b53ee0"
@@ -5402,6 +6639,12 @@
       "raw_payload_committed": false,
       "locator": "How Foodborne Outbreaks Happen | Foodborne Outbreaks | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
       "http_status": 200,
       "source_sha256": "44ed9dbada51f73072ae714beb0db62a85626736e789a09aad6ae2beb0b53ee0"
@@ -5432,7 +6675,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "How Foodborne Outbreaks Happen | Foodborne Outbreaks | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
       "http_status": 200,
       "source_sha256": "44ed9dbada51f73072ae714beb0db62a85626736e789a09aad6ae2beb0b53ee0"
@@ -5464,6 +6716,15 @@
       "raw_payload_committed": false,
       "locator": "How Foodborne Outbreaks Happen | Foodborne Outbreaks | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
       "http_status": 200,
       "source_sha256": "44ed9dbada51f73072ae714beb0db62a85626736e789a09aad6ae2beb0b53ee0"
@@ -5494,7 +6755,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "How Foodborne Outbreaks Happen | Foodborne Outbreaks | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
       "http_status": 200,
       "source_sha256": "44ed9dbada51f73072ae714beb0db62a85626736e789a09aad6ae2beb0b53ee0"
@@ -5526,6 +6793,12 @@
       "raw_payload_committed": false,
       "locator": "How Foodborne Outbreaks Happen | Foodborne Outbreaks | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
       "http_status": 200,
       "source_sha256": "44ed9dbada51f73072ae714beb0db62a85626736e789a09aad6ae2beb0b53ee0"
@@ -5557,6 +6830,12 @@
       "raw_payload_committed": false,
       "locator": "How Foodborne Outbreaks Happen | Foodborne Outbreaks | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
       "http_status": 200,
       "source_sha256": "44ed9dbada51f73072ae714beb0db62a85626736e789a09aad6ae2beb0b53ee0"
@@ -5577,7 +6856,7 @@
       "suggested_source_boundary": "inspection records, recall notices, laboratory results and outbreak investigations",
       "source_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5586,8 +6865,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "How it happens Hens can pass on germs to an egg's yolk even before the egg is laid.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "How Foodborne Outbreaks Happen | Foodborne Outbreaks | CDC",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/foodborne-outbreaks/about/index.html",
       "http_status": 200,
       "source_sha256": "44ed9dbada51f73072ae714beb0db62a85626736e789a09aad6ae2beb0b53ee0"
@@ -5617,8 +6902,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Recalls, Market Withdrawals, & Safety Alerts | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 1580642e005fe36b216ae6a7ceddefcf042acd96f594e730c95a1f8573463a77; selected=https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts; final=https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
       "http_status": 200,
       "source_sha256": "1580642e005fe36b216ae6a7ceddefcf042acd96f594e730c95a1f8573463a77"
@@ -5649,7 +6940,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Recalls, Market Withdrawals, & Safety Alerts | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
       "http_status": 200,
       "source_sha256": "1580642e005fe36b216ae6a7ceddefcf042acd96f594e730c95a1f8573463a77"
@@ -5681,6 +6982,15 @@
       "raw_payload_committed": false,
       "locator": "Recalls, Market Withdrawals, & Safety Alerts | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
       "http_status": 200,
       "source_sha256": "1580642e005fe36b216ae6a7ceddefcf042acd96f594e730c95a1f8573463a77"
@@ -5712,6 +7022,12 @@
       "raw_payload_committed": false,
       "locator": "Recalls, Market Withdrawals, & Safety Alerts | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
       "http_status": 200,
       "source_sha256": "1580642e005fe36b216ae6a7ceddefcf042acd96f594e730c95a1f8573463a77"
@@ -5742,7 +7058,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Recalls, Market Withdrawals, & Safety Alerts | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
       "http_status": 200,
       "source_sha256": "1580642e005fe36b216ae6a7ceddefcf042acd96f594e730c95a1f8573463a77"
@@ -5774,6 +7099,15 @@
       "raw_payload_committed": false,
       "locator": "Recalls, Market Withdrawals, & Safety Alerts | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
       "http_status": 200,
       "source_sha256": "1580642e005fe36b216ae6a7ceddefcf042acd96f594e730c95a1f8573463a77"
@@ -5804,7 +7138,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Recalls, Market Withdrawals, & Safety Alerts | FDA",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
       "http_status": 200,
       "source_sha256": "1580642e005fe36b216ae6a7ceddefcf042acd96f594e730c95a1f8573463a77"
@@ -5836,6 +7176,12 @@
       "raw_payload_committed": false,
       "locator": "Recalls, Market Withdrawals, & Safety Alerts | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
       "http_status": 200,
       "source_sha256": "1580642e005fe36b216ae6a7ceddefcf042acd96f594e730c95a1f8573463a77"
@@ -5867,6 +7213,12 @@
       "raw_payload_committed": false,
       "locator": "Recalls, Market Withdrawals, & Safety Alerts | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
       "http_status": 200,
       "source_sha256": "1580642e005fe36b216ae6a7ceddefcf042acd96f594e730c95a1f8573463a77"
@@ -5898,6 +7250,12 @@
       "raw_payload_committed": false,
       "locator": "Recalls, Market Withdrawals, & Safety Alerts | FDA",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts",
       "http_status": 200,
       "source_sha256": "1580642e005fe36b216ae6a7ceddefcf042acd96f594e730c95a1f8573463a77"
@@ -5929,9 +7287,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
       "http_status": 403,
-      "source_sha256": "d5712aecc44e7b4c32d7eb4efa532e02963876a95b3fe01279d9159c154f9e97"
+      "source_sha256": "165cd11966735c5f16bce8dcf5b5e64fe76225b6437a34d4ac10d128c16e9fd2"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5960,9 +7323,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
       "http_status": 403,
-      "source_sha256": "d5712aecc44e7b4c32d7eb4efa532e02963876a95b3fe01279d9159c154f9e97"
+      "source_sha256": "165cd11966735c5f16bce8dcf5b5e64fe76225b6437a34d4ac10d128c16e9fd2"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5991,9 +7364,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
       "http_status": 403,
-      "source_sha256": "d5712aecc44e7b4c32d7eb4efa532e02963876a95b3fe01279d9159c154f9e97"
+      "source_sha256": "165cd11966735c5f16bce8dcf5b5e64fe76225b6437a34d4ac10d128c16e9fd2"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -6022,9 +7404,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
       "http_status": 403,
-      "source_sha256": "d5712aecc44e7b4c32d7eb4efa532e02963876a95b3fe01279d9159c154f9e97"
+      "source_sha256": "165cd11966735c5f16bce8dcf5b5e64fe76225b6437a34d4ac10d128c16e9fd2"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -6053,9 +7441,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
       "http_status": 403,
-      "source_sha256": "d5712aecc44e7b4c32d7eb4efa532e02963876a95b3fe01279d9159c154f9e97"
+      "source_sha256": "165cd11966735c5f16bce8dcf5b5e64fe76225b6437a34d4ac10d128c16e9fd2"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -6084,9 +7481,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
       "http_status": 403,
-      "source_sha256": "d5712aecc44e7b4c32d7eb4efa532e02963876a95b3fe01279d9159c154f9e97"
+      "source_sha256": "165cd11966735c5f16bce8dcf5b5e64fe76225b6437a34d4ac10d128c16e9fd2"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -6115,9 +7521,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
       "http_status": 403,
-      "source_sha256": "d5712aecc44e7b4c32d7eb4efa532e02963876a95b3fe01279d9159c154f9e97"
+      "source_sha256": "165cd11966735c5f16bce8dcf5b5e64fe76225b6437a34d4ac10d128c16e9fd2"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -6146,9 +7558,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
       "http_status": 403,
-      "source_sha256": "d5712aecc44e7b4c32d7eb4efa532e02963876a95b3fe01279d9159c154f9e97"
+      "source_sha256": "165cd11966735c5f16bce8dcf5b5e64fe76225b6437a34d4ac10d128c16e9fd2"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -6177,9 +7595,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
       "http_status": 403,
-      "source_sha256": "d5712aecc44e7b4c32d7eb4efa532e02963876a95b3fe01279d9159c154f9e97"
+      "source_sha256": "165cd11966735c5f16bce8dcf5b5e64fe76225b6437a34d4ac10d128c16e9fd2"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -6208,9 +7632,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics",
       "http_status": 403,
-      "source_sha256": "d5712aecc44e7b4c32d7eb4efa532e02963876a95b3fe01279d9159c154f9e97"
+      "source_sha256": "165cd11966735c5f16bce8dcf5b5e64fe76225b6437a34d4ac10d128c16e9fd2"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -6237,8 +7667,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Food Safety",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 0326bd02ec733a9d6f6e066657e92fe034ef9b50a611f33c86d16ac234c5e9b9; selected=https://www.who.int/health-topics/food-safety; final=https://www.who.int/health-topics/food-safety",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/food-safety",
       "http_status": 200,
       "source_sha256": "0326bd02ec733a9d6f6e066657e92fe034ef9b50a611f33c86d16ac234c5e9b9"
@@ -6269,7 +7705,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Food Safety",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/food-safety",
       "http_status": 200,
       "source_sha256": "0326bd02ec733a9d6f6e066657e92fe034ef9b50a611f33c86d16ac234c5e9b9"
@@ -6301,6 +7747,15 @@
       "raw_payload_committed": false,
       "locator": "Food Safety",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/food-safety",
       "http_status": 200,
       "source_sha256": "0326bd02ec733a9d6f6e066657e92fe034ef9b50a611f33c86d16ac234c5e9b9"
@@ -6332,6 +7787,12 @@
       "raw_payload_committed": false,
       "locator": "Food Safety",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/food-safety",
       "http_status": 200,
       "source_sha256": "0326bd02ec733a9d6f6e066657e92fe034ef9b50a611f33c86d16ac234c5e9b9"
@@ -6362,7 +7823,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Food Safety",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/food-safety",
       "http_status": 200,
       "source_sha256": "0326bd02ec733a9d6f6e066657e92fe034ef9b50a611f33c86d16ac234c5e9b9"
@@ -6394,6 +7864,15 @@
       "raw_payload_committed": false,
       "locator": "Food Safety",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/food-safety",
       "http_status": 200,
       "source_sha256": "0326bd02ec733a9d6f6e066657e92fe034ef9b50a611f33c86d16ac234c5e9b9"
@@ -6424,7 +7903,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Food Safety",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/food-safety",
       "http_status": 200,
       "source_sha256": "0326bd02ec733a9d6f6e066657e92fe034ef9b50a611f33c86d16ac234c5e9b9"
@@ -6456,6 +7941,12 @@
       "raw_payload_committed": false,
       "locator": "Food Safety",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/food-safety",
       "http_status": 200,
       "source_sha256": "0326bd02ec733a9d6f6e066657e92fe034ef9b50a611f33c86d16ac234c5e9b9"
@@ -6487,6 +7978,12 @@
       "raw_payload_committed": false,
       "locator": "Food Safety",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/food-safety",
       "http_status": 200,
       "source_sha256": "0326bd02ec733a9d6f6e066657e92fe034ef9b50a611f33c86d16ac234c5e9b9"
@@ -6518,6 +8015,12 @@
       "raw_payload_committed": false,
       "locator": "Food Safety",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.who.int/health-topics/food-safety",
       "http_status": 200,
       "source_sha256": "0326bd02ec733a9d6f6e066657e92fe034ef9b50a611f33c86d16ac234c5e9b9"

@@ -1,15 +1,13 @@
 {
   "issue_number": 177,
-  "protocol_version": "CB7K-ISSUE-177-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-177-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "source_manifest_sha256": "83bea8b0900c0665b9c6af4a96c2accf886de70267e3f307c0fec6517b7738bd",
   "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
   "raw_payload_committed": false,
-  "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
+  "review_method": "complete topic-specific textual gate facets with verbatim locators; numerator-denominator, method-version, and reproducibility additionally require an independent execution artifact",
   "result_counts": {
     "BLOCKED_SOURCE": 100,
-    "SOURCE_DRIFT": 30,
-    "INSUFFICIENT_COVERAGE": 79,
-    "PASSED_UNDER_PROTOCOL": 1
+    "INSUFFICIENT_COVERAGE": 110
   },
   "cards": [
     {
@@ -39,6 +37,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 0",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "TRANSPORT_FAILURE",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://content.naic.org/consumer",
       "http_status": 0,
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -70,6 +73,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 0",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "TRANSPORT_FAILURE",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://content.naic.org/consumer",
       "http_status": 0,
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -101,6 +114,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 0",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "TRANSPORT_FAILURE",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://content.naic.org/consumer",
       "http_status": 0,
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -132,6 +154,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 0",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "TRANSPORT_FAILURE",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://content.naic.org/consumer",
       "http_status": 0,
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -163,6 +191,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 0",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "TRANSPORT_FAILURE",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://content.naic.org/consumer",
       "http_status": 0,
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -194,6 +231,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 0",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "TRANSPORT_FAILURE",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://content.naic.org/consumer",
       "http_status": 0,
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -225,6 +271,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 0",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "TRANSPORT_FAILURE",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://content.naic.org/consumer",
       "http_status": 0,
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -256,6 +308,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 0",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "TRANSPORT_FAILURE",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://content.naic.org/consumer",
       "http_status": 0,
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -287,6 +345,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 0",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "TRANSPORT_FAILURE",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://content.naic.org/consumer",
       "http_status": 0,
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -318,6 +382,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 0",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "TRANSPORT_FAILURE",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://content.naic.org/consumer",
       "http_status": 0,
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -338,7 +408,7 @@
       "suggested_source_boundary": "policy wording, actuarial filings, claims statistics and regulator decisions",
       "source_url": "https://www.cms.gov/marketplace",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -347,8 +417,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cms.gov/marketplace canonical=https://www.cms.gov/marketplace/in-person-assisters/information-partners",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 d28871930495b4fb163cfda0d32c79ab335b4348bd70b740b6375648a7db724b; selected=https://www.cms.gov/marketplace; final=https://www.cms.gov/marketplace/in-person-assisters/information-partners",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cms.gov/marketplace/in-person-assisters/information-partners",
       "http_status": 200,
       "source_sha256": "d28871930495b4fb163cfda0d32c79ab335b4348bd70b740b6375648a7db724b"
@@ -369,7 +445,7 @@
       "suggested_source_boundary": "policy wording, actuarial filings, claims statistics and regulator decisions",
       "source_url": "https://www.cms.gov/marketplace",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -378,8 +454,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cms.gov/marketplace canonical=https://www.cms.gov/marketplace/in-person-assisters/information-partners",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Health Insurance Marketplace | CMS",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cms.gov/marketplace/in-person-assisters/information-partners",
       "http_status": 200,
       "source_sha256": "d28871930495b4fb163cfda0d32c79ab335b4348bd70b740b6375648a7db724b"
@@ -400,7 +486,7 @@
       "suggested_source_boundary": "policy wording, actuarial filings, claims statistics and regulator decisions",
       "source_url": "https://www.cms.gov/marketplace",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -409,8 +495,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cms.gov/marketplace canonical=https://www.cms.gov/marketplace/in-person-assisters/information-partners",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Health Insurance Marketplace | CMS",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cms.gov/marketplace/in-person-assisters/information-partners",
       "http_status": 200,
       "source_sha256": "d28871930495b4fb163cfda0d32c79ab335b4348bd70b740b6375648a7db724b"
@@ -431,7 +526,7 @@
       "suggested_source_boundary": "policy wording, actuarial filings, claims statistics and regulator decisions",
       "source_url": "https://www.cms.gov/marketplace",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -440,8 +535,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cms.gov/marketplace canonical=https://www.cms.gov/marketplace/in-person-assisters/information-partners",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Health Insurance Marketplace | CMS",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cms.gov/marketplace/in-person-assisters/information-partners",
       "http_status": 200,
       "source_sha256": "d28871930495b4fb163cfda0d32c79ab335b4348bd70b740b6375648a7db724b"
@@ -462,7 +563,7 @@
       "suggested_source_boundary": "policy wording, actuarial filings, claims statistics and regulator decisions",
       "source_url": "https://www.cms.gov/marketplace",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -471,8 +572,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cms.gov/marketplace canonical=https://www.cms.gov/marketplace/in-person-assisters/information-partners",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Health Insurance Marketplace | CMS",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cms.gov/marketplace/in-person-assisters/information-partners",
       "http_status": 200,
       "source_sha256": "d28871930495b4fb163cfda0d32c79ab335b4348bd70b740b6375648a7db724b"
@@ -493,7 +603,7 @@
       "suggested_source_boundary": "policy wording, actuarial filings, claims statistics and regulator decisions",
       "source_url": "https://www.cms.gov/marketplace",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -502,8 +612,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cms.gov/marketplace canonical=https://www.cms.gov/marketplace/in-person-assisters/information-partners",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Health Insurance Marketplace | CMS",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cms.gov/marketplace/in-person-assisters/information-partners",
       "http_status": 200,
       "source_sha256": "d28871930495b4fb163cfda0d32c79ab335b4348bd70b740b6375648a7db724b"
@@ -524,7 +643,7 @@
       "suggested_source_boundary": "policy wording, actuarial filings, claims statistics and regulator decisions",
       "source_url": "https://www.cms.gov/marketplace",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -533,8 +652,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cms.gov/marketplace canonical=https://www.cms.gov/marketplace/in-person-assisters/information-partners",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Health Insurance Marketplace | CMS",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cms.gov/marketplace/in-person-assisters/information-partners",
       "http_status": 200,
       "source_sha256": "d28871930495b4fb163cfda0d32c79ab335b4348bd70b740b6375648a7db724b"
@@ -555,7 +680,7 @@
       "suggested_source_boundary": "policy wording, actuarial filings, claims statistics and regulator decisions",
       "source_url": "https://www.cms.gov/marketplace",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -564,8 +689,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cms.gov/marketplace canonical=https://www.cms.gov/marketplace/in-person-assisters/information-partners",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Health Insurance Marketplace | CMS",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cms.gov/marketplace/in-person-assisters/information-partners",
       "http_status": 200,
       "source_sha256": "d28871930495b4fb163cfda0d32c79ab335b4348bd70b740b6375648a7db724b"
@@ -586,7 +717,7 @@
       "suggested_source_boundary": "policy wording, actuarial filings, claims statistics and regulator decisions",
       "source_url": "https://www.cms.gov/marketplace",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -595,8 +726,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cms.gov/marketplace canonical=https://www.cms.gov/marketplace/in-person-assisters/information-partners",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Health Insurance Marketplace | CMS",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cms.gov/marketplace/in-person-assisters/information-partners",
       "http_status": 200,
       "source_sha256": "d28871930495b4fb163cfda0d32c79ab335b4348bd70b740b6375648a7db724b"
@@ -617,7 +754,7 @@
       "suggested_source_boundary": "policy wording, actuarial filings, claims statistics and regulator decisions",
       "source_url": "https://www.cms.gov/marketplace",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -626,8 +763,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.cms.gov/marketplace canonical=https://www.cms.gov/marketplace/in-person-assisters/information-partners",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Health Insurance Marketplace | CMS",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cms.gov/marketplace/in-person-assisters/information-partners",
       "http_status": 200,
       "source_sha256": "d28871930495b4fb163cfda0d32c79ab335b4348bd70b740b6375648a7db724b"
@@ -657,8 +800,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Consumer Information",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 300836b690430353e8d1f0619b006aa297e132593da2236e3bd16ecaeefd1137; selected=https://www.insurance.ca.gov/01-consumers/; final=https://www.insurance.ca.gov/01-consumers/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.insurance.ca.gov/01-consumers/",
       "http_status": 200,
       "source_sha256": "300836b690430353e8d1f0619b006aa297e132593da2236e3bd16ecaeefd1137"
@@ -689,7 +838,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Consumer Information",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.insurance.ca.gov/01-consumers/",
       "http_status": 200,
       "source_sha256": "300836b690430353e8d1f0619b006aa297e132593da2236e3bd16ecaeefd1137"
@@ -721,6 +880,15 @@
       "raw_payload_committed": false,
       "locator": "Consumer Information",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.insurance.ca.gov/01-consumers/",
       "http_status": 200,
       "source_sha256": "300836b690430353e8d1f0619b006aa297e132593da2236e3bd16ecaeefd1137"
@@ -752,6 +920,12 @@
       "raw_payload_committed": false,
       "locator": "Consumer Information",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.insurance.ca.gov/01-consumers/",
       "http_status": 200,
       "source_sha256": "300836b690430353e8d1f0619b006aa297e132593da2236e3bd16ecaeefd1137"
@@ -772,7 +946,7 @@
       "suggested_source_boundary": "policy wording, actuarial filings, claims statistics and regulator decisions",
       "source_url": "https://www.insurance.ca.gov/01-consumers/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -781,8 +955,16 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Insurers Insurers Insurers Applications, Forms and Filings, Bulletins & Notices, Programs, Officially Filed Reports of Examination Electronic Funds Transfer (EFT) Programs Convenient method for the payment of Invoices and Premium Tax remittances.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Consumer Information",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.insurance.ca.gov/01-consumers/",
       "http_status": 200,
       "source_sha256": "300836b690430353e8d1f0619b006aa297e132593da2236e3bd16ecaeefd1137"
@@ -814,6 +996,14 @@
       "raw_payload_committed": false,
       "locator": "Consumer Information",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.insurance.ca.gov/01-consumers/",
       "http_status": 200,
       "source_sha256": "300836b690430353e8d1f0619b006aa297e132593da2236e3bd16ecaeefd1137"
@@ -844,7 +1034,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Consumer Information",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.insurance.ca.gov/01-consumers/",
       "http_status": 200,
       "source_sha256": "300836b690430353e8d1f0619b006aa297e132593da2236e3bd16ecaeefd1137"
@@ -876,6 +1072,12 @@
       "raw_payload_committed": false,
       "locator": "Consumer Information",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.insurance.ca.gov/01-consumers/",
       "http_status": 200,
       "source_sha256": "300836b690430353e8d1f0619b006aa297e132593da2236e3bd16ecaeefd1137"
@@ -907,6 +1109,12 @@
       "raw_payload_committed": false,
       "locator": "Consumer Information",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.insurance.ca.gov/01-consumers/",
       "http_status": 200,
       "source_sha256": "300836b690430353e8d1f0619b006aa297e132593da2236e3bd16ecaeefd1137"
@@ -938,6 +1146,12 @@
       "raw_payload_committed": false,
       "locator": "Consumer Information",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.insurance.ca.gov/01-consumers/",
       "http_status": 200,
       "source_sha256": "300836b690430353e8d1f0619b006aa297e132593da2236e3bd16ecaeefd1137"
@@ -969,6 +1183,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/insurance",
       "http_status": 404,
       "source_sha256": "a1bd382f822bf897245f674fae8c597a75bcd89b6f500fc9fdb62f2a1cd28ad0"
@@ -1000,6 +1219,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/insurance",
       "http_status": 404,
       "source_sha256": "a1bd382f822bf897245f674fae8c597a75bcd89b6f500fc9fdb62f2a1cd28ad0"
@@ -1031,6 +1260,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/insurance",
       "http_status": 404,
       "source_sha256": "a1bd382f822bf897245f674fae8c597a75bcd89b6f500fc9fdb62f2a1cd28ad0"
@@ -1062,6 +1300,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/insurance",
       "http_status": 404,
       "source_sha256": "a1bd382f822bf897245f674fae8c597a75bcd89b6f500fc9fdb62f2a1cd28ad0"
@@ -1093,6 +1337,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/insurance",
       "http_status": 404,
       "source_sha256": "a1bd382f822bf897245f674fae8c597a75bcd89b6f500fc9fdb62f2a1cd28ad0"
@@ -1124,6 +1377,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/insurance",
       "http_status": 404,
       "source_sha256": "a1bd382f822bf897245f674fae8c597a75bcd89b6f500fc9fdb62f2a1cd28ad0"
@@ -1155,6 +1417,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/insurance",
       "http_status": 404,
       "source_sha256": "a1bd382f822bf897245f674fae8c597a75bcd89b6f500fc9fdb62f2a1cd28ad0"
@@ -1186,6 +1454,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/insurance",
       "http_status": 404,
       "source_sha256": "a1bd382f822bf897245f674fae8c597a75bcd89b6f500fc9fdb62f2a1cd28ad0"
@@ -1217,6 +1491,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/insurance",
       "http_status": 404,
       "source_sha256": "a1bd382f822bf897245f674fae8c597a75bcd89b6f500fc9fdb62f2a1cd28ad0"
@@ -1248,6 +1528,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/insurance",
       "http_status": 404,
       "source_sha256": "a1bd382f822bf897245f674fae8c597a75bcd89b6f500fc9fdb62f2a1cd28ad0"
@@ -1277,8 +1563,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "For consumers - European Insurance and Occupational Pensions Authority",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 fa488f4346450816592be77cc1c470332a38e542a087b55516dd52516615a37f; selected=https://www.eiopa.europa.eu/consumers_en; final=https://www.eiopa.europa.eu/consumers_en",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eiopa.europa.eu/consumers_en",
       "http_status": 200,
       "source_sha256": "fa488f4346450816592be77cc1c470332a38e542a087b55516dd52516615a37f"
@@ -1309,7 +1601,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "For consumers - European Insurance and Occupational Pensions Authority",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eiopa.europa.eu/consumers_en",
       "http_status": 200,
       "source_sha256": "fa488f4346450816592be77cc1c470332a38e542a087b55516dd52516615a37f"
@@ -1341,6 +1643,15 @@
       "raw_payload_committed": false,
       "locator": "For consumers - European Insurance and Occupational Pensions Authority",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eiopa.europa.eu/consumers_en",
       "http_status": 200,
       "source_sha256": "fa488f4346450816592be77cc1c470332a38e542a087b55516dd52516615a37f"
@@ -1372,6 +1683,12 @@
       "raw_payload_committed": false,
       "locator": "For consumers - European Insurance and Occupational Pensions Authority",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eiopa.europa.eu/consumers_en",
       "http_status": 200,
       "source_sha256": "fa488f4346450816592be77cc1c470332a38e542a087b55516dd52516615a37f"
@@ -1402,7 +1719,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "For consumers - European Insurance and Occupational Pensions Authority",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eiopa.europa.eu/consumers_en",
       "http_status": 200,
       "source_sha256": "fa488f4346450816592be77cc1c470332a38e542a087b55516dd52516615a37f"
@@ -1434,6 +1760,15 @@
       "raw_payload_committed": false,
       "locator": "For consumers - European Insurance and Occupational Pensions Authority",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eiopa.europa.eu/consumers_en",
       "http_status": 200,
       "source_sha256": "fa488f4346450816592be77cc1c470332a38e542a087b55516dd52516615a37f"
@@ -1464,7 +1799,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "For consumers - European Insurance and Occupational Pensions Authority",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eiopa.europa.eu/consumers_en",
       "http_status": 200,
       "source_sha256": "fa488f4346450816592be77cc1c470332a38e542a087b55516dd52516615a37f"
@@ -1496,6 +1837,12 @@
       "raw_payload_committed": false,
       "locator": "For consumers - European Insurance and Occupational Pensions Authority",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eiopa.europa.eu/consumers_en",
       "http_status": 200,
       "source_sha256": "fa488f4346450816592be77cc1c470332a38e542a087b55516dd52516615a37f"
@@ -1527,6 +1874,12 @@
       "raw_payload_committed": false,
       "locator": "For consumers - European Insurance and Occupational Pensions Authority",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eiopa.europa.eu/consumers_en",
       "http_status": 200,
       "source_sha256": "fa488f4346450816592be77cc1c470332a38e542a087b55516dd52516615a37f"
@@ -1558,6 +1911,12 @@
       "raw_payload_committed": false,
       "locator": "For consumers - European Insurance and Occupational Pensions Authority",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.eiopa.europa.eu/consumers_en",
       "http_status": 200,
       "source_sha256": "fa488f4346450816592be77cc1c470332a38e542a087b55516dd52516615a37f"
@@ -1589,9 +1948,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/insurance/",
       "http_status": 403,
-      "source_sha256": "923afb8368f063898705225cf057bcafaaff37fd780bfb6174abe1c3b78bd96b"
+      "source_sha256": "f6e0697dcedcfaf699ab09cbf361ad0e30ce0a69680e92c9a2c7ce579bc0b87a"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1620,9 +1984,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/insurance/",
       "http_status": 403,
-      "source_sha256": "923afb8368f063898705225cf057bcafaaff37fd780bfb6174abe1c3b78bd96b"
+      "source_sha256": "f6e0697dcedcfaf699ab09cbf361ad0e30ce0a69680e92c9a2c7ce579bc0b87a"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1651,9 +2025,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/insurance/",
       "http_status": 403,
-      "source_sha256": "923afb8368f063898705225cf057bcafaaff37fd780bfb6174abe1c3b78bd96b"
+      "source_sha256": "f6e0697dcedcfaf699ab09cbf361ad0e30ce0a69680e92c9a2c7ce579bc0b87a"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1682,9 +2065,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/insurance/",
       "http_status": 403,
-      "source_sha256": "923afb8368f063898705225cf057bcafaaff37fd780bfb6174abe1c3b78bd96b"
+      "source_sha256": "f6e0697dcedcfaf699ab09cbf361ad0e30ce0a69680e92c9a2c7ce579bc0b87a"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1713,9 +2102,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/insurance/",
       "http_status": 403,
-      "source_sha256": "923afb8368f063898705225cf057bcafaaff37fd780bfb6174abe1c3b78bd96b"
+      "source_sha256": "f6e0697dcedcfaf699ab09cbf361ad0e30ce0a69680e92c9a2c7ce579bc0b87a"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1744,9 +2142,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/insurance/",
       "http_status": 403,
-      "source_sha256": "923afb8368f063898705225cf057bcafaaff37fd780bfb6174abe1c3b78bd96b"
+      "source_sha256": "f6e0697dcedcfaf699ab09cbf361ad0e30ce0a69680e92c9a2c7ce579bc0b87a"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1775,9 +2182,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/insurance/",
       "http_status": 403,
-      "source_sha256": "923afb8368f063898705225cf057bcafaaff37fd780bfb6174abe1c3b78bd96b"
+      "source_sha256": "f6e0697dcedcfaf699ab09cbf361ad0e30ce0a69680e92c9a2c7ce579bc0b87a"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1806,9 +2219,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/insurance/",
       "http_status": 403,
-      "source_sha256": "923afb8368f063898705225cf057bcafaaff37fd780bfb6174abe1c3b78bd96b"
+      "source_sha256": "f6e0697dcedcfaf699ab09cbf361ad0e30ce0a69680e92c9a2c7ce579bc0b87a"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1837,9 +2256,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/insurance/",
       "http_status": 403,
-      "source_sha256": "923afb8368f063898705225cf057bcafaaff37fd780bfb6174abe1c3b78bd96b"
+      "source_sha256": "f6e0697dcedcfaf699ab09cbf361ad0e30ce0a69680e92c9a2c7ce579bc0b87a"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1868,9 +2293,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/insurance/",
       "http_status": 403,
-      "source_sha256": "923afb8368f063898705225cf057bcafaaff37fd780bfb6174abe1c3b78bd96b"
+      "source_sha256": "f6e0697dcedcfaf699ab09cbf361ad0e30ce0a69680e92c9a2c7ce579bc0b87a"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1897,8 +2328,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "International Association of Insurance Supervisors",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 03814196433cef7f2f3cafbcf298b1654246026af8c00c6c89e23dd3889c1f4e; selected=https://www.iais.org/; final=https://www.iais.org/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iais.org/",
       "http_status": 200,
       "source_sha256": "03814196433cef7f2f3cafbcf298b1654246026af8c00c6c89e23dd3889c1f4e"
@@ -1929,7 +2366,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "International Association of Insurance Supervisors",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iais.org/",
       "http_status": 200,
       "source_sha256": "03814196433cef7f2f3cafbcf298b1654246026af8c00c6c89e23dd3889c1f4e"
@@ -1961,6 +2408,15 @@
       "raw_payload_committed": false,
       "locator": "International Association of Insurance Supervisors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iais.org/",
       "http_status": 200,
       "source_sha256": "03814196433cef7f2f3cafbcf298b1654246026af8c00c6c89e23dd3889c1f4e"
@@ -1992,6 +2448,12 @@
       "raw_payload_committed": false,
       "locator": "International Association of Insurance Supervisors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iais.org/",
       "http_status": 200,
       "source_sha256": "03814196433cef7f2f3cafbcf298b1654246026af8c00c6c89e23dd3889c1f4e"
@@ -2022,7 +2484,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "International Association of Insurance Supervisors",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iais.org/",
       "http_status": 200,
       "source_sha256": "03814196433cef7f2f3cafbcf298b1654246026af8c00c6c89e23dd3889c1f4e"
@@ -2054,6 +2525,15 @@
       "raw_payload_committed": false,
       "locator": "International Association of Insurance Supervisors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iais.org/",
       "http_status": 200,
       "source_sha256": "03814196433cef7f2f3cafbcf298b1654246026af8c00c6c89e23dd3889c1f4e"
@@ -2084,7 +2564,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "International Association of Insurance Supervisors",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iais.org/",
       "http_status": 200,
       "source_sha256": "03814196433cef7f2f3cafbcf298b1654246026af8c00c6c89e23dd3889c1f4e"
@@ -2116,6 +2602,12 @@
       "raw_payload_committed": false,
       "locator": "International Association of Insurance Supervisors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iais.org/",
       "http_status": 200,
       "source_sha256": "03814196433cef7f2f3cafbcf298b1654246026af8c00c6c89e23dd3889c1f4e"
@@ -2147,6 +2639,12 @@
       "raw_payload_committed": false,
       "locator": "International Association of Insurance Supervisors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iais.org/",
       "http_status": 200,
       "source_sha256": "03814196433cef7f2f3cafbcf298b1654246026af8c00c6c89e23dd3889c1f4e"
@@ -2178,6 +2676,12 @@
       "raw_payload_committed": false,
       "locator": "International Association of Insurance Supervisors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iais.org/",
       "http_status": 200,
       "source_sha256": "03814196433cef7f2f3cafbcf298b1654246026af8c00c6c89e23dd3889c1f4e"
@@ -2207,8 +2711,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Credit reports and scores | Consumer Financial Protection Bureau",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 2ce242a2f4a9dc24459311b283e39dec4d855f0b5817e61bc291b3f868114a41; selected=https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/; final=https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
       "http_status": 200,
       "source_sha256": "2ce242a2f4a9dc24459311b283e39dec4d855f0b5817e61bc291b3f868114a41"
@@ -2239,7 +2749,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Credit reports and scores | Consumer Financial Protection Bureau",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
       "http_status": 200,
       "source_sha256": "2ce242a2f4a9dc24459311b283e39dec4d855f0b5817e61bc291b3f868114a41"
@@ -2271,6 +2791,15 @@
       "raw_payload_committed": false,
       "locator": "Credit reports and scores | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
       "http_status": 200,
       "source_sha256": "2ce242a2f4a9dc24459311b283e39dec4d855f0b5817e61bc291b3f868114a41"
@@ -2302,6 +2831,12 @@
       "raw_payload_committed": false,
       "locator": "Credit reports and scores | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
       "http_status": 200,
       "source_sha256": "2ce242a2f4a9dc24459311b283e39dec4d855f0b5817e61bc291b3f868114a41"
@@ -2332,7 +2867,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Credit reports and scores | Consumer Financial Protection Bureau",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
       "http_status": 200,
       "source_sha256": "2ce242a2f4a9dc24459311b283e39dec4d855f0b5817e61bc291b3f868114a41"
@@ -2364,6 +2908,15 @@
       "raw_payload_committed": false,
       "locator": "Credit reports and scores | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
       "http_status": 200,
       "source_sha256": "2ce242a2f4a9dc24459311b283e39dec4d855f0b5817e61bc291b3f868114a41"
@@ -2394,7 +2947,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Credit reports and scores | Consumer Financial Protection Bureau",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
       "http_status": 200,
       "source_sha256": "2ce242a2f4a9dc24459311b283e39dec4d855f0b5817e61bc291b3f868114a41"
@@ -2426,6 +2985,12 @@
       "raw_payload_committed": false,
       "locator": "Credit reports and scores | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
       "http_status": 200,
       "source_sha256": "2ce242a2f4a9dc24459311b283e39dec4d855f0b5817e61bc291b3f868114a41"
@@ -2457,6 +3022,12 @@
       "raw_payload_committed": false,
       "locator": "Credit reports and scores | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
       "http_status": 200,
       "source_sha256": "2ce242a2f4a9dc24459311b283e39dec4d855f0b5817e61bc291b3f868114a41"
@@ -2488,6 +3059,12 @@
       "raw_payload_committed": false,
       "locator": "Credit reports and scores | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-reports-and-scores/",
       "http_status": 200,
       "source_sha256": "2ce242a2f4a9dc24459311b283e39dec4d855f0b5817e61bc291b3f868114a41"
@@ -2517,8 +3094,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Credit cards | Consumer Financial Protection Bureau",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 c1a5efdf180317e0d5d8af85afc24af1ba299d41c583370f9a8bf41e73126264; selected=https://www.consumerfinance.gov/consumer-tools/credit-cards/; final=https://www.consumerfinance.gov/consumer-tools/credit-cards/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
       "http_status": 200,
       "source_sha256": "c1a5efdf180317e0d5d8af85afc24af1ba299d41c583370f9a8bf41e73126264"
@@ -2549,7 +3132,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Credit cards | Consumer Financial Protection Bureau",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
       "http_status": 200,
       "source_sha256": "c1a5efdf180317e0d5d8af85afc24af1ba299d41c583370f9a8bf41e73126264"
@@ -2581,6 +3174,15 @@
       "raw_payload_committed": false,
       "locator": "Credit cards | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
       "http_status": 200,
       "source_sha256": "c1a5efdf180317e0d5d8af85afc24af1ba299d41c583370f9a8bf41e73126264"
@@ -2612,6 +3214,12 @@
       "raw_payload_committed": false,
       "locator": "Credit cards | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
       "http_status": 200,
       "source_sha256": "c1a5efdf180317e0d5d8af85afc24af1ba299d41c583370f9a8bf41e73126264"
@@ -2642,7 +3250,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Credit cards | Consumer Financial Protection Bureau",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
       "http_status": 200,
       "source_sha256": "c1a5efdf180317e0d5d8af85afc24af1ba299d41c583370f9a8bf41e73126264"
@@ -2674,6 +3291,15 @@
       "raw_payload_committed": false,
       "locator": "Credit cards | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
       "http_status": 200,
       "source_sha256": "c1a5efdf180317e0d5d8af85afc24af1ba299d41c583370f9a8bf41e73126264"
@@ -2704,7 +3330,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Credit cards | Consumer Financial Protection Bureau",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
       "http_status": 200,
       "source_sha256": "c1a5efdf180317e0d5d8af85afc24af1ba299d41c583370f9a8bf41e73126264"
@@ -2736,6 +3368,12 @@
       "raw_payload_committed": false,
       "locator": "Credit cards | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
       "http_status": 200,
       "source_sha256": "c1a5efdf180317e0d5d8af85afc24af1ba299d41c583370f9a8bf41e73126264"
@@ -2767,6 +3405,12 @@
       "raw_payload_committed": false,
       "locator": "Credit cards | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
       "http_status": 200,
       "source_sha256": "c1a5efdf180317e0d5d8af85afc24af1ba299d41c583370f9a8bf41e73126264"
@@ -2798,6 +3442,12 @@
       "raw_payload_committed": false,
       "locator": "Credit cards | Consumer Financial Protection Bureau",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/",
       "http_status": 200,
       "source_sha256": "c1a5efdf180317e0d5d8af85afc24af1ba299d41c583370f9a8bf41e73126264"
@@ -2827,11 +3477,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
+      "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
-      "http_status": 403,
-      "source_sha256": "513564bff87e13e7277f8c72491a7bc1117d7bf1d4613c50c674e5327291d6fd"
+      "http_status": 404,
+      "source_sha256": "f4d8901d88c36da17bc184611cf0599585d4ee4e4e1200cd20556d9497e46d61"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2858,11 +3511,21 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
+      "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
-      "http_status": 403,
-      "source_sha256": "513564bff87e13e7277f8c72491a7bc1117d7bf1d4613c50c674e5327291d6fd"
+      "http_status": 404,
+      "source_sha256": "f4d8901d88c36da17bc184611cf0599585d4ee4e4e1200cd20556d9497e46d61"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2889,11 +3552,20 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
+      "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
-      "http_status": 403,
-      "source_sha256": "513564bff87e13e7277f8c72491a7bc1117d7bf1d4613c50c674e5327291d6fd"
+      "http_status": 404,
+      "source_sha256": "f4d8901d88c36da17bc184611cf0599585d4ee4e4e1200cd20556d9497e46d61"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2920,11 +3592,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
+      "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
-      "http_status": 403,
-      "source_sha256": "513564bff87e13e7277f8c72491a7bc1117d7bf1d4613c50c674e5327291d6fd"
+      "http_status": 404,
+      "source_sha256": "f4d8901d88c36da17bc184611cf0599585d4ee4e4e1200cd20556d9497e46d61"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2951,11 +3629,20 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
+      "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
-      "http_status": 403,
-      "source_sha256": "513564bff87e13e7277f8c72491a7bc1117d7bf1d4613c50c674e5327291d6fd"
+      "http_status": 404,
+      "source_sha256": "f4d8901d88c36da17bc184611cf0599585d4ee4e4e1200cd20556d9497e46d61"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2982,11 +3669,20 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
+      "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
-      "http_status": 403,
-      "source_sha256": "513564bff87e13e7277f8c72491a7bc1117d7bf1d4613c50c674e5327291d6fd"
+      "http_status": 404,
+      "source_sha256": "f4d8901d88c36da17bc184611cf0599585d4ee4e4e1200cd20556d9497e46d61"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3013,11 +3709,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
+      "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
-      "http_status": 403,
-      "source_sha256": "513564bff87e13e7277f8c72491a7bc1117d7bf1d4613c50c674e5327291d6fd"
+      "http_status": 404,
+      "source_sha256": "f4d8901d88c36da17bc184611cf0599585d4ee4e4e1200cd20556d9497e46d61"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3044,11 +3746,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
+      "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
-      "http_status": 403,
-      "source_sha256": "513564bff87e13e7277f8c72491a7bc1117d7bf1d4613c50c674e5327291d6fd"
+      "http_status": 404,
+      "source_sha256": "f4d8901d88c36da17bc184611cf0599585d4ee4e4e1200cd20556d9497e46d61"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3075,11 +3783,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
+      "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
-      "http_status": 403,
-      "source_sha256": "513564bff87e13e7277f8c72491a7bc1117d7bf1d4613c50c674e5327291d6fd"
+      "http_status": 404,
+      "source_sha256": "f4d8901d88c36da17bc184611cf0599585d4ee4e4e1200cd20556d9497e46d61"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3106,11 +3820,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
+      "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ftc.gov/legal-library/browse/rules/fair-credit-reporting-act",
-      "http_status": 403,
-      "source_sha256": "513564bff87e13e7277f8c72491a7bc1117d7bf1d4613c50c674e5327291d6fd"
+      "http_status": 404,
+      "source_sha256": "f4d8901d88c36da17bc184611cf0599585d4ee4e4e1200cd20556d9497e46d61"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3137,8 +3857,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "﻿",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 ea3cc6debe2b9bdcf751869d0703478b426f3f47885d34440e7ece5712d9ad38; selected=https://www.federalreserve.gov/consumerscommunities.htm; final=https://www.federalreserve.gov/consumerscommunities.htm",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "ea3cc6debe2b9bdcf751869d0703478b426f3f47885d34440e7ece5712d9ad38"
@@ -3169,7 +3895,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "﻿",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "ea3cc6debe2b9bdcf751869d0703478b426f3f47885d34440e7ece5712d9ad38"
@@ -3201,6 +3937,15 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "ea3cc6debe2b9bdcf751869d0703478b426f3f47885d34440e7ece5712d9ad38"
@@ -3232,6 +3977,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "ea3cc6debe2b9bdcf751869d0703478b426f3f47885d34440e7ece5712d9ad38"
@@ -3262,7 +4013,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "﻿",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "ea3cc6debe2b9bdcf751869d0703478b426f3f47885d34440e7ece5712d9ad38"
@@ -3294,6 +4054,15 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "ea3cc6debe2b9bdcf751869d0703478b426f3f47885d34440e7ece5712d9ad38"
@@ -3324,7 +4093,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "﻿",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "ea3cc6debe2b9bdcf751869d0703478b426f3f47885d34440e7ece5712d9ad38"
@@ -3356,6 +4131,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "ea3cc6debe2b9bdcf751869d0703478b426f3f47885d34440e7ece5712d9ad38"
@@ -3387,6 +4168,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "ea3cc6debe2b9bdcf751869d0703478b426f3f47885d34440e7ece5712d9ad38"
@@ -3418,6 +4205,12 @@
       "raw_payload_committed": false,
       "locator": "﻿",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.federalreserve.gov/consumerscommunities.htm",
       "http_status": 200,
       "source_sha256": "ea3cc6debe2b9bdcf751869d0703478b426f3f47885d34440e7ece5712d9ad38"
@@ -3449,6 +4242,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/credit",
       "http_status": 404,
       "source_sha256": "3ee6d9e524a6c0e4caae55c9299b84135ab2d0769fbca5a94a2bcd59af900f1d"
@@ -3480,6 +4278,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/credit",
       "http_status": 404,
       "source_sha256": "3ee6d9e524a6c0e4caae55c9299b84135ab2d0769fbca5a94a2bcd59af900f1d"
@@ -3511,6 +4319,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/credit",
       "http_status": 404,
       "source_sha256": "3ee6d9e524a6c0e4caae55c9299b84135ab2d0769fbca5a94a2bcd59af900f1d"
@@ -3542,6 +4359,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/credit",
       "http_status": 404,
       "source_sha256": "3ee6d9e524a6c0e4caae55c9299b84135ab2d0769fbca5a94a2bcd59af900f1d"
@@ -3573,6 +4396,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/credit",
       "http_status": 404,
       "source_sha256": "3ee6d9e524a6c0e4caae55c9299b84135ab2d0769fbca5a94a2bcd59af900f1d"
@@ -3604,6 +4436,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/credit",
       "http_status": 404,
       "source_sha256": "3ee6d9e524a6c0e4caae55c9299b84135ab2d0769fbca5a94a2bcd59af900f1d"
@@ -3635,6 +4476,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/credit",
       "http_status": 404,
       "source_sha256": "3ee6d9e524a6c0e4caae55c9299b84135ab2d0769fbca5a94a2bcd59af900f1d"
@@ -3666,6 +4513,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/credit",
       "http_status": 404,
       "source_sha256": "3ee6d9e524a6c0e4caae55c9299b84135ab2d0769fbca5a94a2bcd59af900f1d"
@@ -3697,6 +4550,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/credit",
       "http_status": 404,
       "source_sha256": "3ee6d9e524a6c0e4caae55c9299b84135ab2d0769fbca5a94a2bcd59af900f1d"
@@ -3728,6 +4587,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/consumers/credit",
       "http_status": 404,
       "source_sha256": "3ee6d9e524a6c0e4caae55c9299b84135ab2d0769fbca5a94a2bcd59af900f1d"
@@ -3759,9 +4624,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/financial-education/",
       "http_status": 403,
-      "source_sha256": "1276fa578dfba101bfc78b18c6f4383c55c3e0ecf60cdd096ca2ba96dd349e04"
+      "source_sha256": "d33a2fb357fcb3ffb10b42793ee0f2e816b10b2f2b9fe851075e1b0001b32d7b"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3790,9 +4660,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/financial-education/",
       "http_status": 403,
-      "source_sha256": "1276fa578dfba101bfc78b18c6f4383c55c3e0ecf60cdd096ca2ba96dd349e04"
+      "source_sha256": "d33a2fb357fcb3ffb10b42793ee0f2e816b10b2f2b9fe851075e1b0001b32d7b"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3821,9 +4701,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/financial-education/",
       "http_status": 403,
-      "source_sha256": "1276fa578dfba101bfc78b18c6f4383c55c3e0ecf60cdd096ca2ba96dd349e04"
+      "source_sha256": "d33a2fb357fcb3ffb10b42793ee0f2e816b10b2f2b9fe851075e1b0001b32d7b"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3852,9 +4741,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/financial-education/",
       "http_status": 403,
-      "source_sha256": "1276fa578dfba101bfc78b18c6f4383c55c3e0ecf60cdd096ca2ba96dd349e04"
+      "source_sha256": "d33a2fb357fcb3ffb10b42793ee0f2e816b10b2f2b9fe851075e1b0001b32d7b"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3883,9 +4778,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/financial-education/",
       "http_status": 403,
-      "source_sha256": "1276fa578dfba101bfc78b18c6f4383c55c3e0ecf60cdd096ca2ba96dd349e04"
+      "source_sha256": "d33a2fb357fcb3ffb10b42793ee0f2e816b10b2f2b9fe851075e1b0001b32d7b"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3914,9 +4818,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/financial-education/",
       "http_status": 403,
-      "source_sha256": "1276fa578dfba101bfc78b18c6f4383c55c3e0ecf60cdd096ca2ba96dd349e04"
+      "source_sha256": "d33a2fb357fcb3ffb10b42793ee0f2e816b10b2f2b9fe851075e1b0001b32d7b"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3945,9 +4858,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/financial-education/",
       "http_status": 403,
-      "source_sha256": "1276fa578dfba101bfc78b18c6f4383c55c3e0ecf60cdd096ca2ba96dd349e04"
+      "source_sha256": "d33a2fb357fcb3ffb10b42793ee0f2e816b10b2f2b9fe851075e1b0001b32d7b"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3976,9 +4895,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/financial-education/",
       "http_status": 403,
-      "source_sha256": "1276fa578dfba101bfc78b18c6f4383c55c3e0ecf60cdd096ca2ba96dd349e04"
+      "source_sha256": "d33a2fb357fcb3ffb10b42793ee0f2e816b10b2f2b9fe851075e1b0001b32d7b"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4007,9 +4932,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/financial-education/",
       "http_status": 403,
-      "source_sha256": "1276fa578dfba101bfc78b18c6f4383c55c3e0ecf60cdd096ca2ba96dd349e04"
+      "source_sha256": "d33a2fb357fcb3ffb10b42793ee0f2e816b10b2f2b9fe851075e1b0001b32d7b"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4038,9 +4969,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/financial-education/",
       "http_status": 403,
-      "source_sha256": "1276fa578dfba101bfc78b18c6f4383c55c3e0ecf60cdd096ca2ba96dd349e04"
+      "source_sha256": "d33a2fb357fcb3ffb10b42793ee0f2e816b10b2f2b9fe851075e1b0001b32d7b"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4058,7 +4995,7 @@
       "suggested_source_boundary": "loan agreements, fee schedules, regulatory filings and portfolio data",
       "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4067,8 +5004,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/financialinclusion canonical=https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 051dedc0c01de641c5cb54594ad8cf8d54f96670aef73107fd6db44dfeda6516; selected=https://www.worldbank.org/en/topic/financialinclusion; final=https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
       "http_status": 200,
       "source_sha256": "051dedc0c01de641c5cb54594ad8cf8d54f96670aef73107fd6db44dfeda6516"
@@ -4089,7 +5032,7 @@
       "suggested_source_boundary": "loan agreements, fee schedules, regulatory filings and portfolio data",
       "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4098,8 +5041,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/financialinclusion canonical=https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Financial Inclusion | World Bank Group",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
       "http_status": 200,
       "source_sha256": "051dedc0c01de641c5cb54594ad8cf8d54f96670aef73107fd6db44dfeda6516"
@@ -4120,7 +5073,7 @@
       "suggested_source_boundary": "loan agreements, fee schedules, regulatory filings and portfolio data",
       "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4129,8 +5082,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/financialinclusion canonical=https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Financial Inclusion | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
       "http_status": 200,
       "source_sha256": "051dedc0c01de641c5cb54594ad8cf8d54f96670aef73107fd6db44dfeda6516"
@@ -4151,7 +5113,7 @@
       "suggested_source_boundary": "loan agreements, fee schedules, regulatory filings and portfolio data",
       "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4160,8 +5122,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/financialinclusion canonical=https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Financial Inclusion | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
       "http_status": 200,
       "source_sha256": "051dedc0c01de641c5cb54594ad8cf8d54f96670aef73107fd6db44dfeda6516"
@@ -4182,7 +5150,7 @@
       "suggested_source_boundary": "loan agreements, fee schedules, regulatory filings and portfolio data",
       "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4191,8 +5159,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/financialinclusion canonical=https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Financial Inclusion | World Bank Group",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
       "http_status": 200,
       "source_sha256": "051dedc0c01de641c5cb54594ad8cf8d54f96670aef73107fd6db44dfeda6516"
@@ -4213,7 +5190,7 @@
       "suggested_source_boundary": "loan agreements, fee schedules, regulatory filings and portfolio data",
       "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4222,8 +5199,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/financialinclusion canonical=https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Financial Inclusion | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
       "http_status": 200,
       "source_sha256": "051dedc0c01de641c5cb54594ad8cf8d54f96670aef73107fd6db44dfeda6516"
@@ -4244,7 +5230,7 @@
       "suggested_source_boundary": "loan agreements, fee schedules, regulatory filings and portfolio data",
       "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4253,8 +5239,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/financialinclusion canonical=https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Financial Inclusion | World Bank Group",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
       "http_status": 200,
       "source_sha256": "051dedc0c01de641c5cb54594ad8cf8d54f96670aef73107fd6db44dfeda6516"
@@ -4275,7 +5267,7 @@
       "suggested_source_boundary": "loan agreements, fee schedules, regulatory filings and portfolio data",
       "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4284,8 +5276,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/financialinclusion canonical=https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Financial Inclusion | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
       "http_status": 200,
       "source_sha256": "051dedc0c01de641c5cb54594ad8cf8d54f96670aef73107fd6db44dfeda6516"
@@ -4306,7 +5304,7 @@
       "suggested_source_boundary": "loan agreements, fee schedules, regulatory filings and portfolio data",
       "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4315,8 +5313,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/financialinclusion canonical=https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Financial Inclusion | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
       "http_status": 200,
       "source_sha256": "051dedc0c01de641c5cb54594ad8cf8d54f96670aef73107fd6db44dfeda6516"
@@ -4337,7 +5341,7 @@
       "suggested_source_boundary": "loan agreements, fee schedules, regulatory filings and portfolio data",
       "source_url": "https://www.worldbank.org/en/topic/financialinclusion",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4346,8 +5350,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/financialinclusion canonical=https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Financial Inclusion | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/financial-sector/financial-inclusion",
       "http_status": 200,
       "source_sha256": "051dedc0c01de641c5cb54594ad8cf8d54f96670aef73107fd6db44dfeda6516"
@@ -4379,9 +5389,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.ssa.gov/retirement",
       "http_status": 403,
-      "source_sha256": "05d4fbc76be702fda009ddc5c29f8d0470117c2db3df5da51a4a1e9bad8fa0c0"
+      "source_sha256": "7b1d1362c0c9ac27ed6a6529c8a75f6e50cd20accc8d54a8fe496281d6f8545f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4410,9 +5425,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.ssa.gov/retirement",
       "http_status": 403,
-      "source_sha256": "05d4fbc76be702fda009ddc5c29f8d0470117c2db3df5da51a4a1e9bad8fa0c0"
+      "source_sha256": "7b1d1362c0c9ac27ed6a6529c8a75f6e50cd20accc8d54a8fe496281d6f8545f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4441,9 +5466,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.ssa.gov/retirement",
       "http_status": 403,
-      "source_sha256": "05d4fbc76be702fda009ddc5c29f8d0470117c2db3df5da51a4a1e9bad8fa0c0"
+      "source_sha256": "7b1d1362c0c9ac27ed6a6529c8a75f6e50cd20accc8d54a8fe496281d6f8545f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4472,9 +5506,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.ssa.gov/retirement",
       "http_status": 403,
-      "source_sha256": "05d4fbc76be702fda009ddc5c29f8d0470117c2db3df5da51a4a1e9bad8fa0c0"
+      "source_sha256": "7b1d1362c0c9ac27ed6a6529c8a75f6e50cd20accc8d54a8fe496281d6f8545f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4503,9 +5543,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.ssa.gov/retirement",
       "http_status": 403,
-      "source_sha256": "05d4fbc76be702fda009ddc5c29f8d0470117c2db3df5da51a4a1e9bad8fa0c0"
+      "source_sha256": "7b1d1362c0c9ac27ed6a6529c8a75f6e50cd20accc8d54a8fe496281d6f8545f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4534,9 +5583,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.ssa.gov/retirement",
       "http_status": 403,
-      "source_sha256": "05d4fbc76be702fda009ddc5c29f8d0470117c2db3df5da51a4a1e9bad8fa0c0"
+      "source_sha256": "7b1d1362c0c9ac27ed6a6529c8a75f6e50cd20accc8d54a8fe496281d6f8545f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4565,9 +5623,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.ssa.gov/retirement",
       "http_status": 403,
-      "source_sha256": "05d4fbc76be702fda009ddc5c29f8d0470117c2db3df5da51a4a1e9bad8fa0c0"
+      "source_sha256": "7b1d1362c0c9ac27ed6a6529c8a75f6e50cd20accc8d54a8fe496281d6f8545f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4596,9 +5660,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.ssa.gov/retirement",
       "http_status": 403,
-      "source_sha256": "05d4fbc76be702fda009ddc5c29f8d0470117c2db3df5da51a4a1e9bad8fa0c0"
+      "source_sha256": "7b1d1362c0c9ac27ed6a6529c8a75f6e50cd20accc8d54a8fe496281d6f8545f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4627,9 +5697,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.ssa.gov/retirement",
       "http_status": 403,
-      "source_sha256": "05d4fbc76be702fda009ddc5c29f8d0470117c2db3df5da51a4a1e9bad8fa0c0"
+      "source_sha256": "7b1d1362c0c9ac27ed6a6529c8a75f6e50cd20accc8d54a8fe496281d6f8545f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4658,9 +5734,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.ssa.gov/retirement",
       "http_status": 403,
-      "source_sha256": "05d4fbc76be702fda009ddc5c29f8d0470117c2db3df5da51a4a1e9bad8fa0c0"
+      "source_sha256": "7b1d1362c0c9ac27ed6a6529c8a75f6e50cd20accc8d54a8fe496281d6f8545f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4687,8 +5769,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Retirement Plans Benefits and Savings | U.S. Department of Labor",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 7904e2fa2fedf3bca1d075d2c7ef3b6e98b28bbc6da28f7a5818722217d7598d; selected=https://www.dol.gov/general/topic/retirement; final=https://www.dol.gov/general/topic/retirement",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.dol.gov/general/topic/retirement",
       "http_status": 200,
       "source_sha256": "7904e2fa2fedf3bca1d075d2c7ef3b6e98b28bbc6da28f7a5818722217d7598d"
@@ -4719,7 +5807,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Retirement Plans Benefits and Savings | U.S. Department of Labor",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.dol.gov/general/topic/retirement",
       "http_status": 200,
       "source_sha256": "7904e2fa2fedf3bca1d075d2c7ef3b6e98b28bbc6da28f7a5818722217d7598d"
@@ -4751,6 +5849,15 @@
       "raw_payload_committed": false,
       "locator": "Retirement Plans Benefits and Savings | U.S. Department of Labor",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.dol.gov/general/topic/retirement",
       "http_status": 200,
       "source_sha256": "7904e2fa2fedf3bca1d075d2c7ef3b6e98b28bbc6da28f7a5818722217d7598d"
@@ -4782,6 +5889,12 @@
       "raw_payload_committed": false,
       "locator": "Retirement Plans Benefits and Savings | U.S. Department of Labor",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.dol.gov/general/topic/retirement",
       "http_status": 200,
       "source_sha256": "7904e2fa2fedf3bca1d075d2c7ef3b6e98b28bbc6da28f7a5818722217d7598d"
@@ -4812,7 +5925,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Retirement Plans Benefits and Savings | U.S. Department of Labor",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.dol.gov/general/topic/retirement",
       "http_status": 200,
       "source_sha256": "7904e2fa2fedf3bca1d075d2c7ef3b6e98b28bbc6da28f7a5818722217d7598d"
@@ -4844,6 +5966,15 @@
       "raw_payload_committed": false,
       "locator": "Retirement Plans Benefits and Savings | U.S. Department of Labor",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.dol.gov/general/topic/retirement",
       "http_status": 200,
       "source_sha256": "7904e2fa2fedf3bca1d075d2c7ef3b6e98b28bbc6da28f7a5818722217d7598d"
@@ -4874,7 +6005,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Retirement Plans Benefits and Savings | U.S. Department of Labor",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.dol.gov/general/topic/retirement",
       "http_status": 200,
       "source_sha256": "7904e2fa2fedf3bca1d075d2c7ef3b6e98b28bbc6da28f7a5818722217d7598d"
@@ -4906,6 +6043,12 @@
       "raw_payload_committed": false,
       "locator": "Retirement Plans Benefits and Savings | U.S. Department of Labor",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.dol.gov/general/topic/retirement",
       "http_status": 200,
       "source_sha256": "7904e2fa2fedf3bca1d075d2c7ef3b6e98b28bbc6da28f7a5818722217d7598d"
@@ -4937,6 +6080,12 @@
       "raw_payload_committed": false,
       "locator": "Retirement Plans Benefits and Savings | U.S. Department of Labor",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.dol.gov/general/topic/retirement",
       "http_status": 200,
       "source_sha256": "7904e2fa2fedf3bca1d075d2c7ef3b6e98b28bbc6da28f7a5818722217d7598d"
@@ -4968,6 +6117,12 @@
       "raw_payload_committed": false,
       "locator": "Retirement Plans Benefits and Savings | U.S. Department of Labor",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.dol.gov/general/topic/retirement",
       "http_status": 200,
       "source_sha256": "7904e2fa2fedf3bca1d075d2c7ef3b6e98b28bbc6da28f7a5818722217d7598d"
@@ -4999,6 +6154,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.pbgc.gov/who-we-are",
       "http_status": 404,
       "source_sha256": "38fc10f955ad619cc994d020cd78e4e612c2566184b8b370723b78e5a254b66b"
@@ -5030,6 +6190,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.pbgc.gov/who-we-are",
       "http_status": 404,
       "source_sha256": "38fc10f955ad619cc994d020cd78e4e612c2566184b8b370723b78e5a254b66b"
@@ -5061,6 +6231,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.pbgc.gov/who-we-are",
       "http_status": 404,
       "source_sha256": "38fc10f955ad619cc994d020cd78e4e612c2566184b8b370723b78e5a254b66b"
@@ -5092,6 +6271,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.pbgc.gov/who-we-are",
       "http_status": 404,
       "source_sha256": "38fc10f955ad619cc994d020cd78e4e612c2566184b8b370723b78e5a254b66b"
@@ -5123,6 +6308,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.pbgc.gov/who-we-are",
       "http_status": 404,
       "source_sha256": "38fc10f955ad619cc994d020cd78e4e612c2566184b8b370723b78e5a254b66b"
@@ -5154,6 +6348,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.pbgc.gov/who-we-are",
       "http_status": 404,
       "source_sha256": "38fc10f955ad619cc994d020cd78e4e612c2566184b8b370723b78e5a254b66b"
@@ -5185,6 +6388,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.pbgc.gov/who-we-are",
       "http_status": 404,
       "source_sha256": "38fc10f955ad619cc994d020cd78e4e612c2566184b8b370723b78e5a254b66b"
@@ -5216,6 +6425,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.pbgc.gov/who-we-are",
       "http_status": 404,
       "source_sha256": "38fc10f955ad619cc994d020cd78e4e612c2566184b8b370723b78e5a254b66b"
@@ -5247,6 +6462,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.pbgc.gov/who-we-are",
       "http_status": 404,
       "source_sha256": "38fc10f955ad619cc994d020cd78e4e612c2566184b8b370723b78e5a254b66b"
@@ -5278,6 +6499,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.pbgc.gov/who-we-are",
       "http_status": 404,
       "source_sha256": "38fc10f955ad619cc994d020cd78e4e612c2566184b8b370723b78e5a254b66b"
@@ -5309,9 +6536,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/pensions/",
       "http_status": 403,
-      "source_sha256": "3b748253f4eaddcb3edceda478304c534b0c0ee9511a7f62250b52989b2f7eaf"
+      "source_sha256": "cdc112209a9ed9c0fd0d88b7451c2d251f5cfb43a60656458f7fc0c9b7373144"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5340,9 +6572,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/pensions/",
       "http_status": 403,
-      "source_sha256": "3b748253f4eaddcb3edceda478304c534b0c0ee9511a7f62250b52989b2f7eaf"
+      "source_sha256": "cdc112209a9ed9c0fd0d88b7451c2d251f5cfb43a60656458f7fc0c9b7373144"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5371,9 +6613,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/pensions/",
       "http_status": 403,
-      "source_sha256": "3b748253f4eaddcb3edceda478304c534b0c0ee9511a7f62250b52989b2f7eaf"
+      "source_sha256": "cdc112209a9ed9c0fd0d88b7451c2d251f5cfb43a60656458f7fc0c9b7373144"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5402,9 +6653,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/pensions/",
       "http_status": 403,
-      "source_sha256": "3b748253f4eaddcb3edceda478304c534b0c0ee9511a7f62250b52989b2f7eaf"
+      "source_sha256": "cdc112209a9ed9c0fd0d88b7451c2d251f5cfb43a60656458f7fc0c9b7373144"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5433,9 +6690,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/pensions/",
       "http_status": 403,
-      "source_sha256": "3b748253f4eaddcb3edceda478304c534b0c0ee9511a7f62250b52989b2f7eaf"
+      "source_sha256": "cdc112209a9ed9c0fd0d88b7451c2d251f5cfb43a60656458f7fc0c9b7373144"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5464,9 +6730,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/pensions/",
       "http_status": 403,
-      "source_sha256": "3b748253f4eaddcb3edceda478304c534b0c0ee9511a7f62250b52989b2f7eaf"
+      "source_sha256": "cdc112209a9ed9c0fd0d88b7451c2d251f5cfb43a60656458f7fc0c9b7373144"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5495,9 +6770,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/pensions/",
       "http_status": 403,
-      "source_sha256": "3b748253f4eaddcb3edceda478304c534b0c0ee9511a7f62250b52989b2f7eaf"
+      "source_sha256": "cdc112209a9ed9c0fd0d88b7451c2d251f5cfb43a60656458f7fc0c9b7373144"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5526,9 +6807,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/pensions/",
       "http_status": 403,
-      "source_sha256": "3b748253f4eaddcb3edceda478304c534b0c0ee9511a7f62250b52989b2f7eaf"
+      "source_sha256": "cdc112209a9ed9c0fd0d88b7451c2d251f5cfb43a60656458f7fc0c9b7373144"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5557,9 +6844,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/pensions/",
       "http_status": 403,
-      "source_sha256": "3b748253f4eaddcb3edceda478304c534b0c0ee9511a7f62250b52989b2f7eaf"
+      "source_sha256": "cdc112209a9ed9c0fd0d88b7451c2d251f5cfb43a60656458f7fc0c9b7373144"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5588,9 +6881,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/pensions/",
       "http_status": 403,
-      "source_sha256": "3b748253f4eaddcb3edceda478304c534b0c0ee9511a7f62250b52989b2f7eaf"
+      "source_sha256": "cdc112209a9ed9c0fd0d88b7451c2d251f5cfb43a60656458f7fc0c9b7373144"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5619,6 +6918,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.ilo.org/topics/pensions",
       "http_status": 404,
       "source_sha256": "b12225811ff427241d2f68627b971c0c3715ce5787de688c3f0b658adce9c418"
@@ -5650,6 +6954,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.ilo.org/topics/pensions",
       "http_status": 404,
       "source_sha256": "b12225811ff427241d2f68627b971c0c3715ce5787de688c3f0b658adce9c418"
@@ -5681,6 +6995,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.ilo.org/topics/pensions",
       "http_status": 404,
       "source_sha256": "b12225811ff427241d2f68627b971c0c3715ce5787de688c3f0b658adce9c418"
@@ -5712,6 +7035,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.ilo.org/topics/pensions",
       "http_status": 404,
       "source_sha256": "b12225811ff427241d2f68627b971c0c3715ce5787de688c3f0b658adce9c418"
@@ -5743,6 +7072,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.ilo.org/topics/pensions",
       "http_status": 404,
       "source_sha256": "b12225811ff427241d2f68627b971c0c3715ce5787de688c3f0b658adce9c418"
@@ -5774,6 +7112,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.ilo.org/topics/pensions",
       "http_status": 404,
       "source_sha256": "b12225811ff427241d2f68627b971c0c3715ce5787de688c3f0b658adce9c418"
@@ -5805,6 +7152,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.ilo.org/topics/pensions",
       "http_status": 404,
       "source_sha256": "b12225811ff427241d2f68627b971c0c3715ce5787de688c3f0b658adce9c418"
@@ -5836,6 +7189,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.ilo.org/topics/pensions",
       "http_status": 404,
       "source_sha256": "b12225811ff427241d2f68627b971c0c3715ce5787de688c3f0b658adce9c418"
@@ -5867,6 +7226,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.ilo.org/topics/pensions",
       "http_status": 404,
       "source_sha256": "b12225811ff427241d2f68627b971c0c3715ce5787de688c3f0b658adce9c418"
@@ -5898,6 +7263,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.ilo.org/topics/pensions",
       "http_status": 404,
       "source_sha256": "b12225811ff427241d2f68627b971c0c3715ce5787de688c3f0b658adce9c418"
@@ -5918,7 +7289,7 @@
       "suggested_source_boundary": "fund reports, actuarial valuations, fee disclosures and benefit rules",
       "source_url": "https://www.worldbank.org/en/topic/pensions",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5927,8 +7298,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/pensions canonical=https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 cbcb61037b07c29ccb276863b2f5dc0ce3e731b563e741b354a66317e92b689b; selected=https://www.worldbank.org/en/topic/pensions; final=https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
       "http_status": 200,
       "source_sha256": "cbcb61037b07c29ccb276863b2f5dc0ce3e731b563e741b354a66317e92b689b"
@@ -5949,7 +7326,7 @@
       "suggested_source_boundary": "fund reports, actuarial valuations, fee disclosures and benefit rules",
       "source_url": "https://www.worldbank.org/en/topic/pensions",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5958,8 +7335,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/pensions canonical=https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Pensions & Aging | World Bank Group",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
       "http_status": 200,
       "source_sha256": "cbcb61037b07c29ccb276863b2f5dc0ce3e731b563e741b354a66317e92b689b"
@@ -5980,7 +7367,7 @@
       "suggested_source_boundary": "fund reports, actuarial valuations, fee disclosures and benefit rules",
       "source_url": "https://www.worldbank.org/en/topic/pensions",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5989,8 +7376,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/pensions canonical=https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Pensions & Aging | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
       "http_status": 200,
       "source_sha256": "cbcb61037b07c29ccb276863b2f5dc0ce3e731b563e741b354a66317e92b689b"
@@ -6011,7 +7407,7 @@
       "suggested_source_boundary": "fund reports, actuarial valuations, fee disclosures and benefit rules",
       "source_url": "https://www.worldbank.org/en/topic/pensions",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6020,8 +7416,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/pensions canonical=https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Pensions & Aging | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
       "http_status": 200,
       "source_sha256": "cbcb61037b07c29ccb276863b2f5dc0ce3e731b563e741b354a66317e92b689b"
@@ -6042,7 +7444,7 @@
       "suggested_source_boundary": "fund reports, actuarial valuations, fee disclosures and benefit rules",
       "source_url": "https://www.worldbank.org/en/topic/pensions",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6051,8 +7453,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/pensions canonical=https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Pensions & Aging | World Bank Group",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
       "http_status": 200,
       "source_sha256": "cbcb61037b07c29ccb276863b2f5dc0ce3e731b563e741b354a66317e92b689b"
@@ -6073,7 +7484,7 @@
       "suggested_source_boundary": "fund reports, actuarial valuations, fee disclosures and benefit rules",
       "source_url": "https://www.worldbank.org/en/topic/pensions",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6082,8 +7493,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/pensions canonical=https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Pensions & Aging | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
       "http_status": 200,
       "source_sha256": "cbcb61037b07c29ccb276863b2f5dc0ce3e731b563e741b354a66317e92b689b"
@@ -6104,7 +7524,7 @@
       "suggested_source_boundary": "fund reports, actuarial valuations, fee disclosures and benefit rules",
       "source_url": "https://www.worldbank.org/en/topic/pensions",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6113,8 +7533,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/pensions canonical=https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Pensions & Aging | World Bank Group",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
       "http_status": 200,
       "source_sha256": "cbcb61037b07c29ccb276863b2f5dc0ce3e731b563e741b354a66317e92b689b"
@@ -6135,7 +7561,7 @@
       "suggested_source_boundary": "fund reports, actuarial valuations, fee disclosures and benefit rules",
       "source_url": "https://www.worldbank.org/en/topic/pensions",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6144,8 +7570,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/pensions canonical=https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Pensions & Aging | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
       "http_status": 200,
       "source_sha256": "cbcb61037b07c29ccb276863b2f5dc0ce3e731b563e741b354a66317e92b689b"
@@ -6166,7 +7598,7 @@
       "suggested_source_boundary": "fund reports, actuarial valuations, fee disclosures and benefit rules",
       "source_url": "https://www.worldbank.org/en/topic/pensions",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6175,8 +7607,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/pensions canonical=https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Pensions & Aging | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
       "http_status": 200,
       "source_sha256": "cbcb61037b07c29ccb276863b2f5dc0ce3e731b563e741b354a66317e92b689b"
@@ -6197,7 +7635,7 @@
       "suggested_source_boundary": "fund reports, actuarial valuations, fee disclosures and benefit rules",
       "source_url": "https://www.worldbank.org/en/topic/pensions",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6206,8 +7644,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.worldbank.org/en/topic/pensions canonical=https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Pensions & Aging | World Bank Group",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.worldbank.org/ext/en/topic/social-protection/pensions-aging",
       "http_status": 200,
       "source_sha256": "cbcb61037b07c29ccb276863b2f5dc0ce3e731b563e741b354a66317e92b689b"
@@ -6237,8 +7681,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Economic research",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 a63d1a2712d9acd0b6c256fd3c22dab635caeba78666af6d61358c5f15d32334; selected=https://www.ecb.europa.eu/pub/economic-research/html/index.en.html; final=https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
       "http_status": 200,
       "source_sha256": "a63d1a2712d9acd0b6c256fd3c22dab635caeba78666af6d61358c5f15d32334"
@@ -6269,7 +7719,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Economic research",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
       "http_status": 200,
       "source_sha256": "a63d1a2712d9acd0b6c256fd3c22dab635caeba78666af6d61358c5f15d32334"
@@ -6301,6 +7761,15 @@
       "raw_payload_committed": false,
       "locator": "Economic research",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
       "http_status": 200,
       "source_sha256": "a63d1a2712d9acd0b6c256fd3c22dab635caeba78666af6d61358c5f15d32334"
@@ -6332,6 +7801,12 @@
       "raw_payload_committed": false,
       "locator": "Economic research",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
       "http_status": 200,
       "source_sha256": "a63d1a2712d9acd0b6c256fd3c22dab635caeba78666af6d61358c5f15d32334"
@@ -6362,7 +7837,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Economic research",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
       "http_status": 200,
       "source_sha256": "a63d1a2712d9acd0b6c256fd3c22dab635caeba78666af6d61358c5f15d32334"
@@ -6394,6 +7878,15 @@
       "raw_payload_committed": false,
       "locator": "Economic research",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
       "http_status": 200,
       "source_sha256": "a63d1a2712d9acd0b6c256fd3c22dab635caeba78666af6d61358c5f15d32334"
@@ -6424,7 +7917,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Economic research",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
       "http_status": 200,
       "source_sha256": "a63d1a2712d9acd0b6c256fd3c22dab635caeba78666af6d61358c5f15d32334"
@@ -6456,6 +7955,12 @@
       "raw_payload_committed": false,
       "locator": "Economic research",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
       "http_status": 200,
       "source_sha256": "a63d1a2712d9acd0b6c256fd3c22dab635caeba78666af6d61358c5f15d32334"
@@ -6487,6 +7992,12 @@
       "raw_payload_committed": false,
       "locator": "Economic research",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
       "http_status": 200,
       "source_sha256": "a63d1a2712d9acd0b6c256fd3c22dab635caeba78666af6d61358c5f15d32334"
@@ -6518,6 +8029,12 @@
       "raw_payload_committed": false,
       "locator": "Economic research",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ecb.europa.eu/pub/economic-research/html/index.en.html",
       "http_status": 200,
       "source_sha256": "a63d1a2712d9acd0b6c256fd3c22dab635caeba78666af6d61358c5f15d32334"

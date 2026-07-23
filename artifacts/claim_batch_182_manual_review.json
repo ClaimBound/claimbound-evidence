@@ -1,15 +1,14 @@
 {
   "issue_number": 182,
-  "protocol_version": "CB7K-ISSUE-182-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-182-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "source_manifest_sha256": "158b92629cb86d95c941989dd744b268a4fd146ff23f35288533cdbbda911df5",
   "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
   "raw_payload_committed": false,
-  "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
+  "review_method": "complete topic-specific textual gate facets with verbatim locators; numerator-denominator, method-version, and reproducibility additionally require an independent execution artifact",
   "result_counts": {
-    "INSUFFICIENT_COVERAGE": 107,
-    "PASSED_UNDER_PROTOCOL": 23,
-    "BLOCKED_SOURCE": 60,
-    "SOURCE_DRIFT": 20
+    "INSUFFICIENT_COVERAGE": 156,
+    "BLOCKED_SOURCE": 50,
+    "PASSED_UNDER_PROTOCOL": 4
   },
   "cards": [
     {
@@ -37,8 +36,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Corrections | Bureau of Justice Statistics",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 ac485dc7396779561b06c4040432e68b13c9a4018c48c0b83de3de7ae934164e; selected=https://bjs.ojp.gov/topics/corrections; final=https://bjs.ojp.gov/topics/corrections",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/corrections",
       "http_status": 200,
       "source_sha256": "ac485dc7396779561b06c4040432e68b13c9a4018c48c0b83de3de7ae934164e"
@@ -69,7 +74,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Corrections | Bureau of Justice Statistics",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/corrections",
       "http_status": 200,
       "source_sha256": "ac485dc7396779561b06c4040432e68b13c9a4018c48c0b83de3de7ae934164e"
@@ -101,6 +116,15 @@
       "raw_payload_committed": false,
       "locator": "Corrections | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/corrections",
       "http_status": 200,
       "source_sha256": "ac485dc7396779561b06c4040432e68b13c9a4018c48c0b83de3de7ae934164e"
@@ -132,6 +156,12 @@
       "raw_payload_committed": false,
       "locator": "Corrections | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/corrections",
       "http_status": 200,
       "source_sha256": "ac485dc7396779561b06c4040432e68b13c9a4018c48c0b83de3de7ae934164e"
@@ -162,7 +192,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Corrections | Bureau of Justice Statistics",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/corrections",
       "http_status": 200,
       "source_sha256": "ac485dc7396779561b06c4040432e68b13c9a4018c48c0b83de3de7ae934164e"
@@ -194,6 +233,15 @@
       "raw_payload_committed": false,
       "locator": "Corrections | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/corrections",
       "http_status": 200,
       "source_sha256": "ac485dc7396779561b06c4040432e68b13c9a4018c48c0b83de3de7ae934164e"
@@ -224,7 +272,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Corrections | Bureau of Justice Statistics",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/corrections",
       "http_status": 200,
       "source_sha256": "ac485dc7396779561b06c4040432e68b13c9a4018c48c0b83de3de7ae934164e"
@@ -256,6 +310,12 @@
       "raw_payload_committed": false,
       "locator": "Corrections | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/corrections",
       "http_status": 200,
       "source_sha256": "ac485dc7396779561b06c4040432e68b13c9a4018c48c0b83de3de7ae934164e"
@@ -287,6 +347,12 @@
       "raw_payload_committed": false,
       "locator": "Corrections | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/corrections",
       "http_status": 200,
       "source_sha256": "ac485dc7396779561b06c4040432e68b13c9a4018c48c0b83de3de7ae934164e"
@@ -318,6 +384,12 @@
       "raw_payload_committed": false,
       "locator": "Corrections | Bureau of Justice Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://bjs.ojp.gov/topics/corrections",
       "http_status": 200,
       "source_sha256": "ac485dc7396779561b06c4040432e68b13c9a4018c48c0b83de3de7ae934164e"
@@ -338,7 +410,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.bop.gov/about/statistics/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -347,8 +419,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "⨯ Federal Bureau of Prisons A-Z Topics Site Map FOIA Search Home About Us About Our Agency About Our Facilities Historical Information Statistics Inmates Find an Inmate First Step Act Communications Custody & Care Report a Concern Visiting Support Coordinators Locations List of our Facilities Map of our Locations Search for a Facility Careers Life at the BOP Explore Opportunities Current Openings Application Process Our Hiring Process Business Acquisitions Solicitations & Awards Residential Reentry Contracting Resources Find a document ...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "SHA-256 23a034817ac2f62e981a43e3d42f73c930ba367011c837a11568e0830dcccfb4; selected=https://www.bop.gov/about/statistics/; final=https://www.bop.gov/about/statistics/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bop.gov/about/statistics/",
       "http_status": 200,
       "source_sha256": "23a034817ac2f62e981a43e3d42f73c930ba367011c837a11568e0830dcccfb4"
@@ -379,7 +457,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "BOP: Statistics",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bop.gov/about/statistics/",
       "http_status": 200,
       "source_sha256": "23a034817ac2f62e981a43e3d42f73c930ba367011c837a11568e0830dcccfb4"
@@ -400,7 +488,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.bop.gov/about/statistics/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -409,8 +497,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Attorney Resources Congressional/Media Reps Employees Family/Stakeholders Former Adults in Custody Health Management Victims & Witnesses Volunteers Contact Us Statistics Inmate Statistics Population Statistics Staff Statistics By the numbers.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "BOP: Statistics",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bop.gov/about/statistics/",
       "http_status": 200,
       "source_sha256": "23a034817ac2f62e981a43e3d42f73c930ba367011c837a11568e0830dcccfb4"
@@ -442,6 +539,12 @@
       "raw_payload_committed": false,
       "locator": "BOP: Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bop.gov/about/statistics/",
       "http_status": 200,
       "source_sha256": "23a034817ac2f62e981a43e3d42f73c930ba367011c837a11568e0830dcccfb4"
@@ -462,7 +565,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.bop.gov/about/statistics/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -471,8 +574,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Attorney Resources Congressional/Media Reps Employees Family/Stakeholders Former Adults in Custody Health Management Victims & Witnesses Volunteers Accessibility Contact Us FOIA Information Quality No FEAR Act Privacy Policy Website Feedback Bop.gov Mobile Version USA.gov Justice.gov Open Government NIC UNICOR .",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "BOP: Statistics",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bop.gov/about/statistics/",
       "http_status": 200,
       "source_sha256": "23a034817ac2f62e981a43e3d42f73c930ba367011c837a11568e0830dcccfb4"
@@ -504,6 +616,15 @@
       "raw_payload_committed": false,
       "locator": "BOP: Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bop.gov/about/statistics/",
       "http_status": 200,
       "source_sha256": "23a034817ac2f62e981a43e3d42f73c930ba367011c837a11568e0830dcccfb4"
@@ -524,7 +645,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.bop.gov/about/statistics/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -533,8 +654,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Inmate Statistics Population Statistics Staff Statistics Download BOP Fact Sheet About Us About Our Agency About Our Facilities Historical Information Statistics Inmates Find an Inmate First Step Act Communications Custody & Care Report a Concern Visiting Support Coordinators Locations List of our Facilities Map of our Locations Search for a Facility Careers Life at the BOP Explore Opportunities Current Openings Application Process Our Hiring Process Business Acquisitions Solicitations & Awards Residential Reentry Contracting Resources Policy & Forms News Stories Press Releases Publications Research & Reports Records Available Online Resources For ...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "BOP: Statistics",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bop.gov/about/statistics/",
       "http_status": 200,
       "source_sha256": "23a034817ac2f62e981a43e3d42f73c930ba367011c837a11568e0830dcccfb4"
@@ -566,6 +693,12 @@
       "raw_payload_committed": false,
       "locator": "BOP: Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bop.gov/about/statistics/",
       "http_status": 200,
       "source_sha256": "23a034817ac2f62e981a43e3d42f73c930ba367011c837a11568e0830dcccfb4"
@@ -586,7 +719,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.bop.gov/about/statistics/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -595,8 +728,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "⨯ Federal Bureau of Prisons A-Z Topics Site Map FOIA Search Home About Us About Our Agency About Our Facilities Historical Information Statistics Inmates Find an Inmate First Step Act Communications Custody & Care Report a Concern Visiting Support Coordinators Locations List of our Facilities Map of our Locations Search for a Facility Careers Life at the BOP Explore Opportunities Current Openings Application Process Our Hiring Process Business Acquisitions Solicitations & Awards Residential Reentry Contracting Resources Find a document ...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "BOP: Statistics",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bop.gov/about/statistics/",
       "http_status": 200,
       "source_sha256": "23a034817ac2f62e981a43e3d42f73c930ba367011c837a11568e0830dcccfb4"
@@ -628,6 +767,12 @@
       "raw_payload_committed": false,
       "locator": "BOP: Statistics",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.bop.gov/about/statistics/",
       "http_status": 200,
       "source_sha256": "23a034817ac2f62e981a43e3d42f73c930ba367011c837a11568e0830dcccfb4"
@@ -659,6 +804,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters/corrections-cases",
       "http_status": 404,
       "source_sha256": "5826fbf1a6d9fd504a5224818c0160b93b214700da49c266740391fd89a4edc6"
@@ -690,6 +840,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters/corrections-cases",
       "http_status": 404,
       "source_sha256": "5826fbf1a6d9fd504a5224818c0160b93b214700da49c266740391fd89a4edc6"
@@ -721,6 +881,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters/corrections-cases",
       "http_status": 404,
       "source_sha256": "5826fbf1a6d9fd504a5224818c0160b93b214700da49c266740391fd89a4edc6"
@@ -752,6 +921,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters/corrections-cases",
       "http_status": 404,
       "source_sha256": "5826fbf1a6d9fd504a5224818c0160b93b214700da49c266740391fd89a4edc6"
@@ -783,6 +958,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters/corrections-cases",
       "http_status": 404,
       "source_sha256": "5826fbf1a6d9fd504a5224818c0160b93b214700da49c266740391fd89a4edc6"
@@ -814,6 +998,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters/corrections-cases",
       "http_status": 404,
       "source_sha256": "5826fbf1a6d9fd504a5224818c0160b93b214700da49c266740391fd89a4edc6"
@@ -845,6 +1038,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters/corrections-cases",
       "http_status": 404,
       "source_sha256": "5826fbf1a6d9fd504a5224818c0160b93b214700da49c266740391fd89a4edc6"
@@ -876,6 +1075,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters/corrections-cases",
       "http_status": 404,
       "source_sha256": "5826fbf1a6d9fd504a5224818c0160b93b214700da49c266740391fd89a4edc6"
@@ -907,6 +1112,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters/corrections-cases",
       "http_status": 404,
       "source_sha256": "5826fbf1a6d9fd504a5224818c0160b93b214700da49c266740391fd89a4edc6"
@@ -938,6 +1149,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.justice.gov/crt/special-litigation-section-cases-and-matters/corrections-cases",
       "http_status": 404,
       "source_sha256": "5826fbf1a6d9fd504a5224818c0160b93b214700da49c266740391fd89a4edc6"
@@ -958,7 +1175,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.ojp.gov/ncjrs/virtual-library/abstracts",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -967,8 +1184,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ojp.gov/ncjrs/virtual-library/abstracts canonical=https://www.ojp.gov/ncjrs-virtual-library/search",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 36fd0a63b2dc5c18157629718bd967e5f7fd911fdb9be2245d3c6a394f4315df; selected=https://www.ojp.gov/ncjrs/virtual-library/abstracts; final=https://www.ojp.gov/ncjrs-virtual-library/search",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ojp.gov/ncjrs-virtual-library/search",
       "http_status": 200,
       "source_sha256": "36fd0a63b2dc5c18157629718bd967e5f7fd911fdb9be2245d3c6a394f4315df"
@@ -989,7 +1212,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.ojp.gov/ncjrs/virtual-library/abstracts",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -998,8 +1221,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ojp.gov/ncjrs/virtual-library/abstracts canonical=https://www.ojp.gov/ncjrs-virtual-library/search",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "NCJRS Virtual Library Search | Office of Justice Programs",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ojp.gov/ncjrs-virtual-library/search",
       "http_status": 200,
       "source_sha256": "36fd0a63b2dc5c18157629718bd967e5f7fd911fdb9be2245d3c6a394f4315df"
@@ -1020,7 +1253,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.ojp.gov/ncjrs/virtual-library/abstracts",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1029,8 +1262,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ojp.gov/ncjrs/virtual-library/abstracts canonical=https://www.ojp.gov/ncjrs-virtual-library/search",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "NCJRS Virtual Library Search | Office of Justice Programs",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ojp.gov/ncjrs-virtual-library/search",
       "http_status": 200,
       "source_sha256": "36fd0a63b2dc5c18157629718bd967e5f7fd911fdb9be2245d3c6a394f4315df"
@@ -1051,7 +1293,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.ojp.gov/ncjrs/virtual-library/abstracts",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1060,8 +1302,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ojp.gov/ncjrs/virtual-library/abstracts canonical=https://www.ojp.gov/ncjrs-virtual-library/search",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "NCJRS Virtual Library Search | Office of Justice Programs",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ojp.gov/ncjrs-virtual-library/search",
       "http_status": 200,
       "source_sha256": "36fd0a63b2dc5c18157629718bd967e5f7fd911fdb9be2245d3c6a394f4315df"
@@ -1082,7 +1330,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.ojp.gov/ncjrs/virtual-library/abstracts",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1091,8 +1339,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ojp.gov/ncjrs/virtual-library/abstracts canonical=https://www.ojp.gov/ncjrs-virtual-library/search",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "NCJRS Virtual Library Search | Office of Justice Programs",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ojp.gov/ncjrs-virtual-library/search",
       "http_status": 200,
       "source_sha256": "36fd0a63b2dc5c18157629718bd967e5f7fd911fdb9be2245d3c6a394f4315df"
@@ -1113,7 +1370,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.ojp.gov/ncjrs/virtual-library/abstracts",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1122,8 +1379,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ojp.gov/ncjrs/virtual-library/abstracts canonical=https://www.ojp.gov/ncjrs-virtual-library/search",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "NCJRS Virtual Library Search | Office of Justice Programs",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ojp.gov/ncjrs-virtual-library/search",
       "http_status": 200,
       "source_sha256": "36fd0a63b2dc5c18157629718bd967e5f7fd911fdb9be2245d3c6a394f4315df"
@@ -1144,7 +1410,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.ojp.gov/ncjrs/virtual-library/abstracts",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1153,8 +1419,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ojp.gov/ncjrs/virtual-library/abstracts canonical=https://www.ojp.gov/ncjrs-virtual-library/search",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "NCJRS Virtual Library Search | Office of Justice Programs",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ojp.gov/ncjrs-virtual-library/search",
       "http_status": 200,
       "source_sha256": "36fd0a63b2dc5c18157629718bd967e5f7fd911fdb9be2245d3c6a394f4315df"
@@ -1175,7 +1447,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.ojp.gov/ncjrs/virtual-library/abstracts",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1184,8 +1456,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ojp.gov/ncjrs/virtual-library/abstracts canonical=https://www.ojp.gov/ncjrs-virtual-library/search",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "NCJRS Virtual Library Search | Office of Justice Programs",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ojp.gov/ncjrs-virtual-library/search",
       "http_status": 200,
       "source_sha256": "36fd0a63b2dc5c18157629718bd967e5f7fd911fdb9be2245d3c6a394f4315df"
@@ -1206,7 +1484,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.ojp.gov/ncjrs/virtual-library/abstracts",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1215,8 +1493,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ojp.gov/ncjrs/virtual-library/abstracts canonical=https://www.ojp.gov/ncjrs-virtual-library/search",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "NCJRS Virtual Library Search | Office of Justice Programs",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ojp.gov/ncjrs-virtual-library/search",
       "http_status": 200,
       "source_sha256": "36fd0a63b2dc5c18157629718bd967e5f7fd911fdb9be2245d3c6a394f4315df"
@@ -1237,7 +1521,7 @@
       "suggested_source_boundary": "inspection reports, custody records, healthcare data and incident reports",
       "source_url": "https://www.ojp.gov/ncjrs/virtual-library/abstracts",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -1246,8 +1530,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ojp.gov/ncjrs/virtual-library/abstracts canonical=https://www.ojp.gov/ncjrs-virtual-library/search",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "NCJRS Virtual Library Search | Office of Justice Programs",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ojp.gov/ncjrs-virtual-library/search",
       "http_status": 200,
       "source_sha256": "36fd0a63b2dc5c18157629718bd967e5f7fd911fdb9be2245d3c6a394f4315df"
@@ -1277,8 +1567,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Public Health Considerations for Correctional Health | Correctional Health | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 27013fac7113839aa688266a6997581e78aa138df49d07b1dddfa1f59b75d7d3; selected=https://www.cdc.gov/correctional-health/about/index.html; final=https://www.cdc.gov/correctional-health/about/index.html",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/correctional-health/about/index.html",
       "http_status": 200,
       "source_sha256": "27013fac7113839aa688266a6997581e78aa138df49d07b1dddfa1f59b75d7d3"
@@ -1309,7 +1605,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Public Health Considerations for Correctional Health | Correctional Health | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/correctional-health/about/index.html",
       "http_status": 200,
       "source_sha256": "27013fac7113839aa688266a6997581e78aa138df49d07b1dddfa1f59b75d7d3"
@@ -1341,6 +1647,15 @@
       "raw_payload_committed": false,
       "locator": "Public Health Considerations for Correctional Health | Correctional Health | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/correctional-health/about/index.html",
       "http_status": 200,
       "source_sha256": "27013fac7113839aa688266a6997581e78aa138df49d07b1dddfa1f59b75d7d3"
@@ -1372,6 +1687,12 @@
       "raw_payload_committed": false,
       "locator": "Public Health Considerations for Correctional Health | Correctional Health | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/correctional-health/about/index.html",
       "http_status": 200,
       "source_sha256": "27013fac7113839aa688266a6997581e78aa138df49d07b1dddfa1f59b75d7d3"
@@ -1402,7 +1723,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Public Health Considerations for Correctional Health | Correctional Health | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/correctional-health/about/index.html",
       "http_status": 200,
       "source_sha256": "27013fac7113839aa688266a6997581e78aa138df49d07b1dddfa1f59b75d7d3"
@@ -1434,6 +1764,15 @@
       "raw_payload_committed": false,
       "locator": "Public Health Considerations for Correctional Health | Correctional Health | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/correctional-health/about/index.html",
       "http_status": 200,
       "source_sha256": "27013fac7113839aa688266a6997581e78aa138df49d07b1dddfa1f59b75d7d3"
@@ -1464,7 +1803,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Public Health Considerations for Correctional Health | Correctional Health | CDC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/correctional-health/about/index.html",
       "http_status": 200,
       "source_sha256": "27013fac7113839aa688266a6997581e78aa138df49d07b1dddfa1f59b75d7d3"
@@ -1496,6 +1841,12 @@
       "raw_payload_committed": false,
       "locator": "Public Health Considerations for Correctional Health | Correctional Health | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/correctional-health/about/index.html",
       "http_status": 200,
       "source_sha256": "27013fac7113839aa688266a6997581e78aa138df49d07b1dddfa1f59b75d7d3"
@@ -1527,6 +1878,12 @@
       "raw_payload_committed": false,
       "locator": "Public Health Considerations for Correctional Health | Correctional Health | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/correctional-health/about/index.html",
       "http_status": 200,
       "source_sha256": "27013fac7113839aa688266a6997581e78aa138df49d07b1dddfa1f59b75d7d3"
@@ -1558,6 +1915,12 @@
       "raw_payload_committed": false,
       "locator": "Public Health Considerations for Correctional Health | Correctional Health | CDC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdc.gov/correctional-health/about/index.html",
       "http_status": 200,
       "source_sha256": "27013fac7113839aa688266a6997581e78aa138df49d07b1dddfa1f59b75d7d3"
@@ -1589,6 +1952,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/reports/statistical-reports",
       "http_status": 404,
       "source_sha256": "ff937d926110e6d705689f743d3bcf5acb78e014a46d5b42200952a63a568ffb"
@@ -1620,6 +1988,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/reports/statistical-reports",
       "http_status": 404,
       "source_sha256": "ff937d926110e6d705689f743d3bcf5acb78e014a46d5b42200952a63a568ffb"
@@ -1651,6 +2029,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/reports/statistical-reports",
       "http_status": 404,
       "source_sha256": "ff937d926110e6d705689f743d3bcf5acb78e014a46d5b42200952a63a568ffb"
@@ -1682,6 +2068,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/reports/statistical-reports",
       "http_status": 404,
       "source_sha256": "ff937d926110e6d705689f743d3bcf5acb78e014a46d5b42200952a63a568ffb"
@@ -1713,6 +2104,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/reports/statistical-reports",
       "http_status": 404,
       "source_sha256": "ff937d926110e6d705689f743d3bcf5acb78e014a46d5b42200952a63a568ffb"
@@ -1744,6 +2144,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/reports/statistical-reports",
       "http_status": 404,
       "source_sha256": "ff937d926110e6d705689f743d3bcf5acb78e014a46d5b42200952a63a568ffb"
@@ -1775,6 +2183,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/reports/statistical-reports",
       "http_status": 404,
       "source_sha256": "ff937d926110e6d705689f743d3bcf5acb78e014a46d5b42200952a63a568ffb"
@@ -1806,6 +2220,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/reports/statistical-reports",
       "http_status": 404,
       "source_sha256": "ff937d926110e6d705689f743d3bcf5acb78e014a46d5b42200952a63a568ffb"
@@ -1837,6 +2257,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/reports/statistical-reports",
       "http_status": 404,
       "source_sha256": "ff937d926110e6d705689f743d3bcf5acb78e014a46d5b42200952a63a568ffb"
@@ -1868,6 +2294,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscourts.gov/data-news/reports/statistical-reports",
       "http_status": 404,
       "source_sha256": "ff937d926110e6d705689f743d3bcf5acb78e014a46d5b42200952a63a568ffb"
@@ -1899,9 +2331,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.ohchr.org/en/special-procedures/sr-torture",
       "http_status": 403,
-      "source_sha256": "4f54160f20ae19bd3138fd2e24287c66efdf0f5b173c988f7e6b87af46b15fc6"
+      "source_sha256": "4a152ed2041641b55c92961ff60e5472cd0e83f2f887d51e9d829593410769f4"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1930,9 +2367,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.ohchr.org/en/special-procedures/sr-torture",
       "http_status": 403,
-      "source_sha256": "4f54160f20ae19bd3138fd2e24287c66efdf0f5b173c988f7e6b87af46b15fc6"
+      "source_sha256": "4a152ed2041641b55c92961ff60e5472cd0e83f2f887d51e9d829593410769f4"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1961,9 +2408,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.ohchr.org/en/special-procedures/sr-torture",
       "http_status": 403,
-      "source_sha256": "4f54160f20ae19bd3138fd2e24287c66efdf0f5b173c988f7e6b87af46b15fc6"
+      "source_sha256": "4a152ed2041641b55c92961ff60e5472cd0e83f2f887d51e9d829593410769f4"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1992,9 +2448,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.ohchr.org/en/special-procedures/sr-torture",
       "http_status": 403,
-      "source_sha256": "4f54160f20ae19bd3138fd2e24287c66efdf0f5b173c988f7e6b87af46b15fc6"
+      "source_sha256": "4a152ed2041641b55c92961ff60e5472cd0e83f2f887d51e9d829593410769f4"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2023,9 +2485,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.ohchr.org/en/special-procedures/sr-torture",
       "http_status": 403,
-      "source_sha256": "4f54160f20ae19bd3138fd2e24287c66efdf0f5b173c988f7e6b87af46b15fc6"
+      "source_sha256": "4a152ed2041641b55c92961ff60e5472cd0e83f2f887d51e9d829593410769f4"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2054,9 +2525,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.ohchr.org/en/special-procedures/sr-torture",
       "http_status": 403,
-      "source_sha256": "4f54160f20ae19bd3138fd2e24287c66efdf0f5b173c988f7e6b87af46b15fc6"
+      "source_sha256": "4a152ed2041641b55c92961ff60e5472cd0e83f2f887d51e9d829593410769f4"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2085,9 +2565,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.ohchr.org/en/special-procedures/sr-torture",
       "http_status": 403,
-      "source_sha256": "4f54160f20ae19bd3138fd2e24287c66efdf0f5b173c988f7e6b87af46b15fc6"
+      "source_sha256": "4a152ed2041641b55c92961ff60e5472cd0e83f2f887d51e9d829593410769f4"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2116,9 +2602,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.ohchr.org/en/special-procedures/sr-torture",
       "http_status": 403,
-      "source_sha256": "4f54160f20ae19bd3138fd2e24287c66efdf0f5b173c988f7e6b87af46b15fc6"
+      "source_sha256": "4a152ed2041641b55c92961ff60e5472cd0e83f2f887d51e9d829593410769f4"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2147,9 +2639,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.ohchr.org/en/special-procedures/sr-torture",
       "http_status": 403,
-      "source_sha256": "4f54160f20ae19bd3138fd2e24287c66efdf0f5b173c988f7e6b87af46b15fc6"
+      "source_sha256": "4a152ed2041641b55c92961ff60e5472cd0e83f2f887d51e9d829593410769f4"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2178,9 +2676,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.ohchr.org/en/special-procedures/sr-torture",
       "http_status": 403,
-      "source_sha256": "4f54160f20ae19bd3138fd2e24287c66efdf0f5b173c988f7e6b87af46b15fc6"
+      "source_sha256": "4a152ed2041641b55c92961ff60e5472cd0e83f2f887d51e9d829593410769f4"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2198,7 +2702,7 @@
       "suggested_source_boundary": "official processing statistics, legal guidance, reception data and audit reports",
       "source_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2207,8 +2711,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "\"green card\" FY22 Appropriations Reporting Requirement - Application Processing Data for May, 2026 (CSV, 3.53 KB) July 22, 2026 This report is produced in response to the direction set forth in the Consolidated Appropriations Act, 2022, Joint Explanatory Statement (H.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "SHA-256 1d371d04df54bf9fd6c624af5911f12683ec487e48f0fed3405024afd5f42b68; selected=https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data; final=https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "http_status": 200,
       "source_sha256": "1d371d04df54bf9fd6c624af5911f12683ec487e48f0fed3405024afd5f42b68"
@@ -2229,7 +2739,7 @@
       "suggested_source_boundary": "official processing statistics, legal guidance, reception data and audit reports",
       "source_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2238,8 +2748,16 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Form I-765, Application for Employment Authorization Counts of Pending Applications by Days Pending and by filing type for All Eligibility Categories and (c)(8) Pending Asylum Category (Fiscal Year 2026, Quarter 1) (XLSX, 21.81 KB) June 12, 2026 This report contains number of pending I-765 petitions by number of days pending, for all EAD categories, as well as for the (c)(8) category for pending asylum applicants.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Immigration and Citizenship Data | USCIS",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "http_status": 200,
       "source_sha256": "1d371d04df54bf9fd6c624af5911f12683ec487e48f0fed3405024afd5f42b68"
@@ -2271,6 +2789,14 @@
       "raw_payload_committed": false,
       "locator": "Immigration and Citizenship Data | USCIS",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "http_status": 200,
       "source_sha256": "1d371d04df54bf9fd6c624af5911f12683ec487e48f0fed3405024afd5f42b68"
@@ -2300,8 +2826,11 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "\"green card\" FY22 Appropriations Reporting Requirement - Application Processing Data for May, 2026 (CSV, 3.53 KB) July 22, 2026 This report is produced in response to the direction set forth in the Consolidated Appropriations Act, 2022, Joint Explanatory Statement (H.",
+      "locator": "All USCIS Application and Petition Form Types (Fiscal Year 2026, Quarter 1) (XLSX, 765.55 KB)",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "http_status": 200,
       "source_sha256": "1d371d04df54bf9fd6c624af5911f12683ec487e48f0fed3405024afd5f42b68"
@@ -2332,7 +2861,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Immigration and Citizenship Data | USCIS",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "http_status": 200,
       "source_sha256": "1d371d04df54bf9fd6c624af5911f12683ec487e48f0fed3405024afd5f42b68"
@@ -2364,6 +2901,13 @@
       "raw_payload_committed": false,
       "locator": "Immigration and Citizenship Data | USCIS",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "http_status": 200,
       "source_sha256": "1d371d04df54bf9fd6c624af5911f12683ec487e48f0fed3405024afd5f42b68"
@@ -2394,7 +2938,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Immigration and Citizenship Data | USCIS",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "http_status": 200,
       "source_sha256": "1d371d04df54bf9fd6c624af5911f12683ec487e48f0fed3405024afd5f42b68"
@@ -2415,7 +2965,7 @@
       "suggested_source_boundary": "official processing statistics, legal guidance, reception data and audit reports",
       "source_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2424,8 +2974,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "\"green card\" FY22 Appropriations Reporting Requirement - Application Processing Data for May, 2026 (CSV, 3.53 KB) July 22, 2026 This report is produced in response to the direction set forth in the Consolidated Appropriations Act, 2022, Joint Explanatory Statement (H.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Immigration and Citizenship Data | USCIS",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "http_status": 200,
       "source_sha256": "1d371d04df54bf9fd6c624af5911f12683ec487e48f0fed3405024afd5f42b68"
@@ -2457,6 +3012,11 @@
       "raw_payload_committed": false,
       "locator": "Immigration and Citizenship Data | USCIS",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "http_status": 200,
       "source_sha256": "1d371d04df54bf9fd6c624af5911f12683ec487e48f0fed3405024afd5f42b68"
@@ -2477,7 +3037,7 @@
       "suggested_source_boundary": "official processing statistics, legal guidance, reception data and audit reports",
       "source_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2486,8 +3046,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "\"green card\" FY22 Appropriations Reporting Requirement - Application Processing Data for May, 2026 (CSV, 3.53 KB) July 22, 2026 This report is produced in response to the direction set forth in the Consolidated Appropriations Act, 2022, Joint Explanatory Statement (H.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Immigration and Citizenship Data | USCIS",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
       "http_status": 200,
       "source_sha256": "1d371d04df54bf9fd6c624af5911f12683ec487e48f0fed3405024afd5f42b68"
@@ -2508,7 +3073,7 @@
       "suggested_source_boundary": "official processing statistics, legal guidance, reception data and audit reports",
       "source_url": "https://www.ice.gov/statistics",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2517,8 +3082,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Data is extracted under a point-in-time scenario.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "SHA-256 8e236889623619992169dc1ccf043f070604adff23684ace187bd2ec62d63d5c; selected=https://www.ice.gov/statistics; final=https://www.ice.gov/statistics",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ice.gov/statistics",
       "http_status": 200,
       "source_sha256": "8e236889623619992169dc1ccf043f070604adff23684ace187bd2ec62d63d5c"
@@ -2549,7 +3120,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "ICE Enforcement and Removal Operations Statistics | ICE",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ice.gov/statistics",
       "http_status": 200,
       "source_sha256": "8e236889623619992169dc1ccf043f070604adff23684ace187bd2ec62d63d5c"
@@ -2581,6 +3160,13 @@
       "raw_payload_committed": false,
       "locator": "ICE Enforcement and Removal Operations Statistics | ICE",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ice.gov/statistics",
       "http_status": 200,
       "source_sha256": "8e236889623619992169dc1ccf043f070604adff23684ace187bd2ec62d63d5c"
@@ -2610,8 +3196,11 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "The following dashboards present for the first time information and trends in arrests, detentions, removals and alternatives to detention as of December 31, 2024.",
+      "locator": "Between March 2020 and May 2023, the Department of Homeland Security quickly expelled irregular border crossers from the United States under a public health order the Centers for Disease Control and Prevention issued March 21, 2020, sometimes called “ || Country of Citizenship is derived from the ICE system of record as it is input by the officer at the time of processing.",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ice.gov/statistics",
       "http_status": 200,
       "source_sha256": "8e236889623619992169dc1ccf043f070604adff23684ace187bd2ec62d63d5c"
@@ -2642,7 +3231,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "ICE Enforcement and Removal Operations Statistics | ICE",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ice.gov/statistics",
       "http_status": 200,
       "source_sha256": "8e236889623619992169dc1ccf043f070604adff23684ace187bd2ec62d63d5c"
@@ -2663,7 +3261,7 @@
       "suggested_source_boundary": "official processing statistics, legal guidance, reception data and audit reports",
       "source_url": "https://www.ice.gov/statistics",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2672,8 +3270,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Code, sometimes called “ Title 8 authority.” Between March 2020 and May 2023, the Department of Homeland Security quickly expelled irregular border crossers from the United States under a public health order the Centers for Disease Control and Prevention issued March 21, 2020, sometimes called “ Title 42 authority.” Title 8: ICE principally removes aliens from the United States after they have received a final order of removal.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "ICE Enforcement and Removal Operations Statistics | ICE",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ice.gov/statistics",
       "http_status": 200,
       "source_sha256": "8e236889623619992169dc1ccf043f070604adff23684ace187bd2ec62d63d5c"
@@ -2694,7 +3297,7 @@
       "suggested_source_boundary": "official processing statistics, legal guidance, reception data and audit reports",
       "source_url": "https://www.ice.gov/statistics",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2703,8 +3306,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "An \"Unknown\" Country indicates the alien failed or refused to identify a country of citizenship or the officer lacked documentation to do so at the time.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "ICE Enforcement and Removal Operations Statistics | ICE",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ice.gov/statistics",
       "http_status": 200,
       "source_sha256": "8e236889623619992169dc1ccf043f070604adff23684ace187bd2ec62d63d5c"
@@ -2734,8 +3342,11 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "An \"Unknown\" Country indicates the alien failed or refused to identify a country of citizenship or the officer lacked documentation to do so at the time.",
+      "locator": "An \"Unknown\" Country indicates the alien failed or refused to identify a country of citizenship or the officer lacked documentation to do so at the time. || Between March 2020 and May 2023, the Department of Homeland Security quickly expelled irregular border crossers from the United States under a public health order the Centers for Disease Control and Prevention issued March 21, 2020, sometimes called “",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ice.gov/statistics",
       "http_status": 200,
       "source_sha256": "8e236889623619992169dc1ccf043f070604adff23684ace187bd2ec62d63d5c"
@@ -2756,7 +3367,7 @@
       "suggested_source_boundary": "official processing statistics, legal guidance, reception data and audit reports",
       "source_url": "https://www.ice.gov/statistics",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2765,8 +3376,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Code, sometimes called “ Title 8 authority.” Between March 2020 and May 2023, the Department of Homeland Security quickly expelled irregular border crossers from the United States under a public health order the Centers for Disease Control and Prevention issued March 21, 2020, sometimes called “ Title 42 authority.” Title 8: ICE principally removes aliens from the United States after they have received a final order of removal.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "ICE Enforcement and Removal Operations Statistics | ICE",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ice.gov/statistics",
       "http_status": 200,
       "source_sha256": "8e236889623619992169dc1ccf043f070604adff23684ace187bd2ec62d63d5c"
@@ -2787,7 +3403,7 @@
       "suggested_source_boundary": "official processing statistics, legal guidance, reception data and audit reports",
       "source_url": "https://www.ice.gov/statistics",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -2796,8 +3412,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Country of Birth or Citizenship can be updated at anytime during the Immigration Lifecycle by an Officer.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "ICE Enforcement and Removal Operations Statistics | ICE",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ice.gov/statistics",
       "http_status": 200,
       "source_sha256": "8e236889623619992169dc1ccf043f070604adff23684ace187bd2ec62d63d5c"
@@ -2827,8 +3448,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Stats and Summaries | U.S. Customs and Border Protection",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 5c007d090c1b8191a731be7d0bd2335aae110842c4f9ac379ffd4a87cee1d301; selected=https://www.cbp.gov/newsroom/stats; final=https://www.cbp.gov/newsroom/stats",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cbp.gov/newsroom/stats",
       "http_status": 200,
       "source_sha256": "5c007d090c1b8191a731be7d0bd2335aae110842c4f9ac379ffd4a87cee1d301"
@@ -2859,7 +3486,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Stats and Summaries | U.S. Customs and Border Protection",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cbp.gov/newsroom/stats",
       "http_status": 200,
       "source_sha256": "5c007d090c1b8191a731be7d0bd2335aae110842c4f9ac379ffd4a87cee1d301"
@@ -2891,6 +3528,15 @@
       "raw_payload_committed": false,
       "locator": "Stats and Summaries | U.S. Customs and Border Protection",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cbp.gov/newsroom/stats",
       "http_status": 200,
       "source_sha256": "5c007d090c1b8191a731be7d0bd2335aae110842c4f9ac379ffd4a87cee1d301"
@@ -2922,6 +3568,12 @@
       "raw_payload_committed": false,
       "locator": "Stats and Summaries | U.S. Customs and Border Protection",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cbp.gov/newsroom/stats",
       "http_status": 200,
       "source_sha256": "5c007d090c1b8191a731be7d0bd2335aae110842c4f9ac379ffd4a87cee1d301"
@@ -2952,7 +3604,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Stats and Summaries | U.S. Customs and Border Protection",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cbp.gov/newsroom/stats",
       "http_status": 200,
       "source_sha256": "5c007d090c1b8191a731be7d0bd2335aae110842c4f9ac379ffd4a87cee1d301"
@@ -2984,6 +3645,15 @@
       "raw_payload_committed": false,
       "locator": "Stats and Summaries | U.S. Customs and Border Protection",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cbp.gov/newsroom/stats",
       "http_status": 200,
       "source_sha256": "5c007d090c1b8191a731be7d0bd2335aae110842c4f9ac379ffd4a87cee1d301"
@@ -3014,7 +3684,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Stats and Summaries | U.S. Customs and Border Protection",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cbp.gov/newsroom/stats",
       "http_status": 200,
       "source_sha256": "5c007d090c1b8191a731be7d0bd2335aae110842c4f9ac379ffd4a87cee1d301"
@@ -3046,6 +3722,12 @@
       "raw_payload_committed": false,
       "locator": "Stats and Summaries | U.S. Customs and Border Protection",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cbp.gov/newsroom/stats",
       "http_status": 200,
       "source_sha256": "5c007d090c1b8191a731be7d0bd2335aae110842c4f9ac379ffd4a87cee1d301"
@@ -3077,6 +3759,12 @@
       "raw_payload_committed": false,
       "locator": "Stats and Summaries | U.S. Customs and Border Protection",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cbp.gov/newsroom/stats",
       "http_status": 200,
       "source_sha256": "5c007d090c1b8191a731be7d0bd2335aae110842c4f9ac379ffd4a87cee1d301"
@@ -3108,6 +3796,12 @@
       "raw_payload_committed": false,
       "locator": "Stats and Summaries | U.S. Customs and Border Protection",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cbp.gov/newsroom/stats",
       "http_status": 200,
       "source_sha256": "5c007d090c1b8191a731be7d0bd2335aae110842c4f9ac379ffd4a87cee1d301"
@@ -3137,8 +3831,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Executive Office for Immigration Review | Statistics Yearbook",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 88df7c479ef3e32e2cdcacefe984da1d3af62ce412ab0e4f84773a8607897daf; selected=https://www.justice.gov/eoir/statistical-year-book; final=https://www.justice.gov/eoir/statistical-year-book",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/eoir/statistical-year-book",
       "http_status": 200,
       "source_sha256": "88df7c479ef3e32e2cdcacefe984da1d3af62ce412ab0e4f84773a8607897daf"
@@ -3169,7 +3869,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Executive Office for Immigration Review | Statistics Yearbook",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/eoir/statistical-year-book",
       "http_status": 200,
       "source_sha256": "88df7c479ef3e32e2cdcacefe984da1d3af62ce412ab0e4f84773a8607897daf"
@@ -3201,6 +3911,15 @@
       "raw_payload_committed": false,
       "locator": "Executive Office for Immigration Review | Statistics Yearbook",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/eoir/statistical-year-book",
       "http_status": 200,
       "source_sha256": "88df7c479ef3e32e2cdcacefe984da1d3af62ce412ab0e4f84773a8607897daf"
@@ -3232,6 +3951,12 @@
       "raw_payload_committed": false,
       "locator": "Executive Office for Immigration Review | Statistics Yearbook",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/eoir/statistical-year-book",
       "http_status": 200,
       "source_sha256": "88df7c479ef3e32e2cdcacefe984da1d3af62ce412ab0e4f84773a8607897daf"
@@ -3262,7 +3987,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Executive Office for Immigration Review | Statistics Yearbook",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/eoir/statistical-year-book",
       "http_status": 200,
       "source_sha256": "88df7c479ef3e32e2cdcacefe984da1d3af62ce412ab0e4f84773a8607897daf"
@@ -3294,6 +4028,15 @@
       "raw_payload_committed": false,
       "locator": "Executive Office for Immigration Review | Statistics Yearbook",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/eoir/statistical-year-book",
       "http_status": 200,
       "source_sha256": "88df7c479ef3e32e2cdcacefe984da1d3af62ce412ab0e4f84773a8607897daf"
@@ -3324,7 +4067,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Executive Office for Immigration Review | Statistics Yearbook",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/eoir/statistical-year-book",
       "http_status": 200,
       "source_sha256": "88df7c479ef3e32e2cdcacefe984da1d3af62ce412ab0e4f84773a8607897daf"
@@ -3356,6 +4105,12 @@
       "raw_payload_committed": false,
       "locator": "Executive Office for Immigration Review | Statistics Yearbook",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/eoir/statistical-year-book",
       "http_status": 200,
       "source_sha256": "88df7c479ef3e32e2cdcacefe984da1d3af62ce412ab0e4f84773a8607897daf"
@@ -3387,6 +4142,12 @@
       "raw_payload_committed": false,
       "locator": "Executive Office for Immigration Review | Statistics Yearbook",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/eoir/statistical-year-book",
       "http_status": 200,
       "source_sha256": "88df7c479ef3e32e2cdcacefe984da1d3af62ce412ab0e4f84773a8607897daf"
@@ -3418,6 +4179,12 @@
       "raw_payload_committed": false,
       "locator": "Executive Office for Immigration Review | Statistics Yearbook",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.justice.gov/eoir/statistical-year-book",
       "http_status": 200,
       "source_sha256": "88df7c479ef3e32e2cdcacefe984da1d3af62ce412ab0e4f84773a8607897daf"
@@ -3449,6 +4216,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iom.int/migration-data-and-research",
       "http_status": 404,
       "source_sha256": "d22050e51b6e555c56bba62b798a50fec57dd321e8725591153ca56d7ea1179c"
@@ -3480,6 +4252,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iom.int/migration-data-and-research",
       "http_status": 404,
       "source_sha256": "d22050e51b6e555c56bba62b798a50fec57dd321e8725591153ca56d7ea1179c"
@@ -3511,6 +4293,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iom.int/migration-data-and-research",
       "http_status": 404,
       "source_sha256": "d22050e51b6e555c56bba62b798a50fec57dd321e8725591153ca56d7ea1179c"
@@ -3542,6 +4333,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iom.int/migration-data-and-research",
       "http_status": 404,
       "source_sha256": "d22050e51b6e555c56bba62b798a50fec57dd321e8725591153ca56d7ea1179c"
@@ -3573,6 +4370,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iom.int/migration-data-and-research",
       "http_status": 404,
       "source_sha256": "d22050e51b6e555c56bba62b798a50fec57dd321e8725591153ca56d7ea1179c"
@@ -3604,6 +4410,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iom.int/migration-data-and-research",
       "http_status": 404,
       "source_sha256": "d22050e51b6e555c56bba62b798a50fec57dd321e8725591153ca56d7ea1179c"
@@ -3635,6 +4450,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iom.int/migration-data-and-research",
       "http_status": 404,
       "source_sha256": "d22050e51b6e555c56bba62b798a50fec57dd321e8725591153ca56d7ea1179c"
@@ -3666,6 +4487,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iom.int/migration-data-and-research",
       "http_status": 404,
       "source_sha256": "d22050e51b6e555c56bba62b798a50fec57dd321e8725591153ca56d7ea1179c"
@@ -3697,6 +4524,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iom.int/migration-data-and-research",
       "http_status": 404,
       "source_sha256": "d22050e51b6e555c56bba62b798a50fec57dd321e8725591153ca56d7ea1179c"
@@ -3728,6 +4561,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iom.int/migration-data-and-research",
       "http_status": 404,
       "source_sha256": "d22050e51b6e555c56bba62b798a50fec57dd321e8725591153ca56d7ea1179c"
@@ -3759,9 +4598,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/refugee-statistics/",
       "http_status": 403,
-      "source_sha256": "5acd02d3aa07926bf0a5767a33cde2df11efc375c76d349f1d9b1d3d43b2e923"
+      "source_sha256": "24a5fa10ff1c4890cd7dbc73a49cf3c40d6acc166d359f503a77359f20aaa633"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3790,9 +4634,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/refugee-statistics/",
       "http_status": 403,
-      "source_sha256": "5acd02d3aa07926bf0a5767a33cde2df11efc375c76d349f1d9b1d3d43b2e923"
+      "source_sha256": "24a5fa10ff1c4890cd7dbc73a49cf3c40d6acc166d359f503a77359f20aaa633"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3821,9 +4675,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/refugee-statistics/",
       "http_status": 403,
-      "source_sha256": "5acd02d3aa07926bf0a5767a33cde2df11efc375c76d349f1d9b1d3d43b2e923"
+      "source_sha256": "24a5fa10ff1c4890cd7dbc73a49cf3c40d6acc166d359f503a77359f20aaa633"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3852,9 +4715,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/refugee-statistics/",
       "http_status": 403,
-      "source_sha256": "5acd02d3aa07926bf0a5767a33cde2df11efc375c76d349f1d9b1d3d43b2e923"
+      "source_sha256": "24a5fa10ff1c4890cd7dbc73a49cf3c40d6acc166d359f503a77359f20aaa633"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3883,9 +4752,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/refugee-statistics/",
       "http_status": 403,
-      "source_sha256": "5acd02d3aa07926bf0a5767a33cde2df11efc375c76d349f1d9b1d3d43b2e923"
+      "source_sha256": "24a5fa10ff1c4890cd7dbc73a49cf3c40d6acc166d359f503a77359f20aaa633"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3914,9 +4792,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/refugee-statistics/",
       "http_status": 403,
-      "source_sha256": "5acd02d3aa07926bf0a5767a33cde2df11efc375c76d349f1d9b1d3d43b2e923"
+      "source_sha256": "24a5fa10ff1c4890cd7dbc73a49cf3c40d6acc166d359f503a77359f20aaa633"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3945,9 +4832,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/refugee-statistics/",
       "http_status": 403,
-      "source_sha256": "5acd02d3aa07926bf0a5767a33cde2df11efc375c76d349f1d9b1d3d43b2e923"
+      "source_sha256": "24a5fa10ff1c4890cd7dbc73a49cf3c40d6acc166d359f503a77359f20aaa633"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3976,9 +4869,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/refugee-statistics/",
       "http_status": 403,
-      "source_sha256": "5acd02d3aa07926bf0a5767a33cde2df11efc375c76d349f1d9b1d3d43b2e923"
+      "source_sha256": "24a5fa10ff1c4890cd7dbc73a49cf3c40d6acc166d359f503a77359f20aaa633"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4007,9 +4906,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/refugee-statistics/",
       "http_status": 403,
-      "source_sha256": "5acd02d3aa07926bf0a5767a33cde2df11efc375c76d349f1d9b1d3d43b2e923"
+      "source_sha256": "24a5fa10ff1c4890cd7dbc73a49cf3c40d6acc166d359f503a77359f20aaa633"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4038,9 +4943,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "SHORT_UNDER_2000_CHARS",
       "canonical_url": "https://www.unhcr.org/refugee-statistics/",
       "http_status": 403,
-      "source_sha256": "5acd02d3aa07926bf0a5767a33cde2df11efc375c76d349f1d9b1d3d43b2e923"
+      "source_sha256": "24a5fa10ff1c4890cd7dbc73a49cf3c40d6acc166d359f503a77359f20aaa633"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4067,8 +4978,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Overview - Migration and asylum - Eurostat",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 0d07902a2a6faa32a74f13913e07030ebf0f5746f3d963fc4b0e89f06eb96f22; selected=https://ec.europa.eu/eurostat/web/migration-asylum; final=https://ec.europa.eu/eurostat/web/migration-asylum",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://ec.europa.eu/eurostat/web/migration-asylum",
       "http_status": 200,
       "source_sha256": "0d07902a2a6faa32a74f13913e07030ebf0f5746f3d963fc4b0e89f06eb96f22"
@@ -4099,7 +5016,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Overview - Migration and asylum - Eurostat",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://ec.europa.eu/eurostat/web/migration-asylum",
       "http_status": 200,
       "source_sha256": "0d07902a2a6faa32a74f13913e07030ebf0f5746f3d963fc4b0e89f06eb96f22"
@@ -4131,6 +5058,15 @@
       "raw_payload_committed": false,
       "locator": "Overview - Migration and asylum - Eurostat",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://ec.europa.eu/eurostat/web/migration-asylum",
       "http_status": 200,
       "source_sha256": "0d07902a2a6faa32a74f13913e07030ebf0f5746f3d963fc4b0e89f06eb96f22"
@@ -4162,6 +5098,12 @@
       "raw_payload_committed": false,
       "locator": "Overview - Migration and asylum - Eurostat",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://ec.europa.eu/eurostat/web/migration-asylum",
       "http_status": 200,
       "source_sha256": "0d07902a2a6faa32a74f13913e07030ebf0f5746f3d963fc4b0e89f06eb96f22"
@@ -4192,7 +5134,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Overview - Migration and asylum - Eurostat",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://ec.europa.eu/eurostat/web/migration-asylum",
       "http_status": 200,
       "source_sha256": "0d07902a2a6faa32a74f13913e07030ebf0f5746f3d963fc4b0e89f06eb96f22"
@@ -4224,6 +5175,15 @@
       "raw_payload_committed": false,
       "locator": "Overview - Migration and asylum - Eurostat",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://ec.europa.eu/eurostat/web/migration-asylum",
       "http_status": 200,
       "source_sha256": "0d07902a2a6faa32a74f13913e07030ebf0f5746f3d963fc4b0e89f06eb96f22"
@@ -4254,7 +5214,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Overview - Migration and asylum - Eurostat",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://ec.europa.eu/eurostat/web/migration-asylum",
       "http_status": 200,
       "source_sha256": "0d07902a2a6faa32a74f13913e07030ebf0f5746f3d963fc4b0e89f06eb96f22"
@@ -4286,6 +5252,12 @@
       "raw_payload_committed": false,
       "locator": "Overview - Migration and asylum - Eurostat",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://ec.europa.eu/eurostat/web/migration-asylum",
       "http_status": 200,
       "source_sha256": "0d07902a2a6faa32a74f13913e07030ebf0f5746f3d963fc4b0e89f06eb96f22"
@@ -4317,6 +5289,12 @@
       "raw_payload_committed": false,
       "locator": "Overview - Migration and asylum - Eurostat",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://ec.europa.eu/eurostat/web/migration-asylum",
       "http_status": 200,
       "source_sha256": "0d07902a2a6faa32a74f13913e07030ebf0f5746f3d963fc4b0e89f06eb96f22"
@@ -4348,6 +5326,12 @@
       "raw_payload_committed": false,
       "locator": "Overview - Migration and asylum - Eurostat",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://ec.europa.eu/eurostat/web/migration-asylum",
       "http_status": 200,
       "source_sha256": "0d07902a2a6faa32a74f13913e07030ebf0f5746f3d963fc4b0e89f06eb96f22"
@@ -4377,8 +5361,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Reports — IPCC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 a5e80514255efa7f928acb3080599e5f266366f595bb0d6a2530402585413e37; selected=https://www.ipcc.ch/reports/; final=https://www.ipcc.ch/reports/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ipcc.ch/reports/",
       "http_status": 200,
       "source_sha256": "a5e80514255efa7f928acb3080599e5f266366f595bb0d6a2530402585413e37"
@@ -4409,7 +5399,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Reports — IPCC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ipcc.ch/reports/",
       "http_status": 200,
       "source_sha256": "a5e80514255efa7f928acb3080599e5f266366f595bb0d6a2530402585413e37"
@@ -4441,6 +5440,14 @@
       "raw_payload_committed": false,
       "locator": "Reports — IPCC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ipcc.ch/reports/",
       "http_status": 200,
       "source_sha256": "a5e80514255efa7f928acb3080599e5f266366f595bb0d6a2530402585413e37"
@@ -4472,6 +5479,11 @@
       "raw_payload_committed": false,
       "locator": "Reports — IPCC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ipcc.ch/reports/",
       "http_status": 200,
       "source_sha256": "a5e80514255efa7f928acb3080599e5f266366f595bb0d6a2530402585413e37"
@@ -4502,7 +5514,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Reports — IPCC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ipcc.ch/reports/",
       "http_status": 200,
       "source_sha256": "a5e80514255efa7f928acb3080599e5f266366f595bb0d6a2530402585413e37"
@@ -4534,6 +5555,15 @@
       "raw_payload_committed": false,
       "locator": "Reports — IPCC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ipcc.ch/reports/",
       "http_status": 200,
       "source_sha256": "a5e80514255efa7f928acb3080599e5f266366f595bb0d6a2530402585413e37"
@@ -4564,7 +5594,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Reports — IPCC",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ipcc.ch/reports/",
       "http_status": 200,
       "source_sha256": "a5e80514255efa7f928acb3080599e5f266366f595bb0d6a2530402585413e37"
@@ -4596,6 +5632,12 @@
       "raw_payload_committed": false,
       "locator": "Reports — IPCC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ipcc.ch/reports/",
       "http_status": 200,
       "source_sha256": "a5e80514255efa7f928acb3080599e5f266366f595bb0d6a2530402585413e37"
@@ -4627,6 +5669,12 @@
       "raw_payload_committed": false,
       "locator": "Reports — IPCC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ipcc.ch/reports/",
       "http_status": 200,
       "source_sha256": "a5e80514255efa7f928acb3080599e5f266366f595bb0d6a2530402585413e37"
@@ -4658,6 +5706,12 @@
       "raw_payload_committed": false,
       "locator": "Reports — IPCC",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ipcc.ch/reports/",
       "http_status": 200,
       "source_sha256": "a5e80514255efa7f928acb3080599e5f266366f595bb0d6a2530402585413e37"
@@ -4687,8 +5741,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Evidence - NASA Science",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 e9f59d584a73d0f722d754c516ec7f410d92920de9c15d65d3e185734f925271; selected=https://science.nasa.gov/climate-change/evidence/; final=https://science.nasa.gov/climate-change/evidence/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://science.nasa.gov/climate-change/evidence/",
       "http_status": 200,
       "source_sha256": "e9f59d584a73d0f722d754c516ec7f410d92920de9c15d65d3e185734f925271"
@@ -4709,7 +5769,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://science.nasa.gov/climate-change/evidence/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4718,8 +5778,16 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "En español Takeaways While Earth’s climate has changed throughout its history , the current warming is happening at a rate not seen in the past 10,000 years.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Evidence - NASA Science",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://science.nasa.gov/climate-change/evidence/",
       "http_status": 200,
       "source_sha256": "e9f59d584a73d0f722d754c516ec7f410d92920de9c15d65d3e185734f925271"
@@ -4751,6 +5819,14 @@
       "raw_payload_committed": false,
       "locator": "Evidence - NASA Science",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://science.nasa.gov/climate-change/evidence/",
       "http_status": 200,
       "source_sha256": "e9f59d584a73d0f722d754c516ec7f410d92920de9c15d65d3e185734f925271"
@@ -4780,8 +5856,11 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "The Ocean Is Getting Warmer The ocean has absorbed much of this increased heat, with the top 100 meters (about 328 feet) of ocean showing warming of 0.67 degrees Fahrenheit (0.33 degrees Celsius) since 1969.",
+      "locator": "The ocean has absorbed much of this increased heat, with the top 100 meters (about 328 feet) of ocean showing warming of 0.67 degrees Fahrenheit (0.33 degrees Celsius) since 1969.",
       "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://science.nasa.gov/climate-change/evidence/",
       "http_status": 200,
       "source_sha256": "e9f59d584a73d0f722d754c516ec7f410d92920de9c15d65d3e185734f925271"
@@ -4812,7 +5891,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Evidence - NASA Science",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://science.nasa.gov/climate-change/evidence/",
       "http_status": 200,
       "source_sha256": "e9f59d584a73d0f722d754c516ec7f410d92920de9c15d65d3e185734f925271"
@@ -4833,7 +5921,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://science.nasa.gov/climate-change/evidence/",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4842,8 +5930,15 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "The current warming trend is different because it is clearly the result of human activities since the mid-1800s, and is proceeding at a rate not seen over many recent millennia.",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Evidence - NASA Science",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "operating-condition",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://science.nasa.gov/climate-change/evidence/",
       "http_status": 200,
       "source_sha256": "e9f59d584a73d0f722d754c516ec7f410d92920de9c15d65d3e185734f925271"
@@ -4874,7 +5969,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Evidence - NASA Science",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://science.nasa.gov/climate-change/evidence/",
       "http_status": 200,
       "source_sha256": "e9f59d584a73d0f722d754c516ec7f410d92920de9c15d65d3e185734f925271"
@@ -4906,6 +6007,12 @@
       "raw_payload_committed": false,
       "locator": "Evidence - NASA Science",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://science.nasa.gov/climate-change/evidence/",
       "http_status": 200,
       "source_sha256": "e9f59d584a73d0f722d754c516ec7f410d92920de9c15d65d3e185734f925271"
@@ -4937,6 +6044,12 @@
       "raw_payload_committed": false,
       "locator": "Evidence - NASA Science",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://science.nasa.gov/climate-change/evidence/",
       "http_status": 200,
       "source_sha256": "e9f59d584a73d0f722d754c516ec7f410d92920de9c15d65d3e185734f925271"
@@ -4968,6 +6081,12 @@
       "raw_payload_committed": false,
       "locator": "Evidence - NASA Science",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://science.nasa.gov/climate-change/evidence/",
       "http_status": 200,
       "source_sha256": "e9f59d584a73d0f722d754c516ec7f410d92920de9c15d65d3e185734f925271"
@@ -4988,7 +6107,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.noaa.gov/climate",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4997,11 +6116,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "SHA-256 ca11233a225d8f9576e22d2fc221dc363ff477f394d5da76b90aeabc546f8e17; selected=https://www.noaa.gov/climate; final=https://www.noaa.gov/climate",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.noaa.gov/climate",
-      "http_status": 403,
-      "source_sha256": "b3c438ef5bc72ad06816b1a8216ac9e325f30c38ec3255ce5b337f0371a4a5dc"
+      "http_status": 200,
+      "source_sha256": "ca11233a225d8f9576e22d2fc221dc363ff477f394d5da76b90aeabc546f8e17"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5019,7 +6144,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.noaa.gov/climate",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5028,11 +6153,21 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Climate | National Oceanic and Atmospheric Administration",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.noaa.gov/climate",
-      "http_status": 403,
-      "source_sha256": "b3c438ef5bc72ad06816b1a8216ac9e325f30c38ec3255ce5b337f0371a4a5dc"
+      "http_status": 200,
+      "source_sha256": "ca11233a225d8f9576e22d2fc221dc363ff477f394d5da76b90aeabc546f8e17"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5050,7 +6185,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.noaa.gov/climate",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5059,11 +6194,20 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Climate | National Oceanic and Atmospheric Administration",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.noaa.gov/climate",
-      "http_status": 403,
-      "source_sha256": "b3c438ef5bc72ad06816b1a8216ac9e325f30c38ec3255ce5b337f0371a4a5dc"
+      "http_status": 200,
+      "source_sha256": "ca11233a225d8f9576e22d2fc221dc363ff477f394d5da76b90aeabc546f8e17"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5081,7 +6225,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.noaa.gov/climate",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5090,11 +6234,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Climate | National Oceanic and Atmospheric Administration",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.noaa.gov/climate",
-      "http_status": 403,
-      "source_sha256": "b3c438ef5bc72ad06816b1a8216ac9e325f30c38ec3255ce5b337f0371a4a5dc"
+      "http_status": 200,
+      "source_sha256": "ca11233a225d8f9576e22d2fc221dc363ff477f394d5da76b90aeabc546f8e17"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5112,7 +6262,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.noaa.gov/climate",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5121,11 +6271,20 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Climate | National Oceanic and Atmospheric Administration",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.noaa.gov/climate",
-      "http_status": 403,
-      "source_sha256": "b3c438ef5bc72ad06816b1a8216ac9e325f30c38ec3255ce5b337f0371a4a5dc"
+      "http_status": 200,
+      "source_sha256": "ca11233a225d8f9576e22d2fc221dc363ff477f394d5da76b90aeabc546f8e17"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5143,7 +6302,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.noaa.gov/climate",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5152,11 +6311,20 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Climate | National Oceanic and Atmospheric Administration",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.noaa.gov/climate",
-      "http_status": 403,
-      "source_sha256": "b3c438ef5bc72ad06816b1a8216ac9e325f30c38ec3255ce5b337f0371a4a5dc"
+      "http_status": 200,
+      "source_sha256": "ca11233a225d8f9576e22d2fc221dc363ff477f394d5da76b90aeabc546f8e17"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5174,7 +6342,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.noaa.gov/climate",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5183,11 +6351,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Climate | National Oceanic and Atmospheric Administration",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.noaa.gov/climate",
-      "http_status": 403,
-      "source_sha256": "b3c438ef5bc72ad06816b1a8216ac9e325f30c38ec3255ce5b337f0371a4a5dc"
+      "http_status": 200,
+      "source_sha256": "ca11233a225d8f9576e22d2fc221dc363ff477f394d5da76b90aeabc546f8e17"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5205,7 +6379,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.noaa.gov/climate",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5214,11 +6388,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Climate | National Oceanic and Atmospheric Administration",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.noaa.gov/climate",
-      "http_status": 403,
-      "source_sha256": "b3c438ef5bc72ad06816b1a8216ac9e325f30c38ec3255ce5b337f0371a4a5dc"
+      "http_status": 200,
+      "source_sha256": "ca11233a225d8f9576e22d2fc221dc363ff477f394d5da76b90aeabc546f8e17"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5236,7 +6416,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.noaa.gov/climate",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5245,11 +6425,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Climate | National Oceanic and Atmospheric Administration",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.noaa.gov/climate",
-      "http_status": 403,
-      "source_sha256": "b3c438ef5bc72ad06816b1a8216ac9e325f30c38ec3255ce5b337f0371a4a5dc"
+      "http_status": 200,
+      "source_sha256": "ca11233a225d8f9576e22d2fc221dc363ff477f394d5da76b90aeabc546f8e17"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5267,7 +6453,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.noaa.gov/climate",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5276,11 +6462,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Climate | National Oceanic and Atmospheric Administration",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.noaa.gov/climate",
-      "http_status": 403,
-      "source_sha256": "b3c438ef5bc72ad06816b1a8216ac9e325f30c38ec3255ce5b337f0371a4a5dc"
+      "http_status": 200,
+      "source_sha256": "ca11233a225d8f9576e22d2fc221dc363ff477f394d5da76b90aeabc546f8e17"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -5307,8 +6499,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Climate Indicators | Copernicus",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 a1938f46b100ef658a03cb63f6ce5db60664248ce9d429fed5e87343b7ff04cf; selected=https://climate.copernicus.eu/climate-indicators; final=https://climate.copernicus.eu/climate-indicators",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://climate.copernicus.eu/climate-indicators",
       "http_status": 200,
       "source_sha256": "a1938f46b100ef658a03cb63f6ce5db60664248ce9d429fed5e87343b7ff04cf"
@@ -5339,7 +6537,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Climate Indicators | Copernicus",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://climate.copernicus.eu/climate-indicators",
       "http_status": 200,
       "source_sha256": "a1938f46b100ef658a03cb63f6ce5db60664248ce9d429fed5e87343b7ff04cf"
@@ -5371,6 +6579,14 @@
       "raw_payload_committed": false,
       "locator": "Climate Indicators | Copernicus",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://climate.copernicus.eu/climate-indicators",
       "http_status": 200,
       "source_sha256": "a1938f46b100ef658a03cb63f6ce5db60664248ce9d429fed5e87343b7ff04cf"
@@ -5402,6 +6618,12 @@
       "raw_payload_committed": false,
       "locator": "Climate Indicators | Copernicus",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://climate.copernicus.eu/climate-indicators",
       "http_status": 200,
       "source_sha256": "a1938f46b100ef658a03cb63f6ce5db60664248ce9d429fed5e87343b7ff04cf"
@@ -5432,7 +6654,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Climate Indicators | Copernicus",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://climate.copernicus.eu/climate-indicators",
       "http_status": 200,
       "source_sha256": "a1938f46b100ef658a03cb63f6ce5db60664248ce9d429fed5e87343b7ff04cf"
@@ -5464,6 +6695,15 @@
       "raw_payload_committed": false,
       "locator": "Climate Indicators | Copernicus",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://climate.copernicus.eu/climate-indicators",
       "http_status": 200,
       "source_sha256": "a1938f46b100ef658a03cb63f6ce5db60664248ce9d429fed5e87343b7ff04cf"
@@ -5494,7 +6734,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Climate Indicators | Copernicus",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://climate.copernicus.eu/climate-indicators",
       "http_status": 200,
       "source_sha256": "a1938f46b100ef658a03cb63f6ce5db60664248ce9d429fed5e87343b7ff04cf"
@@ -5526,6 +6772,12 @@
       "raw_payload_committed": false,
       "locator": "Climate Indicators | Copernicus",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://climate.copernicus.eu/climate-indicators",
       "http_status": 200,
       "source_sha256": "a1938f46b100ef658a03cb63f6ce5db60664248ce9d429fed5e87343b7ff04cf"
@@ -5557,6 +6809,12 @@
       "raw_payload_committed": false,
       "locator": "Climate Indicators | Copernicus",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://climate.copernicus.eu/climate-indicators",
       "http_status": 200,
       "source_sha256": "a1938f46b100ef658a03cb63f6ce5db60664248ce9d429fed5e87343b7ff04cf"
@@ -5588,6 +6846,12 @@
       "raw_payload_committed": false,
       "locator": "Climate Indicators | Copernicus",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://climate.copernicus.eu/climate-indicators",
       "http_status": 200,
       "source_sha256": "a1938f46b100ef658a03cb63f6ce5db60664248ce9d429fed5e87343b7ff04cf"
@@ -5608,7 +6872,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.metoffice.gov.uk/research/climate",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5617,8 +6881,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Featured CLIMATE Climate, cryosphere and oceans Explore CLIMATE Earth system science Explore CLIMATE Climate impacts Explore CLIMATE Monthly to decadal prediction Explore CLIMATE Understanding climate change Explore CLIMATE Climate monitoring and attribution Explore RESEARCH CONSULTING Climate services Explore CLIMATE UK climate maps and data Explore Help us improve our website Take our short survey Met Office College National Meteorological Library & Archive Weather Observations Website Voluntary Climate Network (VCN) Weather & Climate Find a forecast Warnings & advice Maps & charts Climate Specialist forecasts Learn about...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "SHA-256 7205368c5173d19394402a20548011e2ee4192fb06235195d7cab13734f8e2fd; selected=https://www.metoffice.gov.uk/research/climate; final=https://www.metoffice.gov.uk/research/climate",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.metoffice.gov.uk/research/climate",
       "http_status": 200,
       "source_sha256": "7205368c5173d19394402a20548011e2ee4192fb06235195d7cab13734f8e2fd"
@@ -5649,7 +6919,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Climate research - Met Office",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.metoffice.gov.uk/research/climate",
       "http_status": 200,
       "source_sha256": "7205368c5173d19394402a20548011e2ee4192fb06235195d7cab13734f8e2fd"
@@ -5670,7 +6950,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.metoffice.gov.uk/research/climate",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5679,8 +6959,16 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Featured CLIMATE Climate, cryosphere and oceans Explore CLIMATE Earth system science Explore CLIMATE Climate impacts Explore CLIMATE Monthly to decadal prediction Explore CLIMATE Understanding climate change Explore CLIMATE Climate monitoring and attribution Explore RESEARCH CONSULTING Climate services Explore CLIMATE UK climate maps and data Explore Help us improve our website Take our short survey Met Office College National Meteorological Library & Archive Weather Observations Website Voluntary Climate Network (VCN) Weather & Climate Find a forecast Warnings & advice Maps & charts Climate Specialist forecasts Learn about...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Climate research - Met Office",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.metoffice.gov.uk/research/climate",
       "http_status": 200,
       "source_sha256": "7205368c5173d19394402a20548011e2ee4192fb06235195d7cab13734f8e2fd"
@@ -5701,7 +6989,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.metoffice.gov.uk/research/climate",
       "source_frozen_sha256": null,
-      "status": "PASSED_UNDER_PROTOCOL",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5710,8 +6998,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Causes of climate change Effects of climate change Climate change questions UK climate Climate science Organisations and reports UK daily weather extremes Specialist forecasts Specialist forecasts Coast and Sea Mountain Space Weather Learn about...",
-      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "locator": "Climate research - Met Office",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.metoffice.gov.uk/research/climate",
       "http_status": 200,
       "source_sha256": "7205368c5173d19394402a20548011e2ee4192fb06235195d7cab13734f8e2fd"
@@ -5742,7 +7036,15 @@
       ],
       "raw_payload_committed": false,
       "locator": "Climate research - Met Office",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.metoffice.gov.uk/research/climate",
       "http_status": 200,
       "source_sha256": "7205368c5173d19394402a20548011e2ee4192fb06235195d7cab13734f8e2fd"
@@ -5774,6 +7076,15 @@
       "raw_payload_committed": false,
       "locator": "Climate research - Met Office",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.metoffice.gov.uk/research/climate",
       "http_status": 200,
       "source_sha256": "7205368c5173d19394402a20548011e2ee4192fb06235195d7cab13734f8e2fd"
@@ -5804,7 +7115,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Climate research - Met Office",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.metoffice.gov.uk/research/climate",
       "http_status": 200,
       "source_sha256": "7205368c5173d19394402a20548011e2ee4192fb06235195d7cab13734f8e2fd"
@@ -5836,6 +7153,12 @@
       "raw_payload_committed": false,
       "locator": "Climate research - Met Office",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.metoffice.gov.uk/research/climate",
       "http_status": 200,
       "source_sha256": "7205368c5173d19394402a20548011e2ee4192fb06235195d7cab13734f8e2fd"
@@ -5867,6 +7190,12 @@
       "raw_payload_committed": false,
       "locator": "Climate research - Met Office",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.metoffice.gov.uk/research/climate",
       "http_status": 200,
       "source_sha256": "7205368c5173d19394402a20548011e2ee4192fb06235195d7cab13734f8e2fd"
@@ -5898,6 +7227,12 @@
       "raw_payload_committed": false,
       "locator": "Climate research - Met Office",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.metoffice.gov.uk/research/climate",
       "http_status": 200,
       "source_sha256": "7205368c5173d19394402a20548011e2ee4192fb06235195d7cab13734f8e2fd"
@@ -5918,7 +7253,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.wmo.int/topics/climate",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5927,8 +7262,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.wmo.int/topics/climate canonical=https://wmo.int/themes/climate",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 d0b57dc768b550d1abe21529d1a2e9cfdc6aaa3b1b01c61d12f2ee4d8e4b743c; selected=https://www.wmo.int/topics/climate; final=https://wmo.int/themes/climate",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://wmo.int/themes/climate",
       "http_status": 200,
       "source_sha256": "d0b57dc768b550d1abe21529d1a2e9cfdc6aaa3b1b01c61d12f2ee4d8e4b743c"
@@ -5949,7 +7290,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.wmo.int/topics/climate",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5958,8 +7299,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.wmo.int/topics/climate canonical=https://wmo.int/themes/climate",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Climate",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://wmo.int/themes/climate",
       "http_status": 200,
       "source_sha256": "d0b57dc768b550d1abe21529d1a2e9cfdc6aaa3b1b01c61d12f2ee4d8e4b743c"
@@ -5980,7 +7331,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.wmo.int/topics/climate",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -5989,8 +7340,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.wmo.int/topics/climate canonical=https://wmo.int/themes/climate",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Climate",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://wmo.int/themes/climate",
       "http_status": 200,
       "source_sha256": "d0b57dc768b550d1abe21529d1a2e9cfdc6aaa3b1b01c61d12f2ee4d8e4b743c"
@@ -6011,7 +7371,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.wmo.int/topics/climate",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6020,8 +7380,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.wmo.int/topics/climate canonical=https://wmo.int/themes/climate",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Climate",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://wmo.int/themes/climate",
       "http_status": 200,
       "source_sha256": "d0b57dc768b550d1abe21529d1a2e9cfdc6aaa3b1b01c61d12f2ee4d8e4b743c"
@@ -6042,7 +7408,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.wmo.int/topics/climate",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6051,8 +7417,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.wmo.int/topics/climate canonical=https://wmo.int/themes/climate",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Climate",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://wmo.int/themes/climate",
       "http_status": 200,
       "source_sha256": "d0b57dc768b550d1abe21529d1a2e9cfdc6aaa3b1b01c61d12f2ee4d8e4b743c"
@@ -6073,7 +7448,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.wmo.int/topics/climate",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6082,8 +7457,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.wmo.int/topics/climate canonical=https://wmo.int/themes/climate",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Climate",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://wmo.int/themes/climate",
       "http_status": 200,
       "source_sha256": "d0b57dc768b550d1abe21529d1a2e9cfdc6aaa3b1b01c61d12f2ee4d8e4b743c"
@@ -6104,7 +7488,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.wmo.int/topics/climate",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6113,8 +7497,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.wmo.int/topics/climate canonical=https://wmo.int/themes/climate",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Climate",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://wmo.int/themes/climate",
       "http_status": 200,
       "source_sha256": "d0b57dc768b550d1abe21529d1a2e9cfdc6aaa3b1b01c61d12f2ee4d8e4b743c"
@@ -6135,7 +7525,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.wmo.int/topics/climate",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6144,8 +7534,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.wmo.int/topics/climate canonical=https://wmo.int/themes/climate",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Climate",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://wmo.int/themes/climate",
       "http_status": 200,
       "source_sha256": "d0b57dc768b550d1abe21529d1a2e9cfdc6aaa3b1b01c61d12f2ee4d8e4b743c"
@@ -6166,7 +7562,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.wmo.int/topics/climate",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6175,8 +7571,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.wmo.int/topics/climate canonical=https://wmo.int/themes/climate",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Climate",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://wmo.int/themes/climate",
       "http_status": 200,
       "source_sha256": "d0b57dc768b550d1abe21529d1a2e9cfdc6aaa3b1b01c61d12f2ee4d8e4b743c"
@@ -6197,7 +7599,7 @@
       "suggested_source_boundary": "official climate datasets, assessment reports, station records and methods",
       "source_url": "https://www.wmo.int/topics/climate",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6206,8 +7608,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.wmo.int/topics/climate canonical=https://wmo.int/themes/climate",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Climate",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://wmo.int/themes/climate",
       "http_status": 200,
       "source_sha256": "d0b57dc768b550d1abe21529d1a2e9cfdc6aaa3b1b01c61d12f2ee4d8e4b743c"
@@ -6237,8 +7645,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Climate at a Glance | National Centers for Environmental Information (NCEI)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 4fa26fbdce6afd67d78a8fd2ab8993a3d00987bb8eb1a2268c99ede5c9a0e7f7; selected=https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/; final=https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
       "http_status": 200,
       "source_sha256": "4fa26fbdce6afd67d78a8fd2ab8993a3d00987bb8eb1a2268c99ede5c9a0e7f7"
@@ -6269,7 +7683,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Climate at a Glance | National Centers for Environmental Information (NCEI)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
       "http_status": 200,
       "source_sha256": "4fa26fbdce6afd67d78a8fd2ab8993a3d00987bb8eb1a2268c99ede5c9a0e7f7"
@@ -6301,6 +7725,15 @@
       "raw_payload_committed": false,
       "locator": "Climate at a Glance | National Centers for Environmental Information (NCEI)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
       "http_status": 200,
       "source_sha256": "4fa26fbdce6afd67d78a8fd2ab8993a3d00987bb8eb1a2268c99ede5c9a0e7f7"
@@ -6332,6 +7765,12 @@
       "raw_payload_committed": false,
       "locator": "Climate at a Glance | National Centers for Environmental Information (NCEI)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
       "http_status": 200,
       "source_sha256": "4fa26fbdce6afd67d78a8fd2ab8993a3d00987bb8eb1a2268c99ede5c9a0e7f7"
@@ -6362,7 +7801,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Climate at a Glance | National Centers for Environmental Information (NCEI)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
       "http_status": 200,
       "source_sha256": "4fa26fbdce6afd67d78a8fd2ab8993a3d00987bb8eb1a2268c99ede5c9a0e7f7"
@@ -6394,6 +7842,15 @@
       "raw_payload_committed": false,
       "locator": "Climate at a Glance | National Centers for Environmental Information (NCEI)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
       "http_status": 200,
       "source_sha256": "4fa26fbdce6afd67d78a8fd2ab8993a3d00987bb8eb1a2268c99ede5c9a0e7f7"
@@ -6424,7 +7881,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Climate at a Glance | National Centers for Environmental Information (NCEI)",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
       "http_status": 200,
       "source_sha256": "4fa26fbdce6afd67d78a8fd2ab8993a3d00987bb8eb1a2268c99ede5c9a0e7f7"
@@ -6456,6 +7919,12 @@
       "raw_payload_committed": false,
       "locator": "Climate at a Glance | National Centers for Environmental Information (NCEI)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
       "http_status": 200,
       "source_sha256": "4fa26fbdce6afd67d78a8fd2ab8993a3d00987bb8eb1a2268c99ede5c9a0e7f7"
@@ -6487,6 +7956,12 @@
       "raw_payload_committed": false,
       "locator": "Climate at a Glance | National Centers for Environmental Information (NCEI)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
       "http_status": 200,
       "source_sha256": "4fa26fbdce6afd67d78a8fd2ab8993a3d00987bb8eb1a2268c99ede5c9a0e7f7"
@@ -6518,6 +7993,12 @@
       "raw_payload_committed": false,
       "locator": "Climate at a Glance | National Centers for Environmental Information (NCEI)",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/",
       "http_status": 200,
       "source_sha256": "4fa26fbdce6afd67d78a8fd2ab8993a3d00987bb8eb1a2268c99ede5c9a0e7f7"

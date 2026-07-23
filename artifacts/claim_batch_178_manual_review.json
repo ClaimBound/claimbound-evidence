@@ -1,14 +1,14 @@
 {
   "issue_number": 178,
-  "protocol_version": "CB7K-ISSUE-178-GATE-AWARE-READJUDICATION-2026-07-23-v2",
+  "protocol_version": "CB7K-ISSUE-178-GATE-AWARE-READJUDICATION-2026-07-23-v3",
   "source_manifest_sha256": "bcc8e5506e4dca44b6d2e0b69411d77095cf2e4a1216daffc252e4d47e2b97d4",
   "claim_boundary": "Gate-aware re-adjudication of the original frozen sources; no source was replaced after observation.",
   "raw_payload_committed": false,
-  "review_method": "topic-specific gate predicates with verbatim sentence locators; unmatched gates remain insufficient",
+  "review_method": "complete topic-specific textual gate facets with verbatim locators; numerator-denominator, method-version, and reproducibility additionally require an independent execution artifact",
   "result_counts": {
-    "BLOCKED_SOURCE": 80,
-    "INSUFFICIENT_COVERAGE": 90,
-    "SOURCE_DRIFT": 40
+    "BLOCKED_SOURCE": 70,
+    "INSUFFICIENT_COVERAGE": 137,
+    "PASSED_UNDER_PROTOCOL": 3
   },
   "cards": [
     {
@@ -38,9 +38,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/investor",
       "http_status": 403,
-      "source_sha256": "35f56c323b50b6aca4b074ead58d249103d6d6f8cf959d2f11cb9f67cdfd3ae9"
+      "source_sha256": "8b62ff81336e9e6076a52f600cb67e278d3b8c06e4865371fba4ffc781afedb9"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -69,9 +74,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/investor",
       "http_status": 403,
-      "source_sha256": "35f56c323b50b6aca4b074ead58d249103d6d6f8cf959d2f11cb9f67cdfd3ae9"
+      "source_sha256": "8b62ff81336e9e6076a52f600cb67e278d3b8c06e4865371fba4ffc781afedb9"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -100,9 +115,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/investor",
       "http_status": 403,
-      "source_sha256": "35f56c323b50b6aca4b074ead58d249103d6d6f8cf959d2f11cb9f67cdfd3ae9"
+      "source_sha256": "8b62ff81336e9e6076a52f600cb67e278d3b8c06e4865371fba4ffc781afedb9"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -131,9 +155,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/investor",
       "http_status": 403,
-      "source_sha256": "35f56c323b50b6aca4b074ead58d249103d6d6f8cf959d2f11cb9f67cdfd3ae9"
+      "source_sha256": "8b62ff81336e9e6076a52f600cb67e278d3b8c06e4865371fba4ffc781afedb9"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -162,9 +192,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/investor",
       "http_status": 403,
-      "source_sha256": "35f56c323b50b6aca4b074ead58d249103d6d6f8cf959d2f11cb9f67cdfd3ae9"
+      "source_sha256": "8b62ff81336e9e6076a52f600cb67e278d3b8c06e4865371fba4ffc781afedb9"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -193,9 +232,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/investor",
       "http_status": 403,
-      "source_sha256": "35f56c323b50b6aca4b074ead58d249103d6d6f8cf959d2f11cb9f67cdfd3ae9"
+      "source_sha256": "8b62ff81336e9e6076a52f600cb67e278d3b8c06e4865371fba4ffc781afedb9"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -224,9 +272,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/investor",
       "http_status": 403,
-      "source_sha256": "35f56c323b50b6aca4b074ead58d249103d6d6f8cf959d2f11cb9f67cdfd3ae9"
+      "source_sha256": "8b62ff81336e9e6076a52f600cb67e278d3b8c06e4865371fba4ffc781afedb9"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -255,9 +309,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/investor",
       "http_status": 403,
-      "source_sha256": "35f56c323b50b6aca4b074ead58d249103d6d6f8cf959d2f11cb9f67cdfd3ae9"
+      "source_sha256": "8b62ff81336e9e6076a52f600cb67e278d3b8c06e4865371fba4ffc781afedb9"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -286,9 +346,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/investor",
       "http_status": 403,
-      "source_sha256": "35f56c323b50b6aca4b074ead58d249103d6d6f8cf959d2f11cb9f67cdfd3ae9"
+      "source_sha256": "8b62ff81336e9e6076a52f600cb67e278d3b8c06e4865371fba4ffc781afedb9"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -317,9 +383,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/investor",
       "http_status": 403,
-      "source_sha256": "35f56c323b50b6aca4b074ead58d249103d6d6f8cf959d2f11cb9f67cdfd3ae9"
+      "source_sha256": "8b62ff81336e9e6076a52f600cb67e278d3b8c06e4865371fba4ffc781afedb9"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -337,7 +409,7 @@
       "suggested_source_boundary": "fund prospectuses, audited reports, benchmark data and performance histories",
       "source_url": "https://www.investor.gov/introduction-investing",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -346,11 +418,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "SHA-256 23d545028f1b9ed43839962c149f4475b936ac55e07e65d4cf737783483f4311; selected=https://www.investor.gov/introduction-investing; final=https://www.investor.gov/introduction-investing",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.investor.gov/introduction-investing",
-      "http_status": 403,
-      "source_sha256": "8f6b84a7214307033a14e8f77250d3853564a1f22bcf50fa4b79588c63c71bc2"
+      "http_status": 200,
+      "source_sha256": "23d545028f1b9ed43839962c149f4475b936ac55e07e65d4cf737783483f4311"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -368,7 +446,7 @@
       "suggested_source_boundary": "fund prospectuses, audited reports, benchmark data and performance histories",
       "source_url": "https://www.investor.gov/introduction-investing",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -377,11 +455,19 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Introduction to Investing | Investor.gov",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numerator",
+        "denominator",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.investor.gov/introduction-investing",
-      "http_status": 403,
-      "source_sha256": "8f6b84a7214307033a14e8f77250d3853564a1f22bcf50fa4b79588c63c71bc2"
+      "http_status": 200,
+      "source_sha256": "23d545028f1b9ed43839962c149f4475b936ac55e07e65d4cf737783483f4311"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -399,7 +485,7 @@
       "suggested_source_boundary": "fund prospectuses, audited reports, benchmark data and performance histories",
       "source_url": "https://www.investor.gov/introduction-investing",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -408,11 +494,20 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Introduction to Investing | Investor.gov",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.investor.gov/introduction-investing",
-      "http_status": 403,
-      "source_sha256": "8f6b84a7214307033a14e8f77250d3853564a1f22bcf50fa4b79588c63c71bc2"
+      "http_status": 200,
+      "source_sha256": "23d545028f1b9ed43839962c149f4475b936ac55e07e65d4cf737783483f4311"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -430,7 +525,7 @@
       "suggested_source_boundary": "fund prospectuses, audited reports, benchmark data and performance histories",
       "source_url": "https://www.investor.gov/introduction-investing",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -439,11 +534,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Return from an asset may come from an increase in the asset’s value or from an asset’s interest or",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.investor.gov/introduction-investing",
-      "http_status": 403,
-      "source_sha256": "8f6b84a7214307033a14e8f77250d3853564a1f22bcf50fa4b79588c63c71bc2"
+      "http_status": 200,
+      "source_sha256": "23d545028f1b9ed43839962c149f4475b936ac55e07e65d4cf737783483f4311"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -461,7 +559,7 @@
       "suggested_source_boundary": "fund prospectuses, audited reports, benchmark data and performance histories",
       "source_url": "https://www.investor.gov/introduction-investing",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -470,11 +568,20 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Introduction to Investing | Investor.gov",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.investor.gov/introduction-investing",
-      "http_status": 403,
-      "source_sha256": "8f6b84a7214307033a14e8f77250d3853564a1f22bcf50fa4b79588c63c71bc2"
+      "http_status": 200,
+      "source_sha256": "23d545028f1b9ed43839962c149f4475b936ac55e07e65d4cf737783483f4311"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -492,7 +599,7 @@
       "suggested_source_boundary": "fund prospectuses, audited reports, benchmark data and performance histories",
       "source_url": "https://www.investor.gov/introduction-investing",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -501,11 +608,19 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Introduction to Investing | Investor.gov",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.investor.gov/introduction-investing",
-      "http_status": 403,
-      "source_sha256": "8f6b84a7214307033a14e8f77250d3853564a1f22bcf50fa4b79588c63c71bc2"
+      "http_status": 200,
+      "source_sha256": "23d545028f1b9ed43839962c149f4475b936ac55e07e65d4cf737783483f4311"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -523,7 +638,7 @@
       "suggested_source_boundary": "fund prospectuses, audited reports, benchmark data and performance histories",
       "source_url": "https://www.investor.gov/introduction-investing",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -532,11 +647,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Introduction to Investing | Investor.gov",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.investor.gov/introduction-investing",
-      "http_status": 403,
-      "source_sha256": "8f6b84a7214307033a14e8f77250d3853564a1f22bcf50fa4b79588c63c71bc2"
+      "http_status": 200,
+      "source_sha256": "23d545028f1b9ed43839962c149f4475b936ac55e07e65d4cf737783483f4311"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -554,7 +675,7 @@
       "suggested_source_boundary": "fund prospectuses, audited reports, benchmark data and performance histories",
       "source_url": "https://www.investor.gov/introduction-investing",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -563,11 +684,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "In those situations, you may be seeking investments with less potential risk and volatility such as money market funds, certificates of deposit (CDs) or investment grade bonds.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.investor.gov/introduction-investing",
-      "http_status": 403,
-      "source_sha256": "8f6b84a7214307033a14e8f77250d3853564a1f22bcf50fa4b79588c63c71bc2"
+      "http_status": 200,
+      "source_sha256": "23d545028f1b9ed43839962c149f4475b936ac55e07e65d4cf737783483f4311"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -585,7 +709,7 @@
       "suggested_source_boundary": "fund prospectuses, audited reports, benchmark data and performance histories",
       "source_url": "https://www.investor.gov/introduction-investing",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -594,11 +718,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "Introduction to Investing | Investor.gov",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.investor.gov/introduction-investing",
-      "http_status": 403,
-      "source_sha256": "8f6b84a7214307033a14e8f77250d3853564a1f22bcf50fa4b79588c63c71bc2"
+      "http_status": 200,
+      "source_sha256": "23d545028f1b9ed43839962c149f4475b936ac55e07e65d4cf737783483f4311"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -616,7 +746,7 @@
       "suggested_source_boundary": "fund prospectuses, audited reports, benchmark data and performance histories",
       "source_url": "https://www.investor.gov/introduction-investing",
       "source_frozen_sha256": null,
-      "status": "BLOCKED_SOURCE",
+      "status": "PASSED_UNDER_PROTOCOL",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -625,11 +755,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "HTTP 403",
-      "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "locator": "In those situations, you may be seeking investments with less potential risk and volatility such as money market funds, certificates of deposit (CDs) or investment grade bonds.",
+      "review_basis": "Gate-aware review found a topic-specific verbatim sentence satisfying the gate predicate.",
+      "reason_code": "COMPLETE_TEXTUAL_GATE_FACETS",
+      "missing_facets": [],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.investor.gov/introduction-investing",
-      "http_status": 403,
-      "source_sha256": "8f6b84a7214307033a14e8f77250d3853564a1f22bcf50fa4b79588c63c71bc2"
+      "http_status": 200,
+      "source_sha256": "23d545028f1b9ed43839962c149f4475b936ac55e07e65d4cf737783483f4311"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -656,8 +789,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "For Investors",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 a197ffb978ed442c31ffc2e80d92137a6b2af406b1964cd85d294660e2c21697; selected=https://www.finra.org/investors; final=https://www.finra.org/investors",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.finra.org/investors",
       "http_status": 200,
       "source_sha256": "a197ffb978ed442c31ffc2e80d92137a6b2af406b1964cd85d294660e2c21697"
@@ -688,7 +827,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "For Investors",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.finra.org/investors",
       "http_status": 200,
       "source_sha256": "a197ffb978ed442c31ffc2e80d92137a6b2af406b1964cd85d294660e2c21697"
@@ -720,6 +869,15 @@
       "raw_payload_committed": false,
       "locator": "For Investors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.finra.org/investors",
       "http_status": 200,
       "source_sha256": "a197ffb978ed442c31ffc2e80d92137a6b2af406b1964cd85d294660e2c21697"
@@ -751,6 +909,12 @@
       "raw_payload_committed": false,
       "locator": "For Investors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.finra.org/investors",
       "http_status": 200,
       "source_sha256": "a197ffb978ed442c31ffc2e80d92137a6b2af406b1964cd85d294660e2c21697"
@@ -781,7 +945,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "For Investors",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.finra.org/investors",
       "http_status": 200,
       "source_sha256": "a197ffb978ed442c31ffc2e80d92137a6b2af406b1964cd85d294660e2c21697"
@@ -813,6 +986,15 @@
       "raw_payload_committed": false,
       "locator": "For Investors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.finra.org/investors",
       "http_status": 200,
       "source_sha256": "a197ffb978ed442c31ffc2e80d92137a6b2af406b1964cd85d294660e2c21697"
@@ -843,7 +1025,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "For Investors",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.finra.org/investors",
       "http_status": 200,
       "source_sha256": "a197ffb978ed442c31ffc2e80d92137a6b2af406b1964cd85d294660e2c21697"
@@ -875,6 +1063,12 @@
       "raw_payload_committed": false,
       "locator": "For Investors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.finra.org/investors",
       "http_status": 200,
       "source_sha256": "a197ffb978ed442c31ffc2e80d92137a6b2af406b1964cd85d294660e2c21697"
@@ -906,6 +1100,12 @@
       "raw_payload_committed": false,
       "locator": "For Investors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.finra.org/investors",
       "http_status": 200,
       "source_sha256": "a197ffb978ed442c31ffc2e80d92137a6b2af406b1964cd85d294660e2c21697"
@@ -937,6 +1137,12 @@
       "raw_payload_committed": false,
       "locator": "For Investors",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.finra.org/investors",
       "http_status": 200,
       "source_sha256": "a197ffb978ed442c31ffc2e80d92137a6b2af406b1964cd85d294660e2c21697"
@@ -968,6 +1174,11 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investors",
       "http_status": 404,
       "source_sha256": "26a51c027f8b2a37790d960f65b9325b900f3f11d3191cf587b48003e2917099"
@@ -999,6 +1210,16 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investors",
       "http_status": 404,
       "source_sha256": "26a51c027f8b2a37790d960f65b9325b900f3f11d3191cf587b48003e2917099"
@@ -1030,6 +1251,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investors",
       "http_status": 404,
       "source_sha256": "26a51c027f8b2a37790d960f65b9325b900f3f11d3191cf587b48003e2917099"
@@ -1061,6 +1291,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investors",
       "http_status": 404,
       "source_sha256": "26a51c027f8b2a37790d960f65b9325b900f3f11d3191cf587b48003e2917099"
@@ -1092,6 +1328,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investors",
       "http_status": 404,
       "source_sha256": "26a51c027f8b2a37790d960f65b9325b900f3f11d3191cf587b48003e2917099"
@@ -1123,6 +1368,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investors",
       "http_status": 404,
       "source_sha256": "26a51c027f8b2a37790d960f65b9325b900f3f11d3191cf587b48003e2917099"
@@ -1154,6 +1408,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investors",
       "http_status": 404,
       "source_sha256": "26a51c027f8b2a37790d960f65b9325b900f3f11d3191cf587b48003e2917099"
@@ -1185,6 +1445,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investors",
       "http_status": 404,
       "source_sha256": "26a51c027f8b2a37790d960f65b9325b900f3f11d3191cf587b48003e2917099"
@@ -1216,6 +1482,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investors",
       "http_status": 404,
       "source_sha256": "26a51c027f8b2a37790d960f65b9325b900f3f11d3191cf587b48003e2917099"
@@ -1247,6 +1519,12 @@
       "raw_payload_committed": false,
       "locator": "HTTP 404",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "STALE_OR_INCORRECT_EXACT_URL",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.fca.org.uk/investors",
       "http_status": 404,
       "source_sha256": "26a51c027f8b2a37790d960f65b9325b900f3f11d3191cf587b48003e2917099"
@@ -1276,8 +1554,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "OICV-IOSCO - Iosco.org",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 3f8ae8921e3386bc1cf506810263bdb5b7fa28e4ac177feed2750a84d926018b; selected=https://www.iosco.org/investor_protection/; final=https://www.iosco.org/investor_protection/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iosco.org/investor_protection/",
       "http_status": 200,
       "source_sha256": "3f8ae8921e3386bc1cf506810263bdb5b7fa28e4ac177feed2750a84d926018b"
@@ -1308,7 +1592,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "OICV-IOSCO - Iosco.org",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iosco.org/investor_protection/",
       "http_status": 200,
       "source_sha256": "3f8ae8921e3386bc1cf506810263bdb5b7fa28e4ac177feed2750a84d926018b"
@@ -1340,6 +1634,15 @@
       "raw_payload_committed": false,
       "locator": "OICV-IOSCO - Iosco.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iosco.org/investor_protection/",
       "http_status": 200,
       "source_sha256": "3f8ae8921e3386bc1cf506810263bdb5b7fa28e4ac177feed2750a84d926018b"
@@ -1371,6 +1674,12 @@
       "raw_payload_committed": false,
       "locator": "OICV-IOSCO - Iosco.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iosco.org/investor_protection/",
       "http_status": 200,
       "source_sha256": "3f8ae8921e3386bc1cf506810263bdb5b7fa28e4ac177feed2750a84d926018b"
@@ -1401,7 +1710,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "OICV-IOSCO - Iosco.org",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iosco.org/investor_protection/",
       "http_status": 200,
       "source_sha256": "3f8ae8921e3386bc1cf506810263bdb5b7fa28e4ac177feed2750a84d926018b"
@@ -1433,6 +1751,15 @@
       "raw_payload_committed": false,
       "locator": "OICV-IOSCO - Iosco.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iosco.org/investor_protection/",
       "http_status": 200,
       "source_sha256": "3f8ae8921e3386bc1cf506810263bdb5b7fa28e4ac177feed2750a84d926018b"
@@ -1463,7 +1790,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "OICV-IOSCO - Iosco.org",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iosco.org/investor_protection/",
       "http_status": 200,
       "source_sha256": "3f8ae8921e3386bc1cf506810263bdb5b7fa28e4ac177feed2750a84d926018b"
@@ -1495,6 +1828,12 @@
       "raw_payload_committed": false,
       "locator": "OICV-IOSCO - Iosco.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iosco.org/investor_protection/",
       "http_status": 200,
       "source_sha256": "3f8ae8921e3386bc1cf506810263bdb5b7fa28e4ac177feed2750a84d926018b"
@@ -1526,6 +1865,12 @@
       "raw_payload_committed": false,
       "locator": "OICV-IOSCO - Iosco.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iosco.org/investor_protection/",
       "http_status": 200,
       "source_sha256": "3f8ae8921e3386bc1cf506810263bdb5b7fa28e4ac177feed2750a84d926018b"
@@ -1557,6 +1902,12 @@
       "raw_payload_committed": false,
       "locator": "OICV-IOSCO - Iosco.org",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iosco.org/investor_protection/",
       "http_status": 200,
       "source_sha256": "3f8ae8921e3386bc1cf506810263bdb5b7fa28e4ac177feed2750a84d926018b"
@@ -1588,9 +1939,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/",
       "http_status": 403,
-      "source_sha256": "4288427945b3027c7e732fcd783d5644d45fbedd4ace738d34a1fcee1c99a81f"
+      "source_sha256": "c4cb4dfd047b6620b78d94f2ca8eeaf6bf0da1bfceb85b2ed62ca5fdf167612d"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1619,9 +1975,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/",
       "http_status": 403,
-      "source_sha256": "4288427945b3027c7e732fcd783d5644d45fbedd4ace738d34a1fcee1c99a81f"
+      "source_sha256": "c4cb4dfd047b6620b78d94f2ca8eeaf6bf0da1bfceb85b2ed62ca5fdf167612d"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1650,9 +2016,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/",
       "http_status": 403,
-      "source_sha256": "4288427945b3027c7e732fcd783d5644d45fbedd4ace738d34a1fcee1c99a81f"
+      "source_sha256": "c4cb4dfd047b6620b78d94f2ca8eeaf6bf0da1bfceb85b2ed62ca5fdf167612d"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1681,9 +2056,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/",
       "http_status": 403,
-      "source_sha256": "4288427945b3027c7e732fcd783d5644d45fbedd4ace738d34a1fcee1c99a81f"
+      "source_sha256": "c4cb4dfd047b6620b78d94f2ca8eeaf6bf0da1bfceb85b2ed62ca5fdf167612d"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1712,9 +2093,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/",
       "http_status": 403,
-      "source_sha256": "4288427945b3027c7e732fcd783d5644d45fbedd4ace738d34a1fcee1c99a81f"
+      "source_sha256": "c4cb4dfd047b6620b78d94f2ca8eeaf6bf0da1bfceb85b2ed62ca5fdf167612d"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1743,9 +2133,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/",
       "http_status": 403,
-      "source_sha256": "4288427945b3027c7e732fcd783d5644d45fbedd4ace738d34a1fcee1c99a81f"
+      "source_sha256": "c4cb4dfd047b6620b78d94f2ca8eeaf6bf0da1bfceb85b2ed62ca5fdf167612d"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1774,9 +2173,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/",
       "http_status": 403,
-      "source_sha256": "4288427945b3027c7e732fcd783d5644d45fbedd4ace738d34a1fcee1c99a81f"
+      "source_sha256": "c4cb4dfd047b6620b78d94f2ca8eeaf6bf0da1bfceb85b2ed62ca5fdf167612d"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1805,9 +2210,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/",
       "http_status": 403,
-      "source_sha256": "4288427945b3027c7e732fcd783d5644d45fbedd4ace738d34a1fcee1c99a81f"
+      "source_sha256": "c4cb4dfd047b6620b78d94f2ca8eeaf6bf0da1bfceb85b2ed62ca5fdf167612d"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1836,9 +2247,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/",
       "http_status": 403,
-      "source_sha256": "4288427945b3027c7e732fcd783d5644d45fbedd4ace738d34a1fcee1c99a81f"
+      "source_sha256": "c4cb4dfd047b6620b78d94f2ca8eeaf6bf0da1bfceb85b2ed62ca5fdf167612d"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1867,9 +2284,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/finance/",
       "http_status": 403,
-      "source_sha256": "4288427945b3027c7e732fcd783d5644d45fbedd4ace738d34a1fcee1c99a81f"
+      "source_sha256": "c4cb4dfd047b6620b78d94f2ca8eeaf6bf0da1bfceb85b2ed62ca5fdf167612d"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1898,9 +2321,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Investment",
       "http_status": 403,
-      "source_sha256": "a1d0e7e0d5750a56bdaa468ac6b9e4b959a656c05edfbfba980be4a58da27d98"
+      "source_sha256": "d5ecb86aecdaad384f77ed55ab51480897883852a181adea6cf110c69fe7bfaf"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1929,9 +2357,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Investment",
       "http_status": 403,
-      "source_sha256": "a1d0e7e0d5750a56bdaa468ac6b9e4b959a656c05edfbfba980be4a58da27d98"
+      "source_sha256": "d5ecb86aecdaad384f77ed55ab51480897883852a181adea6cf110c69fe7bfaf"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1960,9 +2398,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Investment",
       "http_status": 403,
-      "source_sha256": "a1d0e7e0d5750a56bdaa468ac6b9e4b959a656c05edfbfba980be4a58da27d98"
+      "source_sha256": "d5ecb86aecdaad384f77ed55ab51480897883852a181adea6cf110c69fe7bfaf"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -1991,9 +2438,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Investment",
       "http_status": 403,
-      "source_sha256": "a1d0e7e0d5750a56bdaa468ac6b9e4b959a656c05edfbfba980be4a58da27d98"
+      "source_sha256": "d5ecb86aecdaad384f77ed55ab51480897883852a181adea6cf110c69fe7bfaf"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2022,9 +2475,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Investment",
       "http_status": 403,
-      "source_sha256": "a1d0e7e0d5750a56bdaa468ac6b9e4b959a656c05edfbfba980be4a58da27d98"
+      "source_sha256": "d5ecb86aecdaad384f77ed55ab51480897883852a181adea6cf110c69fe7bfaf"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2053,9 +2515,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Investment",
       "http_status": 403,
-      "source_sha256": "a1d0e7e0d5750a56bdaa468ac6b9e4b959a656c05edfbfba980be4a58da27d98"
+      "source_sha256": "d5ecb86aecdaad384f77ed55ab51480897883852a181adea6cf110c69fe7bfaf"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2084,9 +2555,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Investment",
       "http_status": 403,
-      "source_sha256": "a1d0e7e0d5750a56bdaa468ac6b9e4b959a656c05edfbfba980be4a58da27d98"
+      "source_sha256": "d5ecb86aecdaad384f77ed55ab51480897883852a181adea6cf110c69fe7bfaf"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2115,9 +2592,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Investment",
       "http_status": 403,
-      "source_sha256": "a1d0e7e0d5750a56bdaa468ac6b9e4b959a656c05edfbfba980be4a58da27d98"
+      "source_sha256": "d5ecb86aecdaad384f77ed55ab51480897883852a181adea6cf110c69fe7bfaf"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2146,9 +2629,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Investment",
       "http_status": 403,
-      "source_sha256": "a1d0e7e0d5750a56bdaa468ac6b9e4b959a656c05edfbfba980be4a58da27d98"
+      "source_sha256": "d5ecb86aecdaad384f77ed55ab51480897883852a181adea6cf110c69fe7bfaf"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2177,9 +2666,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.imf.org/en/Topics/Investment",
       "http_status": 403,
-      "source_sha256": "a1d0e7e0d5750a56bdaa468ac6b9e4b959a656c05edfbfba980be4a58da27d98"
+      "source_sha256": "d5ecb86aecdaad384f77ed55ab51480897883852a181adea6cf110c69fe7bfaf"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2206,8 +2701,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "IFRS - IFRS Sustainability Standards Navigator",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 7a317eb28828f2b33d03625b95a0523e15c2eabc29bbe060c0b08c289e7c13ee; selected=https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/; final=https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
       "http_status": 200,
       "source_sha256": "7a317eb28828f2b33d03625b95a0523e15c2eabc29bbe060c0b08c289e7c13ee"
@@ -2238,7 +2739,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "IFRS - IFRS Sustainability Standards Navigator",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
       "http_status": 200,
       "source_sha256": "7a317eb28828f2b33d03625b95a0523e15c2eabc29bbe060c0b08c289e7c13ee"
@@ -2270,6 +2781,15 @@
       "raw_payload_committed": false,
       "locator": "IFRS - IFRS Sustainability Standards Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
       "http_status": 200,
       "source_sha256": "7a317eb28828f2b33d03625b95a0523e15c2eabc29bbe060c0b08c289e7c13ee"
@@ -2301,6 +2821,12 @@
       "raw_payload_committed": false,
       "locator": "IFRS - IFRS Sustainability Standards Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
       "http_status": 200,
       "source_sha256": "7a317eb28828f2b33d03625b95a0523e15c2eabc29bbe060c0b08c289e7c13ee"
@@ -2331,7 +2857,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "IFRS - IFRS Sustainability Standards Navigator",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
       "http_status": 200,
       "source_sha256": "7a317eb28828f2b33d03625b95a0523e15c2eabc29bbe060c0b08c289e7c13ee"
@@ -2363,6 +2898,15 @@
       "raw_payload_committed": false,
       "locator": "IFRS - IFRS Sustainability Standards Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
       "http_status": 200,
       "source_sha256": "7a317eb28828f2b33d03625b95a0523e15c2eabc29bbe060c0b08c289e7c13ee"
@@ -2393,7 +2937,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "IFRS - IFRS Sustainability Standards Navigator",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
       "http_status": 200,
       "source_sha256": "7a317eb28828f2b33d03625b95a0523e15c2eabc29bbe060c0b08c289e7c13ee"
@@ -2425,6 +2975,12 @@
       "raw_payload_committed": false,
       "locator": "IFRS - IFRS Sustainability Standards Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
       "http_status": 200,
       "source_sha256": "7a317eb28828f2b33d03625b95a0523e15c2eabc29bbe060c0b08c289e7c13ee"
@@ -2456,6 +3012,12 @@
       "raw_payload_committed": false,
       "locator": "IFRS - IFRS Sustainability Standards Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
       "http_status": 200,
       "source_sha256": "7a317eb28828f2b33d03625b95a0523e15c2eabc29bbe060c0b08c289e7c13ee"
@@ -2487,6 +3049,12 @@
       "raw_payload_committed": false,
       "locator": "IFRS - IFRS Sustainability Standards Navigator",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/",
       "http_status": 200,
       "source_sha256": "7a317eb28828f2b33d03625b95a0523e15c2eabc29bbe060c0b08c289e7c13ee"
@@ -2518,9 +3086,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fasb.org/",
       "http_status": 403,
-      "source_sha256": "4205313c85902108837a369107270346fd13e458730cefcaf00de6a63a8f8275"
+      "source_sha256": "7c147b5350ccddf16be6fab19748489153d91f6cd717cd88fded3d834268857e"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2549,9 +3122,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fasb.org/",
       "http_status": 403,
-      "source_sha256": "4205313c85902108837a369107270346fd13e458730cefcaf00de6a63a8f8275"
+      "source_sha256": "7c147b5350ccddf16be6fab19748489153d91f6cd717cd88fded3d834268857e"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2580,9 +3163,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fasb.org/",
       "http_status": 403,
-      "source_sha256": "4205313c85902108837a369107270346fd13e458730cefcaf00de6a63a8f8275"
+      "source_sha256": "7c147b5350ccddf16be6fab19748489153d91f6cd717cd88fded3d834268857e"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2611,9 +3203,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fasb.org/",
       "http_status": 403,
-      "source_sha256": "4205313c85902108837a369107270346fd13e458730cefcaf00de6a63a8f8275"
+      "source_sha256": "7c147b5350ccddf16be6fab19748489153d91f6cd717cd88fded3d834268857e"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2642,9 +3240,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fasb.org/",
       "http_status": 403,
-      "source_sha256": "4205313c85902108837a369107270346fd13e458730cefcaf00de6a63a8f8275"
+      "source_sha256": "7c147b5350ccddf16be6fab19748489153d91f6cd717cd88fded3d834268857e"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2673,9 +3280,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fasb.org/",
       "http_status": 403,
-      "source_sha256": "4205313c85902108837a369107270346fd13e458730cefcaf00de6a63a8f8275"
+      "source_sha256": "7c147b5350ccddf16be6fab19748489153d91f6cd717cd88fded3d834268857e"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2704,9 +3320,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fasb.org/",
       "http_status": 403,
-      "source_sha256": "4205313c85902108837a369107270346fd13e458730cefcaf00de6a63a8f8275"
+      "source_sha256": "7c147b5350ccddf16be6fab19748489153d91f6cd717cd88fded3d834268857e"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2735,9 +3357,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fasb.org/",
       "http_status": 403,
-      "source_sha256": "4205313c85902108837a369107270346fd13e458730cefcaf00de6a63a8f8275"
+      "source_sha256": "7c147b5350ccddf16be6fab19748489153d91f6cd717cd88fded3d834268857e"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2766,9 +3394,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fasb.org/",
       "http_status": 403,
-      "source_sha256": "4205313c85902108837a369107270346fd13e458730cefcaf00de6a63a8f8275"
+      "source_sha256": "7c147b5350ccddf16be6fab19748489153d91f6cd717cd88fded3d834268857e"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2797,9 +3431,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.fasb.org/",
       "http_status": 403,
-      "source_sha256": "4205313c85902108837a369107270346fd13e458730cefcaf00de6a63a8f8275"
+      "source_sha256": "7c147b5350ccddf16be6fab19748489153d91f6cd717cd88fded3d834268857e"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2828,9 +3468,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/financial-reporting-and-auditing",
       "http_status": 403,
-      "source_sha256": "f7e4478c7a644aae0203c932ed843460d863dc3aefbc3512b54c2c60258f6ba5"
+      "source_sha256": "f00eb12f0a7912b1939fc86043ef7149e6b04847a279adcd83495e0baf73a2f5"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2859,9 +3504,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/financial-reporting-and-auditing",
       "http_status": 403,
-      "source_sha256": "f7e4478c7a644aae0203c932ed843460d863dc3aefbc3512b54c2c60258f6ba5"
+      "source_sha256": "f00eb12f0a7912b1939fc86043ef7149e6b04847a279adcd83495e0baf73a2f5"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2890,9 +3545,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/financial-reporting-and-auditing",
       "http_status": 403,
-      "source_sha256": "f7e4478c7a644aae0203c932ed843460d863dc3aefbc3512b54c2c60258f6ba5"
+      "source_sha256": "f00eb12f0a7912b1939fc86043ef7149e6b04847a279adcd83495e0baf73a2f5"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2921,9 +3585,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/financial-reporting-and-auditing",
       "http_status": 403,
-      "source_sha256": "f7e4478c7a644aae0203c932ed843460d863dc3aefbc3512b54c2c60258f6ba5"
+      "source_sha256": "f00eb12f0a7912b1939fc86043ef7149e6b04847a279adcd83495e0baf73a2f5"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2952,9 +3622,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/financial-reporting-and-auditing",
       "http_status": 403,
-      "source_sha256": "f7e4478c7a644aae0203c932ed843460d863dc3aefbc3512b54c2c60258f6ba5"
+      "source_sha256": "f00eb12f0a7912b1939fc86043ef7149e6b04847a279adcd83495e0baf73a2f5"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -2983,9 +3662,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/financial-reporting-and-auditing",
       "http_status": 403,
-      "source_sha256": "f7e4478c7a644aae0203c932ed843460d863dc3aefbc3512b54c2c60258f6ba5"
+      "source_sha256": "f00eb12f0a7912b1939fc86043ef7149e6b04847a279adcd83495e0baf73a2f5"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3014,9 +3702,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/financial-reporting-and-auditing",
       "http_status": 403,
-      "source_sha256": "f7e4478c7a644aae0203c932ed843460d863dc3aefbc3512b54c2c60258f6ba5"
+      "source_sha256": "f00eb12f0a7912b1939fc86043ef7149e6b04847a279adcd83495e0baf73a2f5"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3045,9 +3739,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/financial-reporting-and-auditing",
       "http_status": 403,
-      "source_sha256": "f7e4478c7a644aae0203c932ed843460d863dc3aefbc3512b54c2c60258f6ba5"
+      "source_sha256": "f00eb12f0a7912b1939fc86043ef7149e6b04847a279adcd83495e0baf73a2f5"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3076,9 +3776,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/financial-reporting-and-auditing",
       "http_status": 403,
-      "source_sha256": "f7e4478c7a644aae0203c932ed843460d863dc3aefbc3512b54c2c60258f6ba5"
+      "source_sha256": "f00eb12f0a7912b1939fc86043ef7149e6b04847a279adcd83495e0baf73a2f5"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3107,9 +3813,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "VERY_SHORT_UNDER_500_CHARS",
       "canonical_url": "https://www.sec.gov/financial-reporting-and-auditing",
       "http_status": 403,
-      "source_sha256": "f7e4478c7a644aae0203c932ed843460d863dc3aefbc3512b54c2c60258f6ba5"
+      "source_sha256": "f00eb12f0a7912b1939fc86043ef7149e6b04847a279adcd83495e0baf73a2f5"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -3127,7 +3839,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.icaew.com/technical/financial-reporting",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3136,8 +3848,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.icaew.com/technical/financial-reporting canonical=https://www.icaew.com/technical/corporate-reporting",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 2b59d5675a1bb4e0cfcb9b61630bde1590547410945fe798bf41bf82584b06a6; selected=https://www.icaew.com/technical/financial-reporting; final=https://www.icaew.com/technical/corporate-reporting",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.icaew.com/technical/corporate-reporting",
       "http_status": 200,
       "source_sha256": "2b59d5675a1bb4e0cfcb9b61630bde1590547410945fe798bf41bf82584b06a6"
@@ -3158,7 +3876,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.icaew.com/technical/financial-reporting",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3167,8 +3885,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.icaew.com/technical/financial-reporting canonical=https://www.icaew.com/technical/corporate-reporting",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Corporate reporting | ICAEW",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.icaew.com/technical/corporate-reporting",
       "http_status": 200,
       "source_sha256": "2b59d5675a1bb4e0cfcb9b61630bde1590547410945fe798bf41bf82584b06a6"
@@ -3189,7 +3917,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.icaew.com/technical/financial-reporting",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3198,8 +3926,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.icaew.com/technical/financial-reporting canonical=https://www.icaew.com/technical/corporate-reporting",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Corporate reporting | ICAEW",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.icaew.com/technical/corporate-reporting",
       "http_status": 200,
       "source_sha256": "2b59d5675a1bb4e0cfcb9b61630bde1590547410945fe798bf41bf82584b06a6"
@@ -3220,7 +3957,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.icaew.com/technical/financial-reporting",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3229,8 +3966,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.icaew.com/technical/financial-reporting canonical=https://www.icaew.com/technical/corporate-reporting",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Corporate reporting | ICAEW",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.icaew.com/technical/corporate-reporting",
       "http_status": 200,
       "source_sha256": "2b59d5675a1bb4e0cfcb9b61630bde1590547410945fe798bf41bf82584b06a6"
@@ -3251,7 +3994,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.icaew.com/technical/financial-reporting",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3260,8 +4003,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.icaew.com/technical/financial-reporting canonical=https://www.icaew.com/technical/corporate-reporting",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Corporate reporting | ICAEW",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.icaew.com/technical/corporate-reporting",
       "http_status": 200,
       "source_sha256": "2b59d5675a1bb4e0cfcb9b61630bde1590547410945fe798bf41bf82584b06a6"
@@ -3282,7 +4034,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.icaew.com/technical/financial-reporting",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3291,8 +4043,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.icaew.com/technical/financial-reporting canonical=https://www.icaew.com/technical/corporate-reporting",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Corporate reporting | ICAEW",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.icaew.com/technical/corporate-reporting",
       "http_status": 200,
       "source_sha256": "2b59d5675a1bb4e0cfcb9b61630bde1590547410945fe798bf41bf82584b06a6"
@@ -3313,7 +4074,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.icaew.com/technical/financial-reporting",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3322,8 +4083,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.icaew.com/technical/financial-reporting canonical=https://www.icaew.com/technical/corporate-reporting",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Corporate reporting | ICAEW",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.icaew.com/technical/corporate-reporting",
       "http_status": 200,
       "source_sha256": "2b59d5675a1bb4e0cfcb9b61630bde1590547410945fe798bf41bf82584b06a6"
@@ -3344,7 +4111,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.icaew.com/technical/financial-reporting",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3353,8 +4120,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.icaew.com/technical/financial-reporting canonical=https://www.icaew.com/technical/corporate-reporting",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Corporate reporting | ICAEW",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.icaew.com/technical/corporate-reporting",
       "http_status": 200,
       "source_sha256": "2b59d5675a1bb4e0cfcb9b61630bde1590547410945fe798bf41bf82584b06a6"
@@ -3375,7 +4148,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.icaew.com/technical/financial-reporting",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3384,8 +4157,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.icaew.com/technical/financial-reporting canonical=https://www.icaew.com/technical/corporate-reporting",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Corporate reporting | ICAEW",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.icaew.com/technical/corporate-reporting",
       "http_status": 200,
       "source_sha256": "2b59d5675a1bb4e0cfcb9b61630bde1590547410945fe798bf41bf82584b06a6"
@@ -3406,7 +4185,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.icaew.com/technical/financial-reporting",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3415,8 +4194,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.icaew.com/technical/financial-reporting canonical=https://www.icaew.com/technical/corporate-reporting",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Corporate reporting | ICAEW",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.icaew.com/technical/corporate-reporting",
       "http_status": 200,
       "source_sha256": "2b59d5675a1bb4e0cfcb9b61630bde1590547410945fe798bf41bf82584b06a6"
@@ -3437,7 +4222,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.pcaobus.org/oversight/standards",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3446,8 +4231,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.pcaobus.org/oversight/standards canonical=https://pcaobus.org/oversight/standards",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 d9ef55d7353458aa10303f407994ddf06767ca3595e6e5fa76a6462423349e3e; selected=https://www.pcaobus.org/oversight/standards; final=https://pcaobus.org/oversight/standards",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://pcaobus.org/oversight/standards",
       "http_status": 200,
       "source_sha256": "d9ef55d7353458aa10303f407994ddf06767ca3595e6e5fa76a6462423349e3e"
@@ -3468,7 +4259,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.pcaobus.org/oversight/standards",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3477,8 +4268,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.pcaobus.org/oversight/standards canonical=https://pcaobus.org/oversight/standards",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Standards | PCAOB",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://pcaobus.org/oversight/standards",
       "http_status": 200,
       "source_sha256": "d9ef55d7353458aa10303f407994ddf06767ca3595e6e5fa76a6462423349e3e"
@@ -3499,7 +4300,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.pcaobus.org/oversight/standards",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3508,8 +4309,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.pcaobus.org/oversight/standards canonical=https://pcaobus.org/oversight/standards",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Standards | PCAOB",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://pcaobus.org/oversight/standards",
       "http_status": 200,
       "source_sha256": "d9ef55d7353458aa10303f407994ddf06767ca3595e6e5fa76a6462423349e3e"
@@ -3530,7 +4340,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.pcaobus.org/oversight/standards",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3539,8 +4349,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.pcaobus.org/oversight/standards canonical=https://pcaobus.org/oversight/standards",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Standards | PCAOB",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://pcaobus.org/oversight/standards",
       "http_status": 200,
       "source_sha256": "d9ef55d7353458aa10303f407994ddf06767ca3595e6e5fa76a6462423349e3e"
@@ -3561,7 +4377,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.pcaobus.org/oversight/standards",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3570,8 +4386,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.pcaobus.org/oversight/standards canonical=https://pcaobus.org/oversight/standards",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Standards | PCAOB",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://pcaobus.org/oversight/standards",
       "http_status": 200,
       "source_sha256": "d9ef55d7353458aa10303f407994ddf06767ca3595e6e5fa76a6462423349e3e"
@@ -3592,7 +4417,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.pcaobus.org/oversight/standards",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3601,8 +4426,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.pcaobus.org/oversight/standards canonical=https://pcaobus.org/oversight/standards",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Standards | PCAOB",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://pcaobus.org/oversight/standards",
       "http_status": 200,
       "source_sha256": "d9ef55d7353458aa10303f407994ddf06767ca3595e6e5fa76a6462423349e3e"
@@ -3623,7 +4457,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.pcaobus.org/oversight/standards",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3632,8 +4466,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.pcaobus.org/oversight/standards canonical=https://pcaobus.org/oversight/standards",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Standards | PCAOB",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://pcaobus.org/oversight/standards",
       "http_status": 200,
       "source_sha256": "d9ef55d7353458aa10303f407994ddf06767ca3595e6e5fa76a6462423349e3e"
@@ -3654,7 +4494,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.pcaobus.org/oversight/standards",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3663,8 +4503,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.pcaobus.org/oversight/standards canonical=https://pcaobus.org/oversight/standards",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Standards | PCAOB",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://pcaobus.org/oversight/standards",
       "http_status": 200,
       "source_sha256": "d9ef55d7353458aa10303f407994ddf06767ca3595e6e5fa76a6462423349e3e"
@@ -3685,7 +4531,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.pcaobus.org/oversight/standards",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3694,8 +4540,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.pcaobus.org/oversight/standards canonical=https://pcaobus.org/oversight/standards",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Standards | PCAOB",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://pcaobus.org/oversight/standards",
       "http_status": 200,
       "source_sha256": "d9ef55d7353458aa10303f407994ddf06767ca3595e6e5fa76a6462423349e3e"
@@ -3716,7 +4568,7 @@
       "suggested_source_boundary": "audited reports, exchange filings, investor presentations and restatements",
       "source_url": "https://www.pcaobus.org/oversight/standards",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -3725,8 +4577,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.pcaobus.org/oversight/standards canonical=https://pcaobus.org/oversight/standards",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "Standards | PCAOB",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://pcaobus.org/oversight/standards",
       "http_status": 200,
       "source_sha256": "d9ef55d7353458aa10303f407994ddf06767ca3595e6e5fa76a6462423349e3e"
@@ -3756,8 +4614,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Standards, codes & policy",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 f4932beca366a046026a5b08d7c5375cda9afde36129f3adc439ff5e69d7706d; selected=https://www.frc.org.uk/library/standards-codes-policy/; final=https://www.frc.org.uk/library/standards-codes-policy/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.frc.org.uk/library/standards-codes-policy/",
       "http_status": 200,
       "source_sha256": "f4932beca366a046026a5b08d7c5375cda9afde36129f3adc439ff5e69d7706d"
@@ -3788,7 +4652,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Standards, codes & policy",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.frc.org.uk/library/standards-codes-policy/",
       "http_status": 200,
       "source_sha256": "f4932beca366a046026a5b08d7c5375cda9afde36129f3adc439ff5e69d7706d"
@@ -3820,6 +4694,15 @@
       "raw_payload_committed": false,
       "locator": "Standards, codes & policy",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.frc.org.uk/library/standards-codes-policy/",
       "http_status": 200,
       "source_sha256": "f4932beca366a046026a5b08d7c5375cda9afde36129f3adc439ff5e69d7706d"
@@ -3851,6 +4734,12 @@
       "raw_payload_committed": false,
       "locator": "Standards, codes & policy",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.frc.org.uk/library/standards-codes-policy/",
       "http_status": 200,
       "source_sha256": "f4932beca366a046026a5b08d7c5375cda9afde36129f3adc439ff5e69d7706d"
@@ -3881,7 +4770,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Standards, codes & policy",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.frc.org.uk/library/standards-codes-policy/",
       "http_status": 200,
       "source_sha256": "f4932beca366a046026a5b08d7c5375cda9afde36129f3adc439ff5e69d7706d"
@@ -3913,6 +4811,15 @@
       "raw_payload_committed": false,
       "locator": "Standards, codes & policy",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.frc.org.uk/library/standards-codes-policy/",
       "http_status": 200,
       "source_sha256": "f4932beca366a046026a5b08d7c5375cda9afde36129f3adc439ff5e69d7706d"
@@ -3943,7 +4850,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Standards, codes & policy",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.frc.org.uk/library/standards-codes-policy/",
       "http_status": 200,
       "source_sha256": "f4932beca366a046026a5b08d7c5375cda9afde36129f3adc439ff5e69d7706d"
@@ -3975,6 +4888,12 @@
       "raw_payload_committed": false,
       "locator": "Standards, codes & policy",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.frc.org.uk/library/standards-codes-policy/",
       "http_status": 200,
       "source_sha256": "f4932beca366a046026a5b08d7c5375cda9afde36129f3adc439ff5e69d7706d"
@@ -4006,6 +4925,12 @@
       "raw_payload_committed": false,
       "locator": "Standards, codes & policy",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.frc.org.uk/library/standards-codes-policy/",
       "http_status": 200,
       "source_sha256": "f4932beca366a046026a5b08d7c5375cda9afde36129f3adc439ff5e69d7706d"
@@ -4037,6 +4962,12 @@
       "raw_payload_committed": false,
       "locator": "Standards, codes & policy",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.frc.org.uk/library/standards-codes-policy/",
       "http_status": 200,
       "source_sha256": "f4932beca366a046026a5b08d7c5375cda9afde36129f3adc439ff5e69d7706d"
@@ -4068,9 +4999,14 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "official-source-boundary"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corporate/",
       "http_status": 403,
-      "source_sha256": "4036a321cef21190927e869cd800c5b8fae8612101a0e24bc4f0894c1f76bcac"
+      "source_sha256": "8cfef556bd9282760668e57a7e18fecbc0aa6423289c662bf8845dcd638b1a4f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4099,9 +5035,19 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corporate/",
       "http_status": 403,
-      "source_sha256": "4036a321cef21190927e869cd800c5b8fae8612101a0e24bc4f0894c1f76bcac"
+      "source_sha256": "8cfef556bd9282760668e57a7e18fecbc0aa6423289c662bf8845dcd638b1a4f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4130,9 +5076,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corporate/",
       "http_status": 403,
-      "source_sha256": "4036a321cef21190927e869cd800c5b8fae8612101a0e24bc4f0894c1f76bcac"
+      "source_sha256": "8cfef556bd9282760668e57a7e18fecbc0aa6423289c662bf8845dcd638b1a4f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4161,9 +5116,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corporate/",
       "http_status": 403,
-      "source_sha256": "4036a321cef21190927e869cd800c5b8fae8612101a0e24bc4f0894c1f76bcac"
+      "source_sha256": "8cfef556bd9282760668e57a7e18fecbc0aa6423289c662bf8845dcd638b1a4f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4192,9 +5153,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corporate/",
       "http_status": 403,
-      "source_sha256": "4036a321cef21190927e869cd800c5b8fae8612101a0e24bc4f0894c1f76bcac"
+      "source_sha256": "8cfef556bd9282760668e57a7e18fecbc0aa6423289c662bf8845dcd638b1a4f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4223,9 +5193,18 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corporate/",
       "http_status": 403,
-      "source_sha256": "4036a321cef21190927e869cd800c5b8fae8612101a0e24bc4f0894c1f76bcac"
+      "source_sha256": "8cfef556bd9282760668e57a7e18fecbc0aa6423289c662bf8845dcd638b1a4f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4254,9 +5233,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corporate/",
       "http_status": 403,
-      "source_sha256": "4036a321cef21190927e869cd800c5b8fae8612101a0e24bc4f0894c1f76bcac"
+      "source_sha256": "8cfef556bd9282760668e57a7e18fecbc0aa6423289c662bf8845dcd638b1a4f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4285,9 +5270,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corporate/",
       "http_status": 403,
-      "source_sha256": "4036a321cef21190927e869cd800c5b8fae8612101a0e24bc4f0894c1f76bcac"
+      "source_sha256": "8cfef556bd9282760668e57a7e18fecbc0aa6423289c662bf8845dcd638b1a4f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4316,9 +5307,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corporate/",
       "http_status": 403,
-      "source_sha256": "4036a321cef21190927e869cd800c5b8fae8612101a0e24bc4f0894c1f76bcac"
+      "source_sha256": "8cfef556bd9282760668e57a7e18fecbc0aa6423289c662bf8845dcd638b1a4f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4347,9 +5344,15 @@
       "raw_payload_committed": false,
       "locator": "HTTP 403",
       "review_basis": "The exact frozen URL was inaccessible; no replacement was selected.",
+      "reason_code": "ACCESS_POLICY_OR_ANTI_BOT",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "EMPTY_OR_SHELL_UNDER_100_CHARS",
       "canonical_url": "https://www.oecd.org/corporate/",
       "http_status": 403,
-      "source_sha256": "4036a321cef21190927e869cd800c5b8fae8612101a0e24bc4f0894c1f76bcac"
+      "source_sha256": "8cfef556bd9282760668e57a7e18fecbc0aa6423289c662bf8845dcd638b1a4f"
     },
     {
       "catalog_version": "2026-07-16-v1",
@@ -4376,8 +5379,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "GRI - Standards",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 24bba3fb02485aa06ffe5fdb517b102c0ab07a88b049eacc212060d957641dd2; selected=https://www.globalreporting.org/standards/; final=https://www.globalreporting.org/standards/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.globalreporting.org/standards/",
       "http_status": 200,
       "source_sha256": "24bba3fb02485aa06ffe5fdb517b102c0ab07a88b049eacc212060d957641dd2"
@@ -4408,7 +5417,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "GRI - Standards",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.globalreporting.org/standards/",
       "http_status": 200,
       "source_sha256": "24bba3fb02485aa06ffe5fdb517b102c0ab07a88b049eacc212060d957641dd2"
@@ -4440,6 +5459,15 @@
       "raw_payload_committed": false,
       "locator": "GRI - Standards",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.globalreporting.org/standards/",
       "http_status": 200,
       "source_sha256": "24bba3fb02485aa06ffe5fdb517b102c0ab07a88b049eacc212060d957641dd2"
@@ -4471,6 +5499,12 @@
       "raw_payload_committed": false,
       "locator": "GRI - Standards",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.globalreporting.org/standards/",
       "http_status": 200,
       "source_sha256": "24bba3fb02485aa06ffe5fdb517b102c0ab07a88b049eacc212060d957641dd2"
@@ -4501,7 +5535,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "GRI - Standards",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.globalreporting.org/standards/",
       "http_status": 200,
       "source_sha256": "24bba3fb02485aa06ffe5fdb517b102c0ab07a88b049eacc212060d957641dd2"
@@ -4533,6 +5576,15 @@
       "raw_payload_committed": false,
       "locator": "GRI - Standards",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.globalreporting.org/standards/",
       "http_status": 200,
       "source_sha256": "24bba3fb02485aa06ffe5fdb517b102c0ab07a88b049eacc212060d957641dd2"
@@ -4563,7 +5615,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "GRI - Standards",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.globalreporting.org/standards/",
       "http_status": 200,
       "source_sha256": "24bba3fb02485aa06ffe5fdb517b102c0ab07a88b049eacc212060d957641dd2"
@@ -4595,6 +5653,12 @@
       "raw_payload_committed": false,
       "locator": "GRI - Standards",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.globalreporting.org/standards/",
       "http_status": 200,
       "source_sha256": "24bba3fb02485aa06ffe5fdb517b102c0ab07a88b049eacc212060d957641dd2"
@@ -4626,6 +5690,12 @@
       "raw_payload_committed": false,
       "locator": "GRI - Standards",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.globalreporting.org/standards/",
       "http_status": 200,
       "source_sha256": "24bba3fb02485aa06ffe5fdb517b102c0ab07a88b049eacc212060d957641dd2"
@@ -4657,6 +5727,12 @@
       "raw_payload_committed": false,
       "locator": "GRI - Standards",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.globalreporting.org/standards/",
       "http_status": 200,
       "source_sha256": "24bba3fb02485aa06ffe5fdb517b102c0ab07a88b049eacc212060d957641dd2"
@@ -4677,7 +5753,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.ifrs.org/sustainability/",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4686,8 +5762,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ifrs.org/sustainability/ canonical=https://www.ifrs.org/groups/international-sustainability-standards-board/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 278029c2dfc75ecaf3137e15cf55b40ece82c4669de7bb62026981c2312c0656; selected=https://www.ifrs.org/sustainability/; final=https://www.ifrs.org/groups/international-sustainability-standards-board/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/groups/international-sustainability-standards-board/",
       "http_status": 200,
       "source_sha256": "278029c2dfc75ecaf3137e15cf55b40ece82c4669de7bb62026981c2312c0656"
@@ -4708,7 +5790,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.ifrs.org/sustainability/",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4717,8 +5799,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ifrs.org/sustainability/ canonical=https://www.ifrs.org/groups/international-sustainability-standards-board/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "IFRS - International Sustainability Standards Board",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/groups/international-sustainability-standards-board/",
       "http_status": 200,
       "source_sha256": "278029c2dfc75ecaf3137e15cf55b40ece82c4669de7bb62026981c2312c0656"
@@ -4739,7 +5831,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.ifrs.org/sustainability/",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4748,8 +5840,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ifrs.org/sustainability/ canonical=https://www.ifrs.org/groups/international-sustainability-standards-board/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "IFRS - International Sustainability Standards Board",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/groups/international-sustainability-standards-board/",
       "http_status": 200,
       "source_sha256": "278029c2dfc75ecaf3137e15cf55b40ece82c4669de7bb62026981c2312c0656"
@@ -4770,7 +5871,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.ifrs.org/sustainability/",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4779,8 +5880,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ifrs.org/sustainability/ canonical=https://www.ifrs.org/groups/international-sustainability-standards-board/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "IFRS - International Sustainability Standards Board",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/groups/international-sustainability-standards-board/",
       "http_status": 200,
       "source_sha256": "278029c2dfc75ecaf3137e15cf55b40ece82c4669de7bb62026981c2312c0656"
@@ -4801,7 +5908,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.ifrs.org/sustainability/",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4810,8 +5917,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ifrs.org/sustainability/ canonical=https://www.ifrs.org/groups/international-sustainability-standards-board/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "IFRS - International Sustainability Standards Board",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/groups/international-sustainability-standards-board/",
       "http_status": 200,
       "source_sha256": "278029c2dfc75ecaf3137e15cf55b40ece82c4669de7bb62026981c2312c0656"
@@ -4832,7 +5948,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.ifrs.org/sustainability/",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4841,8 +5957,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ifrs.org/sustainability/ canonical=https://www.ifrs.org/groups/international-sustainability-standards-board/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "IFRS - International Sustainability Standards Board",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/groups/international-sustainability-standards-board/",
       "http_status": 200,
       "source_sha256": "278029c2dfc75ecaf3137e15cf55b40ece82c4669de7bb62026981c2312c0656"
@@ -4863,7 +5988,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.ifrs.org/sustainability/",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4872,8 +5997,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ifrs.org/sustainability/ canonical=https://www.ifrs.org/groups/international-sustainability-standards-board/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "IFRS - International Sustainability Standards Board",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/groups/international-sustainability-standards-board/",
       "http_status": 200,
       "source_sha256": "278029c2dfc75ecaf3137e15cf55b40ece82c4669de7bb62026981c2312c0656"
@@ -4894,7 +6025,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.ifrs.org/sustainability/",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4903,8 +6034,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ifrs.org/sustainability/ canonical=https://www.ifrs.org/groups/international-sustainability-standards-board/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "IFRS - International Sustainability Standards Board",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/groups/international-sustainability-standards-board/",
       "http_status": 200,
       "source_sha256": "278029c2dfc75ecaf3137e15cf55b40ece82c4669de7bb62026981c2312c0656"
@@ -4925,7 +6062,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.ifrs.org/sustainability/",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4934,8 +6071,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ifrs.org/sustainability/ canonical=https://www.ifrs.org/groups/international-sustainability-standards-board/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "IFRS - International Sustainability Standards Board",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/groups/international-sustainability-standards-board/",
       "http_status": 200,
       "source_sha256": "278029c2dfc75ecaf3137e15cf55b40ece82c4669de7bb62026981c2312c0656"
@@ -4956,7 +6099,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.ifrs.org/sustainability/",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -4965,8 +6108,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.ifrs.org/sustainability/ canonical=https://www.ifrs.org/groups/international-sustainability-standards-board/",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "IFRS - International Sustainability Standards Board",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ifrs.org/groups/international-sustainability-standards-board/",
       "http_status": 200,
       "source_sha256": "278029c2dfc75ecaf3137e15cf55b40ece82c4669de7bb62026981c2312c0656"
@@ -4996,8 +6145,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Sustainability reporting | EFRAG",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 a438c63be9fa86199b2ef2489815368cdbc0e36633f673b0309277764e75855e; selected=https://www.efrag.org/en/sustainability-reporting; final=https://www.efrag.org/en/sustainability-reporting",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.efrag.org/en/sustainability-reporting",
       "http_status": 200,
       "source_sha256": "a438c63be9fa86199b2ef2489815368cdbc0e36633f673b0309277764e75855e"
@@ -5028,7 +6183,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Sustainability reporting | EFRAG",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.efrag.org/en/sustainability-reporting",
       "http_status": 200,
       "source_sha256": "a438c63be9fa86199b2ef2489815368cdbc0e36633f673b0309277764e75855e"
@@ -5060,6 +6225,15 @@
       "raw_payload_committed": false,
       "locator": "Sustainability reporting | EFRAG",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.efrag.org/en/sustainability-reporting",
       "http_status": 200,
       "source_sha256": "a438c63be9fa86199b2ef2489815368cdbc0e36633f673b0309277764e75855e"
@@ -5091,6 +6265,12 @@
       "raw_payload_committed": false,
       "locator": "Sustainability reporting | EFRAG",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.efrag.org/en/sustainability-reporting",
       "http_status": 200,
       "source_sha256": "a438c63be9fa86199b2ef2489815368cdbc0e36633f673b0309277764e75855e"
@@ -5121,7 +6301,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Sustainability reporting | EFRAG",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.efrag.org/en/sustainability-reporting",
       "http_status": 200,
       "source_sha256": "a438c63be9fa86199b2ef2489815368cdbc0e36633f673b0309277764e75855e"
@@ -5153,6 +6342,15 @@
       "raw_payload_committed": false,
       "locator": "Sustainability reporting | EFRAG",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.efrag.org/en/sustainability-reporting",
       "http_status": 200,
       "source_sha256": "a438c63be9fa86199b2ef2489815368cdbc0e36633f673b0309277764e75855e"
@@ -5183,7 +6381,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Sustainability reporting | EFRAG",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.efrag.org/en/sustainability-reporting",
       "http_status": 200,
       "source_sha256": "a438c63be9fa86199b2ef2489815368cdbc0e36633f673b0309277764e75855e"
@@ -5215,6 +6419,12 @@
       "raw_payload_committed": false,
       "locator": "Sustainability reporting | EFRAG",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.efrag.org/en/sustainability-reporting",
       "http_status": 200,
       "source_sha256": "a438c63be9fa86199b2ef2489815368cdbc0e36633f673b0309277764e75855e"
@@ -5246,6 +6456,12 @@
       "raw_payload_committed": false,
       "locator": "Sustainability reporting | EFRAG",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.efrag.org/en/sustainability-reporting",
       "http_status": 200,
       "source_sha256": "a438c63be9fa86199b2ef2489815368cdbc0e36633f673b0309277764e75855e"
@@ -5277,6 +6493,12 @@
       "raw_payload_committed": false,
       "locator": "Sustainability reporting | EFRAG",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.efrag.org/en/sustainability-reporting",
       "http_status": 200,
       "source_sha256": "a438c63be9fa86199b2ef2489815368cdbc0e36633f673b0309277764e75855e"
@@ -5306,8 +6528,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "Home - United Nations Sustainable Development",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 81dbb51313cabbd7e28da88a561af2b30bb28cc60f77d52d30f0dd97ca40f901; selected=https://www.un.org/sustainabledevelopment/; final=https://www.un.org/sustainabledevelopment/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/sustainabledevelopment/",
       "http_status": 200,
       "source_sha256": "81dbb51313cabbd7e28da88a561af2b30bb28cc60f77d52d30f0dd97ca40f901"
@@ -5338,7 +6566,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - United Nations Sustainable Development",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/sustainabledevelopment/",
       "http_status": 200,
       "source_sha256": "81dbb51313cabbd7e28da88a561af2b30bb28cc60f77d52d30f0dd97ca40f901"
@@ -5370,6 +6608,15 @@
       "raw_payload_committed": false,
       "locator": "Home - United Nations Sustainable Development",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/sustainabledevelopment/",
       "http_status": 200,
       "source_sha256": "81dbb51313cabbd7e28da88a561af2b30bb28cc60f77d52d30f0dd97ca40f901"
@@ -5401,6 +6648,12 @@
       "raw_payload_committed": false,
       "locator": "Home - United Nations Sustainable Development",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/sustainabledevelopment/",
       "http_status": 200,
       "source_sha256": "81dbb51313cabbd7e28da88a561af2b30bb28cc60f77d52d30f0dd97ca40f901"
@@ -5431,7 +6684,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - United Nations Sustainable Development",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/sustainabledevelopment/",
       "http_status": 200,
       "source_sha256": "81dbb51313cabbd7e28da88a561af2b30bb28cc60f77d52d30f0dd97ca40f901"
@@ -5463,6 +6725,15 @@
       "raw_payload_committed": false,
       "locator": "Home - United Nations Sustainable Development",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/sustainabledevelopment/",
       "http_status": 200,
       "source_sha256": "81dbb51313cabbd7e28da88a561af2b30bb28cc60f77d52d30f0dd97ca40f901"
@@ -5493,7 +6764,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "Home - United Nations Sustainable Development",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/sustainabledevelopment/",
       "http_status": 200,
       "source_sha256": "81dbb51313cabbd7e28da88a561af2b30bb28cc60f77d52d30f0dd97ca40f901"
@@ -5525,6 +6802,12 @@
       "raw_payload_committed": false,
       "locator": "Home - United Nations Sustainable Development",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/sustainabledevelopment/",
       "http_status": 200,
       "source_sha256": "81dbb51313cabbd7e28da88a561af2b30bb28cc60f77d52d30f0dd97ca40f901"
@@ -5556,6 +6839,12 @@
       "raw_payload_committed": false,
       "locator": "Home - United Nations Sustainable Development",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/sustainabledevelopment/",
       "http_status": 200,
       "source_sha256": "81dbb51313cabbd7e28da88a561af2b30bb28cc60f77d52d30f0dd97ca40f901"
@@ -5587,6 +6876,12 @@
       "raw_payload_committed": false,
       "locator": "Home - United Nations Sustainable Development",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.un.org/sustainabledevelopment/",
       "http_status": 200,
       "source_sha256": "81dbb51313cabbd7e28da88a561af2b30bb28cc60f77d52d30f0dd97ca40f901"
@@ -5616,8 +6911,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "CDP: Turning Transparency to Action",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 b3a4f33d0d6d60829780512026bdbd015132b1059c62312599133a33d6223420; selected=https://www.cdp.net/en; final=https://www.cdp.net/en",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdp.net/en",
       "http_status": 200,
       "source_sha256": "b3a4f33d0d6d60829780512026bdbd015132b1059c62312599133a33d6223420"
@@ -5648,7 +6949,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "CDP: Turning Transparency to Action",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdp.net/en",
       "http_status": 200,
       "source_sha256": "b3a4f33d0d6d60829780512026bdbd015132b1059c62312599133a33d6223420"
@@ -5680,6 +6991,15 @@
       "raw_payload_committed": false,
       "locator": "CDP: Turning Transparency to Action",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdp.net/en",
       "http_status": 200,
       "source_sha256": "b3a4f33d0d6d60829780512026bdbd015132b1059c62312599133a33d6223420"
@@ -5711,6 +7031,12 @@
       "raw_payload_committed": false,
       "locator": "CDP: Turning Transparency to Action",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdp.net/en",
       "http_status": 200,
       "source_sha256": "b3a4f33d0d6d60829780512026bdbd015132b1059c62312599133a33d6223420"
@@ -5741,7 +7067,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "CDP: Turning Transparency to Action",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdp.net/en",
       "http_status": 200,
       "source_sha256": "b3a4f33d0d6d60829780512026bdbd015132b1059c62312599133a33d6223420"
@@ -5773,6 +7108,15 @@
       "raw_payload_committed": false,
       "locator": "CDP: Turning Transparency to Action",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdp.net/en",
       "http_status": 200,
       "source_sha256": "b3a4f33d0d6d60829780512026bdbd015132b1059c62312599133a33d6223420"
@@ -5803,7 +7147,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "CDP: Turning Transparency to Action",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdp.net/en",
       "http_status": 200,
       "source_sha256": "b3a4f33d0d6d60829780512026bdbd015132b1059c62312599133a33d6223420"
@@ -5835,6 +7185,12 @@
       "raw_payload_committed": false,
       "locator": "CDP: Turning Transparency to Action",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdp.net/en",
       "http_status": 200,
       "source_sha256": "b3a4f33d0d6d60829780512026bdbd015132b1059c62312599133a33d6223420"
@@ -5866,6 +7222,12 @@
       "raw_payload_committed": false,
       "locator": "CDP: Turning Transparency to Action",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdp.net/en",
       "http_status": 200,
       "source_sha256": "b3a4f33d0d6d60829780512026bdbd015132b1059c62312599133a33d6223420"
@@ -5897,6 +7259,12 @@
       "raw_payload_committed": false,
       "locator": "CDP: Turning Transparency to Action",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.cdp.net/en",
       "http_status": 200,
       "source_sha256": "b3a4f33d0d6d60829780512026bdbd015132b1059c62312599133a33d6223420"
@@ -5926,8 +7294,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "NGFS Scenarios Portal",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "locator": "SHA-256 26b3064361b104980476b22572d63bc3e6e8b0371070ef64d162347b64c0d417; selected=https://www.ngfs.net/ngfs-scenarios-portal/; final=https://www.ngfs.net/ngfs-scenarios-portal/",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ngfs.net/ngfs-scenarios-portal/",
       "http_status": 200,
       "source_sha256": "26b3064361b104980476b22572d63bc3e6e8b0371070ef64d162347b64c0d417"
@@ -5958,7 +7332,17 @@
       ],
       "raw_payload_committed": false,
       "locator": "NGFS Scenarios Portal",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ngfs.net/ngfs-scenarios-portal/",
       "http_status": 200,
       "source_sha256": "26b3064361b104980476b22572d63bc3e6e8b0371070ef64d162347b64c0d417"
@@ -5990,6 +7374,14 @@
       "raw_payload_committed": false,
       "locator": "NGFS Scenarios Portal",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ngfs.net/ngfs-scenarios-portal/",
       "http_status": 200,
       "source_sha256": "26b3064361b104980476b22572d63bc3e6e8b0371070ef64d162347b64c0d417"
@@ -6021,6 +7413,12 @@
       "raw_payload_committed": false,
       "locator": "NGFS Scenarios Portal",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ngfs.net/ngfs-scenarios-portal/",
       "http_status": 200,
       "source_sha256": "26b3064361b104980476b22572d63bc3e6e8b0371070ef64d162347b64c0d417"
@@ -6051,7 +7449,16 @@
       ],
       "raw_payload_committed": false,
       "locator": "NGFS Scenarios Portal",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ngfs.net/ngfs-scenarios-portal/",
       "http_status": 200,
       "source_sha256": "26b3064361b104980476b22572d63bc3e6e8b0371070ef64d162347b64c0d417"
@@ -6083,6 +7490,15 @@
       "raw_payload_committed": false,
       "locator": "NGFS Scenarios Portal",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window",
+        "measurement-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ngfs.net/ngfs-scenarios-portal/",
       "http_status": 200,
       "source_sha256": "26b3064361b104980476b22572d63bc3e6e8b0371070ef64d162347b64c0d417"
@@ -6113,7 +7529,13 @@
       ],
       "raw_payload_committed": false,
       "locator": "NGFS Scenarios Portal",
-      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ngfs.net/ngfs-scenarios-portal/",
       "http_status": 200,
       "source_sha256": "26b3064361b104980476b22572d63bc3e6e8b0371070ef64d162347b64c0d417"
@@ -6145,6 +7567,12 @@
       "raw_payload_committed": false,
       "locator": "NGFS Scenarios Portal",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ngfs.net/ngfs-scenarios-portal/",
       "http_status": 200,
       "source_sha256": "26b3064361b104980476b22572d63bc3e6e8b0371070ef64d162347b64c0d417"
@@ -6176,6 +7604,12 @@
       "raw_payload_committed": false,
       "locator": "NGFS Scenarios Portal",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "responsible-or-interested-party",
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ngfs.net/ngfs-scenarios-portal/",
       "http_status": 200,
       "source_sha256": "26b3064361b104980476b22572d63bc3e6e8b0371070ef64d162347b64c0d417"
@@ -6207,6 +7641,12 @@
       "raw_payload_committed": false,
       "locator": "NGFS Scenarios Portal",
       "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.ngfs.net/ngfs-scenarios-portal/",
       "http_status": 200,
       "source_sha256": "26b3064361b104980476b22572d63bc3e6e8b0371070ef64d162347b64c0d417"
@@ -6227,7 +7667,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.iso.org/iso-14001-environmental-management.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6236,8 +7676,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.iso.org/iso-14001-environmental-management.html canonical=https://www.iso.org/standards/popular/iso-14000-family",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "SHA-256 fc148209e62d718709bfd1432cbc32f1a41f030683c9a8fb69360591b8505b62; selected=https://www.iso.org/iso-14001-environmental-management.html; final=https://www.iso.org/standards/popular/iso-14000-family",
+      "review_basis": "The response bytes were frozen, but the source-integrity provenance record is incomplete.",
+      "reason_code": "SOURCE_INTEGRITY_METADATA_INCOMPLETE",
+      "missing_facets": [
+        "accessed-at-utc",
+        "redirect-chain"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iso.org/standards/popular/iso-14000-family",
       "http_status": 200,
       "source_sha256": "fc148209e62d718709bfd1432cbc32f1a41f030683c9a8fb69360591b8505b62"
@@ -6258,7 +7704,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.iso.org/iso-14001-environmental-management.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6267,8 +7713,18 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.iso.org/iso-14001-environmental-management.html canonical=https://www.iso.org/standards/popular/iso-14000-family",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "ISO - ISO 14000 family — Environmental management",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "numeric-value",
+        "numerator",
+        "denominator",
+        "units-or-rate",
+        "exclusions-or-missingness",
+        "rounding-rule"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iso.org/standards/popular/iso-14000-family",
       "http_status": 200,
       "source_sha256": "fc148209e62d718709bfd1432cbc32f1a41f030683c9a8fb69360591b8505b62"
@@ -6289,7 +7745,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.iso.org/iso-14001-environmental-management.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6298,8 +7754,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.iso.org/iso-14001-environmental-management.html canonical=https://www.iso.org/standards/popular/iso-14000-family",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "ISO - ISO 14000 family — Environmental management",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "population",
+        "geography",
+        "inclusion-rules",
+        "missingness",
+        "coverage-limits"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iso.org/standards/popular/iso-14000-family",
       "http_status": 200,
       "source_sha256": "fc148209e62d718709bfd1432cbc32f1a41f030683c9a8fb69360591b8505b62"
@@ -6320,7 +7785,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.iso.org/iso-14001-environmental-management.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6329,8 +7794,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.iso.org/iso-14001-environmental-management.html canonical=https://www.iso.org/standards/popular/iso-14000-family",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "ISO - ISO 14000 family — Environmental management",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "date-or-period",
+        "temporal-applicability"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iso.org/standards/popular/iso-14000-family",
       "http_status": 200,
       "source_sha256": "fc148209e62d718709bfd1432cbc32f1a41f030683c9a8fb69360591b8505b62"
@@ -6351,7 +7822,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.iso.org/iso-14001-environmental-management.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6360,8 +7831,17 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.iso.org/iso-14001-environmental-management.html canonical=https://www.iso.org/standards/popular/iso-14000-family",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "ISO - ISO 14000 family — Environmental management",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "method",
+        "software-or-version",
+        "thresholds",
+        "transformations-or-calibration",
+        "quality-controls"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iso.org/standards/popular/iso-14000-family",
       "http_status": 200,
       "source_sha256": "fc148209e62d718709bfd1432cbc32f1a41f030683c9a8fb69360591b8505b62"
@@ -6382,7 +7862,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.iso.org/iso-14001-environmental-management.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6391,8 +7871,16 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.iso.org/iso-14001-environmental-management.html canonical=https://www.iso.org/standards/popular/iso-14000-family",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "ISO - ISO 14000 family — Environmental management",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "baseline",
+        "population",
+        "operating-condition",
+        "time-window"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iso.org/standards/popular/iso-14000-family",
       "http_status": 200,
       "source_sha256": "fc148209e62d718709bfd1432cbc32f1a41f030683c9a8fb69360591b8505b62"
@@ -6413,7 +7901,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.iso.org/iso-14001-environmental-management.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6422,8 +7910,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.iso.org/iso-14001-environmental-management.html canonical=https://www.iso.org/standards/popular/iso-14000-family",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "ISO - ISO 14000 family — Environmental management",
+      "review_basis": "Text disclosure alone cannot pass this executable gate; no independent numeric reproduction, method execution, or rerun artifact was recorded.",
+      "reason_code": "GATE_FACETS_AND_EXECUTION_ARTIFACT_MISSING",
+      "missing_facets": [
+        "public-input-access",
+        "rerun-procedure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iso.org/standards/popular/iso-14000-family",
       "http_status": 200,
       "source_sha256": "fc148209e62d718709bfd1432cbc32f1a41f030683c9a8fb69360591b8505b62"
@@ -6444,7 +7938,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.iso.org/iso-14001-environmental-management.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6453,8 +7947,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.iso.org/iso-14001-environmental-management.html canonical=https://www.iso.org/standards/popular/iso-14000-family",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "ISO - ISO 14000 family — Environmental management",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "adverse-or-limiting-evidence",
+        "explicit-qualification"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iso.org/standards/popular/iso-14000-family",
       "http_status": 200,
       "source_sha256": "fc148209e62d718709bfd1432cbc32f1a41f030683c9a8fb69360591b8505b62"
@@ -6475,7 +7975,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.iso.org/iso-14001-environmental-management.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6484,8 +7984,13 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.iso.org/iso-14001-environmental-management.html canonical=https://www.iso.org/standards/popular/iso-14000-family",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "ISO - ISO 14000 family — Environmental management",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "interest-or-support-disclosure"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iso.org/standards/popular/iso-14000-family",
       "http_status": 200,
       "source_sha256": "fc148209e62d718709bfd1432cbc32f1a41f030683c9a8fb69360591b8505b62"
@@ -6506,7 +8011,7 @@
       "suggested_source_boundary": "sustainability reports, methodology notes, assurance statements and source datasets",
       "source_url": "https://www.iso.org/iso-14001-environmental-management.html",
       "source_frozen_sha256": null,
-      "status": "SOURCE_DRIFT",
+      "status": "INSUFFICIENT_COVERAGE",
       "honest_outcomes": [
         "PASSED_UNDER_PROTOCOL",
         "INSUFFICIENT_COVERAGE",
@@ -6515,8 +8020,14 @@
         "SOURCE_DRIFT"
       ],
       "raw_payload_committed": false,
-      "locator": "selected=https://www.iso.org/iso-14001-environmental-management.html canonical=https://www.iso.org/standards/popular/iso-14000-family",
-      "review_basis": "The frozen URL resolved outside its selected source boundary.",
+      "locator": "ISO - ISO 14000 family — Environmental management",
+      "review_basis": "No topic-specific verbatim sentence satisfied the gate predicate.",
+      "reason_code": "GATE_SPECIFIC_FACETS_MISSING",
+      "missing_facets": [
+        "explicit-qualification",
+        "limitation-or-uncertainty"
+      ],
+      "extraction_quality": "TEXT_EXTRACT_AT_LEAST_2000_CHARS",
       "canonical_url": "https://www.iso.org/standards/popular/iso-14000-family",
       "http_status": 200,
       "source_sha256": "fc148209e62d718709bfd1432cbc32f1a41f030683c9a8fb69360591b8505b62"
