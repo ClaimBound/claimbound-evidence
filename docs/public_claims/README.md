@@ -17,6 +17,32 @@ drifts.
 > claims; each item must first be replaced by a genuinely sourced statement and
 > rerun under a frozen protocol.
 
+## Revision-bound replacement campaign
+
+The historical gate-question records have now been replaced in their existing
+100 × 70 registry slots by 7,000 distinct structured public statements from
+Wikidata. The sanitized manifest is
+`artifacts/cb7k_wikidata_public_claims.json`; raw revision content remains in a
+local cache and is not committed.
+
+The narrow result is deliberately precise: `PASSED_UNDER_PROTOCOL` means the
+exact statement GUID and verbatim JSON excerpt occur in the named Wikidata
+revision and the frozen revision content matches the recorded SHA-256. It does
+not mean that ClaimBound independently proved the value's real-world truth.
+
+Reproduce the local source binding checks:
+
+```bash
+python3 scripts/build_wikidata_public_claims.py verify-sources \
+  artifacts/cb7k_wikidata_public_claims.json \
+  --cache /path/to/local-wikidata-cache
+```
+
+The collector uses a descriptive User-Agent, sequential requests, `maxlag=5`
+and local caching. Wikidata structured data is published under CC0; see the
+[Wikidata data-access documentation](https://www.wikidata.org/wiki/Help:Data_access)
+and [MediaWiki API etiquette](https://www.mediawiki.org/wiki/API:Etiquette).
+
 ## Build locally
 
 ```bash
