@@ -4,8 +4,11 @@
 from __future__ import annotations
 
 import json
+import re
+from datetime import date
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 ALLOWED_EXECUTION_MODES = {
     "MANUAL_NO_AI",
@@ -95,6 +98,27 @@ FORBIDDEN_CLAIM_FRAGMENTS = {
     "universal forecasting edge",
     "universal effect",
     "proves correctness outside",
+}
+
+# Cards created before this policy remain readable as historical records.  Every
+# card created on or after the cutoff must bind the result to a concrete public
+# statement.  This is deliberately date based so a producer cannot opt out by
+# choosing an older schema version or record type.
+PUBLIC_CLAIM_POLICY_START = date(2026, 7, 26)
+PUBLIC_CLAIM_REQUIRED_FIELDS = {
+    "public_claim_text",
+    "public_claim_verbatim_quote",
+    "public_claim_source_url",
+    "public_claim_locator",
+    "public_claim_captured_at",
+    "public_claim_source_sha256",
+}
+_SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
+_CANDIDATE_QUESTION_FRAGMENTS = {
+    "the public claim about",
+    "the published number for",
+    "can be traced to one exact public source",
+    "does not silently exclude",
 }
 
 
@@ -195,6 +219,55 @@ def validate_evidence_card(card: dict[str, Any]) -> list[str]:
     if mode_text.endswith("_NO_AI") and "used" in ai_assistance and "not used" not in ai_assistance:
         violations.append("NO_AI execution modes must not describe AI use")
 
+    violations.extend(_validate_public_claim_binding(card))
+
+    return violations
+
+
+def _validate_public_claim_binding(card: dict[str, Any]) -> list[str]:
+    """Require a source-bound public statement for every newly created card."""
+    created = str(card.get("created_at", ""))[:10]
+    try:
+        policy_applies = date.fromisoformat(created) >= PUBLIC_CLAIM_POLICY_START
+    except ValueError:
+        return []  # The ordinary required-field validation handles bad/missing values.
+    if not policy_applies:
+        return []
+
+    violations: list[str] = []
+    missing = sorted(
+        field for field in PUBLIC_CLAIM_REQUIRED_FIELDS if _is_missing(card.get(field))
+    )
+    violations.extend(f"missing public claim field: {field}" for field in missing)
+    if missing:
+        return violations
+
+    claim = str(card["public_claim_text"]).strip()
+    quote = str(card["public_claim_verbatim_quote"]).strip()
+    locator = str(card["public_claim_locator"]).strip()
+    source_url = str(card["public_claim_source_url"]).strip()
+    source_sha256 = str(card["public_claim_source_sha256"]).strip()
+
+    if len(claim) < 20 or claim.endswith("?"):
+        violations.append("public_claim_text must be a concrete declarative statement")
+    lowered_claim = claim.lower()
+    if any(fragment in lowered_claim for fragment in _CANDIDATE_QUESTION_FRAGMENTS):
+        violations.append("public_claim_text must not be a generated gate template")
+    if len(quote) < 20:
+        violations.append("public_claim_verbatim_quote must contain a substantive source excerpt")
+    if len(locator) < 8:
+        violations.append("public_claim_locator must identify the quote within the source")
+    parsed = urlparse(source_url)
+    if parsed.scheme != "https" or not parsed.netloc:
+        violations.append("public_claim_source_url must be an absolute HTTPS URL")
+    if not _SHA256_RE.fullmatch(source_sha256):
+        violations.append("public_claim_source_sha256 must be a lowercase SHA-256 digest")
+    try:
+        captured = date.fromisoformat(str(card["public_claim_captured_at"])[:10])
+        if captured > date.fromisoformat(created):
+            violations.append("public_claim_captured_at must not be later than created_at")
+    except ValueError:
+        violations.append("public_claim_captured_at must start with an ISO date")
     return violations
 
 
@@ -206,4 +279,3 @@ def _is_missing(value: object) -> bool:
     if isinstance(value, (list, tuple, dict, set)) and len(value) == 0:
         return True
     return False
-

@@ -52,6 +52,46 @@ def test_valid_evidence_card_passes() -> None:
     assert validate_evidence_card(_valid_card()) == []
 
 
+def test_new_evidence_card_requires_public_claim_binding() -> None:
+    card = _valid_card()
+    card["created_at"] = "2026-07-26"
+    violations = validate_evidence_card(card)
+    assert "missing public claim field: public_claim_text" in violations
+    assert "missing public claim field: public_claim_verbatim_quote" in violations
+
+
+def test_new_evidence_card_accepts_concrete_public_claim_binding() -> None:
+    card = _valid_card()
+    card.update(
+        {
+            "created_at": "2026-07-26",
+            "public_claim_text": "The agency reported 42 completed inspections in June 2026.",
+            "public_claim_verbatim_quote": "During June 2026, the agency completed 42 inspections.",
+            "public_claim_source_url": "https://example.org/reports/june-2026",
+            "public_claim_locator": "Results, paragraph 2",
+            "public_claim_captured_at": "2026-07-26T10:00:00Z",
+            "public_claim_source_sha256": "1" * 64,
+        }
+    )
+    assert validate_evidence_card(card) == []
+
+
+def test_new_evidence_card_rejects_gate_template_as_public_claim() -> None:
+    card = _valid_card()
+    card.update(
+        {
+            "created_at": "2026-07-26",
+            "public_claim_text": "The published number for inspections reproduces from disclosed inputs.",
+            "public_claim_verbatim_quote": "During June 2026, the agency completed 42 inspections.",
+            "public_claim_source_url": "https://example.org/reports/june-2026",
+            "public_claim_locator": "Results, paragraph 2",
+            "public_claim_captured_at": "2026-07-26",
+            "public_claim_source_sha256": "1" * 64,
+        }
+    )
+    assert "public_claim_text must not be a generated gate template" in validate_evidence_card(card)
+
+
 def test_committed_evidence_cards_validate_and_are_indexed() -> None:
     card_dir = REPO_ROOT / "docs" / "evidence_cards"
     registry_path = REPO_ROOT / "docs" / "registry" / "evidence_index.json"
@@ -163,4 +203,3 @@ def test_evidence_card_cli_reports_violations(
     assert module.main() == 1
     captured = capsys.readouterr()
     assert "execution_mode must be one of" in captured.err
-
