@@ -20,6 +20,10 @@ Rules first. Source second. Run third. Claim last.
 7. Raw payload handling must respect source rights and repository policy.
 8. Another operator should be able to inspect the record and decide whether a
    rerun is possible.
+9. Every evidence card created on or after 2026-07-26 must quote one concrete
+   public statement, identify its exact HTTPS source and locator, and bind the
+   capture to a SHA-256 digest. A topic, question, search query or generated gate
+   template is not a public claim.
 
 ## What Counts As Evidence
 
@@ -38,6 +42,11 @@ A ClaimBound evidence record can include:
 - sanitized report hash;
 - evidence card;
 - reproduction level.
+
+For new cards, “what was claimed?” is mandatory data rather than prose hidden in
+`claim_boundary`: `public_claim_text`, `public_claim_verbatim_quote`,
+`public_claim_source_url`, `public_claim_locator`, `public_claim_captured_at` and
+`public_claim_source_sha256` must all validate before registration.
 
 A ClaimBound evidence record does not rely on:
 

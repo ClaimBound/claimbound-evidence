@@ -9,6 +9,14 @@ select one exact public source URL, freeze the source manifest, and keep the ori
 claim and source even when the result is blocked, insufficient, negative, or later
 drifts.
 
+> **Registration rule (effective 2026-07-26):** a candidate question is never a
+> public claim. A new evidence card is rejected unless it contains a concrete
+> declarative claim, a substantive verbatim source excerpt, an exact HTTPS URL,
+> a quote locator, capture time and the captured source SHA-256. The historical
+> CB7K gate-question run therefore cannot be relabelled as 7,000 verified public
+> claims; each item must first be replaced by a genuinely sourced statement and
+> rerun under a frozen protocol.
+
 ## Build locally
 
 ```bash
