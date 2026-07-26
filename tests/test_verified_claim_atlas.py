@@ -25,7 +25,7 @@ def test_verified_claim_atlas_has_every_claim_and_category(tmp_path):
     assert payload["category_count"] == 100
     assert sum(payload["result_counts"].values()) == 7000
     assert payload["protocol_audit_conclusion"] == (
-        "STRUCTURALLY_COMPLETE_BUT_CURRENT_PROTOCOL_COMPLIANCE_NOT_ESTABLISHED"
+        "COMPLETE_CARD_SET_BUT_CURRENT_PROTOCOL_COMPLIANCE_NOT_ESTABLISHED"
     )
     assert all(item["dedicated_concrete_claim_under_test"] is None for item in payload["results"])
     assert all(item["adjudication_rule"] for item in payload["results"])
@@ -68,6 +68,7 @@ def test_campaign_audit_exposes_known_protocol_failures():
     assert checks["fetch-attempt-provenance"]["passed"] == 0
     assert checks["source-integrity-pass-evidence"]["total"] == 300
     assert checks["topic-url-diversity"]["passed"] == 68
-    assert checks["executable-pass-evidence"]["total"] == 96
+    assert checks["executable-pass-reproduction"]["total"] == 96
+    assert checks["reproducibility-pass-consistency"]["total"] == 23
     assert checks["report-file-integrity"]["passed"] == 7000
     assert checks["source-manifest-publication"]["passed"] == 15

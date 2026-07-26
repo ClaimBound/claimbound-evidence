@@ -275,6 +275,17 @@ def audit_campaign(run_validator: bool = False) -> dict[str, Any]:
         and candidates[claim_id]["gate"] in executable_gates
         for claim_id, (_, card) in cards.items()
     )
+    independently_reproduced_executable_passes = sum(
+        card.get("result_status") == "PASSED_UNDER_PROTOCOL"
+        and candidates[claim_id]["gate"] in executable_gates
+        and card.get("reproduction_level") != "not independently reproduced"
+        for claim_id, (_, card) in cards.items()
+    )
+    reproducibility_passes = sum(
+        card.get("result_status") == "PASSED_UNDER_PROTOCOL"
+        and candidates[claim_id]["gate"] == "reproducibility"
+        for claim_id, (_, card) in cards.items()
+    )
     git_commit_values = {str(card.get("git_commit", "")) for _, card in cards.values()}
     resolvable_git_commits: set[str] = set()
     for value in git_commit_values:
@@ -365,9 +376,9 @@ def audit_campaign(run_validator: bool = False) -> dict[str, Any]:
 
     checks = [
         _check("complete-card-set", "Exactly one evidence card per preregistered question", "PASS" if len(cards) == 7000 and set(cards) == set(candidates) else "FAIL", len(set(cards) & set(candidates)), 7000, f"Found {len(cards)} unique CB7K cards for {len(candidates)} preregistered questions; duplicate IDs are rejected while loading."),
-        _check("allowed-outcomes", "Only predeclared honest outcomes are used", "PASS" if set(status_counts) <= set(OUTCOMES) else "FAIL", sum(status_counts[value] for value in OUTCOMES), 7000, f"Observed outcomes: {outcome_counts}; all non-pass outcomes were retained."),
+        _check("allowed-outcomes", "All observed outcome values belong to the allowed enum", "PASS" if set(status_counts) <= set(OUTCOMES) else "FAIL", sum(status_counts[value] for value in OUTCOMES), 7000, f"Observed outcomes: {outcome_counts}. This check does not establish historical retention or absence of rewriting."),
         _check("raw-payload-policy", "Cards record raw_payload_committed=false", "PASS" if all(card.get("raw_payload_committed") is False for _, card in cards.values()) else "FAIL", sum(card.get("raw_payload_committed") is False for _, card in cards.values()), 7000, "All cards carry the false flag. This field-level check does not independently prove local retention or exhaustively classify every repository file."),
-        _check("https-source", "An exact HTTPS source URL is recorded", "PASS" if all(str(card.get("official_source_url", "")).startswith("https://") for _, card in cards.values()) else "FAIL", sum(str(card.get("official_source_url", "")).startswith("https://") for _, card in cards.values()), 7000, f"{len({card['official_source_url'] for _, card in cards.values()})} distinct URLs are recorded."),
+        _check("https-source", "The recorded source URL syntactically starts with https://", "PASS" if all(str(card.get("official_source_url", "")).startswith("https://") for _, card in cards.values()) else "FAIL", sum(str(card.get("official_source_url", "")).startswith("https://") for _, card in cards.values()), 7000, f"{len({card['official_source_url'] for _, card in cards.values()})} distinct URL strings are recorded; this check does not establish public accessibility, exactness, or freeze timing."),
         _check("response-hash", "A response SHA-256 is recorded", "PASS" if sha_manifest_count == 7000 else "FAIL", sha_manifest_count, 7000, "This proves a hash was recorded, not that the private raw bytes still reproduce it."),
         _check("manifest-completeness", "Execution manifests exactly cover the preregistered claim set", "PASS" if set(entries) == set(candidates) else "FAIL", len(set(entries) & set(candidates)), 7000, f"Loaded {len(entries)} unique execution entries; missing={len(set(candidates)-set(entries))}, extra={len(set(entries)-set(candidates))}."),
         _check("manifest-method", "Execution manifest records the expected gate-specific method", "PASS" if manifest_methods == 7000 else "FAIL", manifest_methods, 7000, "Compared each execution entry with the current gate-to-method mapping; missing timestamped provenance means pre-fetch freezing is not proven."),
@@ -383,13 +394,14 @@ def audit_campaign(run_validator: bool = False) -> dict[str, Any]:
         _check("concrete-source-claim", "A dedicated concrete claim-under-test is captured", "FAIL", 0, 7000, "The catalog stores generated topic × gate questions and no dedicated claim-under-test field. Some evidence locators contain supporting excerpts, but those excerpts are not explicitly frozen as the claim being checked."),
         _check("runner-availability", "The recorded runner command points to a published script", "PASS" if runner_paths_present == 7000 else "FAIL", runner_paths_present, 7000, f"{7000-runner_paths_present} cards still point to an unavailable historical runner."),
         _check("maintainer-operator", "The human maintainer is named as the card operator", "PASS" if maintainer_operator == 7000 else "FAIL", maintainer_operator, 7000, f"{7000-maintainer_operator} cards name ClaimBound rather than the NeoZorK maintainer handle."),
-        _check("executable-pass-evidence", "Executable-gate passes include independent execution evidence", "FAIL" if executable_passes else "PASS", 0, executable_passes, f"{executable_passes} passes occur in numerator-denominator, method-version, or reproducibility gates while every card states not independently reproduced."),
+        _check("executable-pass-reproduction", "Passes in execution-required gates were independently reproduced", "PASS" if independently_reproduced_executable_passes == executable_passes else "FAIL", independently_reproduced_executable_passes, executable_passes, f"{executable_passes} passes occur in gates categorized as execution-required by the historical runner; {independently_reproduced_executable_passes} state independent reproduction. This does not establish whether a single-operator execution artifact existed."),
+        _check("reproducibility-pass-consistency", "A reproducibility PASS agrees with the card reproduction level", "PASS" if reproducibility_passes == 0 else "FAIL", 0, reproducibility_passes, f"{reproducibility_passes} reproducibility-gate checks are marked passed while their cards state not independently reproduced."),
         _check("report-status", "Manual-review rows exactly cover cards and agree on status", "PASS" if set(reviews) == set(candidates) and report_status_mismatches == 0 else "FAIL", len(set(reviews) & set(candidates))-report_status_mismatches, 7000, f"Unique review records: {len(reviews)}; missing={len(set(candidates)-set(reviews))}, extra={len(set(reviews)-set(candidates))}, status mismatches={report_status_mismatches}."),
         _check("report-http", "Manual-review HTTP metadata agrees with the comparable card observation", "PASS" if report_http_comparable == 7000 and report_http_mismatches == 0 else "FAIL", report_http_comparable-report_http_mismatches, 7000, f"Comparable: {report_http_comparable}; mismatches: {report_http_mismatches}."),
         _check("report-sha", "Manual-review source hash agrees with the comparable card observation", "PASS" if report_sha_comparable == 7000 and report_sha_mismatches == 0 else "FAIL", report_sha_comparable-report_sha_mismatches, 7000, f"Comparable: {report_sha_comparable}; mismatches: {report_sha_mismatches}."),
         _check("report-file-integrity", "Published manual-review files match the hashes recorded by cards", "PASS" if report_file_hash_matches == 7000 else "FAIL", report_file_hash_matches, 7000, f"Checked {len(report_hash_cache)} distinct manual-review files against each card's sanitized_report_sha256."),
         _check("source-manifest-publication", "Every execution batch publishes its referenced source manifest", "PASS" if source_manifest_hash_matches == 34 else "FAIL", source_manifest_hash_matches, 34, f"Published {source_manifest_present}/34 source manifests; all {source_manifest_hash_matches} present referenced manifests match their declared hashes. {34-source_manifest_present} are absent, and {34-source_manifest_declared} execution manifest does not declare a source-manifest hash."),
-        _check("independent-reproduction", "Outcome was independently reproduced", "LIMITATION", sum(card.get("reproduction_level") != "not independently reproduced" for _, card in cards.values()), 7000, "All 7,000 cards state not independently reproduced; 6,790 are single-operator first runs and 210 are single-operator reruns."),
+        _check("independent-reproduction", "Outcome was independently reproduced", "LIMITATION", sum(card.get("reproduction_level") != "not independently reproduced" for _, card in cards.values()), 7000, "All 7,000 cards state not independently reproduced; verification_level is SINGLE_OPERATOR on 6,790 cards and SINGLE_OPERATOR_RERUN on 210."),
         _check("selection-timing", "Source was frozen before first fetch", "PASS" if selection_provenance == 7000 else "NOT_AUDITABLE", selection_provenance if selection_provenance == 7000 else None, 7000, "End-state artifacts assert this rule and URLs match, but current timestamped discovery provenance is incomplete, so ordering is not independently established."),
         _check("no-source-replacement", "Blocked or weak source was not replaced after observation", "PASS" if selection_provenance == 7000 and manifest_url_matches == 7000 else "NOT_AUDITABLE", manifest_url_matches if selection_provenance == 7000 else None, 7000, "Manifest/card URLs match and review text asserts no replacement; without complete pre-evaluation selection provenance, post-observation replacement cannot be independently excluded."),
     ]
@@ -435,7 +447,7 @@ def audit_campaign(run_validator: bool = False) -> dict[str, Any]:
     conclusion = (
         "CURRENT_PROTOCOL_COMPLIANCE_ESTABLISHED"
         if not any(item["status"] in {"FAIL", "NOT_AUDITABLE"} for item in checks)
-        else "STRUCTURALLY_COMPLETE_BUT_CURRENT_PROTOCOL_COMPLIANCE_NOT_ESTABLISHED"
+        else "COMPLETE_CARD_SET_BUT_CURRENT_PROTOCOL_COMPLIANCE_NOT_ESTABLISHED"
     )
 
     return {
