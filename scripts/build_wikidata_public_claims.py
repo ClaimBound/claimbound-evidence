@@ -372,9 +372,13 @@ def validate(path: Path) -> None:
     print("VALID: 7000 distinct revision-bound public statements across 100 categories")
 
 
-def verify_sources(path: Path, cache: Path) -> None:
+def verify_sources(path: Path, cache: Path, claim_id: str | None = None) -> None:
     payload = json.loads(path.read_text(encoding="utf-8"))
     rows = payload["records"]
+    if claim_id is not None:
+        rows = [row for row in rows if row["claim_id"] == claim_id]
+        if not rows:
+            raise SystemExit(f"ERROR: unknown claim ID: {claim_id}")
     client = Client(cache, delay=0)
     grouped: dict[int, list[dict[str, Any]]] = {}
     for row in rows:
@@ -392,7 +396,7 @@ def verify_sources(path: Path, cache: Path) -> None:
                 row["public_claim_verbatim_quote"].encode("utf-8")
             ).hexdigest() == row["statement_sha256"]
             checked += 1
-    assert checked == 7000
+    assert checked == len(rows)
     print(
         f"VERIFIED: {checked} exact statements against {len(grouped)} frozen revision payloads"
     )
@@ -409,13 +413,14 @@ def main() -> None:
     verify = sub.add_parser("verify-sources")
     verify.add_argument("manifest", type=Path)
     verify.add_argument("--cache", type=Path, required=True)
+    verify.add_argument("--claim-id")
     args = parser.parse_args()
     if args.command == "build":
         collect(args.cache, args.output)
     elif args.command == "validate":
         validate(args.manifest)
     else:
-        verify_sources(args.manifest, args.cache)
+        verify_sources(args.manifest, args.cache, args.claim_id)
 
 
 if __name__ == "__main__":

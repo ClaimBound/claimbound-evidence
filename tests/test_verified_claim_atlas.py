@@ -24,10 +24,14 @@ def test_public_claim_atlas_has_7000_distinct_claims(tmp_path):
     assert payload["distinct_statement_count"] == 7000
     assert payload["category_count"] == 100
     assert payload["result_counts"] == {"PASSED_UNDER_PROTOCOL": 7000}
+    assert payload["independent_reproduction_count"] == 0
     assert all(item["public_claim_text"] for item in payload["results"])
     assert all(item["public_claim_verbatim_quote"] for item in payload["results"])
     assert all(item["public_claim_locator"] for item in payload["results"])
     pages = list((output / "categories").glob("*/index.html"))
     assert len(pages) == 100
     assert all(page.read_text(encoding="utf-8").count('<article class="claim">') == 70 for page in pages)
+    assert all("Repeat this exact check locally" in page.read_text(encoding="utf-8") for page in pages)
+    assert all("What this card does not prove" in page.read_text(encoding="utf-8") for page in pages)
     assert "7,000 / 7,000" in (output / "audit/index.html").read_text(encoding="utf-8")
+    assert "0 / 7,000" in (output / "audit/index.html").read_text(encoding="utf-8")

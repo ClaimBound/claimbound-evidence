@@ -38,6 +38,20 @@ python3 scripts/build_wikidata_public_claims.py verify-sources \
   --cache /path/to/local-wikidata-cache
 ```
 
+Reproduce one selected card from an empty cache:
+
+```bash
+python3 scripts/build_wikidata_public_claims.py verify-sources \
+  artifacts/cb7k_wikidata_public_claims.json \
+  --cache .cache/claimbound-wikidata \
+  --claim-id CB7K-DOM001-C01
+```
+
+This rerun verifies source publication and byte identity. It does not validate
+the statement against the real world, follow its reference blocks, or convert a
+maintainer run into independent reproduction. Those are separate evidence
+tracks and must be reported separately.
+
 The collector uses a descriptive User-Agent, sequential requests, `maxlag=5`
 and local caching. Wikidata structured data is published under CC0; see the
 [Wikidata data-access documentation](https://www.wikidata.org/wiki/Help:Data_access)
