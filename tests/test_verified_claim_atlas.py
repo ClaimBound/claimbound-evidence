@@ -19,10 +19,12 @@ def test_verified_claim_atlas_has_every_claim_and_category(tmp_path):
     builder = load_builder()
     output = tmp_path / "site"
     builder.build(output)
-    payload = json.loads((output / "results.json").read_text())
+    payload = json.loads((output / "results.json").read_text(encoding="utf-8"))
     assert payload["maintainer"] == "NeoZorK"
     assert payload["claim_count"] == 7000
     assert payload["category_count"] == 100
     assert sum(payload["result_counts"].values()) == 7000
     assert len(list((output / "categories").glob("*/index.html"))) == 100
-    assert "PENDING_SOURCE_SELECTION" not in (output / "index.html").read_text()
+    assert "PENDING_SOURCE_SELECTION" not in (output / "index.html").read_text(
+        encoding="utf-8"
+    )
