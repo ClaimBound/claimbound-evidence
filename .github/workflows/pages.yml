@@ -8,7 +8,11 @@ on:
       - ".github/workflows/pages.yml"
       - "docs/evidence_cards/CLAIMBOUND-CB7K-*.json"
       - "docs/public_claims/domains/**"
+      - "artifacts/claim_batch_*_execution_manifest.json"
+      - "artifacts/claim_batch_*_manual_review.json"
+      - "artifacts/claim_batch_*_source_manifest.json"
       - "scripts/build_public_claim_catalog.py"
+      - "scripts/audit_cb7k_campaign.py"
       - "scripts/build_verified_claim_atlas.py"
 
 permissions:
