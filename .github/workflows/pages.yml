@@ -15,6 +15,10 @@ on:
       - "scripts/build_public_claim_catalog.py"
       - "scripts/audit_cb7k_campaign.py"
       - "scripts/build_verified_claim_atlas.py"
+      - "scripts/build_public_claim_atlas_v2.py"
+      - "scripts/build_wikidata_public_claims.py"
+      - "scripts/register_wikidata_public_claims.py"
+      - "artifacts/cb7k_wikidata_public_claims.json"
 
 permissions:
   contents: read
@@ -46,7 +50,7 @@ jobs:
           cp -R docs/esa/atlas _site/esa
           cp -R docs/nasa/atlas _site/nasa
           cp -R docs/leqembi _site/leqembi
-          python3 scripts/build_verified_claim_atlas.py --output _site/claims
+          python3 scripts/build_public_claim_atlas_v2.py --output _site/claims
           cp docs/atlas_home.html _site/index.html
       - uses: actions/upload-pages-artifact@v5
         with:
