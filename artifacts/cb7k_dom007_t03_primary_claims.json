@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NASA Robotic Interface Best Practices and Lessons Learned for Surface Operations bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NASA Robotic Interface Best Practices and Lessons Learned for Surface Operations",
+  "source_url": "https://ntrs.nasa.gov/api/citations/20260001900/downloads/SP-20260001900_Final.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "fee6644426a6db1a72984d7ec2224288899582b03f04dae7b041a01b4eacffb8",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM007-T03-G01",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "The mating coordinate frame should be identifiable to an approaching crew member or autonomous system by an alignment reference marking (arrow, light, etc.) on the system the interface is placed upon.",
+      "public_claim_verbatim_quote": "The mating coordinate frame should be identifiable to an approaching crew member or autonomous system by an alignment reference marking (arrow, light, etc.) on the system the interface is placed upon."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T03-G02",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "EVRBP-0001 Keep Out Zones During concurrent EVA and EVR operations, EVA keep-out zones should be clearly defined and indicated around the worksite in a manner perceivable by the robotic system.",
+      "public_claim_verbatim_quote": "EVRBP-0001 Keep Out Zones During concurrent EVA and EVR operations, EVA keep-out zones should be clearly defined and indicated around the worksite in a manner perceivable by the robotic system."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T03-G03",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "Rationale: The crew’s Situation Awareness (SA) may be stretched while performing EVA and having clearly defined keep-out zones that are indicated in some way (ex., labels, lights, etc.) will provide an added buffer for the crew’s safety and awareness, and enable robotic systems to comprehend areas that are dangerous to operate in when crew are present.",
+      "public_claim_verbatim_quote": "Rationale: The crew’s Situation Awareness (SA) may be stretched while performing EVA and having clearly defined keep-out zones that are indicated in some way (ex., labels, lights, etc.) will provide an added buffer for the crew’s safety and awareness, and enable robotic systems to comprehend areas that are dangerous to operate in when crew are present."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T03-G04",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "When robotic systems are in use (automated, IVA operated, or ground operated), they should be able to respond to stimulus (external) or on-board recognition such that when crew enter an area of operations and breaches a robotic workspace (keep-out zone), the robotic system pauses in a safe configuration until crew exits the area.",
+      "public_claim_verbatim_quote": "When robotic systems are in use (automated, IVA operated, or ground operated), they should be able to respond to stimulus (external) or on-board recognition such that when crew enter an area of operations and breaches a robotic workspace (keep-out zone), the robotic system pauses in a safe configuration until crew exits the area."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T03-G05",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "EVRBP-0002 Softgoods Restraints Softgoods (ex., EVA handles, tethers), cables, and hoses that are not intended for robotic interaction should be constrained in such a way that they are kept clear of robotic grasp areas, targets, and worksites even after incidental contact or under dynamic conditions.",
+      "public_claim_verbatim_quote": "EVRBP-0002 Softgoods Restraints Softgoods (ex., EVA handles, tethers), cables, and hoses that are not intended for robotic interaction should be constrained in such a way that they are kept clear of robotic grasp areas, targets, and worksites even after incidental contact or under dynamic conditions."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T03-G06",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "EVRBP-0004 Shared EVA and EVR Interface Loads The forces and torques required for actuation (Push, Pull, Twist, or combinations) and insertion of/into interfaces should be minimized where practical and should not exceed the maximum EVA loads defined within EHP-10028 and NASA-STD-3001.",
+      "public_claim_verbatim_quote": "EVRBP-0004 Shared EVA and EVR Interface Loads The forces and torques required for actuation (Push, Pull, Twist, or combinations) and insertion of/into interfaces should be minimized where practical and should not exceed the maximum EVA loads defined within EHP-10028 and NASA-STD-3001."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T03-G07",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "EVRBP-0005 Robotic Interoperability Standardization Robotic system interfaces should adopt a set of unified design standards emphasizing interface commonality and interoperability, where feasible, for both the human-robot interface and the robot-hardware interface design.",
+      "public_claim_verbatim_quote": "EVRBP-0005 Robotic Interoperability Standardization Robotic system interfaces should adopt a set of unified design standards emphasizing interface commonality and interoperability, where feasible, for both the human-robot interface and the robot-hardware interface design."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T03-G08",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "Ethercat, Controller Area Network (CAN), MIL STD 1553), along with limiting the number of physical interface variants, simplifies mission logistics by reducing the need to carry, maintain, and replace multiple unique and/or specialized supporting parts or adapters in environments where mass and volume are at a premium.",
+      "public_claim_verbatim_quote": "Ethercat, Controller Area Network (CAN), MIL STD 1553), along with limiting the number of physical interface variants, simplifies mission logistics by reducing the need to carry, maintain, and replace multiple unique and/or specialized supporting parts or adapters in environments where mass and volume are at a premium."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T03-G09",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "EVRBP-0006 Sequential Mating Concepts of Operations Interfaces should not expect robotic systems to be able to provide multiple simultaneous actions.",
+      "public_claim_verbatim_quote": "EVRBP-0006 Sequential Mating Concepts of Operations Interfaces should not expect robotic systems to be able to provide multiple simultaneous actions."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T03-G10",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "Items such as 38999 connectors should be avoided if possible as they require fine alignment, moderate force, and rotation all at the same time.",
+      "public_claim_verbatim_quote": "Items such as 38999 connectors should be avoided if possible as they require fine alignment, moderate force, and rotation all at the same time."
+    }
+  ]
+}

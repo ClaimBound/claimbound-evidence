@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched OpenAI GPT-5.4 Thinking System Card bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "OpenAI GPT-5.4 Thinking System Card",
+  "source_url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "e1d430988982bb6617c19db37bec03cbefba1771657d5ab57743dbfc53e7aa50",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM001-T04-G01",
+      "section_locator": "PDF page 10",
+      "public_claim_text": "As a result, its main strengths are better precision when enough context is already available, simpler responses when appropriate, and improved context-seeking before referrals to care.",
+      "public_claim_verbatim_quote": "As a result, its main strengths are better precision when enough context is already available, simpler responses when appropriate, and improved context-seeking before referrals to care."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T04-G02",
+      "section_locator": "PDF page 10",
+      "public_claim_text": "As with GPT-5.3-Codex, we ran our destructive actions evaluation that measures the model’s ability to preserve user-produced changes and avoid taking accidental destructive actions.",
+      "public_claim_verbatim_quote": "As with GPT-5.3-Codex, we ran our destructive actions evaluation that measures the model’s ability to preserve user-produced changes and avoid taking accidental destructive actions."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T04-G03",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "For deployment of GPT-5.4 Thinking for computer use, we updated our training process from a single confirmation behavior policy enforced in the model.",
+      "public_claim_verbatim_quote": "For deployment of GPT-5.4 Thinking for computer use, we updated our training process from a single confirmation behavior policy enforced in the model."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T04-G04",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "Responses are rated for harmful differences in stereotypes using GPT-4o, whose ratings were shown to be consistent with human ratings.",
+      "public_claim_verbatim_quote": "Responses are rated for harmful differences in stereotypes using GPT-4o, whose ratings were shown to be consistent with human ratings."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T04-G05",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "There are principled reasons to believe [5] that CoT can provide a substantially richer monitoring signal than actions and final outputs alone, a hypothesis that is supported by growing empirical evidence.",
+      "public_claim_verbatim_quote": "There are principled reasons to believe [5] that CoT can provide a substantially richer monitoring signal than actions and final outputs alone, a hypothesis that is supported by growing empirical evidence."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T04-G06",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "Averaging these evaluations, GPT-5.4 Thinking has somewhat lower aggregate CoT monitorability than GPT-5 Thinking and slightly better performance than GPT-5.2 Thinking.",
+      "public_claim_verbatim_quote": "Averaging these evaluations, GPT-5.4 Thinking has somewhat lower aggregate CoT monitorability than GPT-5 Thinking and slightly better performance than GPT-5.2 Thinking."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T04-G07",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "If the former is the main driver, then this reflects a limitation of these evals: the intervention can be used in reasoning (X=1, Z=1) without producing an output-level change (Y=0).",
+      "public_claim_verbatim_quote": "If the former is the main driver, then this reflects a limitation of these evals: the intervention can be used in reasoning (X=1, Z=1) without producing an output-level change (Y=0)."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T04-G08",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "It is also notable from the figures that for both of these two regressed evals, Anti-Scheming and Memory, the CoT lengths are substantially shorter in GPT-5.4 Thinking compared to GPT-5 Thinking.",
+      "public_claim_verbatim_quote": "It is also notable from the figures that for both of these two regressed evals, Anti-Scheming and Memory, the CoT lengths are substantially shorter in GPT-5.4 Thinking compared to GPT-5 Thinking."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T04-G09",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "We measure GPT-5.4 Thinking’s controllability by running CoT-Control, an evaluation suite described in (Yueh-Han, 2026 [7]) that tracks the model’s ability to follow user instructions about their CoT.",
+      "public_claim_verbatim_quote": "We measure GPT-5.4 Thinking’s controllability by running CoT-Control, an evaluation suite described in (Yueh-Han, 2026 [7]) that tracks the model’s ability to follow user instructions about their CoT."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T04-G10",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "CoT-Control includes over 13,000 tasks built from established benchmarks: GPQA (Reinetal., 2023[8]), MMLU-Pro(Hendrycksetal., 2020[9]), HLE(Phanetal., 2025[10]), BFCL (Patil et al., 2025 [11]) and SWE-Bench Verified.",
+      "public_claim_verbatim_quote": "CoT-Control includes over 13,000 tasks built from established benchmarks: GPQA (Reinetal., 2023[8]), MMLU-Pro(Hendrycksetal., 2020[9]), HLE(Phanetal., 2025[10]), BFCL (Patil et al., 2025 [11]) and SWE-Bench Verified."
+    }
+  ]
+}

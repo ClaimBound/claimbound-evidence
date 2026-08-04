@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST SP 800-63-4 Digital Identity Guidelines bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST SP 800-63-4 Digital Identity Guidelines",
+  "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-4.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "2f5b107de218a0fc3fe7f7e91b2ece5babb001eda5745b7c568a3cc876002f2d",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM009-T01-G01",
+      "section_locator": "PDF page 10",
+      "public_claim_text": "Preface This publication and its companion volumes — [SP800-63A], [SP800-63B], and [SP800-63C] — provide technical and process guidelines to organizations for the implementation of digital identity services.",
+      "public_claim_verbatim_quote": "Preface This publication and its companion volumes — [SP800-63A], [SP800-63B], and [SP800-63C] — provide technical and process guidelines to organizations for the implementation of digital identity services."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T01-G02",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "When confidence in a person’s real-life identity is not required to provide access to an online service, organizations can use anonymous or pseudonymous accounts.",
+      "public_claim_verbatim_quote": "When confidence in a person’s real-life identity is not required to provide access to an online service, organizations can use anonymous or pseudonymous accounts."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T01-G03",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "In all other use cases, a digital identity is intended to establish trust between the holder of the digital identity and the person, organization, or system interacting with the online service.",
+      "public_claim_verbatim_quote": "In all other use cases, a digital identity is intended to establish trust between the holder of the digital identity and the person, organization, or system interacting with the online service."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T01-G04",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "The composition, models, and availability of identity services have significantly changed since the first version of SP 800-63 was released, as have the considerations and challenges of deploying secure, private, and usable services to users.",
+      "public_claim_verbatim_quote": "The composition, models, and availability of identity services have significantly changed since the first version of SP 800-63 was released, as have the considerations and challenges of deploying secure, private, and usable services to users."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T01-G05",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "Additionally, this publication provides instruction for credential service providers (CSPs), verifiers, and relying parties (RPs), to supplement the NIST Risk Management Framework [NISTRMF] and its component publications.",
+      "public_claim_verbatim_quote": "Additionally, this publication provides instruction for credential service providers (CSPs), verifiers, and relying parties (RPs), to supplement the NIST Risk Management Framework [NISTRMF] and its component publications."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T01-G06",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "Online services not covered by these guidelines include those associated with national security systems as defined in [44 U.S.C. § 3552(b)(6)].",
+      "public_claim_verbatim_quote": "Online services not covered by these guidelines include those associated with national security systems as defined in [44 U.S.C. § 3552(b)(6)]."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T01-G07",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "SP 800-63 is organized as the following suite of volumes: • SP 800-63 Digital Identity Guidelines describes the digital identity models, risk assessment methodology, and processes for selecting assurance levels for identity proofing, authentication, and federation.",
+      "public_claim_verbatim_quote": "SP 800-63 is organized as the following suite of volumes: • SP 800-63 Digital Identity Guidelines describes the digital identity models, risk assessment methodology, and processes for selecting assurance levels for identity proofing, authentication, and federation."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T01-G08",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "SP 800-63A contains both normative and informative material. • [SP800-63B] provides requirements for authentication processes that can be used at each of the three AALs, including choices of authenticators.",
+      "public_claim_verbatim_quote": "SP 800-63A contains both normative and informative material. • [SP800-63B] provides requirements for authentication processes that can be used at each of the three AALs, including choices of authenticators."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T01-G09",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "SP 800-63B contains both normative and informative material. • [SP800-63C] provides requirements on the use of federated identity architectures and assertions to convey the results of authentication processes and relevant identity information to an organization’s application.",
+      "public_claim_verbatim_quote": "SP 800-63B contains both normative and informative material. • [SP800-63C] provides requirements on the use of federated identity architectures and assertions to convey the results of authentication processes and relevant identity information to an organization’s application."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T01-G10",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "Federal agencies implementing these guidelines are required to meet statutory responsibilities, including those under the Federal Information Security Modernization Act (FISMA) of 2014 [FISMA] and related NIST standards and guidelines.",
+      "public_claim_verbatim_quote": "Federal agencies implementing these guidelines are required to meet statutory responsibilities, including those under the Federal Information Security Modernization Act (FISMA) of 2014 [FISMA] and related NIST standards and guidelines."
+    }
+  ]
+}

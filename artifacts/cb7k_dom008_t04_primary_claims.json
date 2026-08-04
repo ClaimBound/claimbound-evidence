@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST IR 8280 Face Recognition Vendor Test Part 3: Demographic Effects bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST IR 8280 Face Recognition Vendor Test Part 3: Demographic Effects",
+  "source_url": "https://nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8280.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "5eb60e39d34a4436121aa83fc8e8d6492c86636518407b1ebe08d87fdd94048c",
+  "raw_payload_committed": false,
+  "text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM008-T04-G01",
+      "section_locator": "PDF page 37",
+      "public_claim_text": "The thresholds were computed over a set of 93 070 400 imposter comparisons made using a different set of images, namely the law enforcement mugshots detailed in Annex 1 .",
+      "public_claim_verbatim_quote": "The thresholds were computed over a set of 93 070 400 imposter comparisons made using a different set of images, namely the law enforcement mugshots detailed in Annex 1 ."
+    },
+    {
+      "protocol_id": "CB7K-DOM008-T04-G02",
+      "section_locator": "PDF page 37",
+      "public_claim_text": "Given many comparisons with the same demographic pairing, we can produce a measurement of FMR when comparing individuals from two demographic groups, for example Polish men over the age of 65 with Mexican women between 20 and 35.",
+      "public_claim_verbatim_quote": "Given many comparisons with the same demographic pairing, we can produce a measurement of FMR when comparing individuals from two demographic groups, for example Polish men over the age of 65 with Mexican women between 20 and 35."
+    },
+    {
+      "protocol_id": "CB7K-DOM008-T04-G03",
+      "section_locator": "PDF page 41",
+      "public_claim_text": "When viewed on a computer the ﬁgure has very high resolution and zooming in reveals full detail; when printed it will likely just show coarse trends. ⊿ Nominal FMR in Eastern Europe: For many algorithms, FMR within Eastern Europe is close to the nominal target false match rate i.e. a grey color,−5≤ log10 FMR≤− 4.",
+      "public_claim_verbatim_quote": "When viewed on a computer the ﬁgure has very high resolution and zooming in reveals full detail; when printed it will likely just show coarse trends. ⊿ Nominal FMR in Eastern Europe: For many algorithms, FMR within Eastern Europe is close to the nominal target false match rate i.e. a grey color,−5≤ log10 FMR≤− 4."
+    },
+    {
+      "protocol_id": "CB7K-DOM008-T04-G04",
+      "section_locator": "PDF page 41",
+      "public_claim_text": "The sample size may be small for this study, but not absolutely small: The Somalia-Somalia FMR measurement is obtained from 1 733 116 comparisons involving 2632 images of 1974 males.",
+      "public_claim_verbatim_quote": "The sample size may be small for this study, but not absolutely small: The Somalia-Somalia FMR measurement is obtained from 1 733 116 comparisons involving 2632 images of 1974 males."
+    },
+    {
+      "protocol_id": "CB7K-DOM008-T04-G05",
+      "section_locator": "PDF page 43",
+      "public_claim_text": "That is, the log10 FMR values are +2 higher corresponding to FMR that is of order 100 times larger than the de-facto baseline.",
+      "public_claim_verbatim_quote": "That is, the log10 FMR values are +2 higher corresponding to FMR that is of order 100 times larger than the de-facto baseline."
+    },
+    {
+      "protocol_id": "CB7K-DOM008-T04-G06",
+      "section_locator": "PDF page 43",
+      "public_claim_text": "A shift of 1.4 on the logarithmic scale corresponds to a factor of 25 increase, for example. ⊿ Anomalies in the ﬁgures: The cross-country heatmaps for the SIAT-004, Panasonic PSL-001, and Sensetimealgorithms are mostly red, indicating high false match rates for all comparisons.",
+      "public_claim_verbatim_quote": "A shift of 1.4 on the logarithmic scale corresponds to a factor of 25 increase, for example. ⊿ Anomalies in the ﬁgures: The cross-country heatmaps for the SIAT-004, Panasonic PSL-001, and Sensetimealgorithms are mostly red, indicating high false match rates for all comparisons."
+    },
+    {
+      "protocol_id": "CB7K-DOM008-T04-G07",
+      "section_locator": "PDF page 49",
+      "public_claim_text": "Indian M−Asian M−Black M−White Demographics of enrollee Demographics of impostor −6 −5 −4 −3 −2 −1 0 Dataset: MUGSHOTS log10 FMR Figure 12: For mugshot photos tagged with one of four race labels and a sex label, the heatmaps show false positive rates for comparison of randomly selected photos from the groups identiﬁed in the respective rows and columns.",
+      "public_claim_verbatim_quote": "Indian M−Asian M−Black M−White Demographics of enrollee Demographics of impostor −6 −5 −4 −3 −2 −1 0 Dataset: MUGSHOTS log10 FMR Figure 12: For mugshot photos tagged with one of four race labels and a sex label, the heatmaps show false positive rates for comparison of randomly selected photos from the groups identiﬁed in the respective rows and columns."
+    },
+    {
+      "protocol_id": "CB7K-DOM008-T04-G08",
+      "section_locator": "PDF page 50",
+      "public_claim_text": "The magnitude of this difference is lower with mugshots than with application photos. ⊿ Highest FMR in American Indians: First, the highest FMR occurs in images of American Indians 11.",
+      "public_claim_verbatim_quote": "The magnitude of this difference is lower with mugshots than with application photos. ⊿ Highest FMR in American Indians: First, the highest FMR occurs in images of American Indians 11."
+    },
+    {
+      "protocol_id": "CB7K-DOM008-T04-G09",
+      "section_locator": "PDF page 50",
+      "public_claim_text": "For the Imperial-002 algorithm featured in Figure 12 the FMR for American Indian women is 0.0068, i.e. a fold increase over the FMR of 0.0001 in white males.",
+      "public_claim_verbatim_quote": "For the Imperial-002 algorithm featured in Figure 12 the FMR for American Indian women is 0.0068, i.e. a fold increase over the FMR of 0.0001 in white males."
+    },
+    {
+      "protocol_id": "CB7K-DOM008-T04-G10",
+      "section_locator": "PDF page 52",
+      "public_claim_text": "The threshold was computed over a set of 93 070 400 imposter comparisons made using a different set of images, namely the mugshots detailed in Annex 1 .",
+      "public_claim_verbatim_quote": "The threshold was computed over a set of 93 070 400 imposter comparisons made using a different set of images, namely the mugshots detailed in Annex 1 ."
+    }
+  ]
+}

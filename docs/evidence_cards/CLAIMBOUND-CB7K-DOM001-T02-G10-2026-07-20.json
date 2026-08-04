@@ -1,6 +1,6 @@
 {
   "access_date": "2026-08-04",
-  "ai_assistance": "AI assisted source selection, quote extraction, and consistency review; the committed verifier deterministically checks the source hash and exact quote.",
+  "ai_assistance": "AI assisted source selection and deterministic quote extraction; the committed verifier checks the source hash and exact quote. No independent human semantic adjudication is claimed.",
   "baseline_control_summary": "The gate passes only when the full fetched response SHA-256 matches and the exact quoted statement occurs in normalized source text.",
   "card_svg_rendered": "docs/evidence_cards/CLAIMBOUND-CB7K-DOM001-T02-G10-2026-07-20.svg",
   "card_svg_template": "docs/assets/claimbound_evidence_card.svg",
@@ -19,7 +19,7 @@
     "A future PDF edit produces source drift until a separately documented rerun."
   ],
   "last_verified_date": "2026-08-04",
-  "manual_review": "Exact quote reviewed at section locator: 9.3.2.7.1 UK AISI Cyber Safeguard Testing (PDF page 43; printed page 42). Automated verification found one occurrence in the frozen response.",
+  "manual_review": "Source locator recorded as 9.3.2.7.1 UK AISI Cyber Safeguard Testing (PDF page 43; printed page 42). Automated verification requires the exact quote in the hash-bound source; independent human semantic review is not registered.",
   "official_source_name": "OpenAI GPT-5.5 System Card PDF",
   "official_source_url": "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
   "operator": "NeoZorK",
@@ -40,14 +40,14 @@
   "result_status": "PASSED_UNDER_PROTOCOL",
   "runner_command": "python scripts/verify_primary_public_claim_group.py artifacts/cb7k_dom001_t02_openai_primary_claims.json --source-file <local-raw-pdf>",
   "sanitized_report_path": "artifacts/cb7k_dom001_t02_openai_primary_claims.json",
-  "sanitized_report_sha256": "6ce09f5cde2c4f24ab78006a834873da4bcc80271220d36754ab3e39c7a79db4",
-  "source_rights_note": "Official public OpenAI source; only the quote, locator, and hashes are committed.",
+  "sanitized_report_sha256": "1f8e6ae32db16800d2cae13ea8ddb4ee2b34be6c0b4e698a29316ac749a2572f",
+  "source_rights_note": "Named public primary source; only limited quotes, locators, and hashes are committed.",
   "verification_count": 1,
   "verification_level": "SINGLE_OPERATOR",
   "visual_summary": {
     "allowed_claim_sentence": "OpenAI reports that UK AISI identified a universal jailbreak eliciting violative content across all malicious cyber queries OpenAI supplied, including multi-turn agentic settings.",
     "artifact_ref": "9.3.2.7.1 UK AISI Cyber Safeguard Testing (PDF page 43; printed page 42)",
-    "candidate_definition": "one exact OpenAI-authored public statement",
+    "candidate_definition": "one exact statement in the named primary source",
     "controls_and_gate": "exact quote + complete response SHA-256",
     "period_scope": "source fetched on 2026-08-04",
     "target_definition": "OpenAI GPT-5.5 System Card PDF public statements"

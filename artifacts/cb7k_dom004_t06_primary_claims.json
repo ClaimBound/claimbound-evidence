@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched C2PA Content Credentials Technical Specification 2.0 bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "C2PA Content Credentials Technical Specification 2.0",
+  "source_url": "https://spec.c2pa.org/specifications/specifications/2.0/specs/_attachments/C2PA_Specification.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "aa8757d760404ee2d129f4c5468a315cb83f28ecbbfbde0e4276b41023d02dbb",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM004-T06-G01",
+      "section_locator": "PDF page 57",
+      "public_claim_text": "Because a JUMBF URI is always a full URI, meaning that it starts at a given C2PA Manifest, and all NOTE C2PA Manifests are considered to be contained in a single C2PA Manifest Store, using such a URI to refer to a parentOf ingredient across C2PA Manifest Stores in a PDF is acceptable.",
+      "public_claim_verbatim_quote": "Because a JUMBF URI is always a full URI, meaning that it starts at a given C2PA Manifest, and all NOTE C2PA Manifests are considered to be contained in a single C2PA Manifest Store, using such a URI to refer to a parentOf ingredient across C2PA Manifest Stores in a PDF is acceptable."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T06-G02",
+      "section_locator": "PDF page 58",
+      "public_claim_text": "It can also be used to provide provenance for specific pieces of content by adding the AF entry to the object (via property list) or a structure element, as described in the Associated Files clause of ISO 32000-2 (14.13.1).",
+      "public_claim_verbatim_quote": "It can also be used to provide provenance for specific pieces of content by adding the AF entry to the object (via property list) or a structure element, as described in the Associated Files clause of ISO 32000-2 (14.13.1)."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T06-G03",
+      "section_locator": "PDF page 59",
+      "public_claim_text": "Embedded Files Document Catalog Dictionary Active Manifest Page 1 Assertions Claim Content Stream Claim Signature Ingredient Manifest (Image) Resources Assertions Image XObject Claim Claim Signature Font Ingredient Manifest (Font) Assertions Claim Claim Signature Text is not SVG - cannot display Figure 13.",
+      "public_claim_verbatim_quote": "Embedded Files Document Catalog Dictionary Active Manifest Page 1 Assertions Claim Content Stream Claim Signature Ingredient Manifest (Image) Resources Assertions Image XObject Claim Claim Signature Font Ingredient Manifest (Font) Assertions Claim Claim Signature Text is not SVG - cannot display Figure 13."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T06-G04",
+      "section_locator": "PDF page 59",
+      "public_claim_text": "The 'uuid' Box for C2PA All BMFF-based C2PA assets, whether they are timed (e.g., videos with or without audio tracks), untimed (e.g., still photos) or mixed (e.g., live or animated photos) audiovisual media, shall use a 'uuid' box that adheres to the following syntax and semantics defined below.",
+      "public_claim_verbatim_quote": "The 'uuid' Box for C2PA All BMFF-based C2PA assets, whether they are timed (e.g., videos with or without audio tracks), untimed (e.g., still photos) or mixed (e.g., live or animated photos) audiovisual media, shall use a 'uuid' box that adheres to the following syntax and semantics defined below."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T06-G05",
+      "section_locator": "PDF page 60",
+      "public_claim_text": "Regarding unique ids: There are cases, such as fragmented MP4 (fMP4), where the id for a subset of the asset, such as the track_id field of the 'tkhd' box, is only locally unique to a subset of the overall asset rather than globally unique to the asset.",
+      "public_claim_verbatim_quote": "Regarding unique ids: There are cases, such as fragmented MP4 (fMP4), where the id for a subset of the asset, such as the track_id field of the 'tkhd' box, is only locally unique to a subset of the overall asset rather than globally unique to the asset."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T06-G06",
+      "section_locator": "PDF page 61",
+      "public_claim_text": "data When box_purpose is manifest, the first 8 bytes inside 'data' shall be the absolute file byte offset to the first auxiliary 'uuid' C2PA box with box_purpose equal to merkle.",
+      "public_claim_verbatim_quote": "data When box_purpose is manifest, the first 8 bytes inside 'data' shall be the absolute file byte offset to the first auxiliary 'uuid' C2PA box with box_purpose equal to merkle."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T06-G07",
+      "section_locator": "PDF page 61",
+      "public_claim_text": "For fragmented MP4 (fMP4) files, an identical 'uuid' C2PA box of type manifest shall be present in each initialization segment; the C2PA Manifest Store shall be identical.",
+      "public_claim_verbatim_quote": "For fragmented MP4 (fMP4) files, an identical 'uuid' C2PA box of type manifest shall be present in each initialization segment; the C2PA Manifest Store shall be identical."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T06-G08",
+      "section_locator": "PDF page 62",
+      "public_claim_text": "For timed-media where an 'stco' or 'co64' box is present, the hash used for a given leaf node in the Merkle tree shall be computed over an individual subset of samples as defined by that box.",
+      "public_claim_verbatim_quote": "For timed-media where an 'stco' or 'co64' box is present, the hash used for a given leaf node in the Merkle tree shall be computed over an individual subset of samples as defined by that box."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T06-G09",
+      "section_locator": "PDF page 63",
+      "public_claim_text": "Taking a c2pa-compliant fMP4 asset which is split across multiple files (i.e., has 'c2pa' boxes of types 'manifest' and 'merkle') and appending the individual files together will not produce a single file which is 'c2pa' compliant (nor vice-versa).",
+      "public_claim_verbatim_quote": "Taking a c2pa-compliant fMP4 asset which is split across multiple files (i.e., has 'c2pa' boxes of types 'manifest' and 'merkle') and appending the individual files together will not produce a single file which is 'c2pa' compliant (nor vice-versa)."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T06-G10",
+      "section_locator": "PDF page 63",
+      "public_claim_text": "If there are multiple auxiliary 'uuid' C2PA boxes with box_purpose merkle for a given Merkle tree in a single file, each shall be followed by sufficient padding bytes (zero or more) to make all auxiliary 'uuid' C2PA boxes for that Merkle tree a fixed size.",
+      "public_claim_verbatim_quote": "If there are multiple auxiliary 'uuid' C2PA boxes with box_purpose merkle for a given Merkle tree in a single file, each shall be followed by sufficient padding bytes (zero or more) to make all auxiliary 'uuid' C2PA boxes for that Merkle tree a fixed size."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NASA Robotic Interface Best Practices and Lessons Learned for Surface Operations bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NASA Robotic Interface Best Practices and Lessons Learned for Surface Operations",
+  "source_url": "https://ntrs.nasa.gov/api/citations/20260001900/downloads/SP-20260001900_Final.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "fee6644426a6db1a72984d7ec2224288899582b03f04dae7b041a01b4eacffb8",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM007-T04-G01",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "EVRBP-0008 Unique Identification of Payloads and Respective Interfaces Items that will be grasped by a robotic system should be identifiably distinct from other nearby objects.",
+      "public_claim_verbatim_quote": "EVRBP-0008 Unique Identification of Payloads and Respective Interfaces Items that will be grasped by a robotic system should be identifiably distinct from other nearby objects."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T04-G02",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "EVRBP-0009 Connection Success Alerts Verification of successful connections from inserting or plugging in any connector should be provided in at least two dissimilar modalities to the robotic system on the surface.",
+      "public_claim_verbatim_quote": "EVRBP-0009 Connection Success Alerts Verification of successful connections from inserting or plugging in any connector should be provided in at least two dissimilar modalities to the robotic system on the surface."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T04-G03",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "EVRBP-0011 Mechanical Alignment Aids Mating or alignment operations should be assisted by guiding features included on the objects being aligned.",
+      "public_claim_verbatim_quote": "EVRBP-0011 Mechanical Alignment Aids Mating or alignment operations should be assisted by guiding features included on the objects being aligned."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T04-G04",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "EVRBP-0012 Marking and Identification of Interface Grasp Location Grasp locations on the object being robotically manipulated should be visually distinct with contrasting colors and other identifiable features from the rest of the object and the surrounding environment.",
+      "public_claim_verbatim_quote": "EVRBP-0012 Marking and Identification of Interface Grasp Location Grasp locations on the object being robotically manipulated should be visually distinct with contrasting colors and other identifiable features from the rest of the object and the surrounding environment."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T04-G05",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "EVRBP-0013 Interface Orientation Preference Objects with preferred orientations or directions of motion should have those preferences clearly marked.",
+      "public_claim_verbatim_quote": "EVRBP-0013 Interface Orientation Preference Objects with preferred orientations or directions of motion should have those preferences clearly marked."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T04-G06",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "EVRBP-0014 Visual Grasp Target Identification When utilizing visual targets to localize interfaces (ex. fiducial markers, retro-reflective tape), targets should be placed non-planar (relative to the grasp interface) whenever possible.",
+      "public_claim_verbatim_quote": "EVRBP-0014 Visual Grasp Target Identification When utilizing visual targets to localize interfaces (ex. fiducial markers, retro-reflective tape), targets should be placed non-planar (relative to the grasp interface) whenever possible."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T04-G07",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "EVRBP-0015 Defining Interface Misalignment Envelope based on Perception Accuracy The precision/accuracy of the inputs to the pose estimation (ex. sensors), and the precision/accuracy of the localization methodology itself, should be used to quantify requirements for allowable grasp misalignment.",
+      "public_claim_verbatim_quote": "EVRBP-0015 Defining Interface Misalignment Envelope based on Perception Accuracy The precision/accuracy of the inputs to the pose estimation (ex. sensors), and the precision/accuracy of the localization methodology itself, should be used to quantify requirements for allowable grasp misalignment."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T04-G08",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "EVRBP-0016 Flexible Goods Interfaces Flexible goods (ex. straps, Velcro, fabric handles) should not be utilized by robotic systems as an interface.",
+      "public_claim_verbatim_quote": "EVRBP-0016 Flexible Goods Interfaces Flexible goods (ex. straps, Velcro, fabric handles) should not be utilized by robotic systems as an interface."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T04-G09",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "EVRBP-0017 Adding Compliance to Relieve Misalignment Loads If alignment is required between two interfaces, the contact point between those interfaces should be designed with some level of force and torque compliance when possible.",
+      "public_claim_verbatim_quote": "EVRBP-0017 Adding Compliance to Relieve Misalignment Loads If alignment is required between two interfaces, the contact point between those interfaces should be designed with some level of force and torque compliance when possible."
+    },
+    {
+      "protocol_id": "CB7K-DOM007-T04-G10",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Rationale: When robots are aligning two interfaces, there will likely be some amount of misalignment, which might be somewhat mitigated if there are guiding features on the interfaces (see EVRBP-11 and EVRBP-15).",
+      "public_claim_verbatim_quote": "Rationale: When robots are aligning two interfaces, there will likely be some amount of misalignment, which might be somewhat mitigated if there are guiding features on the interfaces (see EVRBP-11 and EVRBP-15)."
+    }
+  ]
+}

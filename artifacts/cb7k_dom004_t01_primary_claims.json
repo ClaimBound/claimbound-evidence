@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched C2PA Content Credentials Technical Specification 2.0 bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "C2PA Content Credentials Technical Specification 2.0",
+  "source_url": "https://spec.c2pa.org/specifications/specifications/2.0/specs/_attachments/C2PA_Specification.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "aa8757d760404ee2d129f4c5468a315cb83f28ecbbfbde0e4276b41023d02dbb",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM004-T01-G01",
+      "section_locator": "PDF page 9",
+      "public_claim_text": "Example C2PA Manifest of a Photograph A Manifest Consumer, such as a C2PA Validator, could help users to establish the trustworthiness of the asset by first validating the digital signature and its associated credential.",
+      "public_claim_verbatim_quote": "Example C2PA Manifest of a Photograph A Manifest Consumer, such as a C2PA Validator, could help users to establish the trustworthiness of the asset by first validating the digital signature and its associated credential."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T01-G02",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "C2PA Manifest Store A collection of C2PA Manifests that can either be embedded into an asset or be external to its asset.",
+      "public_claim_verbatim_quote": "C2PA Manifest Store A collection of C2PA Manifests that can either be embedded into an asset or be external to its asset."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T01-G03",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "If a C2PA Manifest is a Content Credential, then multiple C2PA Manifest or the broader, universal concept is Content Credentials.",
+      "public_claim_verbatim_quote": "If a C2PA Manifest is a Content Credential, then multiple C2PA Manifest or the broader, universal concept is Content Credentials."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T01-G04",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "C2PA Trust List A C2PA-managed list of X.509 certificate trust anchors that issue certificates to hardware & software signers that are trusted to sign claims.",
+      "public_claim_verbatim_quote": "C2PA Trust List A C2PA-managed list of X.509 certificate trust anchors that issue certificates to hardware & software signers that are trusted to sign claims."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T01-G05",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "Manifest Repository A repository into which C2PA Manifests and C2PA Manifest Stores can be placed, and which can be searched using a content binding.",
+      "public_claim_verbatim_quote": "Manifest Repository A repository into which C2PA Manifests and C2PA Manifest Stores can be placed, and which can be searched using a content binding."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T01-G06",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "The label would then consist of an incremented version number, for example moving from c2pa.hash.bmff (deprecated) to c2pa.hash.bmff.v2.",
+      "public_claim_verbatim_quote": "The label would then consist of an incremented version number, for example moving from c2pa.hash.bmff (deprecated) to c2pa.hash.bmff.v2."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T01-G07",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "For example, if a manifest contains a single assertion of type c2pa.metadata, then the assertion label will be c2pa.metadata.",
+      "public_claim_verbatim_quote": "For example, if a manifest contains a single assertion of type c2pa.metadata, then the assertion label will be c2pa.metadata."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T01-G08",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "Unlike embedded assertion data, cloud data is not retrieved nor validated as part of manifest validation, and are only retrieved and validated when specifically needed by an application according to a different set of validation rules as described in Section 15.7, “Validate the Assertions”.",
+      "public_claim_verbatim_quote": "Unlike embedded assertion data, cloud data is not retrieved nor validated as part of manifest validation, and are only retrieved and validated when specifically needed by an application according to a different set of validation rules as described in Section 15.7, “Validate the Assertions”."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T01-G09",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "It is also strongly recommended that the claim generator should add a c2pa.redaction action assertion with a redacted field as described in Section 18.12.2, “Parameters”.",
+      "public_claim_verbatim_quote": "It is also strongly recommended that the claim generator should add a c2pa.redaction action assertion with a redacted field as described in Section 18.12.2, “Parameters”."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T01-G10",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "Using XMP values When an asset contains embedded XMP which include values for xmpMM:DocumentID and/or xmpMM:InstanceID as defined in XMP Specification Part 2, 2.2, those values shall be included in a metadata assertion and should be used as identifiers for the asset.",
+      "public_claim_verbatim_quote": "Using XMP values When an asset contains embedded XMP which include values for xmpMM:DocumentID and/or xmpMM:InstanceID as defined in XMP Specification Part 2, 2.2, those values shall be included in a metadata assertion and should be used as identifiers for the asset."
+    }
+  ]
+}
