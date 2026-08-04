@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Register the first CB7K primary-source group in its existing registry slots."""
+"""Register a CB7K primary-source group in its existing registry slots."""
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 from pathlib import Path
 import sys
@@ -14,13 +15,8 @@ from claimbound_evidence.card_svg_render import render_svg
 from claimbound_evidence.evidence_card import validate_evidence_card
 from claimbound_evidence.registry import _compute_statistics, validate_registry
 
-MANIFEST = ROOT / "artifacts/cb7k_dom001_t01_openai_primary_claims.json"
 REGISTRY = ROOT / "docs/registry/evidence_index.json"
 CARDS = ROOT / "docs/evidence_cards"
-RUNNER = (
-    "python scripts/verify_primary_public_claim_group.py "
-    "artifacts/cb7k_dom001_t01_openai_primary_claims.json --source-file <local-raw-html>"
-)
 
 
 def registry_entry(card: dict, path: Path, previous: dict) -> dict:
@@ -37,8 +33,16 @@ def registry_entry(card: dict, path: Path, previous: dict) -> dict:
 
 
 def main() -> int:
-    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    report_sha = hashlib.sha256(MANIFEST.read_bytes()).hexdigest()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("manifest", type=Path, nargs="?", default=Path("artifacts/cb7k_dom001_t01_openai_primary_claims.json"))
+    args = parser.parse_args()
+    manifest_path = args.manifest if args.manifest.is_absolute() else ROOT / args.manifest
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    report_sha = hashlib.sha256(manifest_path.read_bytes()).hexdigest()
+    runner = (
+        "python scripts/verify_primary_public_claim_group.py "
+        f"{manifest_path.relative_to(ROOT).as_posix()} --source-file <local-raw-pdf>"
+    )
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     entries = {row["protocol_id"]: row for row in registry["cards"]}
     replacements: dict[str, dict] = {}
@@ -106,8 +110,8 @@ def main() -> int:
             "registry_sequence": previous_card["registry_sequence"],
             "reproduction_level": "not independently reproduced",
             "result_status": manifest["result_status"],
-            "runner_command": RUNNER,
-            "sanitized_report_path": MANIFEST.relative_to(ROOT).as_posix(),
+            "runner_command": runner,
+            "sanitized_report_path": manifest_path.relative_to(ROOT).as_posix(),
             "sanitized_report_sha256": report_sha,
             "source_rights_note": (
                 "Official public OpenAI source; only the quote, locator, and hashes are committed."
@@ -120,7 +124,7 @@ def main() -> int:
                 "candidate_definition": "one exact OpenAI-authored public statement",
                 "controls_and_gate": "exact quote + complete response SHA-256",
                 "period_scope": f"source fetched on {manifest['access_date']}",
-                "target_definition": "GPT-5.6 public system-card statements",
+                "target_definition": f"{manifest['source_name']} public statements",
             },
         }
         violations = validate_evidence_card(card)
@@ -140,7 +144,8 @@ def main() -> int:
     violations = validate_registry(registry, ROOT)
     if violations:
         raise SystemExit("ERROR: registry invalid: " + "; ".join(violations[:20]))
-    print("REGISTERED: 10 primary-source public claims in DOM001-T01 slots")
+    protocols = sorted(replacements)
+    print(f"REGISTERED: {len(protocols)} primary-source public claims in {protocols[0].rsplit('-', 1)[0]} slots")
     return 0
 
 
