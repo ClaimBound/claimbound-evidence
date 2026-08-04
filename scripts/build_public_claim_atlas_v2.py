@@ -12,7 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "artifacts/cb7k_wikidata_public_claims.json"
-PRIMARY_MANIFEST = ROOT / "artifacts/cb7k_dom001_t01_openai_primary_claims.json"
+PRIMARY_MANIFESTS = sorted(ROOT.glob("artifacts/cb7k_dom*_primary_claims.json"))
 CARDS = ROOT / "docs/evidence_cards"
 REPO = "https://github.com/ClaimBound/claimbound-evidence"
 
@@ -30,11 +30,14 @@ def shell(title: str, body: str, root: str = "") -> str:
 def load() -> tuple[dict, list[dict]]:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     report_sha = hashlib.sha256(MANIFEST.read_bytes()).hexdigest()
-    primary_manifest = json.loads(PRIMARY_MANIFEST.read_text(encoding="utf-8"))
-    primary_report_sha = hashlib.sha256(PRIMARY_MANIFEST.read_bytes()).hexdigest()
-    primary_by_protocol = {
-        row["protocol_id"]: row for row in primary_manifest["records"]
-    }
+    primary_by_protocol: dict[str, tuple[dict, dict, str]] = {}
+    for primary_path in PRIMARY_MANIFESTS:
+        primary_manifest = json.loads(primary_path.read_text(encoding="utf-8"))
+        primary_report_sha = hashlib.sha256(primary_path.read_bytes()).hexdigest()
+        for row in primary_manifest["records"]:
+            if row["protocol_id"] in primary_by_protocol:
+                raise SystemExit(f"ERROR: duplicate primary protocol {row['protocol_id']}")
+            primary_by_protocol[row["protocol_id"]] = (row, primary_manifest, primary_report_sha)
     rows: list[dict] = []
     card_paths = sorted(CARDS.glob("CLAIMBOUND-CB7K-*.json"))
     cards_by_protocol = {
@@ -55,8 +58,9 @@ def load() -> tuple[dict, list[dict]]:
         by_domain[record["domain_code"]].append(record)
     for domain_code in sorted(by_domain):
         for record, (path, card) in zip(by_domain[domain_code], slots[domain_code], strict=True):
-            primary = primary_by_protocol.get(card["protocol_id"])
-            if primary:
+            primary_match = primary_by_protocol.get(card["protocol_id"])
+            if primary_match:
+                primary, primary_manifest, primary_report_sha = primary_match
                 checks = {
                     "claim_text": card.get("public_claim_text") == primary["public_claim_text"],
                     "verbatim_quote": card.get("public_claim_verbatim_quote") == primary["public_claim_verbatim_quote"],
@@ -140,7 +144,7 @@ def build(output: Path) -> None:
             command = reproducible_command.format(claim_id=row["claim_id"])
             if row["source_kind"] == "primary":
                 command = card["runner_command"]
-                claims.append(f'''<article class="claim"><span class="tag">{esc(row['claim_id'])}</span><span class="tag">registry slot {esc(card['protocol_id'])}</span><span class="tag pass">PASSED: EXACT PRIMARY-SOURCE STATEMENT FOUND</span><h2>{index}. OpenAI GPT-5.6 · {esc(row['section_locator'])}</h2><p class="muted">Narrow public claim</p><blockquote>{esc(row['public_claim_text'])}</blockquote><h3>What this card proves</h3><p>The exact quoted statement occurred in the official OpenAI GPT-5.6 System Card PDF fetched on {esc(row['public_claim_captured_at'])}, and the complete PDF matched the recorded SHA-256.</p><h3>What this card does not prove</h3><p>It does not independently establish the underlying model capability, safety, comparison, or real-world truth. This is a retrospective single-maintainer source-publication audit.</p><dl><dt>Primary source</dt><dd><a href="{esc(source_url)}">OpenAI GPT-5.6 System Card PDF</a></dd><dt>Section locator</dt><dd><code>{esc(row['section_locator'])}</code></dd><dt>Captured</dt><dd>{esc(row['public_claim_captured_at'])}</dd><dt>Source SHA-256</dt><dd><code>{esc(row['public_claim_source_sha256'])}</code></dd><dt>Reproduction</dt><dd>Maintainer run only; no independent operator rerun is registered.</dd></dl><details><summary>Repeat this exact check locally</summary><p>Download the PDF to a local file, then run the committed verifier. A changed PDF is reported as drift rather than silently accepted.</p><pre><code>{esc(command)}</code></pre></details><details><summary>Exact source quote</summary><blockquote><code>{esc(quote)}</code></blockquote><p class="links"><a href="{card_url}">Evidence card JSON</a><a href="{card_url[:-5]}.svg">Rendered card</a></p></details></article>''')
+                claims.append(f'''<article class="claim"><span class="tag">{esc(row['claim_id'])}</span><span class="tag">registry slot {esc(card['protocol_id'])}</span><span class="tag pass">PASSED: EXACT PRIMARY-SOURCE STATEMENT FOUND</span><h2>{index}. {esc(card['official_source_name'])} · {esc(row['section_locator'])}</h2><p class="muted">Narrow public claim</p><blockquote>{esc(row['public_claim_text'])}</blockquote><h3>What this card proves</h3><p>The exact quoted statement occurred in the named official PDF fetched on {esc(row['public_claim_captured_at'])}, and the complete PDF matched the recorded SHA-256.</p><h3>What this card does not prove</h3><p>It does not independently establish the underlying model capability, safety, comparison, or real-world truth. This is a retrospective single-maintainer source-publication audit.</p><dl><dt>Primary source</dt><dd><a href="{esc(source_url)}">{esc(card['official_source_name'])}</a></dd><dt>Section locator</dt><dd><code>{esc(row['section_locator'])}</code></dd><dt>Captured</dt><dd>{esc(row['public_claim_captured_at'])}</dd><dt>Source SHA-256</dt><dd><code>{esc(row['public_claim_source_sha256'])}</code></dd><dt>Reproduction</dt><dd>Maintainer run only; no independent operator rerun is registered.</dd></dl><details><summary>Repeat this exact check locally</summary><p>Download the PDF to a local file, then run the committed verifier. A changed PDF is reported as drift rather than silently accepted.</p><pre><code>{esc(command)}</code></pre></details><details><summary>Exact source quote</summary><blockquote><code>{esc(quote)}</code></blockquote><p class="links"><a href="{card_url}">Evidence card JSON</a><a href="{card_url[:-5]}.svg">Rendered card</a></p></details></article>''')
             else:
                 claims.append(f'''<article class="claim"><span class="tag">{esc(row['claim_id'])}</span><span class="tag">registry slot {esc(card['protocol_id'])}</span><span class="tag pass">PASSED: STATEMENT PUBLISHED IN REVISION</span><h2>{index}. {esc(row['entity_label'])} · {esc(row['property_label'])}</h2><p class="muted">Exact public statement under test</p><blockquote>{esc(row['public_claim_text'])}</blockquote><h3>What this card proves</h3><p>The exact statement GUID and JSON excerpt were publicly present in Wikidata revision {row['revision_id']}; the frozen revision content and statement match the recorded SHA-256 values.</p><h3>What this card does not prove</h3><p>It does not independently prove that the value is true in the real world, current outside this revision, supported by a primary source, or correctly assigned to this category.</p><dl><dt>Exact source</dt><dd><a href="{esc(source_url)}">Wikidata revision {row['revision_id']}</a></dd><dt>Locator</dt><dd><code>{esc(row['public_claim_locator'])}</code></dd><dt>Captured</dt><dd>{esc(row['public_claim_captured_at'])}</dd><dt>Rank / qualifiers</dt><dd>{esc(row['wikidata_rank'])}; {row['wikidata_qualifier_count']} qualifier snaks</dd><dt>Wikidata references</dt><dd>{row['wikidata_reference_count']} reference blocks — presence is reported, but the referenced sources were not independently checked by this protocol.</dd><dt>Source SHA-256</dt><dd><code>{esc(row['public_claim_source_sha256'])}</code></dd><dt>Statement SHA-256</dt><dd><code>{esc(row['statement_sha256'])}</code></dd><dt>Reproduction</dt><dd>Maintainer run only; no independent operator rerun is registered.</dd></dl><details><summary>Repeat this exact check locally</summary><p>Requires Python 3 and network access to Wikidata. Start with an empty cache; the command downloads the immutable revision and verifies the exact excerpt and both hashes.</p><pre><code>{esc(command)}</code></pre></details><details><summary>Verbatim structured statement and evidence</summary><blockquote><code>{esc(quote)}</code></blockquote><p class="links"><a href="{card_url}">Evidence card JSON</a><a href="{card_url[:-5]}.svg">Rendered card</a></p></details></article>''')
             results.append({key: value for key, value in row.items() if key not in {"card"}} | {"evidence_id": card["evidence_id"], "result_status": card["result_status"]})
