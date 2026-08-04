@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched C2PA Content Credentials Technical Specification 2.0 bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "C2PA Content Credentials Technical Specification 2.0",
+  "source_url": "https://spec.c2pa.org/specifications/specifications/2.0/specs/_attachments/C2PA_Specification.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "aa8757d760404ee2d129f4c5468a315cb83f28ecbbfbde0e4276b41023d02dbb",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM004-T02-G01",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "URI References All references to information in the manifest, whether stored internally to the asset (i.e., embedded) or stored externally to the asset (e.g., in the cloud), shall be referenced via JUMBF URI references as defined in ISO 19566-5, C.2.",
+      "public_claim_verbatim_quote": "URI References All references to information in the manifest, whether stored internally to the asset (i.e., embedded) or stored externally to the asset (e.g., in the cloud), shall be referenced via JUMBF URI references as defined in ISO 19566-5, C.2."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T02-G02",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "We use a socket/plug here to allow hashed-uri-map to be used in individual files without having the map defined in the same file $hashed-uri-map /= { \"url\": url-regexp-type, ; JUMBF URI reference ? \"alg\": tstr .size (1..max-tstr-length), ; A string identifying the cryptographic hash algorithm used to compute all hashes in this claim, taken from the C2PA hash algorithm identifier list.",
+      "public_claim_verbatim_quote": "We use a socket/plug here to allow hashed-uri-map to be used in individual files without having the map defined in the same file $hashed-uri-map /= { \"url\": url-regexp-type, ; JUMBF URI reference ? \"alg\": tstr .size (1..max-tstr-length), ; A string identifying the cryptographic hash algorithm used to compute all hashes in this claim, taken from the C2PA hash algorithm identifier list."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T02-G03",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "These self#jumbf URIs may be relative to the entire C2PA Manifest Store, in which case they shall start with a / (U+002F, Slash), or relative to the current C2PA Manifest.",
+      "public_claim_verbatim_quote": "These self#jumbf URIs may be relative to the entire C2PA Manifest Store, in which case they shall start with a / (U+002F, Slash), or relative to the current C2PA Manifest."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T02-G04",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "z]{2,6}\\\\b[-a-zA-Z0-9@:%_\\\\+.~#?&//=]*\" In keeping with common practice, it is recommended that the https scheme be used to retrieve assertion data to protect the privacy of the data in transit, but http is also permitted because the NOTE data’s integrity is protected by the hash field and this privacy may not be required in all circumstances.",
+      "public_claim_verbatim_quote": "z]{2,6}\\\\b[-a-zA-Z0-9@:%_\\\\+.~#?&//=]*\" In keeping with common practice, it is recommended that the https scheme be used to retrieve assertion data to protect the privacy of the data in transit, but http is also permitted because the NOTE data’s integrity is protected by the hash field and this privacy may not be required in all circumstances."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T02-G05",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "As described in the latest version of JUMBF (ISO 19566-5:2023), a new Private field can be present as part of any JUMBF Description box.",
+      "public_claim_verbatim_quote": "As described in the latest version of JUMBF (ISO 19566-5:2023), a new Private field can be present as part of any JUMBF Description box."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T02-G06",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "Hashing using byte ranges The simplest type of hard binding that can be used to detect tampering is a cryptographic hashing algorithm, as described in Section 11.3.4.2, “Hashing”, over some or all of the bytes of an asset.",
+      "public_claim_verbatim_quote": "Hashing using byte ranges The simplest type of hard binding that can be used to detect tampering is a cryptographic hashing algorithm, as described in Section 11.3.4.2, “Hashing”, over some or all of the bytes of an asset."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T02-G07",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "(fMP4) files, the assertion itself must be combined with chunk-specific hashing information which is located as specified in Section 11.3.3, “Embedding manifests into BMFF-based assets”.",
+      "public_claim_verbatim_quote": "(fMP4) files, the assertion itself must be combined with chunk-specific hashing information which is located as specified in Section 11.3.3, “Embedding manifests into BMFF-based assets”."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T02-G08",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "Asset Metadata Bindings Signers of the C2PA Manifest are not required to sign the asset metadata not contained within the C2PA Manifest.",
+      "public_claim_verbatim_quote": "Asset Metadata Bindings Signers of the C2PA Manifest are not required to sign the asset metadata not contained within the C2PA Manifest."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T02-G09",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "Any asset metadata values that are supported by the common metadata assertion, as described in Appendix A, Implementation Details for c2pa.metadata, and can be asserted by the signer should be copied into such an assertion and included in the C2PA Manifest.",
+      "public_claim_verbatim_quote": "Any asset metadata values that are supported by the common metadata assertion, as described in Appendix A, Implementation Details for c2pa.metadata, and can be asserted by the signer should be copied into such an assertion and included in the C2PA Manifest."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T02-G10",
+      "section_locator": "PDF page 35",
+      "public_claim_text": "A claim has all the same properties as an assertion including being assigned the label (c2pa.claim.v2) and supporting the use of assertion metadata.",
+      "public_claim_verbatim_quote": "A claim has all the same properties as an assertion including being assigned the label (c2pa.claim.v2) and supporting the use of assertion metadata."
+    }
+  ]
+}

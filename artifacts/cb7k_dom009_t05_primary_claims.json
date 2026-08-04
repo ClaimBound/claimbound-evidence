@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST SP 800-63-4 Digital Identity Guidelines bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST SP 800-63-4 Digital Identity Guidelines",
+  "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-4.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "2f5b107de218a0fc3fe7f7e91b2ece5babb001eda5745b7c568a3cc876002f2d",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM009-T05-G01",
+      "section_locator": "PDF page 43",
+      "public_claim_text": "While high-level descriptions of the assurance levels are provided in this subsection, readers of this guideline are encouraged to refer to companion volumes [SP800-63A], [SP800-63B], and [SP800-63C] for normative guidelines and requirements for each assurance level.",
+      "public_claim_verbatim_quote": "While high-level descriptions of the assurance levels are provided in this subsection, readers of this guideline are encouraged to refer to companion volumes [SP800-63A], [SP800-63B], and [SP800-63C] for normative guidelines and requirements for each assurance level."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T05-G02",
+      "section_locator": "PDF page 44",
+      "public_claim_text": "Identity Assurance Level • IAL1: IAL1 supports the real-world existence of the claimed identity and provides some assurance that the applicant is associated with that identity.",
+      "public_claim_verbatim_quote": "Identity Assurance Level • IAL1: IAL1 supports the real-world existence of the claimed identity and provides some assurance that the applicant is associated with that identity."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T05-G03",
+      "section_locator": "PDF page 45",
+      "public_claim_text": "Authentication Assurance Level • AAL1: AAL1 provides basic confidence that the claimant controls an authenticator that is bound to the subscriber account.",
+      "public_claim_verbatim_quote": "Authentication Assurance Level • AAL1: AAL1 provides basic confidence that the claimant controls an authenticator that is bound to the subscriber account."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T05-G04",
+      "section_locator": "PDF page 46",
+      "public_claim_text": "Successful authentication requires the claimant to prove possession and control of the authenticator through a secure authentication protocol. • AAL2: AAL2 provides high confidence that the claimant controls one or more authenticators that are bound to the subscriber account.",
+      "public_claim_verbatim_quote": "Successful authentication requires the claimant to prove possession and control of the authenticator through a secure authentication protocol. • AAL2: AAL2 provides high confidence that the claimant controls one or more authenticators that are bound to the subscriber account."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T05-G05",
+      "section_locator": "PDF page 46",
+      "public_claim_text": "Approved cryptographic techniques are required. • AAL3: AAL3 provides very high confidence that the claimant controls authenticators that are bound to the subscriber account.",
+      "public_claim_verbatim_quote": "Approved cryptographic techniques are required. • AAL3: AAL3 provides very high confidence that the claimant controls authenticators that are bound to the subscriber account."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T05-G06",
+      "section_locator": "PDF page 47",
+      "public_claim_text": "FAL Summary FAL Control Objectives User Profile FAL1 Protect against forged No sensitive personal assertions. information is available to any users but some profile or preference data may be retained to support usability or the customization of applications.",
+      "public_claim_verbatim_quote": "FAL Summary FAL Control Objectives User Profile FAL1 Protect against forged No sensitive personal assertions. information is available to any users but some profile or preference data may be retained to support usability or the customization of applications."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T05-G07",
+      "section_locator": "PDF page 47",
+      "public_claim_text": "FAL2 Protect against forged assertions Users can access personal and injection attacks. information and other sensitive data with appropriate authentication assurance levels (e.g., AAL2 or above).",
+      "public_claim_verbatim_quote": "FAL2 Protect against forged assertions Users can access personal and injection attacks. information and other sensitive data with appropriate authentication assurance levels (e.g., AAL2 or above)."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T05-G08",
+      "section_locator": "PDF page 48",
+      "public_claim_text": "3.2.4) do not differentiate between identity proofing, authentication, and federation risks, the selected initial xALs may still be different.",
+      "public_claim_verbatim_quote": "3.2.4) do not differentiate between identity proofing, authentication, and federation risks, the selected initial xALs may still be different."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T05-G09",
+      "section_locator": "PDF page 48",
+      "public_claim_text": "For example, the initial impact assessment may be low impact and indicate IAL1 and FAL1 but may also determine that personal information is accessible and therefore requires AAL2.",
+      "public_claim_verbatim_quote": "For example, the initial impact assessment may be low impact and indicate IAL1 and FAL1 but may also determine that personal information is accessible and therefore requires AAL2."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T05-G10",
+      "section_locator": "PDF page 49",
+      "public_claim_text": "For example, [EO13681] states that “all organizations making personal data accessible to citizens through digital applications require the use of multiple factors of authentication,” which requires a minimum selection of AAL2 for applications that meet those criteria.",
+      "public_claim_verbatim_quote": "For example, [EO13681] states that “all organizations making personal data accessible to citizens through digital applications require the use of multiple factors of authentication,” which requires a minimum selection of AAL2 for applications that meet those criteria."
+    }
+  ]
+}

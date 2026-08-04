@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST SP 800-63-4 Digital Identity Guidelines bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST SP 800-63-4 Digital Identity Guidelines",
+  "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-4.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "2f5b107de218a0fc3fe7f7e91b2ece5babb001eda5745b7c568a3cc876002f2d",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM009-T04-G01",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "The usual sequence of interactions involved in using one or more authenticators in the federated model to perform digital authentication is as follows: • Step 3: The RP requests that the claimant authenticate and requests any attributes needed from the IdP to make access or authorization decisions.",
+      "public_claim_verbatim_quote": "The usual sequence of interactions involved in using one or more authenticators in the federated model to perform digital authentication is as follows: • Step 3: The RP requests that the claimant authenticate and requests any attributes needed from the IdP to make access or authorization decisions."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T04-G02",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "RPs use a subscriber’s federated identity (pseudonymous or non-pseudonymous), IAL, AAL, FAL, and other factors to make authorization decisions. • Step 6: An authenticated session is established between the subscriber and the RP.",
+      "public_claim_verbatim_quote": "RPs use a subscriber’s federated identity (pseudonymous or non-pseudonymous), IAL, AAL, FAL, and other factors to make authorization decisions. • Step 6: An authenticated session is established between the subscriber and the RP."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T04-G03",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "The usual sequence of interactions involved in providing an assertion to the RP from a subscriber-controlled wallet is as follows: • Step 4: The RP requests that the claimant authenticate.",
+      "public_claim_verbatim_quote": "The usual sequence of interactions involved in providing an assertion to the RP from a subscriber-controlled wallet is as follows: • Step 4: The RP requests that the claimant authenticate."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T04-G04",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "RPs use a subscriber’s federated identity (pseudonymous or non-pseudonymous), IAL, AAL, FAL, and other factors to make authorization decisions. • Step 7: An authenticated session is established between the subscriber and the RP.",
+      "public_claim_verbatim_quote": "RPs use a subscriber’s federated identity (pseudonymous or non-pseudonymous), IAL, AAL, FAL, and other factors to make authorization decisions. • Step 7: An authenticated session is established between the subscriber and the RP."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T04-G05",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "The Digital Identity Risk Management (DIRM) process focuses on the identification and management of risks according to two dimensions: (1) risks that result from operating the online service that might be addressed by an identity system and (2) additional risks that are introduced as a result of implementing the identity system.",
+      "public_claim_verbatim_quote": "The Digital Identity Risk Management (DIRM) process focuses on the identification and management of risks according to two dimensions: (1) risks that result from operating the online service that might be addressed by an identity system and (2) additional risks that are introduced as a result of implementing the identity system."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T04-G06",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "Using the assurance levels, the organization identifies the baseline controls for the IAL, AAL, and FAL for each user group based on the requirements in companion volumes [SP800-63A], [SP800-63B], and [SP800-63C], respectively.",
+      "public_claim_verbatim_quote": "Using the assurance levels, the organization identifies the baseline controls for the IAL, AAL, and FAL for each user group based on the requirements in companion volumes [SP800-63A], [SP800-63B], and [SP800-63C], respectively."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T04-G07",
+      "section_locator": "PDF page 36",
+      "public_claim_text": "For example, an online income tax filing and review service may have the following user groups: (1) citizens who need to check the status of their personal tax returns, (2) tax preparers who file tax returns on behalf of their clients, and (3) system administrators who assign privileges to different groups of users or create new user groups as needed.",
+      "public_claim_verbatim_quote": "For example, an online income tax filing and review service may have the following user groups: (1) citizens who need to check the status of their personal tax returns, (2) tax preparers who file tax returns on behalf of their clients, and (3) system administrators who assign privileges to different groups of users or create new user groups as needed."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T04-G08",
+      "section_locator": "PDF page 37",
+      "public_claim_text": "Additionally, organizations SHALL identify other entities (e.g., mission partners, communities, and those identified in [SP800-30]) that need to be specifically included based on mission and business needs.",
+      "public_claim_verbatim_quote": "Additionally, organizations SHALL identify other entities (e.g., mission partners, communities, and those identified in [SP800-30]) that need to be specifically included based on mission and business needs."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T04-G09",
+      "section_locator": "PDF page 42",
+      "public_claim_text": "3.2.2) The impact analysis SHALL consider the level of impact for each impact category for each type of impacted entity if an intruder obtains unauthorized access as a member of each user group.",
+      "public_claim_verbatim_quote": "3.2.2) The impact analysis SHALL consider the level of impact for each impact category for each type of impacted entity if an intruder obtains unauthorized access as a member of each user group."
+    },
+    {
+      "protocol_id": "CB7K-DOM009-T04-G10",
+      "section_locator": "PDF page 43",
+      "public_claim_text": "3.3.1) to identify the corresponding set of baseline digital identity controls from the requirements and guidelines in the companion volumes [SP800-63A], [SP800-63B], and [SP800-63C].",
+      "public_claim_verbatim_quote": "3.3.1) to identify the corresponding set of baseline digital identity controls from the requirements and guidelines in the companion volumes [SP800-63A], [SP800-63B], and [SP800-63C]."
+    }
+  ]
+}

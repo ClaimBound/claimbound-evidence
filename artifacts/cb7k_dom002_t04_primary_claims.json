@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST AI 800-2 Initial Public Draft: Guidelines for Evaluating AI Systems bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST AI 800-2 Initial Public Draft: Guidelines for Evaluating AI Systems",
+  "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-2.ipd.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "5ae4244d58ed472803c7f62da92b310d7167a4afa18da19edd3d1dc8109b64f7",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM002-T04-G01",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "Models can be served with intrinsic (e.g., weight-alteration based) or extrinsic (e.g., input/output classifier based) Inference safeguards that cause certain classes of tasks to be refused.",
+      "public_claim_verbatim_quote": "Models can be served with intrinsic (e.g., weight-alteration based) or extrinsic (e.g., input/output classifier based) Inference safeguards that cause certain classes of tasks to be refused."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T04-G02",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "Evaluation Setting Protocol Description Type(s) Setting A key sub-consideration when designing agents is whether and how to provide them with context-compression tools, which allow them to operate past their normal context limits.",
+      "public_claim_verbatim_quote": "Evaluation Setting Protocol Description Type(s) Setting A key sub-consideration when designing agents is whether and how to provide them with context-compression tools, which allow them to operate past their normal context limits."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T04-G03",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "Thus, unlike nonagentic evaluations where task items have a natural stopping point, for agentic evaluations a stopping condition must be explicitly defined.",
+      "public_claim_verbatim_quote": "Thus, unlike nonagentic evaluations where task items have a natural stopping point, for agentic evaluations a stopping condition must be explicitly defined."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T04-G04",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "Evaluation Setting Protocol Description Type(s) Setting The instructions presented to a model can impact what is being measured.",
+      "public_claim_verbatim_quote": "Evaluation Setting Protocol Description Type(s) Setting The instructions presented to a model can impact what is being measured."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T04-G05",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "For example, the level of detail in instructions can influence whether an evaluation is or is not measuring a model’s skill at resolving ambiguity and inferring intentions.",
+      "public_claim_verbatim_quote": "For example, the level of detail in instructions can influence whether an evaluation is or is not measuring a model’s skill at resolving ambiguity and inferring intentions."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T04-G06",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Evaluation Setting Protocol Description Type(s) Setting For example, this may be the case when the objective is to understand the utility provided by different tools.",
+      "public_claim_verbatim_quote": "Evaluation Setting Protocol Description Type(s) Setting For example, this may be the case when the objective is to understand the utility provided by different tools."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T04-G07",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Note: Whether to provide internet search tools is a particularly consequential decision, as internet access may allow models to cheat by looking up answers online [9].",
+      "public_claim_verbatim_quote": "Note: Whether to provide internet search tools is a particularly consequential decision, as internet access may allow models to cheat by looking up answers online [9]."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T04-G08",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Evaluation Setting Protocol Description Type(s) Setting Models are generally sampled nondeterministically (though in certain cases, it may be possible to directly measure performance without sampling, e.g., via next-token probabilities).",
+      "public_claim_verbatim_quote": "Evaluation Setting Protocol Description Type(s) Setting Models are generally sampled nondeterministically (though in certain cases, it may be possible to directly measure performance without sampling, e.g., via next-token probabilities)."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T04-G09",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Having models attempt each item multiple Number of times increases evaluation cost but can reduce uncertainty of trials per Scoring evaluation results and enable an evaluator to quantify what test item portion of the uncertainty stems from model sampling.",
+      "public_claim_verbatim_quote": "Having models attempt each item multiple Number of times increases evaluation cost but can reduce uncertainty of trials per Scoring evaluation results and enable an evaluator to quantify what test item portion of the uncertainty stems from model sampling."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T04-G10",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "Here, this sub-section describes practices for the micro-level implementation of an evaluation protocol as evaluation code: 3 1.",
+      "public_claim_verbatim_quote": "Here, this sub-section describes practices for the micro-level implementation of an evaluation protocol as evaluation code: 3 1."
+    }
+  ]
+}

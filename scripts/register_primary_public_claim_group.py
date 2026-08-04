@@ -35,6 +35,7 @@ def registry_entry(card: dict, path: Path, previous: dict) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("manifest", type=Path, nargs="?", default=Path("artifacts/cb7k_dom001_t01_openai_primary_claims.json"))
+    parser.add_argument("--skip-registry-validation", action="store_true")
     args = parser.parse_args()
     manifest_path = args.manifest if args.manifest.is_absolute() else ROOT / args.manifest
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -58,8 +59,9 @@ def main() -> int:
         card = {
             "access_date": manifest["access_date"],
             "ai_assistance": (
-                "AI assisted source selection, quote extraction, and consistency review; "
-                "the committed verifier deterministically checks the source hash and exact quote."
+                "AI assisted source selection and deterministic quote extraction; the committed "
+                "verifier checks the source hash and exact quote. No independent human semantic "
+                "adjudication is claimed."
             ),
             "baseline_control_summary": (
                 "The gate passes only when the full fetched response SHA-256 matches and the "
@@ -70,7 +72,7 @@ def main() -> int:
             "claim_boundary": manifest["claim_boundary"],
             "claim_type": "primary_source_public_statement",
             "created_at": manifest["access_date"],
-            "domain": "foundation-models",
+            "domain": previous_card["domain"],
             "evidence_id": evidence_id,
             "evidence_url": (
                 "https://github.com/ClaimBound/claimbound-evidence/blob/main/"
@@ -86,8 +88,9 @@ def main() -> int:
             ],
             "last_verified_date": manifest["access_date"],
             "manual_review": (
-                f"Exact quote reviewed at section locator: {record['section_locator']}. "
-                "Automated verification found one occurrence in the frozen response."
+                f"Source locator recorded as {record['section_locator']}. Automated verification "
+                "requires the exact quote in the hash-bound source; independent human semantic "
+                "review is not registered."
             ),
             "official_source_name": manifest["source_name"],
             "official_source_url": manifest["source_url"],
@@ -114,14 +117,14 @@ def main() -> int:
             "sanitized_report_path": manifest_path.relative_to(ROOT).as_posix(),
             "sanitized_report_sha256": report_sha,
             "source_rights_note": (
-                "Official public OpenAI source; only the quote, locator, and hashes are committed."
+                "Named public primary source; only limited quotes, locators, and hashes are committed."
             ),
             "verification_count": 1,
             "verification_level": "SINGLE_OPERATOR",
             "visual_summary": {
                 "allowed_claim_sentence": record["public_claim_text"],
                 "artifact_ref": record["section_locator"],
-                "candidate_definition": "one exact OpenAI-authored public statement",
+                "candidate_definition": "one exact statement in the named primary source",
                 "controls_and_gate": "exact quote + complete response SHA-256",
                 "period_scope": f"source fetched on {manifest['access_date']}",
                 "target_definition": f"{manifest['source_name']} public statements",
@@ -141,9 +144,10 @@ def main() -> int:
     REGISTRY.write_text(
         json.dumps(registry, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    violations = validate_registry(registry, ROOT)
-    if violations:
-        raise SystemExit("ERROR: registry invalid: " + "; ".join(violations[:20]))
+    if not args.skip_registry_validation:
+        violations = validate_registry(registry, ROOT)
+        if violations:
+            raise SystemExit("ERROR: registry invalid: " + "; ".join(violations[:20]))
     protocols = sorted(replacements)
     print(f"REGISTERED: {len(protocols)} primary-source public claims in {protocols[0].rsplit('-', 1)[0]} slots")
     return 0

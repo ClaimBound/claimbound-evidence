@@ -63,6 +63,16 @@ def test_no_forbidden_public_tokens_or_ru_text() -> None:
         # removing only the source-controlled claim fields.
         if rel.as_posix() == "artifacts/cb7k_wikidata_public_claims.json":
             continue
+        if (
+            rel.parent.name == "artifacts"
+            and rel.name.startswith("cb7k_dom")
+            and rel.name.endswith("_primary_claims.json")
+        ):
+            payload = json.loads(text)
+            for record in payload.get("records", []):
+                record.pop("public_claim_text", None)
+                record.pop("public_claim_verbatim_quote", None)
+            text = json.dumps(payload, ensure_ascii=False, sort_keys=True)
         if rel.name.startswith("CLAIMBOUND-CB7K-") and rel.suffix == ".json":
             payload = json.loads(text)
             payload.pop("public_claim_text", None)

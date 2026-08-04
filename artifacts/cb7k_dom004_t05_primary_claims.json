@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched C2PA Content Credentials Technical Specification 2.0 bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "C2PA Content Credentials Technical Specification 2.0",
+  "source_url": "https://spec.c2pa.org/specifications/specifications/2.0/specs/_attachments/C2PA_Specification.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "aa8757d760404ee2d129f4c5468a315cb83f28ecbbfbde0e4276b41023d02dbb",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM004-T05-G01",
+      "section_locator": "PDF page 52",
+      "public_claim_text": "An Update Manifest shall not contain assertions of types c2pa.hash.data, c2pa.hash.boxes, c2pa.hash.collection.data, or c2pa.hash.bmff.v2 because the content has not changed and therefore the bindings need not be updated.",
+      "public_claim_verbatim_quote": "An Update Manifest shall not contain assertions of types c2pa.hash.data, c2pa.hash.boxes, c2pa.hash.collection.data, or c2pa.hash.bmff.v2 because the content has not changed and therefore the bindings need not be updated."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T05-G02",
+      "section_locator": "PDF page 52",
+      "public_claim_text": "In the case of a file offset hash (c2pa.hash.data), the C2PA Manifest Store has to continue to start at the same file offset after updating - only its length can change.",
+      "public_claim_verbatim_quote": "In the case of a file offset hash (c2pa.hash.data), the C2PA Manifest Store has to continue to start at the same file offset after updating - only its length can change."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T05-G03",
+      "section_locator": "PDF page 53",
+      "public_claim_text": "NOTE C2PA is asking for feedback from the audio community if embedding the C2PA Manifest Store in an ID3v2 container will work with FLAC or if we will need to use the native FLAC container.",
+      "public_claim_verbatim_quote": "NOTE C2PA is asking for feedback from the audio community if embedding the C2PA Manifest Store in an ID3v2 container will work with FLAC or if we will need to use the native FLAC container."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T05-G04",
+      "section_locator": "PDF page 54",
+      "public_claim_text": "Since a single marker segment in JPEG 1 cannot be larger than 64K bytes, it is likely that multiple APP11 segments will be required, and they shall be constructed as per the JPEG 1 standard and ISO 19566-5, D.2.",
+      "public_claim_verbatim_quote": "Since a single marker segment in JPEG 1 cannot be larger than 64K bytes, it is likely that multiple APP11 segments will be required, and they shall be constructed as per the JPEG 1 standard and ISO 19566-5, D.2."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T05-G05",
+      "section_locator": "PDF page 54",
+      "public_claim_text": "Embedding manifests into PNG The C2PA Manifest Store shall be embedded using an ancillary, private, not safe to copy, chunk type of 'caBX' (as per PNG, 4.7.2).",
+      "public_claim_verbatim_quote": "Embedding manifests into PNG The C2PA Manifest Store shall be embedded using an ancillary, private, not safe to copy, chunk type of 'caBX' (as per PNG, 4.7.2)."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T05-G06",
+      "section_locator": "PDF page 55",
+      "public_claim_text": "The GEOB’s MIME type field shall be present and shall use the value for the media type for JUMBF as described in Section 11.4, “External Manifests”.",
+      "public_claim_verbatim_quote": "The GEOB’s MIME type field shall be present and shall use the value for the media type for JUMBF as described in Section 11.4, “External Manifests”."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T05-G07",
+      "section_locator": "PDF page 55",
+      "public_claim_text": "The C2PA Manifest Store shall be embedded into a TIFF-compatible file (i.e., TIFF/EP, DNG or other TIFF-based RAW formats) as the data of a tag with ID 52545 (decimal) or 0xCD41 (hexadecimal), with a tag type of 7.",
+      "public_claim_verbatim_quote": "The C2PA Manifest Store shall be embedded into a TIFF-compatible file (i.e., TIFF/EP, DNG or other TIFF-based RAW formats) as the data of a tag with ID 52545 (decimal) or 0xCD41 (hexadecimal), with a tag type of 7."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T05-G08",
+      "section_locator": "PDF page 56",
+      "public_claim_text": "The C2PA table format is not yet defined in the Open Font Format nor OpenType specification; the following definition is preliminary: 11.3.1.8.1.",
+      "public_claim_verbatim_quote": "The C2PA table format is not yet defined in the Open Font Format nor OpenType specification; the following definition is preliminary: 11.3.1.8.1."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T05-G09",
+      "section_locator": "PDF page 56",
+      "public_claim_text": "If a URI is not provided a NULL offset = 0x0000 should be used. uint16 activeManifestUriLength Length of URI in bytes. uint16 reserved Reserved for future use.",
+      "public_claim_verbatim_quote": "If a URI is not provided a NULL offset = 0x0000 should be used. uint16 activeManifestUriLength Length of URI in bytes. uint16 reserved Reserved for future use."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T05-G10",
+      "section_locator": "PDF page 57",
+      "public_claim_text": "A C2PA Manifest Consumer shall process all C2PA Manifests in all C2PA Manifest Stores as if they were contained in a single C2PA Manifest Store.",
+      "public_claim_verbatim_quote": "A C2PA Manifest Consumer shall process all C2PA Manifests in all C2PA Manifest Stores as if they were contained in a single C2PA Manifest Store."
+    }
+  ]
+}

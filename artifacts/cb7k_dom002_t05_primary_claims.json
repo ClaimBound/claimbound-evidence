@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST AI 800-2 Initial Public Draft: Guidelines for Evaluating AI Systems bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST AI 800-2 Initial Public Draft: Guidelines for Evaluating AI Systems",
+  "source_url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-2.ipd.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "5ae4244d58ed472803c7f62da92b310d7167a4afa18da19edd3d1dc8109b64f7",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM002-T05-G01",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "Running evaluations can often be made easier by using evaluation frameworks, which provide software libraries for querying models, agent scaffolding and tools, error handling, and logging evaluation results instead of having to write those functions from scratch.",
+      "public_claim_verbatim_quote": "Running evaluations can often be made easier by using evaluation frameworks, which provide software libraries for querying models, agent scaffolding and tools, error handling, and logging evaluation results instead of having to write those functions from scratch."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T05-G02",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "18 2.4.1 Common bugs In this section, we list some common classes of bugs that one may encounter when performing automated benchmark evaluations.",
+      "public_claim_verbatim_quote": "18 2.4.1 Common bugs In this section, we list some common classes of bugs that one may encounter when performing automated benchmark evaluations."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T05-G03",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "However, even commercial providers may serve models in a degraded state 28 (e.g. commercial providers often vary on what context length they serve a given model with).",
+      "public_claim_verbatim_quote": "However, even commercial providers may serve models in a degraded state 28 (e.g. commercial providers often vary on what context length they serve a given model with)."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T05-G04",
+      "section_locator": "PDF page 26",
+      "public_claim_text": "If refusal behavior during evaluation may differ from refusal behavior under realistic usage,6 evaluators should check for the presence of refusals or other safeguards interventions in evaluation transcripts to determine whether and how they may be impacting evaluation results.",
+      "public_claim_verbatim_quote": "If refusal behavior during evaluation may differ from refusal behavior under realistic usage,6 evaluators should check for the presence of refusals or other safeguards interventions in evaluation transcripts to determine whether and how they may be impacting evaluation results."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T05-G05",
+      "section_locator": "PDF page 26",
+      "public_claim_text": "Evaluation awareness. [Emerging Practice] Recent work has shown that for certain models, model behavior can be influenced by cues that the input is part of an evaluation exercise [12][13][14].",
+      "public_claim_verbatim_quote": "Evaluation awareness. [Emerging Practice] Recent work has shown that for certain models, model behavior can be influenced by cues that the input is part of an evaluation exercise [12][13][14]."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T05-G06",
+      "section_locator": "PDF page 26",
+      "public_claim_text": "Unfortunately, the absence of verbalized evaluation 6For example, a malicious user might be able to find jailbreaks that circumvent refusal.",
+      "public_claim_verbatim_quote": "Unfortunately, the absence of verbalized evaluation 6For example, a malicious user might be able to find jailbreaks that circumvent refusal."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T05-G07",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "5 2.4.2 Quality assurance techniques Quality assurance can diagnose issues in evaluation code and mistakes in evaluation protocols identified above.",
+      "public_claim_verbatim_quote": "5 2.4.2 Quality assurance techniques Quality assurance can diagnose issues in evaluation code and mistakes in evaluation protocols identified above."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T05-G08",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "Automated transcript review. [Emerging Practice] Evaluators may be able to extend and augment manual transcript review processes using automated transcript review.",
+      "public_claim_verbatim_quote": "Automated transcript review. [Emerging Practice] Evaluators may be able to extend and augment manual transcript review processes using automated transcript review."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T05-G09",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "For evaluations that involve complex virtual environments, it can be useful to create and run deterministic solutions against the evaluator’s in-house setup of the environment.",
+      "public_claim_verbatim_quote": "For evaluations that involve complex virtual environments, it can be useful to create and run deterministic solutions against the evaluator’s in-house setup of the environment."
+    },
+    {
+      "protocol_id": "CB7K-DOM002-T05-G10",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "Another assurance technique is to compare results to existing evidence such as other results on the same or closely related benchmarks.",
+      "public_claim_verbatim_quote": "Another assurance technique is to compare results to existing evidence such as other results on the same or closely related benchmarks."
+    }
+  ]
+}

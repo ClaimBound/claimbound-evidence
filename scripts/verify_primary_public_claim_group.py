@@ -10,11 +10,22 @@ from pathlib import Path
 import re
 import urllib.request
 
+import pdfplumber
 from pypdf import PdfReader
 
-def normalized_text(payload: bytes) -> str:
-    reader = PdfReader(BytesIO(payload))
-    text = "\n".join(page.extract_text() or "" for page in reader.pages)
+def normalized_text(payload: bytes, extractor: str = "pdfplumber") -> str:
+    if extractor == "pdfplumber":
+        with pdfplumber.open(BytesIO(payload)) as reader:
+            text = "\n".join(page.extract_text() or "" for page in reader.pages)
+    elif extractor == "pypdf":
+        reader = PdfReader(BytesIO(payload))
+        text = "\n".join(page.extract_text() or "" for page in reader.pages)
+    else:
+        raise ValueError(f"unsupported text extractor: {extractor}")
+    text = "\n".join(
+        re.sub(r"^\d+\s+(?=[A-Za-z])", "", line)
+        for line in text.splitlines()
+    )
     # PDF extractors may retain discretionary line-break hyphens. Removing
     # whitespace and hyphens on both sides preserves the textual gate while
     # making the check independent of page layout.
@@ -32,7 +43,7 @@ def verify(manifest_path: Path, source_file: Path | None) -> dict:
         with urllib.request.urlopen(request, timeout=60) as response:
             payload = response.read()
     actual_sha = hashlib.sha256(payload).hexdigest()
-    text = normalized_text(payload)
+    text = normalized_text(payload, manifest.get("text_extractor", "pdfplumber"))
     rows = []
     for record in manifest["records"]:
         normalized_quote = re.sub(

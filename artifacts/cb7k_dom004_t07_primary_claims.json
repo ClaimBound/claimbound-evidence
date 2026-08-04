@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched C2PA Content Credentials Technical Specification 2.0 bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "C2PA Content Credentials Technical Specification 2.0",
+  "source_url": "https://spec.c2pa.org/specifications/specifications/2.0/specs/_attachments/C2PA_Specification.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "aa8757d760404ee2d129f4c5468a315cb83f28ecbbfbde0e4276b41023d02dbb",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM004-T07-G01",
+      "section_locator": "PDF page 65",
+      "public_claim_text": "As a result, such a server must either hash said streams and create a C2PA Manifest each time the content is consumed or, if generation is deterministic, create and cache the hashes and C2PA Manifests once and then embed them at consumption time.",
+      "public_claim_verbatim_quote": "As a result, such a server must either hash said streams and create a C2PA Manifest each time the content is consumed or, if generation is deterministic, create and cache the hashes and C2PA Manifests once and then embed them at consumption time."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T07-G02",
+      "section_locator": "PDF page 65",
+      "public_claim_text": "Exclusion List Requirements For all c2pa.hash.bmff.v2 assertions, the following entries shall always appear on the exclusion list.",
+      "public_claim_verbatim_quote": "Exclusion List Requirements For all c2pa.hash.bmff.v2 assertions, the following entries shall always appear on the exclusion list."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T07-G03",
+      "section_locator": "PDF page 66",
+      "public_claim_text": "Size requirements If a BMFF-based asset uses 32-bit sizes or offsets in any box(es), e.g. the 'stco' box, and adding boxes to conform to this specification will push the file size over 4 gigabytes, it is the responsibility of the manifest creator to edit the file to use appropriate sizes and offsets, e.g. by replacing the 'stco' box with a 'co64' box, before creating the manifest.",
+      "public_claim_verbatim_quote": "Size requirements If a BMFF-based asset uses 32-bit sizes or offsets in any box(es), e.g. the 'stco' box, and adding boxes to conform to this specification will push the file size over 4 gigabytes, it is the responsibility of the manifest creator to edit the file to use appropriate sizes and offsets, e.g. by replacing the 'stco' box with a 'co64' box, before creating the manifest."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T07-G04",
+      "section_locator": "PDF page 66",
+      "public_claim_text": "Hashing the ZIP Central Directory As described in 4.3.12 of the ZIP AppNote, the Central Directory is an array of central directory headers - one per file in the ZIP archive.",
+      "public_claim_verbatim_quote": "Hashing the ZIP Central Directory As described in 4.3.12 of the ZIP AppNote, the Central Directory is an array of central directory headers - one per file in the ZIP archive."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T07-G05",
+      "section_locator": "PDF page 67",
+      "public_claim_text": "It is immediately followed by the End of Central Directory record (ZIP AppNote, 4.3.16), which contains information about the ZIP archive itself.",
+      "public_claim_verbatim_quote": "It is immediately followed by the End of Central Directory record (ZIP AppNote, 4.3.16), which contains information about the ZIP archive itself."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T07-G06",
+      "section_locator": "PDF page 68",
+      "public_claim_text": "Placement of the Manifest Store The C2PA Manifest Store shall be stored in the META-INF directory of the ZIP archive with a filename of content_credential.c2pa and a media type as recommended for external manifests.",
+      "public_claim_verbatim_quote": "Placement of the Manifest Store The C2PA Manifest Store shall be stored in the META-INF directory of the ZIP archive with a filename of content_credential.c2pa and a media type as recommended for external manifests."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T07-G07",
+      "section_locator": "PDF page 72",
+      "public_claim_text": "These lists establish the allowed algorithms and key types by referencing an algorithm identifier from the relevant standards that define algorithms for COSE and their mappings to CBOR identifiers, including but not limited to RFC and RFC 8230.",
+      "public_claim_verbatim_quote": "These lists establish the allowed algorithms and key types by referencing an algorithm identifier from the relevant standards that define algorithms for COSE and their mappings to CBOR identifiers, including but not limited to RFC and RFC 8230."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T07-G08",
+      "section_locator": "PDF page 72",
+      "public_claim_text": "Nothing in Section 11.3.4.2, “Hashing” shall apply to this use of hash algorithms; if a digital signature algorithm is present in the digital signature algorithm and key type registry, the use of its specified hash algorithm in the signature scheme shall be allowed and followed.",
+      "public_claim_verbatim_quote": "Nothing in Section 11.3.4.2, “Hashing” shall apply to this use of hash algorithms; if a digital signature algorithm is present in the digital signature algorithm and key type registry, the use of its specified hash algorithm in the signature scheme shall be allowed and followed."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T07-G09",
+      "section_locator": "PDF page 73",
+      "public_claim_text": "ECDSA requires elliptic curve keys on the P-256, P-384, or P-521 elliptic curves. ◦ Although it is recommended to use P-256 keys with ES256, P-384 keys with ES384, and P-521 keys with ES512, it is not required.",
+      "public_claim_verbatim_quote": "ECDSA requires elliptic curve keys on the P-256, P-384, or P-521 elliptic curves. ◦ Although it is recommended to use P-256 keys with ES256, P-384 keys with ES384, and P-521 keys with ES512, it is not required."
+    },
+    {
+      "protocol_id": "CB7K-DOM004-T07-G10",
+      "section_locator": "PDF page 73",
+      "public_claim_text": "Use of COSE The signature for the CBOR-encoded claim is produced by CBOR Object Signing and Encryption (COSE) as described in RFC 8152 sections 4.2 and 4.4.",
+      "public_claim_verbatim_quote": "Use of COSE The signature for the CBOR-encoded claim is produced by CBOR Object Signing and Encryption (COSE) as described in RFC 8152 sections 4.2 and 4.4."
+    }
+  ]
+}

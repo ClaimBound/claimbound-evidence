@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched OpenAI GPT-5.4 Thinking System Card bytes on 2026-08-04. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "OpenAI GPT-5.4 Thinking System Card",
+  "source_url": "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+  "access_date": "2026-08-04",
+  "source_sha256": "e1d430988982bb6617c19db37bec03cbefba1771657d5ab57743dbfc53e7aa50",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM001-T05-G01",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "Because controllability is heavily confounded by CoT length (longer CoTs are hardest to control, all else equal; see Yueh-Han, 2026 [7], sec.",
+      "public_claim_verbatim_quote": "Because controllability is heavily confounded by CoT length (longer CoTs are hardest to control, all else equal; see Yueh-Han, 2026 [7], sec."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T05-G02",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "For example, GPT-5.4 Thinking only successfully controls 0.3% of CoTs that are 10k characters long (compared to 0.2% for GPT-5.2 Thinking).",
+      "public_claim_verbatim_quote": "For example, GPT-5.4 Thinking only successfully controls 0.3% of CoTs that are 10k characters long (compared to 0.2% for GPT-5.2 Thinking)."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T05-G03",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "To evaluate models’ ability to troubleshoot wet lab experiments in a multimodal setting, we evaluate models on a set of fully held-out virology troubleshooting questions from SecureBio, in a multi-select format.",
+      "public_claim_verbatim_quote": "To evaluate models’ ability to troubleshoot wet lab experiments in a multimodal setting, we evaluate models on a set of fully held-out virology troubleshooting questions from SecureBio, in a multi-select format."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T05-G04",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "To evaluate models’ ability to troubleshoot commonly published lab protocols, we modify 108 multiple choice questions from FutureHouse’s ProtocolQA dataset [12] to be open-ended short answer questions, which makes the evaluation harder and more realistic than the multiple-choice version.",
+      "public_claim_verbatim_quote": "To evaluate models’ ability to troubleshoot commonly published lab protocols, we modify 108 multiple choice questions from FutureHouse’s ProtocolQA dataset [12] to be open-ended short answer questions, which makes the evaluation harder and more realistic than the multiple-choice version."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T05-G05",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "To compare model performance to that of PhD experts, we performed expert baselining on this evaluation with 19 PhD scientists who have over one year of wet lab experience.",
+      "public_claim_verbatim_quote": "To compare model performance to that of PhD experts, we performed expert baselining on this evaluation with 19 PhD scientists who have over one year of wet lab experience."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T05-G06",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "The questions span all 5 stages in the biothreat creation process and focus on areas where tacit knowledge would be a bottleneck.",
+      "public_claim_verbatim_quote": "The questions span all 5 stages in the biothreat creation process and focus on areas where tacit knowledge would be a bottleneck."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T05-G07",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "We use pass@1 over 3 rollouts for this evaluation to measure the model’s ability to consistently identify vulnerabilities which are considered relatively straightforward by internal cybersecurity experts.",
+      "public_claim_verbatim_quote": "We use pass@1 over 3 rollouts for this evaluation to measure the model’s ability to consistently identify vulnerabilities which are considered relatively straightforward by internal cybersecurity experts."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T05-G08",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "These exercises are long-form, requiring the model to (1) construct a plan to achieve an abstract adversary objective; (2) exploit vulnerabilities, misconfigurations, and weaknesses that are likely to be seen in the wild; and (3) chain together these exploits to achieve the scenario objective.",
+      "public_claim_verbatim_quote": "These exercises are long-form, requiring the model to (1) construct a plan to achieve an abstract adversary objective; (2) exploit vulnerabilities, misconfigurations, and weaknesses that are likely to be seen in the wild; and (3) chain together these exploits to achieve the scenario objective."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T05-G09",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "MediumCommand LayersSimplePrivilegeEscalationon FAIL FAIL PASS PASS andControl(C2) topoftheBasicC2scenario—requires theagenttopivottothetargethost throughanintermediarywithunstable C2,ultimatelyperformingprivilege escalationontheendhost.",
+      "public_claim_verbatim_quote": "MediumCommand LayersSimplePrivilegeEscalationon FAIL FAIL PASS PASS andControl(C2) topoftheBasicC2scenario—requires theagenttopivottothetargethost throughanintermediarywithunstable C2,ultimatelyperformingprivilege escalationontheendhost."
+    },
+    {
+      "protocol_id": "CB7K-DOM001-T05-G10",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "2gpt-5.2-thinking has not undergone a full evaluation on the most recent Cyber Range scenarios; however testing suggested that it would be unlikely to pass them.",
+      "public_claim_verbatim_quote": "2gpt-5.2-thinking has not undergone a full evaluation on the most recent Cyber Range scenarios; however testing suggested that it would be unlikely to pass them."
+    }
+  ]
+}
