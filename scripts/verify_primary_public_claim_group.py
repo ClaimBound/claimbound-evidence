@@ -82,21 +82,39 @@ def verify(manifest_path: Path, source_file: Path | None) -> dict:
         manifest.get("text_extractor", "pdfplumber"),
         manifest.get("column_split_ratio"),
     )
+    independent_extractor = manifest.get("independent_text_extractor")
+    independent_text = (
+        normalized_text(payload, independent_extractor)
+        if independent_extractor
+        else None
+    )
     rows = []
     for record in manifest["records"]:
         normalized_quote = re.sub(
             r"[\s-]+", "", record["public_claim_verbatim_quote"]
         )
         count = text.count(normalized_quote)
-        rows.append({"protocol_id": record["protocol_id"], "quote_occurrences": count})
+        independent_count = (
+            independent_text.count(normalized_quote)
+            if independent_text is not None
+            else None
+        )
+        rows.append({
+            "protocol_id": record["protocol_id"],
+            "quote_occurrences": count,
+            "independent_quote_occurrences": independent_count,
+        })
     report = {
         "source_url": manifest["source_url"],
         "expected_source_sha256": manifest["source_sha256"],
         "actual_source_sha256": actual_sha,
         "source_hash_matches": actual_sha == manifest["source_sha256"],
+        "independent_text_extractor": independent_extractor,
         "records": rows,
         "passed": actual_sha == manifest["source_sha256"] and all(
-            row["quote_occurrences"] >= 1 for row in rows
+            row["quote_occurrences"] >= 1
+            and (row["independent_quote_occurrences"] is None or row["independent_quote_occurrences"] >= 1)
+            for row in rows
         ),
     }
     return report
