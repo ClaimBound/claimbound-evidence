@@ -1,6 +1,6 @@
 {
   "access_date": "2026-08-04",
-  "ai_assistance": "AI assisted source selection, quote extraction, and consistency review; the committed verifier deterministically checks the source hash and exact quote.",
+  "ai_assistance": "AI assisted source selection and deterministic quote extraction; the committed verifier checks the source hash and exact quote. No independent human semantic adjudication is claimed.",
   "baseline_control_summary": "The gate passes only when the full fetched response SHA-256 matches and the exact quoted statement occurs in normalized source text.",
   "card_svg_rendered": "docs/evidence_cards/CLAIMBOUND-CB7K-DOM001-T01-G01-2026-07-20.svg",
   "card_svg_template": "docs/assets/claimbound_evidence_card.svg",
@@ -15,11 +15,11 @@
   "known_limitations": [
     "This retrospective audit was not preregistered before source inspection.",
     "The result verifies publication and byte identity, not independent ground truth.",
-    "The source is OpenAI's own report about its model and is not independent evidence.",
+    "The source is the named publisher's own document (OpenAI GPT-5.6 System Card PDF); the card does not provide independent corroboration of its statements.",
     "A future PDF edit produces source drift until a separately documented rerun."
   ],
   "last_verified_date": "2026-08-04",
-  "manual_review": "Exact quote reviewed at section locator: 1. Introduction. Automated verification found one occurrence in the frozen response.",
+  "manual_review": "Source locator recorded as 1. Introduction. Automated verification requires the exact quote in the hash-bound source; independent human semantic review is not registered.",
   "official_source_name": "OpenAI GPT-5.6 System Card PDF",
   "official_source_url": "https://deploymentsafety.openai.com/gpt-5-6/gpt-5-6.pdf",
   "operator": "NeoZorK",
@@ -38,18 +38,18 @@
   "registry_sequence": 4,
   "reproduction_level": "not independently reproduced",
   "result_status": "PASSED_UNDER_PROTOCOL",
-  "runner_command": "python scripts/verify_primary_public_claim_group.py artifacts/cb7k_dom001_t01_openai_primary_claims.json --source-file <local-raw-html>",
+  "runner_command": "python scripts/verify_primary_public_claim_group.py artifacts/cb7k_dom001_t01_openai_primary_claims.json --source-file <local-raw-pdf>",
   "sanitized_report_path": "artifacts/cb7k_dom001_t01_openai_primary_claims.json",
   "sanitized_report_sha256": "49d771d26f5e79187f9471dc71a189a332d130ee3f92c8c8c94fc7cbff6dc171",
-  "source_rights_note": "Official public OpenAI source; only the quote, locator, and hashes are committed.",
+  "source_rights_note": "Named public primary source; only limited quotes, locators, and hashes are committed.",
   "verification_count": 1,
   "verification_level": "SINGLE_OPERATOR",
   "visual_summary": {
     "allowed_claim_sentence": "OpenAI describes GPT-5.6 as a family of three models named Sol, Terra, and Luna.",
     "artifact_ref": "1. Introduction",
-    "candidate_definition": "one exact OpenAI-authored public statement",
+    "candidate_definition": "one exact statement in the named primary source",
     "controls_and_gate": "exact quote + complete response SHA-256",
     "period_scope": "source fetched on 2026-08-04",
-    "target_definition": "GPT-5.6 public system-card statements"
+    "target_definition": "OpenAI GPT-5.6 System Card PDF public statements"
   }
 }

@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched Does Functional Package Management Enable Reproducible Builds at Scale? Yes bytes on 2026-08-11. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "Does Functional Package Management Enable Reproducible Builds at Scale? Yes",
+  "source_url": "https://upsilon.cc/~zack/research/publications/msr-2025-nix-reproducibility.pdf",
+  "access_date": "2026-08-11",
+  "source_sha256": "1cec8d9117720e3fa61a2c448d689c433dff80af39ddd9a950ea396ff5f07ef1",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber_columns",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM012-T04-G01",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "The release.nix file is human crafted and does not contain all the dependencies of the listed packages, even though they are built by Hydra along the way.",
+      "public_claim_verbatim_quote": "The release.nix file is human crafted and does not contain all the dependencies of the listed packages, even though they are built by Hydra along the way."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T04-G02",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "This is required to compare our build outputs with historical results for bitwise reproducibility.",
+      "public_claim_verbatim_quote": "This is required to compare our build outputs with historical results for bitwise reproducibility."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T04-G03",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "Derivations missing from the cache can indicate that they historically failed to build, although there can be other reasons for their absence.",
+      "public_claim_verbatim_quote": "Derivations missing from the cache can indicate that they historically failed to build, although there can be other reasons for their absence."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T04-G04",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "Ecosystem identification and package tracking To answer RQ1, RQ2 and RQ4, we need to be able to discriminate packages by provenance ecosystem, and track them over time to follow their evolution.",
+      "public_claim_verbatim_quote": "Ecosystem identification and package tracking To answer RQ1, RQ2 and RQ4, we need to be able to discriminate packages by provenance ecosystem, and track them over time to follow their evolution."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T04-G05",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "To categorize packages by ecosystem, we rely on the first component of the package name when it has several components (for example a package named haskellPackages.network is sorted into the Haskell ecosystem).",
+      "public_claim_verbatim_quote": "To categorize packages by ecosystem, we rely on the first component of the package name when it has several components (for example a package named haskellPackages.network is sorted into the Haskell ecosystem)."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T04-G06",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "For instance, the following ecosystems were merged into a single one: php56Packages, php70Packages, ..., php82Packages, phpExtensions, phpPackages and phpPackages-unit.",
+      "public_claim_verbatim_quote": "For instance, the following ecosystems were merged into a single one: php56Packages, php70Packages, ..., php82Packages, phpExtensions, phpPackages and phpPackages-unit."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T04-G07",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "We then investigate whether we can use our large dataset of diffoscopes for automatic detection of causes of nonreproducibility.",
+      "public_claim_verbatim_quote": "We then investigate whether we can use our large dataset of diffoscopes for automatic detection of causes of nonreproducibility."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T04-G08",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "We then run these heuristics on the full diffoscope dataset to determine the proportion of packages impacted by each cause (multiple causes can apply to the same package).",
+      "public_claim_verbatim_quote": "We then run these heuristics on the full diffoscope dataset to determine the proportion of packages impacted by each cause (multiple causes can apply to the same package)."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T04-G09",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "The first and last author then evaluate the precision of each these heuristics by manually counting false positives in samples of matched lines for each heuristic.",
+      "public_claim_verbatim_quote": "The first and last author then evaluate the precision of each these heuristics by manually counting false positives in samples of matched lines for each heuristic."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T04-G10",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "These are our candidate packages (and “old” and “new” commits) for the bisection process.",
+      "public_claim_verbatim_quote": "These are our candidate packages (and “old” and “new” commits) for the bisection process."
+    }
+  ]
+}

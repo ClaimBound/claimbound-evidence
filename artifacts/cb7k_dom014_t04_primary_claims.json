@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST SP 1800-33B 5G Cybersecurity Preliminary Draft bytes on 2026-08-11. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST SP 1800-33B 5G Cybersecurity Preliminary Draft",
+  "source_url": "https://www.nccoe.nist.gov/sites/default/files/2022-04/nist-5G-sp1800-33b-preliminary-draft.pdf",
+  "access_date": "2026-08-11",
+  "source_sha256": "890ce655b87f080c7e9243cc53b054cf65a4e379fb054ed68270e380e9762268",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM014-T04-G01",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "Non-3GPP networks, such as Wi-Fi, can be susceptible to various types of security attacks, including fake access points for hijacking legitimate user sessions and eavesdropping attacks.",
+      "public_claim_verbatim_quote": "Non-3GPP networks, such as Wi-Fi, can be susceptible to various types of security attacks, including fake access points for hijacking legitimate user sessions and eavesdropping attacks."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T04-G02",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "For non-3GPP accesses, IPsec tunnels can be used to protect subscriber and signaling traffic from the non-3GPP access point to the N3IWF.",
+      "public_claim_verbatim_quote": "For non-3GPP accesses, IPsec tunnels can be used to protect subscriber and signaling traffic from the non-3GPP access point to the N3IWF."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T04-G03",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "If the keys are compromised, protected 3GPP subscriber traffic and signaling traffic can be intercepted by the adversary.",
+      "public_claim_verbatim_quote": "If the keys are compromised, protected 3GPP subscriber traffic and signaling traffic can be intercepted by the adversary."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T04-G04",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "Infected network devices maliciously use network resources for Command-and-Control (C2) traffic, which impacts network and application performance.",
+      "public_claim_verbatim_quote": "Infected network devices maliciously use network resources for Command-and-Control (C2) traffic, which impacts network and application performance."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T04-G05",
+      "section_locator": "PDF page 34",
+      "public_claim_text": "When this information is paired with results from C2, vulnerability, antivirus, and botnet inspection SOC and NOC analysts have a clear view of malicious users.",
+      "public_claim_verbatim_quote": "When this information is paired with results from C2, vulnerability, antivirus, and botnet inspection SOC and NOC analysts have a clear view of malicious users."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T04-G06",
+      "section_locator": "PDF page 34",
+      "public_claim_text": "Inspecting user-plane traffic and analyzing it against known C2 signatures, known malicious domains, and domain generation algorithms is a great way to identify C2 traffic.",
+      "public_claim_verbatim_quote": "Inspecting user-plane traffic and analyzing it against known C2 signatures, known malicious domains, and domain generation algorithms is a great way to identify C2 traffic."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T04-G07",
+      "section_locator": "PDF page 35",
+      "public_claim_text": "The Internet Key Exchange version 1 (IKEv1) protocol could be vulnerable to offline dictionary attacks if a weak PSK is used.",
+      "public_claim_verbatim_quote": "The Internet Key Exchange version 1 (IKEv1) protocol could be vulnerable to offline dictionary attacks if a weak PSK is used."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T04-G08",
+      "section_locator": "PDF page 35",
+      "public_claim_text": "IPsec tunnels are used in 5G networks to provide subscriber and signaling traffic with integrity, confidentiality, and replay protection for backhaul connection and other connections, like untrusted non-3GPP network access.",
+      "public_claim_verbatim_quote": "IPsec tunnels are used in 5G networks to provide subscriber and signaling traffic with integrity, confidentiality, and replay protection for backhaul connection and other connections, like untrusted non-3GPP network access."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T04-G09",
+      "section_locator": "PDF page 36",
+      "public_claim_text": "For over 30 years, CableLabs has developed and improved wired and wireless network technologies for the secure delivery of high-speed data, video, voice, and other next-generation services.",
+      "public_claim_verbatim_quote": "For over 30 years, CableLabs has developed and improved wired and wireless network technologies for the secure delivery of high-speed data, video, voice, and other next-generation services."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T04-G10",
+      "section_locator": "PDF page 36",
+      "public_claim_text": "CableLabs is also the cable industry’s expert body on standards and participates in over 25 standards bodies and industry consortia globally, including in wireless, wired, and security.",
+      "public_claim_verbatim_quote": "CableLabs is also the cable industry’s expert body on standards and participates in over 25 standards bodies and industry consortia globally, including in wireless, wired, and security."
+    }
+  ]
+}

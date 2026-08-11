@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST SP 500-292 Cloud Computing Reference Architecture bytes on 2026-08-11. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST SP 500-292 Cloud Computing Reference Architecture",
+  "source_url": "https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication500-292.pdf",
+  "access_date": "2026-08-11",
+  "source_sha256": "f29497b4e8438ca5875e85e06f2e1521dd949b4c9f4b3b7ee0941f8a2b040e58",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM013-T03-G01",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "In this case, the provider may specify its requirements on capability, flexibility and functionality in SLA2 in order to provide essential requirements in SLA1.",
+      "public_claim_verbatim_quote": "In this case, the provider may specify its requirements on capability, flexibility and functionality in SLA2 in order to provide essential requirements in SLA1."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T03-G02",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "Typically a cloud provider‟s pricing policy and SLAs are non-negotiable, unless the customer expects heavy usage and might be able to negotiate for better contracts. [2].",
+      "public_claim_verbatim_quote": "Typically a cloud provider‟s pricing policy and SLAs are non-negotiable, unless the customer expects heavy usage and might be able to negotiate for better contracts. [2]."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T03-G03",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "The consumers of SaaS can be organizations that provide their members with access to software applications, end users who directly use software applications, or software application administrators who configure applications for end users.",
+      "public_claim_verbatim_quote": "The consumers of SaaS can be organizations that provide their members with access to software applications, end users who directly use software applications, or software application administrators who configure applications for end users."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T03-G04",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "SaaS consumers can be billed based on the number of end users, the time of use, the network bandwidth consumed, the amount of data stored or duration of stored data.",
+      "public_claim_verbatim_quote": "SaaS consumers can be billed based on the number of end users, the time of use, the network bandwidth consumed, the amount of data stored or duration of stored data."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T03-G05",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "Cloud consumers of PaaS can employ the tools and execution resources provided by cloud providers to develop, test, deploy and manage the applications hosted in a cloud environment.",
+      "public_claim_verbatim_quote": "Cloud consumers of PaaS can employ the tools and execution resources provided by cloud providers to develop, test, deploy and manage the applications hosted in a cloud environment."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T03-G06",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "PaaS consumers can be application developers who design and implement application software, application testers who run and test applications in cloud-based environments, application deployers who publish applications into the cloud, and application administrators who configure and monitor application performance on a platform.",
+      "public_claim_verbatim_quote": "PaaS consumers can be application developers who design and implement application software, application testers who run and test applications in cloud-based environments, application deployers who publish applications into the cloud, and application administrators who configure and monitor application performance on a platform."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T03-G07",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "A cloud provider is a person, an organization; it is the entity responsible for making a service available to interested parties.",
+      "public_claim_verbatim_quote": "A cloud provider is a person, an organization; it is the entity responsible for making a service available to interested parties."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T03-G08",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "A Cloud Provider acquires and manages the computing infrastructure required for providing the services, runs the cloud software that provides the services, and makes arrangement to deliver the cloud services to the Cloud Consumers through network access.",
+      "public_claim_verbatim_quote": "A Cloud Provider acquires and manages the computing infrastructure required for providing the services, runs the cloud software that provides the services, and makes arrangement to deliver the cloud services to the Cloud Consumers through network access."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T03-G09",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "For Software as a Service, the cloud provider deploys, configures, maintains and updates the operation of the software applications on a cloud infrastructure so that the services are provisioned at the expected service levels to cloud consumers.",
+      "public_claim_verbatim_quote": "For Software as a Service, the cloud provider deploys, configures, maintains and updates the operation of the software applications on a cloud infrastructure so that the services are provisioned at the expected service levels to cloud consumers."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T03-G10",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "The provider of SaaS assumes most of the responsibilities in managing and controlling the applications and the infrastructure, while the cloud consumers have limited administrative control of the applications.",
+      "public_claim_verbatim_quote": "The provider of SaaS assumes most of the responsibilities in managing and controlling the applications and the infrastructure, while the cloud consumers have limited administrative control of the applications."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST SP 500-292 Cloud Computing Reference Architecture bytes on 2026-08-11. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST SP 500-292 Cloud Computing Reference Architecture",
+  "source_url": "https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication500-292.pdf",
+  "access_date": "2026-08-11",
+  "source_sha256": "f29497b4e8438ca5875e85e06f2e1521dd949b4c9f4b3b7ee0941f8a2b040e58",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM013-T02-G01",
+      "section_locator": "PDF page 9",
+      "public_claim_text": "It is a generic high-level conceptual model that is an effective tool for discussing the requirements, structures, and operations of cloud computing.",
+      "public_claim_verbatim_quote": "It is a generic high-level conceptual model that is an effective tool for discussing the requirements, structures, and operations of cloud computing."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T02-G02",
+      "section_locator": "PDF page 9",
+      "public_claim_text": "The remainder of this document is organized as follows: Section 2 presents the overview of the NIST cloud computing reference architecture, lists the major actors and discusses the interactions among the actors.",
+      "public_claim_verbatim_quote": "The remainder of this document is organized as follows: Section 2 presents the overview of the NIST cloud computing reference architecture, lists the major actors and discusses the interactions among the actors."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T02-G03",
+      "section_locator": "PDF page 10",
+      "public_claim_text": "The diagram depicts a generic high-level architecture and is intended to facilitate the understanding of the requirements, uses, characteristics and standards of cloud computing.",
+      "public_claim_verbatim_quote": "The diagram depicts a generic high-level architecture and is intended to facilitate the understanding of the requirements, uses, characteristics and standards of cloud computing."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T02-G04",
+      "section_locator": "PDF page 10",
+      "public_claim_text": "The general activities of the actors are discussed in the remainder of this section, while the details of the architectural elements are discussed in Section 3.",
+      "public_claim_verbatim_quote": "The general activities of the actors are discussed in the remainder of this section, while the details of the architectural elements are discussed in Section 3."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T02-G05",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "Actor Definition Cloud Consumer A person or organization that maintains a business relationship with, and uses service from, Cloud Providers.",
+      "public_claim_verbatim_quote": "Actor Definition Cloud Consumer A person or organization that maintains a business relationship with, and uses service from, Cloud Providers."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T02-G06",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "Cloud Auditor A party that can conduct independent assessment of cloud services, information system operations, performance and security of the cloud implementation.",
+      "public_claim_verbatim_quote": "Cloud Auditor A party that can conduct independent assessment of cloud services, information system operations, performance and security of the cloud implementation."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T02-G07",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "Cloud Broker An entity that manages the use, performance and delivery of cloud services, and negotiates relationships between Cloud Providers and Cloud Consumers.",
+      "public_claim_verbatim_quote": "Cloud Broker An entity that manages the use, performance and delivery of cloud services, and negotiates relationships between Cloud Providers and Cloud Consumers."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T02-G08",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "Cloud Carrier An intermediary that provides connectivity and transport of cloud services from Cloud Providers to Cloud Consumers.",
+      "public_claim_verbatim_quote": "Cloud Carrier An intermediary that provides connectivity and transport of cloud services from Cloud Providers to Cloud Consumers."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T02-G09",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "Example Usage Scenario 2: Cloud carriers provide the connectivity and transport of cloud services from cloud providers to cloud consumers.",
+      "public_claim_verbatim_quote": "Example Usage Scenario 2: Cloud carriers provide the connectivity and transport of cloud services from cloud providers to cloud consumers."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T02-G10",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "A cloud provider arranges service level agreements (SLAs) with a cloud carrier and may request dedicated and encrypted connections to ensure the cloud services are consumed at a consistent level according to the contractual obligations with the cloud consumers.",
+      "public_claim_verbatim_quote": "A cloud provider arranges service level agreements (SLAs) with a cloud carrier and may request dedicated and encrypted connections to ensure the cloud services are consumed at a consistent level according to the contractual obligations with the cloud consumers."
+    }
+  ]
+}

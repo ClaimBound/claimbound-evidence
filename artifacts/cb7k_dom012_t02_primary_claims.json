@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched Does Functional Package Management Enable Reproducible Builds at Scale? Yes bytes on 2026-08-11. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "Does Functional Package Management Enable Reproducible Builds at Scale? Yes",
+  "source_url": "https://upsilon.cc/~zack/research/publications/msr-2025-nix-reproducibility.pdf",
+  "access_date": "2026-08-11",
+  "source_sha256": "1cec8d9117720e3fa61a2c448d689c433dff80af39ddd9a950ea396ff5f07ef1",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber_columns",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM012-T02-G01",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "Our work is similar, but instead of relying on historical R-B tracking, we actually rebuildpackages andcomparethembitwise tohistoricalbuild results.",
+      "public_claim_verbatim_quote": "Our work is similar, but instead of relying on historical R-B tracking, we actually rebuildpackages andcomparethembitwise tohistoricalbuild results."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T02-G02",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "When we report on packages being reproducible, it means they have stood the test of time.",
+      "public_claim_verbatim_quote": "When we report on packages being reproducible, it means they have stood the test of time."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T02-G03",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "Combining the historical snapshot approach of our work with their approach of varying the configuration options could be an interesting future work.",
+      "public_claim_verbatim_quote": "Combining the historical snapshot approach of our work with their approach of varying the configuration options could be an interesting future work."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T02-G04",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "More specifically, nixpkgs is the basis of the NixOS Linux distribution.",
+      "public_claim_verbatim_quote": "More specifically, nixpkgs is the basis of the NixOS Linux distribution."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T02-G05",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "Nix packages are viewed as pure functions from their inputs (source code, dependencies, build scripts) to their outputs (binaries, documentation, etc.).",
+      "public_claim_verbatim_quote": "Nix packages are viewed as pure functions from their inputs (source code, dependencies, build scripts) to their outputs (binaries, documentation, etc.)."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T02-G06",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "Any change to the inputs should produce a different package version.",
+      "public_claim_verbatim_quote": "Any change to the inputs should produce a different package version."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T02-G07",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "Nix evaluation-build pipeline Building binary outputs from a Nix package recipe is a two-step process.",
+      "public_claim_verbatim_quote": "Nix evaluation-build pipeline Building binary outputs from a Nix package recipe is a two-step process."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T02-G08",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "First, Nix evaluates the expression and transforms it into a derivation, an intermediary representation in the Nix store containing all the necessary information to run the build process.",
+      "public_claim_verbatim_quote": "First, Nix evaluates the expression and transforms it into a derivation, an intermediary representation in the Nix store containing all the necessary information to run the build process."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T02-G09",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "In particular, the derivation contains ahead of time the (input-addressed) output path, that is the exact location in the Nix store where the build artifacts will be stored if that derivation were to be built.",
+      "public_claim_verbatim_quote": "In particular, the derivation contains ahead of time the (input-addressed) output path, that is the exact location in the Nix store where the build artifacts will be stored if that derivation were to be built."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T02-G10",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "In the same fashion as other Linux distributions, Nix packages may produce multiple outputs (a main output with binaries, one with documentation, etc.).",
+      "public_claim_verbatim_quote": "In the same fashion as other Linux distributions, Nix packages may produce multiple outputs (a main output with binaries, one with documentation, etc.)."
+    }
+  ]
+}

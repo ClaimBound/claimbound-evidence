@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched FDA Cybersecurity in Medical Devices Guidance (February 2026) bytes on 2026-08-11. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "FDA Cybersecurity in Medical Devices Guidance (February 2026)",
+  "source_url": "https://www.fda.gov/media/119933/download?attachment=",
+  "access_date": "2026-08-11",
+  "source_sha256": "d046fa836048933e1a8795bcf2f8224bcfa08789c2f3ef6f46ae53c2eb096c54",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM020-T07-G01",
+      "section_locator": "PDF page 42",
+      "public_claim_text": "Security Control Categories and Associated Recommendations The following sections provide detailed descriptions of each of the security control categories introduced in Section V.B.1, as well as specific recommendations for security controls and their implementation, to avoid common pitfalls.",
+      "public_claim_verbatim_quote": "Security Control Categories and Associated Recommendations The following sections provide detailed descriptions of each of the security control categories introduced in Section V.B.1, as well as specific recommendations for security controls and their implementation, to avoid common pitfalls."
+    },
+    {
+      "protocol_id": "CB7K-DOM020-T07-G02",
+      "section_locator": "PDF page 42",
+      "public_claim_text": "Authentication of information75 exists where the device and the system in which it operates are able to prove that information originated at a known and trusted source, and that the information has not been altered in transit between the original source and the point at which authenticity is verified.",
+      "public_claim_verbatim_quote": "Authentication of information75 exists where the device and the system in which it operates are able to prove that information originated at a known and trusted source, and that the information has not been altered in transit between the original source and the point at which authenticity is verified."
+    },
+    {
+      "protocol_id": "CB7K-DOM020-T07-G03",
+      "section_locator": "PDF page 44",
+      "public_claim_text": "Within an adequately designed authorization scheme, the principle of least privileges77 should be applied to users, system functions, and others, to only allow those entities the levels of system access necessary to perform a specific function.",
+      "public_claim_verbatim_quote": "Within an adequately designed authorization scheme, the principle of least privileges77 should be applied to users, system functions, and others, to only allow those entities the levels of system access necessary to perform a specific function."
+    },
+    {
+      "protocol_id": "CB7K-DOM020-T07-G04",
+      "section_locator": "PDF page 44",
+      "public_claim_text": "While authentication schemes based on cryptographically proven designs are generally considered more robust and are therefore preferred, meaningful authorization checks can be performed based on other compelling evidence (e.g., benefit/risk assessment in accordance with AAMI TIR57 or ANSI/AAMI SW96 and associated supporting justification and as evidenced through security testing).",
+      "public_claim_verbatim_quote": "While authentication schemes based on cryptographically proven designs are generally considered more robust and are therefore preferred, meaningful authorization checks can be performed based on other compelling evidence (e.g., benefit/risk assessment in accordance with AAMI TIR57 or ANSI/AAMI SW96 and associated supporting justification and as evidenced through security testing)."
+    },
+    {
+      "protocol_id": "CB7K-DOM020-T07-G05",
+      "section_locator": "PDF page 47",
+      "public_claim_text": "Confidentiality Manufacturers should ensure support for the confidentiality82 of any/all data whose disclosure could lead to patient harm (e.g., through the unauthorized use of otherwise valid credentials, lack of encryption).",
+      "public_claim_verbatim_quote": "Confidentiality Manufacturers should ensure support for the confidentiality82 of any/all data whose disclosure could lead to patient harm (e.g., through the unauthorized use of otherwise valid credentials, lack of encryption)."
+    },
+    {
+      "protocol_id": "CB7K-DOM020-T07-G06",
+      "section_locator": "PDF page 51",
+      "public_claim_text": "Submission Documentation for Security Architecture Flows In premarket submissions, FDA recommends that manufacturers provide detailed information for the views identified in Section V.B.2.",
+      "public_claim_verbatim_quote": "Submission Documentation for Security Architecture Flows In premarket submissions, FDA recommends that manufacturers provide detailed information for the views identified in Section V.B.2."
+    },
+    {
+      "protocol_id": "CB7K-DOM020-T07-G07",
+      "section_locator": "PDF page 51",
+      "public_claim_text": "The diagrams may also include items from the information details identified below for the architecture views identified in Section V.B.2 if the information is better represented or conveyed through a diagram than explanatory text alone.",
+      "public_claim_verbatim_quote": "The diagrams may also include items from the information details identified below for the architecture views identified in Section V.B.2 if the information is better represented or conveyed through a diagram than explanatory text alone."
+    },
+    {
+      "protocol_id": "CB7K-DOM020-T07-G08",
+      "section_locator": "PDF page 55",
+      "public_claim_text": "As mentioned previously, the submission documentation recommendations in this guidance are intended to help manufacturers meet their obligations for cyber devices under section 524B of the FD&C Act.",
+      "public_claim_verbatim_quote": "As mentioned previously, the submission documentation recommendations in this guidance are intended to help manufacturers meet their obligations for cyber devices under section 524B of the FD&C Act."
+    },
+    {
+      "protocol_id": "CB7K-DOM020-T07-G09",
+      "section_locator": "PDF page 60",
+      "public_claim_text": "Exploitability – the feasibility or ease and technical means by which the vulnerability can be exploited by a threat.103 Firmware – software program or set of instructions programmed on the flash read-only memory (ROM) of a hardware device.",
+      "public_claim_verbatim_quote": "Exploitability – the feasibility or ease and technical means by which the vulnerability can be exploited by a threat.103 Firmware – software program or set of instructions programmed on the flash read-only memory (ROM) of a hardware device."
+    },
+    {
+      "protocol_id": "CB7K-DOM020-T07-G10",
+      "section_locator": "PDF page 62",
+      "public_claim_text": "Software Bill of Materials (SBOM) – a formal inventory of software components and dependencies, information about those components, and their hierarchical relationships.117 The software components in an SBOM include, but are not limited to, commercial, open source, offthe-shelf, and custom software components.",
+      "public_claim_verbatim_quote": "Software Bill of Materials (SBOM) – a formal inventory of software components and dependencies, information about those components, and their hierarchical relationships.117 The software components in an SBOM include, but are not limited to, commercial, open source, offthe-shelf, and custom software components."
+    }
+  ]
+}
