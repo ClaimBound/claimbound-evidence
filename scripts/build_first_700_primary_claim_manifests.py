@@ -44,6 +44,38 @@ GRAMMAR = re.compile(
     r"evaluates?|measures?|found|shows?|reports?|describes?|applies?)\b",
     re.IGNORECASE,
 )
+EXTRACT_ARTEFACT = re.compile(
+    r"(?:^|\s)(?:è|©)(?:\s|$)|"
+    r"^(?:Dotted and dashed lines|Section \d+(?:\.\d+)? was prepared by|"
+    r"Acknowledg(?:e)?ments|References)\b|"
+    r"\b(?:prepared by|prepared with inputs from)\b|"
+    r"\b\w+\s+-\s+\w+\b|"
+    r"\b(?:nearly|over|under|above|from|to)\s+(?:and|the|percentage|million|billion)\b|"
+    r"\b(?:percent|percentage point)\s+(?:above|below|in|of)\b",
+    re.IGNORECASE,
+)
+PROSE_INTEGRITY_ARTEFACT = re.compile(
+    r"\b[A-Z]\s+able\b|"
+    r"\.\s+[a-z]|"
+    r"\b(?:Key messages|Examples include|Data and methodology used in this chapter|"
+    r"Context|Selection)\s+[A-Z]|"
+    r"\b(?:See|All)\s+r\s*eferences\b|"
+    r"\b(?:Table|Figure)\s*\d|"
+    r"\b[A-Za-z]+\s+\d+\s*\.\s*n\.r\.\s*=",
+    re.IGNORECASE,
+)
+# A PDF text layer can insert spaces inside a word or a number.  Those strings can
+# still be found by a mechanical re-extraction, but are not faithful public claims
+# a reader could quote.  Reject them rather than treating text-search success as a
+# semantic pass.
+OCR_OR_LAYOUT_ARTEFACT = re.compile(
+    r"\b(?:DAL|QAL|YLD|YLL)\s+Ys?\b|"
+    r"\b\d\s+\d{1,2}(?:[.,]\d+)?\b|"
+    r"\b\d{1,2}\s+\d{3}\b|"
+    r"\b(?:Fig|Figs|Table|Tables)\.$|"
+    r"\b(?:and|or|of|to|in|for|with|from)\s*$",
+    re.IGNORECASE,
+)
 
 
 def automatic_column_split(page) -> float:
@@ -139,6 +171,9 @@ def candidates(
                 if (
                     quote[-1:] != "."
                     or REJECT.search(quote)
+                    or EXTRACT_ARTEFACT.search(quote)
+                    or PROSE_INTEGRITY_ARTEFACT.search(quote)
+                    or OCR_OR_LAYOUT_ARTEFACT.search(quote)
                     or (reject_pattern and re.search(reject_pattern, quote, re.IGNORECASE))
                     or not GRAMMAR.search(quote)
                 ):
@@ -235,6 +270,13 @@ def write_manifests(source: dict, selected: list[dict], start: int, access_date:
             "source_sha256": source["source_sha256"],
             "raw_payload_committed": False,
             "text_extractor": source["text_extractor"],
+            # A second implementation must recover the same quote before a new
+            # batch is eligible for registration.  This prevents a pass that is
+            # merely an artefact of the extractor that selected the sentence.
+            "independent_text_extractor": source.get(
+                "independent_text_extractor",
+                "pdfplumber" if source["text_extractor"] == "pypdf" else "pypdf",
+            ),
             **(
                 {"column_split_ratio": source["column_split_ratio"]}
                 if "column_split_ratio" in source
@@ -245,9 +287,10 @@ def write_manifests(source: dict, selected: list[dict], start: int, access_date:
                 "filters, signal scoring, duplicate removal, and per-page concentration limits."
             ),
             "verification_rule": (
-                "Extract PDF text, compare quote and extracted text after removing layout "
-                "whitespace and hyphens, require every quote once or more, and require the "
-                "complete fetched PDF SHA-256 to match."
+                "Extract PDF text with the selecting extractor and an independent extractor, "
+                "compare each quote after removing layout whitespace and hyphens, require every "
+                "quote once or more in both extractions, and require the complete fetched PDF "
+                "SHA-256 to match."
             ),
             "result_status": "PASSED_UNDER_PROTOCOL",
             "records": records,
