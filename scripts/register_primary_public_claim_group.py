@@ -83,7 +83,10 @@ def main() -> int:
             "known_limitations": [
                 "This retrospective audit was not preregistered before source inspection.",
                 "The result verifies publication and byte identity, not independent ground truth.",
-                "The source is OpenAI's own report about its model and is not independent evidence.",
+                (
+                    f"The source is the named publisher's own document ({manifest['source_name']}); "
+                    "the card does not provide independent corroboration of its statements."
+                ),
                 "A future PDF edit produces source drift until a separately documented rerun.",
             ],
             "last_verified_date": manifest["access_date"],

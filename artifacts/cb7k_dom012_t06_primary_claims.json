@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched Does Functional Package Management Enable Reproducible Builds at Scale? Yes bytes on 2026-08-11. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "Does Functional Package Management Enable Reproducible Builds at Scale? Yes",
+  "source_url": "https://upsilon.cc/~zack/research/publications/msr-2025-nix-reproducibility.pdf",
+  "access_date": "2026-08-11",
+  "source_sha256": "1cec8d9117720e3fa61a2c448d689c433dff80af39ddd9a950ea396ff5f07ef1",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber_columns",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM012-T06-G01",
+      "section_locator": "PDF page 10",
+      "public_claim_text": "Altogether, a total of 19.7% of the packages for which we have generated a diffoscope have an unreproducibility that can be explained by at least one of our heuristics.",
+      "public_claim_verbatim_quote": "Altogether, a total of 19.7% of the packages for which we have generated a diffoscope have an unreproducibility that can be explained by at least one of our heuristics."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T06-G02",
+      "section_locator": "PDF page 10",
+      "public_claim_text": "We evaluate the precision of each heuristic by manually verifying 500 matched lines for every heuristic and counting false positives.",
+      "public_claim_verbatim_quote": "We evaluate the precision of each heuristic by manually verifying 500 matched lines for every heuristic and counting false positives."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T06-G03",
+      "section_locator": "PDF page 10",
+      "public_claim_text": "For the uname, build ID, and environment variables heuristics, we report a precision of 100%.",
+      "public_claim_verbatim_quote": "For the uname, build ID, and environment variables heuristics, we report a precision of 100%."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T06-G04",
+      "section_locator": "PDF page 10",
+      "public_claim_text": "In fact, in 76 cases we found out that the reproducibility fix was just a routine package update, and it is very likely that the package becoming reproducible had more to do with changes in the upstream software than with a conscious action from the package maintainer.",
+      "public_claim_verbatim_quote": "In fact, in 76 cases we found out that the reproducibility fix was just a routine package update, and it is very likely that the package becoming reproducible had more to do with changes in the upstream software than with a conscious action from the package maintainer."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T06-G05",
+      "section_locator": "PDF page 10",
+      "public_claim_text": "Other fixes included internal nixpkgs changes that had reproducibility impact as a side effect of the main reason behind the change.",
+      "public_claim_verbatim_quote": "Other fixes included internal nixpkgs changes that had reproducibility impact as a side effect of the main reason behind the change."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T06-G06",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "False myth: Nix implies bitwise reproducibility: Contradictory to the previous myth, there is also a belief that Nix (or functional package management more generally) implies bitwise reproducibility.",
+      "public_claim_verbatim_quote": "False myth: Nix implies bitwise reproducibility: Contradictory to the previous myth, there is also a belief that Nix (or functional package management more generally) implies bitwise reproducibility."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T06-G07",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "Our results disprove this belief: about 9.4% of nixpkgs packages are not bitwise reproducible.",
+      "public_claim_verbatim_quote": "Our results disprove this belief: about 9.4% of nixpkgs packages are not bitwise reproducible."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T06-G08",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "This is not surprising, because R-B violations happen for multiple reasons, only some of which are mitigated by FPM per se.",
+      "public_claim_verbatim_quote": "This is not surprising, because R-B violations happen for multiple reasons, only some of which are mitigated by FPM per se."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T06-G09",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "Recommendation: use FPM for bitwise reproducibility andrebuildability: Still,Nixappearstoperformreallywellat bitwise reproducibility “out of the box”, and even more so at rebuildability (above 99%).",
+      "public_claim_verbatim_quote": "Recommendation: use FPM for bitwise reproducibility andrebuildability: Still,Nixappearstoperformreallywellat bitwise reproducibility “out of the box”, and even more so at rebuildability (above 99%)."
+    },
+    {
+      "protocol_id": "CB7K-DOM012-T06-G10",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "Based on this, we recommend to use Nix, or FPM more generally, for all use cases that require either mere rebuildability or full bitwise reproducibility.",
+      "public_claim_verbatim_quote": "Based on this, we recommend to use Nix, or FPM more generally, for all use cases that require either mere rebuildability or full bitwise reproducibility."
+    }
+  ]
+}

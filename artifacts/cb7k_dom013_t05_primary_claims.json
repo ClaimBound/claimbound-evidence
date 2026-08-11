@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST SP 500-292 Cloud Computing Reference Architecture bytes on 2026-08-11. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST SP 500-292 Cloud Computing Reference Architecture",
+  "source_url": "https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication500-292.pdf",
+  "access_date": "2026-08-11",
+  "source_sha256": "f29497b4e8438ca5875e85e06f2e1521dd949b4c9f4b3b7ee0941f8a2b040e58",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM013-T05-G01",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "Similar to private clouds, a community cloud may be managed by the organizations or by a third party, and may be implemented on customer premise (i.e. on-site community cloud) or outsourced to a hosting company (i.e. outsourced community cloud).",
+      "public_claim_verbatim_quote": "Similar to private clouds, a community cloud may be managed by the organizations or by a third party, and may be implemented on customer premise (i.e. on-site community cloud) or outsourced to a hosting company (i.e. outsourced community cloud)."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T05-G02",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "A cloud consumer can access the local cloud resources, and also the resources of other participating organizations through the connections between the associated organizations.",
+      "public_claim_verbatim_quote": "A cloud consumer can access the local cloud resources, and also the resources of other participating organizations through the connections between the associated organizations."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T05-G03",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "Service Orchestration refers to the composition of system components to support the Cloud Providers activities in arrangement, coordination and management of computing resources in order to provide cloud services to Cloud Consumers.",
+      "public_claim_verbatim_quote": "Service Orchestration refers to the composition of system components to support the Cloud Providers activities in arrangement, coordination and management of computing resources in order to provide cloud services to Cloud Consumers."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T05-G04",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "It is possible, though not necessary, that SaaS applications can be built on top of PaaS components and PaaS components can be built on top of IaaS components.",
+      "public_claim_verbatim_quote": "It is possible, though not necessary, that SaaS applications can be built on top of PaaS components and PaaS components can be built on top of IaaS components."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T05-G05",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "The optional dependency relationships among SaaS, PaaS, and IaaS components are represented graphically as components stacking on each other; while the angling of the components represents that each of the service component can stand by itself.",
+      "public_claim_verbatim_quote": "The optional dependency relationships among SaaS, PaaS, and IaaS components are represented graphically as components stacking on each other; while the angling of the components represents that each of the service component can stand by itself."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T05-G06",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "For example, a SaaS application can be implemented and hosted on virtual machines from an IaaS cloud or it can be implemented directly on top of cloud resources without using IaaS virtual machines.",
+      "public_claim_verbatim_quote": "For example, a SaaS application can be implemented and hosted on virtual machines from an IaaS cloud or it can be implemented directly on top of cloud resources without using IaaS virtual machines."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T05-G07",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "This layer contains the system components that Cloud Providers use to provide and manage access to the physical computing resources through software abstraction.",
+      "public_claim_verbatim_quote": "This layer contains the system components that Cloud Providers use to provide and manage access to the physical computing resources through software abstraction."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T05-G08",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "The resource abstraction and control layer exposes virtual cloud resources on top of the physical resource layer and supports the service layer where cloud services interfaces are exposed to Cloud Consumers, while Cloud Consumers do not have direct access to the physical resources.",
+      "public_claim_verbatim_quote": "The resource abstraction and control layer exposes virtual cloud resources on top of the physical resource layer and supports the service layer where cloud services interfaces are exposed to Cloud Consumers, while Cloud Consumers do not have direct access to the physical resources."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T05-G09",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "Cloud Service Management includes all of the service-related functions that are necessary for the management and operation of those services required by or proposed to cloud consumers.",
+      "public_claim_verbatim_quote": "Cloud Service Management includes all of the service-related functions that are necessary for the management and operation of those services required by or proposed to cloud consumers."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T05-G10",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Pricing and Rating: Evaluate cloud services and determine prices, handle promotions and pricing rules based on a user's profile, etc.",
+      "public_claim_verbatim_quote": "Pricing and Rating: Evaluate cloud services and determine prices, handle promotions and pricing rules based on a user's profile, etc."
+    }
+  ]
+}

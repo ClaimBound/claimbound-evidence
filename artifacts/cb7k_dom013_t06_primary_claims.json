@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST SP 500-292 Cloud Computing Reference Architecture bytes on 2026-08-11. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST SP 500-292 Cloud Computing Reference Architecture",
+  "source_url": "https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication500-292.pdf",
+  "access_date": "2026-08-11",
+  "source_sha256": "f29497b4e8438ca5875e85e06f2e1521dd949b4c9f4b3b7ee0941f8a2b040e58",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM013-T06-G01",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Monitoring and Reporting: Discovering and monitoring virtual resources, monitoring cloud operations and events and generating performance reports.",
+      "public_claim_verbatim_quote": "Monitoring and Reporting: Discovering and monitoring virtual resources, monitoring cloud operations and events and generating performance reports."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T06-G02",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Cloud providers should provide mechanisms to support data portability, service interoperability, and system portability [8].",
+      "public_claim_verbatim_quote": "Cloud providers should provide mechanisms to support data portability, service interoperability, and system portability [8]."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T06-G03",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "It should be noted that various cloud service models may have different requirements in related with portability and interoperability [35].",
+      "public_claim_verbatim_quote": "It should be noted that various cloud service models may have different requirements in related with portability and interoperability [35]."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T06-G04",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "While these security requirements are not new, we discuss cloud specific perspectives to help discuss, analyze and implement security in a cloud system.",
+      "public_claim_verbatim_quote": "While these security requirements are not new, we discuss cloud specific perspectives to help discuss, analyze and implement security in a cloud system."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T06-G05",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Hence, it is important to consider the impact of cloud service models and their different issues in security design and implementation.",
+      "public_claim_verbatim_quote": "Hence, it is important to consider the impact of cloud service models and their different issues in security design and implementation."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T06-G06",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Another way to analyze the security impact of cloud deployment models is to use the concept of access boundaries as shown in [2].",
+      "public_claim_verbatim_quote": "Another way to analyze the security impact of cloud deployment models is to use the concept of access boundaries as shown in [2]."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T06-G07",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "As discussed in Section 2.7, the Cloud Provider and the Cloud Consumer have differing degrees of control over the computing resources in a cloud system.",
+      "public_claim_verbatim_quote": "As discussed in Section 2.7, the Cloud Provider and the Cloud Consumer have differing degrees of control over the computing resources in a cloud system."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T06-G08",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "Cloud providers should protect the assured, proper, and consistent collection, processing, communication, use and disposition of personal information (PI) and personally identifiable information (PII) in the cloud [14].",
+      "public_claim_verbatim_quote": "Cloud providers should protect the assured, proper, and consistent collection, processing, communication, use and disposition of personal information (PI) and personally identifiable information (PII) in the cloud [14]."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T06-G09",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "According to the Federal CIO Council [5], one of the Federal government‟s key business imperatives is to ensure the privacy of the collected personally identifiable information.",
+      "public_claim_verbatim_quote": "According to the Federal CIO Council [5], one of the Federal government‟s key business imperatives is to ensure the privacy of the collected personally identifiable information."
+    },
+    {
+      "protocol_id": "CB7K-DOM013-T06-G10",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "PII is the information that can be used to distinguish or trace an individual‟s identity, such as their name, social security number, biometric records, etc. alone, or when combined with other personal or identifying information that is linked or linkable to a specific individual, such as date and place of birth, mother‟s maiden name, etc [6].",
+      "public_claim_verbatim_quote": "PII is the information that can be used to distinguish or trace an individual‟s identity, such as their name, social security number, biometric records, etc. alone, or when combined with other personal or identifying information that is linked or linkable to a specific individual, such as date and place of birth, mother‟s maiden name, etc [6]."
+    }
+  ]
+}

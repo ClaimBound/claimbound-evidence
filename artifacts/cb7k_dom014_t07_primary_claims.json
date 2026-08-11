@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST SP 1800-33B 5G Cybersecurity Preliminary Draft bytes on 2026-08-11. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST SP 1800-33B 5G Cybersecurity Preliminary Draft",
+  "source_url": "https://www.nccoe.nist.gov/sites/default/files/2022-04/nist-5G-sp1800-33b-preliminary-draft.pdf",
+  "access_date": "2026-08-11",
+  "source_sha256": "890ce655b87f080c7e9243cc53b054cf65a4e379fb054ed68270e380e9762268",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM014-T07-G01",
+      "section_locator": "PDF page 56",
+      "public_claim_text": "The Cell Site Router, 7705 SAR-8, is a flexible service traffic aggregator for transport and connects all cell site traffic to the Core Aggregation Router.",
+      "public_claim_verbatim_quote": "The Cell Site Router, 7705 SAR-8, is a flexible service traffic aggregator for transport and connects all cell site traffic to the Core Aggregation Router."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T07-G02",
+      "section_locator": "PDF page 56",
+      "public_claim_text": "Among the security features the 7705 supports are IPSec, public key infrastructure (PKI), and centralized key management.",
+      "public_claim_verbatim_quote": "Among the security features the 7705 supports are IPSec, public key infrastructure (PKI), and centralized key management."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T07-G03",
+      "section_locator": "PDF page 63",
+      "public_claim_text": "DNS Security - Provides DNS-attack coverage and disrupts the 85% of attacks that use DNS for command and control and data theft, without requiring any changes to your infrastructure.",
+      "public_claim_verbatim_quote": "DNS Security - Provides DNS-attack coverage and disrupts the 85% of attacks that use DNS for command and control and data theft, without requiring any changes to your infrastructure."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T07-G04",
+      "section_locator": "PDF page 65",
+      "public_claim_text": "As more enterprises adopt 5G, zero trust architecture for 5G will be an important control for securing access to data and applications.",
+      "public_claim_verbatim_quote": "As more enterprises adopt 5G, zero trust architecture for 5G will be an important control for securing access to data and applications."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T07-G05",
+      "section_locator": "PDF page 65",
+      "public_claim_text": "The firewall is deployed inline with the N3 and N4 interfaces to inspect control and user plane traffic, and it correlates the mobile network identifier information with the IP traffic inside the GTP-U tunnels in a 5G network.",
+      "public_claim_verbatim_quote": "The firewall is deployed inline with the N3 and N4 interfaces to inspect control and user plane traffic, and it correlates the mobile network identifier information with the IP traffic inside the GTP-U tunnels in a 5G network."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T07-G06",
+      "section_locator": "PDF page 66",
+      "public_claim_text": "Using containerized traffic generator agents, LoadCore has the ability to emulate or place under test any of the 5G nodes, their associated interfaces or the entire 5G core network.",
+      "public_claim_verbatim_quote": "Using containerized traffic generator agents, LoadCore has the ability to emulate or place under test any of the 5G nodes, their associated interfaces or the entire 5G core network."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T07-G07",
+      "section_locator": "PDF page 67",
+      "public_claim_text": "On the terminating side, LoadCore is emulating the data network (IP services) communicating to the 5G core network over the N6 interface.",
+      "public_claim_verbatim_quote": "On the terminating side, LoadCore is emulating the data network (IP services) communicating to the 5G core network over the N6 interface."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T07-G08",
+      "section_locator": "PDF page 71",
+      "public_claim_text": "Security Capability Subreference Description Infrastructure Security Hardware Roots of Trust Packet Core, ISC-1 Network Function Policy ICS-1.6 Technically enforce policies that define the servers in the Enforcement compute environment where NFs can run based on trust values and asset tags.",
+      "public_claim_verbatim_quote": "Security Capability Subreference Description Infrastructure Security Hardware Roots of Trust Packet Core, ISC-1 Network Function Policy ICS-1.6 Technically enforce policies that define the servers in the Enforcement compute environment where NFs can run based on trust values and asset tags."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T07-G09",
+      "section_locator": "PDF page 72",
+      "public_claim_text": "Security Capability Subreference Description API Security, 5GSC-5 Common API Frame- 5GSC-5.2 Use secure interfaces, such as TLS-PSK, TLS-PKI and TLSwork (CAPIF) OAuth, provided by a common API interface between internal functions and external functions.",
+      "public_claim_verbatim_quote": "Security Capability Subreference Description API Security, 5GSC-5 Common API Frame- 5GSC-5.2 Use secure interfaces, such as TLS-PSK, TLS-PKI and TLSwork (CAPIF) OAuth, provided by a common API interface between internal functions and external functions."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T07-G10",
+      "section_locator": "PDF page 72",
+      "public_claim_text": "Network Slicing Security, 5GSC-6 Network Slice Resource 5GSC-6.1 Enable the creation of multiple logical networks over the Isolation same physical infrastructure.",
+      "public_claim_verbatim_quote": "Network Slicing Security, 5GSC-6 Network Slice Resource 5GSC-6.1 Enable the creation of multiple logical networks over the Isolation same physical infrastructure."
+    }
+  ]
+}

@@ -13,10 +13,44 @@ import urllib.request
 import pdfplumber
 from pypdf import PdfReader
 
-def normalized_text(payload: bytes, extractor: str = "pdfplumber") -> str:
+
+def automatic_column_split(page) -> float:
+    words = page.extract_words()
+    candidates = []
+    for x in range(int(page.width * 0.35), int(page.width * 0.65)):
+        crossings = sum(word["x0"] < x < word["x1"] for word in words)
+        candidates.append((crossings, x))
+    minimum = min(value for value, _ in candidates)
+    best = [x for value, x in candidates if value == minimum]
+    runs = []
+    for x in best:
+        if not runs or x != runs[-1][-1] + 1:
+            runs.append([x])
+        else:
+            runs[-1].append(x)
+    run = min(runs, key=lambda values: abs(sum(values) / len(values) - page.width / 2))
+    return sum(run) / len(run)
+
+def normalized_text(
+    payload: bytes,
+    extractor: str = "pdfplumber",
+    column_split_ratio: float | None = None,
+) -> str:
     if extractor == "pdfplumber":
         with pdfplumber.open(BytesIO(payload)) as reader:
             text = "\n".join(page.extract_text() or "" for page in reader.pages)
+    elif extractor == "pdfplumber_columns":
+        with pdfplumber.open(BytesIO(payload)) as reader:
+            parts = []
+            for page in reader.pages:
+                middle = (
+                    page.width * column_split_ratio
+                    if column_split_ratio is not None
+                    else automatic_column_split(page)
+                )
+                parts.append(page.crop((0, 0, middle, page.height)).extract_text() or "")
+                parts.append(page.crop((middle, 0, page.width, page.height)).extract_text() or "")
+            text = "\n".join(parts)
     elif extractor == "pypdf":
         reader = PdfReader(BytesIO(payload))
         text = "\n".join(page.extract_text() or "" for page in reader.pages)
@@ -43,7 +77,11 @@ def verify(manifest_path: Path, source_file: Path | None) -> dict:
         with urllib.request.urlopen(request, timeout=60) as response:
             payload = response.read()
     actual_sha = hashlib.sha256(payload).hexdigest()
-    text = normalized_text(payload, manifest.get("text_extractor", "pdfplumber"))
+    text = normalized_text(
+        payload,
+        manifest.get("text_extractor", "pdfplumber"),
+        manifest.get("column_split_ratio"),
+    )
     rows = []
     for record in manifest["records"]:
         normalized_quote = re.sub(

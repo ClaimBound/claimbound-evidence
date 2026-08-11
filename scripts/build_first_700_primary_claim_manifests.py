@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build deterministic, reviewable primary-source manifests for the first 700 slots.
+"""Build deterministic, reviewable primary-source manifests from an inventory.
 
 The script never treats source prose as independently true. It selects substantive
 sentences, preserves them verbatim modulo PDF layout whitespace, and binds each one
@@ -28,7 +28,7 @@ REJECT = re.compile(
     r"references\s*$|acknowledg(?:e)?ments\s*$|this page intentionally left blank|"
     r"performing organization name|how to cite|comments on .+ may be sent|"
     r"official journal of the european union|does not contain export-controlled|"
-    r"claimboundsectionbreak|"
+    r"claimboundsectionbreak|contains nonbinding recommendations|[]|\(fig\.$|"
     r"special publication .+ guidelines .+ [A-Z][a-z]+ [A-Z][a-z]+)",
     re.IGNORECASE,
 )
@@ -46,11 +46,31 @@ GRAMMAR = re.compile(
 )
 
 
+def automatic_column_split(page) -> float:
+    """Find the least text-dense vertical gutter near the page centre."""
+    words = page.extract_words()
+    candidates = []
+    for x in range(int(page.width * 0.35), int(page.width * 0.65)):
+        crossings = sum(word["x0"] < x < word["x1"] for word in words)
+        candidates.append((crossings, x))
+    minimum = min(value for value, _ in candidates)
+    best = [x for value, x in candidates if value == minimum]
+    runs: list[list[int]] = []
+    for x in best:
+        if not runs or x != runs[-1][-1] + 1:
+            runs.append([x])
+        else:
+            runs[-1].append(x)
+    run = min(runs, key=lambda values: abs(sum(values) / len(values) - page.width / 2))
+    return sum(run) / len(run)
+
+
 def clean(text: str) -> str:
     kept = []
     for raw_line in text.splitlines():
         line = re.sub(r"\s+", " ", raw_line).strip()
-        line = re.sub(r"^\d+\s+(?=[A-Za-z])", "", line)
+        line = re.sub(r"^\d+\s+(?=[A-Za-z•])", "", line)
+        line = re.sub(r"^[•]\s*", "", line)
         if not line or re.fullmatch(r"[ivxlcdm\d\s.\-]+", line, re.IGNORECASE):
             kept.append("CLAIMBOUNDSECTIONBREAK.")
             continue
@@ -69,10 +89,20 @@ def clean(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def candidates(pdf: Path, content_start_page: int, extractor: str) -> list[dict]:
+def candidates(
+    pdf: Path,
+    content_start_page: int,
+    extractor: str,
+    min_quote_characters: int = 90,
+    min_quote_words: int = 14,
+    excluded_keys: set[str] | None = None,
+    column_split_ratio: float | None = None,
+    content_end_page: int | None = None,
+    reject_pattern: str | None = None,
+) -> list[dict]:
     rows: list[dict] = []
-    seen: set[str] = set()
-    if extractor == "pdfplumber":
+    seen: set[str] = set(excluded_keys or ())
+    if extractor in {"pdfplumber", "pdfplumber_columns"}:
         document = pdfplumber.open(pdf)
         pages = document.pages
     elif extractor == "pypdf":
@@ -84,13 +114,34 @@ def candidates(pdf: Path, content_start_page: int, extractor: str) -> list[dict]
         for page_number, page in enumerate(pages, 1):
             if page_number < content_start_page:
                 continue
-            text = clean(page.extract_text() or "")
-            for position, quote in enumerate(SENTENCE.split(text)):
+            if content_end_page is not None and page_number > content_end_page:
+                continue
+            if extractor == "pdfplumber_columns":
+                middle = (
+                    page.width * column_split_ratio
+                    if column_split_ratio is not None
+                    else automatic_column_split(page)
+                )
+                page_texts = [
+                    page.crop((0, 0, middle, page.height)).extract_text() or "",
+                    page.crop((middle, 0, page.width, page.height)).extract_text() or "",
+                ]
+            else:
+                page_texts = [page.extract_text() or ""]
+            page_quotes = []
+            for page_text in page_texts:
+                page_quotes.extend(SENTENCE.split(clean(page_text)))
+            for position, quote in enumerate(page_quotes):
                 quote = quote.strip(" •\t")
                 words = WORD.findall(quote)
-                if not 90 <= len(quote) <= 650 or len(words) < 14:
+                if not min_quote_characters <= len(quote) <= 650 or len(words) < min_quote_words:
                     continue
-                if quote[-1:] != "." or REJECT.search(quote) or not GRAMMAR.search(quote):
+                if (
+                    quote[-1:] != "."
+                    or REJECT.search(quote)
+                    or (reject_pattern and re.search(reject_pattern, quote, re.IGNORECASE))
+                    or not GRAMMAR.search(quote)
+                ):
                     continue
                 if re.match(r"^(?:Table|Figure|Fig\.|Evaluation Capability Description)\b", quote):
                     continue
@@ -151,7 +202,7 @@ def protocol_ids(domain_code: str, count: int, start: int) -> list[str]:
     return result
 
 
-def write_manifests(source: dict, selected: list[dict], start: int) -> None:
+def write_manifests(source: dict, selected: list[dict], start: int, access_date: str) -> None:
     domain = source["domain_code"].lower()
     for chunk_index in range(0, len(selected), 10):
         chunk = selected[chunk_index:chunk_index + 10]
@@ -170,7 +221,7 @@ def write_manifests(source: dict, selected: list[dict], start: int) -> None:
             "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
             "claim_boundary": (
                 f"Each result verifies that one exact public statement appeared in the fetched "
-                f"{source['source_name']} bytes on 2026-08-04. It does not independently "
+                f"{source['source_name']} bytes on {access_date}. It does not independently "
                 "establish the statement's underlying real-world truth."
             ),
             "review_design": (
@@ -180,10 +231,15 @@ def write_manifests(source: dict, selected: list[dict], start: int) -> None:
             "operator": "NeoZorK",
             "source_name": source["source_name"],
             "source_url": source["source_url"],
-            "access_date": "2026-08-04",
+            "access_date": access_date,
             "source_sha256": source["source_sha256"],
             "raw_payload_committed": False,
             "text_extractor": source["text_extractor"],
+            **(
+                {"column_split_ratio": source["column_split_ratio"]}
+                if "column_split_ratio" in source
+                else {}
+            ),
             "selection_method": (
                 "Deterministic sentence extraction with minimum length and prose-quality "
                 "filters, signal scoring, duplicate removal, and per-page concentration limits."
@@ -203,10 +259,25 @@ def write_manifests(source: dict, selected: list[dict], start: int) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-root", type=Path, required=True)
+    parser.add_argument("--inventory", type=Path, default=INVENTORY)
     parser.add_argument("--domain", action="append", help="limit generation to one or more DOM codes")
     args = parser.parse_args()
-    inventory = json.loads(INVENTORY.read_text(encoding="utf-8"))
+    inventory = json.loads(args.inventory.read_text(encoding="utf-8"))
     total = inventory["already_registered_primary_claims"]
+    target_domains = {
+        source["domain_code"]
+        for source in inventory["sources"]
+        if not args.domain or source["domain_code"] in args.domain
+    }
+    excluded_keys: set[str] = set()
+    for path in OUTPUT.glob("cb7k_dom*_primary_claims.json"):
+        match = re.match(r"cb7k_(dom\d{3})_", path.name)
+        if match and match.group(1).upper() in target_domains:
+            continue
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+        for record in manifest.get("records", []):
+            quote = record.get("public_claim_verbatim_quote", "")
+            excluded_keys.add(re.sub(r"[\s-]+", "", quote).casefold())
     audit = []
     for source in inventory["sources"]:
         if args.domain and source["domain_code"] not in args.domain:
@@ -216,10 +287,23 @@ def main() -> int:
         actual_sha = hashlib.sha256(payload).hexdigest()
         if actual_sha != source["source_sha256"]:
             raise SystemExit(f"ERROR: source drift for {source['domain_code']}: {actual_sha}")
-        rows = candidates(pdf, source["content_start_page"], source["text_extractor"])
+        rows = candidates(
+            pdf,
+            source["content_start_page"],
+            source["text_extractor"],
+            source.get("min_quote_characters", 90),
+            source.get("min_quote_words", 14),
+            excluded_keys,
+            source.get("column_split_ratio"),
+            source.get("content_end_page"),
+            source.get("reject_pattern"),
+        )
         chosen = select(rows, source["remaining_target"])
-        start = 21 if source["domain_code"] == "DOM001" else 1
-        write_manifests(source, chosen, start)
+        start = source.get("start_index", 21 if source["domain_code"] == "DOM001" else 1)
+        write_manifests(source, chosen, start, inventory["created_at"])
+        excluded_keys.update(
+            re.sub(r"[\s-]+", "", row["quote"]).casefold() for row in chosen
+        )
         total += len(chosen)
         audit.append({
             "domain_code": source["domain_code"],
@@ -227,8 +311,9 @@ def main() -> int:
             "selected_count": len(chosen),
             "selected_pages": sorted({row["page"] for row in chosen}),
         })
-    if not args.domain and total != 700:
-        raise SystemExit(f"ERROR: expected 700 total primary claims, got {total}")
+    expected_total = inventory.get("expected_total_primary_claims", 700)
+    if not args.domain and total != expected_total:
+        raise SystemExit(f"ERROR: expected {expected_total} total primary claims, got {total}")
     print(json.dumps({"registered_baseline_plus_selected": total, "domains": audit}, indent=2))
     return 0
 

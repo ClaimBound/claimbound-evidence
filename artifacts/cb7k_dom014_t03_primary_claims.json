@@ -1,0 +1,78 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NIST SP 1800-33B 5G Cybersecurity Preliminary Draft bytes on 2026-08-11. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NIST SP 1800-33B 5G Cybersecurity Preliminary Draft",
+  "source_url": "https://www.nccoe.nist.gov/sites/default/files/2022-04/nist-5G-sp1800-33b-preliminary-draft.pdf",
+  "access_date": "2026-08-11",
+  "source_sha256": "890ce655b87f080c7e9243cc53b054cf65a4e379fb054ed68270e380e9762268",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text, compare quote and extracted text after removing layout whitespace and hyphens, require every quote once or more, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM014-T03-G01",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Remote Platform ISC-1.3 Attest each server’s trust measurements and asset tags Attestation against policies, and allow services like workload orchestrators access to these findings so the results can be used as factors in workload placement/migration.",
+      "public_claim_verbatim_quote": "Remote Platform ISC-1.3 Attest each server’s trust measurements and asset tags Attestation against policies, and allow services like workload orchestrators access to these findings so the results can be used as factors in workload placement/migration."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T03-G02",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Infrastructure Recommended Practice, ISC-3 Infrastructure Security ISC-3.1 Provide the visibility across the infrastructure needed to Monitoring continuously monitor communications patterns, see threats within the extended network, and detect and respond to threats using methods such as behavioral modeling and supervised and unsupervised machine learning.",
+      "public_claim_verbatim_quote": "Infrastructure Recommended Practice, ISC-3 Infrastructure Security ISC-3.1 Provide the visibility across the infrastructure needed to Monitoring continuously monitor communications patterns, see threats within the extended network, and detect and respond to threats using methods such as behavioral modeling and supervised and unsupervised machine learning."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T03-G03",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "Security Capability Subreference Description Initial NAS Message 5GSC-1.3 After the initial service request message, security Security sensitive messages are re-sent encrypted in a NonAccess Stratum (NAS) Container so sensitive UE-specific information is not sent in the clear.",
+      "public_claim_verbatim_quote": "Security Capability Subreference Description Initial NAS Message 5GSC-1.3 After the initial service request message, security Security sensitive messages are re-sent encrypted in a NonAccess Stratum (NAS) Container so sensitive UE-specific information is not sent in the clear."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T03-G04",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "No SUPI-Based Paging 5GSC-1.4 Use a temporary identifier (5G-S-TMSI) as the basis of paging timing, not a permanent identifier (SUPI).",
+      "public_claim_verbatim_quote": "No SUPI-Based Paging 5GSC-1.4 Use a temporary identifier (5G-S-TMSI) as the basis of paging timing, not a permanent identifier (SUPI)."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T03-G05",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "Application Security, 5GSC-7 Subscriber Traffic Security 5GSC-7.1 Have complete visibility across the control and user Monitoring planes.",
+      "public_claim_verbatim_quote": "Application Security, 5GSC-7 Subscriber Traffic Security 5GSC-7.1 Have complete visibility across the control and user Monitoring planes."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T03-G06",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "Without network segmentation, a regular 5G user could potentially interact with the management and operational components of the 5G network.",
+      "public_claim_verbatim_quote": "Without network segmentation, a regular 5G user could potentially interact with the management and operational components of the 5G network."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T03-G07",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "One example is to verify a subscriber’s presence in a certain area, and another is to reveal their past movements in that area and enable tracking of future movements [2].",
+      "public_claim_verbatim_quote": "One example is to verify a subscriber’s presence in a certain area, and another is to reveal their past movements in that area and enable tracking of future movements [2]."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T03-G08",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "For instance, it could allow an attacker to infer a victim’s location based on the victim’s permanent identifier, or inject fabricated emergency alerts [4].",
+      "public_claim_verbatim_quote": "For instance, it could allow an attacker to infer a victim’s location based on the victim’s permanent identifier, or inject fabricated emergency alerts [4]."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T03-G09",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "For example, in a known LTE attack referred to as aLTEr [7], a malicious actor can modify the message payload and can redirect DNS requests and then perform a DNS spoofing attack.",
+      "public_claim_verbatim_quote": "For example, in a known LTE attack referred to as aLTEr [7], a malicious actor can modify the message payload and can redirect DNS requests and then perform a DNS spoofing attack."
+    },
+    {
+      "protocol_id": "CB7K-DOM014-T03-G10",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "Per 3GPP specifications the 5G network equipment is required to support an Advanced Encryption Standard (AES) based algorithm as well as a SNOW3G-based algorithm.",
+      "public_claim_verbatim_quote": "Per 3GPP specifications the 5G network equipment is required to support an Advanced Encryption Standard (AES) based algorithm as well as a SNOW3G-based algorithm."
+    }
+  ]
+}
