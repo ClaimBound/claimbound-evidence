@@ -1,0 +1,47 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-08-17",
+  "operator": "NeoZorK",
+  "scope": "DOM022 immunization: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 1540,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 1610,
+  "sources": [
+    {
+      "domain_code": "DOM022",
+      "domain_title": "Immunization",
+      "remaining_target": 50,
+      "source_name": "WHO Immunization Agenda 2030 Mid-Term Review 2025",
+      "source_url": "https://cdn.who.int/media/docs/default-source/immunization/strategy/ia2030/ia2030_mid-term-review_2025_final.pdf?download=true&sfvrsn=c84cfcf0_1",
+      "source_sha256": "4a2e494aaefc67e8395c832642756a406b706cfd2d7a3ac6965c01d95f2adc2c",
+      "pdf_pages": 80,
+      "content_start_page": 1,
+      "content_end_page": 78,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": null
+    },
+    {
+      "domain_code": "DOM022",
+      "domain_title": "Immunization",
+      "remaining_target": 20,
+      "start_index": 51,
+      "source_subdir": "dom022b",
+      "source_name": "WHO and UNICEF Immunization Coverage Estimates 2024 revision: methodology notes",
+      "source_url": "https://cdn.who.int/media/docs/default-source/immunization/immunization-coverage/wuenic_notes.pdf?sfvrsn=88ff590d_6",
+      "source_sha256": "0bad719a01145f9fa3b5fc8b041f885e3287a3fe9b2e78fd7ecd337c83693447",
+      "pdf_pages": 26,
+      "content_start_page": 1,
+      "content_end_page": 26,
+      "text_extractor": "pypdf",
+      "independent_text_extractor": "pdfplumber",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}
