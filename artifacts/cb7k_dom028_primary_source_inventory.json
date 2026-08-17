@@ -1,0 +1,48 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-08-17",
+  "operator": "NeoZorK",
+  "scope": "DOM028 health insurance: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 1890,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 1960,
+  "sources": [
+    {
+      "domain_code": "DOM028",
+      "domain_title": "Health insurance",
+      "remaining_target": 60,
+      "source_subdir": "dom028",
+      "source_name": "Global spending on health: Emerging from the pandemic",
+      "source_url": "https://iris.who.int/server/api/core/bitstreams/6a22149b-17d5-4afb-a89b-14a3e8c12442/content",
+      "source_sha256": "c64ec0210bb8cfe845946f6dc2f21bdee75ced44d54a51d05ac48c8cae0cc2e5",
+      "pdf_pages": 96,
+      "content_start_page": 1,
+      "content_end_page": 96,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": null
+    },
+    {
+      "domain_code": "DOM028",
+      "domain_title": "Health insurance",
+      "remaining_target": 10,
+      "start_index": 61,
+      "source_subdir": "dom028b",
+      "source_name": "Tracking universal health coverage: 2023 global monitoring report",
+      "source_url": "https://iris.who.int/server/api/core/bitstreams/46902c71-0f61-49ef-b474-8c35be363e6e/content",
+      "source_sha256": "28c5d7935c098d6b04022832c04a1df3736ca6d3fbd5f09fd8b4b833e3de2f62",
+      "pdf_pages": 16,
+      "content_start_page": 1,
+      "content_end_page": 16,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": null
+    }
+  ]
+}
