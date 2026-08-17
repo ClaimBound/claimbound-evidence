@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched UN IGME Levels and Trends in Child Mortality: Report 2022 bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "UN IGME Levels and Trends in Child Mortality: Report 2022",
+  "source_url": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2022_un-igme_child_mortality_report.pdf?download=1",
+  "access_date": "2026-08-17",
+  "source_sha256": "e1338a9848b9f0ccb8f529df4687d51d51916e32e71de3868a6708a314746ec0",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM025-T06-G01",
+      "section_locator": "PDF page 2",
+      "public_claim_text": "This report was prepared at the United Nations Children’s Fund (UNICEF) headquarters by David Sharrow, Lucia Hug, Yang Liu, Naomi Lindt and Danzhen You on behalf of the United Nations Inter-agency Group for Child Mortality Estimation (UN IGME).",
+      "public_claim_verbatim_quote": "This report was prepared at the United Nations Children’s Fund (UNICEF) headquarters by David Sharrow, Lucia Hug, Yang Liu, Naomi Lindt and Danzhen You on behalf of the United Nations Inter-agency Group for Child Mortality Estimation (UN IGME)."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T06-G02",
+      "section_locator": "PDF page 2",
+      "public_claim_text": "We would also like to extend special thanks to UNICEF and WHO field office colleagues as well as Sebastian Bania, Ahamadi Dhoydine, John Paul-Joseph and the Platforms and Service Delivery O365 team at UNICEF for supporting the country consultations.",
+      "public_claim_verbatim_quote": "We would also like to extend special thanks to UNICEF and WHO field office colleagues as well as Sebastian Bania, Ahamadi Dhoydine, John Paul-Joseph and the Platforms and Service Delivery O365 team at UNICEF for supporting the country consultations."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T06-G03",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "While global under-five mortality declined by 59 per cent since 1990, several countries have managed to outpace that global decline despite relatively limited economic resources.",
+      "public_claim_verbatim_quote": "While global under-five mortality declined by 59 per cent since 1990, several countries have managed to outpace that global decline despite relatively limited economic resources."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T06-G04",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "While the analysis of CRVS data is a useful exercise in determining the extent of possible excess mortality, these data disproportionately represent high-income countries, which may differ in their mortality experience of the pandemic compared to low- or middle-income countries.",
+      "public_claim_verbatim_quote": "While the analysis of CRVS data is a useful exercise in determining the extent of possible excess mortality, these data disproportionately represent high-income countries, which may differ in their mortality experience of the pandemic compared to low- or middle-income countries."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T06-G05",
+      "section_locator": "PDF page 43",
+      "public_claim_text": "Estimation of under-five mortality rates Estimation and projection of under-five mortality rates was undertaken using the Bayesian B-splines bias-adjusted model, referred to as the B3 model.",
+      "public_claim_verbatim_quote": "Estimation of under-five mortality rates Estimation and projection of under-five mortality rates was undertaken using the Bayesian B-splines bias-adjusted model, referred to as the B3 model."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T06-G06",
+      "section_locator": "PDF page 43",
+      "public_claim_text": "This model was developed, validated and used to produce previous rounds of UN IGME child mortality estimates, including the previously published round in 2021.39, 40 In the B3 model, log(U5MR) is estimated with a flexible splines regression model.",
+      "public_claim_verbatim_quote": "This model was developed, validated and used to produce previous rounds of UN IGME child mortality estimates, including the previously published round in 2021.39, 40 In the B3 model, log(U5MR) is estimated with a flexible splines regression model."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T06-G07",
+      "section_locator": "PDF page 47",
+      "public_claim_text": "Data on infant mortality (<1 year) was available in a subset of countries.",
+      "public_claim_verbatim_quote": "Data on infant mortality (<1 year) was available in a subset of countries."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T06-G08",
+      "section_locator": "PDF page 48",
+      "public_claim_text": "Confidence intervals, 95 per cent, were predicted using bootstrapping with 2,000 iterations.",
+      "public_claim_verbatim_quote": "Confidence intervals, 95 per cent, were predicted using bootstrapping with 2,000 iterations."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T06-G09",
+      "section_locator": "PDF page 78",
+      "public_claim_text": "Aggregates presented for member organizations of the United Nations Inter-agency Group for Child Mortality Estimation may differ and regional classifications with the same name from different member organizations (e.g., “Sub-Saharan Africa”) may include different countries.",
+      "public_claim_verbatim_quote": "Aggregates presented for member organizations of the United Nations Inter-agency Group for Child Mortality Estimation may differ and regional classifications with the same name from different member organizations (e.g., “Sub-Saharan Africa”) may include different countries."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T06-G10",
+      "section_locator": "PDF page 80",
+      "public_claim_text": "Suggested citation: United Nations Inter-agency Group for Child Mortality Estimation (UN IGME), Levels & Trends in Child Mortality: Report 2022, Estimates developed by the United Nations Inter-agency Group for Child Mortality Estimation, United Nations Children’s Fund, New York, 2023.",
+      "public_claim_verbatim_quote": "Suggested citation: United Nations Inter-agency Group for Child Mortality Estimation (UN IGME), Levels & Trends in Child Mortality: Report 2022, Estimates developed by the United Nations Inter-agency Group for Child Mortality Estimation, United Nations Children’s Fund, New York, 2023."
+    }
+  ]
+}
