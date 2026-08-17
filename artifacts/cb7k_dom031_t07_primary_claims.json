@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IMF Global Financial Stability Report, April 2024: The Last Mile bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IMF Global Financial Stability Report, April 2024: The Last Mile",
+  "source_url": "https://www.imf.org/en/publications/gfsr/issues/2024/04/16/global-financial-stability-report-april-2024",
+  "access_date": "2026-08-17",
+  "source_sha256": "93ab9c4f651725794f3aa47a52ae959e8b2bfb6ab59e0bd7361b3c7e562303f3",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM031-T07-G01",
+      "section_locator": "PDF page 97",
+      "public_claim_text": "The financial sector is highly exposed to cyber risks, with nearly one-fifth of all incidents affecting financial firms.",
+      "public_claim_verbatim_quote": "The financial sector is highly exposed to cyber risks, with nearly one-fifth of all incidents affecting financial firms."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T07-G02",
+      "section_locator": "PDF page 98",
+      "public_claim_text": "“Affected count” is the total accumulated number of parties with data breached or stolen, or devices compromised, depending on the type of event.",
+      "public_claim_verbatim_quote": "“Affected count” is the total accumulated number of parties with data breached or stolen, or devices compromised, depending on the type of event."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T07-G03",
+      "section_locator": "PDF page 99",
+      "public_claim_text": "Data for more recent periods may be underestimated because of delayed reporting of cyber events.",
+      "public_claim_verbatim_quote": "Data for more recent periods may be underestimated because of delayed reporting of cyber events."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T07-G04",
+      "section_locator": "PDF page 104",
+      "public_claim_text": "In panel 2, data labels use International Organization for Standardization (ISO) country codes.",
+      "public_claim_verbatim_quote": "In panel 2, data labels use International Organization for Standardization (ISO) country codes."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T07-G05",
+      "section_locator": "PDF page 105",
+      "public_claim_text": "Small firms are firms with total assets below the 25th percentile of the sample distribution.",
+      "public_claim_verbatim_quote": "Small firms are firms with total assets below the 25th percentile of the sample distribution."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T07-G06",
+      "section_locator": "PDF page 105",
+      "public_claim_text": "Malicious events include cyber extortion, malicious data breach, identity fraudulent use/account access, network and website disruption, phishing, spoofing, social engineering, skimming, and physical tampering (see Online Annex 3.1).",
+      "public_claim_verbatim_quote": "Malicious events include cyber extortion, malicious data breach, identity fraudulent use/account access, network and website disruption, phishing, spoofing, social engineering, skimming, and physical tampering (see Online Annex 3.1)."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T07-G07",
+      "section_locator": "PDF page 107",
+      "public_claim_text": "Teleworkability groups (low, medium, high) are based on Dingel and Nieman (2020).",
+      "public_claim_verbatim_quote": "Teleworkability groups (low, medium, high) are based on Dingel and Nieman (2020)."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T07-G08",
+      "section_locator": "PDF page 112",
+      "public_claim_text": "In panel 2, the MSCI Privacy & Data Security Management Score measures how well a company manages the risk and opportunities, with higher scores indicating better management.",
+      "public_claim_verbatim_quote": "In panel 2, the MSCI Privacy & Data Security Management Score measures how well a company manages the risk and opportunities, with higher scores indicating better management."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T07-G09",
+      "section_locator": "PDF page 112",
+      "public_claim_text": "Panels 3 to 5 are based on an IMF survey of 74 EMDEs comprising 43 questions on various aspects of cybersecurity.",
+      "public_claim_verbatim_quote": "Panels 3 to 5 are based on an IMF survey of 74 EMDEs comprising 43 questions on various aspects of cybersecurity."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T07-G10",
+      "section_locator": "PDF page 117",
+      "public_claim_text": "To achieve these objectives, the SWIFT Customer Security Controls Framework v2024 contains security controls, 25 of which are mandatory (SWIFT 2023).",
+      "public_claim_verbatim_quote": "To achieve these objectives, the SWIFT Customer Security Controls Framework v2024 contains security controls, 25 of which are mandatory (SWIFT 2023)."
+    }
+  ]
+}
