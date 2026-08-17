@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched OECD Pensions Outlook 2024 bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "OECD Pensions Outlook 2024",
+  "source_url": "https://www.oecd.org/en/publications/oecd-pensions-outlook-2024_51510909-en.html",
+  "access_date": "2026-08-17",
+  "source_sha256": "f074273160b40949070cc34d589e69315dd38e11cd004856a127abe2a9b2be97",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM036-T01-G01",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "In advanced economies, pension assets have nearly doubled as a share of GDP to an average of 55%, exceeding 100% of GDP in eight countries.",
+      "public_claim_verbatim_quote": "In advanced economies, pension assets have nearly doubled as a share of GDP to an average of 55%, exceeding 100% of GDP in eight countries."
+    },
+    {
+      "protocol_id": "CB7K-DOM036-T01-G02",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "With total assets over USD 56 trillion, pension funds are also the largest investors in global capital markets, including public equity and debt markets as well as emerging private capital markets.",
+      "public_claim_verbatim_quote": "With total assets over USD 56 trillion, pension funds are also the largest investors in global capital markets, including public equity and debt markets as well as emerging private capital markets."
+    },
+    {
+      "protocol_id": "CB7K-DOM036-T01-G03",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "Equity investments account for more than 40% in 13 out of 38 countries, while they are less than 20% in only 7 countries.",
+      "public_claim_verbatim_quote": "Equity investments account for more than 40% in 13 out of 38 countries, while they are less than 20% in only 7 countries."
+    },
+    {
+      "protocol_id": "CB7K-DOM036-T01-G04",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "The OECD Pension Markets in Focus 2024 provides detailed country-specific notes and information on the plans covered by the data.",
+      "public_claim_verbatim_quote": "The OECD Pension Markets in Focus 2024 provides detailed country-specific notes and information on the plans covered by the data."
+    },
+    {
+      "protocol_id": "CB7K-DOM036-T01-G05",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "Since 2015, many countries have increased the value of financial incentives for retirement savings to increase the role that asset-backed pension plans are expected to play in financing retirement income.",
+      "public_claim_verbatim_quote": "Since 2015, many countries have increased the value of financial incentives for retirement savings to increase the role that asset-backed pension plans are expected to play in financing retirement income."
+    },
+    {
+      "protocol_id": "CB7K-DOM036-T01-G06",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "Using historical returns on selected asset classes, the chapter shows that over 80% of cohorts across 19 OECD countries would have accumulated more assets at retirement had they invested at least part of their retirement savings for 40 years in a mix of domestic and foreign equities instead of only investing in domestic fixed income securities (government bonds plus cash and deposits).",
+      "public_claim_verbatim_quote": "Using historical returns on selected asset classes, the chapter shows that over 80% of cohorts across 19 OECD countries would have accumulated more assets at retirement had they invested at least part of their retirement savings for 40 years in a mix of domestic and foreign equities instead of only investing in domestic fixed income securities (government bonds plus cash and deposits)."
+    },
+    {
+      "protocol_id": "CB7K-DOM036-T01-G07",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "In contrast, the first column shows that the fixed-income portfolio would produce a higher replacement rate than the other strategies with a probability of no more than 13%.",
+      "public_claim_verbatim_quote": "In contrast, the first column shows that the fixed-income portfolio would produce a higher replacement rate than the other strategies with a probability of no more than 13%."
+    },
+    {
+      "protocol_id": "CB7K-DOM036-T01-G08",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Cohorts saving for 20 years instead of 40 would accumulate less in all investment strategies, with a much larger difference for portfolios fully invested in diversified equities compared to other investment strategies.",
+      "public_claim_verbatim_quote": "Cohorts saving for 20 years instead of 40 would accumulate less in all investment strategies, with a much larger difference for portfolios fully invested in diversified equities compared to other investment strategies."
+    },
+    {
+      "protocol_id": "CB7K-DOM036-T01-G09",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "By contrast, there is a 60% probability of getting higher replacement rates when staying invested fully in equities during the payout phase and taking regular drawdowns instead of buying a lifelong annuity at retirement.",
+      "public_claim_verbatim_quote": "By contrast, there is a 60% probability of getting higher replacement rates when staying invested fully in equities during the payout phase and taking regular drawdowns instead of buying a lifelong annuity at retirement."
+    },
+    {
+      "protocol_id": "CB7K-DOM036-T01-G10",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "For example, the reduction in equity exposure may start in the last 10 years before retirement when participants are planning to take an annuity.",
+      "public_claim_verbatim_quote": "For example, the reduction in equity exposure may start in the last 10 years before retirement when participants are planning to take an annuity."
+    }
+  ]
+}
