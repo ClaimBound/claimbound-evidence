@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched BIS Working Papers No 1164: Public information and stablecoin runs bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "BIS Working Papers No 1164: Public information and stablecoin runs",
+  "source_url": "https://www.bis.org/publ/work1164.htm",
+  "access_date": "2026-08-17",
+  "source_sha256": "82402543c3dac3cb0332e42c44d61d7692295f9af9753d61effc1b675d7c66eb",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM032-T04-G01",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "This difference may seem surprising, as it implies that issuers with more opaque reserve assetsaremoreresilienttosmallshocks, buttheinertiahasasimpleintuition.",
+      "public_claim_verbatim_quote": "This difference may seem surprising, as it implies that issuers with more opaque reserve assetsaremoreresilienttosmallshocks, buttheinertiahasasimpleintuition."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T04-G02",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "Weshowthatontheonehand, conditionalonmodeluncertaintyabout the reserve portfolio and that a run is not already occurring, lower transparency by the issuer lowers the tendency of SC holders to run on the issuer.",
+      "public_claim_verbatim_quote": "Weshowthatontheonehand, conditionalonmodeluncertaintyabout the reserve portfolio and that a run is not already occurring, lower transparency by the issuer lowers the tendency of SC holders to run on the issuer."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T04-G03",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "But unlike difference-in-differences, which requires multiple treated and control units, synthetic control techniques are designed for settings with just one treated unit such as ours.",
+      "public_claim_verbatim_quote": "But unlike difference-in-differences, which requires multiple treated and control units, synthetic control techniques are designed for settings with just one treated unit such as ours."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T04-G04",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "We therefore rely on data beyond stablecoins that are likely to be important determinants of stablecoin variabil ity to estimate our counterfactuals (see discussion below).33 Second, one advantage of our approach is that the relatively small number of covariates used to construct counterfactual predictions implies that the risk of overfitting the counterfactual estimate is much lower compared to a traditional synthetic control exercise, where the number of control units is large and often exceeds the number of observations.",
+      "public_claim_verbatim_quote": "We therefore rely on data beyond stablecoins that are likely to be important determinants of stablecoin variabil ity to estimate our counterfactuals (see discussion below).33 Second, one advantage of our approach is that the relatively small number of covariates used to construct counterfactual predictions implies that the risk of overfitting the counterfactual estimate is much lower compared to a traditional synthetic control exercise, where the number of control units is large and often exceeds the number of observations."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T04-G05",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "These exchange-level price data are also sourced from cryptocompare.com and the choice of exchange is based on coin-level exchange data quality and transparency.38 We also make use of daily market capitalization statistics for Tether, TerraUSD and Luna from Coingecko.",
+      "public_claim_verbatim_quote": "These exchange-level price data are also sourced from cryptocompare.com and the choice of exchange is based on coin-level exchange data quality and transparency.38 We also make use of daily market capitalization statistics for Tether, TerraUSD and Luna from Coingecko."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T04-G06",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "Data on conventional financial market variables are from FRED.39 38Figures 17 and 18 in Appendix C presents price series for the main cryptoassets considered.",
+      "public_claim_verbatim_quote": "Data on conventional financial market variables are from FRED.39 38Figures 17 and 18 in Appendix C presents price series for the main cryptoassets considered."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T04-G07",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "Our first case study uses minute-by-minute data around the large de-pegging event suffered byUSDCinMarch2023.",
+      "public_claim_verbatim_quote": "Our first case study uses minute-by-minute data around the large de-pegging event suffered byUSDCinMarch2023."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T04-G08",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "To assess this, we fit the dynamic regression specification described in equation (6), where USDC’s absolute peg deviations are modeled as a function of their own lag and the set of controls discussed above for which minute-frequency data are available: Tether’s absolute peg deviations, Bitcoin volatility and Ether volatility.",
+      "public_claim_verbatim_quote": "To assess this, we fit the dynamic regression specification described in equation (6), where USDC’s absolute peg deviations are modeled as a function of their own lag and the set of controls discussed above for which minute-frequency data are available: Tether’s absolute peg deviations, Bitcoin volatility and Ether volatility."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T04-G09",
+      "section_locator": "PDF page 35",
+      "public_claim_text": "This occurred in the aftermath of a June 2018 audit report that was completed by a law firm, rather than a certified accounting firm.41 Concerns over whether Tether was fully backed by US dollars (as claimed by the issuer, without any supporting evidence) con tinued to fester and worries also rose regarding Tether’s relationship with Bitfinex and the possibleco-minglingofcustomerfunds.",
+      "public_claim_verbatim_quote": "This occurred in the aftermath of a June 2018 audit report that was completed by a law firm, rather than a certified accounting firm.41 Concerns over whether Tether was fully backed by US dollars (as claimed by the issuer, without any supporting evidence) con tinued to fester and worries also rose regarding Tether’s relationship with Bitfinex and the possibleco-minglingofcustomerfunds."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T04-G10",
+      "section_locator": "PDF page 35",
+      "public_claim_text": "44The choice of treatment date is not clear-cut in this exercise because of the ongoing scrutiny over Tether’s reserve adequacy over this period.",
+      "public_claim_verbatim_quote": "44The choice of treatment date is not clear-cut in this exercise because of the ongoing scrutiny over Tether’s reserve adequacy over this period."
+    }
+  ]
+}
