@@ -1,0 +1,28 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-08-17",
+  "operator": "NeoZorK",
+  "scope": "DOM040 public budgets: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 3714,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 3784,
+  "sources": [{
+    "domain_code": "DOM040",
+    "domain_title": "Public budgets",
+    "remaining_target": 70,
+    "source_subdir": "dom040",
+    "source_name": "IMF Fiscal Monitor, April 2024: Fiscal Policy in the Great Election Year",
+    "source_url": "https://www.imf.org/en/publications/fm/issues/2024/04/17/fiscal-monitor-april-2024",
+    "source_sha256": "584aab438fb6762ef03740535611e559aee8d5661b3b8f6ae1740265ef3a87f6",
+    "pdf_pages": 128,
+    "content_start_page": 8,
+    "content_end_page": 128,
+    "text_extractor": "pdfplumber",
+    "independent_text_extractor": "pypdf",
+    "min_quote_characters": 60,
+    "min_quote_words": 10,
+    "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+  }]
+}
