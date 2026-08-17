@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched UN IGME Levels and trends in child mortality: Report 2020 bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "UN IGME Levels and trends in child mortality: Report 2020",
+  "source_url": "https://digitallibrary.un.org/record/3968644/files/UN-IGME-child-mortality-report-2020-pdf.pdf.pdf?download=1",
+  "access_date": "2026-08-17",
+  "source_sha256": "d8d2e5f0ad7ffffcb988f8882282d28bb532d6545eb37047abd02d2ad4a813c6",
+  "raw_payload_committed": false,
+  "text_extractor": "pypdf",
+  "independent_text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM025-T07-G01",
+      "section_locator": "PDF page 2",
+      "public_claim_text": "This report was prepared at UNICEF headquarters by David Sharrow, Lucia Hug, Yang Liu, and Danzhen You on behalf of the United Nations Inter-agency Group for Child Mortality Estimation (UN IGME).",
+      "public_claim_verbatim_quote": "This report was prepared at UNICEF headquarters by David Sharrow, Lucia Hug, Yang Liu, and Danzhen You on behalf of the United Nations Inter-agency Group for Child Mortality Estimation (UN IGME)."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T07-G02",
+      "section_locator": "PDF page 2",
+      "public_claim_text": "We would also like to extend special thanks to UNICEF and WHO field office colleagues as well as Sebastian Bania, Kassa Beyene, John Paul-Joseph and the Platforms and Service delivery O365 team at UNICEF for supporting the country consultations.",
+      "public_claim_verbatim_quote": "We would also like to extend special thanks to UNICEF and WHO field office colleagues as well as Sebastian Bania, Kassa Beyene, John Paul-Joseph and the Platforms and Service delivery O365 team at UNICEF for supporting the country consultations."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T07-G03",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "This model was developed, validated, and used to produce the previous rounds of the UN IGME child mortality estimates, including the previously published round in September 2019.43,44 In the B3 model, log(U5MR) is estimated with a flexible splines regression model.",
+      "public_claim_verbatim_quote": "This model was developed, validated, and used to produce the previous rounds of the UN IGME child mortality estimates, including the previously published round in September 2019.43,44 In the B3 model, log(U5MR) is estimated with a flexible splines regression model."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T07-G04",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "It can more accurately capture short-term fluctuations in the U5MR and its annual rate of reduction and thus, is better able to account for evidence of acceleration in the decline of under-five mortality from new surveys.",
+      "public_claim_verbatim_quote": "It can more accurately capture short-term fluctuations in the U5MR and its annual rate of reduction and thus, is better able to account for evidence of acceleration in the decline of under-five mortality from new surveys."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T07-G05",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "The B3 method was developed and implemented for the UN IGME by Leontine Alkema and Jin Rou New with guidance and review by the UN IGME’s TAG.",
+      "public_claim_verbatim_quote": "The B3 method was developed and implemented for the UN IGME by Leontine Alkema and Jin Rou New with guidance and review by the UN IGME’s TAG."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T07-G06",
+      "section_locator": "PDF page 34",
+      "public_claim_text": "This is to restrict the IMR estimate to be lower than the U5MR estimate for any given year.",
+      "public_claim_verbatim_quote": "This is to restrict the IMR estimate to be lower than the U5MR estimate for any given year."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T07-G07",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "This analysis could lead to a different adjustment approach in future estimates.",
+      "public_claim_verbatim_quote": "This analysis could lead to a different adjustment approach in future estimates."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T07-G08",
+      "section_locator": "PDF page 39",
+      "public_claim_text": "The International Disaster Database’, Université Catholique de Louvain, Brussels, Belgium, < www.emdat.be >.",
+      "public_claim_verbatim_quote": "The International Disaster Database’, Université Catholique de Louvain, Brussels, Belgium, < www.emdat.be >."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T07-G09",
+      "section_locator": "PDF page 56",
+      "public_claim_text": "This report contains the latest UN IGME estimates of child mortality at the country, regional and global levels.",
+      "public_claim_verbatim_quote": "This report contains the latest UN IGME estimates of child mortality at the country, regional and global levels."
+    },
+    {
+      "protocol_id": "CB7K-DOM025-T07-G10",
+      "section_locator": "PDF page 56",
+      "public_claim_text": "Suggested citation: United Nations Inter-agency Group for Child Mortality Estimation (UN IGME), ‘Levels & Trends in Child Mortality: Report 2020, Estimates developed by the United Nations Inter-agency Group for Child Mortality Estimation’, United Nations Children’s Fund, New York, 2020.",
+      "public_claim_verbatim_quote": "Suggested citation: United Nations Inter-agency Group for Child Mortality Estimation (UN IGME), ‘Levels & Trends in Child Mortality: Report 2020, Estimates developed by the United Nations Inter-agency Group for Child Mortality Estimation’, United Nations Children’s Fund, New York, 2020."
+    }
+  ]
+}
