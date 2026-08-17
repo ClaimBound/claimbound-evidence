@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched BIS Working Papers No 1164: Public information and stablecoin runs bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "BIS Working Papers No 1164: Public information and stablecoin runs",
+  "source_url": "https://www.bis.org/publ/work1164.htm",
+  "access_date": "2026-08-17",
+  "source_sha256": "82402543c3dac3cb0332e42c44d61d7692295f9af9753d61effc1b675d7c66eb",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM032-T05-G01",
+      "section_locator": "PDF page 37",
+      "public_claim_text": "The earliest available attestation report of Tether’s reserves is dated June 1, 2018 by firm Free, Sporkin, and Sullivan LLP (see footnote 41 and preceding discussion).",
+      "public_claim_verbatim_quote": "The earliest available attestation report of Tether’s reserves is dated June 1, 2018 by firm Free, Sporkin, and Sullivan LLP (see footnote 41 and preceding discussion)."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T05-G02",
+      "section_locator": "PDF page 37",
+      "public_claim_text": "This dry spell was broken when Moore (then Tether’s auditor) published attestations of Tether’s reserves on February 28, 2021 and then again on March 30, 2021 – the only period when Tether released audits in two consecutive months.45 We take advantage of this period to examine whether Tether’s peg stability was impacted by the first audit release after several years.",
+      "public_claim_verbatim_quote": "This dry spell was broken when Moore (then Tether’s auditor) published attestations of Tether’s reserves on February 28, 2021 and then again on March 30, 2021 – the only period when Tether released audits in two consecutive months.45 We take advantage of this period to examine whether Tether’s peg stability was impacted by the first audit release after several years."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T05-G03",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "Coun terfactual peg deviations were larger than actual peg deviations following the February 28 release, and the difference between them grew even larger following the March 31 release.",
+      "public_claim_verbatim_quote": "Coun terfactual peg deviations were larger than actual peg deviations following the February 28 release, and the difference between them grew even larger following the March 31 release."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T05-G04",
+      "section_locator": "PDF page 39",
+      "public_claim_text": "In particular, we fit the dynamic regression specification described in equation (6), where Frax’s hourly absolute peg deviations are modeled as a function of their own lag and the set of controls discussed above, for which hourly data are available: Tether’s absolute peg deviations, Bitcoin volatility and Ether volatility.",
+      "public_claim_verbatim_quote": "In particular, we fit the dynamic regression specification described in equation (6), where Frax’s hourly absolute peg deviations are modeled as a function of their own lag and the set of controls discussed above, for which hourly data are available: Tether’s absolute peg deviations, Bitcoin volatility and Ether volatility."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T05-G05",
+      "section_locator": "PDF page 40",
+      "public_claim_text": "It is quite visible how Frax’s actual peg deviations rose significantly following the disclosure, while counterfactual peg deviations did not rise by nearly as much.",
+      "public_claim_verbatim_quote": "It is quite visible how Frax’s actual peg deviations rose significantly following the disclosure, while counterfactual peg deviations did not rise by nearly as much."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T05-G06",
+      "section_locator": "PDF page 40",
+      "public_claim_text": "Moreover, the difference between actual and counter factual average absolute peg deviations is statistically significant at the 1% level.",
+      "public_claim_verbatim_quote": "Moreover, the difference between actual and counter factual average absolute peg deviations is statistically significant at the 1% level."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T05-G07",
+      "section_locator": "PDF page 41",
+      "public_claim_text": "We define this difference as Terra’s “equity value”.47 For example, the 2021 episode when Terra equity values quickly approached zero was caused by the bursting of the cryptoasset bubble, with the price of Bitcoin falling 40% in a matter of days, bringing Luna’spricedownwithit.",
+      "public_claim_verbatim_quote": "We define this difference as Terra’s “equity value”.47 For example, the 2021 episode when Terra equity values quickly approached zero was caused by the bursting of the cryptoasset bubble, with the price of Bitcoin falling 40% in a matter of days, bringing Luna’spricedownwithit."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T05-G08",
+      "section_locator": "PDF page 41",
+      "public_claim_text": "As a result, TerraUSD holders’ best guess of the variance of the reserve asset Luna is likely a function of Luna’s price return history, and this estimate can change over time with the arrival of new information.",
+      "public_claim_verbatim_quote": "As a result, TerraUSD holders’ best guess of the variance of the reserve asset Luna is likely a function of Luna’s price return history, and this estimate can change over time with the arrival of new information."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T05-G09",
+      "section_locator": "PDF page 45",
+      "public_claim_text": "Under an equity value of $15 billion, TerraUSD’s peg deviations would increase from $0.00013 to $0.0004.49 However, under an equity value of just $1 billion, TerraUSD peg deviations would rise from $0.0009 to $0.0026, a 29-fold increase.",
+      "public_claim_verbatim_quote": "Under an equity value of $15 billion, TerraUSD’s peg deviations would increase from $0.00013 to $0.0004.49 However, under an equity value of just $1 billion, TerraUSD peg deviations would rise from $0.0009 to $0.0026, a 29-fold increase."
+    },
+    {
+      "protocol_id": "CB7K-DOM032-T05-G10",
+      "section_locator": "PDF page 45",
+      "public_claim_text": "On May 12, 2022, TerraUSDbroke itspegandfellfrom $1to roughly $0.78andTerra’sequityvalue was wiped out.",
+      "public_claim_verbatim_quote": "On May 12, 2022, TerraUSDbroke itspegandfellfrom $1to roughly $0.78andTerra’sequityvalue was wiped out."
+    }
+  ]
+}
