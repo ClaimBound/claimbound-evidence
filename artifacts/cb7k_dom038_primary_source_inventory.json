@@ -1,0 +1,28 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-08-17",
+  "operator": "NeoZorK",
+  "scope": "DOM038 corporate reporting: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 3574,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 3644,
+  "sources": [{
+    "domain_code": "DOM038",
+    "domain_title": "Corporate reporting",
+    "remaining_target": 70,
+    "source_subdir": "dom038",
+    "source_name": "IFRS Progress on Corporate Climate-related Disclosures—2024 Report",
+    "source_url": "https://www.ifrs.org/content/dam/ifrs/supporting-implementation/issb-standards/progress-climate-related-disclosures-2024.pdf",
+    "source_sha256": "a02fe67b55eec0fc75ca74af150c068d7897a419f16f7d80f3c55fd8f8ea3e2d",
+    "pdf_pages": 164,
+    "content_start_page": 8,
+    "content_end_page": 164,
+    "text_extractor": "pdfplumber",
+    "independent_text_extractor": "pypdf",
+    "min_quote_characters": 60,
+    "min_quote_words": 10,
+    "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+  }]
+}
