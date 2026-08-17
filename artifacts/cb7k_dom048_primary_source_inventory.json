@@ -1,0 +1,28 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-08-17",
+  "operator": "NeoZorK",
+  "scope": "DOM048 courts: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 4274,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 4344,
+  "sources": [{
+    "domain_code": "DOM048",
+    "domain_title": "Courts",
+    "remaining_target": 70,
+    "source_subdir": "dom048",
+    "source_name": "European Commission EU Justice Scoreboard 2024",
+    "source_url": "https://commission.europa.eu/document/download/84aa3726-82d7-4401-98c1-fee04a7d2dd6_en?filename=2024%20EU%20Justice%20Scoreboard.pdf",
+    "source_sha256": "73d0f14e7bb2cfa25731a3f8c6184a166f2ef2e0b574b5ff0d9b33d95fcaa88a",
+    "pdf_pages": 72,
+    "content_start_page": 1,
+    "content_end_page": 72,
+    "text_extractor": "pdfplumber",
+    "independent_text_extractor": "pypdf",
+    "min_quote_characters": 60,
+    "min_quote_words": 10,
+    "reject_pattern": "Figure \\\\d|Table \\\\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+  }]
+}
