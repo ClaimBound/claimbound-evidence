@@ -117,8 +117,30 @@ def clean(text: str) -> str:
             continue
         kept.append(line)
     text = "\n".join(kept)
-    text = re.sub(r"(?<=\w)-\s*\n\s*(?=\w)", "", text)
+    # Turn discretionary line-break hyphens into spaces, but retain semantic
+    # hyphens in uppercase compounds such as WHO-UNICEF-UNFPA.
+    def repair_line_hyphen(match: re.Match[str]) -> str:
+        word = match.group("word")
+        return f"{word}{'-' if word.isupper() else ' '}{match.group('next')}"
+
+    text = re.sub(
+        r"(?P<word>[A-Za-z]+)-\s*\n\s*(?P<next>[A-Za-z])",
+        repair_line_hyphen,
+        text,
+    )
     return re.sub(r"\s+", " ", text).strip()
+
+
+def normalized_document_text(pdf: Path, extractor: str) -> str:
+    """Return layout-normalized text from a separate PDF implementation."""
+    if extractor == "pypdf":
+        text = "\n".join(page.extract_text() or "" for page in PdfReader(pdf).pages)
+    elif extractor == "pdfplumber":
+        with pdfplumber.open(pdf) as document:
+            text = "\n".join(page.extract_text() or "" for page in document.pages)
+    else:
+        raise ValueError(f"unsupported independent text extractor: {extractor}")
+    return re.sub(r"[\s-]+", "", text)
 
 
 def candidates(
@@ -131,9 +153,15 @@ def candidates(
     column_split_ratio: float | None = None,
     content_end_page: int | None = None,
     reject_pattern: str | None = None,
+    independent_extractor: str | None = None,
 ) -> list[dict]:
     rows: list[dict] = []
     seen: set[str] = set(excluded_keys or ())
+    independent_text = (
+        normalized_document_text(pdf, independent_extractor)
+        if independent_extractor
+        else None
+    )
     if extractor in {"pdfplumber", "pdfplumber_columns"}:
         document = pdfplumber.open(pdf)
         pages = document.pages
@@ -192,6 +220,8 @@ def candidates(
                 if not letters or sum(char.isupper() for char in letters) / len(letters) > 0.32:
                     continue
                 key = re.sub(r"[\s-]+", "", quote).casefold()
+                if independent_text is not None and key not in independent_text.casefold():
+                    continue
                 if key in seen:
                     continue
                 seen.add(key)
@@ -340,6 +370,10 @@ def main() -> int:
             source.get("column_split_ratio"),
             source.get("content_end_page"),
             source.get("reject_pattern"),
+            source.get(
+                "independent_text_extractor",
+                "pdfplumber" if source["text_extractor"] == "pypdf" else "pypdf",
+            ),
         )
         chosen = select(rows, source["remaining_target"])
         start = source.get("start_index", 21 if source["domain_code"] == "DOM001" else 1)

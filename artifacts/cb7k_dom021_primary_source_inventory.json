@@ -1,0 +1,29 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-08-17",
+  "operator": "NeoZorK",
+  "scope": "DOM021 diagnostics: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 1470,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 1540,
+  "sources": [
+    {
+      "domain_code": "DOM021",
+      "domain_title": "Diagnostics",
+      "remaining_target": 70,
+      "source_name": "WHO Regulation and Prequalification Department Annual Report 2025",
+      "source_url": "https://cdn.who.int/media/docs/default-source/medicines/regulatory-updates/rpq/who_rpq_annualreport2025.pdf?download=true&sfvrsn=afe3907_3",
+      "source_sha256": "489f48ce81a7d8294ced574a7dad00a821de912b07cdb81437386854708895c3",
+      "pdf_pages": 100,
+      "content_start_page": 8,
+      "content_end_page": 92,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|Regulatory capacity-building and|(?-i:^[a-z])"
+    }
+  ]
+}
