@@ -355,7 +355,7 @@ def main() -> int:
     for source in inventory["sources"]:
         if args.domain and source["domain_code"] not in args.domain:
             continue
-        pdf = args.source_root / source["domain_code"].lower() / "a.pdf"
+        pdf = args.source_root / source.get("source_subdir", source["domain_code"].lower()) / "a.pdf"
         payload = pdf.read_bytes()
         actual_sha = hashlib.sha256(payload).hexdigest()
         if actual_sha != source["source_sha256"]:
