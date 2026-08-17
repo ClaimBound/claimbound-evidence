@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IMF Global Financial Stability Report, October 2024: Steadying the Course bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IMF Global Financial Stability Report, October 2024: Steadying the Course",
+  "source_url": "https://www.imf.org/en/publications/gfsr/issues/2024/10/22/global-financial-stability-report-october-2024",
+  "access_date": "2026-08-17",
+  "source_sha256": "966a2932597ef9f6506a7ce225fa45eb047f5d24035189bc636ca4a9eb1edde4",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM037-T02-G01",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "Market turmoil in early August, though short-lived, served as a reminder of how quickly volatility can catch up to uncertainty, force the unwinding of leveraged trades, and trigger feedback loops between asset prices and deleveraging.",
+      "public_claim_verbatim_quote": "Market turmoil in early August, though short-lived, served as a reminder of how quickly volatility can catch up to uncertainty, force the unwinding of leveraged trades, and trigger feedback loops between asset prices and deleveraging."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T02-G02",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "The banking system has remained sound, although a weak tail of banks is still confronting exposures to troubled sectors like commercial real estate and ongoing business model challenges.",
+      "public_claim_verbatim_quote": "The banking system has remained sound, although a weak tail of banks is still confronting exposures to troubled sectors like commercial real estate and ongoing business model challenges."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T02-G03",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Information conveyed by these markets may deviate periodically from other measures of policy rate expectations, such as those obtained from surveys of professional forecasters.",
+      "public_claim_verbatim_quote": "Information conveyed by these markets may deviate periodically from other measures of policy rate expectations, such as those obtained from surveys of professional forecasters."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T02-G04",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "In panel 2, distributions are constructed, using kernel densities, from survey forecast responses submitted by economists and market participants to Bloomberg Finance L.P.",
+      "public_claim_verbatim_quote": "In panel 2, distributions are constructed, using kernel densities, from survey forecast responses submitted by economists and market participants to Bloomberg Finance L.P."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T02-G05",
+      "section_locator": "PDF page 26",
+      "public_claim_text": "In panel 4, the average reaction of the US 10-year government bond yield is calculated three months into a steepening episode since 2000.",
+      "public_claim_verbatim_quote": "In panel 4, the average reaction of the US 10-year government bond yield is calculated three months into a steepening episode since 2000."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T02-G06",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "Panel 2 shows net duration supply, expressed in terms of 10-year equivalent bonds net of domestic central bank purchases.",
+      "public_claim_verbatim_quote": "Panel 2 shows net duration supply, expressed in terms of 10-year equivalent bonds net of domestic central bank purchases."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T02-G07",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "ECB = European Central Bank; EGB = European government bond; GFSR = Global Financial Stability Report; QT = quantitative tightening.",
+      "public_claim_verbatim_quote": "ECB = European Central Bank; EGB = European government bond; GFSR = Global Financial Stability Report; QT = quantitative tightening."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T02-G08",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "In panel 2, the Chicago Board Options Exchange Volatility Index, or VIX, is the benchmark measure of US stock market volatility, based on S&P 500 options.",
+      "public_claim_verbatim_quote": "In panel 2, the Chicago Board Options Exchange Volatility Index, or VIX, is the benchmark measure of US stock market volatility, based on S&P 500 options."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T02-G09",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "“Large to small cap volatility” is the implied volatility for the S&P 500 divided by the implied volatility for the Russell 2000.",
+      "public_claim_verbatim_quote": "“Large to small cap volatility” is the implied volatility for the S&P 500 divided by the implied volatility for the Russell 2000."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T02-G10",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "Thailand is excluded from panel 1 because the sovereign has no outstanding hard-currency dollar-denominated debt.",
+      "public_claim_verbatim_quote": "Thailand is excluded from panel 1 because the sovereign has no outstanding hard-currency dollar-denominated debt."
+    }
+  ]
+}
