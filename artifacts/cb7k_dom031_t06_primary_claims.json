@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IMF Global Financial Stability Report, April 2024: The Last Mile bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IMF Global Financial Stability Report, April 2024: The Last Mile",
+  "source_url": "https://www.imf.org/en/publications/gfsr/issues/2024/04/16/global-financial-stability-report-april-2024",
+  "access_date": "2026-08-17",
+  "source_sha256": "93ab9c4f651725794f3aa47a52ae959e8b2bfb6ab59e0bd7361b3c7e562303f3",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM031-T06-G01",
+      "section_locator": "PDF page 75",
+      "public_claim_text": "In panel 2, the measure of assets under management includes those from private credit funds, business development companies, and middle-market collateralized debt obligations, with the last two being mostly US focused, from 2000 to June 2023.",
+      "public_claim_verbatim_quote": "In panel 2, the measure of assets under management includes those from private credit funds, business development companies, and middle-market collateralized debt obligations, with the last two being mostly US focused, from 2000 to June 2023."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T06-G02",
+      "section_locator": "PDF page 80",
+      "public_claim_text": "Average annual credit losses are computed for a 10-year window between 2013 and 2022.",
+      "public_claim_verbatim_quote": "Average annual credit losses are computed for a 10-year window between 2013 and 2022."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T06-G03",
+      "section_locator": "PDF page 85",
+      "public_claim_text": "Public BDCs provide additional transparency, as they cater to a broad range of equity and bond investors.",
+      "public_claim_verbatim_quote": "Public BDCs provide additional transparency, as they cater to a broad range of equity and bond investors."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T06-G04",
+      "section_locator": "PDF page 86",
+      "public_claim_text": "The impulse response function is based on an AR(1) model using quarterly data.",
+      "public_claim_verbatim_quote": "The impulse response function is based on an AR(1) model using quarterly data."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T06-G05",
+      "section_locator": "PDF page 89",
+      "public_claim_text": "Derivatives/total assets: 2016 Sources: Bloomberg Finance L.P.; individual annual reports of selected pension funds; Preqin; and IMF staff calculations.",
+      "public_claim_verbatim_quote": "Derivatives/total assets: 2016 Sources: Bloomberg Finance L.P.; individual annual reports of selected pension funds; Preqin; and IMF staff calculations."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T06-G06",
+      "section_locator": "PDF page 89",
+      "public_claim_text": "Note that the calculation in panel 3 is based on 21 of the pension funds in the sample for which data on allocation to private credit funds was found in Preqin.",
+      "public_claim_verbatim_quote": "Note that the calculation in panel 3 is based on 21 of the pension funds in the sample for which data on allocation to private credit funds was found in Preqin."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T06-G07",
+      "section_locator": "PDF page 90",
+      "public_claim_text": "The global insurers estimate in panel 2 is calculated from a sample of 50 selected large insurance groups from 19 jurisdictions across Europe, North America, Asia, and Australia.",
+      "public_claim_verbatim_quote": "The global insurers estimate in panel 2 is calculated from a sample of 50 selected large insurance groups from 19 jurisdictions across Europe, North America, Asia, and Australia."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T06-G08",
+      "section_locator": "PDF page 90",
+      "public_claim_text": "The US insurers’ risk-capital ratio is based on a sample of the largest 20 US insurers.",
+      "public_claim_verbatim_quote": "The US insurers’ risk-capital ratio is based on a sample of the largest 20 US insurers."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T06-G09",
+      "section_locator": "PDF page 92",
+      "public_claim_text": "Relevant regulators and supervisors should coor dinate to address data gaps and enhance their reporting requirements to monitor emerging risks.",
+      "public_claim_verbatim_quote": "Relevant regulators and supervisors should coor dinate to address data gaps and enhance their reporting requirements to monitor emerging risks."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T06-G10",
+      "section_locator": "PDF page 97",
+      "public_claim_text": "Most direct reported losses from cyberattacks are small, around $0.5 million, but the risk of extreme losses—at least as large as $2.5 billion—has increased.",
+      "public_claim_verbatim_quote": "Most direct reported losses from cyberattacks are small, around $0.5 million, but the risk of extreme losses—at least as large as $2.5 billion—has increased."
+    }
+  ]
+}

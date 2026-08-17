@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IMF Global Financial Stability Report, April 2024: The Last Mile bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IMF Global Financial Stability Report, April 2024: The Last Mile",
+  "source_url": "https://www.imf.org/en/publications/gfsr/issues/2024/04/16/global-financial-stability-report-april-2024",
+  "access_date": "2026-08-17",
+  "source_sha256": "93ab9c4f651725794f3aa47a52ae959e8b2bfb6ab59e0bd7361b3c7e562303f3",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM031-T04-G01",
+      "section_locator": "PDF page 44",
+      "public_claim_text": "In panel 2, yield decomposition is calculated by IMF staff using ACM methodology.",
+      "public_claim_verbatim_quote": "In panel 2, yield decomposition is calculated by IMF staff using ACM methodology."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T04-G02",
+      "section_locator": "PDF page 45",
+      "public_claim_text": "Average maturity of local currency government debt in panel 4 is a simple average of 14 major sovereigns with all data as of March 28, 2024.",
+      "public_claim_verbatim_quote": "Average maturity of local currency government debt in panel 4 is a simple average of 14 major sovereigns with all data as of March 28, 2024."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T04-G03",
+      "section_locator": "PDF page 45",
+      "public_claim_text": "CDS = credit default swap; CEEMA = Central and Eastern Europe, Middle East, and Africa; EM = emerging market; GFSR = Global Financial Stability Report; HC = hard currency; LatAm = Latin America.",
+      "public_claim_verbatim_quote": "CDS = credit default swap; CEEMA = Central and Eastern Europe, Middle East, and Africa; EM = emerging market; GFSR = Global Financial Stability Report; HC = hard currency; LatAm = Latin America."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T04-G04",
+      "section_locator": "PDF page 48",
+      "public_claim_text": "In panels 3 and 4, the ranking of public finance conditions is based on local governments’ general budget deficit and official debt.",
+      "public_claim_verbatim_quote": "In panels 3 and 4, the ranking of public finance conditions is based on local governments’ general budget deficit and official debt."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T04-G05",
+      "section_locator": "PDF page 52",
+      "public_claim_text": "US corporate bond spreads are narrower than model values based on macro fundamentals.",
+      "public_claim_verbatim_quote": "US corporate bond spreads are narrower than model values based on macro fundamentals."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T04-G06",
+      "section_locator": "PDF page 52",
+      "public_claim_text": "EPS = earnings per share; GFSR = Global Financial Stability Report ; HY = high yield; IG = investment grade.",
+      "public_claim_verbatim_quote": "EPS = earnings per share; GFSR = Global Financial Stability Report ; HY = high yield; IG = investment grade."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T04-G07",
+      "section_locator": "PDF page 53",
+      "public_claim_text": "In panel 2, US bankruptcies are counted as the sum of Chapters 7 and 11.",
+      "public_claim_verbatim_quote": "In panel 2, US bankruptcies are counted as the sum of Chapters 7 and 11."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T04-G08",
+      "section_locator": "PDF page 53",
+      "public_claim_text": "The index is 12-month moving average of the spread and annualized.",
+      "public_claim_verbatim_quote": "The index is 12-month moving average of the spread and annualized."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T04-G09",
+      "section_locator": "PDF page 54",
+      "public_claim_text": "Projections of the real risk premium are obtained using parametric bootstrap techniques and considering a range of forecasts for Federal Reserve holdings by year-end 2025, as shown in the latest Primary Dealer Survey.",
+      "public_claim_verbatim_quote": "Projections of the real risk premium are obtained using parametric bootstrap techniques and considering a range of forecasts for Federal Reserve holdings by year-end 2025, as shown in the latest Primary Dealer Survey."
+    },
+    {
+      "protocol_id": "CB7K-DOM031-T04-G10",
+      "section_locator": "PDF page 54",
+      "public_claim_text": "The ellipses shown delineate the 68 and 95 percent CIs, within which the projected real risk premium is expected to fall.",
+      "public_claim_verbatim_quote": "The ellipses shown delineate the 68 and 95 percent CIs, within which the projected real risk premium is expected to fall."
+    }
+  ]
+}

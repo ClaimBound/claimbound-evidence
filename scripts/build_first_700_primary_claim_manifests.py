@@ -140,6 +140,14 @@ def normalized_document_text(pdf: Path, extractor: str) -> str:
             text = "\n".join(page.extract_text() or "" for page in document.pages)
     else:
         raise ValueError(f"unsupported independent text extractor: {extractor}")
+    # Keep this normalization aligned with the publication verifier: remove
+    # extractor-specific page-number prefixes before collapsing layout
+    # whitespace/hyphens.  The independent gate below must match the complete
+    # candidate quote, not merely a weak key fragment.
+    text = "\n".join(
+        re.sub(r"^\d+\s+(?=[A-Za-z])", "", line)
+        for line in text.splitlines()
+    )
     return re.sub(r"[\s-]+", "", text)
 
 
@@ -219,8 +227,11 @@ def candidates(
                 letters = [char for char in quote if char.isalpha()]
                 if not letters or sum(char.isupper() for char in letters) / len(letters) > 0.32:
                     continue
-                key = re.sub(r"[\s-]+", "", quote).casefold()
-                if independent_text is not None and key not in independent_text.casefold():
+                key = re.sub(r"[\s-]+", "", quote)
+                # Require the complete quote with original casing in the
+                # independent extraction.  Case-folding here would permit a
+                # quote that the publication verifier cannot reproduce.
+                if independent_text is not None and key not in independent_text:
                     continue
                 if key in seen:
                     continue
