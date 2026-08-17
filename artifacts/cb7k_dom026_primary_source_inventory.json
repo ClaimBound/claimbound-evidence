@@ -1,0 +1,30 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-08-17",
+  "operator": "NeoZorK",
+  "scope": "DOM026 nutrition: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 1820,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 1890,
+  "sources": [
+    {
+      "domain_code": "DOM026",
+      "domain_title": "Nutrition",
+      "remaining_target": 70,
+      "source_subdir": "dom026b",
+      "source_name": "World health statistics 2024: monitoring health for the SDGs",
+      "source_url": "https://iris.who.int/server/api/core/bitstreams/74b12494-f213-4b5b-9533-18442147e1fb/content",
+      "source_sha256": "f7b08734131ff6b3e07a508f2efc12a94c85ce19eaee2a98f0bbc57fad3c3555",
+      "pdf_pages": 96,
+      "content_start_page": 1,
+      "content_end_page": 96,
+      "text_extractor": "pypdf",
+      "independent_text_extractor": "pdfplumber",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}
