@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IAIS Global Insurance Market Report 2024 bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IAIS Global Insurance Market Report 2024",
+  "source_url": "https://www.iais.org/uploads/2024/12/Global-Insurance-Market-Report-2024.pdf",
+  "access_date": "2026-08-17",
+  "source_sha256": "ccc654d17367a7e7779c1a051a98fad88f6842faafea178321a2cfe06617e0a1",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM034-T04-G01",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "Life insurers often deal with long-term liabilities, making them well suited to hold long-term, illiquid assets that can provide consistent returns over extended periods, subject to sound ALM.",
+      "public_claim_verbatim_quote": "Life insurers often deal with long-term liabilities, making them well suited to hold long-term, illiquid assets that can provide consistent returns over extended periods, subject to sound ALM."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T04-G02",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "As highlighted in the 2023 GIMAR, investing in assets originated by related parties could give rise to conflicts of interest.",
+      "public_claim_verbatim_quote": "As highlighted in the 2023 GIMAR, investing in assets originated by related parties could give rise to conflicts of interest."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T04-G03",
+      "section_locator": "PDF page 40",
+      "public_claim_text": "Transactions with affiliated parties Transactions with affiliated parties are of lesser concern, although they remain a supervisory issue.",
+      "public_claim_verbatim_quote": "Transactions with affiliated parties Transactions with affiliated parties are of lesser concern, although they remain a supervisory issue."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T04-G04",
+      "section_locator": "PDF page 40",
+      "public_claim_text": "It is particularly difficult to determine the value of private equity, collateralised debt obligations (CDOs), and collateralised loan obligations (CLOs) because of their intricate nature and the scarcity of transparent market data.",
+      "public_claim_verbatim_quote": "It is particularly difficult to determine the value of private equity, collateralised debt obligations (CDOs), and collateralised loan obligations (CLOs) because of their intricate nature and the scarcity of transparent market data."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T04-G05",
+      "section_locator": "PDF page 41",
+      "public_claim_text": "Understanding the materiality of alternative investment exposure for selected geographies and sectors is essential for assessing associated risks and opportunities.",
+      "public_claim_verbatim_quote": "Understanding the materiality of alternative investment exposure for selected geographies and sectors is essential for assessing associated risks and opportunities."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T04-G06",
+      "section_locator": "PDF page 43",
+      "public_claim_text": "Potential financial stability risks are contingent upon the proportion of alternative assets within insurers’ investment portfolios and the degree to which insurers dominate the alternative investments universe.",
+      "public_claim_verbatim_quote": "Potential financial stability risks are contingent upon the proportion of alternative assets within insurers’ investment portfolios and the degree to which insurers dominate the alternative investments universe."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T04-G07",
+      "section_locator": "PDF page 45",
+      "public_claim_text": "Alternative assets, like private credit and infrastructure, can provide higher returns but can also introduce higher liquidity, complexity or other risks, making strong safeguards essential for effective risk management.",
+      "public_claim_verbatim_quote": "Alternative assets, like private credit and infrastructure, can provide higher returns but can also introduce higher liquidity, complexity or other risks, making strong safeguards essential for effective risk management."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T04-G08",
+      "section_locator": "PDF page 46",
+      "public_claim_text": "Additionally, there are markets that have shown limited activity but significant interest in such agreements, with untapped growth potential.",
+      "public_claim_verbatim_quote": "Additionally, there are markets that have shown limited activity but significant interest in such agreements, with untapped growth potential."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T04-G09",
+      "section_locator": "PDF page 46",
+      "public_claim_text": "For example, the EU has life technical provisions of €4.3 trillion,20 while Japan holds ¥343 trillion in life insurance reserves.21 Lane Clark & Peacock LLP (lcp.uk.com).",
+      "public_claim_verbatim_quote": "For example, the EU has life technical provisions of €4.3 trillion,20 while Japan holds ¥343 trillion in life insurance reserves.21 Lane Clark & Peacock LLP (lcp.uk.com)."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T04-G10",
+      "section_locator": "PDF page 47",
+      "public_claim_text": "Overview of concerns, drivers and benefits associated with asset-intensive reinsurance Concerns ] Motivation for asset-intensive reinsurance: Cross-border asset-intensive reinsurance can be employed for capital, risk and financial management.",
+      "public_claim_verbatim_quote": "Overview of concerns, drivers and benefits associated with asset-intensive reinsurance Concerns ] Motivation for asset-intensive reinsurance: Cross-border asset-intensive reinsurance can be employed for capital, risk and financial management."
+    }
+  ]
+}

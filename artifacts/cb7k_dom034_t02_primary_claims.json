@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IAIS Global Insurance Market Report 2024 bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IAIS Global Insurance Market Report 2024",
+  "source_url": "https://www.iais.org/uploads/2024/12/Global-Insurance-Market-Report-2024.pdf",
+  "access_date": "2026-08-17",
+  "source_sha256": "ccc654d17367a7e7779c1a051a98fad88f6842faafea178321a2cfe06617e0a1",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM034-T02-G01",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "Additionally, there was a focus on the impact of market conditions, interest rate movements and strategic acquisitions on overall financial stability.",
+      "public_claim_verbatim_quote": "Additionally, there was a focus on the impact of market conditions, interest rate movements and strategic acquisitions on overall financial stability."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T02-G02",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "This outlook is driven by continued capital generation, sound strategic asset allocation and compliance with evolving regulatory frameworks.",
+      "public_claim_verbatim_quote": "This outlook is driven by continued capital generation, sound strategic asset allocation and compliance with evolving regulatory frameworks."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T02-G03",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Macroprudential themes The IAIS has continued to focus on two macroprudential themes, based on supervisory priorities identified through the annual GME: (1) key risks in the current macroeconomic environment; and (2) structural shifts in the life insurance sector, with a focus on asset allocation to alternative assets and cross border asset-intensive reinsurance.",
+      "public_claim_verbatim_quote": "Macroprudential themes The IAIS has continued to focus on two macroprudential themes, based on supervisory priorities identified through the annual GME: (1) key risks in the current macroeconomic environment; and (2) structural shifts in the life insurance sector, with a focus on asset allocation to alternative assets and cross border asset-intensive reinsurance."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T02-G04",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Insurers using debt funding may face liquidity pressures in a high interest rate environment, though larger insurers appear to have better access to funding.",
+      "public_claim_verbatim_quote": "Insurers using debt funding may face liquidity pressures in a high interest rate environment, though larger insurers appear to have better access to funding."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T02-G05",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "The 2024 GME identified four areas of attention with respect to interest rate and liquidity risk: (1) surrender risk; (2) funding risk; (3) derivatives and margin calls; and (4) the impact of AI/digitalisation.",
+      "public_claim_verbatim_quote": "The 2024 GME identified four areas of attention with respect to interest rate and liquidity risk: (1) surrender risk; (2) funding risk; (3) derivatives and margin calls; and (4) the impact of AI/digitalisation."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T02-G06",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "SWM data shows an increase in life insurance surrender rates across the 26 jurisdictions that submitted information from year-end to year-end 2023.",
+      "public_claim_verbatim_quote": "SWM data shows an increase in life insurance surrender rates across the 26 jurisdictions that submitted information from year-end to year-end 2023."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T02-G07",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "Half of these surrender values pertain to contracts that carry no economic penalty and are redeemable within one week; however, fiscal disincentives may still apply.",
+      "public_claim_verbatim_quote": "Half of these surrender values pertain to contracts that carry no economic penalty and are redeemable within one week; however, fiscal disincentives may still apply."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T02-G08",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "Insurers generally make limited use of debt funding, but in a high interest rate environment, those relying on it may face liquidity pressures during refinancing.",
+      "public_claim_verbatim_quote": "Insurers generally make limited use of debt funding, but in a high interest rate environment, those relying on it may face liquidity pressures during refinancing."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T02-G09",
+      "section_locator": "PDF page 26",
+      "public_claim_text": "Overview of measures to reduce funding risk taken by insurers and supervisors Key measures by supervisors: ] Monitoring insurers’ use of repurchase agreements and setting limits in anticipation of potential increases in short-term interest rates. ] Monitoring risks related to invested assets, particularly in real estate. ] Paying increased attention to insurers most affected by lapses and those using short-term debt.",
+      "public_claim_verbatim_quote": "Overview of measures to reduce funding risk taken by insurers and supervisors Key measures by supervisors: ] Monitoring insurers’ use of repurchase agreements and setting limits in anticipation of potential increases in short-term interest rates. ] Monitoring risks related to invested assets, particularly in real estate. ] Paying increased attention to insurers most affected by lapses and those using short-term debt."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T02-G10",
+      "section_locator": "PDF page 26",
+      "public_claim_text": "Derivatives are commonly used by insurers to hedge risks, enhance returns or manage interest rate exposure.",
+      "public_claim_verbatim_quote": "Derivatives are commonly used by insurers to hedge risks, enhance returns or manage interest rate exposure."
+    }
+  ]
+}

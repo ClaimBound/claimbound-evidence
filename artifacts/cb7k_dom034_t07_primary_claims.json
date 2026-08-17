@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IAIS Global Insurance Market Report 2024 bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IAIS Global Insurance Market Report 2024",
+  "source_url": "https://www.iais.org/uploads/2024/12/Global-Insurance-Market-Report-2024.pdf",
+  "access_date": "2026-08-17",
+  "source_sha256": "ccc654d17367a7e7779c1a051a98fad88f6842faafea178321a2cfe06617e0a1",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM034-T07-G01",
+      "section_locator": "PDF page 76",
+      "public_claim_text": "The GRMS was discontinued with the adoption of the Holistic Framework in 2019, including the launch of the GME.",
+      "public_claim_verbatim_quote": "The GRMS was discontinued with the adoption of the Holistic Framework in 2019, including the launch of the GME."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T07-G02",
+      "section_locator": "PDF page 76",
+      "public_claim_text": "One downside of collecting this data through the SWM is that it reduced the granularity of data, as it was based on reinsurance data already collected in the supervisory frameworks.",
+      "public_claim_verbatim_quote": "One downside of collecting this data through the SWM is that it reduced the granularity of data, as it was based on reinsurance data already collected in the supervisory frameworks."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T07-G03",
+      "section_locator": "PDF page 78",
+      "public_claim_text": "Regional differences emerge, with the split being more pronounced in Europe and Africa (17% life, 83% non-life), while equally distributed in the Americas (49% life, 51% non-life).",
+      "public_claim_verbatim_quote": "Regional differences emerge, with the split being more pronounced in Europe and Africa (17% life, 83% non-life), while equally distributed in the Americas (49% life, 51% non-life)."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T07-G04",
+      "section_locator": "PDF page 79",
+      "public_claim_text": "The increase in net reinsurance premiums between 2022 and 2023 was driven mainly by the Americas, which increased by around $80 billion.",
+      "public_claim_verbatim_quote": "The increase in net reinsurance premiums between 2022 and 2023 was driven mainly by the Americas, which increased by around $80 billion."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T07-G05",
+      "section_locator": "PDF page 81",
+      "public_claim_text": "In 2023, for the SWM sample, retention ratios were comparable for the reinsurance market and the overall insurance market which includes primary insurance business conducted by insurers and reinsurers (71% for both).",
+      "public_claim_verbatim_quote": "In 2023, for the SWM sample, retention ratios were comparable for the reinsurance market and the overall insurance market which includes primary insurance business conducted by insurers and reinsurers (71% for both)."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T07-G06",
+      "section_locator": "PDF page 82",
+      "public_claim_text": "However, since the total size of the US reinsurance market is underrepresented in the survey, caution should be used in interpreting the results.",
+      "public_claim_verbatim_quote": "However, since the total size of the US reinsurance market is underrepresented in the survey, caution should be used in interpreting the results."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T07-G07",
+      "section_locator": "PDF page 85",
+      "public_claim_text": "The decrease in 2023 was due to a relatively large increase in available capital resources compared to recoverables, among various jurisdictions.",
+      "public_claim_verbatim_quote": "The decrease in 2023 was due to a relatively large increase in available capital resources compared to recoverables, among various jurisdictions."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T07-G08",
+      "section_locator": "PDF page 85",
+      "public_claim_text": "The spread between gross and net gearing ratios declined until 2017, indicating an increased use of collateral for retrocession.",
+      "public_claim_verbatim_quote": "The spread between gross and net gearing ratios declined until 2017, indicating an increased use of collateral for retrocession."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T07-G09",
+      "section_locator": "PDF page 86",
+      "public_claim_text": "The high combined ratio in 2011 was driven by the severe tsunami in Japan and flooding in Thailand.",
+      "public_claim_verbatim_quote": "The high combined ratio in 2011 was driven by the severe tsunami in Japan and flooding in Thailand."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T07-G10",
+      "section_locator": "PDF page 86",
+      "public_claim_text": "From 2019 to 2021, this data was collected through the SWM reinsurance component.",
+      "public_claim_verbatim_quote": "From 2019 to 2021, this data was collected through the SWM reinsurance component."
+    }
+  ]
+}
