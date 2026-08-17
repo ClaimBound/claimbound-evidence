@@ -1,0 +1,30 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-08-17",
+  "operator": "NeoZorK",
+  "scope": "DOM029 elder care: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 1960,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 2030,
+  "sources": [
+    {
+      "domain_code": "DOM029",
+      "domain_title": "Elder care",
+      "remaining_target": 70,
+      "source_subdir": "dom029",
+      "source_name": "WHO World report on ageing and health",
+      "source_url": "https://www.who.int/docs/default-source/mca-documents/ageing/9789240694811-eng.pdf",
+      "source_sha256": "f26acaa4ed5c6c254dbf3953f6d6976ca90a201a1992be5717008394431be3d2",
+      "pdf_pages": 260,
+      "content_start_page": 8,
+      "content_end_page": 260,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}
