@@ -1,0 +1,29 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-08-17",
+  "operator": "NeoZorK",
+  "scope": "DOM024 maternal health: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 1680,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 1750,
+  "sources": [
+    {
+      "domain_code": "DOM024",
+      "domain_title": "Maternal health",
+      "remaining_target": 70,
+      "source_name": "Trends in maternal mortality estimates 2000 to 2023",
+      "source_url": "https://iris.who.int/server/api/core/bitstreams/29f43a3d-2228-489c-b1e7-b2f28e9101ce/content",
+      "source_sha256": "e2e6773eb78614e99707a9d658a54317d4fa122492318f5bb7e76cfd42dc7869",
+      "pdf_pages": 132,
+      "content_start_page": 1,
+      "content_end_page": 132,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}
