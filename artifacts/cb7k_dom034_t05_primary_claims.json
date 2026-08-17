@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IAIS Global Insurance Market Report 2024 bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IAIS Global Insurance Market Report 2024",
+  "source_url": "https://www.iais.org/uploads/2024/12/Global-Insurance-Market-Report-2024.pdf",
+  "access_date": "2026-08-17",
+  "source_sha256": "ccc654d17367a7e7779c1a051a98fad88f6842faafea178321a2cfe06617e0a1",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM034-T05-G01",
+      "section_locator": "PDF page 47",
+      "public_claim_text": "However, it can also be used to benefit from regulatory differences. ] Concentration risks: Concerns arise due to a limited number of reinsurers and jurisdictions dominating the transaction volumes.",
+      "public_claim_verbatim_quote": "However, it can also be used to benefit from regulatory differences. ] Concentration risks: Concerns arise due to a limited number of reinsurers and jurisdictions dominating the transaction volumes."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T05-G02",
+      "section_locator": "PDF page 48",
+      "public_claim_text": "While most supervisors do not directly oversee collateral arrangements, many establish clear expectations to minimise counterparty risk.",
+      "public_claim_verbatim_quote": "While most supervisors do not directly oversee collateral arrangements, many establish clear expectations to minimise counterparty risk."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T05-G03",
+      "section_locator": "PDF page 48",
+      "public_claim_text": "Key supervisory concerns with asset-intensive reinsurance include potential concentration risks, increasing complexity and potential conflicts of interest.",
+      "public_claim_verbatim_quote": "Key supervisory concerns with asset-intensive reinsurance include potential concentration risks, increasing complexity and potential conflicts of interest."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T05-G04",
+      "section_locator": "PDF page 52",
+      "public_claim_text": "Most jurisdictions require some level of collateralisation for reinsurance agreements with non-licensed reinsurers.",
+      "public_claim_verbatim_quote": "Most jurisdictions require some level of collateralisation for reinsurance agreements with non-licensed reinsurers."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T05-G05",
+      "section_locator": "PDF page 54",
+      "public_claim_text": "Leveraging ongoing work on level 3 assets is crucial, as there are significant overlaps.",
+      "public_claim_verbatim_quote": "Leveraging ongoing work on level 3 assets is crucial, as there are significant overlaps."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T05-G06",
+      "section_locator": "PDF page 54",
+      "public_claim_text": "This integrated approach will ensure a comprehensive assessment of the risks associated with alternative assets.",
+      "public_claim_verbatim_quote": "This integrated approach will ensure a comprehensive assessment of the risks associated with alternative assets."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T05-G07",
+      "section_locator": "PDF page 55",
+      "public_claim_text": "Note, the end-2023 data to calculate the cross-sectoral scores for banks is not yet available, so this will be calculated later in 2024.",
+      "public_claim_verbatim_quote": "Note, the end-2023 data to calculate the cross-sectoral scores for banks is not yet available, so this will be calculated later in 2024."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T05-G08",
+      "section_locator": "PDF page 58",
+      "public_claim_text": "This cross-sectoral methodology was developed by the joint IAIS-BCBS Task Force on Banks and Insurers in 2018.",
+      "public_claim_verbatim_quote": "This cross-sectoral methodology was developed by the joint IAIS-BCBS Task Force on Banks and Insurers in 2018."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T05-G09",
+      "section_locator": "PDF page 58",
+      "public_claim_text": "As noted before, the increase in the level 3 assets indicator is driven by accounting changes, in particular the implementation of IFRS (see Section 4.3).",
+      "public_claim_verbatim_quote": "As noted before, the increase in the level 3 assets indicator is driven by accounting changes, in particular the implementation of IFRS (see Section 4.3)."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T05-G10",
+      "section_locator": "PDF page 60",
+      "public_claim_text": "As a result, many insurers have made the accounting choice, or have been required, to adopt fair value measurement for assets previously held at amortised cost.",
+      "public_claim_verbatim_quote": "As a result, many insurers have made the accounting choice, or have been required, to adopt fair value measurement for assets previously held at amortised cost."
+    }
+  ]
+}

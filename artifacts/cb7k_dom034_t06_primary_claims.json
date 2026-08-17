@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IAIS Global Insurance Market Report 2024 bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IAIS Global Insurance Market Report 2024",
+  "source_url": "https://www.iais.org/uploads/2024/12/Global-Insurance-Market-Report-2024.pdf",
+  "access_date": "2026-08-17",
+  "source_sha256": "ccc654d17367a7e7779c1a051a98fad88f6842faafea178321a2cfe06617e0a1",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM034-T06-G01",
+      "section_locator": "PDF page 60",
+      "public_claim_text": "This shift in accounting practices is particularly evident for mortgage loans, which are now frequently measured at fair value and classified as level 3 assets within the fair value hierarchy.",
+      "public_claim_verbatim_quote": "This shift in accounting practices is particularly evident for mortgage loans, which are now frequently measured at fair value and classified as level 3 assets within the fair value hierarchy."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T06-G02",
+      "section_locator": "PDF page 62",
+      "public_claim_text": "Climate data elements are now a regular feature of the GME, providing a global baseline of climate risk data for the insurance sector.",
+      "public_claim_verbatim_quote": "Climate data elements are now a regular feature of the GME, providing a global baseline of climate risk data for the insurance sector."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T06-G03",
+      "section_locator": "PDF page 64",
+      "public_claim_text": "Climate-related sectors are those economic sectors that are most likely to be affected by climate change, notably by transition risks.",
+      "public_claim_verbatim_quote": "Climate-related sectors are those economic sectors that are most likely to be affected by climate change, notably by transition risks."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T06-G04",
+      "section_locator": "PDF page 64",
+      "public_claim_text": "Sovereign debt instruments and real estate are classified as climate-related assets, in line with the 2021 Climate GIMAR.",
+      "public_claim_verbatim_quote": "Sovereign debt instruments and real estate are classified as climate-related assets, in line with the 2021 Climate GIMAR."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T06-G05",
+      "section_locator": "PDF page 65",
+      "public_claim_text": "To approximate the exposures that would result from a look-through approach, it was assumed that entities or funds classified in the financial sector include climate-relevant assets in similar proportion to that of assets held directly by insurers.",
+      "public_claim_verbatim_quote": "To approximate the exposures that would result from a look-through approach, it was assumed that entities or funds classified in the financial sector include climate-relevant assets in similar proportion to that of assets held directly by insurers."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T06-G06",
+      "section_locator": "PDF page 66",
+      "public_claim_text": "Changes compared to last year’s results can be attributed to differences in data coverage of the IAIS climate data collections.",
+      "public_claim_verbatim_quote": "Changes compared to last year’s results can be attributed to differences in data coverage of the IAIS climate data collections."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T06-G07",
+      "section_locator": "PDF page 66",
+      "public_claim_text": "In the absence of insight into the actual exposures, the IAIS applied the same data adjustment to approximate a look-through approach as was used in previous years.34 The impact of this adjustment is an increase in the share of the six climate relevant sectors by 16% on a global level.",
+      "public_claim_verbatim_quote": "In the absence of insight into the actual exposures, the IAIS applied the same data adjustment to approximate a look-through approach as was used in previous years.34 The impact of this adjustment is an increase in the share of the six climate relevant sectors by 16% on a global level."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T06-G08",
+      "section_locator": "PDF page 69",
+      "public_claim_text": "The IAIS has commissioned CLIMADA Technologies to develop an open-source tool using the CLIMADA model to help supervisors assess the materiality of NatCat risks and the impact of climate change.",
+      "public_claim_verbatim_quote": "The IAIS has commissioned CLIMADA Technologies to develop an open-source tool using the CLIMADA model to help supervisors assess the materiality of NatCat risks and the impact of climate change."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T06-G09",
+      "section_locator": "PDF page 73",
+      "public_claim_text": "Scenario analysis is a key tool to assess the risks relating to climate change.",
+      "public_claim_verbatim_quote": "Scenario analysis is a key tool to assess the risks relating to climate change."
+    },
+    {
+      "protocol_id": "CB7K-DOM034-T06-G10",
+      "section_locator": "PDF page 74",
+      "public_claim_text": "There is still uncertainty about the role of supervisors in transition plans and planning relating to climate risk.",
+      "public_claim_verbatim_quote": "There is still uncertainty about the role of supervisors in transition plans and planning relating to climate risk."
+    }
+  ]
+}
