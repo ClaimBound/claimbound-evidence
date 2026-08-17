@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched Trends in maternal mortality estimates 2000 to 2023 bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "Trends in maternal mortality estimates 2000 to 2023",
+  "source_url": "https://iris.who.int/server/api/core/bitstreams/29f43a3d-2228-489c-b1e7-b2f28e9101ce/content",
+  "access_date": "2026-08-17",
+  "source_sha256": "e2e6773eb78614e99707a9d658a54317d4fa122492318f5bb7e76cfd42dc7869",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM024-T04-G01",
+      "section_locator": "PDF page 34",
+      "public_claim_text": "ICD-11, Part 2, section 2.28.5.7: “International reporting of maternal mortality: For the purpose of the international reporting of maternal mortality, only those maternal deaths occurring before the end of the 42-day reference period should be included in the calculation of the various ratios and rates, although the recording of later deaths is useful for national analytical purposes” (1).",
+      "public_claim_verbatim_quote": "ICD-11, Part 2, section 2.28.5.7: “International reporting of maternal mortality: For the purpose of the international reporting of maternal mortality, only those maternal deaths occurring before the end of the 42-day reference period should be included in the calculation of the various ratios and rates, although the recording of later deaths is useful for national analytical purposes” (1)."
+    },
+    {
+      "protocol_id": "CB7K-DOM024-T04-G02",
+      "section_locator": "PDF page 34",
+      "public_claim_text": "Late maternal deaths (coded O96 in ICD-10 and JB61 in ICD-11) and death from sequelae of obstetric causes (coded O97 in ICD-10 and JB62 in ICD-11) are also of interest for national- and international-level analysis but are not reported in this publication.",
+      "public_claim_verbatim_quote": "Late maternal deaths (coded O96 in ICD-10 and JB61 in ICD-11) and death from sequelae of obstetric causes (coded O97 in ICD-10 and JB62 in ICD-11) are also of interest for national- and international-level analysis but are not reported in this publication."
+    },
+    {
+      "protocol_id": "CB7K-DOM024-T04-G03",
+      "section_locator": "PDF page 35",
+      "public_claim_text": "Incompleteness and misclassification are often referred to collectively or individually as “underreporting”.",
+      "public_claim_verbatim_quote": "Incompleteness and misclassification are often referred to collectively or individually as “underreporting”."
+    },
+    {
+      "protocol_id": "CB7K-DOM024-T04-G04",
+      "section_locator": "PDF page 35",
+      "public_claim_text": "Errors of reporting affect all data and the concepts are defined here in Box 2.2.",
+      "public_claim_verbatim_quote": "Errors of reporting affect all data and the concepts are defined here in Box 2.2."
+    },
+    {
+      "protocol_id": "CB7K-DOM024-T04-G05",
+      "section_locator": "PDF page 35",
+      "public_claim_text": "Specificity (Sp) is defined as the proportion of correctly classified non-maternal deaths out of all true non-maternal deaths.",
+      "public_claim_verbatim_quote": "Specificity (Sp) is defined as the proportion of correctly classified non-maternal deaths out of all true non-maternal deaths."
+    },
+    {
+      "protocol_id": "CB7K-DOM024-T04-G06",
+      "section_locator": "PDF page 35",
+      "public_claim_text": "This can arise due to incomplete identification/ registration of individual deaths in each country and/or incomplete coverage of the national registration system within each country.",
+      "public_claim_verbatim_quote": "This can arise due to incomplete identification/ registration of individual deaths in each country and/or incomplete coverage of the national registration system within each country."
+    },
+    {
+      "protocol_id": "CB7K-DOM024-T04-G07",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "Though ICD-11 came into effect on 1 January 2022, ICD-10 was in use for the period of observation in this report.",
+      "public_claim_verbatim_quote": "Though ICD-11 came into effect on 1 January 2022, ICD-10 was in use for the period of observation in this report."
+    },
+    {
+      "protocol_id": "CB7K-DOM024-T04-G08",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "The ICD-10 codes included for the purposes of the MMEIG MMR estimates are the obstetric (“O”) codes except for O96 and O97 (late maternal deaths), and A34 (maternal tetanus).",
+      "public_claim_verbatim_quote": "The ICD-10 codes included for the purposes of the MMEIG MMR estimates are the obstetric (“O”) codes except for O96 and O97 (late maternal deaths), and A34 (maternal tetanus)."
+    },
+    {
+      "protocol_id": "CB7K-DOM024-T04-G09",
+      "section_locator": "PDF page 40",
+      "public_claim_text": "These studies either directly validate CRVS data, or provide the number of true maternal deaths for a country-year for which there is an eligible CRVS observation.",
+      "public_claim_verbatim_quote": "These studies either directly validate CRVS data, or provide the number of true maternal deaths for a country-year for which there is an eligible CRVS observation."
+    },
+    {
+      "protocol_id": "CB7K-DOM024-T04-G10",
+      "section_locator": "PDF page 40",
+      "public_claim_text": "These studies are used in the MMEIG BMis model to generate CRVS adjustment factors (see section 3.4.1).",
+      "public_claim_verbatim_quote": "These studies are used in the MMEIG BMis model to generate CRVS adjustment factors (see section 3.4.1)."
+    }
+  ]
+}
