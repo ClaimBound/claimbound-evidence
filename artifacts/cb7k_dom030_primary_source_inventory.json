@@ -1,0 +1,30 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-08-17",
+  "operator": "NeoZorK",
+  "scope": "DOM030 occupational health: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 2030,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 2100,
+  "sources": [
+    {
+      "domain_code": "DOM030",
+      "domain_title": "Occupational health",
+      "remaining_target": 70,
+      "source_subdir": "dom030",
+      "source_name": "WHO/ILO joint estimates of the work-related burden of disease and injury, 2000–2016: global monitoring report",
+      "source_url": "https://www.who.int/publications/i/9789240034945",
+      "source_sha256": "cdca76dd001cfd95602bad1683d584f438bbc3ef9695f043033559d601309d75",
+      "pdf_pages": 92,
+      "content_start_page": 8,
+      "content_end_page": 92,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}
