@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched OECD Anti-Corruption and Integrity Outlook 2024 bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "OECD Anti-Corruption and Integrity Outlook 2024",
+  "source_url": "https://www.oecd.org/en/publications/anti-corruption-and-integrity-outlook-2024_968587cd-en.html",
+  "access_date": "2026-08-17",
+  "source_sha256": "58f2772ebf642946287bee92bea9d2ddaffd8a0429496a1568b8fdb70df5dc54",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM043-T03-G01",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "How to read: As measured against OECD standards, Latvia fulfils 81% of criteria on quality of strategic framework, 79% on implementation of strategy, and 87% on action plans and monitoring reports.",
+      "public_claim_verbatim_quote": "How to read: As measured against OECD standards, Latvia fulfils 81% of criteria on quality of strategic framework, 79% on implementation of strategy, and 87% on action plans and monitoring reports."
+    },
+    {
+      "protocol_id": "CB7K-DOM043-T03-G02",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "The outer circle is based on whether public integrity risks are explicitly addressed in the risk management framework.",
+      "public_claim_verbatim_quote": "The outer circle is based on whether public integrity risks are explicitly addressed in the risk management framework."
+    },
+    {
+      "protocol_id": "CB7K-DOM043-T03-G03",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "How to read: In Norway, guidelines on fraud and corruption prevention are available as part of internal control processes.",
+      "public_claim_verbatim_quote": "How to read: In Norway, guidelines on fraud and corruption prevention are available as part of internal control processes."
+    },
+    {
+      "protocol_id": "CB7K-DOM043-T03-G04",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "However, public integrity risks are not explicitly addressed in the risk management framework.",
+      "public_claim_verbatim_quote": "However, public integrity risks are not explicitly addressed in the risk management framework."
+    },
+    {
+      "protocol_id": "CB7K-DOM043-T03-G05",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "Others have full coverage in legislation but do not audit all entities in practice.",
+      "public_claim_verbatim_quote": "Others have full coverage in legislation but do not audit all entities in practice."
+    },
+    {
+      "protocol_id": "CB7K-DOM043-T03-G06",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "Yet again, many countries do not collect the necessary data to be able to assess this.",
+      "public_claim_verbatim_quote": "Yet again, many countries do not collect the necessary data to be able to assess this."
+    },
+    {
+      "protocol_id": "CB7K-DOM043-T03-G07",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "The following countries do not collect data for both indicators: Australia, Austria, Denmark, Estonia, Japan, Luxembourg, Spain and Switzerland.",
+      "public_claim_verbatim_quote": "The following countries do not collect data for both indicators: Australia, Austria, Denmark, Estonia, Japan, Luxembourg, Spain and Switzerland."
+    },
+    {
+      "protocol_id": "CB7K-DOM043-T03-G08",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "How to read: In Ireland, the share of national budget organisations at the central government level covered by internal audit is 100% (blue column), and the share of the national budget organisations that were audited in the past five years is 100% (green dot).",
+      "public_claim_verbatim_quote": "How to read: In Ireland, the share of national budget organisations at the central government level covered by internal audit is 100% (blue column), and the share of the national budget organisations that were audited in the past five years is 100% (green dot)."
+    },
+    {
+      "protocol_id": "CB7K-DOM043-T03-G09",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "Data for Greece is not available as their central internal audit function was established recently.",
+      "public_claim_verbatim_quote": "Data for Greece is not available as their central internal audit function was established recently."
+    },
+    {
+      "protocol_id": "CB7K-DOM043-T03-G10",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "How to read: In Mexico, the implementation rate for internal audit recommendations is 100%.",
+      "public_claim_verbatim_quote": "How to read: In Mexico, the implementation rate for internal audit recommendations is 100%."
+    }
+  ]
+}
