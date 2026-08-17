@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IMF Global Financial Stability Report, October 2024: Steadying the Course bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IMF Global Financial Stability Report, October 2024: Steadying the Course",
+  "source_url": "https://www.imf.org/en/publications/gfsr/issues/2024/10/22/global-financial-stability-report-october-2024",
+  "access_date": "2026-08-17",
+  "source_sha256": "966a2932597ef9f6506a7ce225fa45eb047f5d24035189bc636ca4a9eb1edde4",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM037-T05-G01",
+      "section_locator": "PDF page 64",
+      "public_claim_text": "The index scale ranges from 0 to 100, with levels above 50 indicating a higher proportion of respondents estimating that credit risk is worsening.",
+      "public_claim_verbatim_quote": "The index scale ranges from 0 to 100, with levels above 50 indicating a higher proportion of respondents estimating that credit risk is worsening."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T05-G02",
+      "section_locator": "PDF page 70",
+      "public_claim_text": "Local currency government bond holdings by pension and insurance funds are assessed from December 2021 to December 2023.",
+      "public_claim_verbatim_quote": "Local currency government bond holdings by pension and insurance funds are assessed from December 2021 to December 2023."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T05-G03",
+      "section_locator": "PDF page 70",
+      "public_claim_text": "Term premiums are on the 10-year yield and follow the methodology in Adrian, Crump, and Moench (2013).",
+      "public_claim_verbatim_quote": "Term premiums are on the 10-year yield and follow the methodology in Adrian, Crump, and Moench (2013)."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T05-G04",
+      "section_locator": "PDF page 75",
+      "public_claim_text": "High macroeconomic uncertainty can profoundly affect macrofinancial stability by exacerbating downside market tail risks, delaying consumption and investment decisions, and reducing credit supply.",
+      "public_claim_verbatim_quote": "High macroeconomic uncertainty can profoundly affect macrofinancial stability by exacerbating downside market tail risks, delaying consumption and investment decisions, and reducing credit supply."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T05-G05",
+      "section_locator": "PDF page 75",
+      "public_claim_text": "As financial indicators may not fully capture macroeconomic uncertainty, particularly in economies with less-developed financial systems, there is merit in considering measures of macroeconomic uncertainty in systemic risk assessment frameworks such as the growth-at-risk framework.",
+      "public_claim_verbatim_quote": "As financial indicators may not fully capture macroeconomic uncertainty, particularly in economies with less-developed financial systems, there is merit in considering measures of macroeconomic uncertainty in systemic risk assessment frameworks such as the growth-at-risk framework."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T05-G06",
+      "section_locator": "PDF page 80",
+      "public_claim_text": "Panel 2 depicts standardized measures of uncertainty for the United States.",
+      "public_claim_verbatim_quote": "Panel 2 depicts standardized measures of uncertainty for the United States."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T05-G07",
+      "section_locator": "PDF page 81",
+      "public_claim_text": "Aït-Sahalia and others (2024) show that macroeconomic uncertainty and stock return volatility could be disconnected.",
+      "public_claim_verbatim_quote": "Aït-Sahalia and others (2024) show that macroeconomic uncertainty and stock return volatility could be disconnected."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T05-G08",
+      "section_locator": "PDF page 82",
+      "public_claim_text": "Panel 2 shows the impact of a one-standard-deviation increase in the real economic uncertainty index used in the chapter, based on Ludvigson, Ma, and Ng (2021), on the 10th percentile of the average future real GDP growth distribution at different time horizons.",
+      "public_claim_verbatim_quote": "Panel 2 shows the impact of a one-standard-deviation increase in the real economic uncertainty index used in the chapter, based on Ludvigson, Ma, and Ng (2021), on the 10th percentile of the average future real GDP growth distribution at different time horizons."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T05-G09",
+      "section_locator": "PDF page 82",
+      "public_claim_text": "Panel 3 depicts the effect of various measures of uncertainty on the full distribution of one-quarter-ahead real GDP growth.",
+      "public_claim_verbatim_quote": "Panel 3 depicts the effect of various measures of uncertainty on the full distribution of one-quarter-ahead real GDP growth."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T05-G10",
+      "section_locator": "PDF page 83",
+      "public_claim_text": "The comparator ML models include the same variables for results presented in green bars and additionally include the real economic uncertainty index for results presented in red bars.",
+      "public_claim_verbatim_quote": "The comparator ML models include the same variables for results presented in green bars and additionally include the real economic uncertainty index for results presented in red bars."
+    }
+  ]
+}

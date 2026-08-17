@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IMF Global Financial Stability Report, October 2024: Steadying the Course bytes on 2026-08-17. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IMF Global Financial Stability Report, October 2024: Steadying the Course",
+  "source_url": "https://www.imf.org/en/publications/gfsr/issues/2024/10/22/global-financial-stability-report-october-2024",
+  "access_date": "2026-08-17",
+  "source_sha256": "966a2932597ef9f6506a7ce225fa45eb047f5d24035189bc636ca4a9eb1edde4",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM037-T07-G01",
+      "section_locator": "PDF page 108",
+      "public_claim_text": "In panel 2, the idiosyncratic jumps frequencies are computed per stock-specific deciles of the daily bid-ask spreads.",
+      "public_claim_verbatim_quote": "In panel 2, the idiosyncratic jumps frequencies are computed per stock-specific deciles of the daily bid-ask spreads."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T07-G02",
+      "section_locator": "PDF page 110",
+      "public_claim_text": "In panel 3, events have been included if the index price change surpassed 0.2 percent at the 15-minute mark.",
+      "public_claim_verbatim_quote": "In panel 3, events have been included if the index price change surpassed 0.2 percent at the 15-minute mark."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T07-G03",
+      "section_locator": "PDF page 110",
+      "public_claim_text": "The periods before and after LLMs are separated by the publication of Vaswani and others (2017), which introduced the attention model and transformer architecture.",
+      "public_claim_verbatim_quote": "The periods before and after LLMs are separated by the publication of Vaswani and others (2017), which introduced the attention model and transformer architecture."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T07-G04",
+      "section_locator": "PDF page 111",
+      "public_claim_text": "Panel 2 shows that industry market participants expect regulatory authorities to intervene to limit the risks of generative AI.",
+      "public_claim_verbatim_quote": "Panel 2 shows that industry market participants expect regulatory authorities to intervene to limit the risks of generative AI."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T07-G05",
+      "section_locator": "PDF page 111",
+      "public_claim_text": "Other industry types in panel 2 include AI vendors, academia, and rating agencies.",
+      "public_claim_verbatim_quote": "Other industry types in panel 2 include AI vendors, academia, and rating agencies."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T07-G06",
+      "section_locator": "PDF page 119",
+      "public_claim_text": "In panel 2, the IMF AI Preparedness Index incorporates four macro-structural indicators that are relevant for AI adoption: digital infrastructure, innovation and economic integration, human capital and labor market policies, and regulation and ethics.",
+      "public_claim_verbatim_quote": "In panel 2, the IMF AI Preparedness Index incorporates four macro-structural indicators that are relevant for AI adoption: digital infrastructure, innovation and economic integration, human capital and labor market policies, and regulation and ethics."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T07-G07",
+      "section_locator": "PDF page 121",
+      "public_claim_text": "FinTech28 Technology-enabled innovation in financial services that could result in new business models, applications, processes, or products with an associated material effect on the provision of financial services.",
+      "public_claim_verbatim_quote": "FinTech28 Technology-enabled innovation in financial services that could result in new business models, applications, processes, or products with an associated material effect on the provision of financial services."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T07-G08",
+      "section_locator": "PDF page 121",
+      "public_claim_text": "Foundation models29 An umbrella term referring to a diversity of models that are usually trained by applying deep learning to massive quantities of data, such as text and images.",
+      "public_claim_verbatim_quote": "Foundation models29 An umbrella term referring to a diversity of models that are usually trained by applying deep learning to massive quantities of data, such as text and images."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T07-G09",
+      "section_locator": "PDF page 122",
+      "public_claim_text": "Market-making31 The provision of liquidity for clients in financial instruments, whereby a trader sets firm bid-offer quotes and thereby provides liquidity for a specific product or a particular product class.",
+      "public_claim_verbatim_quote": "Market-making31 The provision of liquidity for clients in financial instruments, whereby a trader sets firm bid-offer quotes and thereby provides liquidity for a specific product or a particular product class."
+    },
+    {
+      "protocol_id": "CB7K-DOM037-T07-G10",
+      "section_locator": "PDF page 122",
+      "public_claim_text": "Such advisors may be standalone firms and platforms or can be in-house applications of incumbent financial institutions.",
+      "public_claim_verbatim_quote": "Such advisors may be standalone firms and platforms or can be in-house applications of incumbent financial institutions."
+    }
+  ]
+}
