@@ -4,28 +4,25 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **3,710 / 7,000** |
-| Remaining | **3,290** (47 domains × 70) |
-| Next domain | **DOM054** Water quality |
+| Primary-backed done | **3,780 / 7,000** |
+| Remaining | **3,220** (46 domains × 70) |
+| Next domain | **DOM055** Oceans |
 | Last updated | 2026-09-05 |
-
-Status tracker for rewriting all 7,000 CB7K registry slots onto the
-primary-source publication protocol (exact verbatim quote + full-source
-SHA-256 + dual-extractor verification).
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM053 | 3,710 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM054–DOM100 | 3,290 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM054 | 3,780 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM055–DOM100 | 3,220 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
 - **DOM051** Climate science — IPCC AR6 SYR SPM (2026-09-05)
-- **DOM052** Carbon offsets — World Bank State and Trends of Carbon Pricing 2024 (2026-09-05)
+- **DOM052** Carbon offsets — World Bank Carbon Pricing 2024 (2026-09-05)
 - **DOM053** Air quality — World Bank The Cost of Air Pollution (2026-09-05)
+- **DOM054** Water quality — IPCC AR6 WGII Chapter 4 Water (2026-09-05)
 
 ## Cadence
 
@@ -52,7 +49,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM054** (Water quality).
+Next domain: **DOM055** Oceans.
 
 Waves:
 
