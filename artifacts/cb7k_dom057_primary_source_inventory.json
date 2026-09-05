@@ -1,0 +1,49 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-05",
+  "operator": "NeoZorK",
+  "scope": "DOM057 biodiversity: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 3920,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 3990,
+  "sources": [
+    {
+      "domain_code": "DOM057",
+      "domain_title": "Biodiversity",
+      "remaining_target": 60,
+      "start_index": 1,
+      "source_subdir": "dom057",
+      "source_name": "IPBES Global Assessment Summary for Policymakers",
+      "source_url": "https://ipbes.net/sites/default/files/2020-02/ipbes_global_assessment_report_summary_for_policymakers_en.pdf",
+      "source_sha256": "1c5fb28d33777167cd44e5b2eb1a6b8cc4307bb49baf2778c36e5bc1be514222",
+      "pdf_pages": 60,
+      "content_start_page": 2,
+      "content_end_page": 60,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 45,
+      "min_quote_words": 8,
+      "reject_pattern": "Figure \\\\d|Table \\\\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    },
+    {
+      "domain_code": "DOM057",
+      "domain_title": "Biodiversity",
+      "remaining_target": 10,
+      "start_index": 61,
+      "source_subdir": "dom057b",
+      "source_name": "IPCC AR5 WGII Summary for Policymakers",
+      "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ar5_wgII_spm_en.pdf",
+      "source_sha256": "a1c07f0c11df08cac7880e8db044c15a56390315d0f472a93adb864436768e74",
+      "pdf_pages": 34,
+      "content_start_page": 2,
+      "content_end_page": 34,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 45,
+      "min_quote_words": 8,
+      "reject_pattern": "Figure \\\\d|Table \\\\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}

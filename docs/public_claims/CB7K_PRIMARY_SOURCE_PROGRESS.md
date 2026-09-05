@@ -4,17 +4,17 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **3,920 / 7,000** |
-| Remaining | **3,080** (44 domains × 70) |
-| Next domain | **DOM057** Biodiversity |
+| Primary-backed done | **3,990 / 7,000** |
+| Remaining | **3,010** (43 domains × 70) |
+| Next domain | **DOM058** Agriculture |
 | Last updated | 2026-09-05 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM056 | 3,920 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM057–DOM100 | 3,080 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM057 | 3,990 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM058–DOM100 | 3,010 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
@@ -25,6 +25,7 @@ Latest packs:
 - **DOM054** Water quality — IPCC AR6 WGII Ch4 (2026-09-05)
 - **DOM055** Oceans — IPCC SROCC SPM (2026-09-05)
 - **DOM056** Forests — IPCC SRCCL SPM (2026-09-05)
+- **DOM057** Biodiversity — IPBES SPM + IPCC AR5 WGII SPM (2026-09-05)
 
 ## Cadence
 
