@@ -4,28 +4,23 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **3,990 / 7,000** |
-| Remaining | **3,010** (43 domains × 70) |
-| Next domain | **DOM058** Agriculture |
+| Primary-backed done | **4,060 / 7,000** |
+| Remaining | **2,940** (42 domains × 70) |
+| Next domain | **DOM059** Fisheries |
 | Last updated | 2026-09-05 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM057 | 3,990 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM058–DOM100 | 3,010 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM058 | 4,060 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM059–DOM100 | 2,940 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- **DOM051** Climate — IPCC AR6 SYR SPM (2026-09-05)
-- **DOM052** Carbon offsets — World Bank Carbon Pricing 2024 (2026-09-05)
-- **DOM053** Air quality — World Bank Cost of Air Pollution (2026-09-05)
-- **DOM054** Water quality — IPCC AR6 WGII Ch4 (2026-09-05)
-- **DOM055** Oceans — IPCC SROCC SPM (2026-09-05)
-- **DOM056** Forests — IPCC SRCCL SPM (2026-09-05)
-- **DOM057** Biodiversity — IPBES SPM + IPCC AR5 WGII SPM (2026-09-05)
+- **DOM051-057** prior packs (2026-09-05)
+- **DOM058** Agriculture — FAO SOFI 2021 (2026-09-05)
 
 ## Cadence
 
