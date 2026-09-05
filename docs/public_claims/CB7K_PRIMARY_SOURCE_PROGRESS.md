@@ -4,26 +4,27 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **3,850 / 7,000** |
-| Remaining | **3,150** (45 domains × 70) |
-| Next domain | **DOM056** Forests |
+| Primary-backed done | **3,920 / 7,000** |
+| Remaining | **3,080** (44 domains × 70) |
+| Next domain | **DOM057** Biodiversity |
 | Last updated | 2026-09-05 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM055 | 3,850 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM056–DOM100 | 3,150 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM056 | 3,920 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM057–DOM100 | 3,080 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- **DOM051** Climate science — IPCC AR6 SYR SPM (2026-09-05)
+- **DOM051** Climate — IPCC AR6 SYR SPM (2026-09-05)
 - **DOM052** Carbon offsets — World Bank Carbon Pricing 2024 (2026-09-05)
-- **DOM053** Air quality — World Bank The Cost of Air Pollution (2026-09-05)
-- **DOM054** Water quality — IPCC AR6 WGII Chapter 4 Water (2026-09-05)
-- **DOM055** Oceans — IPCC SROCC Summary for Policymakers (2026-09-05)
+- **DOM053** Air quality — World Bank Cost of Air Pollution (2026-09-05)
+- **DOM054** Water quality — IPCC AR6 WGII Ch4 (2026-09-05)
+- **DOM055** Oceans — IPCC SROCC SPM (2026-09-05)
+- **DOM056** Forests — IPCC SRCCL SPM (2026-09-05)
 
 ## Cadence
 

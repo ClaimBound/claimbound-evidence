@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC SRCCL Summary for Policymakers bytes on 2026-09-05. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC SRCCL Summary for Policymakers",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/sites/4/2020/02/SPM_Updated-Jan20.pdf",
+  "access_date": "2026-09-05",
+  "source_sha256": "6634b55031cd08820c7069138fa1e1c26be98f5f1b9674d6ac15a4fb1158b223",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM056-T04-G01",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Risks are assessed for two contrasted socio-economic pathways (SSP1 and SSP3 {Box SPM.1}) excluding the effects of targeted mitigation policies. {3.5, 4.2.1.2, 5.2.2, 5.2.3, 5.2.4, 5.2.5, 6.1.4, 7.2, Table SM7.5} Risks are not indicated beyond 3°C because SSP1 does not exceed this level of temperature change.",
+      "public_claim_verbatim_quote": "Risks are assessed for two contrasted socio-economic pathways (SSP1 and SSP3 {Box SPM.1}) excluding the effects of targeted mitigation policies. {3.5, 4.2.1.2, 5.2.2, 5.2.3, 5.2.4, 5.2.5, 6.1.4, 7.2, Table SM7.5} Risks are not indicated beyond 3°C because SSP1 does not exceed this level of temperature change."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T04-G02",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "(Figure SPM.2) {2.2, 3.5, 4.2, 4.4, 4.7, 5.1, 5.2, 5.8, 6.1, 7.2, 7.3, Cross-Chapter Box 9 in Chapter 6} A.5.1 W ith increasing warming, the frequency, intensity and duration of heat related events including heatwaves are projected to continue to increase through the 21st century (high confidence).",
+      "public_claim_verbatim_quote": "(Figure SPM.2) {2.2, 3.5, 4.2, 4.4, 4.7, 5.1, 5.2, 5.8, 6.1, 7.2, 7.3, Cross-Chapter Box 9 in Chapter 6} A.5.1 W ith increasing warming, the frequency, intensity and duration of heat related events including heatwaves are projected to continue to increase through the 21st century (high confidence)."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T04-G03",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "The frequency and intensity of extreme rainfall events are projected to increase in many regions (high confidence). {2.2.5, 3.5.1, 4.2.3, 5.2} A.5.2 W ith increasing warming, climate zones are projected to further shift poleward in the middle and high latitudes (high confidence).",
+      "public_claim_verbatim_quote": "The frequency and intensity of extreme rainfall events are projected to increase in many regions (high confidence). {2.2.5, 3.5.1, 4.2.3, 5.2} A.5.2 W ith increasing warming, climate zones are projected to further shift poleward in the middle and high latitudes (high confidence)."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T04-G04",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "The most vulnerable people will be more severely affected (high confidence). {5.2.3, 5.2.4, 5.2.5, 5.8.1, 7.2.2.2, 7.3.1} A.5.5 I n drylands, climate change and desertification are projected to cause reductions in crop and livestock productivity (high confidence), modify the plant species mix and reduce biodiversity (medium confidence).",
+      "public_claim_verbatim_quote": "The most vulnerable people will be more severely affected (high confidence). {5.2.3, 5.2.4, 5.2.5, 5.8.1, 7.2.2.2, 7.3.1} A.5.5 I n drylands, climate change and desertification are projected to cause reductions in crop and livestock productivity (high confidence), modify the plant species mix and reduce biodiversity (medium confidence)."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T04-G05",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Extreme weather and climate or slow-onset events may lead to increased displacement, disrupted food chains, threatened livelihoods (high confidence), and contribute to exacerbated stresses for conflict (medium confidence). {3.4.2, 4.7.3, 5.2.3, 5.2.4, 5.2.5, 5.8.2, 7.2.2, 7.3.1} A.5.8 U nsustainable land management has led to negative economic impacts (high confidence).",
+      "public_claim_verbatim_quote": "Extreme weather and climate or slow-onset events may lead to increased displacement, disrupted food chains, threatened livelihoods (high confidence), and contribute to exacerbated stresses for conflict (medium confidence). {3.4.2, 4.7.3, 5.2.3, 5.2.4, 5.2.5, 5.8.2, 7.2.2, 7.3.1} A.5.8 U nsustainable land management has led to negative economic impacts (high confidence)."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T04-G06",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "SSPs with greater cropland expansion result in larger declines in biodiversity (high confidence). {6.1.4} A.6.2 R isks related to water scarcity in drylands are lower in pathways with low population growth, less increase in water demand, and high adaptive capacity, as in SSP1 {Box SPM.1}.",
+      "public_claim_verbatim_quote": "SSPs with greater cropland expansion result in larger declines in biodiversity (high confidence). {6.1.4} A.6.2 R isks related to water scarcity in drylands are lower in pathways with low population growth, less increase in water demand, and high adaptive capacity, as in SSP1 {Box SPM.1}."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T04-G07",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "A.6.3 R isks related to climate change driven land degradation are higher in pathways with a higher population, increased land-use change, low adaptive capacity and other barriers to adaptation (e.g., SSP3).",
+      "public_claim_verbatim_quote": "A.6.3 R isks related to climate change driven land degradation are higher in pathways with a higher population, increased land-use change, low adaptive capacity and other barriers to adaptation (e.g., SSP3)."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T04-G08",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "Summary for Policymakers A.6.4 R isks related to food security are greater in pathways with lower income, increased food demand, increased food prices resulting from competition for land, more limited trade, and other challenges to adaptation (e.g., SSP3) (high confidence).",
+      "public_claim_verbatim_quote": "Summary for Policymakers A.6.4 R isks related to food security are greater in pathways with lower income, increased food demand, increased food prices resulting from competition for land, more limited trade, and other challenges to adaptation (e.g., SSP3) (high confidence)."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T04-G09",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "(Figure SPM.2b) {7.2} A.6.5 U rban expansion is projected to lead to conversion of cropland leading to losses in food production (high confidence).",
+      "public_claim_verbatim_quote": "(Figure SPM.2b) {7.2} A.6.5 U rban expansion is projected to lead to conversion of cropland leading to losses in food production (high confidence)."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T04-G10",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "Strategies for reducing these impacts can include urban and peri-urban food production and management of urban expansion, as well as urban green infrastructure that can reduce climate risks in cities32 (high confidence).",
+      "public_claim_verbatim_quote": "Strategies for reducing these impacts can include urban and peri-urban food production and management of urban expansion, as well as urban green infrastructure that can reduce climate risks in cities32 (high confidence)."
+    }
+  ]
+}
