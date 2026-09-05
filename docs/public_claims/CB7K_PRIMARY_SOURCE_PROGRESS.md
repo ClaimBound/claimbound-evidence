@@ -4,23 +4,23 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **4,060 / 7,000** |
-| Remaining | **2,940** (42 domains × 70) |
-| Next domain | **DOM059** Fisheries |
+| Primary-backed done | **4,130 / 7,000** |
+| Remaining | **2,870** (41 domains × 70) |
+| Next domain | **DOM060** Mining |
 | Last updated | 2026-09-05 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM058 | 4,060 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM059–DOM100 | 2,940 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM059 | 4,130 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM060–DOM100 | 2,870 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- **DOM051-057** prior packs (2026-09-05)
 - **DOM058** Agriculture — FAO SOFI 2021 (2026-09-05)
+- **DOM059** Fisheries — IPCC AR5 WGII Chapter 6 Ocean Systems (2026-09-05)
 
 ## Cadence
 

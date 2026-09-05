@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC AR5 WGII Chapter 6 Ocean Systems bytes on 2026-09-05. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC AR5 WGII Chapter 6 Ocean Systems",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/WGIIAR5-Chap6_FINAL.pdf",
+  "access_date": "2026-09-05",
+  "source_sha256": "1726eeab69f54503656c99dbb769b3c0c074ebd749801da236a5e2782c9ef372",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM059-T06-G01",
+      "section_locator": "PDF page 26",
+      "public_claim_text": "Some of these shells are shielded from direct contact with seawater by a special coating that the animal makes (as is the case in mussels).",
+      "public_claim_verbatim_quote": "Some of these shells are shielded from direct contact with seawater by a special coating that the animal makes (as is the case in mussels)."
+    },
+    {
+      "protocol_id": "CB7K-DOM059-T06-G02",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "Natural analogs and laboratory and mesocosm experiments provide evidence for differential effects of ocean acidification on species and communities.",
+      "public_claim_verbatim_quote": "Natural analogs and laboratory and mesocosm experiments provide evidence for differential effects of ocean acidification on species and communities."
+    },
+    {
+      "protocol_id": "CB7K-DOM059-T06-G03",
+      "section_locator": "PDF page 36",
+      "public_claim_text": "Unknown denotes no published information is available for each of these categories.",
+      "public_claim_verbatim_quote": "Unknown denotes no published information is available for each of these categories."
+    },
+    {
+      "protocol_id": "CB7K-DOM059-T06-G04",
+      "section_locator": "PDF page 36",
+      "public_claim_text": "Lab cultures show how altered pH elicits different responses of coccolithophore species (Langer et al., 2006).",
+      "public_claim_verbatim_quote": "Lab cultures show how altered pH elicits different responses of coccolithophore species (Langer et al., 2006)."
+    },
+    {
+      "protocol_id": "CB7K-DOM059-T06-G05",
+      "section_locator": "PDF page 37",
+      "public_claim_text": "In turn, tropical species may be more sensitive than temperate zone species (Pörtner et al., 2011).",
+      "public_claim_verbatim_quote": "In turn, tropical species may be more sensitive than temperate zone species (Pörtner et al., 2011)."
+    },
+    {
+      "protocol_id": "CB7K-DOM059-T06-G06",
+      "section_locator": "PDF page 39",
+      "public_claim_text": "A coupled pelagic and benthic food web is structured by the body size spectrum of species.",
+      "public_claim_verbatim_quote": "A coupled pelagic and benthic food web is structured by the body size spectrum of species."
+    },
+    {
+      "protocol_id": "CB7K-DOM059-T06-G07",
+      "section_locator": "PDF page 41",
+      "public_claim_text": "Overall, climate change will lead to large-scale shifts in the patterns of marine productivity, biodiversity, community composition, and ecosystem structure.",
+      "public_claim_verbatim_quote": "Overall, climate change will lead to large-scale shifts in the patterns of marine productivity, biodiversity, community composition, and ecosystem structure."
+    },
+    {
+      "protocol_id": "CB7K-DOM059-T06-G08",
+      "section_locator": "PDF page 41",
+      "public_claim_text": "In particular, the impacts of climate change on vulnerable organisms such as warm water corals are expected to affect associated ecosystems, such as coral reef communities.",
+      "public_claim_verbatim_quote": "In particular, the impacts of climate change on vulnerable organisms such as warm water corals are expected to affect associated ecosystems, such as coral reef communities."
+    },
+    {
+      "protocol_id": "CB7K-DOM059-T06-G09",
+      "section_locator": "PDF page 41",
+      "public_claim_text": "Alteration of the biology, distribution, and seasonal activity of marine organisms will disturb food web interactions such as the grazing of copepods (tiny crustaceans) on planktonic algae, another important foundational level of the marine food chain.",
+      "public_claim_verbatim_quote": "Alteration of the biology, distribution, and seasonal activity of marine organisms will disturb food web interactions such as the grazing of copepods (tiny crustaceans) on planktonic algae, another important foundational level of the marine food chain."
+    },
+    {
+      "protocol_id": "CB7K-DOM059-T06-G10",
+      "section_locator": "PDF page 41",
+      "public_claim_text": "Organisms less likely to shift to higher latitudes because they are more tolerant of the direct effects of climate change or less mobile may also be affected because climate change will alter the existing food webs on which they depend.",
+      "public_claim_verbatim_quote": "Organisms less likely to shift to higher latitudes because they are more tolerant of the direct effects of climate change or less mobile may also be affected because climate change will alter the existing food webs on which they depend."
+    }
+  ]
+}
