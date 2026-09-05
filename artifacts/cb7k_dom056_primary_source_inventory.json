@@ -1,0 +1,30 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-05",
+  "operator": "NeoZorK",
+  "scope": "DOM056 forests: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 3850,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 3920,
+  "sources": [
+    {
+      "domain_code": "DOM056",
+      "domain_title": "Forests",
+      "remaining_target": 70,
+      "source_subdir": "dom056",
+      "source_name": "IPCC SRCCL Summary for Policymakers",
+      "source_url": "https://www.ipcc.ch/site/assets/uploads/sites/4/2020/02/SPM_Updated-Jan20.pdf",
+      "source_sha256": "6634b55031cd08820c7069138fa1e1c26be98f5f1b9674d6ac15a4fb1158b223",
+      "pdf_pages": 41,
+      "content_start_page": 3,
+      "content_end_page": 41,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 55,
+      "min_quote_words": 9,
+      "reject_pattern": "Figure \\\\d|Table \\\\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}

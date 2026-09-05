@@ -9,6 +9,9 @@ select one exact public source URL, freeze the source manifest, and keep the ori
 claim and source even when the result is blocked, insufficient, negative, or later
 drifts.
 
+Primary-source rewrite progress for the 7,000 CB7K slots:
+[CB7K_PRIMARY_SOURCE_PROGRESS.md](CB7K_PRIMARY_SOURCE_PROGRESS.md).
+
 > **Registration rule (effective 2026-07-26):** a candidate question is never a
 > public claim. A new evidence card is rejected unless it contains a concrete
 > declarative claim, a substantive verbatim source excerpt, an exact HTTPS URL,

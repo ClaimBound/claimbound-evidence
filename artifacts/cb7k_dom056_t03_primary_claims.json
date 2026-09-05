@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC SRCCL Summary for Policymakers bytes on 2026-09-05. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC SRCCL Summary for Policymakers",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/sites/4/2020/02/SPM_Updated-Jan20.pdf",
+  "access_date": "2026-09-05",
+  "source_sha256": "6634b55031cd08820c7069138fa1e1c26be98f5f1b9674d6ac15a4fb1158b223",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM056-T03-G01",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "Global models consider as managed forest those lands that were subject to harvest whereas, consistent with IPCC guidelines, national GHG inventories define managed forest more broadly.",
+      "public_claim_verbatim_quote": "Global models consider as managed forest those lands that were subject to harvest whereas, consistent with IPCC guidelines, national GHG inventories define managed forest more broadly."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T03-G02",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "On this larger area, inventories can also consider the natural response of land to human-induced environmental changes as anthropogenic, while the global model approach (Table SPM.1) treats this response as part of the non-anthropogenic sink.",
+      "public_claim_verbatim_quote": "On this larger area, inventories can also consider the natural response of land to human-induced environmental changes as anthropogenic, while the global model approach (Table SPM.1) treats this response as part of the non-anthropogenic sink."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T03-G03",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "Summary for Policymakers Table SPM.1 | Data sources and notes: Estimates are only given until 2016 as this is the latest date when data are available for all gases.",
+      "public_claim_verbatim_quote": "Summary for Policymakers Table SPM.1 | Data sources and notes: Estimates are only given until 2016 as this is the latest date when data are available for all gases."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T03-G04",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "It includes emissions from fibre and other non-food agricultural products since these are not separated from food use in databases.",
+      "public_claim_verbatim_quote": "It includes emissions from fibre and other non-food agricultural products since these are not separated from food use in databases."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T03-G05",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "Summary for Policymakers A.4 Changes in land conditions,25 either from land-use or climate change, affect global and regional climate (high confidence).",
+      "public_claim_verbatim_quote": "Summary for Policymakers A.4 Changes in land conditions,25 either from land-use or climate change, affect global and regional climate (high confidence)."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T03-G06",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "Changes in land conditions can affect temperature and rainfall in regions as far as hundreds of kilometres away (high confidence). {2.5.1, 2.5.2, 2.5.4, 3.3, Cross-Chapter Box 4 in Chapter 2} A.4.3 C limate change is projected to alter land conditions with feedbacks on regional climate.",
+      "public_claim_verbatim_quote": "Changes in land conditions can affect temperature and rainfall in regions as far as hundreds of kilometres away (high confidence). {2.5.1, 2.5.2, 2.5.4, 3.3, Cross-Chapter Box 4 in Chapter 2} A.4.3 C limate change is projected to alter land conditions with feedbacks on regional climate."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T03-G07",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "SSP3 includes high population growth (~13 billion in 2100), low income and continued inequalities, material-intensive consumption and production, barriers to trade, and slow rates of technological change.",
+      "public_claim_verbatim_quote": "SSP3 includes high population growth (~13 billion in 2100), low income and continued inequalities, material-intensive consumption and production, barriers to trade, and slow rates of technological change."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T03-G08",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "SSP4 includes medium population growth (~9 billion in 2100), medium income, but significant inequality within and across regions.",
+      "public_claim_verbatim_quote": "SSP4 includes medium population growth (~9 billion in 2100), medium income, but significant inequality within and across regions."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T03-G09",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "Risks are lower in SSP1 compared with SSP3 given the same level of GMST increase.",
+      "public_claim_verbatim_quote": "Risks are lower in SSP1 compared with SSP3 given the same level of GMST increase."
+    },
+    {
+      "protocol_id": "CB7K-DOM056-T03-G10",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Risk levels are estimated assuming medium exposure and vulnerability driven by moderate trends in socioeconomic conditions broadly consistent with an SSP2 pathway. {Table SM7.4} Panel B: Risks associated with desertification, land degradation and food security due to climate change and patterns of socio-economic development.",
+      "public_claim_verbatim_quote": "Risk levels are estimated assuming medium exposure and vulnerability driven by moderate trends in socioeconomic conditions broadly consistent with an SSP2 pathway. {Table SM7.4} Panel B: Risks associated with desertification, land degradation and food security due to climate change and patterns of socio-economic development."
+    }
+  ]
+}

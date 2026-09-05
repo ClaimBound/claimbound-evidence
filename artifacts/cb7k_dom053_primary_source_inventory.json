@@ -1,0 +1,30 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-05",
+  "operator": "NeoZorK",
+  "scope": "DOM053 air quality: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 3640,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 3710,
+  "sources": [
+    {
+      "domain_code": "DOM053",
+      "domain_title": "Air quality",
+      "remaining_target": 70,
+      "source_subdir": "dom053",
+      "source_name": "World Bank The Cost of Air Pollution",
+      "source_url": "https://documents1.worldbank.org/curated/en/781521473177013155/pdf/108141-REVISED-Cost-of-Air-Pollution.pdf",
+      "source_sha256": "f39cec5f1ba173acaa4364f25edfbe7c7a8c395aefe6e26e04fb059a867377ed",
+      "pdf_pages": 122,
+      "content_start_page": 10,
+      "content_end_page": 110,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}

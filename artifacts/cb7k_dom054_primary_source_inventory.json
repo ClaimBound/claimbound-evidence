@@ -1,0 +1,30 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-05",
+  "operator": "NeoZorK",
+  "scope": "DOM054 water quality: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 3710,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 3780,
+  "sources": [
+    {
+      "domain_code": "DOM054",
+      "domain_title": "Water quality",
+      "remaining_target": 70,
+      "source_subdir": "dom054",
+      "source_name": "IPCC AR6 WGII Chapter 4 Water",
+      "source_url": "https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_Chapter04.pdf",
+      "source_sha256": "05e4c382a5b3955a65675680ed109b2efbb697e3b9e3e4e191edb1de893e3d82",
+      "pdf_pages": 162,
+      "content_start_page": 5,
+      "content_end_page": 157,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": "Figure \\\\d|Table \\\\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}

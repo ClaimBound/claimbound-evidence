@@ -1,0 +1,30 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-05",
+  "operator": "NeoZorK",
+  "scope": "DOM052 carbon offsets: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 3570,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 3640,
+  "sources": [
+    {
+      "domain_code": "DOM052",
+      "domain_title": "Carbon offsets",
+      "remaining_target": 70,
+      "source_subdir": "dom052",
+      "source_name": "World Bank State and Trends of Carbon Pricing 2024",
+      "source_url": "https://documents1.worldbank.org/curated/en/099081624122529330/pdf/P50228315fd8d1050186341ea02e1c107bc.pdf",
+      "source_sha256": "6c3305e60b3e3f3db632e616ff9df5a46590ef4a8ce6cce381ff53a637c278c6",
+      "pdf_pages": 76,
+      "content_start_page": 8,
+      "content_end_page": 70,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 60,
+      "min_quote_words": 10,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}

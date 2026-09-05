@@ -1,0 +1,49 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-05",
+  "operator": "NeoZorK",
+  "scope": "DOM060 mining: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 4130,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 4200,
+  "sources": [
+    {
+      "domain_code": "DOM060",
+      "domain_title": "Mining",
+      "remaining_target": 40,
+      "start_index": 1,
+      "source_subdir": "dom060",
+      "source_name": "IPCC AR4 WGIII Chapter 4 Energy Supply",
+      "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ar4-wg3-chapter4-1.pdf",
+      "source_sha256": "050eb7f7af18e48c87da62a1025154cd4c10096f2ee04a800bca4580d42d4175",
+      "pdf_pages": 72,
+      "content_start_page": 2,
+      "content_end_page": 72,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 40,
+      "min_quote_words": 7,
+      "reject_pattern": "Figure \\\\d|Table \\\\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    },
+    {
+      "domain_code": "DOM060",
+      "domain_title": "Mining",
+      "remaining_target": 30,
+      "start_index": 41,
+      "source_subdir": "dom060b",
+      "source_name": "IPCC AR4 WGIII Chapter 7 Industry",
+      "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ar4-wg3-chapter7-1.pdf",
+      "source_sha256": "9d615982debe2ae8382c2da2880cf4c872b26234a577f38fdb9d790a45134cf1",
+      "pdf_pages": 50,
+      "content_start_page": 2,
+      "content_end_page": 50,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 40,
+      "min_quote_words": 7,
+      "reject_pattern": "Figure \\\\d|Table \\\\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}
