@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC AR6 Synthesis Report Summary for Policymakers bytes on 2026-09-05. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC AR6 Synthesis Report Summary for Policymakers",
+  "source_url": "https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf",
+  "access_date": "2026-09-05",
+  "source_sha256": "3e347d04913c8fcc180c10efec372681554f3d735a7f0b2e6c7d991ddbb29c11",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM051-T04-G01",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "In panels (b) and (c), large positive relative changes in dry regions may correspond to small absolute changes.",
+      "public_claim_verbatim_quote": "In panels (b) and (c), large positive relative changes in dry regions may correspond to small absolute changes."
+    },
+    {
+      "protocol_id": "CB7K-DOM051-T04-G02",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "In panel (b), the unit is the standard deviation of interannual variability in soil moisture during 1850–1900.",
+      "public_claim_verbatim_quote": "In panel (b), the unit is the standard deviation of interannual variability in soil moisture during 1850–1900."
+    },
+    {
+      "protocol_id": "CB7K-DOM051-T04-G03",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "Summary for Policymakers B.2.1 In the near term, every region in the world is projected to face further increases in climate hazards (medium to high confidence, depending on region and hazard), increasing multiple risks to ecosystems and humans (very high confidence).",
+      "public_claim_verbatim_quote": "Summary for Policymakers B.2.1 In the near term, every region in the world is projected to face further increases in climate hazards (medium to high confidence, depending on region and hazard), increasing multiple risks to ecosystems and humans (very high confidence)."
+    },
+    {
+      "protocol_id": "CB7K-DOM051-T04-G04",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "RFC1: Unique and threatened systems: ecological and human systems that have restricted geographic ranges constrained by climate-related conditions and have high endemism or other distinctive properties.",
+      "public_claim_verbatim_quote": "RFC1: Unique and threatened systems: ecological and human systems that have restricted geographic ranges constrained by climate-related conditions and have high endemism or other distinctive properties."
+    },
+    {
+      "protocol_id": "CB7K-DOM051-T04-G05",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Projected risks and impacts shown on the maps are based on outputs from different subsets of Earth system and impact models that were used to project each impact indicator without additional adaptation.",
+      "public_claim_verbatim_quote": "Projected risks and impacts shown on the maps are based on outputs from different subsets of Earth system and impact models that were used to project each impact indicator without additional adaptation."
+    },
+    {
+      "protocol_id": "CB7K-DOM051-T04-G06",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Underpinning projections of temperature are from 21 Earth system models and do not consider extreme events impacting ecosystems such as the Arctic.",
+      "public_claim_verbatim_quote": "Underpinning projections of temperature are from 21 Earth system models and do not consider extreme events impacting ecosystems such as the Arctic."
+    },
+    {
+      "protocol_id": "CB7K-DOM051-T04-G07",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Large relative changes in low yielding regions may correspond to small absolute changes.",
+      "public_claim_verbatim_quote": "Large relative changes in low yielding regions may correspond to small absolute changes."
+    },
+    {
+      "protocol_id": "CB7K-DOM051-T04-G08",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Biodiversity and fisheries in Antarctica were not analysed due to data limitations.",
+      "public_claim_verbatim_quote": "Biodiversity and fisheries in Antarctica were not analysed due to data limitations."
+    },
+    {
+      "protocol_id": "CB7K-DOM051-T04-G09",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "Very likely ranges are shown for the low and high GHG emissions scenarios (SSP1-2.6 and SSP3-7.0) (Cross-Section Box.2).",
+      "public_claim_verbatim_quote": "Very likely ranges are shown for the low and high GHG emissions scenarios (SSP1-2.6 and SSP3-7.0) (Cross-Section Box.2)."
+    },
+    {
+      "protocol_id": "CB7K-DOM051-T04-G10",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "The future changes to 2100 (coloured lines and shading) are assessed consistently with observational constraints based on emulation of CMIP, ice-sheet, and glacier models, and likely ranges are shown for SSP1-2.6 and SSP3-7.0.",
+      "public_claim_verbatim_quote": "The future changes to 2100 (coloured lines and shading) are assessed consistently with observational constraints based on emulation of CMIP, ice-sheet, and glacier models, and likely ranges are shown for SSP1-2.6 and SSP3-7.0."
+    }
+  ]
+}
