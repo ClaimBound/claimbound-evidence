@@ -4,17 +4,17 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **3,780 / 7,000** |
-| Remaining | **3,220** (46 domains × 70) |
-| Next domain | **DOM055** Oceans |
+| Primary-backed done | **3,850 / 7,000** |
+| Remaining | **3,150** (45 domains × 70) |
+| Next domain | **DOM056** Forests |
 | Last updated | 2026-09-05 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM054 | 3,780 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM055–DOM100 | 3,220 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM055 | 3,850 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM056–DOM100 | 3,150 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
@@ -23,6 +23,7 @@ Latest packs:
 - **DOM052** Carbon offsets — World Bank Carbon Pricing 2024 (2026-09-05)
 - **DOM053** Air quality — World Bank The Cost of Air Pollution (2026-09-05)
 - **DOM054** Water quality — IPCC AR6 WGII Chapter 4 Water (2026-09-05)
+- **DOM055** Oceans — IPCC SROCC Summary for Policymakers (2026-09-05)
 
 ## Cadence
 

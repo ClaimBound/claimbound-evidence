@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC SROCC Summary for Policymakers bytes on 2026-09-05. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC SROCC Summary for Policymakers",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/sites/3/2019/11/03_SROCC_SPM_FINAL.pdf",
+  "access_date": "2026-09-05",
+  "source_sha256": "74266354fea22282964442f03d74c14ed5e7131826e421dbb4987489f57e7058",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM055-T01-G01",
+      "section_locator": "PDF page 3",
+      "public_claim_text": "Weyer (Germany) This Summary for Policymakers should be cited as: IPCC, 2019: Summary for Policymakers.",
+      "public_claim_verbatim_quote": "Weyer (Germany) This Summary for Policymakers should be cited as: IPCC, 2019: Summary for Policymakers."
+    },
+    {
+      "protocol_id": "CB7K-DOM055-T01-G02",
+      "section_locator": "PDF page 3",
+      "public_claim_text": "In: IPCC Special Report on the Ocean and Cryosphere in a Changing Climate [H.-O.",
+      "public_claim_verbatim_quote": "In: IPCC Special Report on the Ocean and Cryosphere in a Changing Climate [H.-O."
+    },
+    {
+      "protocol_id": "CB7K-DOM055-T01-G03",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "Summary for Policymakers Introduction This Special Report on the Ocean and Cryosphere1 in a Changing Climate (SROCC) was prepared following an IPCC Panel decision in 2016 to prepare three Special Reports during the Sixth Assessment Cycle2.",
+      "public_claim_verbatim_quote": "Summary for Policymakers Introduction This Special Report on the Ocean and Cryosphere1 in a Changing Climate (SROCC) was prepared following an IPCC Panel decision in 2016 to prepare three Special Reports during the Sixth Assessment Cycle2."
+    },
+    {
+      "protocol_id": "CB7K-DOM055-T01-G04",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "The SROCC follows the other two Special Reports on Global Warming of 1.5ºC (SR1.5) and on Climate Change and Land (SRCCL)5 and the Intergovernmental Science Policy Platform on Biodiversity and Ecosystem Services (IPBES) Global Assessment Report on Biodiversity and Ecosystem Services.",
+      "public_claim_verbatim_quote": "The SROCC follows the other two Special Reports on Global Warming of 1.5ºC (SR1.5) and on Climate Change and Land (SRCCL)5 and the Intergovernmental Science Policy Platform on Biodiversity and Ecosystem Services (IPBES) Global Assessment Report on Biodiversity and Ecosystem Services."
+    },
+    {
+      "protocol_id": "CB7K-DOM055-T01-G05",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "The decision to prepare a Special Report on Climate Change and Oceans and the Cryosphere was made at the Forty-Third Session of the IPCC in Nairobi, Kenya, 11–13 April 2016.",
+      "public_claim_verbatim_quote": "The decision to prepare a Special Report on Climate Change and Oceans and the Cryosphere was made at the Forty-Third Session of the IPCC in Nairobi, Kenya, 11–13 April 2016."
+    },
+    {
+      "protocol_id": "CB7K-DOM055-T01-G06",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "The following terms have been used to indicate the assessed likelihood of an outcome or a result: virtually certain 99–100% probability, very likely 90–100%, likely 66–100%, about as likely as not 33–66%, unlikely 0–33%, very unlikely 0–10%, exceptionally unlikely 0–1%.",
+      "public_claim_verbatim_quote": "The following terms have been used to indicate the assessed likelihood of an outcome or a result: virtually certain 99–100% probability, very likely 90–100%, likely 66–100%, about as likely as not 33–66%, unlikely 0–33%, very unlikely 0–10%, exceptionally unlikely 0–1%."
+    },
+    {
+      "protocol_id": "CB7K-DOM055-T01-G07",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "Around 10% of Earth’s land area is covered by glaciers or ice sheets.",
+      "public_claim_verbatim_quote": "Around 10% of Earth’s land area is covered by glaciers or ice sheets."
+    },
+    {
+      "protocol_id": "CB7K-DOM055-T01-G08",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "The low-lying coastal zone8 is currently home to around 680 million people (nearly 10% of the 2010 global population), projected to reach more than one billion by 2050.",
+      "public_claim_verbatim_quote": "The low-lying coastal zone8 is currently home to around 680 million people (nearly 10% of the 2010 global population), projected to reach more than one billion by 2050."
+    },
+    {
+      "protocol_id": "CB7K-DOM055-T01-G09",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "Arctic sea ice has thinned, concurrent with a transition to younger ice: between 1979 and 2018, the areal proportion of multi-year ice at least five years old has declined by approximately 90% (very high confidence).",
+      "public_claim_verbatim_quote": "Arctic sea ice has thinned, concurrent with a transition to younger ice: between 1979 and 2018, the areal proportion of multi-year ice at least five years old has declined by approximately 90% (very high confidence)."
+    },
+    {
+      "protocol_id": "CB7K-DOM055-T01-G10",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "Antarctic sea ice extent overall has had no statistically significant trend (1979–2018) due to contrasting regional signals and large interannual variability (high confidence). {3.2.1, 6.3.1, Box 3.1, Box 3.2, SPM A.1.2, Figures SPM.1, SPM.2} Including peripheral glaciers.",
+      "public_claim_verbatim_quote": "Antarctic sea ice extent overall has had no statistically significant trend (1979–2018) due to contrasting regional signals and large interannual variability (high confidence). {3.2.1, 6.3.1, Box 3.1, Box 3.2, SPM A.1.2, Figures SPM.1, SPM.2} Including peripheral glaciers."
+    }
+  ]
+}
