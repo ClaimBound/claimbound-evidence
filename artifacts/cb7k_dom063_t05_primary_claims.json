@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched US EPA Municipal Solid Waste Generation, Recycling, and Disposal in the United States: Facts and Figures for 2012 bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "US EPA Municipal Solid Waste Generation, Recycling, and Disposal in the United States: Facts and Figures for 2012",
+  "source_url": "https://www.epa.gov/sites/default/files/2015-09/documents/2012_msw_fs.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "23a9f870278e1d0ba2b4acc659fd2a1919eb6623a0c2dae9cbb8f3d33e453941",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM063-T05-G01",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "This figure also shows that the MSW generated per capita leveled off in the early- to mid-2000s and has fallen since then.",
+      "public_claim_verbatim_quote": "This figure also shows that the MSW generated per capita leveled off in the early- to mid-2000s and has fallen since then."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T05-G02",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "This is important because as population continues to grow, it will be necessary for MSW generated per capita to continue to fall to maintain or decrease the total amount of MSW generated as a country.",
+      "public_claim_verbatim_quote": "This is important because as population continues to grow, it will be necessary for MSW generated per capita to continue to fall to maintain or decrease the total amount of MSW generated as a country."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T05-G03",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "Thinking Beyond Waste EPA is helping change the way our society protects the environment and conserves resources for future generations by thinking beyond recycling, composting, and disposal.",
+      "public_claim_verbatim_quote": "Thinking Beyond Waste EPA is helping change the way our society protects the environment and conserves resources for future generations by thinking beyond recycling, composting, and disposal."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T05-G04",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "This starts with extraction of natural resources and material processing through product design and manufacturing then the product use stage followed by collection/processing and final end of life (disposal).",
+      "public_claim_verbatim_quote": "This starts with extraction of natural resources and material processing through product design and manufacturing then the product use stage followed by collection/processing and final end of life (disposal)."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T05-G05",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "By examining how materials are used throughout their life cycle, an SMM approach seeks to use materials in the most productive way with an emphasis on using less; reducing toxic chemicals and environmental impacts throughout the material’s life cycle; and assuring we have sufficient resources to meet today’s needs and those of the future.",
+      "public_claim_verbatim_quote": "By examining how materials are used throughout their life cycle, an SMM approach seeks to use materials in the most productive way with an emphasis on using less; reducing toxic chemicals and environmental impacts throughout the material’s life cycle; and assuring we have sufficient resources to meet today’s needs and those of the future."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T05-G06",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "Data on municipal solid waste generation, recycling and disposal is an important starting point for the full SMM approach.",
+      "public_claim_verbatim_quote": "Data on municipal solid waste generation, recycling and disposal is an important starting point for the full SMM approach."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T05-G07",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "For example, to determine the amounts of paper recycled, information is gathered on the amounts processed by paper mills and made into new paper on a national basis plus recycled paper exported, instead of counting paper collected for recycling on a state-by-state basis.",
+      "public_claim_verbatim_quote": "For example, to determine the amounts of paper recycled, information is gathered on the amounts processed by paper mills and made into new paper on a national basis plus recycled paper exported, instead of counting paper collected for recycling on a state-by-state basis."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T05-G08",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "Other sources of data, such as waste characterizations and research reports performed by governments, industry, or the press, supplement these data.",
+      "public_claim_verbatim_quote": "Other sources of data, such as waste characterizations and research reports performed by governments, industry, or the press, supplement these data."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T05-G09",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "The benefits of recycling and composting, such as elimination of GHG emissions, are calculated using EPA’s WARM methodology.",
+      "public_claim_verbatim_quote": "The benefits of recycling and composting, such as elimination of GHG emissions, are calculated using EPA’s WARM methodology."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T05-G10",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "Full data tables on MSW characterization that support this Report and Summaries of the MSW characterization methodology and WARM are available on the EPA website along with information about waste reduction and recycling.",
+      "public_claim_verbatim_quote": "Full data tables on MSW characterization that support this Report and Summaries of the MSW characterization methodology and WARM are available on the EPA website along with information about waste reduction and recycling."
+    }
+  ]
+}
