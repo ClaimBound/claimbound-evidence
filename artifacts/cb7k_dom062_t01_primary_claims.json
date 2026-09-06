@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC Good Practice Guidance Chapter 5 Waste bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC Good Practice Guidance Chapter 5 Waste",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/03/5_Waste-1.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "1651667ae684d4da3892e6b5f4491d8ba9c7d38f2f6b746cb9c0149ef26cf865",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM062-T01-G01",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "If the amount or composition of waste disposed of at SWDS is changing more rapidly over time, however, the IPCC default method will not provide an accurate trend.",
+      "public_claim_verbatim_quote": "If the amount or composition of waste disposed of at SWDS is changing more rapidly over time, however, the IPCC default method will not provide an accurate trend."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T01-G02",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "The use of the FOD method requires data on current, as well as historic waste quantities, composition and disposal practices for several decades.",
+      "public_claim_verbatim_quote": "The use of the FOD method requires data on current, as well as historic waste quantities, composition and disposal practices for several decades."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T01-G03",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "It is good practice to estimate this historical data, if such data are unavailable, when this is a key source category (see Chapter 7, Methodological Choice and Recalculation) or if there have been significant changes in waste management practices.",
+      "public_claim_verbatim_quote": "It is good practice to estimate this historical data, if such data are unavailable, when this is a key source category (see Chapter 7, Methodological Choice and Recalculation) or if there have been significant changes in waste management practices."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T01-G04",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "The IPCC Guidelines do not provide default values or methods for the estimation of some key parameters needed to use the FOD method.",
+      "public_claim_verbatim_quote": "The IPCC Guidelines do not provide default values or methods for the estimation of some key parameters needed to use the FOD method."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T01-G05",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "Equation 5.1 is based on the derivative of the general FOD equation (see p 6.10, Reference Manual, IPCC Guidelines) with t replaced by t – x, representing a normalisation factor that corrects for the fact that the evaluation for a single year is a discrete time estimate rather than a continuous time estimate.",
+      "public_claim_verbatim_quote": "Equation 5.1 is based on the derivative of the general FOD equation (see p 6.10, Reference Manual, IPCC Guidelines) with t replaced by t – x, representing a normalisation factor that corrects for the fact that the evaluation for a single year is a discrete time estimate rather than a continuous time estimate."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T01-G06",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "In national inventories, it is usually necessary to include data for 3 to 5 half lives in order to achieve an acceptably accurate result.",
+      "public_claim_verbatim_quote": "In national inventories, it is usually necessary to include data for 3 to 5 half lives in order to achieve an acceptably accurate result."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T01-G07",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "Measurements from SWDS in the United States, the United Kingdom and the Netherlands support values for k in the range 0.03 to 0.2 per year (Oonk and Boom, 1995).",
+      "public_claim_verbatim_quote": "Measurements from SWDS in the United States, the United Kingdom and the Netherlands support values for k in the range 0.03 to 0.2 per year (Oonk and Boom, 1995)."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T01-G08",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "The most rapid rates (k = 0.2, or a half life of about 3 years) are associated with high moisture conditions and rapidly degradable material such as food waste.",
+      "public_claim_verbatim_quote": "The most rapid rates (k = 0.2, or a half life of about 3 years) are associated with high moisture conditions and rapidly degradable material such as food waste."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T01-G09",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "The slower decay rates (k = 0.03, or a half life of about 23 years) are associated with dry site conditions and slowly degradable waste such as wood or paper.",
+      "public_claim_verbatim_quote": "The slower decay rates (k = 0.03, or a half life of about 23 years) are associated with dry site conditions and slowly degradable waste such as wood or paper."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T01-G10",
+      "section_locator": "PDF page 8",
+      "public_claim_text": "OX = Oxidation factor (fraction) Note that all of the model parameters can change over time, depending upon waste disposal trends and waste management practices.",
+      "public_claim_verbatim_quote": "OX = Oxidation factor (fraction) Note that all of the model parameters can change over time, depending upon waste disposal trends and waste management practices."
+    }
+  ]
+}

@@ -4,24 +4,24 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **4,270 / 7,000** |
-| Remaining | **2,730** (39 domains × 70) |
-| Next domain | **DOM062** Waste management |
+| Primary-backed done | **4,340 / 7,000** |
+| Remaining | **2,660** (38 domains × 70) |
+| Next domain | **DOM063** Recycling |
 | Last updated | 2026-09-06 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM061 | 4,270 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM062–DOM100 | 2,730 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM062 | 4,340 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM063–DOM100 | 2,660 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- **DOM059** Fisheries — IPCC AR5 WGII Ch6 Ocean Systems (2026-09-05)
 - **DOM060** Mining — IPCC AR4 WGIII Ch4+Ch7 (2026-09-05)
 - **DOM061** Chemicals — IPCC AR5 WGIII Ch10 + AR4 WGIII Ch7 (2026-09-06)
+- **DOM062** Waste management — IPCC GPG Chapter 5 Waste (2026-09-06)
 
 ## Cadence
 

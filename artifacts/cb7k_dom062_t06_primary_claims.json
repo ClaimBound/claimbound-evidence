@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC Good Practice Guidance Chapter 5 Waste bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC Good Practice Guidance Chapter 5 Waste",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/03/5_Waste-1.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "1651667ae684d4da3892e6b5f4491d8ba9c7d38f2f6b746cb9c0149ef26cf865",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM062-T06-G01",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "National statistics, regulatory agencies, wastewater treatment associations or industry associations can provide this information.",
+      "public_claim_verbatim_quote": "National statistics, regulatory agencies, wastewater treatment associations or industry associations can provide this information."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T06-G02",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "A significant fraction of industrial wastewater may be discharged into municipal sewers to be treated or disposed of with domestic wastewater.",
+      "public_claim_verbatim_quote": "A significant fraction of industrial wastewater may be discharged into municipal sewers to be treated or disposed of with domestic wastewater."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T06-G03",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "When few data points are available, the range is assumed to be from –50 to +100%.",
+      "public_claim_verbatim_quote": "When few data points are available, the range is assumed to be from –50 to +100%."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T06-G04",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "It is good practice to use these estimates provided they are transparent and otherwise consistent with the QA/QC principles set out in Chapter 8, Quality Assurance and Quality Control.",
+      "public_claim_verbatim_quote": "It is good practice to use these estimates provided they are transparent and otherwise consistent with the QA/QC principles set out in Chapter 8, Quality Assurance and Quality Control."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T06-G05",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "The existing sectoral tables accompanied with a detailed inventory report provide good transparency for this source category.",
+      "public_claim_verbatim_quote": "The existing sectoral tables accompanied with a detailed inventory report provide good transparency for this source category."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T06-G06",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Inventory agencies should record the results of such comparisons for internal documentation, and investigate any unexplainable discrepancies.",
+      "public_claim_verbatim_quote": "Inventory agencies should record the results of such comparisons for internal documentation, and investigate any unexplainable discrepancies."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T06-G07",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "For industrial wastewater, inventory agencies should cross-check values for MCFs against those from other national inventories with similar industrial wastewater characteristics.",
+      "public_claim_verbatim_quote": "For industrial wastewater, inventory agencies should cross-check values for MCFs against those from other national inventories with similar industrial wastewater characteristics."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T06-G08",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "Some countries may have regulatory control over industrial discharges, in which cases significant QA/QC protocols may already be in place for the development of the wastewater characteristics on an industry basis.",
+      "public_claim_verbatim_quote": "Some countries may have regulatory control over industrial discharges, in which cases significant QA/QC protocols may already be in place for the development of the wastewater characteristics on an industry basis."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T06-G09",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "Emissions from waste incineration without energy recovery have to be reported in the Waste Sector, while emissions from incineration with energy recovery should be reported in the Energy Sector.",
+      "public_claim_verbatim_quote": "Emissions from waste incineration without energy recovery have to be reported in the Waste Sector, while emissions from incineration with energy recovery should be reported in the Energy Sector."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T06-G10",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "Equation 5.11, the activity data are the waste inputs into the incinerator, and the emission factor is based on the carbon content of the waste that is of fossil origin only.",
+      "public_claim_verbatim_quote": "Equation 5.11, the activity data are the waste inputs into the incinerator, and the emission factor is based on the carbon content of the waste that is of fossil origin only."
+    }
+  ]
+}
