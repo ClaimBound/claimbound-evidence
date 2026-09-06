@@ -4,17 +4,17 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **4,480 / 7,000** |
-| Remaining | **2,520** (36 domains × 70) |
-| Next domain | **DOM065** Renewable energy |
+| Primary-backed done | **4,550 / 7,000** |
+| Remaining | **2,450** (35 domains × 70) |
+| Next domain | **DOM066** Power grid |
 | Last updated | 2026-09-06 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM064 | 4,480 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM065–DOM100 | 2,520 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM065 | 4,550 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM066–DOM100 | 2,450 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
@@ -24,6 +24,7 @@ Latest packs:
 - **DOM062** Waste management — IPCC GPG Chapter 5 Waste (2026-09-06)
 - **DOM063** Recycling — US EPA MSW Facts 2012 + IPCC AR4 WGIII Ch10 (2026-09-06)
 - **DOM064** Plastics — OECD Global Plastics Outlook (2026-09-06)
+- **DOM065** Renewable energy — IPCC AR5 WGIII Ch7 Energy Systems (2026-09-06)
 
 ## Cadence
 

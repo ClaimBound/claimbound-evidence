@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC AR5 WGIII Chapter 7 Energy Systems bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC AR5 WGIII Chapter 7 Energy Systems",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_chapter7.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "b375616d016f09432fdaf63eccb7c26043139d790689754ffc218f3fab54d41c",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM065-T03-G01",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "The upper range of emissions for CCS-based power plants is flexible since plants can be designed to capture less, something that results in lower cost and less equipment required.",
+      "public_claim_verbatim_quote": "The upper range of emissions for CCS-based power plants is flexible since plants can be designed to capture less, something that results in lower cost and less equipment required."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T03-G02",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "Renewable heat and power generation and nuclear energy can bring more significant reductions in GHG emissions.",
+      "public_claim_verbatim_quote": "Renewable heat and power generation and nuclear energy can bring more significant reductions in GHG emissions."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T03-G03",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "Note that percentiles were displayed for RE and traditional coal and gas in the SRREN, but not for coal CCS and gas CCS.",
+      "public_claim_verbatim_quote": "Note that percentiles were displayed for RE and traditional coal and gas in the SRREN, but not for coal CCS and gas CCS."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T03-G04",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "In the latter cases, the entire range is therefore shown.",
+      "public_claim_verbatim_quote": "In the latter cases, the entire range is therefore shown."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T03-G05",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "For hydropower, the variation in biogenic methane emissions from project to project are the main cause of the large range.",
+      "public_claim_verbatim_quote": "For hydropower, the variation in biogenic methane emissions from project to project are the main cause of the large range."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T03-G06",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "PV — photovoltaic, SRREN — IPCC Special Report on Renewable Energy Sources and Climate Change Mitigation.",
+      "public_claim_verbatim_quote": "PV — photovoltaic, SRREN — IPCC Special Report on Renewable Energy Sources and Climate Change Mitigation."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T03-G07",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "Notes: Harmonized values have been used where available and the mean values of the typical contributions are shown for the set of those cases where the data base allowed the separation.",
+      "public_claim_verbatim_quote": "Notes: Harmonized values have been used where available and the mean values of the typical contributions are shown for the set of those cases where the data base allowed the separation."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T03-G08",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "For world average coal and gas, the uncertainty range represents the uncertainty in the mean; the range of the uncerlying distribution is much larger.",
+      "public_claim_verbatim_quote": "For world average coal and gas, the uncertainty range represents the uncertainty in the mean; the range of the uncerlying distribution is much larger."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T03-G09",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "For the fossil fuel technologies, all fugitive methane emissions were calculated based on the range provided by (Burnham et al., 2012), infrastructure and supplies are based on (Singh et al., 2011), and direct emissions are based on (Singh et al., 2011; Corsten et al., 2013).",
+      "public_claim_verbatim_quote": "For the fossil fuel technologies, all fugitive methane emissions were calculated based on the range provided by (Burnham et al., 2012), infrastructure and supplies are based on (Singh et al., 2011), and direct emissions are based on (Singh et al., 2011; Corsten et al., 2013)."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T03-G10",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "These impacts are site-specific and generally more significant for long rotation species.",
+      "public_claim_verbatim_quote": "These impacts are site-specific and generally more significant for long rotation species."
+    }
+  ]
+}

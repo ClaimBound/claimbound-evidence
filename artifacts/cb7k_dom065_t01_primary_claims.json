@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC AR5 WGIII Chapter 7 Energy Systems bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC AR5 WGIII Chapter 7 Energy Systems",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_chapter7.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "b375616d016f09432fdaf63eccb7c26043139d790689754ffc218f3fab54d41c",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM065-T01-G01",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "Improving the energy efficiencies of fos sil power plants and / or the shift from coal to gas will not by itself be sufficient to achieve this.",
+      "public_claim_verbatim_quote": "Improving the energy efficiencies of fos sil power plants and / or the shift from coal to gas will not by itself be sufficient to achieve this."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T01-G02",
+      "section_locator": "PDF page 8",
+      "public_claim_text": "Responsive load issues are dealt with by chapters 8 – 10.",
+      "public_claim_verbatim_quote": "Responsive load issues are dealt with by chapters 8 – 10."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T01-G03",
+      "section_locator": "PDF page 9",
+      "public_claim_text": "Section 7.2 describes the current status of global and regional energy markets.",
+      "public_claim_verbatim_quote": "Section 7.2 describes the current status of global and regional energy markets."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T01-G04",
+      "section_locator": "PDF page 9",
+      "public_claim_text": "Transportation consumes 62 % of liquid fuels final use.",
+      "public_claim_verbatim_quote": "Transportation consumes 62 % of liquid fuels final use."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T01-G05",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "Underlying data from IEA (2012a) for this figure have been converted using the direct equivalent method of accounting for primary energy (see Annex.II.4).",
+      "public_claim_verbatim_quote": "Underlying data from IEA (2012a) for this figure have been converted using the direct equivalent method of accounting for primary energy (see Annex.II.4)."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T01-G06",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "The IEA reports energy sector share at 46 % (IEA, 2012f).",
+      "public_claim_verbatim_quote": "The IEA reports energy sector share at 46 % (IEA, 2012f)."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T01-G07",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "New post-2000 trends were registered for nuclear’s role in global energy systems.",
+      "public_claim_verbatim_quote": "New post-2000 trends were registered for nuclear’s role in global energy systems."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T01-G08",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "In recent years, the share of nuclear energy in world power generation has declined.",
+      "public_claim_verbatim_quote": "In recent years, the share of nuclear energy in world power generation has declined."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T01-G09",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "Those trends were formed well before the incident at the Fukushima nuclear plants in March 2011 and following revision of policies towards nuclear power by several governments (IEA, 2012e).",
+      "public_claim_verbatim_quote": "Those trends were formed well before the incident at the Fukushima nuclear plants in March 2011 and following revision of policies towards nuclear power by several governments (IEA, 2012e)."
+    },
+    {
+      "protocol_id": "CB7K-DOM065-T01-G10",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "Growing nuclear contribution to TPES after 2000 was observed only in EIT and Asia (mostly in Russia and China).",
+      "public_claim_verbatim_quote": "Growing nuclear contribution to TPES after 2000 was observed only in EIT and Asia (mostly in Russia and China)."
+    }
+  ]
+}
