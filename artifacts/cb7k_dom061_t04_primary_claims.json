@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC AR4 WGIII Chapter 7 Industry bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC AR4 WGIII Chapter 7 Industry",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ar4-wg3-chapter7-1.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "9d615982debe2ae8382c2da2880cf4c872b26234a577f38fdb9d790a45134cf1",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM061-T04-G01",
+      "section_locator": "PDF page 3",
+      "public_claim_text": "The A1 family of scenarios describe a future with very rapid econoic growth, low population growth, and rapid introduction of new and more efficient technologies.",
+      "public_claim_verbatim_quote": "The A1 family of scenarios describe a future with very rapid econoic growth, low population growth, and rapid introduction of new and more efficient technologies."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T04-G02",
+      "section_locator": "PDF page 3",
+      "public_claim_text": "B2 describes a world ‘in which emphasis is on local solutions to economic, social, and environmental sustainability’.",
+      "public_claim_verbatim_quote": "B2 describes a world ‘in which emphasis is on local solutions to economic, social, and environmental sustainability’."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T04-G03",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "A sampling of these options is discussed in Sections 7.2–7.4.",
+      "public_claim_verbatim_quote": "A sampling of these options is discussed in Sections 7.2–7.4."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T04-G04",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "The production of biofuels is covered in Chapter 4.",
+      "public_claim_verbatim_quote": "The production of biofuels is covered in Chapter 4."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T04-G05",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "These activities also take place in dedicated facilities, which are discussed in Chapters 4 and 10 respectively.",
+      "public_claim_verbatim_quote": "These activities also take place in dedicated facilities, which are discussed in Chapters 4 and 10 respectively."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T04-G06",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "Industrial sector ‘final energy’ use excludes energy consumed in refineries and other energy conversion operations, power plants, coal transformation plants, etc.",
+      "public_claim_verbatim_quote": "Industrial sector ‘final energy’ use excludes energy consumed in refineries and other energy conversion operations, power plants, coal transformation plants, etc."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T04-G07",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "However, this energy is included in ‘primary energy’.",
+      "public_claim_verbatim_quote": "However, this energy is included in ‘primary energy’."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T04-G08",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "Upstream energy consumption was reallocated by weighting electricity, petroleum and coal products consumption with primary factors reflecting energy use and loses in energy industries.",
+      "public_claim_verbatim_quote": "Upstream energy consumption was reallocated by weighting electricity, petroleum and coal products consumption with primary factors reflecting energy use and loses in energy industries."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T04-G09",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "Final energy includes feedstock energy consumed, for example in the chemical industry.",
+      "public_claim_verbatim_quote": "Final energy includes feedstock energy consumed, for example in the chemical industry."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T04-G10",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "In Primary energy associated with electricity and heat consumption was calculated by multiplying the amount of elec-tricity and heat consumed by each end-use sector by eletricity and heat primary factors.",
+      "public_claim_verbatim_quote": "In Primary energy associated with electricity and heat consumption was calculated by multiplying the amount of elec-tricity and heat consumed by each end-use sector by eletricity and heat primary factors."
+    }
+  ]
+}

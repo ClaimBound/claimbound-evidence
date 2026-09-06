@@ -4,24 +4,24 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **4,200 / 7,000** |
-| Remaining | **2,800** (40 domains × 70) |
-| Next domain | **DOM061** Chemicals |
-| Last updated | 2026-09-05 |
+| Primary-backed done | **4,270 / 7,000** |
+| Remaining | **2,730** (39 domains × 70) |
+| Next domain | **DOM062** Waste management |
+| Last updated | 2026-09-06 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM060 | 4,200 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM061–DOM100 | 2,800 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM061 | 4,270 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM062–DOM100 | 2,730 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- **DOM058** Agriculture — FAO SOFI 2021 (2026-09-05)
 - **DOM059** Fisheries — IPCC AR5 WGII Ch6 Ocean Systems (2026-09-05)
 - **DOM060** Mining — IPCC AR4 WGIII Ch4+Ch7 (2026-09-05)
+- **DOM061** Chemicals — IPCC AR5 WGIII Ch10 + AR4 WGIII Ch7 (2026-09-06)
 
 ## Cadence
 

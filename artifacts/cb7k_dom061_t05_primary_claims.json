@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC AR4 WGIII Chapter 7 Industry bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC AR4 WGIII Chapter 7 Industry",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ar4-wg3-chapter7-1.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "9d615982debe2ae8382c2da2880cf4c872b26234a577f38fdb9d790a45134cf1",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM061-T05-G01",
+      "section_locator": "PDF page 8",
+      "public_claim_text": "Tables 7.3 and 7.4 include HFC emissions from refrigeration equipment used in industrial processes and food storage, but not HFC emissions from other refrigeration and air conditioning applications.",
+      "public_claim_verbatim_quote": "Tables 7.3 and 7.4 include HFC emissions from refrigeration equipment used in industrial processes and food storage, but not HFC emissions from other refrigeration and air conditioning applications."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T05-G02",
+      "section_locator": "PDF page 8",
+      "public_claim_text": "Foams should be considered in the buildings sector.",
+      "public_claim_verbatim_quote": "Foams should be considered in the buildings sector."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T05-G03",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "IEA (2006a) estimates that steam generation consumes about 15% of global final industrial energy use.",
+      "public_claim_verbatim_quote": "IEA (2006a) estimates that steam generation consumes about 15% of global final industrial energy use."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T05-G04",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "These techniques are already being applied in specific applications.",
+      "public_claim_verbatim_quote": "These techniques are already being applied in specific applications."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T05-G05",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "Options for fuel switching in those processes are discussed in Section 7.4.",
+      "public_claim_verbatim_quote": "Options for fuel switching in those processes are discussed in Section 7.4."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T05-G06",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "The use of biomass is well established in some industries.",
+      "public_claim_verbatim_quote": "The use of biomass is well established in some industries."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T05-G07",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "The food and jute industries make use of solar energy for drying in appropriate climates (Das and Roy, 1994).",
+      "public_claim_verbatim_quote": "The food and jute industries make use of solar energy for drying in appropriate climates (Das and Roy, 1994)."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T05-G08",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "Future efficiency developments will aim at further process Data is pluralintegration.",
+      "public_claim_verbatim_quote": "Future efficiency developments will aim at further process Data is pluralintegration."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T05-G09",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "China uses various indicators to present energy intensity, including “comprehensive” and “comparable” energy intensity.",
+      "public_claim_verbatim_quote": "China uses various indicators to present energy intensity, including “comprehensive” and “comparable” energy intensity."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T05-G10",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "The above figures use the comparable energy intensity, which is a constructed indicator, making it impossible to compare to those of other studies.",
+      "public_claim_verbatim_quote": "The above figures use the comparable energy intensity, which is a constructed indicator, making it impossible to compare to those of other studies."
+    }
+  ]
+}
