@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC AR5 WGIII Chapter 10 Industry bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC AR5 WGIII Chapter 10 Industry",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_chapter10.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "2d42f77df47e028c07c8af16bbf1fd899b64b5e7da5aebd64dd2ccf942e750a0",
+  "raw_payload_committed": false,
+  "text_extractor": "pypdf",
+  "independent_text_extractor": "pdfplumber",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM061-T03-G01",
+      "section_locator": "PDF page 51",
+      "public_claim_text": "Therefore, economics of both options may be different in such cases.",
+      "public_claim_verbatim_quote": "Therefore, economics of both options may be different in such cases."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T03-G02",
+      "section_locator": "PDF page 51",
+      "public_claim_text": "WTE plants require sophisticated Air Pollution Control (APC) sys tems that constitute a large part of the plant.",
+      "public_claim_verbatim_quote": "WTE plants require sophisticated Air Pollution Control (APC) sys tems that constitute a large part of the plant."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T03-G03",
+      "section_locator": "PDF page 58",
+      "public_claim_text": "Chapter 10 CRC ORE (2011)� Annual Report: Transforming Resource Extraction, 2010 – 11.",
+      "public_claim_verbatim_quote": "Chapter 10 CRC ORE (2011)� Annual Report: Transforming Resource Extraction, 2010 – 11."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T03-G04",
+      "section_locator": "PDF page 58",
+      "public_claim_text": "DRET (2011)� Analyses of Diesel Use for Mine Haul and Transport Operations.",
+      "public_claim_verbatim_quote": "DRET (2011)� Analyses of Diesel Use for Mine Haul and Transport Operations."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T03-G05",
+      "section_locator": "PDF page 62",
+      "public_claim_text": "ISMI (2005)� Reduction of Perfluorocompound (PFC) Emissions: 2005 State-of-the Technology Report.",
+      "public_claim_verbatim_quote": "ISMI (2005)� Reduction of Perfluorocompound (PFC) Emissions: 2005 State-of-the Technology Report."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T03-G06",
+      "section_locator": "PDF page 64",
+      "public_claim_text": "Locher F� W� (2006)� Cement: Principles of Production and Use.",
+      "public_claim_verbatim_quote": "Locher F� W� (2006)� Cement: Principles of Production and Use."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T03-G07",
+      "section_locator": "PDF page 66",
+      "public_claim_text": "Available at: http: / / criepi.denken.or.jp / jp / kenkikaku / report / detail / Y07012.html.",
+      "public_claim_verbatim_quote": "Available at: http: / / criepi.denken.or.jp / jp / kenkikaku / report / detail / Y07012.html."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T03-G08",
+      "section_locator": "PDF page 68",
+      "public_claim_text": "Saidur R� (2010)� A review on electrical motors energy use and energy savings.",
+      "public_claim_verbatim_quote": "Saidur R� (2010)� A review on electrical motors energy use and energy savings."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T03-G09",
+      "section_locator": "PDF page 68",
+      "public_claim_text": "Schäfer A� (2005)� Structural change in energy use.",
+      "public_claim_verbatim_quote": "Schäfer A� (2005)� Structural change in energy use."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T03-G10",
+      "section_locator": "PDF page 70",
+      "public_claim_text": "US DoE (2004b)� Energy Use, Loss and Opportunities Analysis: U.",
+      "public_claim_verbatim_quote": "US DoE (2004b)� Energy Use, Loss and Opportunities Analysis: U."
+    }
+  ]
+}

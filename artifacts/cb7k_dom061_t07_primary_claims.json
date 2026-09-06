@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC AR4 WGIII Chapter 7 Industry bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC AR4 WGIII Chapter 7 Industry",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ar4-wg3-chapter7-1.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "9d615982debe2ae8382c2da2880cf4c872b26234a577f38fdb9d790a45134cf1",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM061-T07-G01",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "Limited data in the literature did not allow estimation of the potential for other mitigation options in these industries.",
+      "public_claim_verbatim_quote": "Limited data in the literature did not allow estimation of the potential for other mitigation options in these industries."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T07-G02",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "This return can be economic, for example energy-efficiency improvements that show an economic payout.",
+      "public_claim_verbatim_quote": "This return can be economic, for example energy-efficiency improvements that show an economic payout."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T07-G03",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "Others, such as fuel switching can be vulnerable to climate change under certain circumstances.",
+      "public_claim_verbatim_quote": "Others, such as fuel switching can be vulnerable to climate change under certain circumstances."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T07-G04",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "Chapter 7 Industry of fifty AIJ projects were in Africa.",
+      "public_claim_verbatim_quote": "Chapter 7 Industry of fifty AIJ projects were in Africa."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T07-G05",
+      "section_locator": "PDF page 35",
+      "public_claim_text": "Industry includes agriculture and the public sector.",
+      "public_claim_verbatim_quote": "Industry includes agriculture and the public sector."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T07-G06",
+      "section_locator": "PDF page 35",
+      "public_claim_text": "Tax reductions are frequently used to stimulate energy savings in industry.",
+      "public_claim_verbatim_quote": "Tax reductions are frequently used to stimulate energy savings in industry."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T07-G07",
+      "section_locator": "PDF page 36",
+      "public_claim_text": "A more in-depth discussion of emission trading can be found in Section 13.2.1.",
+      "public_claim_verbatim_quote": "A more in-depth discussion of emission trading can be found in Section 13.2.1."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T07-G08",
+      "section_locator": "PDF page 37",
+      "public_claim_text": "Most policies are stated in general terms, but their implementation would have to include the industrial sector.",
+      "public_claim_verbatim_quote": "Most policies are stated in general terms, but their implementation would have to include the industrial sector."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T07-G09",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "Waste Reduced use of primary materials; reduction of waste water, hazardous waste, waste materials; reduced waste disposal costs; use of waste fuels, heat and gas.",
+      "public_claim_verbatim_quote": "Waste Reduced use of primary materials; reduction of waste water, hazardous waste, waste materials; reduced waste disposal costs; use of waste fuels, heat and gas."
+    },
+    {
+      "protocol_id": "CB7K-DOM061-T07-G10",
+      "section_locator": "PDF page 39",
+      "public_claim_text": "Ideally, the roles of the public and private sectors will be complementary.",
+      "public_claim_verbatim_quote": "Ideally, the roles of the public and private sectors will be complementary."
+    }
+  ]
+}
