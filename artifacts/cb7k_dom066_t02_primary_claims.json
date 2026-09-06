@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC AR5 WGIII Chapter 6 Assessing Transformation Pathways bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC AR5 WGIII Chapter 6 Assessing Transformation Pathways",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/02/ipcc_wg3_ar5_chapter6.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "ac3544248c770a9dd6b907cde0e626b687acf7b5bd4a51928d6aff68bb5168fa",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM066-T02-G01",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "This has important implications for costs and technology transitions, among other things (see Section 6.3.5).",
+      "public_claim_verbatim_quote": "This has important implications for costs and technology transitions, among other things (see Section 6.3.5)."
+    },
+    {
+      "protocol_id": "CB7K-DOM066-T02-G02",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "AR5 database is given as dashed black lines.",
+      "public_claim_verbatim_quote": "AR5 database is given as dashed black lines."
+    },
+    {
+      "protocol_id": "CB7K-DOM066-T02-G03",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Carbon budgets below 0 and relative mitigation above 100 % can be achieved via negative emissions.",
+      "public_claim_verbatim_quote": "Carbon budgets below 0 and relative mitigation above 100 % can be achieved via negative emissions."
+    },
+    {
+      "protocol_id": "CB7K-DOM066-T02-G04",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "The left panel shows 2010 historic emissions and the bars in the right panel indicate changes compared to 2010 (AR5 Scenario Database).",
+      "public_claim_verbatim_quote": "The left panel shows 2010 historic emissions and the bars in the right panel indicate changes compared to 2010 (AR5 Scenario Database)."
+    },
+    {
+      "protocol_id": "CB7K-DOM066-T02-G05",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "The numbers in parenthesis show the interquartile range across scenarios.",
+      "public_claim_verbatim_quote": "The numbers in parenthesis show the interquartile range across scenarios."
+    },
+    {
+      "protocol_id": "CB7K-DOM066-T02-G06",
+      "section_locator": "PDF page 26",
+      "public_claim_text": "Panel a) shows concentration-driven runs for the RCP scenarios from MAGICC (lines) and one-standard deviation ranges from CMIP5 models.",
+      "public_claim_verbatim_quote": "Panel a) shows concentration-driven runs for the RCP scenarios from MAGICC (lines) and one-standard deviation ranges from CMIP5 models."
+    },
+    {
+      "protocol_id": "CB7K-DOM066-T02-G07",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "Panel a) shows temperature increase relative reference as calculated by MAGICC (10th to 90th percentile for median MAGICC outcomes).",
+      "public_claim_verbatim_quote": "Panel a) shows temperature increase relative reference as calculated by MAGICC (10th to 90th percentile for median MAGICC outcomes)."
+    },
+    {
+      "protocol_id": "CB7K-DOM066-T02-G08",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "Panel b) shows 2081 – 2100 temperature levels for the scenario categories and RCPs for the MAGICC outcomes.",
+      "public_claim_verbatim_quote": "Panel b) shows 2081 – 2100 temperature levels for the scenario categories and RCPs for the MAGICC outcomes."
+    },
+    {
+      "protocol_id": "CB7K-DOM066-T02-G09",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "The bars for the scenarios used in this assessment include both the 10th to 90th percentile range for median MAGICC outcomes (colored portion of the bars) and the 16th to 84th percentile range of the full distribution of MAGICC outcomes from these scenarios, which also captures the Earth-System uncertainty.",
+      "public_claim_verbatim_quote": "The bars for the scenarios used in this assessment include both the 10th to 90th percentile range for median MAGICC outcomes (colored portion of the bars) and the 16th to 84th percentile range of the full distribution of MAGICC outcomes from these scenarios, which also captures the Earth-System uncertainty."
+    },
+    {
+      "protocol_id": "CB7K-DOM066-T02-G10",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "The bars for the RCPs are based on the 16th to 84th of MAGICC outcomes based on the RCP emissions scenarios, capturing only the Earth-System uncertainty.",
+      "public_claim_verbatim_quote": "The bars for the RCPs are based on the 16th to 84th of MAGICC outcomes based on the RCP emissions scenarios, capturing only the Earth-System uncertainty."
+    }
+  ]
+}
