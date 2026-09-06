@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC Good Practice Guidance Chapter 5 Waste bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC Good Practice Guidance Chapter 5 Waste",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/03/5_Waste-1.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "1651667ae684d4da3892e6b5f4491d8ba9c7d38f2f6b746cb9c0149ef26cf865",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM062-T05-G01",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "For typical domestic raw sewage, COD (mg/l) is 2 to 2.5 times higher than BOD (mg/l).",
+      "public_claim_verbatim_quote": "For typical domestic raw sewage, COD (mg/l) is 2 to 2.5 times higher than BOD (mg/l)."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T05-G02",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "Therefore, it is important to use emission factors that are consistent with the measure of degradable carbon being used.",
+      "public_claim_verbatim_quote": "Therefore, it is important to use emission factors that are consistent with the measure of degradable carbon being used."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T05-G03",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "If sludge separation is practised and appropriate statistics are available, then these sub-source categories should be separated.",
+      "public_claim_verbatim_quote": "If sludge separation is practised and appropriate statistics are available, then these sub-source categories should be separated."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T05-G04",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "Where a separate estimate for emissions from sewage sludge is not made, the weighted MCF for primary treatment and aerobic secondary treatment may need to be greater than zero, reflecting the typical sludge processing routes for that country.",
+      "public_claim_verbatim_quote": "Where a separate estimate for emissions from sewage sludge is not made, the weighted MCF for primary treatment and aerobic secondary treatment may need to be greater than zero, reflecting the typical sludge processing routes for that country."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T05-G05",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "As mentioned above, the wastewater characterisation will determine the fraction of each wastewater type treated by a particular type of system.",
+      "public_claim_verbatim_quote": "As mentioned above, the wastewater characterisation will determine the fraction of each wastewater type treated by a particular type of system."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T05-G06",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "Otherwise, consultation with sanitation experts can help and expert judgement can be applied (see Chapter 6, Quantifying Uncertainties in Practice, for general guidance on eliciting expert judgement).",
+      "public_claim_verbatim_quote": "Otherwise, consultation with sanitation experts can help and expert judgement can be applied (see Chapter 6, Quantifying Uncertainties in Practice, for general guidance on eliciting expert judgement)."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T05-G07",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "If significant amounts of waste in rural areas is expected to degrade aerobically, as is the case in some developing countries, then it is good practice to compute the estimate using only the urban population.",
+      "public_claim_verbatim_quote": "If significant amounts of waste in rural areas is expected to degrade aerobically, as is the case in some developing countries, then it is good practice to compute the estimate using only the urban population."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T05-G08",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "Emissions from domestic wastewater handling should be calculated using the same method and data sets for every year in the time series.",
+      "public_claim_verbatim_quote": "Emissions from domestic wastewater handling should be calculated using the same method and data sets for every year in the time series."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T05-G09",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "Good practice is to use country- and industry sector-specific data that may be available from government authorities, industrial organisations, or industrial experts.",
+      "public_claim_verbatim_quote": "Good practice is to use country- and industry sector-specific data that may be available from government authorities, industrial organisations, or industrial experts."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T05-G10",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "Chapter 6, Quantifying Uncertainties in Practice, Section 6.2.5, Expert Judgement, describes how to elicit expert judgement for uncertainty ranges.",
+      "public_claim_verbatim_quote": "Chapter 6, Quantifying Uncertainties in Practice, Section 6.2.5, Expert Judgement, describes how to elicit expert judgement for uncertainty ranges."
+    }
+  ]
+}

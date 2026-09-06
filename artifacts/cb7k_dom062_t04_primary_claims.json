@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IPCC Good Practice Guidance Chapter 5 Waste bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IPCC Good Practice Guidance Chapter 5 Waste",
+  "source_url": "https://www.ipcc.ch/site/assets/uploads/2018/03/5_Waste-1.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "1651667ae684d4da3892e6b5f4491d8ba9c7d38f2f6b746cb9c0149ef26cf865",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM062-T04-G01",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "Inventory agencies should record the results of such comparisons for internal documentation, and investigate any discrepancies.",
+      "public_claim_verbatim_quote": "Inventory agencies should record the results of such comparisons for internal documentation, and investigate any discrepancies."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T04-G02",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "If the values are very different, inventory agencies should characterise municipal solid waste separately from industrial solid waste.",
+      "public_claim_verbatim_quote": "If the values are very different, inventory agencies should characterise municipal solid waste separately from industrial solid waste."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T04-G03",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "Both wastewater systems are discussed in Section 5.2.2, Reporting and Documentation, and Section 5.2.3, Inventory Quality Assurance/Quality Control (QA/QC).",
+      "public_claim_verbatim_quote": "Both wastewater systems are discussed in Section 5.2.2, Reporting and Documentation, and Section 5.2.3, Inventory Quality Assurance/Quality Control (QA/QC)."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T04-G04",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "In developing countries, a small share of domestic wastewater is collected in sewer systems, with the remainder ending up in pits or latrines.",
+      "public_claim_verbatim_quote": "In developing countries, a small share of domestic wastewater is collected in sewer systems, with the remainder ending up in pits or latrines."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T04-G05",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "Emissions = (Total Organic Waste • Emission Factor) – Methane Recovery Depending on the available activity data and emission factors, this method can be applied at various levels of disaggregation.",
+      "public_claim_verbatim_quote": "Emissions = (Total Organic Waste • Emission Factor) – Methane Recovery Depending on the available activity data and emission factors, this method can be applied at various levels of disaggregation."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T04-G06",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "FTA = Fraction of BOD in sludge that degrades anaerobically, default = 0.8 Over 50% of the BOD in domestic wastewater is associated with non-dissolved solids, much of which rapidly settle under a wide range of conditions.",
+      "public_claim_verbatim_quote": "FTA = Fraction of BOD in sludge that degrades anaerobically, default = 0.8 Over 50% of the BOD in domestic wastewater is associated with non-dissolved solids, much of which rapidly settle under a wide range of conditions."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T04-G07",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "For example, a conventional settling tank typically removes 33% of suspended solids, whereas a figure of 50% is more appropriate to many longer-term processes such as lagoons, septic tanks, latrines, and ungraded sewers.",
+      "public_claim_verbatim_quote": "For example, a conventional settling tank typically removes 33% of suspended solids, whereas a figure of 50% is more appropriate to many longer-term processes such as lagoons, septic tanks, latrines, and ungraded sewers."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T04-G08",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "Furthermore, it is believed that in many countries a very large fraction of this settleable BOD will degrade anaerobically, resulting in the high FTA (0.8).",
+      "public_claim_verbatim_quote": "Furthermore, it is believed that in many countries a very large fraction of this settleable BOD will degrade anaerobically, resulting in the high FTA (0.8)."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T04-G09",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "Setting the global population P to 6 billion and EF to 0.6, one will arrive at total WM of 32 Tg/yr.",
+      "public_claim_verbatim_quote": "Setting the global population P to 6 billion and EF to 0.6, one will arrive at total WM of 32 Tg/yr."
+    },
+    {
+      "protocol_id": "CB7K-DOM062-T04-G10",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "Comprehensive field test data (Doorn et al., 1997)6 are in good agreement with the default value.",
+      "public_claim_verbatim_quote": "Comprehensive field test data (Doorn et al., 1997)6 are in good agreement with the default value."
+    }
+  ]
+}
