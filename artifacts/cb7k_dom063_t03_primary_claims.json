@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched US EPA Municipal Solid Waste Generation, Recycling, and Disposal in the United States: Facts and Figures for 2012 bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "US EPA Municipal Solid Waste Generation, Recycling, and Disposal in the United States: Facts and Figures for 2012",
+  "source_url": "https://www.epa.gov/sites/default/files/2015-09/documents/2012_msw_fs.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "23a9f870278e1d0ba2b4acc659fd2a1919eb6623a0c2dae9cbb8f3d33e453941",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM063-T03-G01",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "We track products to learn how people are consuming, using, and discarding materials.",
+      "public_claim_verbatim_quote": "We track products to learn how people are consuming, using, and discarding materials."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T03-G02",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "This information allows us to target activities that will ultimately maximize the recovery of materials.",
+      "public_claim_verbatim_quote": "This information allows us to target activities that will ultimately maximize the recovery of materials."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T03-G03",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "Paper products, steel, and aluminum were the most recycled materials by percentage in this category.",
+      "public_claim_verbatim_quote": "Paper products, steel, and aluminum were the most recycled materials by percentage in this category."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T03-G04",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "Polyethylene terephthalate (PET) bottles and jars were recovered at about 31 percent.",
+      "public_claim_verbatim_quote": "Polyethylene terephthalate (PET) bottles and jars were recovered at about 31 percent."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T03-G05",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "Recovery of high density polyethylene (HDPE) natural (white translucent) bottles was also estimated at over 28 percent (see 2012 MSW full data tables).",
+      "public_claim_verbatim_quote": "Recovery of high density polyethylene (HDPE) natural (white translucent) bottles was also estimated at over 28 percent (see 2012 MSW full data tables)."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T03-G06",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "These products were recovered for recycling at a rate of over 16 percent.",
+      "public_claim_verbatim_quote": "These products were recovered for recycling at a rate of over 16 percent."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T03-G07",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "With an almost 96 percent recycling rate, lead-acid batteries continue to be one of the most recovered products.",
+      "public_claim_verbatim_quote": "With an almost 96 percent recycling rate, lead-acid batteries continue to be one of the most recovered products."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T03-G08",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "Recovery of steel in all durable goods was 27 percent, with high rates of recovery from appliances and other miscellaneous items.",
+      "public_claim_verbatim_quote": "Recovery of steel in all durable goods was 27 percent, with high rates of recovery from appliances and other miscellaneous items."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T03-G09",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "Recovery of selected consumer electronics was 29% (see MSW full data tables).",
+      "public_claim_verbatim_quote": "Recovery of selected consumer electronics was 29% (see MSW full data tables)."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T03-G10",
+      "section_locator": "PDF page 9",
+      "public_claim_text": "Does not include backyard composting. † I ncludes combustion of MSW in mass burn or refuse-derived fuel form, and combustion with energy recovery of source separated materials in MSW (e.g., wood pallets, tire-derived fuel). ‡ Discards after recovery minus combustion with energy recovery.",
+      "public_claim_verbatim_quote": "Does not include backyard composting. † I ncludes combustion of MSW in mass burn or refuse-derived fuel form, and combustion with energy recovery of source separated materials in MSW (e.g., wood pallets, tire-derived fuel). ‡ Discards after recovery minus combustion with energy recovery."
+    }
+  ]
+}

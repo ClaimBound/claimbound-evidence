@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched US EPA Municipal Solid Waste Generation, Recycling, and Disposal in the United States: Facts and Figures for 2012 bytes on 2026-09-06. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "US EPA Municipal Solid Waste Generation, Recycling, and Disposal in the United States: Facts and Figures for 2012",
+  "source_url": "https://www.epa.gov/sites/default/files/2015-09/documents/2012_msw_fs.pdf",
+  "access_date": "2026-09-06",
+  "source_sha256": "23a9f870278e1d0ba2b4acc659fd2a1919eb6623a0c2dae9cbb8f3d33e453941",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM063-T02-G01",
+      "section_locator": "PDF page 2",
+      "public_claim_text": "In 2012, lead-acid battery recovery was about 96 percent (2.8 million tons).",
+      "public_claim_verbatim_quote": "In 2012, lead-acid battery recovery was about 96 percent (2.8 million tons)."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T02-G02",
+      "section_locator": "PDF page 2",
+      "public_claim_text": "Sources of MSW Sources of MSW include residential waste (including waste from apartment houses) and waste from commercial and institutional locations, such as businesses, schools, and hospitals.",
+      "public_claim_verbatim_quote": "Sources of MSW Sources of MSW include residential waste (including waste from apartment houses) and waste from commercial and institutional locations, such as businesses, schools, and hospitals."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T02-G03",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "Organic materials such as paper and paperboard, yard trimmings, and food waste continue to be the largest component of MSW.",
+      "public_claim_verbatim_quote": "Organic materials such as paper and paperboard, yard trimmings, and food waste continue to be the largest component of MSW."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T02-G04",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "Total MSW recovery in 2012 was almost 87 million tons.",
+      "public_claim_verbatim_quote": "Total MSW recovery in 2012 was almost 87 million tons."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T02-G05",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "After MSW recovery through recycling and composting, 164 million tons of MSW were discarded in 2012.",
+      "public_claim_verbatim_quote": "After MSW recovery through recycling and composting, 164 million tons of MSW were discarded in 2012."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T02-G06",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "Food waste is the largest component of discards at 21 percent.",
+      "public_claim_verbatim_quote": "Food waste is the largest component of discards at 21 percent."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T02-G07",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "A ll benefit calculations in this fact sheet are derived from EPA’s Waste Reduction Model (WARM).",
+      "public_claim_verbatim_quote": "A ll benefit calculations in this fact sheet are derived from EPA’s Waste Reduction Model (WARM)."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T02-G08",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "Details might not add to totals due to rounding.",
+      "public_claim_verbatim_quote": "Details might not add to totals due to rounding."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T02-G09",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "Materials are what products are made of and will ultimately be what is recovered and be reprocessed in the recycling process.",
+      "public_claim_verbatim_quote": "Materials are what products are made of and will ultimately be what is recovered and be reprocessed in the recycling process."
+    },
+    {
+      "protocol_id": "CB7K-DOM063-T02-G10",
+      "section_locator": "PDF page 6",
+      "public_claim_text": "Products are what people buy and handle.",
+      "public_claim_verbatim_quote": "Products are what people buy and handle."
+    }
+  ]
+}
