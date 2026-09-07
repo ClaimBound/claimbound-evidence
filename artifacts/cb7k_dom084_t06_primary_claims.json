@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched WMO State of the Global Climate 2024 (WMO-No. 1368) bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "WMO State of the Global Climate 2024 (WMO-No. 1368)",
+  "source_url": "https://wmo.int/sites/default/files/2025-03/WMO-1368-2024_en.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "ae106b3df21d0381ad34bda451a406648ef66147111aac6cc91a7387438fb874",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM084-T06-G01",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "According to some analyses (for example, that of Rantanen and Laaksonen54), they were at the far end of what has been expected from climate model estimates of trends plus internal variability.",
+      "public_claim_verbatim_quote": "According to some analyses (for example, that of Rantanen and Laaksonen54), they were at the far end of what has been expected from climate model estimates of trends plus internal variability."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T06-G02",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "Estimates of relative temperature residuals for (b) 2023 and (d) 2024 attributable to ENSO and four distinct forcings that were not (or were only partially) predicted.",
+      "public_claim_verbatim_quote": "Estimates of relative temperature residuals for (b) 2023 and (d) 2024 attributable to ENSO and four distinct forcings that were not (or were only partially) predicted."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T06-G03",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "The impact of GHGs on the residuals in these two years is small (<0.01 °C), as changes from GHGs are represented in the smoothly rising trend line.",
+      "public_claim_verbatim_quote": "The impact of GHGs on the residuals in these two years is small (<0.01 °C), as changes from GHGs are represented in the smoothly rising trend line."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T06-G04",
+      "section_locator": "PDF page 28",
+      "public_claim_text": "Fuller analyses of these factors and the role of internal variability will require coordinated Earth system model experiments, which are currently underway.",
+      "public_claim_verbatim_quote": "Fuller analyses of these factors and the role of internal variability will require coordinated Earth system model experiments, which are currently underway."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T06-G05",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "Where possible, the most recent WMO climatological standard normal, 1991–2020, is used as the baseline for consistent reporting.",
+      "public_claim_verbatim_quote": "Where possible, the most recent WMO climatological standard normal, 1991–2020, is used as the baseline for consistent reporting."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T06-G06",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "First, for the global mean temperature time series – and only for the global mean series – a reference period of 1850–1900 is used.",
+      "public_claim_verbatim_quote": "First, for the global mean temperature time series – and only for the global mean series – a reference period of 1850–1900 is used."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T06-G07",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "Second, greenhouse gas concentrations can be estimated much further back in time than 1850 using gas bubbles trapped in ice cores.",
+      "public_claim_verbatim_quote": "Second, greenhouse gas concentrations can be estimated much further back in time than 1850 using gas bubbles trapped in ice cores."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T06-G08",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "The year 1750 is used in this report to represent pre-industrial greenhouse gas concentrations in line with IPCC AR6 WG I.",
+      "public_claim_verbatim_quote": "The year 1750 is used in this report to represent pre-industrial greenhouse gas concentrations in line with IPCC AR6 WG I."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T06-G09",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "The number quoted in this report for 2024 (1.55 °C ± 0.13 °C) was calculated in this way, with 1.55 °C being the mean of the six estimates and 0.05 °C the standard deviation.",
+      "public_claim_verbatim_quote": "The number quoted in this report for 2024 (1.55 °C ± 0.13 °C) was calculated in this way, with 1.55 °C being the mean of the six estimates and 0.05 °C the standard deviation."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T06-G10",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "The uncertainties indicated for the three modern baselines (1981–2010, 1991–2020 and 1961–1990) are the standard deviations of the available estimates multiplied by 1.645 to represent the 90% uncertainty range.",
+      "public_claim_verbatim_quote": "The uncertainties indicated for the three modern baselines (1981–2010, 1991–2020 and 1961–1990) are the standard deviations of the available estimates multiplied by 1.645 to represent the 90% uncertainty range."
+    }
+  ]
+}

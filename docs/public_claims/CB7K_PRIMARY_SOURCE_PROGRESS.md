@@ -4,17 +4,17 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **5,810 / 7,000** |
-| Remaining | **1,190** (17 domains × 70) |
-| Next domain | **DOM084** Weather services |
+| Primary-backed done | **5,880 / 7,000** |
+| Remaining | **1,120** (16 domains × 70) |
+| Next domain | **DOM085** Disaster response |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM083 | 5,810 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM084–DOM100 | 1,190 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM084 | 5,880 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM085–DOM100 | 1,120 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
@@ -32,6 +32,7 @@ Latest packs:
 - DOM081 Urban planning — UN-Habitat World Cities Report 2024: Cities and Climate Action (2026-09-07)
 - DOM082 Satellites — NASA-STD-8719.14C Process for Limiting Orbital Debris (2026-09-07)
 - DOM083 Earth observation — CEOS Earth Observation Handbook 2023: Space Data for the Global Stocktake (2026-09-07)
+- DOM084 Weather services — WMO State of the Global Climate 2024 (WMO-No. 1368) (2026-09-07)
 
 
 ## Cadence
@@ -59,7 +60,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM084** Weather services.
+Next domain: **DOM085** Disaster response.
 
 Waves:
 
