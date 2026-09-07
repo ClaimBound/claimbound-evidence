@@ -1,0 +1,31 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-07",
+  "operator": "NeoZorK",
+  "scope": "DOM073 public transit: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 5040,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 5110,
+  "sources": [
+    {
+      "domain_code": "DOM073",
+      "domain_title": "Public transit",
+      "remaining_target": 70,
+      "start_index": 1,
+      "source_subdir": "dom073",
+      "source_name": "IEA Bus Systems for the Future: Achieving Sustainable Transport Worldwide",
+      "source_url": "https://iea.blob.core.windows.net/assets/58f1199f-7f21-46d6-830f-c1ad160fda78/BusSystemsfortheFuture.pdf",
+      "source_sha256": "48d5955ade446845aa50cea973886c0c12c3a16a10c6859873e2edbe8d14a717",
+      "pdf_pages": 191,
+      "content_start_page": 1,
+      "content_end_page": 191,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 40,
+      "min_quote_words": 7,
+      "reject_pattern": "Figure \\\\d|Table \\\\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}
