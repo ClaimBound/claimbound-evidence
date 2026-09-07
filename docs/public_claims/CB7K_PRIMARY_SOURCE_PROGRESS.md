@@ -4,17 +4,17 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **5,460 / 7,000** |
-| Remaining | **1,540** (22 domains × 70) |
-| Next domain | **DOM079** Housing |
+| Primary-backed done | **5,530 / 7,000** |
+| Remaining | **1,470** (21 domains × 70) |
+| Next domain | **DOM080** Construction |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM078 | 5,460 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM079–DOM100 | 1,540 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM079 | 5,530 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM080–DOM100 | 1,470 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
@@ -30,6 +30,7 @@ Latest packs:
 - DOM076 Logistics — World Bank Connecting to Compete 2025 LPI 2.0 (2026-09-07)
 - DOM077 Electric vehicles — IEA Global EV Outlook 2026 (2026-09-07)
 - DOM078 Buildings — UNEP Global Status Report for Buildings and Construction 2025–2026 (2026-09-07)
+- DOM079 Housing — UN-Habitat World Cities Report 2026: The Global Housing Crisis (2026-09-07)
 
 ## Cadence
 
