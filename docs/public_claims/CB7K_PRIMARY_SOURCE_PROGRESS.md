@@ -4,21 +4,22 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **6,020 / 7,000** |
-| Remaining | **980** (14 domains × 70) |
-| Next domain | **DOM087** Universities |
+| Primary-backed done | **6,090 / 7,000** |
+| Remaining | **910** (13 domains × 70) |
+| Next domain | **DOM088** Open science |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM086 | 6,020 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM087–DOM100 | 980 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM087 | 6,090 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM088–DOM100 | 910 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
+- DOM087 Universities — OECD Education at a Glance 2025: OECD Indicators (special focus on tertiary education) (2026-09-07)
 - DOM086 Education — UNESCO Global Education Monitoring Report 2024/5: Leadership in education – Lead for learning (2026-09-07)
 - DOM085 Disaster response — IFRC World Disasters Report 2026: Truth, Trust and Humanitarian Action in the Age of Harmful Information (2026-09-07)
 - DOM084 Weather services — WMO State of the Global Climate 2024 (WMO-No. 1368) (2026-09-07)
@@ -33,7 +34,6 @@ Latest packs:
 - DOM075 Shipping — IPCC AR5 WGIII Chapter 8 Transport (2026-09-07)
 - DOM074 Road safety — WHO Global Status Report on Road Safety 2023 (2026-09-07)
 - DOM073 Public transit — IEA Bus Systems for the Future (2026-09-07)
-- DOM072 Rail — IEA The Future of Rail (2026-09-07)
 
 
 ## Cadence
@@ -61,7 +61,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM087** Universities.
+Next domain: **DOM088** Open science.
 
 Waves:
 
