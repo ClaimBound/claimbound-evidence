@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NASA-STD-8719.14C Process for Limiting Orbital Debris bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NASA-STD-8719.14C Process for Limiting Orbital Debris",
+  "source_url": "https://www.nasa.gov/wp-content/uploads/2023/02/nasa-std-871914c.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "67b26fc7af75ceeec66f9b205c92af7d6dda6e8e212fb77d61885ec1442194c9",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM082-T05-G01",
+      "section_locator": "PDF page 44",
+      "public_claim_text": "If a collision does occur, then very little debris from that collision would come low enough to pose a significant threat to operational spacecraft in LEO since the region from 1500 km to 2000 km is little used.",
+      "public_claim_verbatim_quote": "If a collision does occur, then very little debris from that collision would come low enough to pose a significant threat to operational spacecraft in LEO since the region from 1500 km to 2000 km is little used."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T05-G02",
+      "section_locator": "PDF page 45",
+      "public_claim_text": "However for most space structures in LEO to GEO orbits (such as GTO) the use of a perigee-lowering maneuver or of natural perturbations to ensure an orbital lifetime of less than 25 years is more cost-effective than reshaping the orbit to avoid crossing heavily-populated operational bands as mandated by requirement 4.6-2a.",
+      "public_claim_verbatim_quote": "However for most space structures in LEO to GEO orbits (such as GTO) the use of a perigee-lowering maneuver or of natural perturbations to ensure an orbital lifetime of less than 25 years is more cost-effective than reshaping the orbit to avoid crossing heavily-populated operational bands as mandated by requirement 4.6-2a."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T05-G03",
+      "section_locator": "PDF page 45",
+      "public_claim_text": "Any 25-year disposal orbits should minimize and preferably avoid potential interference with major satellite constellations, such as the Global Navigation Satellite Systems.",
+      "public_claim_verbatim_quote": "Any 25-year disposal orbits should minimize and preferably avoid potential interference with major satellite constellations, such as the Global Navigation Satellite Systems."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T05-G04",
+      "section_locator": "PDF page 46",
+      "public_claim_text": "For an orbit with apogee altitude above 5,000 km, the orbital lifetime will also be affected by lunar and solar gravitational perturbations.",
+      "public_claim_verbatim_quote": "For an orbit with apogee altitude above 5,000 km, the orbital lifetime will also be affected by lunar and solar gravitational perturbations."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T05-G05",
+      "section_locator": "PDF page 46",
+      "public_claim_text": "Coordination with the 18 SPCS to avoid collisions with other tracked objects prior to executing these maneuvers at EOM is operationally expected of all NASA spacecraft per section 4.6.1.9 and by NPR 8715.6, but is not a condition of ODAR/EOMP approval.",
+      "public_claim_verbatim_quote": "Coordination with the 18 SPCS to avoid collisions with other tracked objects prior to executing these maneuvers at EOM is operationally expected of all NASA spacecraft per section 4.6.1.9 and by NPR 8715.6, but is not a condition of ODAR/EOMP approval."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T05-G06",
+      "section_locator": "PDF page 47",
+      "public_claim_text": "Note that the minimum required inherent system reliability for postmission disposal operations is 0.90, while the probability of postmission disposal failure due only to small object impacts is 0.01 (Requirement 4.5-2).",
+      "public_claim_verbatim_quote": "Note that the minimum required inherent system reliability for postmission disposal operations is 0.90, while the probability of postmission disposal failure due only to small object impacts is 0.01 (Requirement 4.5-2)."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T05-G07",
+      "section_locator": "PDF page 47",
+      "public_claim_text": "The probability of failure due to small object impacts need not be included in the 0.90 inherent system reliability determination.",
+      "public_claim_verbatim_quote": "The probability of failure due to small object impacts need not be included in the 0.90 inherent system reliability determination."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T05-G08",
+      "section_locator": "PDF page 48",
+      "public_claim_text": "For example, if a space structure is in a Sun Synchronous Orbit (SSO) of 800 km, less energy is required to ensure an orbital lifetime of less than 25 years if the space structure is left in an elliptical rather than a circular orbit.",
+      "public_claim_verbatim_quote": "For example, if a space structure is in a Sun Synchronous Orbit (SSO) of 800 km, less energy is required to ensure an orbital lifetime of less than 25 years if the space structure is left in an elliptical rather than a circular orbit."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T05-G09",
+      "section_locator": "PDF page 48",
+      "public_claim_text": "4.6.5.9 If disposal by controlled reentry into the atmosphere is chosen, the trajectory is to be designed to ensure that the space structure does not skip in the upper regions of the atmosphere.",
+      "public_claim_verbatim_quote": "4.6.5.9 If disposal by controlled reentry into the atmosphere is chosen, the trajectory is to be designed to ensure that the space structure does not skip in the upper regions of the atmosphere."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T05-G10",
+      "section_locator": "PDF page 49",
+      "public_claim_text": "4.7.1.1 The use of atmospheric reentry to limit the orbital lifetime of space structures in compliance with Requirement 4.6-1 results in the transfer of an orbital environment risk to a potential human casualty risk.",
+      "public_claim_verbatim_quote": "4.7.1.1 The use of atmospheric reentry to limit the orbital lifetime of space structures in compliance with Requirement 4.6-1 results in the transfer of an orbital environment risk to a potential human casualty risk."
+    }
+  ]
+}

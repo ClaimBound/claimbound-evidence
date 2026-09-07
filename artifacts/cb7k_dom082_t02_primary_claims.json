@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched NASA-STD-8719.14C Process for Limiting Orbital Debris bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "NASA-STD-8719.14C Process for Limiting Orbital Debris",
+  "source_url": "https://www.nasa.gov/wp-content/uploads/2023/02/nasa-std-871914c.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "67b26fc7af75ceeec66f9b205c92af7d6dda6e8e212fb77d61885ec1442194c9",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM082-T02-G01",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "Requirement 4.3-1b: The total object-time product shall be less than 100 object-years per launch vehicle upper stage or per spacecraft.",
+      "public_claim_verbatim_quote": "Requirement 4.3-1b: The total object-time product shall be less than 100 object-years per launch vehicle upper stage or per spacecraft."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T02-G02",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "This requirement will have the greatest impact on programs and projects with perigee altitudes above 700 km, where objects may remain in orbit naturally for hundreds of years.",
+      "public_claim_verbatim_quote": "This requirement will have the greatest impact on programs and projects with perigee altitudes above 700 km, where objects may remain in orbit naturally for hundreds of years."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T02-G03",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "In both cases the debris were left in orbits of less than 630 km and decayed from orbit well within the 25-year requirement.",
+      "public_claim_verbatim_quote": "In both cases the debris were left in orbits of less than 630 km and decayed from orbit well within the 25-year requirement."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T02-G04",
+      "section_locator": "PDF page 24",
+      "public_claim_text": "Therefore, Requirement 4.3-2 limits the accumulation of debris at GEO altitudes and will help mitigate the development of a significant debris environment, as currently exists in LEO.",
+      "public_claim_verbatim_quote": "Therefore, Requirement 4.3-2 limits the accumulation of debris at GEO altitudes and will help mitigate the development of a significant debris environment, as currently exists in LEO."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T02-G05",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "For debris released with significant ∆v (typically greater than 10 meters per second), the initial debris orbit may be significantly different from that of the object releasing the debris.",
+      "public_claim_verbatim_quote": "For debris released with significant ∆v (typically greater than 10 meters per second), the initial debris orbit may be significantly different from that of the object releasing the debris."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T02-G06",
+      "section_locator": "PDF page 25",
+      "public_claim_text": "“LEO dwell time” is defined as the total time spent by an orbiting object below an altitude of 2000 km during its orbital lifetime.",
+      "public_claim_verbatim_quote": "“LEO dwell time” is defined as the total time spent by an orbiting object below an altitude of 2000 km during its orbital lifetime."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T02-G07",
+      "section_locator": "PDF page 26",
+      "public_claim_text": "To ensure that the debris is compliant with Requirement 4.3-2, the spacecraft must be sufficiently above or below GEO at the time of debris release to assure that within 25 years, and for 100 years thereafter, the debris is outside of the GEO +/- 200 km and GEO +/- 15 band.",
+      "public_claim_verbatim_quote": "To ensure that the debris is compliant with Requirement 4.3-2, the spacecraft must be sufficiently above or below GEO at the time of debris release to assure that within 25 years, and for 100 years thereafter, the debris is outside of the GEO +/- 200 km and GEO +/- 15 band."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T02-G08",
+      "section_locator": "PDF page 26",
+      "public_claim_text": "The orbit propagator within DAS can determine the minimum altitude above GEO or the maximum altitude below GEO to ensure that the debris is not perturbed into GEO +/- 200 km and GEO +/- 15 within 100 years.",
+      "public_claim_verbatim_quote": "The orbit propagator within DAS can determine the minimum altitude above GEO or the maximum altitude below GEO to ensure that the debris is not perturbed into GEO +/- 200 km and GEO +/- 15 within 100 years."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T02-G09",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "The limiting conditions of allowable apogee and perigee in constant solar flux conditions for a variety of area/mass ratios, under which requirement (4.3-1a) is met (25-year decay after EOM).",
+      "public_claim_verbatim_quote": "The limiting conditions of allowable apogee and perigee in constant solar flux conditions for a variety of area/mass ratios, under which requirement (4.3-1a) is met (25-year decay after EOM)."
+    },
+    {
+      "protocol_id": "CB7K-DOM082-T02-G10",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "Geosynchronous Transfer Orbit (GTO) with perigees near LEO or at higher altitudes and with apogees near GEO, but must be consistent with requirement 4.6-2 or 4.6-3.",
+      "public_claim_verbatim_quote": "Geosynchronous Transfer Orbit (GTO) with perigees near LEO or at higher altitudes and with apogees near GEO, but must be consistent with requirement 4.6-2 or 4.6-3."
+    }
+  ]
+}
