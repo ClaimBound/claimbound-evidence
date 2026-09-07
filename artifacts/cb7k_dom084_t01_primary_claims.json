@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched WMO State of the Global Climate 2024 (WMO-No. 1368) bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "WMO State of the Global Climate 2024 (WMO-No. 1368)",
+  "source_url": "https://wmo.int/sites/default/files/2025-03/WMO-1368-2024_en.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "ae106b3df21d0381ad34bda451a406648ef66147111aac6cc91a7387438fb874",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM084-T01-G01",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "This is the warmest year in the 175-year observational record, beating the previous record set only the year before.",
+      "public_claim_verbatim_quote": "This is the warmest year in the 175-year observational record, beating the previous record set only the year before."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T01-G02",
+      "section_locator": "PDF page 4",
+      "public_claim_text": "While a single year above 1.5 °C of warming does not indicate that the long-term temperature goals of the Paris Agreement are out of reach, it is a wake-up call that we are increasing the risks to our lives, economies and the planet.",
+      "public_claim_verbatim_quote": "While a single year above 1.5 °C of warming does not indicate that the long-term temperature goals of the Paris Agreement are out of reach, it is a wake-up call that we are increasing the risks to our lives, economies and the planet."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T01-G03",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "Real-time data from specific locations show that levels of these three main greenhouse gases continued to increase in 2024.",
+      "public_claim_verbatim_quote": "Real-time data from specific locations show that levels of these three main greenhouse gases continued to increase in 2024."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T01-G04",
+      "section_locator": "PDF page 5",
+      "public_claim_text": "The rate of growth is typically higher during El Niño conditions due to an overall increase from fire emissions and reduced net terrestrial carbon sinks (see Climate Driver – El Niño–Southern Oscillation).",
+      "public_claim_verbatim_quote": "The rate of growth is typically higher during El Niño conditions due to an overall increase from fire emissions and reduced net terrestrial carbon sinks (see Climate Driver – El Niño–Southern Oscillation)."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T01-G05",
+      "section_locator": "PDF page 7",
+      "public_claim_text": "For global mean temperature, each of the past ten years, 2015–2024, were individually the ten warmest years on record.",
+      "public_claim_verbatim_quote": "For global mean temperature, each of the past ten years, 2015–2024, were individually the ten warmest years on record."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T01-G06",
+      "section_locator": "PDF page 8",
+      "public_claim_text": "However, temperatures were already at record levels in 2023 (see sidebar on Global mean surface temperature anomalies in 2023/2024).",
+      "public_claim_verbatim_quote": "However, temperatures were already at record levels in 2023 (see sidebar on Global mean surface temperature anomalies in 2023/2024)."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T01-G07",
+      "section_locator": "PDF page 8",
+      "public_claim_text": "It is estimated using air temperatures measured at weather stations at a height of around 1.5 to 2 m and sea-surface temperatures measured by ships and ocean buoys.",
+      "public_claim_verbatim_quote": "It is estimated using air temperatures measured at weather stations at a height of around 1.5 to 2 m and sea-surface temperatures measured by ships and ocean buoys."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T01-G08",
+      "section_locator": "PDF page 8",
+      "public_claim_text": "Differences are larger earlier in the record, leading to small differences in their assessment of long-term change (around 0.1 °C).",
+      "public_claim_verbatim_quote": "Differences are larger earlier in the record, leading to small differences in their assessment of long-term change (around 0.1 °C)."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T01-G09",
+      "section_locator": "PDF page 9",
+      "public_claim_text": "The latest Intergovernmental Panel on Climate Change (IPCC) report concluded that it was virtually certain that ocean heat content had increased since the 1970s and extremely likely that the main driver was human influence.",
+      "public_claim_verbatim_quote": "The latest Intergovernmental Panel on Climate Change (IPCC) report concluded that it was virtually certain that ocean heat content had increased since the 1970s and extremely likely that the main driver was human influence."
+    },
+    {
+      "protocol_id": "CB7K-DOM084-T01-G10",
+      "section_locator": "PDF page 10",
+      "public_claim_text": "Around 5% of that surplus energy is warming the land, 1% is warming the atmosphere, and 4% is warming and melting the cryosphere.",
+      "public_claim_verbatim_quote": "Around 5% of that surplus energy is warming the land, 1% is warming the atmosphere, and 4% is warming and melting the cryosphere."
+    }
+  ]
+}
