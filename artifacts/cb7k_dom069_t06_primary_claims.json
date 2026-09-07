@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IRENA Electricity Storage and Renewables: Costs and Markets to 2030 bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IRENA Electricity Storage and Renewables: Costs and Markets to 2030",
+  "source_url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2017/Oct/IRENA_Electricity_Storage_Costs_2017.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "dbc54913127a59179294f88455ddc60d1f1ee5d0a932571df05169a64b44b91b",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM069-T06-G01",
+      "section_locator": "PDF page 86",
+      "public_claim_text": "This has led to comparably high retail prices.",
+      "public_claim_verbatim_quote": "This has led to comparably high retail prices."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T06-G02",
+      "section_locator": "PDF page 87",
+      "public_claim_text": "Can independently scale their energy and power characteristics.",
+      "public_claim_verbatim_quote": "Can independently scale their energy and power characteristics."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T06-G03",
+      "section_locator": "PDF page 93",
+      "public_claim_text": "Because of good safety characteristics and high power densities, aqueous systems with inorganic redox materials are often considered for stationary applications.",
+      "public_claim_verbatim_quote": "Because of good safety characteristics and high power densities, aqueous systems with inorganic redox materials are often considered for stationary applications."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T06-G04",
+      "section_locator": "PDF page 95",
+      "public_claim_text": "Pathways to achieving a VRFB cost of USD 120/ kWh (excluding the cost of installation) have been explored and demonstrate as feasible, assuming a production volume of approximately 10 GWh per annum (Darling et al., 2014).",
+      "public_claim_verbatim_quote": "Pathways to achieving a VRFB cost of USD 120/ kWh (excluding the cost of installation) have been explored and demonstrate as feasible, assuming a production volume of approximately 10 GWh per annum (Darling et al., 2014)."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T06-G05",
+      "section_locator": "PDF page 95",
+      "public_claim_text": "These have the advantage of wider structural diversity and increased molecule availability from abundant natural resources (Li and Liu, 2017; Wei et al., 2015).",
+      "public_claim_verbatim_quote": "These have the advantage of wider structural diversity and increased molecule availability from abundant natural resources (Li and Liu, 2017; Wei et al., 2015)."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T06-G06",
+      "section_locator": "PDF page 97",
+      "public_claim_text": "This could potentially endanger the accident site.",
+      "public_claim_verbatim_quote": "This could potentially endanger the accident site."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T06-G07",
+      "section_locator": "PDF page 97",
+      "public_claim_text": "It can especially affect the larger cells that are preferred for stationary storage applications.",
+      "public_claim_verbatim_quote": "It can especially affect the larger cells that are preferred for stationary storage applications."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T06-G08",
+      "section_locator": "PDF page 100",
+      "public_claim_text": "The cost outlook for BES systems is promising.",
+      "public_claim_verbatim_quote": "The cost outlook for BES systems is promising."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T06-G09",
+      "section_locator": "PDF page 105",
+      "public_claim_text": "The year of commissioning is typically three to five years following this date.",
+      "public_claim_verbatim_quote": "The year of commissioning is typically three to five years following this date."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T06-G10",
+      "section_locator": "PDF page 106",
+      "public_claim_text": "2008-11, a considerable number of systems will reach the end of their remuneration scheme in or around 2030.",
+      "public_claim_verbatim_quote": "2008-11, a considerable number of systems will reach the end of their remuneration scheme in or around 2030."
+    }
+  ]
+}

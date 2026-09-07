@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IRENA Electricity Storage and Renewables: Costs and Markets to 2030 bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IRENA Electricity Storage and Renewables: Costs and Markets to 2030",
+  "source_url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2017/Oct/IRENA_Electricity_Storage_Costs_2017.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "dbc54913127a59179294f88455ddc60d1f1ee5d0a932571df05169a64b44b91b",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM069-T02-G01",
+      "section_locator": "PDF page 29",
+      "public_claim_text": "Note that these are preliminary estimates and are likely to change once the 2017 data are validated.",
+      "public_claim_verbatim_quote": "Note that these are preliminary estimates and are likely to change once the 2017 data are validated."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T02-G02",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "The database of the US DOE identifies 162.2 GW of installed capacity at the end of 2016, while IRENA statistics identify 159.5 GW (including so-called mixed hydro plants).",
+      "public_claim_verbatim_quote": "The database of the US DOE identifies 162.2 GW of installed capacity at the end of 2016, while IRENA statistics identify 159.5 GW (including so-called mixed hydro plants)."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T02-G03",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "Given that the difference between the two data sources remains modest (1.7% in 2016), this report focuses on the DOE data for the additional details available at a plant level on technology and, more crucially for the report, the primary services that these storage technologies provide.",
+      "public_claim_verbatim_quote": "Given that the difference between the two data sources remains modest (1.7% in 2016), this report focuses on the DOE data for the additional details available at a plant level on technology and, more crucially for the report, the primary services that these storage technologies provide."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T02-G04",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "Higher shares of variable renewables — at least in Europe — also are undermining the traditional business model of PHS of charging during off-peak periods and releasing electricity during peak periods, as variable renewables have tended to reduce (on average) short-run marginal price differentials between peak and off-peak periods.",
+      "public_claim_verbatim_quote": "Higher shares of variable renewables — at least in Europe — also are undermining the traditional business model of PHS of charging during off-peak periods and releasing electricity during peak periods, as variable renewables have tended to reduce (on average) short-run marginal price differentials between peak and off-peak periods."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T02-G05",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "Sensible heat energy stores, such as domestic hot water tanks, provide considerable quantities of storage in end-use applications, although no reliable global statistics are available.",
+      "public_claim_verbatim_quote": "Sensible heat energy stores, such as domestic hot water tanks, provide considerable quantities of storage in end-use applications, although no reliable global statistics are available."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T02-G06",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "Similarly, large-scale sensible energy stores (sometimes designed for seasonal storage), used in association with solar thermal collectors and in district heating systems, are an important source of storage, with 24 such systems in place in Europe.",
+      "public_claim_verbatim_quote": "Similarly, large-scale sensible energy stores (sometimes designed for seasonal storage), used in association with solar thermal collectors and in district heating systems, are an important source of storage, with 24 such systems in place in Europe."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T02-G07",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "This figure may be overestimated due to a potential regional bias in the Global Energy Storage Database.",
+      "public_claim_verbatim_quote": "This figure may be overestimated due to a potential regional bias in the Global Energy Storage Database."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T02-G08",
+      "section_locator": "PDF page 34",
+      "public_claim_text": "Japan also dedicates significant PHS to other main-use cases, including 2.8 GW (10%) to black start services and 2 GW (7%) to firm supply capacity.",
+      "public_claim_verbatim_quote": "Japan also dedicates significant PHS to other main-use cases, including 2.8 GW (10%) to black start services and 2 GW (7%) to firm supply capacity."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T02-G09",
+      "section_locator": "PDF page 34",
+      "public_claim_text": "Austria has the most diverse use case for PHS in its system, with 54% of its total of 4.7 GW going to electricity time shifting, 17% to providing firm capacity, 16% to providing black start services and 13% to firming renewable generation capacity.",
+      "public_claim_verbatim_quote": "Austria has the most diverse use case for PHS in its system, with 54% of its total of 4.7 GW going to electricity time shifting, 17% to providing firm capacity, 16% to providing black start services and 13% to firming renewable generation capacity."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T02-G10",
+      "section_locator": "PDF page 37",
+      "public_claim_text": "Installed Capacity: Some storage systems are oversized to reduce ageing during operation.",
+      "public_claim_verbatim_quote": "Installed Capacity: Some storage systems are oversized to reduce ageing during operation."
+    }
+  ]
+}

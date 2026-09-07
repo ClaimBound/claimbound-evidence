@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IRENA Electricity Storage and Renewables: Costs and Markets to 2030 bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IRENA Electricity Storage and Renewables: Costs and Markets to 2030",
+  "source_url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2017/Oct/IRENA_Electricity_Storage_Costs_2017.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "dbc54913127a59179294f88455ddc60d1f1ee5d0a932571df05169a64b44b91b",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM069-T01-G01",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "An alternative is “power-to-X” pathways, where surplus VRE is used to produce renewable gas or hydrogen, which is then stored for later use (a power-to-fuel approach).",
+      "public_claim_verbatim_quote": "An alternative is “power-to-X” pathways, where surplus VRE is used to produce renewable gas or hydrogen, which is then stored for later use (a power-to-fuel approach)."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T01-G02",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "Given that thermal energy stores are significantly less expensive than electrical energy storage, this could make sense.",
+      "public_claim_verbatim_quote": "Given that thermal energy stores are significantly less expensive than electrical energy storage, this could make sense."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T01-G03",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "Stationary electricity storage can provide a range of key energy services in an affordable manner.",
+      "public_claim_verbatim_quote": "Stationary electricity storage can provide a range of key energy services in an affordable manner."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T01-G04",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "Australia), significant battery storage with regard to new PV installations is taking place.",
+      "public_claim_verbatim_quote": "Australia), significant battery storage with regard to new PV installations is taking place."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T01-G05",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "There remains significant uncertainty, for instance, about what will be the average residential battery pack size in 2030 on a global basis.",
+      "public_claim_verbatim_quote": "There remains significant uncertainty, for instance, about what will be the average residential battery pack size in 2030 on a global basis."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T01-G06",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "Moreover, providing renewable capacity firming at the utility scale will effectively contribute to between 11% and 14% of total battery electricity storage capacity in 2030, depending on the case.",
+      "public_claim_verbatim_quote": "Moreover, providing renewable capacity firming at the utility scale will effectively contribute to between 11% and 14% of total battery electricity storage capacity in 2030, depending on the case."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T01-G07",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "As costs fall further, batteries will provide more grid services.",
+      "public_claim_verbatim_quote": "As costs fall further, batteries will provide more grid services."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T01-G08",
+      "section_locator": "PDF page 23",
+      "public_claim_text": "The 2015 United Nations Climate Change Conference in Paris was a watershed moment for renewable energy.",
+      "public_claim_verbatim_quote": "The 2015 United Nations Climate Change Conference in Paris was a watershed moment for renewable energy."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T01-G09",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "System flexibility requirements will grow and change in nature as the electricity sector becomes decarbonised.",
+      "public_claim_verbatim_quote": "System flexibility requirements will grow and change in nature as the electricity sector becomes decarbonised."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T01-G10",
+      "section_locator": "PDF page 27",
+      "public_claim_text": "The numbers of electric buses and electric two-wheelers are growing as well, especially in China.",
+      "public_claim_verbatim_quote": "The numbers of electric buses and electric two-wheelers are growing as well, especially in China."
+    }
+  ]
+}
