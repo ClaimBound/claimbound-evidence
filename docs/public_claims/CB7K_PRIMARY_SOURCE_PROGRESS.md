@@ -4,22 +4,21 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **4,830 / 7,000** |
-| Remaining | **2,170** (31 domains × 70) |
-| Next domain | **DOM070** Hydrogen |
+| Primary-backed done | **4,900 / 7,000** |
+| Remaining | **2,100** (30 domains × 70) |
+| Next domain | **DOM071** Aviation |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM069 | 4,830 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM070–DOM100 | 2,170 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM070 | 4,900 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM071–DOM100 | 2,100 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- **DOM062** Waste management — IPCC GPG Chapter 5 Waste (2026-09-06)
 - **DOM063** Recycling — US EPA MSW Facts 2012 + IPCC AR4 WGIII Ch10 (2026-09-06)
 - **DOM064** Plastics — OECD Global Plastics Outlook (2026-09-06)
 - **DOM065** Renewable energy — IPCC AR5 WGIII Ch7 Energy Systems (2026-09-06)
@@ -27,6 +26,7 @@ Latest packs:
 - **DOM067** Nuclear energy — IAEA Nuclear Energy Series PUB1908 (2026-09-07)
 - **DOM068** Oil and gas — IPCC AR4 WGIII Ch4 + AR5 WGIII Ch7 (2026-09-07)
 - **DOM069** Batteries — IRENA Electricity Storage and Renewables Costs and Markets to 2030 (2026-09-07)
+- **DOM070** Hydrogen — IRENA Hydrogen: A renewable energy perspective (2026-09-07)
 
 ## Cadence
 
