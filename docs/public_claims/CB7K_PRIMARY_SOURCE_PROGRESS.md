@@ -4,22 +4,21 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **5,600 / 7,000** |
-| Remaining | **1,400** (20 domains × 70) |
-| Next domain | **DOM081** Urban planning |
+| Primary-backed done | **5,670 / 7,000** |
+| Remaining | **1,330** (19 domains × 70) |
+| Next domain | **DOM082** Satellites |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM080 | 5,600 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM081–DOM100 | 1,400 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM081 | 5,670 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM082–DOM100 | 1,330 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- DOM068 Oil and gas — IPCC AR4 WGIII Ch4 + AR5 WGIII Ch7 (2026-09-07)
 - DOM069 Batteries — IRENA Electricity Storage and Renewables Costs and Markets to 2030 (2026-09-07)
 - DOM070 Hydrogen — IRENA Hydrogen: A renewable energy perspective (2026-09-07)
 - DOM071 Aviation — IPCC AR5 WGIII Chapter 8 Transport (2026-09-07)
@@ -32,6 +31,7 @@ Latest packs:
 - DOM078 Buildings — UNEP Global Status Report for Buildings and Construction 2025–2026 (2026-09-07)
 - DOM079 Housing — UN-Habitat World Cities Report 2026: The Global Housing Crisis (2026-09-07)
 - DOM080 Construction — IEA Material Efficiency in Clean Energy Transitions (2026-09-07)
+- DOM081 Urban planning — UN-Habitat World Cities Report 2024: Cities and Climate Action (2026-09-07)
 
 ## Cadence
 
@@ -58,7 +58,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM081** Urban planning.
+Next domain: **DOM082** Satellites.
 
 Waves:
 
