@@ -1,0 +1,31 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-07",
+  "operator": "NeoZorK",
+  "scope": "DOM094 Product recalls: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 6510,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 6580,
+  "sources": [
+    {
+      "domain_code": "DOM094",
+      "domain_title": "Product recalls",
+      "remaining_target": 70,
+      "start_index": 1,
+      "source_subdir": "dom094",
+      "source_name": "OECD Enhancing Product Recall Effectiveness Globally (2018)",
+      "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/11/enhancing-product-recall-effectiveness-globally_8d743dba/ef71935c-en.pdf",
+      "source_sha256": "77c72594948a9fb65af456f26cbb0dddd94dcc012e6c2a1b26f7a3dc8dde8c86",
+      "pdf_pages": 49,
+      "content_start_page": 5,
+      "content_end_page": 41,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 90,
+      "min_quote_words": 14,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|Endnotes|Credit:|StatLink|(?-i:^[a-z])|^ENHANCING PRODUCT RECALL|^OECD SCIENCE|^OECD 20|[\\x84\\u201e\\u2022\\u25aa\\uf07c]|available at https|doi\\.org|https?://|accessed on|Unclassified|Table of contents|Foreword|Executive Summary|Annex A|Questionnaire on Measuring|Guide for voluntary recall|Key messages|see Chapter|on page \\d|How to read|Disclaimer|Box \\d"
+    }
+  ]
+}
