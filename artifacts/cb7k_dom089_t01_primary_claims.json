@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched STM Report 2018: An overview of scientific and scholarly publishing (Fifth edition) bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "STM Report 2018: An overview of scientific and scholarly publishing (Fifth edition)",
+  "source_url": "https://s3.eu-west-2.amazonaws.com/stm.offloadmedia/wp-content/uploads/2024/08/10034147/2018_10_04_STM_Report_2018-1.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "74caefd6fa6f1ad4e398f0c74154609e3db78d3a34ba61da9a8d696c3a291f86",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM089-T01-G01",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "We can identify three basic modes for all kinds of human communication: one-to-one, one-to-many, and many-to many (see Inger & Gardner, 2013 for a more extensive treatment of these arguments).",
+      "public_claim_verbatim_quote": "We can identify three basic modes for all kinds of human communication: one-to-one, one-to-many, and many-to many (see Inger & Gardner, 2013 for a more extensive treatment of these arguments)."
+    },
+    {
+      "protocol_id": "CB7K-DOM089-T01-G02",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "The CrossRef organisation introduced the CrossMark service in April 2012 to identify (among other things) the version of record (Meyer 2011).",
+      "public_claim_verbatim_quote": "The CrossRef organisation introduced the CrossMark service in April 2012 to identify (among other things) the version of record (Meyer 2011)."
+    },
+    {
+      "protocol_id": "CB7K-DOM089-T01-G03",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "In 2018 there are calls for a revision of the convention about what constitutes the first published version, with online papers often preceding the official issue dates by months if not years (Keller and Prusiner 2018).",
+      "public_claim_verbatim_quote": "In 2018 there are calls for a revision of the convention about what constitutes the first published version, with online papers often preceding the official issue dates by months if not years (Keller and Prusiner 2018)."
+    },
+    {
+      "protocol_id": "CB7K-DOM089-T01-G04",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "Individual article sales are growing in popularity (albeit from a very small base), with the proportion of publishers offering them increasing from 65% in 2003 to 83% in 2012 (Inger & Gardner, 2013), and related models such as article rental and article packs becoming more common.",
+      "public_claim_verbatim_quote": "Individual article sales are growing in popularity (albeit from a very small base), with the proportion of publishers offering them increasing from 65% in 2003 to 83% in 2012 (Inger & Gardner, 2013), and related models such as article rental and article packs becoming more common."
+    },
+    {
+      "protocol_id": "CB7K-DOM089-T01-G05",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "A decade ago, Cox & Cox (2008) found that nearly all (95%) of large and most (75%) of medium publishers offered bundles of content, though this dropped (for obvious reasons) to 40% of small publishers.",
+      "public_claim_verbatim_quote": "A decade ago, Cox & Cox (2008) found that nearly all (95%) of large and most (75%) of medium publishers offered bundles of content, though this dropped (for obvious reasons) to 40% of small publishers."
+    },
+    {
+      "protocol_id": "CB7K-DOM089-T01-G06",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "A key issue for libraries is whether the publisher’s licence term for bundles allows cancellations; Cox and Cox (2008) found that only 40% of publishers allowed cancellations, with commercial publishers interestingly being much more likely to permit cancellations than not-for-profits (46% vs 24%).",
+      "public_claim_verbatim_quote": "A key issue for libraries is whether the publisher’s licence term for bundles allows cancellations; Cox and Cox (2008) found that only 40% of publishers allowed cancellations, with commercial publishers interestingly being much more likely to permit cancellations than not-for-profits (46% vs 24%)."
+    },
+    {
+      "protocol_id": "CB7K-DOM089-T01-G07",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "The numbers of consortia have been growing strongly: the Ringgold Consortia Directory Online5 lists over 500 consortia in 126 countries, representing over 32,000 individual institutions6; of these, about 350 are responsible for licensing content.",
+      "public_claim_verbatim_quote": "The numbers of consortia have been growing strongly: the Ringgold Consortia Directory Online5 lists over 500 consortia in 126 countries, representing over 32,000 individual institutions6; of these, about 350 are responsible for licensing content."
+    },
+    {
+      "protocol_id": "CB7K-DOM089-T01-G08",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "Consortia deals were typically (60%) for a 3-year period, with 30% on a 1-year and 10% on a 2-year basis, with price caps offered by only about half of publishers.",
+      "public_claim_verbatim_quote": "Consortia deals were typically (60%) for a 3-year period, with 30% on a 1-year and 10% on a 2-year basis, with price caps offered by only about half of publishers."
+    },
+    {
+      "protocol_id": "CB7K-DOM089-T01-G09",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "Publishers work with systems vendors on supply chain standards such as ONIX for Serials10 and KBART (Knowledge Bases And Related Tools).11 Uniquely identifying institutions is important for publishers: the Identify service from Ringgold12 is the leading commercial service here, with a database of some 500,000 institutions and consortia.",
+      "public_claim_verbatim_quote": "Publishers work with systems vendors on supply chain standards such as ONIX for Serials10 and KBART (Knowledge Bases And Related Tools).11 Uniquely identifying institutions is important for publishers: the Identify service from Ringgold12 is the leading commercial service here, with a database of some 500,000 institutions and consortia."
+    },
+    {
+      "protocol_id": "CB7K-DOM089-T01-G10",
+      "section_locator": "PDF page 21",
+      "public_claim_text": "Tests conducted by libraries have typically shown that use of discovery services increases patron satisfaction and increases use of subscribed-to library content (Somerville & Conrad, 2014; Outsell 2014e; Levine-Clark, McDonald, & Price, 2014).",
+      "public_claim_verbatim_quote": "Tests conducted by libraries have typically shown that use of discovery services increases patron satisfaction and increases use of subscribed-to library content (Somerville & Conrad, 2014; Outsell 2014e; Levine-Clark, McDonald, & Price, 2014)."
+    }
+  ]
+}
