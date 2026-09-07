@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched ILO Global Wage Report 2024-25: Is wage inequality decreasing globally? bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "ILO Global Wage Report 2024-25: Is wage inequality decreasing globally?",
+  "source_url": "https://www.ilo.org/sites/default/files/2024-11/GWR-2024_Layout_E_RGB_Web.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "d83110c6170796752fa906a3b80d3d3734836268b621bf318d33be61f609b876",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM096-T02-G01",
+      "section_locator": "PDF page 40",
+      "public_claim_text": "Both the real wage and productivity indices are calculated as weighted averages using countries’ populations as weights so that larger countries have a greater impact at each point estimate.",
+      "public_claim_verbatim_quote": "Both the real wage and productivity indices are calculated as weighted averages using countries’ populations as weights so that larger countries have a greater impact at each point estimate."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T02-G02",
+      "section_locator": "PDF page 46",
+      "public_claim_text": "The Arab States were excluded due to limited number of countries that have a statutory minimum wage.",
+      "public_claim_verbatim_quote": "The Arab States were excluded due to limited number of countries that have a statutory minimum wage."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T02-G03",
+      "section_locator": "PDF page 51",
+      "public_claim_text": "In selecting the latest year surveys, survey data available for the year 2020 has been avoided to ensure that the disruptions in data collection during the COVID-19 pandemic, or the outcomes that would have been reflected during that period, do not affect the global estimates, the latest estimates or estimates that analyse the evolution of wage and labour income inequality across time.",
+      "public_claim_verbatim_quote": "In selecting the latest year surveys, survey data available for the year 2020 has been avoided to ensure that the disruptions in data collection during the COVID-19 pandemic, or the outcomes that would have been reflected during that period, do not affect the global estimates, the latest estimates or estimates that analyse the evolution of wage and labour income inequality across time."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T02-G04",
+      "section_locator": "PDF page 51",
+      "public_claim_text": "Otherwise, for countries where the available latest year survey data are for years before 2021, the available data considered ranges from roughly 2015 to 2019, with most of these countries providing survey data within the period circa 2017–19.",
+      "public_claim_verbatim_quote": "Otherwise, for countries where the available latest year survey data are for years before 2021, the available data considered ranges from roughly 2015 to 2019, with most of these countries providing survey data within the period circa 2017–19."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T02-G05",
+      "section_locator": "PDF page 52",
+      "public_claim_text": "When the coefficient is zero, this implies perfect equality (after being ranked, employees’ wages subsequently accumulate proportionately the same amount of earnings), whereas a value of 1 implies perfect inequality (after being ranked, most of employees’ wages subsequently accumulate almost nothing while one or a few people hoard all the wages earned in the population).",
+      "public_claim_verbatim_quote": "When the coefficient is zero, this implies perfect equality (after being ranked, employees’ wages subsequently accumulate proportionately the same amount of earnings), whereas a value of 1 implies perfect inequality (after being ranked, most of employees’ wages subsequently accumulate almost nothing while one or a few people hoard all the wages earned in the population)."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T02-G06",
+      "section_locator": "PDF page 52",
+      "public_claim_text": "These ways of eliciting earnings, which are far less frequent, are often found in low- and lower-middle-income countries where wage work is far more precarious and payments for work do not occur on a regular basis.",
+      "public_claim_verbatim_quote": "These ways of eliciting earnings, which are far less frequent, are often found in low- and lower-middle-income countries where wage work is far more precarious and payments for work do not occur on a regular basis."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T02-G07",
+      "section_locator": "PDF page 52",
+      "public_claim_text": "The measured D9/D1 ratio would therefore be driven by the higher incidence of women in part-time work.",
+      "public_claim_verbatim_quote": "The measured D9/D1 ratio would therefore be driven by the higher incidence of women in part-time work."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T02-G08",
+      "section_locator": "PDF page 52",
+      "public_claim_text": "In countries where women’s participation in paid wage employment is low or where part-time work is not common, this would not be a significant issue.",
+      "public_claim_verbatim_quote": "In countries where women’s participation in paid wage employment is low or where part-time work is not common, this would not be a significant issue."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T02-G09",
+      "section_locator": "PDF page 52",
+      "public_claim_text": "But comparisons among countries would be impacted by the lack of information on hourly wages.",
+      "public_claim_verbatim_quote": "But comparisons among countries would be impacted by the lack of information on hourly wages."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T02-G10",
+      "section_locator": "PDF page 53",
+      "public_claim_text": "Measures of inequality Low-paid wage workers are defined as those whose hourly wage falls below 50 per cent of the median hourly wage in a given country.",
+      "public_claim_verbatim_quote": "Measures of inequality Low-paid wage workers are defined as those whose hourly wage falls below 50 per cent of the median hourly wage in a given country."
+    }
+  ]
+}

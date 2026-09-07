@@ -4,23 +4,23 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **6,650 / 7,000** |
-| Remaining | **350** (5 domains × 70) |
-| Next domain | **DOM096** Wages and pay |
+| Primary-backed done | **6,720 / 7,000** |
+| Remaining | **280** (4 domains × 70) |
+| Next domain | **DOM097** Workplace safety |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM095 | 6,650 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM096–DOM100 | 350 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM096 | 6,720 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM097–DOM100 | 280 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
+- DOM096: Wages and pay — ILO Global Wage Report 2024-25: Is wage inequality decreasing globally?
 - DOM095: Labor markets — OECD Employment Outlook 2024: The Net-Zero Transition and the Labour Market
-- DOM094: Product recalls — OECD Enhancing Product Recall Effectiveness Globally (2018)
 
 ## Cadence
 
@@ -47,7 +47,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM096** Wages and pay.
+Next domain: **DOM097** Workplace safety.
 
 Waves:
 
