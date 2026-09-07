@@ -1,0 +1,31 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-07",
+  "operator": "NeoZorK",
+  "scope": "DOM080 construction: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 5530,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 5600,
+  "sources": [
+    {
+      "domain_code": "DOM080",
+      "domain_title": "Construction",
+      "remaining_target": 70,
+      "start_index": 1,
+      "source_subdir": "dom080",
+      "source_name": "IEA Material Efficiency in Clean Energy Transitions",
+      "source_url": "https://iea.blob.core.windows.net/assets/52cb5782-b6ed-4757-809f-928fd6c3384d/Material_Efficiency_in_Clean_Energy_Transitions.pdf",
+      "source_sha256": "805e7b634020012b755ad8fb3f44338fbb5b18c96a8e80720cff82ea24887df8",
+      "pdf_pages": 162,
+      "content_start_page": 6,
+      "content_end_page": 162,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 90,
+      "min_quote_words": 14,
+      "reject_pattern": "Figure \\\\d|Table \\\\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}

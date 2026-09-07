@@ -4,17 +4,17 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **5,530 / 7,000** |
-| Remaining | **1,470** (21 domains × 70) |
-| Next domain | **DOM080** Construction |
+| Primary-backed done | **5,600 / 7,000** |
+| Remaining | **1,400** (20 domains × 70) |
+| Next domain | **DOM081** Urban planning |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM079 | 5,530 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM080–DOM100 | 1,470 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM080 | 5,600 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM081–DOM100 | 1,400 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
@@ -31,6 +31,7 @@ Latest packs:
 - DOM077 Electric vehicles — IEA Global EV Outlook 2026 (2026-09-07)
 - DOM078 Buildings — UNEP Global Status Report for Buildings and Construction 2025–2026 (2026-09-07)
 - DOM079 Housing — UN-Habitat World Cities Report 2026: The Global Housing Crisis (2026-09-07)
+- DOM080 Construction — IEA Material Efficiency in Clean Energy Transitions (2026-09-07)
 
 ## Cadence
 
@@ -57,7 +58,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM079** Housing.
+Next domain: **DOM081** Urban planning.
 
 Waves:
 
