@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IRENA Electricity Storage and Renewables: Costs and Markets to 2030 bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IRENA Electricity Storage and Renewables: Costs and Markets to 2030",
+  "source_url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2017/Oct/IRENA_Electricity_Storage_Costs_2017.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "dbc54913127a59179294f88455ddc60d1f1ee5d0a932571df05169a64b44b91b",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM069-T07-G01",
+      "section_locator": "PDF page 107",
+      "public_claim_text": "These markets are often growing in importance and value, although they still may represent relatively small overall costs within the electricity system.",
+      "public_claim_verbatim_quote": "These markets are often growing in importance and value, although they still may represent relatively small overall costs within the electricity system."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T07-G02",
+      "section_locator": "PDF page 110",
+      "public_claim_text": "Bloomberg (2017) ‘Move Over Tesla, Europe’s Building Its Own Battery Gigafactories’, Bloomberg.com, 22 May [Online].",
+      "public_claim_verbatim_quote": "Bloomberg (2017) ‘Move Over Tesla, Europe’s Building Its Own Battery Gigafactories’, Bloomberg.com, 22 May [Online]."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T07-G03",
+      "section_locator": "PDF page 110",
+      "public_claim_text": "BNEF (2016) Electric vehicles to be 35% of global new car sales by 2040 [Online].",
+      "public_claim_verbatim_quote": "BNEF (2016) Electric vehicles to be 35% of global new car sales by 2040 [Online]."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T07-G04",
+      "section_locator": "PDF page 113",
+      "public_claim_text": "Full Report, Union of the Electricity Industry–EURELECTRIC [Online].",
+      "public_claim_verbatim_quote": "Full Report, Union of the Electricity Industry–EURELECTRIC [Online]."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T07-G05",
+      "section_locator": "PDF page 113",
+      "public_claim_text": "(2016) This Unique Combo of Wind and Hydro Power Could Revolutionize Renewable Energy [Online].",
+      "public_claim_verbatim_quote": "(2016) This Unique Combo of Wind and Hydro Power Could Revolutionize Renewable Energy [Online]."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T07-G06",
+      "section_locator": "PDF page 114",
+      "public_claim_text": "IHA (2017b) 2017 Hydropower Status Report, London, International Hydropower Association.",
+      "public_claim_verbatim_quote": "IHA (2017b) 2017 Hydropower Status Report, London, International Hydropower Association."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T07-G07",
+      "section_locator": "PDF page 126",
+      "public_claim_text": "The Excel sheet contains basic instructions on how to use the tool.",
+      "public_claim_verbatim_quote": "The Excel sheet contains basic instructions on how to use the tool."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T07-G08",
+      "section_locator": "PDF page 126",
+      "public_claim_text": "This annex describes the methodology used by the tool.",
+      "public_claim_verbatim_quote": "This annex describes the methodology used by the tool."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T07-G09",
+      "section_locator": "PDF page 129",
+      "public_claim_text": "Calculation of the cost of service Depending on the type of application, the cost of service of the storage system is calculated by reference to its installed power or to its total energy throughput.",
+      "public_claim_verbatim_quote": "Calculation of the cost of service Depending on the type of application, the cost of service of the storage system is calculated by reference to its installed power or to its total energy throughput."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T07-G10",
+      "section_locator": "PDF page 129",
+      "public_claim_text": "Energy applications The majority of storage systems are mainly used and sized based on the need to provide energy services in applications, while the exact amount of power is generally less important, (this is especially true in some applications, such as home storage systems, island grids, time-of-use management).",
+      "public_claim_verbatim_quote": "Energy applications The majority of storage systems are mainly used and sized based on the need to provide energy services in applications, while the exact amount of power is generally less important, (this is especially true in some applications, such as home storage systems, island grids, time-of-use management)."
+    }
+  ]
+}

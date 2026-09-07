@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IRENA Electricity Storage and Renewables: Costs and Markets to 2030 bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IRENA Electricity Storage and Renewables: Costs and Markets to 2030",
+  "source_url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2017/Oct/IRENA_Electricity_Storage_Costs_2017.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "dbc54913127a59179294f88455ddc60d1f1ee5d0a932571df05169a64b44b91b",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM069-T05-G01",
+      "section_locator": "PDF page 68",
+      "public_claim_text": "BES system costs are experiencing a downward trend in recent years, which has been widely documented.",
+      "public_claim_verbatim_quote": "BES system costs are experiencing a downward trend in recent years, which has been widely documented."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T05-G02",
+      "section_locator": "PDF page 72",
+      "public_claim_text": "Companies, such as Volkswagen and Daimler, are investing billions of Euros into facilities for pack assembly for stationary and mobile applications (pv magazine, 2017b; Bloomberg, 2017).",
+      "public_claim_verbatim_quote": "Companies, such as Volkswagen and Daimler, are investing billions of Euros into facilities for pack assembly for stationary and mobile applications (pv magazine, 2017b; Bloomberg, 2017)."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T05-G03",
+      "section_locator": "PDF page 72",
+      "public_claim_text": "With such an increased manufacturing landscape, continuous price declines for Li ion battery cells and packs will most likely continue.",
+      "public_claim_verbatim_quote": "With such an increased manufacturing landscape, continuous price declines for Li ion battery cells and packs will most likely continue."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T05-G04",
+      "section_locator": "PDF page 75",
+      "public_claim_text": "Some approaches to stop the dissolution process include a graphene coating of the cathode, as well as cationic doping.",
+      "public_claim_verbatim_quote": "Some approaches to stop the dissolution process include a graphene coating of the cathode, as well as cationic doping."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T05-G05",
+      "section_locator": "PDF page 75",
+      "public_claim_text": "Post Li-ion technologies that explore new approaches towards lithium as a material for energy storage have been explored in past years.",
+      "public_claim_verbatim_quote": "Post Li-ion technologies that explore new approaches towards lithium as a material for energy storage have been explored in past years."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T05-G06",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "By 2030, NCA, NMC/ LMO and LFP battery chemistries are projected to have costs that fall within roughly the same range of from USD 80 to USD 340/kWh.",
+      "public_claim_verbatim_quote": "By 2030, NCA, NMC/ LMO and LFP battery chemistries are projected to have costs that fall within roughly the same range of from USD 80 to USD 340/kWh."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T05-G07",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "The central estimates for their costs in 2030 are also similar, with NMC Li-ion technologies for stationary applications at USD 145/kWh, NMC/LMO at USD 167/kWh and LFP somewhat higher at USD 224/kWh.",
+      "public_claim_verbatim_quote": "The central estimates for their costs in 2030 are also similar, with NMC Li-ion technologies for stationary applications at USD 145/kWh, NMC/LMO at USD 167/kWh and LFP somewhat higher at USD 224/kWh."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T05-G08",
+      "section_locator": "PDF page 78",
+      "public_claim_text": "There will also be opportunities to amortise overhead costs over greater volumes, reducing this component as well.",
+      "public_claim_verbatim_quote": "There will also be opportunities to amortise overhead costs over greater volumes, reducing this component as well."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T05-G09",
+      "section_locator": "PDF page 85",
+      "public_claim_text": "The Li-ion batteries are used in daily cycling to provide continuous power quality during brownouts or short blackouts, while the lower-cost lead-acid batteries provide longer duration supply in case of lengthy blackouts.",
+      "public_claim_verbatim_quote": "The Li-ion batteries are used in daily cycling to provide continuous power quality during brownouts or short blackouts, while the lower-cost lead-acid batteries provide longer duration supply in case of lengthy blackouts."
+    },
+    {
+      "protocol_id": "CB7K-DOM069-T05-G10",
+      "section_locator": "PDF page 85",
+      "public_claim_text": "There are also synergies that can be exploited in charge and discharge cycles of both batteries to improve efficiency and extend lifetimes.",
+      "public_claim_verbatim_quote": "There are also synergies that can be exploited in charge and discharge cycles of both batteries to improve efficiency and extend lifetimes."
+    }
+  ]
+}
