@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched OECD Online Product Safety Sweep Report (2023) bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "OECD Online Product Safety Sweep Report (2023)",
+  "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/06/online-product-safety-sweep-report_f68342d5/c1faa51e-en.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "6be3a7ebf04d4b9c1f7721c15d4fb8f8415368eb17e0fdbdc9370c7d539af273",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM093-T06-G01",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "While some additional safety information was available to consumers in almost half of the listings examined, these findings highlight an opportunity to address the issue of information asymmetry when consumers are shopping online: even if consumers are thinking about product safety when shopping online, they may find themselves unable to make a fully informed decision about whether a product is safe or not, resulting in unintentional exposure to risk of harm from unsafe or non-compliant products.",
+      "public_claim_verbatim_quote": "While some additional safety information was available to consumers in almost half of the listings examined, these findings highlight an opportunity to address the issue of information asymmetry when consumers are shopping online: even if consumers are thinking about product safety when shopping online, they may find themselves unable to make a fully informed decision about whether a product is safe or not, resulting in unintentional exposure to risk of harm from unsafe or non-compliant products."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T06-G02",
+      "section_locator": "PDF page 30",
+      "public_claim_text": "To illustrate examples where additional safety information was available to consumers, this section compares the results from a compliance perspective (as per the requirements of the standard) and instances where there was some additional safety information available.",
+      "public_claim_verbatim_quote": "To illustrate examples where additional safety information was available to consumers, this section compares the results from a compliance perspective (as per the requirements of the standard) and instances where there was some additional safety information available."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T06-G03",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "Compliance vs additional safety information available for Household non-electrical products* *The Household non-electrical category was chosen because it had the highest ‘unsure’ responses.",
+      "public_claim_verbatim_quote": "Compliance vs additional safety information available for Household non-electrical products* *The Household non-electrical category was chosen because it had the highest ‘unsure’ responses."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T06-G04",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "Compliance vs additional safety information available for Toys/Games products* *The Toys/Games category was chosen because it had the most responses overall.",
+      "public_claim_verbatim_quote": "Compliance vs additional safety information available for Toys/Games products* *The Toys/Games category was chosen because it had the most responses overall."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T06-G05",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "Button/coin batteries (387) were the most inspected products in tier 2, followed by Products containing button batteries (126) and Playsets (80).",
+      "public_claim_verbatim_quote": "Button/coin batteries (387) were the most inspected products in tier 2, followed by Products containing button batteries (126) and Playsets (80)."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T06-G06",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "Button/coin batteries (5%), Quad bikes (5%) and Car seat/child restraint (8%) had the lowest levels of compliance recorded.",
+      "public_claim_verbatim_quote": "Button/coin batteries (5%), Quad bikes (5%) and Car seat/child restraint (8%) had the lowest levels of compliance recorded."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T06-G07",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "Where non-compliance could be determined online marketplaces (32%) had more instances of non-compliance than retailers (28%).",
+      "public_claim_verbatim_quote": "Where non-compliance could be determined online marketplaces (32%) had more instances of non-compliance than retailers (28%)."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T06-G08",
+      "section_locator": "PDF page 36",
+      "public_claim_text": "They were asked to check whether the product complies with voluntary or mandatory standard requirements by assessing the information available online or purchasing a sample from websites and testing in accordance with the relevant requirements.",
+      "public_claim_verbatim_quote": "They were asked to check whether the product complies with voluntary or mandatory standard requirements by assessing the information available online or purchasing a sample from websites and testing in accordance with the relevant requirements."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T06-G09",
+      "section_locator": "PDF page 36",
+      "public_claim_text": "The higher non-compliance rate for physically examined products is likely because products chosen for physical examination were already suspected to be non-compliant after online inspection.",
+      "public_claim_verbatim_quote": "The higher non-compliance rate for physically examined products is likely because products chosen for physical examination were already suspected to be non-compliant after online inspection."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T06-G10",
+      "section_locator": "PDF page 37",
+      "public_claim_text": "It had the highest percentage of non compliance at 58%, with Children/infant and Toys/games product category next highest with 34%.",
+      "public_claim_verbatim_quote": "It had the highest percentage of non compliance at 58%, with Children/infant and Toys/games product category next highest with 34%."
+    }
+  ]
+}

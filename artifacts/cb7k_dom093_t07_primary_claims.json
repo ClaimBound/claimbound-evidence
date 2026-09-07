@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched OECD Online Product Safety Sweep Report (2023) bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "OECD Online Product Safety Sweep Report (2023)",
+  "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/06/online-product-safety-sweep-report_f68342d5/c1faa51e-en.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "6be3a7ebf04d4b9c1f7721c15d4fb8f8415368eb17e0fdbdc9370c7d539af273",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM093-T07-G01",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "Button/coin batteries (190) was the most popular product inspected, followed by Kitchen appliances – other (131) and Prams and strollers (127).",
+      "public_claim_verbatim_quote": "Button/coin batteries (190) was the most popular product inspected, followed by Kitchen appliances – other (131) and Prams and strollers (127)."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T07-G02",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "Products swept by website type, Tier 3 Website type Retailer Online marketplace Products swept 486 1207 Retailers had slightly better rates of compliance when compared to online marketplaces.",
+      "public_claim_verbatim_quote": "Products swept by website type, Tier 3 Website type Retailer Online marketplace Products swept 486 1207 Retailers had slightly better rates of compliance when compared to online marketplaces."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T07-G03",
+      "section_locator": "PDF page 39",
+      "public_claim_text": "Some online marketplaces were inspected by only one jurisdiction, while others were swept by multiple jurisdictions.",
+      "public_claim_verbatim_quote": "Some online marketplaces were inspected by only one jurisdiction, while others were swept by multiple jurisdictions."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T07-G04",
+      "section_locator": "PDF page 39",
+      "public_claim_text": "For example, Singapore was the only jurisdiction that inspected Lazada, while eBay and Amazon21 were inspected by 5 or more jurisdictions.",
+      "public_claim_verbatim_quote": "For example, Singapore was the only jurisdiction that inspected Lazada, while eBay and Amazon21 were inspected by 5 or more jurisdictions."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T07-G05",
+      "section_locator": "PDF page 40",
+      "public_claim_text": "Products swept by website type, Tier 3 Supplier location Location unsure Foreign supplier Domestic supplier Products swept 122 504 1067 Domestic suppliers had the greatest number of compliant products (41%), and foreign suppliers had the greatest number of non-compliant products (58%).",
+      "public_claim_verbatim_quote": "Products swept by website type, Tier 3 Supplier location Location unsure Foreign supplier Domestic supplier Products swept 122 504 1067 Domestic suppliers had the greatest number of compliant products (41%), and foreign suppliers had the greatest number of non-compliant products (58%)."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T07-G06",
+      "section_locator": "PDF page 42",
+      "public_claim_text": "Product Tiers The selected products will be investigated under one of the three categories listed below.",
+      "public_claim_verbatim_quote": "Product Tiers The selected products will be investigated under one of the three categories listed below."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T07-G07",
+      "section_locator": "PDF page 43",
+      "public_claim_text": "Household electrical Any product that is intended to be used whilst connected to a power outlet and may be found in a typical household (e.g., plug adapter, microwave).",
+      "public_claim_verbatim_quote": "Household electrical Any product that is intended to be used whilst connected to a power outlet and may be found in a typical household (e.g., plug adapter, microwave)."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T07-G08",
+      "section_locator": "PDF page 43",
+      "public_claim_text": "Household non-electrical Any product that may be found in a typical household and is not reliant upon constant connection to a power outlet when being used (e.g., novelty lighter, tempered glass lid).",
+      "public_claim_verbatim_quote": "Household non-electrical Any product that may be found in a typical household and is not reliant upon constant connection to a power outlet when being used (e.g., novelty lighter, tempered glass lid)."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T07-G09",
+      "section_locator": "PDF page 43",
+      "public_claim_text": "Children/infant Any product that is intended to be used primarily by infants or children aged less than 3 years (e.g., baby walker, highchair).",
+      "public_claim_verbatim_quote": "Children/infant Any product that is intended to be used primarily by infants or children aged less than 3 years (e.g., baby walker, highchair)."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T07-G10",
+      "section_locator": "PDF page 43",
+      "public_claim_text": "This category excludes products intended to be used in Sporting/recreational contexts and Toys/games irrespective of the age of the consumer such products may be targeted towards.",
+      "public_claim_verbatim_quote": "This category excludes products intended to be used in Sporting/recreational contexts and Toys/games irrespective of the age of the consumer such products may be targeted towards."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched OECD Online Product Safety Sweep Report (2023) bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "OECD Online Product Safety Sweep Report (2023)",
+  "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/06/online-product-safety-sweep-report_f68342d5/c1faa51e-en.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "6be3a7ebf04d4b9c1f7721c15d4fb8f8415368eb17e0fdbdc9370c7d539af273",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM093-T03-G01",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "To mitigate the impacts of differences in sample sizes and enable more meaningful comparisons between the two sweeps, comparisons are based on average non-compliance rates calculated at the level of each product category and tier.",
+      "public_claim_verbatim_quote": "To mitigate the impacts of differences in sample sizes and enable more meaningful comparisons between the two sweeps, comparisons are based on average non-compliance rates calculated at the level of each product category and tier."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T03-G02",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "As the sweep took place in 2021 during the COVID-19 pandemic, results may be affected by the pandemic’s effect on the global e-commerce landscape.",
+      "public_claim_verbatim_quote": "As the sweep took place in 2021 during the COVID-19 pandemic, results may be affected by the pandemic’s effect on the global e-commerce landscape."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T03-G03",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "Product safety laws differ between jurisdictions (as highlighted above), and product safety priorities within a jurisdiction may change over time, which may affect the extent to which specific products were investigated over others.",
+      "public_claim_verbatim_quote": "Product safety laws differ between jurisdictions (as highlighted above), and product safety priorities within a jurisdiction may change over time, which may affect the extent to which specific products were investigated over others."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T03-G04",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "Sweepers found it difficult in these circumstances to ascertain whether a product met the requirements of a standard because there was inadequate information available to make an accurate assessment.",
+      "public_claim_verbatim_quote": "Sweepers found it difficult in these circumstances to ascertain whether a product met the requirements of a standard because there was inadequate information available to make an accurate assessment."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T03-G05",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "These standards require tests to show compliance and certain warnings and safety information to be provided on the battery, packaging and in instructions.",
+      "public_claim_verbatim_quote": "These standards require tests to show compliance and certain warnings and safety information to be provided on the battery, packaging and in instructions."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T03-G06",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "This may be because Korea has three mandatory Acts that provide for the safety of products supplied online for electronic15, children’s16 and electrical appliances17.",
+      "public_claim_verbatim_quote": "This may be because Korea has three mandatory Acts that provide for the safety of products supplied online for electronic15, children’s16 and electrical appliances17."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T03-G07",
+      "section_locator": "PDF page 16",
+      "public_claim_text": "Portable Technology had the second highest levels of non-compliance, with 24 out of 40 (57%) websites recorded as non-compliant and Household Electrical, with 397 out of 671 (54%) was third highest.",
+      "public_claim_verbatim_quote": "Portable Technology had the second highest levels of non-compliance, with 24 out of 40 (57%) websites recorded as non-compliant and Household Electrical, with 397 out of 671 (54%) was third highest."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T03-G08",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "A large proportion of unsure responses were recorded for Apparel, with sweepers unsure whether the website was compliant or not in 119 out of 180 (66%) instances.",
+      "public_claim_verbatim_quote": "A large proportion of unsure responses were recorded for Apparel, with sweepers unsure whether the website was compliant or not in 119 out of 180 (66%) instances."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T03-G09",
+      "section_locator": "PDF page 17",
+      "public_claim_text": "For example, Australia bans certain small high-powered magnets that have a magnetic strength (flux) above a set strength.",
+      "public_claim_verbatim_quote": "For example, Australia bans certain small high-powered magnets that have a magnetic strength (flux) above a set strength."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T03-G10",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "Approximately three quarters (77%) of products inspected were available from online marketplaces, with 54% average non-compliance rate.",
+      "public_claim_verbatim_quote": "Approximately three quarters (77%) of products inspected were available from online marketplaces, with 54% average non-compliance rate."
+    }
+  ]
+}
