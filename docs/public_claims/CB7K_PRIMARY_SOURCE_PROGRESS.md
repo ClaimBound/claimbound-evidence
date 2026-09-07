@@ -4,17 +4,17 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **4,970 / 7,000** |
-| Remaining | **2,030** (29 domains × 70) |
-| Next domain | **DOM072** Rail |
+| Primary-backed done | **5,040 / 7,000** |
+| Remaining | **1,960** (28 domains × 70) |
+| Next domain | **DOM073** Public transit |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM071 | 4,970 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM072–DOM100 | 2,030 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM072 | 5,040 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM073–DOM100 | 1,960 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
@@ -27,6 +27,7 @@ Latest packs:
 - **DOM069** Batteries — IRENA Electricity Storage and Renewables Costs and Markets to 2030 (2026-09-07)
 - **DOM070** Hydrogen — IRENA Hydrogen: A renewable energy perspective (2026-09-07)
 - **DOM071** Aviation — IPCC AR5 WGIII Chapter 8 Transport (2026-09-07)
+- **DOM072** Rail — IEA The Future of Rail (2026-09-07)
 
 ## Cadence
 
@@ -53,7 +54,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM072** Rail.
+Next domain: **DOM073** Public transit.
 
 Waves:
 
