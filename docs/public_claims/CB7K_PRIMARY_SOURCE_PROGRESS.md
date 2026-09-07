@@ -4,31 +4,31 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **5,320 / 7,000** |
-| Remaining | **1,680** (24 domains × 70) |
-| Next domain | **DOM077** Electric vehicles |
+| Primary-backed done | **5,390 / 7,000** |
+| Remaining | **1,610** (23 domains × 70) |
+| Next domain | **DOM078** Buildings |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM076 | 5,320 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM077–DOM100 | 1,680 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM077 | 5,390 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM078–DOM100 | 1,610 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- **DOM067** Nuclear energy — IAEA Nuclear Energy Series PUB1908 (2026-09-07)
-- **DOM068** Oil and gas — IPCC AR4 WGIII Ch4 + AR5 WGIII Ch7 (2026-09-07)
-- **DOM069** Batteries — IRENA Electricity Storage and Renewables Costs and Markets to 2030 (2026-09-07)
-- **DOM070** Hydrogen — IRENA Hydrogen: A renewable energy perspective (2026-09-07)
-- **DOM071** Aviation — IPCC AR5 WGIII Chapter 8 Transport (2026-09-07)
-- **DOM072** Rail — IEA The Future of Rail (2026-09-07)
-- **DOM073** Public transit — IEA Bus Systems for the Future (2026-09-07)
-- **DOM074** Road safety — WHO Global Status Report on Road Safety 2023 (2026-09-07)
-- **DOM075** Shipping — IPCC AR5 WGIII Chapter 8 Transport (2026-09-07)
-- **DOM076** Logistics — World Bank Connecting to Compete 2025 LPI 2.0 (2026-09-07)
+- DOM068 Oil and gas — IPCC AR4 WGIII Ch4 + AR5 WGIII Ch7 (2026-09-07)
+- DOM069 Batteries — IRENA Electricity Storage and Renewables Costs and Markets to 2030 (2026-09-07)
+- DOM070 Hydrogen — IRENA Hydrogen: A renewable energy perspective (2026-09-07)
+- DOM071 Aviation — IPCC AR5 WGIII Chapter 8 Transport (2026-09-07)
+- DOM072 Rail — IEA The Future of Rail (2026-09-07)
+- DOM073 Public transit — IEA Bus Systems for the Future (2026-09-07)
+- DOM074 Road safety — WHO Global Status Report on Road Safety 2023 (2026-09-07)
+- DOM075 Shipping — IPCC AR5 WGIII Chapter 8 Transport (2026-09-07)
+- DOM076 Logistics — World Bank Connecting to Compete 2025 LPI 2.0 (2026-09-07)
+- DOM077 Electric vehicles — IEA Global EV Outlook 2026 (2026-09-07)
 
 ## Cadence
 
@@ -55,7 +55,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM077** Electric vehicles.
+Next domain: **DOM078** Buildings.
 
 Waves:
 
