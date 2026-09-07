@@ -1,0 +1,31 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-07",
+  "operator": "NeoZorK",
+  "scope": "DOM085 Disaster response: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 5880,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 5950,
+  "sources": [
+    {
+      "domain_code": "DOM085",
+      "domain_title": "Disaster response",
+      "remaining_target": 70,
+      "start_index": 1,
+      "source_subdir": "dom085",
+      "source_name": "IFRC World Disasters Report 2026: Truth, Trust and Humanitarian Action in the Age of Harmful Information",
+      "source_url": "https://www.ifrc.org/sites/default/files/2026-02/WDR2026_FullReport_EN.pdf",
+      "source_sha256": "449cdf687c2600ded10265be692c68a9779aeb7b7ae9d1c5e7dc774f3de7ab65",
+      "pdf_pages": 376,
+      "content_start_page": 22,
+      "content_end_page": 365,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 90,
+      "min_quote_words": 14,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|Endnotes|Contributor Insight|(?-i:^[a-z])|^\\d+\\s|misin |manip |coop er|disinforma|earth.\\s*quake|[\\u2011\\u00ad]\\s|Edelman Other|Annex I on page|Annex II on page|ȇ|“ For me|So it becomes really very|see Chapter|on page \\d"
+    }
+  ]
+}
