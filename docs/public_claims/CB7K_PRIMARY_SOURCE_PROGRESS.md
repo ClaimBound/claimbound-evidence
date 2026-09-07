@@ -4,22 +4,21 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **5,110 / 7,000** |
-| Remaining | **1,890** (27 domains × 70) |
-| Next domain | **DOM074** Road safety |
+| Primary-backed done | **5,180 / 7,000** |
+| Remaining | **1,820** (26 domains × 70) |
+| Next domain | **DOM075** Shipping |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM073 | 5,110 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM074–DOM100 | 1,890 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM074 | 5,180 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM075–DOM100 | 1,820 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- **DOM064** Plastics — OECD Global Plastics Outlook (2026-09-06)
 - **DOM065** Renewable energy — IPCC AR5 WGIII Ch7 Energy Systems (2026-09-06)
 - **DOM066** Power grid — IPCC AR5 WGIII Ch6 Assessing Transformation Pathways (2026-09-06)
 - **DOM067** Nuclear energy — IAEA Nuclear Energy Series PUB1908 (2026-09-07)
@@ -29,6 +28,7 @@ Latest packs:
 - **DOM071** Aviation — IPCC AR5 WGIII Chapter 8 Transport (2026-09-07)
 - **DOM072** Rail — IEA The Future of Rail (2026-09-07)
 - **DOM073** Public transit — IEA Bus Systems for the Future (2026-09-07)
+- **DOM074** Road safety — WHO Global Status Report on Road Safety 2023 (2026-09-07)
 
 ## Cadence
 
@@ -55,7 +55,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM074** Road safety.
+Next domain: **DOM075** Shipping.
 
 Waves:
 
