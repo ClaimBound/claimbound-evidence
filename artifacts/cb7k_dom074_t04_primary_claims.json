@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched WHO Global Status Report on Road Safety 2023 bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "WHO Global Status Report on Road Safety 2023",
+  "source_url": "https://iris.who.int/bitstream/handle/10665/375016/9789240086517-eng.pdf?sequence=1&isAllowed=y",
+  "access_date": "2026-09-07",
+  "source_sha256": "8d65d10d3b8cbc018fb4701130fad953425699104c6560c7aee5308e5890e2b5",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM074-T04-G01",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "Additionally, 29 countries report legislation mandating the availability of eCall or Accident Emergency Call Systems in all vehicles to trigger an emergency response through a vehicle sensor.",
+      "public_claim_verbatim_quote": "Additionally, 29 countries report legislation mandating the availability of eCall or Accident Emergency Call Systems in all vehicles to trigger an emergency response through a vehicle sensor."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T04-G02",
+      "section_locator": "PDF page 44",
+      "public_claim_text": "Head injuries are the main cause of death in most motorcycle crashes.",
+      "public_claim_verbatim_quote": "Head injuries are the main cause of death in most motorcycle crashes."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T04-G03",
+      "section_locator": "PDF page 44",
+      "public_claim_text": "Fifty-six of these countries are signatories of the corresponding UN Convention.17 Whether this legislation matches other international recommendations such as International Labour Organization (ILO) R616 or the EU rules for working in road transport18 was not assessed at this time.",
+      "public_claim_verbatim_quote": "Fifty-six of these countries are signatories of the corresponding UN Convention.17 Whether this legislation matches other international recommendations such as International Labour Organization (ILO) R616 or the EU rules for working in road transport18 was not assessed at this time."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T04-G04",
+      "section_locator": "PDF page 44",
+      "public_claim_text": "Whether countries adhere to international helmet standards is shown in Annex 4.",
+      "public_claim_verbatim_quote": "Whether countries adhere to international helmet standards is shown in Annex 4."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T04-G05",
+      "section_locator": "PDF page 47",
+      "public_claim_text": "We are the voice of those who use the transport systems.",
+      "public_claim_verbatim_quote": "We are the voice of those who use the transport systems."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T04-G06",
+      "section_locator": "PDF page 50",
+      "public_claim_text": "Encouraging them to do so requires protection from civil liability.",
+      "public_claim_verbatim_quote": "Encouraging them to do so requires protection from civil liability."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T04-G07",
+      "section_locator": "PDF page 55",
+      "public_claim_text": "More than half of countries use general taxes on vehicle purchases, insurance, fuel and alcoholic beverages among others, to finance road safety activities.",
+      "public_claim_verbatim_quote": "More than half of countries use general taxes on vehicle purchases, insurance, fuel and alcoholic beverages among others, to finance road safety activities."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T04-G08",
+      "section_locator": "PDF page 55",
+      "public_claim_text": "About half of all countries use dedicated taxes and fines from traffic violations to finance road safety activities.",
+      "public_claim_verbatim_quote": "About half of all countries use dedicated taxes and fines from traffic violations to finance road safety activities."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T04-G09",
+      "section_locator": "PDF page 55",
+      "public_claim_text": "In some cases the WHO estimates are 10 times higher, and in one case, 49 times higher, than self-reported figures.",
+      "public_claim_verbatim_quote": "In some cases the WHO estimates are 10 times higher, and in one case, 49 times higher, than self-reported figures."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T04-G10",
+      "section_locator": "PDF page 55",
+      "public_claim_text": "Only 114 countries report having a specific definition for injuries that result from a road traffic crash.",
+      "public_claim_verbatim_quote": "Only 114 countries report having a specific definition for injuries that result from a road traffic crash."
+    }
+  ]
+}

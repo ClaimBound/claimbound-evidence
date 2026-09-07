@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched WHO Global Status Report on Road Safety 2023 bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "WHO Global Status Report on Road Safety 2023",
+  "source_url": "https://iris.who.int/bitstream/handle/10665/375016/9789240086517-eng.pdf?sequence=1&isAllowed=y",
+  "access_date": "2026-09-07",
+  "source_sha256": "8d65d10d3b8cbc018fb4701130fad953425699104c6560c7aee5308e5890e2b5",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM074-T06-G01",
+      "section_locator": "PDF page 66",
+      "public_claim_text": "Drug use and road safety: a policy brief.",
+      "public_claim_verbatim_quote": "Drug use and road safety: a policy brief."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T06-G02",
+      "section_locator": "PDF page 71",
+      "public_claim_text": "An article on the evolution in methods used to produce this series of reports is currently under review for a forthcoming edition of Injury Prevention.",
+      "public_claim_verbatim_quote": "An article on the evolution in methods used to produce this series of reports is currently under review for a forthcoming edition of Injury Prevention."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T06-G03",
+      "section_locator": "PDF page 73",
+      "public_claim_text": "In depth legal reviews for the seven legislation areas described in Table A1.1 were also compiled.",
+      "public_claim_verbatim_quote": "In depth legal reviews for the seven legislation areas described in Table A1.1 were also compiled."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T06-G04",
+      "section_locator": "PDF page 73",
+      "public_claim_text": "Some of these values are included in the Country and territory profiles.",
+      "public_claim_verbatim_quote": "Some of these values are included in the Country and territory profiles."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T06-G05",
+      "section_locator": "PDF page 73",
+      "public_claim_text": "Instead of relying on a single data source for the entire population, these countries have conducted a linkage of data from various stakeholders.",
+      "public_claim_verbatim_quote": "Instead of relying on a single data source for the entire population, these countries have conducted a linkage of data from various stakeholders."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T06-G06",
+      "section_locator": "PDF page 74",
+      "public_claim_text": "Estimates (GHE) 2020 were used to account for road traffic deaths from 2000 to 2019.",
+      "public_claim_verbatim_quote": "Estimates (GHE) 2020 were used to account for road traffic deaths from 2000 to 2019."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T06-G07",
+      "section_locator": "PDF page 74",
+      "public_claim_text": "A1.1, and best criteria are described in corresponding sections of the report and in Annex 6.",
+      "public_claim_verbatim_quote": "A1.1, and best criteria are described in corresponding sections of the report and in Annex 6."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T06-G08",
+      "section_locator": "PDF page 74",
+      "public_claim_text": "On this occasion, national-level legislation was also reviewed.",
+      "public_claim_verbatim_quote": "On this occasion, national-level legislation was also reviewed."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T06-G09",
+      "section_locator": "PDF page 75",
+      "public_claim_text": "Differences of 2% or less are presented as “no change”.",
+      "public_claim_verbatim_quote": "Differences of 2% or less are presented as “no change”."
+    },
+    {
+      "protocol_id": "CB7K-DOM074-T06-G10",
+      "section_locator": "PDF page 75",
+      "public_claim_text": "Participating territories are: British Virgin Islands (high income, Region of the Americas) and occupied Palestinian territory, including east Jerusalem (lower middle-income, Eastern Mediterranean Region).",
+      "public_claim_verbatim_quote": "Participating territories are: British Virgin Islands (high income, Region of the Americas) and occupied Palestinian territory, including east Jerusalem (lower middle-income, Eastern Mediterranean Region)."
+    }
+  ]
+}
