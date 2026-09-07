@@ -4,22 +4,21 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **5,740 / 7,000** |
-| Remaining | **1,260** (18 domains × 70) |
-| Next domain | **DOM083** Earth observation |
+| Primary-backed done | **5,810 / 7,000** |
+| Remaining | **1,190** (17 domains × 70) |
+| Next domain | **DOM084** Weather services |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM082 | 5,740 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM083–DOM100 | 1,260 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM083 | 5,810 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM084–DOM100 | 1,190 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- DOM070 Hydrogen — IRENA Hydrogen: A renewable energy perspective (2026-09-07)
 - DOM071 Aviation — IPCC AR5 WGIII Chapter 8 Transport (2026-09-07)
 - DOM072 Rail — IEA The Future of Rail (2026-09-07)
 - DOM073 Public transit — IEA Bus Systems for the Future (2026-09-07)
@@ -32,6 +31,8 @@ Latest packs:
 - DOM080 Construction — IEA Material Efficiency in Clean Energy Transitions (2026-09-07)
 - DOM081 Urban planning — UN-Habitat World Cities Report 2024: Cities and Climate Action (2026-09-07)
 - DOM082 Satellites — NASA-STD-8719.14C Process for Limiting Orbital Debris (2026-09-07)
+- DOM083 Earth observation — CEOS Earth Observation Handbook 2023: Space Data for the Global Stocktake (2026-09-07)
+
 
 ## Cadence
 
@@ -58,7 +59,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM083** Earth observation.
+Next domain: **DOM084** Weather services.
 
 Waves:
 
