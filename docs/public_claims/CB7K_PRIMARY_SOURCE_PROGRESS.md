@@ -4,22 +4,22 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **6,440 / 7,000** |
-| Remaining | **560** (8 domains × 70) |
-| Next domain | **DOM093** Consumer products |
+| Primary-backed done | **6,510 / 7,000** |
+| Remaining | **490** (7 domains × 70) |
+| Next domain | **DOM094** Product recalls |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM092 | 6,440 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM093–DOM100 | 560 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM093 | 6,510 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM094–DOM100 | 490 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- DOM092: E-commerce — UNCTAD Digital Economy Report 2024 Chapter V: E-commerce and environmental sustainability
+- DOM093: Consumer products — OECD Online Product Safety Sweep Report (2023)
 
 ## Cadence
 
@@ -46,7 +46,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM093** Consumer products.
+Next domain: **DOM094** Product recalls.
 
 Waves:
 

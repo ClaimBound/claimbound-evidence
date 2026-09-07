@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched OECD Online Product Safety Sweep Report (2023) bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "OECD Online Product Safety Sweep Report (2023)",
+  "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/06/online-product-safety-sweep-report_f68342d5/c1faa51e-en.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "6be3a7ebf04d4b9c1f7721c15d4fb8f8415368eb17e0fdbdc9370c7d539af273",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM093-T02-G01",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "A key factor explaining this difference is that the sweep was conducted over a whole month, rather than a four-day period in 2015, allowing some jurisdictions time to investigate more products.",
+      "public_claim_verbatim_quote": "A key factor explaining this difference is that the sweep was conducted over a whole month, rather than a four-day period in 2015, allowing some jurisdictions time to investigate more products."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T02-G02",
+      "section_locator": "PDF page 11",
+      "public_claim_text": "By narrowing the number of product categories, the intent was to achieve sample sizes large enough to provide meaningful and comparable results, enabling better identification of trends and emerging issues to inform policy and enforcement priorities.",
+      "public_claim_verbatim_quote": "By narrowing the number of product categories, the intent was to achieve sample sizes large enough to provide meaningful and comparable results, enabling better identification of trends and emerging issues to inform policy and enforcement priorities."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T02-G03",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "Online marketplaces: a web-based platform provided by an independent third party upon which suppliers may offer for sale their products.",
+      "public_claim_verbatim_quote": "Online marketplaces: a web-based platform provided by an independent third party upon which suppliers may offer for sale their products."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T02-G04",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "The sweeping process Sweep participants were asked to consider tier, product category, website type and supplier location when selecting products to include in the sweep.",
+      "public_claim_verbatim_quote": "The sweeping process Sweep participants were asked to consider tier, product category, website type and supplier location when selecting products to include in the sweep."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T02-G05",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "Product types within product categories inspected were not selected at random but were already products of concern based on internal data.",
+      "public_claim_verbatim_quote": "Product types within product categories inspected were not selected at random but were already products of concern based on internal data."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T02-G06",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "This meant that compliance rates referred to throughout this report are not reflective of all products online in a particular category, but rather of those products that may already pose concerns.",
+      "public_claim_verbatim_quote": "This meant that compliance rates referred to throughout this report are not reflective of all products online in a particular category, but rather of those products that may already pose concerns."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T02-G07",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "In addition, because product safety laws may differ between jurisdictions, a product may be recorded as compliant in one jurisdiction but not in another.",
+      "public_claim_verbatim_quote": "In addition, because product safety laws may differ between jurisdictions, a product may be recorded as compliant in one jurisdiction but not in another."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T02-G08",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "As a result, the composition of the sample of jurisdictions participating in the sweep can play a role in the overall compliance rates measured.",
+      "public_claim_verbatim_quote": "As a result, the composition of the sample of jurisdictions participating in the sweep can play a role in the overall compliance rates measured."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T02-G09",
+      "section_locator": "PDF page 13",
+      "public_claim_text": "In contrast, in the 2015 Sweep where there was insufficient information to form a conclusion on compliance, this was recorded as non-compliant.",
+      "public_claim_verbatim_quote": "In contrast, in the 2015 Sweep where there was insufficient information to form a conclusion on compliance, this was recorded as non-compliant."
+    },
+    {
+      "protocol_id": "CB7K-DOM093-T02-G10",
+      "section_locator": "PDF page 14",
+      "public_claim_text": "While five of the seven product categories selected to sweep were also covered in the 2015 Sweep, within those categories, jurisdictions were free to choose which types of products and how many to investigate, in line with their respective interests and priorities.",
+      "public_claim_verbatim_quote": "While five of the seven product categories selected to sweep were also covered in the 2015 Sweep, within those categories, jurisdictions were free to choose which types of products and how many to investigate, in line with their respective interests and priorities."
+    }
+  ]
+}

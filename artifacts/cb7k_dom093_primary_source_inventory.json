@@ -1,0 +1,31 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-07",
+  "operator": "NeoZorK",
+  "scope": "DOM093 Consumer products: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 6440,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 6510,
+  "sources": [
+    {
+      "domain_code": "DOM093",
+      "domain_title": "Consumer products",
+      "remaining_target": 70,
+      "start_index": 1,
+      "source_subdir": "dom093",
+      "source_name": "OECD Online Product Safety Sweep Report (2023)",
+      "source_url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2023/06/online-product-safety-sweep-report_f68342d5/c1faa51e-en.pdf",
+      "source_sha256": "6be3a7ebf04d4b9c1f7721c15d4fb8f8415368eb17e0fdbdc9370c7d539af273",
+      "pdf_pages": 58,
+      "content_start_page": 6,
+      "content_end_page": 55,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 90,
+      "min_quote_words": 14,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|Endnotes|Credit:|StatLink|(?-i:^[a-z])|^ONLINE PRODUCT SAFETY|^OECD DIGITAL ECONOMY|^OECD 20|[\\x84\\u201e\\u2022\\u25aa\\uf07c]|available at https|doi\\.org|https?://|accessed on|Unclassified|Table of contents|Foreword|Executive Summary|Products swept by jurisdiction|Jurisdiction Products swept|Online Inspection Physically examined"
+    }
+  ]
+}
