@@ -1,0 +1,31 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-07",
+  "operator": "NeoZorK",
+  "scope": "DOM083 Earth observation: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 5740,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 5810,
+  "sources": [
+    {
+      "domain_code": "DOM083",
+      "domain_title": "Earth observation",
+      "remaining_target": 70,
+      "start_index": 1,
+      "source_subdir": "dom083",
+      "source_name": "CEOS Earth Observation Handbook 2023: Space Data for the Global Stocktake",
+      "source_url": "https://eohandbook.com/gst/documents/CEOS_EO_Handbook_2023_light.pdf",
+      "source_sha256": "41dbd7b9200040dc2375e0dced2dd936c1d832837ecb24d5ad85355c3b6b98ae",
+      "pdf_pages": 117,
+      "content_start_page": 8,
+      "content_end_page": 115,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 90,
+      "min_quote_words": 14,
+      "reject_pattern": "Figure \\\\d|Table \\\\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}

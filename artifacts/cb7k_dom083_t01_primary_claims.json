@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched CEOS Earth Observation Handbook 2023: Space Data for the Global Stocktake bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "CEOS Earth Observation Handbook 2023: Space Data for the Global Stocktake",
+  "source_url": "https://eohandbook.com/gst/documents/CEOS_EO_Handbook_2023_light.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "41dbd7b9200040dc2375e0dced2dd936c1d832837ecb24d5ad85355c3b6b98ae",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM083-T01-G01",
+      "section_locator": "PDF page 8",
+      "public_claim_text": "At its heart, the GST is an evidence-driven process, using data to power improved understanding of the global climate and an ambition cycle that seeks to leverage the data for increasing action by countries on the reduction of greenhouse gas (GHG) emissions.",
+      "public_claim_verbatim_quote": "At its heart, the GST is an evidence-driven process, using data to power improved understanding of the global climate and an ambition cycle that seeks to leverage the data for increasing action by countries on the reduction of greenhouse gas (GHG) emissions."
+    },
+    {
+      "protocol_id": "CB7K-DOM083-T01-G02",
+      "section_locator": "PDF page 8",
+      "public_claim_text": "The Handbook also aims to provide practical examples and leads for further investigation so that the potential of the data available from our EO satellites is fully realised.",
+      "public_claim_verbatim_quote": "The Handbook also aims to provide practical examples and leads for further investigation so that the potential of the data available from our EO satellites is fully realised."
+    },
+    {
+      "protocol_id": "CB7K-DOM083-T01-G03",
+      "section_locator": "PDF page 9",
+      "public_claim_text": "It is hoped that readers might find inspiration and resources relevant to their own information needs and reporting obligations.",
+      "public_claim_verbatim_quote": "It is hoped that readers might find inspiration and resources relevant to their own information needs and reporting obligations."
+    },
+    {
+      "protocol_id": "CB7K-DOM083-T01-G04",
+      "section_locator": "PDF page 12",
+      "public_claim_text": "In 2023, the first formal review of progress towards the goals of the Paris Agreement, known as the Global Stocktake (GST), will take place.",
+      "public_claim_verbatim_quote": "In 2023, the first formal review of progress towards the goals of the Paris Agreement, known as the Global Stocktake (GST), will take place."
+    },
+    {
+      "protocol_id": "CB7K-DOM083-T01-G05",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "The Intergovernmental Panel on Climate Change (IPCC) has released several reports, the latest being the Synthesis Report for the 6th Assessment in 2023, which unequivocally states that human-related emissions of greenhouse gases (GHGs) are causing a warming world.",
+      "public_claim_verbatim_quote": "The Intergovernmental Panel on Climate Change (IPCC) has released several reports, the latest being the Synthesis Report for the 6th Assessment in 2023, which unequivocally states that human-related emissions of greenhouse gases (GHGs) are causing a warming world."
+    },
+    {
+      "protocol_id": "CB7K-DOM083-T01-G06",
+      "section_locator": "PDF page 15",
+      "public_claim_text": "This latest IPCC report shows that if we rely on policies implemented to date, or current nationally determined contributions out to 2030, it will not be possible to limit global warming to 1.5 degrees, and possibly not even 2 degrees.",
+      "public_claim_verbatim_quote": "This latest IPCC report shows that if we rely on policies implemented to date, or current nationally determined contributions out to 2030, it will not be possible to limit global warming to 1.5 degrees, and possibly not even 2 degrees."
+    },
+    {
+      "protocol_id": "CB7K-DOM083-T01-G07",
+      "section_locator": "PDF page 18",
+      "public_claim_text": "The Paris Agreement emphasises the significance of adaptation measures taken by countries to counter the effects of climate change that are already happening or are anticipated.",
+      "public_claim_verbatim_quote": "The Paris Agreement emphasises the significance of adaptation measures taken by countries to counter the effects of climate change that are already happening or are anticipated."
+    },
+    {
+      "protocol_id": "CB7K-DOM083-T01-G08",
+      "section_locator": "PDF page 19",
+      "public_claim_text": "In order to monitor and fully understand the changing climate, we must observe key facets of the climate system on a sustained basis.",
+      "public_claim_verbatim_quote": "In order to monitor and fully understand the changing climate, we must observe key facets of the climate system on a sustained basis."
+    },
+    {
+      "protocol_id": "CB7K-DOM083-T01-G09",
+      "section_locator": "PDF page 20",
+      "public_claim_text": "GCOS Essential Climate Variables Space agencies provide data records for around two thirds of the 55 ECVs.",
+      "public_claim_verbatim_quote": "GCOS Essential Climate Variables Space agencies provide data records for around two thirds of the 55 ECVs."
+    },
+    {
+      "protocol_id": "CB7K-DOM083-T01-G10",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "The ECV Inventory provides a comprehensive view of the systemic availability of Climate Data Records (CDRs) that are currently available and are being planned for the future from satellite missions of CEOS and CGMS members.",
+      "public_claim_verbatim_quote": "The ECV Inventory provides a comprehensive view of the systemic availability of Climate Data Records (CDRs) that are currently available and are being planned for the future from satellite missions of CEOS and CGMS members."
+    }
+  ]
+}
