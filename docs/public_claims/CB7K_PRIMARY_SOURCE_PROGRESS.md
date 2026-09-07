@@ -4,17 +4,17 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **5,390 / 7,000** |
-| Remaining | **1,610** (23 domains × 70) |
-| Next domain | **DOM078** Buildings |
+| Primary-backed done | **5,460 / 7,000** |
+| Remaining | **1,540** (22 domains × 70) |
+| Next domain | **DOM079** Housing |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM077 | 5,390 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM078–DOM100 | 1,610 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM078 | 5,460 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM079–DOM100 | 1,540 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
@@ -29,6 +29,7 @@ Latest packs:
 - DOM075 Shipping — IPCC AR5 WGIII Chapter 8 Transport (2026-09-07)
 - DOM076 Logistics — World Bank Connecting to Compete 2025 LPI 2.0 (2026-09-07)
 - DOM077 Electric vehicles — IEA Global EV Outlook 2026 (2026-09-07)
+- DOM078 Buildings — UNEP Global Status Report for Buildings and Construction 2025–2026 (2026-09-07)
 
 ## Cadence
 
@@ -55,7 +56,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM078** Buildings.
+Next domain: **DOM079** Housing.
 
 Waves:
 
