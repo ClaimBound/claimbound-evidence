@@ -4,23 +4,23 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **6,580 / 7,000** |
-| Remaining | **420** (6 domains × 70) |
-| Next domain | **DOM095** Labor markets |
+| Primary-backed done | **6,650 / 7,000** |
+| Remaining | **350** (5 domains × 70) |
+| Next domain | **DOM096** Wages and pay |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM094 | 6,580 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM095–DOM100 | 420 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM095 | 6,650 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM096–DOM100 | 350 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
+- DOM095: Labor markets — OECD Employment Outlook 2024: The Net-Zero Transition and the Labour Market
 - DOM094: Product recalls — OECD Enhancing Product Recall Effectiveness Globally (2018)
-- DOM093: Consumer products — OECD Online Product Safety Sweep Report (2023)
 
 ## Cadence
 
@@ -47,7 +47,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM095** Labor markets.
+Next domain: **DOM096** Wages and pay.
 
 Waves:
 
