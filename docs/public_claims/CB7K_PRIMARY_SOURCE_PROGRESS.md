@@ -4,38 +4,22 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **6,300 / 7,000** |
-| Remaining | **700** (10 domains × 70) |
-| Next domain | **DOM091** Advertising |
+| Primary-backed done | **6,370 / 7,000** |
+| Remaining | **630** (9 domains × 70) |
+| Next domain | **DOM092** E-commerce |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM090 | 6,300 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM091–DOM100 | 700 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM091 | 6,370 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM092–DOM100 | 630 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- DOM090 Journalism — UNESCO World Trends in Freedom of Expression and Media Development: Global Report 2022/2025 – Journalism: Shaping a World at Peace (2026-09-07)
-- DOM089 Academic publishing — STM Report 2018: An overview of scientific and scholarly publishing (Fifth edition) (2026-09-07)
-- DOM088 Open science — OECD Open Science - Enabling Discovery in the Digital Age (Going Digital Toolkit note) (2026-09-07)
-- DOM087 Universities — OECD Education at a Glance 2025: OECD Indicators (special focus on tertiary education) (2026-09-07)
-- DOM086 Education — UNESCO Global Education Monitoring Report 2024/5: Leadership in education – Lead for learning (2026-09-07)
-- DOM085 Disaster response — IFRC World Disasters Report 2026: Truth, Trust and Humanitarian Action in the Age of Harmful Information (2026-09-07)
-- DOM084 Weather services — WMO State of the Global Climate 2024 (WMO-No. 1368) (2026-09-07)
-- DOM083 Earth observation — CEOS Earth Observation Handbook 2023: Space Data for the Global Stocktake (2026-09-07)
-- DOM082 Satellites — NASA-STD-8719.14C Process for Limiting Orbital Debris (2026-09-07)
-- DOM081 Urban planning — UN-Habitat World Cities Report 2024: Cities and Climate Action (2026-09-07)
-- DOM080 Construction — IEA Material Efficiency in Clean Energy Transitions (2026-09-07)
-- DOM079 Housing — UN-Habitat World Cities Report 2026: The Global Housing Crisis (2026-09-07)
-- DOM078 Buildings — UNEP Global Status Report for Buildings and Construction 2025–2026 (2026-09-07)
-- DOM077 Electric vehicles — IEA Global EV Outlook 2026 (2026-09-07)
-- DOM076 Logistics — World Bank Connecting to Compete 2025 LPI 2.0 (2026-09-07)
-- DOM075 Shipping — IPCC AR5 WGIII Chapter 8 Transport (2026-09-07)
-- DOM074 Road safety — WHO Global Status Report on Road Safety 2023 (2026-09-07)
+- DOM091: Advertising — OECD Competition in Digital Advertising Markets (2020)
 
 ## Cadence
 
@@ -62,7 +46,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM091** Advertising.
+Next domain: **DOM092** E-commerce.
 
 Waves:
 
