@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched IAEA Nuclear Energy Series Technical Reports Guides (PUB1908) bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "IAEA Nuclear Energy Series Technical Reports Guides (PUB1908)",
+  "source_url": "https://www-pub.iaea.org/MTCD/Publications/PDF/PUB1908_web.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "ff8502b2e497ae0adc6eb8728c9a36371f0c8df162bdc9b6b8c117c2c8d9067f",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM067-T03-G01",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "Design control requires the WMO to assume responsibility for the design as the design authority and the future repository licensee [25].",
+      "public_claim_verbatim_quote": "Design control requires the WMO to assume responsibility for the design as the design authority and the future repository licensee [25]."
+    },
+    {
+      "protocol_id": "CB7K-DOM067-T03-G02",
+      "section_locator": "PDF page 31",
+      "public_claim_text": "Design control tools and processes include the checking and review of design products and the use of systematic requirements management (see Section 3.1.1), design configuration management, change control, interface management, data management and control of software.",
+      "public_claim_verbatim_quote": "Design control tools and processes include the checking and review of design products and the use of systematic requirements management (see Section 3.1.1), design configuration management, change control, interface management, data management and control of software."
+    },
+    {
+      "protocol_id": "CB7K-DOM067-T03-G03",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "Experience demonstrates that appropriate requirements and constraints for both can be integrated effectively within the repository design basis (see Section 3.1.1) in order to comply with international and national legislation, standards and good practice.",
+      "public_claim_verbatim_quote": "Experience demonstrates that appropriate requirements and constraints for both can be integrated effectively within the repository design basis (see Section 3.1.1) in order to comply with international and national legislation, standards and good practice."
+    },
+    {
+      "protocol_id": "CB7K-DOM067-T03-G04",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "The use of passive systems, intended to avoid human errors, can also make it more difficult for potential aggressors to tamper with safeguards and security systems [27].",
+      "public_claim_verbatim_quote": "The use of passive systems, intended to avoid human errors, can also make it more difficult for potential aggressors to tamper with safeguards and security systems [27]."
+    },
+    {
+      "protocol_id": "CB7K-DOM067-T03-G05",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "Means of achieving Principle 5, particularly as related to design projects, are outlined in Nuclear Power Objectives: Achieving the Nuclear Energy Basic Principles [29].",
+      "public_claim_verbatim_quote": "Means of achieving Principle 5, particularly as related to design projects, are outlined in Nuclear Power Objectives: Achieving the Nuclear Energy Basic Principles [29]."
+    },
+    {
+      "protocol_id": "CB7K-DOM067-T03-G06",
+      "section_locator": "PDF page 33",
+      "public_claim_text": "As noted by the United Kingdom Office for Nuclear Regulation [31], a repository is intended to integrate “robust protection against the modern threat environment” across all security disciplines: physical, personnel, transport, cyber security and information assurance.",
+      "public_claim_verbatim_quote": "As noted by the United Kingdom Office for Nuclear Regulation [31], a repository is intended to integrate “robust protection against the modern threat environment” across all security disciplines: physical, personnel, transport, cyber security and information assurance."
+    },
+    {
+      "protocol_id": "CB7K-DOM067-T03-G07",
+      "section_locator": "PDF page 36",
+      "public_claim_text": "14) entails complete drawings and reports containing the final technical design, considering detailed information on-site, environment and waste package throughput and capacity requirements.",
+      "public_claim_verbatim_quote": "14) entails complete drawings and reports containing the final technical design, considering detailed information on-site, environment and waste package throughput and capacity requirements."
+    },
+    {
+      "protocol_id": "CB7K-DOM067-T03-G08",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "As discussed in Section 3.2.4, a separate authorization is often required to begin disposal operations after commissioning activities have certified operational readiness.",
+      "public_claim_verbatim_quote": "As discussed in Section 3.2.4, a separate authorization is often required to begin disposal operations after commissioning activities have certified operational readiness."
+    },
+    {
+      "protocol_id": "CB7K-DOM067-T03-G09",
+      "section_locator": "PDF page 38",
+      "public_claim_text": "15) might continue to be refined and tested throughout the disposal phase, as it might not be implemented until many decades into the future.",
+      "public_claim_verbatim_quote": "15) might continue to be refined and tested throughout the disposal phase, as it might not be implemented until many decades into the future."
+    },
+    {
+      "protocol_id": "CB7K-DOM067-T03-G10",
+      "section_locator": "PDF page 40",
+      "public_claim_text": "The timeframe can range from several decades to over a hundred years for VLLW or a few hundred years for LLW (300 years is often applied).",
+      "public_claim_verbatim_quote": "The timeframe can range from several decades to over a hundred years for VLLW or a few hundred years for LLW (300 years is often applied)."
+    }
+  ]
+}
