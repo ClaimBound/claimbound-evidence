@@ -4,23 +4,23 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **6,930 / 7,000** |
-| Remaining | **70** (1 domains × 70) |
-| Next domain | **DOM100** Cultural heritage |
+| Primary-backed done | **7,000 / 7,000** |
+| Remaining | **0** (0 domains × 70) |
+| Next domain | **none** (complete) |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM099 | 6,930 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM100–DOM100 | 70 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM100 | 7,000 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | — | 0 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
+- DOM100: Cultural heritage — UNESCO WHC Third Cycle Periodic Reporting Europe and North America (WHC/24/46.COM/10A.Rev, 2024)
 - DOM099: Tourism — OECD Tourism Trends and Policies 2024
-- DOM098: Sports — Olympic Agenda 2020+5 Closing Report (IOC, 2025)
 
 ## Cadence
 
@@ -47,7 +47,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM100** Cultural heritage.
+Next domain: **none** (complete). CB7K primary track finished at 7,000 / 7,000.
 
 Waves:
 

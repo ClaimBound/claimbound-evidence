@@ -1,0 +1,31 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-07",
+  "operator": "NeoZorK",
+  "scope": "DOM100 Cultural heritage: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 6930,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 7000,
+  "sources": [
+    {
+      "domain_code": "DOM100",
+      "domain_title": "Cultural heritage",
+      "remaining_target": 70,
+      "start_index": 1,
+      "source_subdir": "dom100",
+      "source_name": "Report on the results of the Third Cycle of Periodic Reporting exercise in Europe and North America (UNESCO World Heritage Centre, WHC/24/46.COM/10A.Rev, 2024)",
+      "source_url": "https://whc.unesco.org/archive/2024/whc24-46com-10A.Rev-en.pdf",
+      "source_sha256": "939d33fe45640969f5a688424100af65c4403c047a98334b97107c3c4dd1d065",
+      "pdf_pages": 105,
+      "content_start_page": 8,
+      "content_end_page": 95,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 90,
+      "min_quote_words": 14,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Notes?:|Acknowledg|References|Endnotes|Credit:|(?-i:^[a-z])|available at https|doi\\.org|https?://|accessed on|Table of contents|Foreword|Disclaimer|Box \\d|Key messages|This work is published|ISBN |Please cite|Copyright|Creative Commons|StatLink|For more information|Further reading|see section \\d|All rights reserved|Corrigenda|Photo credits|Attribution|WHC/\\d+|COM/\\d+|Draft Decision|Decision \\d+\\s*COM|Item \\d+|Provisional Agenda|^SUMMARY\\b|^ANNEX\\b|^Chapter \\d|^Part I\\b|^Part II\\b|States Parties are invited|The Committee may wish|Report on the Third Cycle of the Periodic Reporting|exercise in Europe and North America|World Heritage Centre|may wish to\\b|See also\\b|^Contents\\b|Executive Summary|Additional information on Periodic Reporting|continuously updated at|national focal points|The texts in blue|hyperlinks to the|please refer to|as follows:"
+    }
+  ]
+}
