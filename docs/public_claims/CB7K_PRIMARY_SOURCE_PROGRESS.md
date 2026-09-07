@@ -4,17 +4,17 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **4,620 / 7,000** |
-| Remaining | **2,380** (34 domains × 70) |
-| Next domain | **DOM067** Nuclear energy |
-| Last updated | 2026-09-06 |
+| Primary-backed done | **4,690 / 7,000** |
+| Remaining | **2,310** (33 domains × 70) |
+| Next domain | **DOM068** Oil and gas |
+| Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM066 | 4,620 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM067–DOM100 | 2,380 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM067 | 4,690 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM068–DOM100 | 2,310 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
@@ -26,6 +26,7 @@ Latest packs:
 - **DOM064** Plastics — OECD Global Plastics Outlook (2026-09-06)
 - **DOM065** Renewable energy — IPCC AR5 WGIII Ch7 Energy Systems (2026-09-06)
 - **DOM066** Power grid — IPCC AR5 WGIII Ch6 Assessing Transformation Pathways (2026-09-06)
+- **DOM067** Nuclear energy — IAEA Nuclear Energy Series PUB1908 (2026-09-07)
 
 ## Cadence
 
