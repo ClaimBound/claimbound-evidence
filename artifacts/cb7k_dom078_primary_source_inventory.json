@@ -1,0 +1,31 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-07",
+  "operator": "NeoZorK",
+  "scope": "DOM078 buildings: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 5390,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 5460,
+  "sources": [
+    {
+      "domain_code": "DOM078",
+      "domain_title": "Buildings",
+      "remaining_target": 70,
+      "start_index": 1,
+      "source_subdir": "dom078",
+      "source_name": "UNEP Global Status Report for Buildings and Construction 2025–2026: Building fast. Falling short.",
+      "source_url": "https://globalabc.org/sites/default/files/resources/2026-05/global-status-report-for-buildings-and-construction-2025_2026.pdf",
+      "source_sha256": "245373afc4f5c1e318a65c31d22c5ca9ebc109093b9c9f021fee5392b6958c78",
+      "pdf_pages": 108,
+      "content_start_page": 10,
+      "content_end_page": 108,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 90,
+      "min_quote_words": 14,
+      "reject_pattern": "Figure \\\\d|Table \\\\d|Source:|Note:|Acknowledg|References|(?-i:^[a-z])"
+    }
+  ]
+}
