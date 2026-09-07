@@ -4,23 +4,23 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **6,720 / 7,000** |
-| Remaining | **280** (4 domains × 70) |
-| Next domain | **DOM097** Workplace safety |
+| Primary-backed done | **6,790 / 7,000** |
+| Remaining | **210** (3 domains × 70) |
+| Next domain | **DOM098** Sports |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM096 | 6,720 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM097–DOM100 | 280 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM097 | 6,790 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM098–DOM100 | 210 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
+- DOM097: Workplace safety — Safe and healthy working environments for all (ILO Introductory Report, 23rd World Congress on Safety and Health at Work, 2023)
 - DOM096: Wages and pay — ILO Global Wage Report 2024-25: Is wage inequality decreasing globally?
-- DOM095: Labor markets — OECD Employment Outlook 2024: The Net-Zero Transition and the Labour Market
 
 ## Cadence
 
