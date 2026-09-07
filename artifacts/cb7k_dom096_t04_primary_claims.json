@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched ILO Global Wage Report 2024-25: Is wage inequality decreasing globally? bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "ILO Global Wage Report 2024-25: Is wage inequality decreasing globally?",
+  "source_url": "https://www.ilo.org/sites/default/files/2024-11/GWR-2024_Layout_E_RGB_Web.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "d83110c6170796752fa906a3b80d3d3734836268b621bf318d33be61f609b876",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM096-T04-G01",
+      "section_locator": "PDF page 68",
+      "public_claim_text": "This value is read as “the average increase in the value of the given measure on an annualized basis expressed as per cent”.",
+      "public_claim_verbatim_quote": "This value is read as “the average increase in the value of the given measure on an annualized basis expressed as per cent”."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T04-G02",
+      "section_locator": "PDF page 74",
+      "public_claim_text": "This was done with wage data for the two separate time points, namely 2006 and 2021 (or closest available years).",
+      "public_claim_verbatim_quote": "This was done with wage data for the two separate time points, namely 2006 and 2021 (or closest available years)."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T04-G03",
+      "section_locator": "PDF page 76",
+      "public_claim_text": "Some multilateral institutions, in particular the IMF, use the annual World Inequality Report to feed into the discussion on global inequalities, thus providing empirical evidence for their daily operations (see, for example, Stanley 2022).",
+      "public_claim_verbatim_quote": "Some multilateral institutions, in particular the IMF, use the annual World Inequality Report to feed into the discussion on global inequalities, thus providing empirical evidence for their daily operations (see, for example, Stanley 2022)."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T04-G04",
+      "section_locator": "PDF page 76",
+      "public_claim_text": "For comparability across countries, FTE monthly wages are obtained using a standardized formula that multiplies hourly wages by 40×52 and dividing by 12, to reflect a 40-hour working week.",
+      "public_claim_verbatim_quote": "For comparability across countries, FTE monthly wages are obtained using a standardized formula that multiplies hourly wages by 40×52 and dividing by 12, to reflect a 40-hour working week."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T04-G05",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "The global wage distribution is based on FTE monthly wages expressed in 2021 international US$.",
+      "public_claim_verbatim_quote": "The global wage distribution is based on FTE monthly wages expressed in 2021 international US$."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T04-G06",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "For comparability across countries, FTE monthly wages were obtained by multiplying hourly wages by 40×52 and dividing by 12, to reflect a 40-hour working week.",
+      "public_claim_verbatim_quote": "For comparability across countries, FTE monthly wages were obtained by multiplying hourly wages by 40×52 and dividing by 12, to reflect a 40-hour working week."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T04-G07",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "Thus, in a first step, the wages of all employees were adjusted using inflation to reflect the levels that would have been found in 2021, which was established as the reference year.",
+      "public_claim_verbatim_quote": "Thus, in a first step, the wages of all employees were adjusted using inflation to reflect the levels that would have been found in 2021, which was established as the reference year."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T04-G08",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "The assumption behind this adjustment is that wages have evolved at the same pace as inflation, where the latter is measured using each country’s CPI.",
+      "public_claim_verbatim_quote": "The assumption behind this adjustment is that wages have evolved at the same pace as inflation, where the latter is measured using each country’s CPI."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T04-G09",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "There are only a few countries for which data were collected in 2022 or later, which is the period where inflation peaked and the assumption of wages growing in line with inflation might be more problematic. ▶ The second step involved adjusting the number of wage workers to what was observed in 2021 for countries whose survey data are not from 2021.",
+      "public_claim_verbatim_quote": "There are only a few countries for which data were collected in 2022 or later, which is the period where inflation peaked and the assumption of wages growing in line with inflation might be more problematic. ▶ The second step involved adjusting the number of wage workers to what was observed in 2021 for countries whose survey data are not from 2021."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T04-G10",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "This was done by weighting each wage worker in each of these countries by the rate of growth (or decline) in wage employment between the survey year and the year 2021. ▶ The third step entailed adjusting wages to account for differences in purchasing power by using the PPP conversion factor for private consumption (local currency unit per 2021 international US$). ▶ The fourth and final step was to weight the wage of each employee according to their survey weight.",
+      "public_claim_verbatim_quote": "This was done by weighting each wage worker in each of these countries by the rate of growth (or decline) in wage employment between the survey year and the year 2021. ▶ The third step entailed adjusting wages to account for differences in purchasing power by using the PPP conversion factor for private consumption (local currency unit per 2021 international US$). ▶ The fourth and final step was to weight the wage of each employee according to their survey weight."
+    }
+  ]
+}

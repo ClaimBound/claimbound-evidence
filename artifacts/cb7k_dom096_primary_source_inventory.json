@@ -1,0 +1,31 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-07",
+  "operator": "NeoZorK",
+  "scope": "DOM096 Wages and pay: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 6650,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 6720,
+  "sources": [
+    {
+      "domain_code": "DOM096",
+      "domain_title": "Wages and pay",
+      "remaining_target": 70,
+      "start_index": 1,
+      "source_subdir": "dom096",
+      "source_name": "ILO Global Wage Report 2024-25: Is wage inequality decreasing globally?",
+      "source_url": "https://www.ilo.org/sites/default/files/2024-11/GWR-2024_Layout_E_RGB_Web.pdf",
+      "source_sha256": "d83110c6170796752fa906a3b80d3d3734836268b621bf318d33be61f609b876",
+      "pdf_pages": 140,
+      "content_start_page": 22,
+      "content_end_page": 130,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 90,
+      "min_quote_words": 14,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Notes?:|Acknowledg|References|Endnotes|Credit:|(?-i:^[a-z])|^Global Wage Report|^ILO 20|[„•▪]|available at https|doi\\.org|https?://|accessed on|Table of contents|Foreword|Executive summary|Annex |How to read|Disclaimer|Box \\d|Key messages|see Chapter|on page \\d|This work is published|ISBN |Please cite|Copyright|Creative Commons|ILO Publications|X Global Wage|Prepared by|The designations employed|responsibility for opinions|Publications of the International Labour|Catalogue in publication|© International Labour|Refer to section|For simplicity|has been relegated|Part I of the report|Part II of the report|countries are aggregated|World Bank country classification|This classification is updated|Appendix II|Appendix I|more information on how labour income|previous estimate|historical estimates between different editions|To be more precise|section presents the two measures|see Appendix|as mentioned in the main text|The solution is to use one single benchmark|The bottom panel|is represented in the figure|The vertical (lines|axis)|Each of the four charts|When all countries are stacked|the chart that shows|Report, which regularly updates|dis tribution|repre senting|in crease|com prising|partially attributed to this inclusion|StatLink|^Wage Report,|I t is|I t should"
+    }
+  ]
+}

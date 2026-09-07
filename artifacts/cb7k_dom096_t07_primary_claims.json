@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched ILO Global Wage Report 2024-25: Is wage inequality decreasing globally? bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "ILO Global Wage Report 2024-25: Is wage inequality decreasing globally?",
+  "source_url": "https://www.ilo.org/sites/default/files/2024-11/GWR-2024_Layout_E_RGB_Web.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "d83110c6170796752fa906a3b80d3d3734836268b621bf318d33be61f609b876",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM096-T07-G01",
+      "section_locator": "PDF page 106",
+      "public_claim_text": "This allows for comparing the wage workers row and the “all workers” row in the table, as they are based on the same set of countries.",
+      "public_claim_verbatim_quote": "This allows for comparing the wage workers row and the “all workers” row in the table, as they are based on the same set of countries."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T07-G02",
+      "section_locator": "PDF page 107",
+      "public_claim_text": "When wage and non-wage workers are put together in a single distribution, the median is bound to change when compared to that observed among wage workers only.",
+      "public_claim_verbatim_quote": "When wage and non-wage workers are put together in a single distribution, the median is bound to change when compared to that observed among wage workers only."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T07-G03",
+      "section_locator": "PDF page 107",
+      "public_claim_text": "We could estimate the share of low-paid workers for each of the two groups separately and then take the (weighted) average of the two to come up with a measure of low-paid among all workers, but this would not be the same as “treating all workers as if describing a single labour income distribution”, which is a final objective if what we want is to study “by how much does inequality change if we add non-wage workers into the estimation”.",
+      "public_claim_verbatim_quote": "We could estimate the share of low-paid workers for each of the two groups separately and then take the (weighted) average of the two to come up with a measure of low-paid among all workers, but this would not be the same as “treating all workers as if describing a single labour income distribution”, which is a final objective if what we want is to study “by how much does inequality change if we add non-wage workers into the estimation”."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T07-G04",
+      "section_locator": "PDF page 107",
+      "public_claim_text": "That is, in these six countries wage workers earn, on average, at or below non-wage workers.",
+      "public_claim_verbatim_quote": "That is, in these six countries wage workers earn, on average, at or below non-wage workers."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T07-G05",
+      "section_locator": "PDF page 112",
+      "public_claim_text": "The annualized growth rate is then calculated by smoothing the total growth rate between periods using the formula for ACGR.",
+      "public_claim_verbatim_quote": "The annualized growth rate is then calculated by smoothing the total growth rate between periods using the formula for ACGR."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T07-G06",
+      "section_locator": "PDF page 112",
+      "public_claim_text": "If Y1 is the value in the latest year, and Y0 is the value in the earliest year, and the value T is the number of years between the earliest year and latest year, the ACGR is estimated as ([(Y1/Y0)^(1/T)]-1)x100.",
+      "public_claim_verbatim_quote": "If Y1 is the value in the latest year, and Y0 is the value in the earliest year, and the value T is the number of years between the earliest year and latest year, the ACGR is estimated as ([(Y1/Y0)^(1/T)]-1)x100."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T07-G07",
+      "section_locator": "PDF page 112",
+      "public_claim_text": "This value is read as “the average increase in the value of the given measure on an annual basis expressed as per cent”.",
+      "public_claim_verbatim_quote": "This value is read as “the average increase in the value of the given measure on an annual basis expressed as per cent”."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T07-G08",
+      "section_locator": "PDF page 112",
+      "public_claim_text": "The countries in each of the charts in this figure are organized in ascending order based on the degree to which the share of low-paid workers among wage workers has increased.",
+      "public_claim_verbatim_quote": "The countries in each of the charts in this figure are organized in ascending order based on the degree to which the share of low-paid workers among wage workers has increased."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T07-G09",
+      "section_locator": "PDF page 127",
+      "public_claim_text": "For consistency across different estimates of the D-ratios in this appendix, these countries are not included in figures A2.1 to A2.4.",
+      "public_claim_verbatim_quote": "For consistency across different estimates of the D-ratios in this appendix, these countries are not included in figures A2.1 to A2.4."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T07-G10",
+      "section_locator": "PDF page 128",
+      "public_claim_text": "For consistency across different estimates of the D-rations in this appendix, these countries are not included in any of the figures A2.1 to A2.4.",
+      "public_claim_verbatim_quote": "For consistency across different estimates of the D-rations in this appendix, these countries are not included in any of the figures A2.1 to A2.4."
+    }
+  ]
+}

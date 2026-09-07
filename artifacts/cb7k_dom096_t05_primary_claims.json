@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched ILO Global Wage Report 2024-25: Is wage inequality decreasing globally? bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "ILO Global Wage Report 2024-25: Is wage inequality decreasing globally?",
+  "source_url": "https://www.ilo.org/sites/default/files/2024-11/GWR-2024_Layout_E_RGB_Web.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "d83110c6170796752fa906a3b80d3d3734836268b621bf318d33be61f609b876",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM096-T05-G01",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "The two first steps described above were followed to construct the 2006 global wage distribution that is compared with the 2021 global wage distribution in section 7.3 – namely, adjustments to reflect the wage levels and number of employees in 2006, in cases where data were collected in a different year.",
+      "public_claim_verbatim_quote": "The two first steps described above were followed to construct the 2006 global wage distribution that is compared with the 2021 global wage distribution in section 7.3 – namely, adjustments to reflect the wage levels and number of employees in 2006, in cases where data were collected in a different year."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T05-G02",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "Then, to compare numbers in real terms, the wages in 2006 were adjusted for inflation to reflect their purchasing power in 2021.",
+      "public_claim_verbatim_quote": "Then, to compare numbers in real terms, the wages in 2006 were adjusted for inflation to reflect their purchasing power in 2021."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T05-G03",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "Finally, for each country, wages were divided by the 2021 PPP to reflect their value in 2021 international US$.",
+      "public_claim_verbatim_quote": "Finally, for each country, wages were divided by the 2021 PPP to reflect their value in 2021 international US$."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T05-G04",
+      "section_locator": "PDF page 77",
+      "public_claim_text": "Considering that wage workers are far more prevalent in high-income countries, this country income group has a significant impact at determining the probability of finding wage workers at all bins across the wage distribution, including in the lowest bins, where high-income countries have a relatively small (overall) representation in the global distribution.",
+      "public_claim_verbatim_quote": "Considering that wage workers are far more prevalent in high-income countries, this country income group has a significant impact at determining the probability of finding wage workers at all bins across the wage distribution, including in the lowest bins, where high-income countries have a relatively small (overall) representation in the global distribution."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T05-G05",
+      "section_locator": "PDF page 79",
+      "public_claim_text": "Note that while the global wage distribution is constructed using FTE monthly earnings, which is equivalent to using hourly wages, the total wage bills (TWBs) used for this table are based on actual monthly earnings, which are what wage earners accumulate at the end of a given working period.",
+      "public_claim_verbatim_quote": "Note that while the global wage distribution is constructed using FTE monthly earnings, which is equivalent to using hourly wages, the total wage bills (TWBs) used for this table are based on actual monthly earnings, which are what wage earners accumulate at the end of a given working period."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T05-G06",
+      "section_locator": "PDF page 87",
+      "public_claim_text": "There are several reasons which explain this discrepancy: – While the methodology behind the estimate in Part I accounts for missing countries, the estimate provided here does not and hence the two samples are not directly comparable. – The methodologies used to weigh countries also differ.",
+      "public_claim_verbatim_quote": "There are several reasons which explain this discrepancy: – While the methodology behind the estimate in Part I accounts for missing countries, the estimate provided here does not and hence the two samples are not directly comparable. – The methodologies used to weigh countries also differ."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T05-G07",
+      "section_locator": "PDF page 87",
+      "public_claim_text": "While the methodology in Part I considers both the population of wage employees and the productivity levels to determine the weights, the estimate in this section only takes into account the former aspect. – While the estimates in Part I are obtained from official records, which normally exclude informal employment, the surveys used in Part II, with few exceptions, include wages of employees in the informal economy.",
+      "public_claim_verbatim_quote": "While the methodology in Part I considers both the population of wage employees and the productivity levels to determine the weights, the estimate in this section only takes into account the former aspect. – While the estimates in Part I are obtained from official records, which normally exclude informal employment, the surveys used in Part II, with few exceptions, include wages of employees in the informal economy."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T05-G08",
+      "section_locator": "PDF page 87",
+      "public_claim_text": "Lower wage growth in the informal economy might contribute to explain the lower estimate in this section. – Finally, while the aim was to use data for 2006 and 2021 to construct the global wage distribution at the two points in time, for several countries this was not possible due to surveys not being available for the specific years.",
+      "public_claim_verbatim_quote": "Lower wage growth in the informal economy might contribute to explain the lower estimate in this section. – Finally, while the aim was to use data for 2006 and 2021 to construct the global wage distribution at the two points in time, for several countries this was not possible due to surveys not being available for the specific years."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T05-G09",
+      "section_locator": "PDF page 87",
+      "public_claim_text": "For many countries the lag between the surveys is actually shorter and it was assumed that wages grew in line with the national CPI in the period not covered, which implies zero wage growth in this time frame.",
+      "public_claim_verbatim_quote": "For many countries the lag between the surveys is actually shorter and it was assumed that wages grew in line with the national CPI in the period not covered, which implies zero wage growth in this time frame."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T05-G10",
+      "section_locator": "PDF page 88",
+      "public_claim_text": "Percentiles are defined independently along the wage distributions at the two points in time based on hourly wages.",
+      "public_claim_verbatim_quote": "Percentiles are defined independently along the wage distributions at the two points in time based on hourly wages."
+    }
+  ]
+}

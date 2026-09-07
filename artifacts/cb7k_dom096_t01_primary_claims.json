@@ -1,0 +1,79 @@
+{
+  "schema_version": "claimbound-primary-public-claim-group-v1",
+  "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
+  "claim_boundary": "Each result verifies that one exact public statement appeared in the fetched ILO Global Wage Report 2024-25: Is wage inequality decreasing globally? bytes on 2026-09-07. It does not independently establish the statement's underlying real-world truth.",
+  "review_design": "retrospective deterministic source-publication audit; not preregistered, not an independent fact-check, and not an independent reproduction",
+  "operator": "NeoZorK",
+  "source_name": "ILO Global Wage Report 2024-25: Is wage inequality decreasing globally?",
+  "source_url": "https://www.ilo.org/sites/default/files/2024-11/GWR-2024_Layout_E_RGB_Web.pdf",
+  "access_date": "2026-09-07",
+  "source_sha256": "d83110c6170796752fa906a3b80d3d3734836268b621bf318d33be61f609b876",
+  "raw_payload_committed": false,
+  "text_extractor": "pdfplumber",
+  "independent_text_extractor": "pypdf",
+  "selection_method": "Deterministic sentence extraction with minimum length and prose-quality filters, signal scoring, duplicate removal, and per-page concentration limits.",
+  "verification_rule": "Extract PDF text with the selecting extractor and an independent extractor, compare each quote after removing layout whitespace and hyphens, require every quote once or more in both extractions, and require the complete fetched PDF SHA-256 to match.",
+  "result_status": "PASSED_UNDER_PROTOCOL",
+  "records": [
+    {
+      "protocol_id": "CB7K-DOM096-T01-G01",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "All low income, lower-middle-income and upper-middle-income countries (as per the World Bank) are classified among emerging and developing economies (as per the IMF).",
+      "public_claim_verbatim_quote": "All low income, lower-middle-income and upper-middle-income countries (as per the World Bank) are classified among emerging and developing economies (as per the IMF)."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T01-G02",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "Examples of high-income countries that are not considered advanced economies – as they lack the diversified economy that characterizes an advanced economy – include Kuwait and Qatar.",
+      "public_claim_verbatim_quote": "Examples of high-income countries that are not considered advanced economies – as they lack the diversified economy that characterizes an advanced economy – include Kuwait and Qatar."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T01-G03",
+      "section_locator": "PDF page 22",
+      "public_claim_text": "The prevalence of extreme working poverty has declined from 27.6 per cent at the beginning of the century to 6.9 per cent in 2023 (ILO 2024b).",
+      "public_claim_verbatim_quote": "The prevalence of extreme working poverty has declined from 27.6 per cent at the beginning of the century to 6.9 per cent in 2023 (ILO 2024b)."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T01-G04",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "The most recent figures for inflation in Türkiye are 72.3 per cent in 2022, 53.9 per cent in 2023 and 60.9 per cent in 2024.",
+      "public_claim_verbatim_quote": "The most recent figures for inflation in Türkiye are 72.3 per cent in 2022, 53.9 per cent in 2023 and 60.9 per cent in 2024."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T01-G05",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "The figure is 0.1 percentage points higher than what estimated in the Global Wage Report 2022–23 using data for the first half of 2022.",
+      "public_claim_verbatim_quote": "The figure is 0.1 percentage points higher than what estimated in the Global Wage Report 2022–23 using data for the first half of 2022."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T01-G06",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "While modest at the aggregate level, this revision is the result of important changes in the estimates for advanced G20 economies and emerging G20 economies, which ended up compensating for each other.",
+      "public_claim_verbatim_quote": "While modest at the aggregate level, this revision is the result of important changes in the estimates for advanced G20 economies and emerging G20 economies, which ended up compensating for each other."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T01-G07",
+      "section_locator": "PDF page 32",
+      "public_claim_text": "Average real wage growth in advanced G20 economies has been revised downward by 0.6 percentage points, from –2.2 per cent to –2.8 per cent, while average real wage growth in emerging G20 economies has been revised upward by 1.0 per cent, going from 0.8 per cent to 1.8 per cent.",
+      "public_claim_verbatim_quote": "Average real wage growth in advanced G20 economies has been revised downward by 0.6 percentage points, from –2.2 per cent to –2.8 per cent, while average real wage growth in emerging G20 economies has been revised upward by 1.0 per cent, going from 0.8 per cent to 1.8 per cent."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T01-G08",
+      "section_locator": "PDF page 36",
+      "public_claim_text": "The most recent figures for inflation in Argentina are 72.4 per cent in 2022, 133.5 per cent in 2023 and 229.8 per cent in 2024.",
+      "public_claim_verbatim_quote": "The most recent figures for inflation in Argentina are 72.4 per cent in 2022, 133.5 per cent in 2023 and 229.8 per cent in 2024."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T01-G09",
+      "section_locator": "PDF page 39",
+      "public_claim_text": "Which of the two deflators is more appropriate depends on the end-use of the analysis, with CPI more accurately reflecting changes in the purchasing power of consumers.",
+      "public_claim_verbatim_quote": "Which of the two deflators is more appropriate depends on the end-use of the analysis, with CPI more accurately reflecting changes in the purchasing power of consumers."
+    },
+    {
+      "protocol_id": "CB7K-DOM096-T01-G10",
+      "section_locator": "PDF page 39",
+      "public_claim_text": "This also means that as long as the same deflator is used consistently over time, the overall conclusion remains that the gap between productivity and wages persists over time.",
+      "public_claim_verbatim_quote": "This also means that as long as the same deflator is used consistently over time, the overall conclusion remains that the gap between productivity and wages persists over time."
+    }
+  ]
+}
