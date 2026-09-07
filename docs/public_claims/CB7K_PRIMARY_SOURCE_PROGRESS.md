@@ -4,23 +4,23 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **6,860 / 7,000** |
-| Remaining | **140** (2 domains × 70) |
-| Next domain | **DOM099** Tourism |
+| Primary-backed done | **6,930 / 7,000** |
+| Remaining | **70** (1 domains × 70) |
+| Next domain | **DOM100** Cultural heritage |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM098 | 6,860 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM099–DOM100 | 140 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM099 | 6,930 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM100–DOM100 | 70 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
+- DOM099: Tourism — OECD Tourism Trends and Policies 2024
 - DOM098: Sports — Olympic Agenda 2020+5 Closing Report (IOC, 2025)
-- DOM097: Workplace safety — Safe and healthy working environments for all (ILO Introductory Report, 23rd World Congress on Safety and Health at Work, 2023)
 
 ## Cadence
 
@@ -47,7 +47,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM097** Workplace safety.
+Next domain: **DOM100** Cultural heritage.
 
 Waves:
 
