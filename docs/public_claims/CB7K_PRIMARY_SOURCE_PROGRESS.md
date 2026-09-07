@@ -4,22 +4,21 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **4,690 / 7,000** |
-| Remaining | **2,310** (33 domains × 70) |
-| Next domain | **DOM068** Oil and gas |
+| Primary-backed done | **4,760 / 7,000** |
+| Remaining | **2,240** (32 domains × 70) |
+| Next domain | **DOM069** Batteries |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM067 | 4,690 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM068–DOM100 | 2,310 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM068 | 4,760 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM069–DOM100 | 2,240 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- **DOM060** Mining — IPCC AR4 WGIII Ch4+Ch7 (2026-09-05)
 - **DOM061** Chemicals — IPCC AR5 WGIII Ch10 + AR4 WGIII Ch7 (2026-09-06)
 - **DOM062** Waste management — IPCC GPG Chapter 5 Waste (2026-09-06)
 - **DOM063** Recycling — US EPA MSW Facts 2012 + IPCC AR4 WGIII Ch10 (2026-09-06)
@@ -27,6 +26,7 @@ Latest packs:
 - **DOM065** Renewable energy — IPCC AR5 WGIII Ch7 Energy Systems (2026-09-06)
 - **DOM066** Power grid — IPCC AR5 WGIII Ch6 Assessing Transformation Pathways (2026-09-06)
 - **DOM067** Nuclear energy — IAEA Nuclear Energy Series PUB1908 (2026-09-07)
+- **DOM068** Oil and gas — IPCC AR4 WGIII Ch4 + AR5 WGIII Ch7 (2026-09-07)
 
 ## Cadence
 
