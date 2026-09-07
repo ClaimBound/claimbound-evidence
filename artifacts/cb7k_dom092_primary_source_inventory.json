@@ -1,0 +1,31 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-07",
+  "operator": "NeoZorK",
+  "scope": "DOM092 E-commerce: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 6370,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 6440,
+  "sources": [
+    {
+      "domain_code": "DOM092",
+      "domain_title": "E-commerce",
+      "remaining_target": 70,
+      "start_index": 1,
+      "source_subdir": "dom092",
+      "source_name": "UNCTAD Digital Economy Report 2024 Chapter V: E-commerce and environmental sustainability",
+      "source_url": "https://unctad.org/system/files/official-document/der2024_ch05_en.pdf",
+      "source_sha256": "879521a8e96f4a462fcc6e78908a656b4d66165c5259c049f1a6c64831cbea4c",
+      "pdf_pages": 35,
+      "content_start_page": 3,
+      "content_end_page": 33,
+      "text_extractor": "pdfplumber_columns",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 90,
+      "min_quote_words": 14,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|Endnotes|Credit:|StatLink|(?-i:^[a-z])|^DIGITAL ECONOMY|^Chapter V|^UNCTAD |[\\x84\\u201e\\u2022\\u25aa]|Key messages|see Chapter|on page \\d|Annex |How to read|Reader.?s Guide|StatLink is|available at https|doi\\.org|http|Box \\d|Methodology|Disclaimer|[a-z] (?:It|There|This|These|Those|Yet|Almost|Only|Globally|Among|Analysis) (?:is|are|was|were|has|have|had|can|could|may|might|must|shall|should|will|would|to|of|in)\\b|[a-z] In (?:the|a|an|OECD|many|20\\d\\d)\\b|[a-z] For each\\b|[a-z] About \\d|[a-z] More recently\\b|accessed on|Unclassified|Table of contents|^\\d+\\.\\d+|Section \\d|Chapter \\d|Foreword|Executive Summary|See source for more|consists of the European Union countries plus|Shaping an environmentally sustainable"
+    }
+  ]
+}
