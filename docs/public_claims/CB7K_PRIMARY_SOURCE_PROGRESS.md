@@ -4,22 +4,22 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **6,370 / 7,000** |
-| Remaining | **630** (9 domains × 70) |
-| Next domain | **DOM092** E-commerce |
+| Primary-backed done | **6,440 / 7,000** |
+| Remaining | **560** (8 domains × 70) |
+| Next domain | **DOM093** Consumer products |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM091 | 6,370 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM092–DOM100 | 630 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM092 | 6,440 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM093–DOM100 | 560 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
-- DOM091: Advertising — OECD Competition in Digital Advertising Markets (2020)
+- DOM092: E-commerce — UNCTAD Digital Economy Report 2024 Chapter V: E-commerce and environmental sustainability
 
 ## Cadence
 
@@ -46,7 +46,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM092** E-commerce.
+Next domain: **DOM093** Consumer products.
 
 Waves:
 
