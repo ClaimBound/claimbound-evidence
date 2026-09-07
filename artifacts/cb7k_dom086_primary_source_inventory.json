@@ -1,0 +1,31 @@
+{
+  "schema_version": "claimbound-primary-source-inventory-v1",
+  "created_at": "2026-09-07",
+  "operator": "NeoZorK",
+  "scope": "DOM086 Education: 70 primary-source public statements",
+  "claim_boundary": "Inventory acceptance proves only that the named public PDF was fetched with the recorded SHA-256 and yielded extractable text. It does not approve a claim or establish the truth of statements in the source.",
+  "raw_payload_committed": false,
+  "already_registered_primary_claims": 5950,
+  "remaining_claims": 70,
+  "expected_total_primary_claims": 6020,
+  "sources": [
+    {
+      "domain_code": "DOM086",
+      "domain_title": "Education",
+      "remaining_target": 70,
+      "start_index": 1,
+      "source_subdir": "dom086",
+      "source_name": "UNESCO Global Education Monitoring Report 2024/5: Leadership in education – Lead for learning",
+      "source_url": "https://reliefweb.int/attachments/4daeb7bf-50eb-4bd9-a598-8afa61d6434b/391406eng.pdf",
+      "source_sha256": "344f683729d75a6f856a7343ee53414395b324256e09d4aff04c41c62380aced",
+      "pdf_pages": 423,
+      "content_start_page": 24,
+      "content_end_page": 370,
+      "text_extractor": "pdfplumber",
+      "independent_text_extractor": "pypdf",
+      "min_quote_characters": 90,
+      "min_quote_words": 14,
+      "reject_pattern": "Figure \\d|Table \\d|Source:|Note:|Acknowledg|References|Endnotes|Credit:|StatLink|(?-i:^[a-z])|^GLOBAL EDUCATION MONITORING REPORT|[\\x84\\u201e\\u2022\\u25aa]|Key messages|see Chapter|on page \\d|Annex |\\bbetween and\\b|[a-z] (?:It|There|This|These|Those|Yet|Almost|Only|Globally|Among|Analysis|Teacher|Students|Film|Promises|Political|Incentives|Ministers|Distribution|Art|Principals|Methods) (?:is|are|was|were|has|have|had|can|could|may|might|must|shall|should|will|would|to|of|in|led|hiring|makers|received)\\b|[a-z] In (?:the|a|an|upper|low|many|Colombia|Chile|20\\d\\d)\\b|[a-z] For each\\b|[a-z] About \\d|[a-z] More recently\\b"
+    }
+  ]
+}

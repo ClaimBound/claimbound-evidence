@@ -4,21 +4,22 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **5,950 / 7,000** |
-| Remaining | **1,050** (15 domains × 70) |
-| Next domain | **DOM086** Education |
+| Primary-backed done | **6,020 / 7,000** |
+| Remaining | **980** (14 domains × 70) |
+| Next domain | **DOM087** Universities |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM085 | 5,950 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM086–DOM100 | 1,050 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM086 | 6,020 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM087–DOM100 | 980 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
+- DOM086 Education — UNESCO Global Education Monitoring Report 2024/5: Leadership in education – Lead for learning (2026-09-07)
 - DOM085 Disaster response — IFRC World Disasters Report 2026: Truth, Trust and Humanitarian Action in the Age of Harmful Information (2026-09-07)
 - DOM084 Weather services — WMO State of the Global Climate 2024 (WMO-No. 1368) (2026-09-07)
 - DOM083 Earth observation — CEOS Earth Observation Handbook 2023: Space Data for the Global Stocktake (2026-09-07)
@@ -60,7 +61,7 @@ uv run pytest tests -n auto
 
 ## Queue
 
-Next domain: **DOM086** Education.
+Next domain: **DOM087** Universities.
 
 Waves:
 
