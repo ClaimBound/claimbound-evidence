@@ -4,23 +4,23 @@
 
 | Metric | Value |
 |---|---|
-| Primary-backed done | **6,790 / 7,000** |
-| Remaining | **210** (3 domains × 70) |
-| Next domain | **DOM098** Sports |
+| Primary-backed done | **6,860 / 7,000** |
+| Remaining | **140** (2 domains × 70) |
+| Next domain | **DOM099** Tourism |
 | Last updated | 2026-09-07 |
 
 ## Summary
 
 | Band | Domains | Cards | Protocol |
 |---|---|---|---|
-| Done | DOM001–DOM097 | 6,790 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
-| Remaining | DOM098–DOM100 | 210 | replace Wikidata-backed PASS with primary-source packs |
+| Done | DOM001–DOM098 | 6,860 | primary-source manifests under `artifacts/cb7k_dom*_t*_primary_claims.json` |
+| Remaining | DOM099–DOM100 | 140 | replace Wikidata-backed PASS with primary-source packs |
 
 Target: **7,000 / 7,000** primary-backed `PASSED_UNDER_PROTOCOL` cards.
 
 Latest packs:
+- DOM098: Sports — Olympic Agenda 2020+5 Closing Report (IOC, 2025)
 - DOM097: Workplace safety — Safe and healthy working environments for all (ILO Introductory Report, 23rd World Congress on Safety and Health at Work, 2023)
-- DOM096: Wages and pay — ILO Global Wage Report 2024-25: Is wage inequality decreasing globally?
 
 ## Cadence
 
