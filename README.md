@@ -99,8 +99,12 @@ More examples, including EU source audits and blocked-source cards:
 
 Independent from [EviBound](https://arxiv.org/abs/2511.05524); see
 [scope split](docs/RELATED_WORK_AND_INDEPENDENCE.md). Not affiliated with
-commercial or similarly named ClaimBound / Claimbound projects or domains; see
+commercial or similarly named ClaimBound / Claimbound projects or domains
+(including on GitHub or GitLab); see
 [similar names](docs/RELATED_WORK_AND_INDEPENDENCE.md#similar-names-and-commercial-lookalikes).
+Canonical home: GitHub
+[ClaimBound/claimbound-evidence](https://github.com/ClaimBound/claimbound-evidence);
+the GitLab repo is a public mirror only.
 
 ## Install
 

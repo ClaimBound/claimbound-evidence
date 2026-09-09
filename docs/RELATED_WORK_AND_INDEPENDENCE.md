@@ -40,15 +40,28 @@ EviBound's agent-execution framework.
 
 ClaimBound Evidence is an independent open-source project. It is not affiliated
 with, endorsed by, or the same product as any other project, company, website,
-or commercial service that uses the same or a similar name — including
-commercial "Claimbound" / "ClaimBound" offerings, similarly named domains, and
-unrelated products that happen to share a Claim* label.
+group, repository, or commercial service that uses the same or a similar name —
+including other GitHub or GitLab projects, groups, or repositories named
+ClaimBound, Claimbound, ClaimBound-Evidence, or similar; commercial "Claimbound" /
+"ClaimBound" offerings; similarly named domains; and unrelated products that
+happen to share a Claim* label.
 
 Commercial sites and products that use a similar name exist and are unrelated
 to this toolkit. Similarity of naming alone does not imply a shared product,
 team, or business relationship.
 
-The canonical public home of **this** project is the GitHub organization
-[ClaimBound](https://github.com/ClaimBound) and GitHub Pages under
-[claimbound.github.io](https://claimbound.github.io/claimbound-evidence/) —
-not third-party commercial domains.
+### Canonical Home And Public Mirror
+
+This toolkit is only the open-source **ClaimBound Evidence** project under the
+GitHub organization [ClaimBound](https://github.com/ClaimBound). The canonical
+public source is
+[github.com/ClaimBound/claimbound-evidence](https://github.com/ClaimBound/claimbound-evidence).
+Public Pages are at
+[claimbound.github.io/claimbound-evidence](https://claimbound.github.io/claimbound-evidence/).
+
+The GitLab repository
+[gitlab.com/claimbound/ClaimBound-Evidence](https://gitlab.com/claimbound/ClaimBound-Evidence)
+is a public mirror of that GitHub `main` branch only. It is not a separate
+product, not the place to open canonical Issues or pull requests, and does not
+imply affiliation with any other project or group on gitlab.com (or elsewhere)
+that may use a similar name.
