@@ -25,6 +25,10 @@ def test_public_claim_atlas_has_7000_distinct_claims(tmp_path):
     assert payload["category_count"] == 100
     assert payload["result_counts"] == {"PASSED_UNDER_PROTOCOL": 7000}
     assert payload["independent_reproduction_count"] == 0
+    assert payload["primary_statement_count"] == 7000
+    assert payload["wikidata_statement_count"] == 0
+    assert payload["schema_version"] == "CB7K-PRIMARY-PUBLIC-CLAIMS-v1"
+    assert "primary PDF" in payload["verification_scope"]
     assert all(item["public_claim_text"] for item in payload["results"])
     assert all(item["public_claim_verbatim_quote"] for item in payload["results"])
     assert all(item["public_claim_locator"] for item in payload["results"])
@@ -33,5 +37,20 @@ def test_public_claim_atlas_has_7000_distinct_claims(tmp_path):
     assert all(page.read_text(encoding="utf-8").count('<article class="claim">') == 70 for page in pages)
     assert all("Repeat this exact check locally" in page.read_text(encoding="utf-8") for page in pages)
     assert all("What this card does not prove" in page.read_text(encoding="utf-8") for page in pages)
-    assert "7,000 / 7,000" in (output / "audit/index.html").read_text(encoding="utf-8")
-    assert "0 / 7,000" in (output / "audit/index.html").read_text(encoding="utf-8")
+    assert all("70 / 70" in page.read_text(encoding="utf-8") for page in pages)
+    assert all("primary-source statements" in page.read_text(encoding="utf-8") for page in pages)
+    home = (output / "index.html").read_text(encoding="utf-8")
+    assert "primary PDF" in home or "primary-source" in home
+    assert "7,000 / 7,000" in home
+    assert "primary-source statements" in home
+    assert "0 / 7,000" in home
+    assert "named frozen Wikidata revision" not in home
+    assert "70 primary-source statements" in home
+    assert "70 distinct revision-bound public claims" not in home
+    audit = (output / "audit/index.html").read_text(encoding="utf-8")
+    assert "7,000 / 7,000" in audit
+    assert "0 / 7,000" in audit
+    assert "dual-extractor" in audit
+    assert "primary-source PDF" in audit or "primary PDF" in audit
+    assert "verify_primary_public_claim_group.py" in audit
+    assert "build_wikidata_public_claims.py verify-sources" not in audit
