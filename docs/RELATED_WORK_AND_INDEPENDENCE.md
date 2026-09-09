@@ -35,3 +35,20 @@ which status, and where that claim stops.
 
 Do not describe ClaimBound as EviBound-derived or as claiming priority over
 EviBound's agent-execution framework.
+
+## Similar Names And Commercial Lookalikes
+
+ClaimBound Evidence is an independent open-source project. It is not affiliated
+with, endorsed by, or the same product as any other project, company, website,
+or commercial service that uses the same or a similar name — including
+commercial "Claimbound" / "ClaimBound" offerings, similarly named domains, and
+unrelated products that happen to share a Claim* label.
+
+Commercial sites and products that use a similar name exist and are unrelated
+to this toolkit. Similarity of naming alone does not imply a shared product,
+team, or business relationship.
+
+The canonical public home of **this** project is the GitHub organization
+[ClaimBound](https://github.com/ClaimBound) and GitHub Pages under
+[claimbound.github.io](https://claimbound.github.io/claimbound-evidence/) —
+not third-party commercial domains.

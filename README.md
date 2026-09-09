@@ -98,7 +98,9 @@ More examples, including EU source audits and blocked-source cards:
 - [Public roadmap 2026](docs/ROADMAP_2026.md) — planned open-source hardening work
 
 Independent from [EviBound](https://arxiv.org/abs/2511.05524); see
-[scope split](docs/RELATED_WORK_AND_INDEPENDENCE.md).
+[scope split](docs/RELATED_WORK_AND_INDEPENDENCE.md). Not affiliated with
+commercial or similarly named ClaimBound / Claimbound projects or domains; see
+[similar names](docs/RELATED_WORK_AND_INDEPENDENCE.md#similar-names-and-commercial-lookalikes).
 
 ## Install
 
