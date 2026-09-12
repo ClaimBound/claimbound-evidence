@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ManifoldBT vs Monte-Neo fair race D001</title>
+  <style>
+    body{max-width:900px;margin:6vh auto;padding:0 24px;background:#f5f0e4;color:#17383a;font:17px/1.6 system-ui,sans-serif}
+    h1,h2{font-family:Georgia,serif}
+    .card{padding:18px;margin:18px 0;border:1px solid #b9b4a7;border-radius:12px;background:#fffdf7}
+    .pass{border-left:8px solid #39745b}
+    .note{border-left:8px solid #b98622}
+    table{width:100%;border-collapse:collapse;margin:12px 0}
+    th,td{border:1px solid #cfc8b8;padding:8px 10px;text-align:left}
+    th{background:#ebe4d4}
+    code{background:#eee8dc;padding:2px 5px;border-radius:4px}
+    a{color:#245e60}
+    .charts img{max-width:100%;height:auto;border:1px solid #cfc8b8;border-radius:8px;margin:8px 0;background:#fff}
+    .eyebrow{letter-spacing:.04em;text-transform:uppercase;font-size:13px;color:#5a6e6f}
+  </style>
+</head>
+<body>
+  <p class="eyebrow">CLAIMBOUND / SOFTWARE PERFORMANCE</p>
+  <h1>ManifoldBT vs Monte-Neo — fair race D001</h1>
+  <p>
+    Narrow, pre-registered Apple Silicon comparison.
+    ManifoldBT Community <strong>CPU only</strong> versus open-source Monte-Neo (MIT).
+    CUDA / Pro GPU is <strong>not</strong> a peer on this host.
+  </p>
+
+  <div class="card pass">
+    <h2>Result status</h2>
+    <p><code>PASSED_UNDER_PROTOCOL</code> under <code>MANIFOLD_MONTE_NEO_FAIR_RACE_D001</code> (registry sequence 8073).</p>
+    <p>Operator: NeoZorK · Host baseline: Apple M1 Pro 16GB · Synthetic OHLCV seed 42, 50k bars.</p>
+  </div>
+
+  <div class="card">
+    <h2>Maintainer baseline (throughput)</h2>
+    <table>
+      <thead>
+        <tr><th>Lane</th><th>ManifoldBT</th><th>Monte-Neo</th><th>Gate</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Type C — sweep (combos/s)</td><td>~38</td><td>~46k</td><td>Monte-Neo &gt; Manifold (required)</td></tr>
+        <tr><td>Type A — return-path MC (sims/s)</td><td>~3.2k</td><td>~1.9k</td><td>both ok (no winner)</td></tr>
+        <tr><td>Type B — scenario / N-run</td><td>ok</td><td>Metal or CPU fallback</td><td>informational</td></tr>
+      </tbody>
+    </table>
+    <p>Type A/B/C answer different questions and must not be merged into one speed claim.</p>
+  </div>
+
+  <div class="card charts">
+    <h2>Charts (committed artifacts)</h2>
+    <p>Relative paths into the evidence tree (also on GitHub):</p>
+    <ul>
+      <li><a href="https://github.com/ClaimBound/claimbound-evidence/blob/main/artifacts/manifold_monte_neo_fair_race_d001/charts/type_c_combos_per_s.png">Type C — combos/s</a></li>
+      <li><a href="https://github.com/ClaimBound/claimbound-evidence/blob/main/artifacts/manifold_monte_neo_fair_race_d001/charts/type_a_sims_per_s.png">Type A — sims/s</a></li>
+      <li><a href="https://github.com/ClaimBound/claimbound-evidence/blob/main/artifacts/manifold_monte_neo_fair_race_d001/charts/type_b_scenarios_per_s.png">Type B — scenarios/s</a></li>
+    </ul>
+  </div>
+
+  <div class="card note">
+    <h2>Reproduce from the card alone</h2>
+    <ol>
+      <li>Open the evidence card and copy <code>runner_command</code>.</li>
+      <li>In a clean clone of <code>claimbound-evidence</code>, run that command.</li>
+      <li>Confirm overall status stays <code>PASSED_UNDER_PROTOCOL</code> and Type C gate still passes (absolute rates may vary by host).</li>
+    </ol>
+    <p>
+      Card:
+      <a href="https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-MANIFOLD_MONTE_NEO_FAIR_RACE_D001-2026-09-12.json">CLAIMBOUND-MANIFOLD_MONTE_NEO_FAIR_RACE_D001-2026-09-12.json</a><br>
+      Protocol:
+      <a href="https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/protocols/MANIFOLD_MONTE_NEO_FAIR_RACE_D001_PREREG_CHARTER.md">MANIFOLD_MONTE_NEO_FAIR_RACE_D001 charter</a><br>
+      Independent rerun issue:
+      <a href="https://github.com/ClaimBound/claimbound-evidence/issues/355">#355</a>
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Claim boundary</h2>
+    <p>
+      Does <strong>not</strong> claim universal superiority of any engine.
+      Does not compare against Manifold CUDA/Pro GPU.
+      Community caps apply (sweep ≤256, MC ≤1000).
+      Synthetic data only.
+    </p>
+  </div>
+
+  <p><a href="../">← Back to ClaimBound atlases</a></p>
+</body>
+</html>
