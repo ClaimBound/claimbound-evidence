@@ -20,6 +20,10 @@ on:
       - "scripts/build_wikidata_public_claims.py"
       - "scripts/register_wikidata_public_claims.py"
       - "artifacts/cb7k_wikidata_public_claims.json"
+      - "docs/atlas_home.html"
+      - "docs/manifold_monte_neo_fair_race/**"
+      - "docs/protocols/MANIFOLD_MONTE_NEO_FAIR_RACE_D001_PREREG_CHARTER.md"
+      - "artifacts/manifold_monte_neo_fair_race_d001/**"
 
 permissions:
   contents: read
@@ -45,12 +49,14 @@ jobs:
         with:
           python-version: "3.12"
       - uses: actions/configure-pages@v6
-      - name: Assemble ESA, NASA, Leqembi, and verified-claim atlas site
+      - name: Assemble ESA, NASA, Leqembi, fair-race, and verified-claim atlas site
         run: |
           mkdir -p _site
           cp -R docs/esa/atlas _site/esa
           cp -R docs/nasa/atlas _site/nasa
           cp -R docs/leqembi _site/leqembi
+          mkdir -p _site/manifold_monte_neo_fair_race
+          cp docs/manifold_monte_neo_fair_race/index.html _site/manifold_monte_neo_fair_race/index.html
           python3 scripts/build_public_claim_atlas_v2.py --output _site/claims
           cp docs/atlas_home.html _site/index.html
       - uses: actions/upload-pages-artifact@v5
