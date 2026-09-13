@@ -13,9 +13,13 @@
   "known_limitations": [
     "Apple Silicon baseline; Manifold CUDA unavailable on this host.",
     "Community free-tier caps: sweep \u2264256 combos, Monte Carlo \u22641000 sims.",
+    "Type C compares a specialized Numba SMA kernel (Monte-Neo) vs general-purpose ManifoldBT run_sweep — throughput gate under D001, not a matched full-engine bake-off.",
+    "Community fan-out / session wait can dominate Manifold Type C wall-clock; absolute rates are host- and tier-sensitive.",
+    "Monte-Neo D001 Type C kernel path is long/flat-style SMA grid with scalar PnL-style work; it does not claim Manifold's full expression/fees/equity checklist.",
     "Type A/B/C answer different questions and must not be merged into one speed claim.",
     "Type B Monte-Neo may use CPU fallback when Metal extension is not compiled.",
     "On Type A return-path bootstrap, Manifold may be faster; protocol does not require Monte-Neo to win Type A.",
+    "Type C linear chart: ~40 vs ~46k combos/s can look like an empty Manifold bar; value labels document the true rate (not zero).",
     "Synthetic data only."
   ],
   "last_verified_date": "2026-09-12",
