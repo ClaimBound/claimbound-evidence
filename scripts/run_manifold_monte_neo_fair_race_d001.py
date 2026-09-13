@@ -51,12 +51,35 @@ def _sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def _bar_chart(path: Path, engines: list[str], vals: list[float], ylabel: str, title: str) -> None:
-    fig, ax = plt.subplots(figsize=(8, 4))
-    ax.bar(engines, vals, color=["#2563eb", "#64748b"])
+def _bar_chart(
+    path: Path,
+    engines: list[str],
+    vals: list[float],
+    ylabel: str,
+    title: str,
+    *,
+    annotate: bool = True,
+) -> None:
+    fig, ax = plt.subplots(figsize=(8, 4.2))
+    bars = ax.bar(engines, vals, color=["#2563eb", "#64748b"])
     ax.set_ylabel(ylabel)
     ax.set_title(title)
     ax.grid(True, axis="y", alpha=0.3)
+    if annotate:
+        ymax = max(vals) if vals else 1.0
+        for bar, val in zip(bars, vals, strict=True):
+            # Place label above bar; for tiny bars vs huge peers, pin near axis.
+            y = bar.get_height()
+            label_y = max(y, ymax * 0.02) if ymax > 0 else y
+            ax.annotate(
+                f"{val:,.1f}",
+                xy=(bar.get_x() + bar.get_width() / 2, label_y),
+                xytext=(0, 4),
+                textcoords="offset points",
+                ha="center",
+                va="bottom",
+                fontsize=10,
+            )
     fig.tight_layout()
     fig.savefig(path, dpi=140)
     plt.close(fig)
@@ -75,7 +98,7 @@ def _write_charts(out: Path, summary: dict) -> list[Path]:
             float(summary["type_c"]["manifoldbt"].get("combos_per_s") or 0),
         ],
         "combos / s",
-        "Type C sweep throughput (≤256, synthetic 50k bars)",
+        "Type C: specialized Numba kernel vs general-purpose run_sweep",
     )
     paths.append(p)
     p = out / "type_a_sims_per_s.png"

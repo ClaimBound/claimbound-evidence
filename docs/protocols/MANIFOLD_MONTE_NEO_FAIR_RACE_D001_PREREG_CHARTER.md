@@ -23,9 +23,15 @@ This protocol does **not** claim universal superiority of C++/Metal over Rust.
 
 | Type | Meaning | Manifold peer | Monte-Neo peer |
 |------|---------|---------------|----------------|
-| C | Parameter sweep ≤256 | `bt.run_sweep` | `fused_sma_sweep` / fair_race Type C |
+| C | Parameter sweep ≤256 | `bt.run_sweep` (general-purpose engine) | specialized Numba fused SMA kernel (`fused_sma_sweep` / fair_race Type C) |
 | A | Return-path MC ≤1000 | `bt.plot.monte_carlo` bootstrap timing | `return_path_bootstrap` on same returns |
 | B | Scenario re-backtest ≤1000 | N× independent `bt.run` on same bars (throughput proxy) | Metal/MLX scenario batch |
+
+**Type C work mismatch (explicit label):** this lane compares a **specialized Numba
+kernel** (Monte-Neo) against a **general-purpose sweep engine** (ManifoldBT
+`run_sweep`: expression eval, next-bar fills, fees/equity/metrics path). It is a
+**throughput gate under D001**, not an apples-to-apples full-engine bake-off.
+A matched fee-aware engine comparison requires a separate protocol.
 
 ## Acceptance gates (frozen before outcome inspection)
 
@@ -56,5 +62,13 @@ Pinned Monte-Neo branch for race helpers: `race/m1-metal-phase2` @ `922631404496
 
 - Manifold CUDA / Pro GPU is not a peer on Apple Silicon.
 - Community sweep session caps: runner uses fresh process semantics where needed.
+- Community fan-out / session wait can dominate Manifold wall-clock on Type C;
+  absolute combos/s are host- and tier-sensitive.
+- Type C is specialized Numba kernel vs general-purpose `run_sweep` (not a full
+  engine bake-off). Monte-Neo D001 kernel path: long/flat-style SMA grid, close
+  fills / scalar PnL style work — not Manifold’s full expression + fees/equity
+  checklist.
 - Type A and Type B answer different scientific questions.
 - Synthetic data only (no venue rights issues).
+- Type C chart uses linear scale: ~40 vs ~46k combos/s makes the Manifold bar
+  appear near-empty; value labels are required so the bar is not mistaken for zero.

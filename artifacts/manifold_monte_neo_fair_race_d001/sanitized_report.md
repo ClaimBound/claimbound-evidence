@@ -16,11 +16,16 @@
 
 ## Type C — sweep (gate)
 
+**Label:** specialized Numba SMA kernel (Monte-Neo) vs general-purpose `run_sweep`
+(ManifoldBT). Throughput gate under D001 — not a matched full-engine bake-off.
+
 | engine | combos/s | ok |
 |---|---:|---|
 | monte_neo | 45977.35004482914 | True |
 | manifoldbt | 37.95973972666864 | True |
 | gate_pass | | True |
+
+> Charts regenerated 2026-09-13 with value labels; throughput numbers unchanged.
 
 ## Type A — return-path bootstrap
 

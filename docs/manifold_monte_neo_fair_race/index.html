@@ -46,6 +46,11 @@
         <tr><td>Type B — scenario / N-run</td><td>ok</td><td>Metal or CPU fallback</td><td>informational</td></tr>
       </tbody>
     </table>
+    <p>
+      <strong>Type C label:</strong> specialized Numba SMA kernel (Monte-Neo) versus
+      general-purpose <code>run_sweep</code> (ManifoldBT). This is the D001 throughput gate,
+      <em>not</em> a matched fee-aware full-engine bake-off.
+    </p>
     <p>Type A/B/C answer different questions and must not be merged into one speed claim.</p>
   </div>
 
@@ -76,11 +81,21 @@
     </p>
   </div>
 
+  <div class="card note">
+    <h2>Known limitations (Type C honesty)</h2>
+    <ul>
+      <li>Community fan-out / session wait can dominate Manifold wall-clock on Type C.</li>
+      <li>Monte-Neo D001 kernel: long/flat-style SMA grid, scalar PnL-style work — not Manifold’s full expression + fees/equity path.</li>
+      <li>On the Type C PNG, ~40 vs ~46k on a linear axis can look “empty”; value labels show Manifold is ~38–41 combos/s, not zero.</li>
+    </ul>
+  </div>
+
   <div class="card">
     <h2>Claim boundary</h2>
     <p>
       Does <strong>not</strong> claim universal superiority of any engine.
       Does not compare against Manifold CUDA/Pro GPU.
+      Does not claim Type C is an apples-to-apples full-engine comparison.
       Community caps apply (sweep ≤256, MC ≤1000).
       Synthetic data only.
     </p>
