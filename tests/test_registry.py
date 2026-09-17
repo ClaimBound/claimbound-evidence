@@ -61,3 +61,30 @@ def test_registry_cli_reports_violations(
     assert module.main() == 1
     captured = capsys.readouterr()
     assert "registry field mismatch: result_status" in captured.err
+
+
+def test_registry_validator_detects_protocol_id_drift(tmp_path: Path) -> None:
+    registry_path = REPO_ROOT / "docs" / "registry" / "evidence_index.json"
+    registry = load_registry(registry_path)
+    entry = dict(registry["cards"][0])
+    card = json.loads((REPO_ROOT / entry["path"]).read_text(encoding="utf-8"))
+
+    card_name = "card.json"
+    (tmp_path / card_name).write_text(json.dumps(card), encoding="utf-8")
+    entry["path"] = card_name
+    entry["protocol_id"] = "DRIFTED_PROTOCOL_ID"
+
+    mini = {
+        "card_count": 1,
+        "cards": [entry],
+        "statistics": {
+            "by_domain": {str(entry["domain"]): 1},
+            "by_record_type": {str(entry["record_type"]): 1},
+            "by_result_status": {str(entry["result_status"]): 1},
+            "by_source": {str(entry["official_source_name"]): 1},
+        },
+    }
+
+    violations = validate_registry(mini, tmp_path)
+    assert any("registry field mismatch: protocol_id" in v for v in violations)
+
