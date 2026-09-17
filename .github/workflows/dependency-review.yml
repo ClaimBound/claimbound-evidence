@@ -5,6 +5,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -14,8 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: Dependency review placeholder
-        run: |
-          echo "dependency-review-action@v4 currently declares the Node.js 20 runtime."
-          echo "This repository keeps the required review check green without emitting the Node 20 warning."
-          echo "Re-enable the upstream dependency-review action after a Node.js 24-compatible release is available."
+      - name: Dependency review
+        uses: actions/dependency-review-action@v5
+        with:
+          fail-on-severity: high
