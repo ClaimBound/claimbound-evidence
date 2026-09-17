@@ -28,7 +28,10 @@ Where is the evidence?
 
 If there is no evidence card, the statement is still only a claim. Green means
 one narrow claim passed under a frozen protocol — not "trust everything".
-Negative, blocked and drift outcomes are first-class evidence too.
+`PASSED_UNDER_PROTOCOL` is not the same as independently reproduced: most public
+cards are still `SINGLE_OPERATOR` / `not independently reproduced` until a
+separate rerun records otherwise. Negative, blocked and drift outcomes are
+first-class evidence too.
 
 Read the one-screen walkthrough in [ClaimBound in 30 seconds](docs/CLAIMBOUND_IN_30_SECONDS.md),
 the [reviewer path](docs/REVIEWER_PATH.md),
