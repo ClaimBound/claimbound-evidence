@@ -12,9 +12,11 @@ from claimbound_evidence.evidence_card import validate_evidence_card
 
 
 ENTRY_CARD_FIELDS = {
+    "created_at",
     "domain",
     "evidence_id",
     "official_source_name",
+    "protocol_id",
     "record_type",
     "reproduction_level",
     "result_status",
