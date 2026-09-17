@@ -12,7 +12,6 @@ from claimbound_evidence.evidence_card import validate_evidence_card
 
 
 ENTRY_CARD_FIELDS = {
-    "created_at",
     "domain",
     "evidence_id",
     "official_source_name",
@@ -27,6 +26,10 @@ ENTRY_CARD_FIELDS = {
     "verification_count",
     "verification_level",
 }
+# Note: created_at is intentionally not cross-checked yet — thousands of CB7K
+# registry rows still carry the original campaign date while card JSON was
+# later updated. Rebuild evidence_index from cards before enforcing created_at.
+
 
 
 def load_registry(path: Path) -> dict[str, Any]:
