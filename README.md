@@ -5,6 +5,8 @@
 [![Python >=3.12](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://github.com/ClaimBound/claimbound-evidence/blob/main/pyproject.toml)
 [![tests](https://img.shields.io/github/actions/workflow/status/ClaimBound/claimbound-evidence/tests.yml?branch=main&label=tests)](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml)
 [![release](https://img.shields.io/github/v/release/ClaimBound/claimbound-evidence?label=release)](https://github.com/ClaimBound/claimbound-evidence/releases/latest)
+[![PyPI](https://img.shields.io/pypi/v/claimbound-evidence.svg)](https://pypi.org/project/claimbound-evidence/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/claimbound-evidence.svg)](https://pypi.org/project/claimbound-evidence/)
 [![evidence cards](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FClaimBound%2Fclaimbound-evidence%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=blue)](docs/registry/evidence_index.json)
 
 <p align="center">
@@ -112,6 +114,15 @@ the GitLab repo is a public mirror only.
 ## Install
 
 Works on Windows, macOS and Linux. See [platform support](docs/PLATFORM_SUPPORT.md).
+
+PyPI (CLI only):
+
+```bash
+pip install claimbound-evidence
+claimbound doctor
+```
+
+From source (dev extras + full checkout):
 
 ```bash
 git clone https://github.com/ClaimBound/claimbound-evidence.git
