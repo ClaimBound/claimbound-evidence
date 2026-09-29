@@ -18,26 +18,34 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
+            python: "3.12"
+            pytest_args: "-n auto -q"
+          - os: ubuntu-latest
+            python: "3.14"
             pytest_args: "-n auto -q"
           - os: windows-latest
+            python: "3.12"
             pytest_args: "-q"
+          - os: macos-latest
+            python: "3.12"
+            pytest_args: "-n auto -q"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v7
-      - run: uv sync --extra dev
+      - run: uv sync --extra dev --python ${{ matrix.python }}
       - run: uv run claimbound doctor
       - run: uv run claimbound validate-all
       - name: Run pytest
         id: pytest
         continue-on-error: true
-        run: uv run --extra dev pytest ${{ matrix.pytest_args }} --junitxml=pytest-${{ runner.os }}.xml
+        run: uv run --extra dev pytest ${{ matrix.pytest_args }} --junitxml=pytest-${{ runner.os }}-py${{ matrix.python }}.xml
       - name: Upload pytest report
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: pytest-${{ runner.os }}
-          path: pytest-${{ runner.os }}.xml
+          name: pytest-${{ runner.os }}-py${{ matrix.python }}
+          path: pytest-${{ runner.os }}-py${{ matrix.python }}.xml
           if-no-files-found: error
       - name: Preserve pytest failure
         if: steps.pytest.outcome == 'failure'
