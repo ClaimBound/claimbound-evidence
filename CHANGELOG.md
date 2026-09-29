@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.4.8 - 2026-09-30
+
 ### Added
 
 - `claimbound --version`.
