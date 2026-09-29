@@ -21,6 +21,15 @@ on:
       - "scripts/register_wikidata_public_claims.py"
       - "artifacts/cb7k_wikidata_public_claims.json"
       - "docs/atlas_home.html"
+      - "docs_site/**"
+      - "mkdocs.yml"
+      - "scripts/build_docs_site.py"
+      - "scripts/gen_cli_reference.py"
+      - "docs/*.md"
+      - "docs/assets/logo/**"
+      - "CONTRIBUTING.md"
+      - "CHANGELOG.md"
+      - "SECURITY.md"
       - "docs/manifold_monte_neo_fair_race/**"
       - "docs/protocols/MANIFOLD_MONTE_NEO_FAIR_RACE_D001_PREREG_CHARTER.md"
       - "artifacts/manifold_monte_neo_fair_race_d001/**"
@@ -59,6 +68,11 @@ jobs:
           cp docs/manifold_monte_neo_fair_race/index.html _site/manifold_monte_neo_fair_race/index.html
           python3 scripts/build_public_claim_atlas_v2.py --output _site/claims
           cp docs/atlas_home.html _site/index.html
+      - uses: astral-sh/setup-uv@v7
+      - name: Build documentation site into _site/docs
+        run: |
+          uv run --extra docs python scripts/build_docs_site.py
+          uv run --extra docs mkdocs build --strict
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
