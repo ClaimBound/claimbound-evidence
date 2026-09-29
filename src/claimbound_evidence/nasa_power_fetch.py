@@ -6,7 +6,7 @@ from __future__ import annotations
 import urllib.parse
 import urllib.request
 from pathlib import Path
-from typing import Callable
+from collections.abc import Callable
 
 from claimbound_evidence.nasa_power import NASA_POWER_PARAMETERS, NASA_POWER_POINTS, NasaPowerPoint
 
