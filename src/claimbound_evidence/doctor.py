@@ -30,6 +30,7 @@ class DoctorReport:
     repo_root: Path
     runs_root: Path
     today_iso: str
+    mode: str = "checkout"
 
     @property
     def ok(self) -> bool:
@@ -80,17 +81,31 @@ def run_doctor(repo_root: Path) -> DoctorReport:
     cards_dir = repo_root / "docs" / "evidence_cards"
     registry = repo_root / "docs" / "registry" / "evidence_index.json"
     repo_ok = cards_dir.is_dir() and registry.is_file()
-    checks.append(
-        DoctorCheck(
-            name="repo_layout",
-            ok=repo_ok,
-            detail=(
-                "evidence cards and registry present"
-                if repo_ok
-                else "missing docs/evidence_cards or docs/registry/evidence_index.json"
-            ),
+    installed = not repo_ok and not (repo_root / "pyproject.toml").is_file()
+    if installed:
+        checks.append(
+            DoctorCheck(
+                name="repo_layout",
+                ok=True,
+                detail=(
+                    "installed package, no repository clone: validate-card, inspect, hash and "
+                    "run-root work; validate-all, demo, rerun, drift and verify need "
+                    "git clone https://github.com/ClaimBound/claimbound-evidence.git"
+                ),
+            )
         )
-    )
+    else:
+        checks.append(
+            DoctorCheck(
+                name="repo_layout",
+                ok=repo_ok,
+                detail=(
+                    "evidence cards and registry present"
+                    if repo_ok
+                    else "missing docs/evidence_cards or docs/registry/evidence_index.json"
+                ),
+            )
+        )
 
     return DoctorReport(
         checks=tuple(checks),
@@ -100,6 +115,7 @@ def run_doctor(repo_root: Path) -> DoctorReport:
         repo_root=repo_root.resolve(),
         runs_root=Path.home() / "claimbound_runs",
         today_iso=date.today().isoformat(),
+        mode="installed-package" if installed else "checkout",
     )
 
 
@@ -107,7 +123,8 @@ def format_doctor_report(report: DoctorReport) -> str:
     lines = [
         f"platform={report.platform_system} {report.platform_release}",
         f"python={report.python_version}",
-        f"repo_root={report.repo_root.as_posix()}",
+        f"mode={report.mode}",
+        *([] if report.mode == "installed-package" else [f"repo_root={report.repo_root.as_posix()}"]),
         f"runs_root={report.runs_root.as_posix()}",
         f"today={report.today_iso}",
     ]

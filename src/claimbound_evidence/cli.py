@@ -7,6 +7,7 @@ import argparse
 import json
 import subprocess
 import sys
+from importlib import metadata
 from pathlib import Path
 
 from claimbound_evidence.doctor import format_doctor_report, run_doctor
@@ -40,12 +41,44 @@ from claimbound_evidence.tree_overlay import (
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DEMO_ROOT = Path.home() / "claimbound_runs" / "claimbound_demo"
+CLONE_URL = "https://github.com/ClaimBound/claimbound-evidence.git"
+CHECKOUT_COMMANDS = frozenset({"demo", "validate-all", "rerun", "drift", "verify"})
+DEFAULT_CARD_KEYS = (
+    "evidence_id",
+    "record_type",
+    "result_status",
+    "reproduction_level",
+    "verification_level",
+    "protocol_id",
+    "official_source_url",
+    "access_date",
+    "claim_boundary",
+)
+
+
+def has_checkout() -> bool:
+    """Return True when running from a repository clone that ships cards and registry."""
+    return (REPO_ROOT / "docs" / "evidence_cards").is_dir() and (
+        REPO_ROOT / "docs" / "registry" / "evidence_index.json"
+    ).is_file()
+
+
+def package_version() -> str:
+    try:
+        return metadata.version("claimbound-evidence")
+    except metadata.PackageNotFoundError:
+        return "unknown (not installed as a package)"
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="claimbound",
         description="ClaimBound helper commands for requests, scaffolds, demos and validation.",
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"claimbound {package_version()}",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -182,8 +215,8 @@ def build_parser() -> argparse.ArgumentParser:
     inspect_card.add_argument(
         "--keys",
         nargs="+",
-        required=True,
-        help="Top-level JSON keys to print.",
+        default=list(DEFAULT_CARD_KEYS),
+        help="Top-level JSON keys to print (default: a short card summary).",
     )
     inspect_card.set_defaults(func=_cmd_inspect_card)
 
@@ -267,6 +300,16 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command in CHECKOUT_COMMANDS and not has_checkout():
+        print(
+            f"claimbound {args.command}: this command needs a clone of the repository "
+            "(cards, registry and scripts are not part of the pip package).\n"
+            f"  git clone {CLONE_URL}\n"
+            "  cd claimbound-evidence && uv sync --extra dev\n"
+            "For a single card use: claimbound validate-card FILE.json",
+            file=sys.stderr,
+        )
+        return 2
     return int(args.func(args, parser) or 0)
 
 
@@ -278,7 +321,7 @@ def _cmd_new(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
     out = args.out or _prompt_path("Output directory", parser)
 
     if not out.is_absolute():
-        out = REPO_ROOT / out
+        out = _base_dir() / out
 
     request = ScaffoldRequest(
         source_url=source_url,
@@ -431,8 +474,13 @@ def _cmd_validate_tree(args: argparse.Namespace, parser: argparse.ArgumentParser
     return 0
 
 
+def _base_dir() -> Path:
+    """Relative paths resolve against the clone in a checkout, otherwise against cwd."""
+    return REPO_ROOT if has_checkout() else Path.cwd()
+
+
 def _resolve_repo_path(path: Path) -> Path:
-    return path if path.is_absolute() else REPO_ROOT / path
+    return path if path.is_absolute() else _base_dir() / path
 
 
 def _cmd_inspect_card(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
@@ -532,6 +580,7 @@ def _cmd_drift_eea(args: argparse.Namespace, parser: argparse.ArgumentParser) ->
 def _cmd_doctor(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
     del args, parser
     report = run_doctor(REPO_ROOT)
+    print(f"claimbound={package_version()}")
     print(format_doctor_report(report))
     return 0 if report.ok else 1
 
