@@ -19,6 +19,11 @@
   `.pre-commit-config.yaml`, `CODEOWNERS`, release-notes categories and an OpenSSF
   Scorecard workflow; SECURITY.md documents the release supply chain.
 
+- Documentation site (MkDocs Material) published under `/docs/` next to the atlases on
+  GitHub Pages; sources in `docs_site/`, assembled by `scripts/build_docs_site.py`.
+  Adds a generated command reference (`docs/CLI.md`), a glossary, a scripts index and
+  "I want to" paths in the documentation index.
+
 ### Fixed
 
 - `NasaPowerMockConfig` without an explicit seed raised `NameError` (missing `hashlib`

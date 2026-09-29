@@ -154,6 +154,8 @@ claimbound validate-card path/to/card.json
 
 `validate-all`, `demo`, `rerun`, `drift` and `verify` need the cards, registry and
 scripts of a repository clone (see below); from a pip install they print how to get one.
+The full guide, including a lighter sparse clone, is the
+[documentation site](https://claimbound.github.io/claimbound-evidence/docs/).
 
 From source (dev extras + full checkout):
 
