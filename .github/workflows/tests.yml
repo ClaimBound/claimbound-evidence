@@ -13,21 +13,28 @@ env:
 
 jobs:
   pytest:
+    # The first two job names are required status checks of the branch ruleset; keep them
+    # exactly as they are. The others are informational.
+    name: ${{ matrix.job }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          - os: ubuntu-latest
+          - job: "pytest (ubuntu-latest, -n auto -q)"
+            os: ubuntu-latest
             python: "3.12"
             pytest_args: "-n auto -q"
             cov_args: "--cov=claimbound_evidence --cov-report=term --cov-report=xml:coverage.xml"
-          - os: ubuntu-latest
+          - job: "pytest-extra (ubuntu-latest, python 3.14)"
+            os: ubuntu-latest
             python: "3.14"
             pytest_args: "-n auto -q"
-          - os: windows-latest
+          - job: "pytest (windows-latest, -q)"
+            os: windows-latest
             python: "3.12"
             pytest_args: "-q"
-          - os: macos-latest
+          - job: "pytest-extra (macos-latest, python 3.12)"
+            os: macos-latest
             python: "3.12"
             pytest_args: "-n auto -q"
     runs-on: ${{ matrix.os }}

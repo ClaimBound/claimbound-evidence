@@ -78,8 +78,10 @@ def _argument_line(action: argparse.Action) -> str | None:
         elif isinstance(default, Path):
             for base, prefix in ((REPO_ROOT, Path()), (Path.home(), Path("~"))):
                 if base in default.parents:
-                    default = prefix / default.relative_to(base)
+                    default = (prefix / default.relative_to(base)).as_posix()
                     break
+            else:
+                default = default.as_posix()
         notes.append(f"default: `{default}`")
     text = f"- `{label}`"
     if action.help:
