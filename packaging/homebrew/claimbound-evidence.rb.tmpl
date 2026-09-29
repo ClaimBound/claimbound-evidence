@@ -1,0 +1,34 @@
+class ClaimboundEvidence < Formula
+  desc "Evidence cards for narrow public AI, ML and data claims"
+  homepage "https://github.com/ClaimBound/claimbound-evidence"
+  url "$wheel_url", using: :nounzip
+  version "$version"
+  sha256 "$wheel_sha256"
+  license "Apache-2.0"
+
+  depends_on "$python_formula"
+
+  # Binary wheels of the dependencies, pinned by SHA-256. Generated from uv.lock by
+  # packaging/render.py; Homebrew builds have no network access, so pip installs from these files.
+$resources
+
+  def install
+$unsupported
+    python = Formula["$python_formula"].opt_bin/"$python_bin"
+    system python, "-m", "venv", libexec
+    wheels = buildpath/"wheels"
+    wheels.mkpath
+    cp Dir[buildpath/"*.whl"], wheels
+    resources.each do |resource|
+      resource.stage { cp Dir["*.whl"], wheels }
+    end
+    system libexec/"bin/python", "-m", "pip", "install", "--no-index", "--find-links", wheels,
+           "--no-deps", "--only-binary=:all:", *Dir[wheels/"*.whl"]
+    bin.install_symlink libexec/"bin/claimbound"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/claimbound --version")
+    assert_match "ready=yes", shell_output("#{bin}/claimbound doctor")
+  end
+end
