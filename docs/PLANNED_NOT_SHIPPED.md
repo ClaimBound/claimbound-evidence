@@ -14,7 +14,7 @@ and validators pass on `main`.
 | --- | --- | --- | --- |
 | SourceProbe v1 | Scaffold stub in `claimbound new`; [acceptance criteria](SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md) | Deterministic HTTP probe CLI, marker checks, standalone probe command | Read the spec; confirm no `scripts/claimbound_source_probe.py` |
 | Static registry MVP | JSON index at [evidence_index.json](registry/evidence_index.json) | Generated HTML/views, filters UI, `claimbound_build_registry_view.py` | Read [acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md); confirm no `docs/registry/views/` |
-| PyPI distribution | Local install via `uv sync` from git | Published package on PyPI | No `claimbound-evidence` release wheel on PyPI required for current baseline |
+| PyPI distribution | Package `claimbound-evidence` on PyPI with the card-level CLI (`validate-card`, `inspect`, `hash`, `run-root`, `doctor`); full workflows via `git clone` + `uv sync` | Registry, runners, reruns and demos inside the pip package | `pip install claimbound-evidence` then `claimbound validate-all` reports that a clone is needed |
 | WCAG / accessibility pass | SVG cards rendered from JSON | Full accessibility audit and remediation pass | Cards are visual aids; no WCAG conformance claim is made |
 
 ## What Counts As Shipped Today
@@ -22,7 +22,7 @@ and validators pass on `main`.
 The current public baseline is:
 
 - evidence-card JSON/SVG and registry index;
-- `uv run claimbound validate-all` and pytest gates (86 tests; CI on Linux and Windows);
+- `uv run claimbound validate-all` and pytest gates (CI on Linux, Windows and macOS);
 - cross-platform operator CLI: `doctor`, `inspect`, `hash`, `rerun`, `drift`, `verify`;
 - [platform support](PLATFORM_SUPPORT.md) and [start without coding](START_WITHOUT_CODING.md);
 - manual and AI-assisted workflow docs;

@@ -2,6 +2,42 @@
 
 ## Unreleased
 
+### Added
+
+- `claimbound --version`.
+- PyPI project page: long description from the README (links and images rewritten to
+  absolute GitHub URLs at build time), author, keywords, classifiers, license files and
+  Discussions/Citation links.
+- `AGENTS.md`/`CLAUDE.md` contributor and coding-assistant rules, `CITATION.cff`,
+  `.zenodo.json` and the [pseudonym policy](docs/PSEUDONYM_POLICY.md).
+
+### Changed
+
+- `claimbound doctor` recognises an installed package: `mode=installed-package` and
+  `ready=yes` for card-level commands instead of `repo_layout=FAIL`.
+- `validate-all`, `demo`, `rerun`, `drift` and `verify` print how to clone the repository and
+  exit with code 2 when run from a pip install, instead of a traceback.
+- Relative paths given to `validate-card`, `inspect`, `hash` and `new --out` resolve against
+  the current directory when there is no repository clone.
+- `claimbound inspect card FILE` prints a short summary when `--keys` is omitted.
+- The source distribution no longer ships the whole repository (about 7 MB to about 60 KB).
+- Publication guard tests now check the files git would commit and ignore local, git-ignored
+  outputs such as `_site/`.
+- `docs/PLANNED_NOT_SHIPPED.md` reflects that the package is published on PyPI.
+
+## 0.4.7.4 - 2026-09-24
+
+### Changed
+
+- Release tooling: version bump after PyPI publishing workflow fixes.
+
+## 0.4.7.3 - 2026-09-24
+
+### Changed
+
+- Release tooling: TestPyPI environment renamed from `pypi` to `testpypi` in the publish
+  workflow; README surfaces the PyPI package (#364, #365).
+
 ## 0.4.7.2 - 2026-06-19
 
 ### Added

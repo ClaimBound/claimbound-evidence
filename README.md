@@ -115,12 +115,16 @@ the GitLab repo is a public mirror only.
 
 Works on Windows, macOS and Linux. See [platform support](docs/PLATFORM_SUPPORT.md).
 
-PyPI (CLI only):
+From PyPI — card-level CLI (`validate-card`, `inspect card`, `hash`, `run-root`):
 
 ```bash
-pip install claimbound-evidence
-claimbound doctor
+pipx install claimbound-evidence      # or: uv tool install claimbound-evidence / pip install claimbound-evidence
+claimbound --version
+claimbound validate-card path/to/card.json
 ```
+
+`validate-all`, `demo`, `rerun`, `drift` and `verify` need the cards, registry and
+scripts of a repository clone (see below); from a pip install they print how to get one.
 
 From source (dev extras + full checkout):
 

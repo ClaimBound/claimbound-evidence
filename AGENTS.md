@@ -44,8 +44,9 @@ Never add private background technology or private data to this repository.
 
 ## Working plan
 
-If `.maintainer/POLISH_PLAN_RU.md` exists locally, it is the current maintenance
-plan: continue from the first open item and append to its handoff log.
+If a local, git-ignored `.maintainer/` directory exists, the plan inside it is the
+current maintenance plan: continue from the first open item and append to its
+handoff log.
 
 ## Commands
 
