@@ -1,7 +1,18 @@
 # ClaimBound Documentation Index
 
 Use this page to choose a reading path. You do not need every protocol file to
-try ClaimBound.
+try ClaimBound. The same core pages are also published as a
+[documentation site](https://claimbound.github.io/claimbound-evidence/docs/).
+
+## I Want To
+
+| Goal | Start here |
+| --- | --- |
+| **Check a card** — validate and read an existing card | [Quick start](../docs_site/quickstart.md), [reading a card](../docs_site/concepts.md), [common misreadings](COMMON_MISREADINGS.md) |
+| **Rerun a card** — repeat a frozen check and record the outcome | [Independent rerun workflow](INDEPENDENT_RERUN_WORKFLOW.md), [start without coding](START_WITHOUT_CODING.md), [volunteer one-pager](external_verification/VOLUNTEER_ONE_PAGER.md) |
+| **Contribute a card or code** — scaffold a new check or extend tooling | [Getting started](GETTING_STARTED.md), [Contributing guide](../CONTRIBUTING.md), [scripts index](../scripts/README.md) |
+| **Review the project** — judge scope, honesty and baseline | [Reviewer path](REVIEWER_PATH.md), [reviewer summary](REVIEWER_SUMMARY.md) |
+| **Look something up** | [Glossary](GLOSSARY.md), [command reference](CLI.md), [result statuses](RESULT_STATUS.md), [card fields](EVIDENCE_CARD.md) |
 
 ## Reviewer Path
 

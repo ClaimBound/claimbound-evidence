@@ -15,7 +15,7 @@ import urllib.request
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
-from typing import Callable
+from collections.abc import Callable
 
 
 NOAA_COOPS_D131_STATIONS: tuple[str, ...] = ("8518750", "9414290", "8638610")

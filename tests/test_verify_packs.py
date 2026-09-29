@@ -3,7 +3,6 @@ from __future__ import annotations
 
 from claimbound_evidence.cli import main
 from claimbound_evidence.verify_packs import (
-    run_verify_pack,
     verify_source_probe_spec,
     verify_static_registry_spec,
 )

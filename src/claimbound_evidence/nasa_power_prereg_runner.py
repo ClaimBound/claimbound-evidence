@@ -12,7 +12,7 @@ import hashlib
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
-from typing import Mapping
+from collections.abc import Mapping
 
 import numpy as np
 from numpy.typing import NDArray

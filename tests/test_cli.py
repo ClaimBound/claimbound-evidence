@@ -134,3 +134,63 @@ def test_validate_frontier_accepts_external_absolute_path(tmp_path: Path) -> Non
     path.write_text(json.dumps(frontier), encoding="utf-8")
 
     assert main(["validate-frontier", str(path)]) == 0
+
+
+def _card_path() -> Path:
+    from claimbound_evidence import cli
+
+    return cli.REPO_ROOT / "docs" / "evidence_cards" / "CLAIMBOUND-NASA-POWER-D103-2026-04-29.json"
+
+
+def test_version_flag_prints_package_version(capsys) -> None:
+    import pytest
+
+    with pytest.raises(SystemExit) as excinfo:
+        main(["--version"])
+    assert excinfo.value.code == 0
+    assert capsys.readouterr().out.startswith("claimbound ")
+
+
+def test_checkout_commands_explain_missing_clone(tmp_path: Path, monkeypatch, capsys) -> None:
+    from claimbound_evidence import cli
+
+    monkeypatch.setattr(cli, "REPO_ROOT", tmp_path)
+    for argv in (["validate-all"], ["demo", "validate-all"], ["verify", "starter-pack"]):
+        assert main(argv) == 2
+        err = capsys.readouterr().err
+        assert "needs a clone of the repository" in err
+        assert "validate-card" in err
+
+
+def test_doctor_reports_installed_package_mode(tmp_path: Path, monkeypatch, capsys) -> None:
+    from claimbound_evidence import cli
+
+    monkeypatch.setattr(cli, "REPO_ROOT", tmp_path)
+    assert main(["doctor"]) == 0
+    out = capsys.readouterr().out
+    assert "mode=installed-package" in out
+    assert "ready=yes" in out
+    assert "repo_root=" not in out
+
+
+def test_validate_card_resolves_relative_path_from_cwd_without_clone(
+    tmp_path: Path, monkeypatch, capsys
+) -> None:
+    from claimbound_evidence import cli
+
+    card = tmp_path / "card.json"
+    card.write_text(_card_path().read_text(encoding="utf-8"), encoding="utf-8")
+    fake_root = tmp_path / "site-packages"
+    fake_root.mkdir()
+    monkeypatch.setattr(cli, "REPO_ROOT", fake_root)
+    monkeypatch.chdir(tmp_path)
+
+    assert main(["validate-card", "card.json"]) == 0
+    assert "valid_card=" in capsys.readouterr().out
+
+
+def test_inspect_card_defaults_to_summary_keys(capsys) -> None:
+    assert main(["inspect", "card", str(_card_path())]) == 0
+    out = json.loads(capsys.readouterr().out)
+    assert out["result_status"]
+    assert "claim_boundary" in out

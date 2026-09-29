@@ -1,9 +1,41 @@
 [project]
 name = "claimbound-evidence"
 version = "0.4.7.4"
-description = "ClaimBound public evidence-card toolkit for narrow public AI, ML and data claims"
+description = "Evidence cards for narrow public AI, ML and data claims: frozen protocol, hashed sources, honest result status."
+dynamic = ["readme"]
 license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
 requires-python = ">=3.12"
+authors = [{ name = "Rostyslav Shcherbyna" }]
+keywords = [
+    "evidence-cards",
+    "claim-provenance",
+    "claim-verification",
+    "reproducibility",
+    "pre-registration",
+    "open-science",
+    "open-data",
+    "ai-transparency",
+    "source-audit",
+    "provenance",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Quality Assurance",
+]
 dependencies = [
     "numpy>=2.5.2",
     "pdfplumber>=0.11",
@@ -13,7 +45,13 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=9.1.1",
+    "pytest-cov>=6.0",
     "pytest-xdist>=3.5",
+    "ruff>=0.15",
+]
+docs = [
+    "mkdocs>=1.6,<2",
+    "mkdocs-material>=9.5",
 ]
 
 [project.scripts]
@@ -27,13 +65,58 @@ Issues = "https://github.com/ClaimBound/claimbound-evidence/issues"
 Changelog = "https://github.com/ClaimBound/claimbound-evidence/blob/main/CHANGELOG.md"
 Documentation = "https://github.com/ClaimBound/claimbound-evidence/tree/main/docs"
 "PyPI" = "https://pypi.org/project/claimbound-evidence/"
+Discussions = "https://github.com/ClaimBound/claimbound-evidence/discussions"
+Citation = "https://github.com/ClaimBound/claimbound-evidence/blob/main/CITATION.cff"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-fancy-pypi-readme>=24.1.0"]
 build-backend = "hatchling.build"
+
+# The README on PyPI is rendered outside GitHub, so relative links and images are
+# rewritten to absolute GitHub URLs at build time. README.md stays the single source.
+[tool.hatch.metadata.hooks.fancy-pypi-readme]
+content-type = "text/markdown"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
+path = "README.md"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = '\]\((?!https?://|#|mailto:)([^)\s#]+\.(?:svg|png|gif|jpe?g))\)'
+replacement = '](https://raw.githubusercontent.com/ClaimBound/claimbound-evidence/main/\1)'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = '\]\((?!https?://|#|mailto:)([^)\s]+)\)'
+replacement = '](https://github.com/ClaimBound/claimbound-evidence/blob/main/\1)'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = 'src="(?!https?://)([^"]+)"'
+replacement = 'src="https://raw.githubusercontent.com/ClaimBound/claimbound-evidence/main/\1"'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = 'srcset="(?!https?://)([^"]+)"'
+replacement = 'srcset="https://raw.githubusercontent.com/ClaimBound/claimbound-evidence/main/\1"'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = 'href="(?!https?://|#|mailto:)([^"]+)"'
+replacement = 'href="https://github.com/ClaimBound/claimbound-evidence/blob/main/\1"'
+
+# Keep the source distribution small: the 8,000+ evidence cards live in the git repository.
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/README.md", "/LICENSE", "/NOTICE", "/CHANGELOG.md", "/CITATION.cff"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/claimbound_evidence"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+extend-exclude = ["scripts", "docs", "artifacts", "_site", ".maintainer"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/test_public_claim_catalog.py" = ["E701", "E702"]

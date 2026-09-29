@@ -1,0 +1,64 @@
+site_name: ClaimBound Evidence
+site_description: Evidence cards for narrow public AI, ML and data claims.
+site_url: https://claimbound.github.io/claimbound-evidence/docs/
+repo_url: https://github.com/ClaimBound/claimbound-evidence
+repo_name: ClaimBound/claimbound-evidence
+docs_dir: .docs_build
+site_dir: _site/docs
+copyright: Apache-2.0 licensed. Evidence cards record narrow checks, not endorsements.
+
+theme:
+  name: material
+  logo: assets/claimbound-mark.svg
+  favicon: assets/favicon.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Get started:
+      - Install: install.md
+      - Quick start: quickstart.md
+      - Start without coding: START_WITHOUT_CODING.md
+      - Platform support: PLATFORM_SUPPORT.md
+  - Concepts:
+      - Reading a card: concepts.md
+      - Result status: RESULT_STATUS.md
+      - Evidence card protocol: EVIDENCE_CARD.md
+      - Common misreadings: COMMON_MISREADINGS.md
+      - Glossary: GLOSSARY.md
+      - Pseudonym policy: PSEUDONYM_POLICY.md
+  - Use it:
+      - Getting started: GETTING_STARTED.md
+      - ClaimBound in 5 minutes: CLAIMBOUND_IN_5_MINUTES.md
+      - Independent rerun workflow: INDEPENDENT_RERUN_WORKFLOW.md
+      - Command reference: CLI.md
+  - Project:
+      - ClaimBound in 30 seconds: CLAIMBOUND_IN_30_SECONDS.md
+      - Reviewer path: REVIEWER_PATH.md
+      - Planned work not shipped: PLANNED_NOT_SHIPPED.md
+      - Roadmap 2026: ROADMAP_2026.md
+      - Contributing: CONTRIBUTING.md
+      - Security: SECURITY.md
+      - Changelog: CHANGELOG.md

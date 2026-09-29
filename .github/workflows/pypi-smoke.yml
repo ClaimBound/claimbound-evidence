@@ -1,0 +1,57 @@
+name: pypi-smoke
+
+# Installs the published package into a clean environment and runs the card-level
+# commands, so a broken release is noticed even when repository tests are green.
+on:
+  release:
+    types: [published]
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to install (empty = latest)"
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install from PyPI
+        shell: bash
+        env:
+          VERSION: ${{ inputs.version || github.event.release.tag_name }}
+        run: |
+          python -m venv "$RUNNER_TEMP/smoke"
+          if [ "$RUNNER_OS" = "Windows" ]; then BIN="$RUNNER_TEMP/smoke/Scripts"; else BIN="$RUNNER_TEMP/smoke/bin"; fi
+          echo "BIN=$BIN" >> "$GITHUB_ENV"
+          SPEC="claimbound-evidence"
+          if [ -n "$VERSION" ]; then SPEC="claimbound-evidence==${VERSION#v}"; fi
+          # A new release can take a few minutes to appear on the index.
+          for attempt in 1 2 3 4 5 6; do
+            "$BIN/python" -m pip install --no-cache-dir "$SPEC" && break
+            echo "attempt $attempt failed; waiting"; sleep 30
+          done
+      - name: Run card-level commands
+        shell: bash
+        run: |
+          "$BIN/claimbound" --version
+          "$BIN/claimbound" doctor
+          cp docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json "$RUNNER_TEMP/card.json"
+          cd "$RUNNER_TEMP"
+          "$BIN/claimbound" validate-card card.json
+          "$BIN/claimbound" inspect card card.json
+          set +e
+          "$BIN/claimbound" validate-all
+          test $? -eq 2

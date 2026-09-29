@@ -1,0 +1,61 @@
+{% set name = "claimbound-evidence" %}
+{% set version = "$version" %}
+{% set python_min = "3.12" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/claimbound_evidence-{{ version }}.tar.gz
+  sha256: $sdist_sha256
+
+build:
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  entry_points:
+    - claimbound = claimbound_evidence.cli:main
+
+requirements:
+  host:
+    - python {{ python_min }}.*
+    - hatchling
+    - hatch-fancy-pypi-readme >=24.1.0
+    - pip
+  run:
+    - python >={{ python_min }}
+    - numpy >=2.5.2
+    - pdfplumber >=0.11
+    - pypdf >=6.16.0
+
+test:
+  imports:
+    - claimbound_evidence
+  commands:
+    - pip check
+    - claimbound --version
+    - claimbound doctor
+  requires:
+    - python {{ python_min }}.*
+    - pip
+
+about:
+  home: https://github.com/ClaimBound/claimbound-evidence
+  summary: Evidence cards for narrow public AI, ML and data claims
+  description: |
+    ClaimBound turns a narrow public claim into an evidence card with a frozen
+    protocol, hashed sources, an exact result status, a claim boundary and a
+    reproduction level. The package provides the card validator and the
+    card-level command-line tools.
+  license: Apache-2.0
+  license_family: APACHE
+  license_file:
+    - LICENSE
+    - NOTICE
+  doc_url: https://claimbound.github.io/claimbound-evidence/docs/
+  dev_url: https://github.com/ClaimBound/claimbound-evidence
+
+extra:
+  recipe-maintainers:
+    - NeoZorK

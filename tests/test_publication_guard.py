@@ -6,6 +6,7 @@ from __future__ import annotations
 import ast
 import json
 import re
+import subprocess
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -39,11 +40,34 @@ RAW_PAYLOAD_SUFFIXES = {".csv", ".parquet", ".zip", ".jsonl", ".env", ".key", ".
 RAW_PAYLOAD_DIR_NAMES = {"raw", "payloads", "data"}
 
 
+def _publishable_paths() -> list[Path]:
+    """Files git would commit: tracked plus untracked-but-not-ignored.
+
+    Git-ignored local outputs (for example ``_site/``) are not committed, so they must not
+    fail the guard. Falls back to a filesystem walk when git is unavailable.
+    """
+    try:
+        listing = subprocess.run(
+            ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
+            cwd=REPO_ROOT,
+            check=True,
+            capture_output=True,
+        ).stdout.decode("utf-8")
+    except (OSError, subprocess.CalledProcessError):
+        return [
+            path
+            for path in REPO_ROOT.rglob("*")
+            if not any(
+                part in {".git", ".venv", ".pytest_cache", "__pycache__", "dist", "build"}
+                for part in path.parts
+            )
+        ]
+    return [REPO_ROOT / name for name in listing.split("\0") if name]
+
+
 def _text_files() -> list[Path]:
     out: list[Path] = []
-    for path in REPO_ROOT.rglob("*"):
-        if any(part in {".git", ".venv", ".pytest_cache", "__pycache__", "dist", "build"} for part in path.parts):
-            continue
+    for path in _publishable_paths():
         if path.is_dir():
             continue
         if path.suffix.lower() in TEXT_SUFFIXES or path.name in {"LICENSE", "NOTICE"}:
@@ -156,12 +180,13 @@ def test_python_imports_stay_inside_open_foreground() -> None:
 
 def test_no_raw_payload_files_or_dirs_are_committed() -> None:
     violations: list[str] = []
-    for path in REPO_ROOT.rglob("*"):
-        if any(part in {".git", ".venv", ".pytest_cache", "__pycache__", "dist", "build"} for part in path.parts):
-            continue
-        if path.is_dir():
-            if path.name.lower() in RAW_PAYLOAD_DIR_NAMES:
+    for path in _publishable_paths():
+        rel_dirs = path.relative_to(REPO_ROOT).parts[:-1] if path.is_file() else path.relative_to(REPO_ROOT).parts
+        for part in rel_dirs:
+            if part.lower() in RAW_PAYLOAD_DIR_NAMES:
                 violations.append(f"{path.relative_to(REPO_ROOT)}: raw payload directory")
+                break
+        if path.is_dir():
             continue
         if path.suffix.lower() in RAW_PAYLOAD_SUFFIXES:
             violations.append(f"{path.relative_to(REPO_ROOT)}: raw payload-like suffix")

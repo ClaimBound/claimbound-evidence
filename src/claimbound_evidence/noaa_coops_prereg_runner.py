@@ -9,7 +9,6 @@ Performs no network I/O and does not change gates.
 from __future__ import annotations
 
 import hashlib
-import json
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path

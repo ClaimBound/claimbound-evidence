@@ -33,7 +33,7 @@ planned to harden that baseline into additional reusable infrastructure.
 
 | Already public now | Planned next (not claimed as completed here) |
 | --- | --- |
-| Evidence-card JSON/SVG, registry index, validators, 86 tests | SourceProbe v1 implementation |
+| Evidence-card JSON/SVG, registry index, validators, pytest suite | SourceProbe v1 implementation |
 | Cross-platform CLI (`doctor`, `inspect`, `rerun`, `drift`, `verify`) on Windows/macOS/Linux | Static registry generated views |
 | EU and public AI source-audit runners for existing card types | Scaffold workflow hardening |
 | Scaffold drafts via `claimbound new` | Operator workflow hardening and external adoption |

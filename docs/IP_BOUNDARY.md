@@ -21,3 +21,6 @@ Excluded background:
 
 The open foreground is designed to be independently usable without private
 background technology.
+
+Claims about a confidential subject can still be registered under a pseudonym;
+see [PSEUDONYM_POLICY.md](PSEUDONYM_POLICY.md).
