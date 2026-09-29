@@ -24,6 +24,9 @@
   Adds a generated command reference (`docs/CLI.md`), a glossary, a scripts index and
   "I want to" paths in the documentation index.
 
+- `packaging/`: unsubmitted recipes for conda-forge, a Homebrew tap and a Docker image, plus
+  `packaging/render.py` which fills them from a published PyPI release and `uv.lock`.
+
 ### Fixed
 
 - `NasaPowerMockConfig` without an explicit seed raised `NameError` (missing `hashlib`
