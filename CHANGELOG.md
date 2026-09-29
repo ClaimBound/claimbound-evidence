@@ -15,6 +15,15 @@
   1280x640 social preview and a terminal demo (`docs/assets/demo/`, regenerated from real
   CLI output by `make_demo.py`).
 
+- Lint and coverage: ruff configuration and CI step, coverage report artifact,
+  `.pre-commit-config.yaml`, `CODEOWNERS`, release-notes categories and an OpenSSF
+  Scorecard workflow; SECURITY.md documents the release supply chain.
+
+### Fixed
+
+- `NasaPowerMockConfig` without an explicit seed raised `NameError` (missing `hashlib`
+  import); covered by a regression test.
+
 ### Changed
 
 - README first screen: theme-aware logo, badges (PyPI, downloads, tests, license, release,

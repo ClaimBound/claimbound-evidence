@@ -62,3 +62,11 @@ private-source detail is accidentally committed or disclosed, report it through
 GitHub Security Advisories:
 
 <https://github.com/ClaimBound/claimbound-evidence/security/advisories/new>
+
+## Supply Chain
+
+- Releases are built and published by GitHub Actions to PyPI through Trusted Publishing
+  (OpenID Connect); no long-lived PyPI API token is stored in the repository.
+- Dependabot proposes dependency and GitHub Actions updates weekly.
+- [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/ClaimBound/claimbound-evidence)
+  results for this repository are published by the `scorecard` workflow.
