@@ -86,6 +86,14 @@ replacement = '](https://github.com/ClaimBound/claimbound-evidence/blob/main/\1)
 pattern = 'src="(?!https?://)([^"]+)"'
 replacement = 'src="https://raw.githubusercontent.com/ClaimBound/claimbound-evidence/main/\1"'
 
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = 'srcset="(?!https?://)([^"]+)"'
+replacement = 'srcset="https://raw.githubusercontent.com/ClaimBound/claimbound-evidence/main/\1"'
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = 'href="(?!https?://|#|mailto:)([^"]+)"'
+replacement = 'href="https://github.com/ClaimBound/claimbound-evidence/blob/main/\1"'
+
 # Keep the source distribution small: the 8,000+ evidence cards live in the git repository.
 [tool.hatch.build.targets.sdist]
 include = ["/src", "/README.md", "/LICENSE", "/NOTICE", "/CHANGELOG.md", "/CITATION.cff"]

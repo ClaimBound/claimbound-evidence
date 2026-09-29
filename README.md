@@ -1,21 +1,35 @@
-# ClaimBound Evidence
-
-[![GitHub stars](https://img.shields.io/github/stars/ClaimBound/claimbound-evidence?style=flat&logo=github)](https://github.com/ClaimBound/claimbound-evidence/stargazers)
-[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://github.com/ClaimBound/claimbound-evidence/blob/main/LICENSE)
-[![Python >=3.12](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://github.com/ClaimBound/claimbound-evidence/blob/main/pyproject.toml)
-[![tests](https://img.shields.io/github/actions/workflow/status/ClaimBound/claimbound-evidence/tests.yml?branch=main&label=tests)](https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml)
-[![release](https://img.shields.io/github/v/release/ClaimBound/claimbound-evidence?label=release)](https://github.com/ClaimBound/claimbound-evidence/releases/latest)
-[![PyPI](https://img.shields.io/pypi/v/claimbound-evidence.svg)](https://pypi.org/project/claimbound-evidence/)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/claimbound-evidence.svg)](https://pypi.org/project/claimbound-evidence/)
-[![evidence cards](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FClaimBound%2Fclaimbound-evidence%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=blue)](docs/registry/evidence_index.json)
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo/claimbound-logo-dark.svg">
+    <img src="docs/assets/logo/claimbound-logo-light.svg" alt="ClaimBound Evidence" width="420">
+  </picture>
+</h1>
 
 <p align="center">
-  <img
-    src="docs/assets/claimbound_logo.svg"
-    alt="ClaimBound evidence logo"
-    width="360"
-  />
+  <b>Where is the evidence?</b><br>
+  Evidence cards for narrow public AI, ML and data claims: frozen protocol,
+  hashed sources, honest result status.
 </p>
+
+<p align="center">
+  <a href="https://pypi.org/project/claimbound-evidence/"><img alt="PyPI" src="https://img.shields.io/pypi/v/claimbound-evidence?logo=pypi&logoColor=white"></a>
+  <a href="https://pypi.org/project/claimbound-evidence/"><img alt="Python >=3.12" src="https://img.shields.io/badge/python-%3E%3D3.12-blue?logo=python&logoColor=white"></a>
+  <a href="https://pypistats.org/packages/claimbound-evidence"><img alt="PyPI downloads per month" src="https://img.shields.io/pypi/dm/claimbound-evidence?label=downloads%2Fmonth"></a>
+  <a href="https://pepy.tech/project/claimbound-evidence"><img alt="Total PyPI downloads" src="https://static.pepy.tech/badge/claimbound-evidence"></a>
+  <a href="https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml"><img alt="tests" src="https://img.shields.io/github/actions/workflow/status/ClaimBound/claimbound-evidence/tests.yml?branch=main&label=tests&logo=github"></a>
+  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
+  <a href="https://github.com/ClaimBound/claimbound-evidence/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/ClaimBound/claimbound-evidence?label=release"></a>
+  <a href="docs/registry/evidence_index.json"><img alt="Evidence cards" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FClaimBound%2Fclaimbound-evidence%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=0A97BB"></a>
+</p>
+
+<p align="center">
+  <img src="docs/assets/demo/quickstart.gif" alt="Terminal recording: claimbound validate-card and inspect card on a real evidence card" width="760">
+</p>
+
+```bash
+pipx install claimbound-evidence        # or: uv tool install claimbound-evidence
+claimbound validate-card path/to/card.json
+```
 
 ClaimBound turns a narrow public AI, ML, data or software-development claim into
 a small evidence card: protocol, source boundary, hashes, exact result status,
@@ -41,6 +55,21 @@ the [non-developer start guide](docs/START_WITHOUT_CODING.md) or the
 [documentation index](docs/README.md) for reviewer, operator and advanced paths.
 
 ![ClaimBound workflow](docs/assets/claimbound_workflow.svg)
+
+## What It Is And Is Not
+
+| ClaimBound is | ClaimBound is not |
+| --- | --- |
+| A card per **one narrow claim**: protocol, source boundary, hashes, result status, claim boundary, reproduction level | A model leaderboard, benchmark ranking or quality score |
+| A validator (`validate-card`, `validate-all`) that anyone can rerun locally | A hosted scoring service or certification authority |
+| Honest about negative, blocked and drifted results (they are first-class evidence) | A way to declare a system safe, compliant or correct |
+| Open registry of sanitized metadata and hashes | An archive of raw payloads or private data |
+
+Nearby tools answer different questions: model and data cards describe a system as
+written by its authors, leaderboards rank systems, supply-chain provenance
+(SLSA, in-toto) covers how software was built, and fact-check markup records a
+publisher's verdict. ClaimBound records what one **frozen, reproducible check of a
+public claim** found, and how far anyone has independently reproduced it.
 
 ## Public Workflows
 

@@ -11,8 +11,14 @@
 - `AGENTS.md`/`CLAUDE.md` contributor and coding-assistant rules, `CITATION.cff`,
   `.zenodo.json` and the [pseudonym policy](docs/PSEUDONYM_POLICY.md).
 
+- Brand assets: light and dark logo without background, square mark (SVG and PNG),
+  1280x640 social preview and a terminal demo (`docs/assets/demo/`, regenerated from real
+  CLI output by `make_demo.py`).
+
 ### Changed
 
+- README first screen: theme-aware logo, badges (PyPI, downloads, tests, license, release,
+  card count), demo recording, install in two lines and an "is / is not" table.
 - `claimbound doctor` recognises an installed package: `mode=installed-package` and
   `ready=yes` for card-level commands instead of `repo_layout=FAIL`.
 - `validate-all`, `demo`, `rerun`, `drift` and `verify` print how to clone the repository and
