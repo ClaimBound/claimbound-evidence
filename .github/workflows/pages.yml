@@ -68,7 +68,7 @@ jobs:
           cp docs/manifold_monte_neo_fair_race/index.html _site/manifold_monte_neo_fair_race/index.html
           python3 scripts/build_public_claim_atlas_v2.py --output _site/claims
           cp docs/atlas_home.html _site/index.html
-      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
       - name: Build documentation site into _site/docs
         run: |
           uv run --extra docs python scripts/build_docs_site.py
