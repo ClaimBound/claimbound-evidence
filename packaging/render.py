@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
-"""Render the conda-forge recipe and the Homebrew formula for a PyPI release.
+"""Render the conda-forge recipe (v1 recipe.yaml) and the Homebrew formula for a PyPI release.
 
 Nothing is submitted anywhere: the output goes to ``packaging/build/`` (git-ignored) and is
 copied by hand into the conda-forge staged-recipes pull request or the Homebrew tap.
@@ -187,7 +187,7 @@ def render_all(info: dict[str, str], lock: dict[str, dict], python: str, out: Pa
     }
     written = []
     for template, target in (
-        (PACKAGING / "conda-forge" / "meta.yaml.tmpl", out / "conda-forge" / "meta.yaml"),
+        (PACKAGING / "conda-forge" / "recipe.yaml.tmpl", out / "conda-forge" / "recipe.yaml"),
         (PACKAGING / "homebrew" / "claimbound-evidence.rb.tmpl", out / "homebrew" / "claimbound-evidence.rb"),
     ):
         target.write_text(Template(template.read_text(encoding="utf-8")).substitute(values), encoding="utf-8")

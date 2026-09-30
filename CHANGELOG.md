@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+- conda-forge template converted to the v1 `recipe.yaml` format, which staged-recipes now requires for new recipes.
+
 ## 0.4.8 - 2026-09-30
 
 ### Added
