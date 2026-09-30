@@ -57,7 +57,8 @@ def test_render_all_fills_templates_from_the_lock_file(tmp_path: Path) -> None:
 
     recipe = conda.read_text(encoding="utf-8")
     ruby = formula.read_text(encoding="utf-8")
-    assert '{% set version = "9.9.9" %}' in recipe
+    assert 'version: "9.9.9"' in recipe
+    assert "version: ${{ version }}" in recipe
     assert "sha256: " + "a" * 64 in recipe
     assert 'version "9.9.9"' in ruby
     assert 'sha256 "' + "b" * 64 + '"' in ruby
@@ -65,3 +66,4 @@ def test_render_all_fills_templates_from_the_lock_file(tmp_path: Path) -> None:
         assert f'resource "{name}" do' in ruby
     for text in (recipe, ruby):
         assert "$" not in text.replace("${{", "")
+        assert "$$" not in text

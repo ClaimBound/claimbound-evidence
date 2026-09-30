@@ -6,7 +6,7 @@ target repository by hand after a release exists on PyPI.
 
 | Channel | Files | Tested here | Submitted |
 | --- | --- | --- | --- |
-| conda-forge | `conda-forge/meta.yaml.tmpl` | Package names and versions checked against conda-forge; recipe not built (no conda on the authoring machine) | no |
+| conda-forge | `conda-forge/recipe.yaml.tmpl` (v1 format) | Package names and versions checked against conda-forge; not built: no conda tooling on the authoring machine; YAML structure and the v1 layout follow the staged-recipes example | no |
 | Homebrew tap | `homebrew/claimbound-evidence.rb.tmpl` | Ruby syntax; the dependency wheels it lists were downloaded, hash-checked and installed offline into a fresh Python 3.13 environment (macOS arm64). `brew install` itself was not run | no |
 | Docker image | `docker/Dockerfile`, `docker/publish.yml.example` | Not built (Docker daemon was not running) | no |
 
@@ -16,14 +16,14 @@ target repository by hand after a release exists on PyPI.
 python packaging/render.py --version 0.4.8      # release must already be on PyPI
 ```
 
-Output goes to `packaging/build/` (git-ignored): `conda-forge/meta.yaml` and
+Output goes to `packaging/build/` (git-ignored): `conda-forge/recipe.yaml` and
 `homebrew/claimbound-evidence.rb`. Hashes come from the PyPI JSON API; dependency wheels for
 Homebrew come from `uv.lock` of the checked-out commit, so render from the release tag.
 
 ## conda-forge
 
-1. Fork `conda-forge/staged-recipes`, add `recipes/claimbound-evidence/meta.yaml` from the
-   rendered file, open a pull request from the owner's GitHub account.
+1. Fork `conda-forge/staged-recipes`, add `recipes/claimbound-evidence/recipe.yaml` from the
+   rendered file (staged-recipes requires the v1 format; v0 `meta.yaml` is deprecated for new recipes), open a pull request from the owner's GitHub account.
 2. The linter and CI in that pull request are the real test; expect requests to adjust
    `about` fields. After merge, a feedstock is created and updated by a bot on each release.
 3. Add the conda-forge badge to the README only after the feedstock exists.
