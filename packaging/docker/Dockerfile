@@ -1,7 +1,7 @@
 # Card-level ClaimBound CLI in a small image, built from a locally built wheel:
 #   python -m build --wheel && docker build -f packaging/docker/Dockerfile -t claimbound-evidence .
 # Run:  docker run --rm -v "$PWD:/work" claimbound-evidence validate-card card.json
-FROM python:3.12-slim@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f
+FROM python:3.14-slim@sha256:51dafde81dbdb6ebde285137a295cf18a47ca95234fe388a343719cb97305b3d
 
 LABEL org.opencontainers.image.title="claimbound-evidence" \
       org.opencontainers.image.description="Evidence cards for narrow public AI, ML and data claims" \
