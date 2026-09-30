@@ -39,8 +39,8 @@ jobs:
             pytest_args: "-n auto -q"
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
       - run: uv sync --extra dev --python ${{ matrix.python }}
       - name: Lint
         if: matrix.cov_args
@@ -53,14 +53,14 @@ jobs:
         run: uv run --extra dev pytest ${{ matrix.pytest_args }} ${{ matrix.cov_args }} --junitxml=pytest-${{ runner.os }}-py${{ matrix.python }}.xml
       - name: Upload pytest report
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: pytest-${{ runner.os }}-py${{ matrix.python }}
           path: pytest-${{ runner.os }}-py${{ matrix.python }}.xml
           if-no-files-found: error
       - name: Upload coverage report
         if: always() && matrix.cov_args
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: coverage-xml
           path: coverage.xml
