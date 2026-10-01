@@ -11,7 +11,9 @@ Rules:
 - do not add private production integrations or private background technology;
 - do not change a frozen target, scorer, control or acceptance gate after seeing
   a result;
-- record failed or blocked runs honestly.
+- record failed or blocked runs honestly;
+- new behavior comes with a test: add or update a pytest case in `tests/` that fails
+  without your change (the suite runs in CI on every pull request).
 
 ## AI Assistance And Provenance
 
