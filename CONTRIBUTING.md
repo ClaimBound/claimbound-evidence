@@ -34,6 +34,20 @@ When AI assistance is materially used in a contribution:
 For AI provenance log and GitHub audit-log handling, see
 [AI provenance log and audit logs](docs/AI_PROVENANCE_LOG.md).
 
+## Reporting a bug
+
+Open a [Bug Report](https://github.com/ClaimBound/claimbound-evidence/issues/new?template=bug_report.yml)
+for incorrect tool behavior, failing tests or broken reproducibility. Include:
+
+- the output of `claimbound --version` and `claimbound doctor`;
+- the exact command you ran and the card file or `evidence_id` involved;
+- what you expected and what happened instead (paste the error text, never raw payloads);
+- your operating system and Python version.
+
+Other issue forms cover source drift, card-boundary questions, evidence requests and
+reproduction requests: <https://github.com/ClaimBound/claimbound-evidence/issues/new/choose>.
+Do not open a public issue for a suspected vulnerability; follow [SECURITY.md](SECURITY.md).
+
 ## Default branch (`main`)
 
 Repository rules enforce the following:
