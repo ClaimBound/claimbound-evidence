@@ -8,6 +8,7 @@ ClaimBound needs Python 3.12 or newer and works on Windows, macOS and Linux
 ```bash
 pipx install claimbound-evidence        # or: uv tool install claimbound-evidence
                                         # or: pip install claimbound-evidence
+                                        # or: conda install -c conda-forge claimbound-evidence   (pixi add claimbound-evidence)
 claimbound --version
 claimbound doctor
 ```

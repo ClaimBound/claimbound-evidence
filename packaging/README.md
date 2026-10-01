@@ -6,7 +6,7 @@ target repository by hand after a release exists on PyPI.
 
 | Channel | Files | Tested here | Submitted |
 | --- | --- | --- | --- |
-| conda-forge | `conda-forge/recipe.yaml.tmpl` (v1 format) | Package names and versions checked against conda-forge; not built: no conda tooling on the authoring machine; YAML structure and the v1 layout follow the staged-recipes example | no |
+| conda-forge | `conda-forge/recipe.yaml.tmpl` (v1 format) | Package names and versions checked against conda-forge; not built: no conda tooling on the authoring machine; YAML structure and the v1 layout follow the staged-recipes example | yes: merged as staged-recipes#35003, feedstock `conda-forge/claimbound-evidence-feedstock`, `claimbound-evidence 0.4.8` (noarch) published \|
 | Homebrew tap | `homebrew/claimbound-evidence.rb.tmpl` | Ruby syntax; the dependency wheels it lists were downloaded, hash-checked and installed offline into a fresh Python 3.13 environment (macOS arm64). `brew install` itself was not run | no |
 | Docker image | `docker/Dockerfile`, `docker/publish.yml.example` | Not built (Docker daemon was not running) | no |
 
@@ -26,7 +26,7 @@ Homebrew come from `uv.lock` of the checked-out commit, so render from the relea
    rendered file (staged-recipes requires the v1 format; v0 `meta.yaml` is deprecated for new recipes), open a pull request from the owner's GitHub account.
 2. The linter and CI in that pull request are the real test; expect requests to adjust
    `about` fields. After merge, a feedstock is created and updated by a bot on each release.
-3. Add the conda-forge badge to the README only after the feedstock exists.
+3. The feedstock exists (2026-09-30); the badge and the install line are in the README. Updates are opened by the conda-forge bot on each PyPI release; the maintainer merges them.
 
 The recipe is `noarch: python` and depends on `numpy`, `pdfplumber` and `pypdf`, all of which
 exist on conda-forge. The build needs `hatchling` and `hatch-fancy-pypi-readme`.

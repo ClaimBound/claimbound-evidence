@@ -14,6 +14,7 @@
 <p align="center">
   <a href="https://pypi.org/project/claimbound-evidence/"><img alt="PyPI" src="https://img.shields.io/pypi/v/claimbound-evidence?logo=pypi&logoColor=white"></a>
   <a href="https://pypi.org/project/claimbound-evidence/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/claimbound-evidence?logo=python&logoColor=white"></a>
+  <a href="https://anaconda.org/conda-forge/claimbound-evidence"><img alt="conda-forge" src="https://img.shields.io/conda/vn/conda-forge/claimbound-evidence?logo=conda-forge&logoColor=white"></a>
   <a href="https://pypistats.org/packages/claimbound-evidence"><img alt="PyPI downloads per month" src="https://img.shields.io/pypi/dm/claimbound-evidence?label=downloads%2Fmonth"></a>
   <a href="https://pepy.tech/project/claimbound-evidence"><img alt="Total PyPI downloads" src="https://static.pepy.tech/badge/claimbound-evidence"></a>
   <a href="https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml"><img alt="tests" src="https://img.shields.io/github/actions/workflow/status/ClaimBound/claimbound-evidence/tests.yml?branch=main&label=tests&logo=github"></a>
@@ -28,6 +29,7 @@
 
 ```bash
 pipx install claimbound-evidence        # or: uv tool install claimbound-evidence
+                                        # or: conda install -c conda-forge claimbound-evidence
 claimbound validate-card path/to/card.json
 ```
 
