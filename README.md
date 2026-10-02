@@ -15,6 +15,7 @@
   <a href="https://pypi.org/project/claimbound-evidence/"><img alt="PyPI" src="https://img.shields.io/pypi/v/claimbound-evidence?logo=pypi&logoColor=white"></a>
   <a href="https://pypi.org/project/claimbound-evidence/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/claimbound-evidence?logo=python&logoColor=white"></a>
   <a href="https://anaconda.org/conda-forge/claimbound-evidence"><img alt="conda-forge" src="https://img.shields.io/conda/vn/conda-forge/claimbound-evidence?logo=conda-forge&logoColor=white"></a>
+  <a href="https://www.bestpractices.dev/projects/15138"><img alt="OpenSSF Best Practices" src="https://www.bestpractices.dev/projects/15138/badge"></a>
   <a href="https://www.bestpractices.dev/projects/15138"><img alt="OpenSSF Baseline" src="https://www.bestpractices.dev/projects/15138/baseline"></a>
   <a href="https://pypistats.org/packages/claimbound-evidence"><img alt="PyPI downloads per month" src="https://img.shields.io/pypi/dm/claimbound-evidence?label=downloads%2Fmonth"></a>
   <a href="https://pepy.tech/project/claimbound-evidence"><img alt="Total PyPI downloads" src="https://static.pepy.tech/badge/claimbound-evidence"></a>
