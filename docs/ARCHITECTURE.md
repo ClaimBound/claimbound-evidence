@@ -23,7 +23,7 @@ This document describes the released ClaimBound Evidence system as a set of acto
 1. An operator supplies a ClaimBound card, registry entry or supported evidence input.
 2. The ClaimBound CLI reads the declared protocol, source boundary, hashes and result fields.
 3. Validators check the applicable schema, protocol constraints and cross-file relationships.
-4. The CLI reports a validation result; it does not grant certification or make a general quality/safety determination.
+4. The CLI reports a validation result; it does not provide certification or make a general quality/safety determination.
 5. Maintainers may review the resulting change through the normal pull-request process.
 
 ### Repository contribution
