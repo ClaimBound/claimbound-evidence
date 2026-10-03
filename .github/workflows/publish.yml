@@ -31,7 +31,7 @@ jobs:
           sha256sum dist/* > SHA256SUMS
 
       - name: Generate artifact attestations
-        uses: actions/attest@v4
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6 # v4
         with:
           subject-path: |
             dist/*
