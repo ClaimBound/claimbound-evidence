@@ -26,7 +26,7 @@ jobs:
             author="$(git log -1 --format='%an <%ae>' "${sha}")"
             author_email="${author#*<}"
             author_email="${author_email%>}"
-            if ! printf '%s\n' "${body}" | grep -Eq "^Signed-off-by: [^<]+ <${author_email}>$"; then
+            if ! printf '%s\n' "${body}" | awk -v email="<${author_email}>" '$0 ~ /^Signed-off-by:/ && index($0, email) > 0 { found=1 } END { exit !found }'; then
               echo "::error::Commit ${sha} is missing a matching Signed-off-by trailer."
               echo "Author: ${author}"
               status=1
