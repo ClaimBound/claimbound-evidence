@@ -39,6 +39,18 @@
     },
     { "type": "deletion" },
     { "type": "non_fast_forward" },
-    { "type": "required_linear_history" }
+    { "type": "required_linear_history" },
+    {
+      "type": "code_scanning",
+      "parameters": {
+        "code_scanning_tools": [
+          {
+            "tool": "CodeQL",
+            "security_alerts_threshold": "high_or_higher",
+            "alerts_threshold": "errors"
+          }
+        ]
+      }
+    }
   ]
 }
