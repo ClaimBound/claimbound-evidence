@@ -23,6 +23,24 @@ This assessment covers the public ClaimBound Evidence repository, its CLI valida
 | Public vulnerability disclosure before remediation | Low/Medium | Medium/High | SECURITY.md provides private GitHub Security Advisory reporting and response targets | No project can guarantee that all vulnerabilities are privately discovered |
 | Malicious contribution with legal/licensing uncertainty | Low/Medium | Medium | DCO sign-off is required on every PR commit; license and contribution rules are documented | DCO is a contributor certification, not independent proof of authorship |
 
+## Attack surface analysis
+
+The released software is a Python command-line tool and library. It opens no network
+listener, runs no server and has no authentication, user accounts or persistent data store.
+
+| Entry point | Reachable by | Critical code path | Controls |
+| --- | --- | --- | --- |
+| Evidence-card and registry JSON files passed to `claimbound validate-card`, `validate-all`, `inspect` | Whoever supplies a file | JSON parsing and field validation in `evidence_card.py`, `registry.py` | JSON only (no pickle, `eval` or YAML object loading); field checks reject malformed cards; commands do not execute card content |
+| Command-line arguments and paths | The local user | Path handling in `cli.py`, `scaffold.py` | Paths are resolved relative to the working directory; no shell is invoked (`subprocess` is called with an argument list) |
+| Public-source fetchers (`nasa_power_fetch.py`, `noaa_coops_fetch.py`) | The local user running a rerun | HTTPS requests with a timeout to the NASA POWER and NOAA CO-OPS APIs | Fixed API base URLs; responses are parsed as data and stored locally; raw payloads are not committed |
+| Helper scripts started through the CLI | The local user in a repository clone | `_run_script` in `cli.py` | Fixed script names under `scripts/`; arguments passed as a list |
+| GitHub Actions workflows | Pull requests and releases | `publish.yml` (privileged), `pages.yml` | Top-level read-only permissions, job-level minimum privileges, no `pull_request_target`, actions pinned to commit SHAs, hash-locked build tools, OIDC publishing with artifact attestations |
+| Dependencies | Supply chain | `numpy`, `pdfplumber`, `pypdf` | Lock file with hashes, Dependabot, dependency review, see [DEVELOPMENT.md](DEVELOPMENT.md) |
+
+The largest remaining exposure is the input parsing of files supplied by third parties
+(card JSON and the PDF/data files read by the helper scripts) and the release workflow. Both
+are covered by the controls above, by CodeQL and by the tests.
+
 ## Highest-priority risks
 
 1. **Supply-chain integrity:** release build and publication are privileged operations. The release workflow therefore uses constrained permissions, OIDC Trusted Publishing and artifact attestations.
