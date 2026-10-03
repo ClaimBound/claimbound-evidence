@@ -16,19 +16,19 @@ Contributors do not receive direct access to protected release or repository-adm
 
 This file must be updated when another person receives administrative, release, security-advisory, or other sensitive-resource access.
 
-## Granting access
+## Giving access
 
 Collaborators are reviewed before they receive escalated permissions to sensitive resources
 (repository administration, rulesets, workflow configuration, releases, package-registry and
 security-advisory access).
 
 1. A contributor first works only through pull requests from a fork or branch; submitting a
-   pull request never grants access.
+   pull request never gives access.
 2. Before access is escalated, a maintainer reviews the contributor's history in the
    project: accepted contributions, adherence to the [DCO](DCO.md) and the contribution
    rules, and conduct under the [Code of Conduct](CODE_OF_CONDUCT.md).
 3. The person must have two-factor authentication enabled (the organization enforces it).
-4. Access is the minimum the role needs, is granted by an existing maintainer with access to
+4. Access is the minimum the role needs, is given by an existing maintainer with access to
    those resources, and is recorded in the table above in the same change.
 5. Access is removed, and any shared secrets rotated (see the
    [secrets policy](docs/SECRETS_POLICY.md)), when a person no longer needs it.
