@@ -208,8 +208,7 @@ Evidence cards are reusable examples and validation records, not a hosted review
 service, legal advice, or on-demand third-party check queue. The registry stores
 sanitized metadata and hashes, not raw payloads.
 
-See [governance](GOVERNANCE.md), [maintainer boundary](MAINTAINER_BOUNDARY.md) and
-[release process](RELEASE_PROCESS.md).
+See [governance](GOVERNANCE.md), [maintainers](MAINTAINERS.md), [architecture](docs/ARCHITECTURE.md), [security assessment](docs/SECURITY_ASSESSMENT.md), [DCO](DCO.md), [maintainer boundary](MAINTAINER_BOUNDARY.md) and [release process](RELEASE_PROCESS.md).
 
 ## Community
 

@@ -15,7 +15,8 @@ jobs:
     environment: pypi
     permissions:
       id-token: write
-      contents: read
+      contents: write
+      attestations: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
@@ -25,6 +26,22 @@ jobs:
         run: |
           pip install --require-hashes -r .github/requirements/publish.txt
           python -m build --no-isolation
+      - name: Generate SHA-256 release manifest
+        run: |
+          sha256sum dist/* > SHA256SUMS
+
+      - name: Generate artifact attestations
+        uses: actions/attest@v4
+        with:
+          subject-path: |
+            dist/*
+            SHA256SUMS
+
+      - name: Upload release assets and manifest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "${GITHUB_REF_NAME}" dist/* SHA256SUMS --clobber
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2
   publish-test:

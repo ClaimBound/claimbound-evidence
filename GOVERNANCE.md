@@ -54,3 +54,7 @@ This repository does not provide:
 - hosted review services;
 - guaranteed turnaround for third-party checks.
 
+
+## Maintainers And Sensitive Access
+
+The current list of people with administrative, release, security-advisory or other sensitive-resource access is maintained in [MAINTAINERS.md](MAINTAINERS.md). Update that file whenever the access boundary changes.
