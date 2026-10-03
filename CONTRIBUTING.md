@@ -34,6 +34,8 @@ When AI assistance is materially used in a contribution:
 For AI provenance log and GitHub audit-log handling, see
 [AI provenance log and audit logs](docs/AI_PROVENANCE_LOG.md).
 
+Build instructions and the dependency policy are in [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
+
 ## Reporting a bug
 
 Open a [Bug Report](https://github.com/ClaimBound/claimbound-evidence/issues/new?template=bug_report.yml)

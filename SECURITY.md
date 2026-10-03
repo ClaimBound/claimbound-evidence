@@ -10,6 +10,14 @@ ClaimBound Evidence is currently pre-1.0 public research tooling. Security fixes
 | Latest tagged release | Yes |
 | Older releases | No, unless a severe issue affects public users |
 
+## Published vulnerability data
+
+Confirmed vulnerabilities are published, after a fix is available, as GitHub Security
+Advisories (with a CVE identifier when one is assigned) at
+<https://github.com/ClaimBound/claimbound-evidence/security/advisories>. Each advisory
+states the affected and fixed versions, and the fix is also listed in the release notes
+and `CHANGELOG.md`. No vulnerabilities have been confirmed so far.
+
 ## Reporting a Vulnerability
 
 Please report suspected vulnerabilities privately through GitHub Security Advisories:
