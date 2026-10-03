@@ -41,6 +41,22 @@ Use patch releases for documentation, validator and card fixes that do not
 change public semantics. Use minor releases when schemas, workflow rules,
 registry structure or status interpretation materially change.
 
+## Release integrity and verification
+
+Official releases produce a `SHA256SUMS` manifest covering every build artifact and
+generate GitHub artifact attestations using Sigstore. The manifest and release artifacts
+are uploaded to the corresponding GitHub Release.
+
+To verify an artifact locally, compare its SHA-256 digest with `SHA256SUMS`. To verify
+the build attestation, use GitHub CLI:
+
+```bash
+gh attestation verify PATH/TO/ARTIFACT \
+  -R ClaimBound/claimbound-evidence
+```
+
+The attestation links the artifact to the repository and workflow that produced it.
+
 ## After Release
 
 - Sync `pyproject.toml`, `specs/repo_version.yaml`, `docs/assets/badge_release.svg`
