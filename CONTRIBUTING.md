@@ -83,3 +83,7 @@ uv run claimbound doctor
 uv run claimbound validate-all
 uv run pytest -n auto
 ```
+
+## Developer Certificate of Origin
+
+ClaimBound requires every commit submitted through a pull request to carry a matching `Signed-off-by:` trailer under the [Developer Certificate of Origin](DCO.md). Use `git commit -s` when creating commits. The `DCO` GitHub Actions check rejects pull requests with a missing or mismatched sign-off.
