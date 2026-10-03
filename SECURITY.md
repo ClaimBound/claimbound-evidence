@@ -10,6 +10,16 @@ ClaimBound Evidence is currently pre-1.0 public research tooling. Security fixes
 | Latest tagged release | Yes |
 | Older releases | No, unless a severe issue affects public users |
 
+### Scope and duration of support
+
+- **Scope:** security fixes are made on `main` and released as the next tagged release.
+- **Duration:** a tagged release is supported until the next tagged release is published.
+  The project is pre-1.0 and has no long-term-support branch.
+- **End of security updates:** once a newer release exists, older releases receive no further
+  security updates. A severe issue that affects public users of an older release may be
+  backported at the maintainer's discretion; the advisory then names the fixed versions. Users
+  of older releases should upgrade to the latest release.
+
 ## Published vulnerability data
 
 Confirmed vulnerabilities are published, after a fix is available, as GitHub Security
@@ -78,3 +88,9 @@ GitHub Security Advisories:
 - Dependabot proposes dependency and GitHub Actions updates weekly.
 - [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/ClaimBound/claimbound-evidence)
   results for this repository are published by the `scorecard` workflow.
+
+## Related policies
+
+- [Secrets and credentials policy](docs/SECRETS_POLICY.md)
+- [Dependency and code-scanning policy](docs/VULNERABILITY_POLICY.md)
+- [Security assessment and threat model](docs/SECURITY_ASSESSMENT.md)
