@@ -19,13 +19,20 @@ jobs:
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_USER: ${{ github.event.pull_request.user.login }}
         run: |
+          dependabot_email="49699333+dependabot[bot]@users.noreply.github.com"
           status=0
           for sha in $(git log --format=%H "${BASE_SHA}..${HEAD_SHA}"); do
             body="$(git log -1 --format=%B "${sha}")"
             author="$(git log -1 --format='%an <%ae>' "${sha}")"
             author_email="${author#*<}"
             author_email="${author_email%>}"
+            # Dependabot cannot sign off; exempt only its own commits in PRs it opened.
+            if [ "${PR_USER}" = "dependabot[bot]" ] && [ "${author_email}" = "${dependabot_email}" ]; then
+              echo "Commit ${sha} is a Dependabot commit; DCO sign-off not applicable."
+              continue
+            fi
             if ! printf '%s\n' "${body}" | awk -v email="<${author_email}>" '$0 ~ /^Signed-off-by:/ && index($0, email) > 0 { found=1 } END { exit !found }'; then
               echo "::error::Commit ${sha} is missing a matching Signed-off-by trailer."
               echo "Author: ${author}"
