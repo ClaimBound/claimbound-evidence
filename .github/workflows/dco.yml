@@ -33,6 +33,16 @@ jobs:
               echo "Commit ${sha} is a Dependabot commit; DCO sign-off not applicable."
               continue
             fi
+            # "Update branch" on a Dependabot PR adds a merge commit of the base branch,
+            # which GitHub creates without a sign-off. Exempt only such a merge: a merge
+            # commit in a Dependabot PR whose second parent is already part of the base.
+            parents="$(git log -1 --format=%P "${sha}")"
+            second_parent="$(printf '%s\n' "${parents}" | awk 'NF == 2 { print $2 }')"
+            if [ "${PR_USER}" = "dependabot[bot]" ] && [ -n "${second_parent}" ] \
+              && git merge-base --is-ancestor "${second_parent}" "${BASE_SHA}"; then
+              echo "Commit ${sha} merges the base branch into a Dependabot PR; DCO sign-off not applicable."
+              continue
+            fi
             if ! printf '%s\n' "${body}" | awk -v email="<${author_email}>" '$0 ~ /^Signed-off-by:/ && index($0, email) > 0 { found=1 } END { exit !found }'; then
               echo "::error::Commit ${sha} is missing a matching Signed-off-by trailer."
               echo "Author: ${author}"
