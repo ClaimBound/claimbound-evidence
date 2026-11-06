@@ -29,7 +29,14 @@ from claimbound_evidence.family_ledger import (
     validate_family_ledger,
 )
 from claimbound_evidence.registry import load_registry, validate_registry
-from claimbound_evidence.run_root import RunRootRequest, prepare_run_root
+from claimbound_evidence.rerun_report import build_report, load_hash_map
+from claimbound_evidence.run_root import (
+    RunRootRequest,
+    add_deviation,
+    list_deviations,
+    prepare_run_root,
+    record_rights_answer,
+)
 from claimbound_evidence.verify_packs import VERIFY_PACKS, run_verify_pack
 from claimbound_evidence.workflows import drift_eea_source_audit, rerun_nasa_d103, rerun_noaa_d131
 from claimbound_evidence.scaffold import ScaffoldRequest, build_scaffold
@@ -99,6 +106,11 @@ def build_parser() -> argparse.ArgumentParser:
     new_parser.add_argument("--out", type=Path)
     new_parser.add_argument("--source-name", default="Public source under review")
     new_parser.add_argument("--audience", default="public evidence operators")
+    new_parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="List the files that would be created and write nothing.",
+    )
     new_parser.set_defaults(func=_cmd_new)
 
     demo_parser = subparsers.add_parser(
@@ -187,8 +199,8 @@ def build_parser() -> argparse.ArgumentParser:
         "run-root",
         description="Create a local-only run root with standard raw/log/hash/report folders.",
     )
-    run_root_parser.add_argument("--protocol-id", required=True)
-    run_root_parser.add_argument("--source-url", required=True)
+    run_root_parser.add_argument("--protocol-id")
+    run_root_parser.add_argument("--source-url")
     run_root_parser.add_argument("--operator", default="local operator")
     run_root_parser.add_argument(
         "--root",
@@ -197,6 +209,22 @@ def build_parser() -> argparse.ArgumentParser:
         help="Local-only parent directory. Defaults to ~/claimbound_runs.",
     )
     run_root_parser.set_defaults(func=_cmd_run_root)
+    rr_sub = run_root_parser.add_subparsers(dest="run_root_cmd")
+    dev_sub = rr_sub.add_parser("deviation").add_subparsers(dest="dev_cmd", required=True)
+    dev_add = dev_sub.add_parser("add")
+    dev_add.add_argument("--run-dir", type=Path, required=True)
+    for field in ("step", "planned", "happened", "reason", "who"):
+        dev_add.add_argument(f"--{field}", required=True)
+    dev_add.set_defaults(func=_cmd_deviation_add)
+    dev_list = dev_sub.add_parser("list")
+    dev_list.add_argument("--run-dir", type=Path, required=True)
+    dev_list.set_defaults(func=_cmd_deviation_list)
+    rights_sub = rr_sub.add_parser("rights").add_subparsers(dest="rights_cmd", required=True)
+    rights_answer = rights_sub.add_parser("answer")
+    rights_answer.add_argument("--run-dir", type=Path, required=True)
+    for field in ("question-id", "answer", "who"):
+        rights_answer.add_argument(f"--{field}", required=True)
+    rights_answer.set_defaults(func=_cmd_rights_answer)
 
     doctor_parser = subparsers.add_parser(
         "doctor",
@@ -269,6 +297,20 @@ def build_parser() -> argparse.ArgumentParser:
         sub.add_argument("--baseline", type=Path)
         sub.set_defaults(func=handler)
 
+    rerun_report = rerun_sub.add_parser(
+        "report",
+        description="Compare original vs rerun hashes; never modifies a card or claim.",
+    )
+    rerun_report.add_argument("--original", type=Path, required=True)
+    rerun_report.add_argument("--rerun", type=Path, required=True)
+    rerun_report.add_argument(
+        "--outcome", choices=("matches", "differs", "unknown"), default="unknown"
+    )
+    rerun_report.add_argument("--blocked", action="store_true")
+    rerun_report.add_argument("--note", default="")
+    rerun_report.add_argument("--out", type=Path)
+    rerun_report.set_defaults(func=_cmd_rerun_report)
+
     drift_parser = subparsers.add_parser(
         "drift",
         description="Compare fresh public-source probes against frozen baselines.",
@@ -278,6 +320,18 @@ def build_parser() -> argparse.ArgumentParser:
     eea_drift.add_argument("--baseline", type=Path)
     eea_drift.add_argument("--report", type=Path)
     eea_drift.set_defaults(func=_cmd_drift_eea)
+
+    probe_parser = subparsers.add_parser(
+        "probe",
+        description="SourceProbe v1: metadata-only probe of one public URL (no legal conclusion).",
+    )
+    probe_parser.add_argument("url")
+    probe_parser.add_argument(
+        "--marker", action="append", default=[], help="Case-sensitive text to look for."
+    )
+    probe_parser.add_argument("--out", type=Path, help="Write the JSON probe artifact here.")
+    probe_parser.add_argument("--json", action="store_true", help="Print the JSON artifact.")
+    probe_parser.set_defaults(func=_cmd_probe)
 
     verify_parser = subparsers.add_parser(
         "verify",
@@ -333,7 +387,13 @@ def _cmd_new(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
         source_name=args.source_name,
         audience=args.audience,
     )
-    paths = build_scaffold(request, REPO_ROOT)
+    try:
+        paths = build_scaffold(request, REPO_ROOT, dry_run=args.dry_run)
+    except (ValueError, FileExistsError) as exc:
+        print(f"claimbound new: {exc}", file=sys.stderr)
+        return 2
+    if args.dry_run:
+        print("dry-run: nothing written; would create:")
     for path in paths:
         print(_display_path(path))
     return 0
@@ -529,6 +589,26 @@ def _cmd_hash(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
     return 0
 
 
+def _cmd_probe(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    from claimbound_evidence.source_probe import probe_url
+
+    try:
+        result = probe_url(args.url, args.marker)
+    except ValueError as exc:
+        print(f"probe error: {exc}", file=sys.stderr)
+        return 2
+    text = json.dumps(result, indent=2, sort_keys=True) + "\n"
+    if args.out is not None:
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(text, encoding="utf-8")
+    if args.json or args.out is None:
+        print(text, end="")
+    else:
+        print(f"{result['recommendation']} http_status={result['http_status']} -> {args.out}")
+    return 0
+
+
 def _cmd_validate_card(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
     del parser
     path = _resolve_repo_path(args.path)
@@ -585,8 +665,57 @@ def _cmd_doctor(args: argparse.Namespace, parser: argparse.ArgumentParser) -> in
     return 0 if report.ok else 1
 
 
+def _cmd_deviation_add(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    try:
+        entry = add_deviation(
+            args.run_dir, step=args.step, planned=args.planned,
+            happened=args.happened, reason=args.reason, who=args.who,
+        )
+    except ValueError as exc:
+        parser.error(str(exc))
+    print(json.dumps(entry, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
+def _cmd_deviation_list(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    try:
+        entries = list_deviations(args.run_dir)
+    except ValueError as exc:
+        parser.error(str(exc))
+    for entry in entries:
+        print(json.dumps(entry, ensure_ascii=False, sort_keys=True))
+    print(f"deviations={len(entries)}")
+    return 0
+
+
+def _cmd_rights_answer(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    try:
+        entry = record_rights_answer(args.run_dir, args.question_id, args.answer, args.who)
+    except ValueError as exc:
+        parser.error(str(exc))
+    print(json.dumps(entry, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
+def _cmd_rerun_report(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    outcome = {"matches": True, "differs": False, "unknown": None}[args.outcome]
+    try:
+        report = build_report(
+            load_hash_map(args.original), load_hash_map(args.rerun),
+            outcome_matches=outcome, blocked=args.blocked, operator_note=args.note,
+        )
+    except (ValueError, OSError) as exc:
+        parser.error(str(exc))
+    text = json.dumps(report, indent=2, sort_keys=True)
+    if args.out:
+        args.out.write_text(text + "\n", encoding="utf-8")
+    print(text)
+    return 0
+
+
 def _cmd_run_root(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
-    del parser
+    if not args.protocol_id or not args.source_url:
+        parser.error("--protocol-id and --source-url are required to create a run root")
     paths = prepare_run_root(
         RunRootRequest(
             protocol_id=args.protocol_id,

@@ -15,6 +15,9 @@ raw-data archive.
 
 ## Public Work Plan
 
+Status (2026-11-06): phases 2-7 shipped in 0.5.0 (see [PLANNED_NOT_SHIPPED](PLANNED_NOT_SHIPPED.md)); phase 8 (new cards)
+and the external-rerun part of phase 7 remain open.
+
 This plan describes the current public implementation path: harden an existing
 prototype into reusable evidence-card infrastructure.
 

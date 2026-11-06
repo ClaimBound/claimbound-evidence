@@ -20,6 +20,7 @@ Create a draft track scaffold. Prompts interactively when run in a terminal.
 - `--out OUT`
 - `--source-name SOURCE_NAME` (default: `Public source under review`)
 - `--audience AUDIENCE` (default: `public evidence operators`)
+- `--dry-run` — List the files that would be created and write nothing.
 
 ## `claimbound demo`
 
@@ -67,10 +68,34 @@ Validate one protocol v3 R&D tree overlay JSON file.
 
 Create a local-only run root with standard raw/log/hash/report folders.
 
-- `--protocol-id PROTOCOL_ID` (required)
-- `--source-url SOURCE_URL` (required)
+- `--protocol-id PROTOCOL_ID`
+- `--source-url SOURCE_URL`
 - `--operator OPERATOR` (default: `local operator`)
 - `--root ROOT` — Local-only parent directory. Defaults to ~/claimbound_runs. (default: `~/claimbound_runs`)
+
+### `claimbound run-root deviation`
+
+#### `claimbound run-root deviation add`
+
+- `--run-dir RUN_DIR` (required)
+- `--step STEP` (required)
+- `--planned PLANNED` (required)
+- `--happened HAPPENED` (required)
+- `--reason REASON` (required)
+- `--who WHO` (required)
+
+#### `claimbound run-root deviation list`
+
+- `--run-dir RUN_DIR` (required)
+
+### `claimbound run-root rights`
+
+#### `claimbound run-root rights answer`
+
+- `--run-dir RUN_DIR` (required)
+- `--question-id QUESTION_ID` (required)
+- `--answer ANSWER` (required)
+- `--who WHO` (required)
 
 ## `claimbound doctor`
 
@@ -128,6 +153,17 @@ Run frozen public-data reruns with cross-platform commands.
 - `--run-dir RUN_DIR`
 - `--baseline BASELINE`
 
+### `claimbound rerun report`
+
+Compare original vs rerun hashes; never modifies a card or claim.
+
+- `--original ORIGINAL` (required)
+- `--rerun RERUN` (required)
+- `--outcome OUTCOME` (choices: `matches`, `differs`, `unknown`; default: `unknown`)
+- `--blocked`
+- `--note NOTE` (default: ``)
+- `--out OUT`
+
 ## `claimbound drift`
 
 **Needs a clone** of the repository.
@@ -138,6 +174,15 @@ Compare fresh public-source probes against frozen baselines.
 
 - `--baseline BASELINE`
 - `--report REPORT`
+
+## `claimbound probe`
+
+SourceProbe v1: metadata-only probe of one public URL (no legal conclusion).
+
+- `url`
+- `--marker MARKER` — Case-sensitive text to look for.
+- `--out OUT` — Write the JSON probe artifact here.
+- `--json` — Print the JSON artifact.
 
 ## `claimbound verify`
 
