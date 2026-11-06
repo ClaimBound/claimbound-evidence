@@ -28,4 +28,4 @@ Signed-off-by: Your Name <your-email@example.com>
 
 Pull requests include an automated DCO status check. Commits without a valid sign-off cannot satisfy the DCO check.
 
-Exception: commits authored by Dependabot (`49699333+dependabot[bot]@users.noreply.github.com`) in pull requests opened by `dependabot[bot]` are exempt, because an automated dependency bot cannot certify the DCO. Any other commit pushed to such a pull request still needs a sign-off. Dependency updates are reviewed by the maintainer before merge.
+Exception: commits authored by Dependabot (`49699333+dependabot[bot]@users.noreply.github.com`) in pull requests opened by `dependabot[bot]` are exempt, because an automated dependency bot cannot certify the DCO. The merge commit that GitHub's "Update branch" button adds to such a pull request (a merge of the base branch only) is exempt as well, because GitHub creates it without a sign-off. Any other commit pushed to such a pull request still needs a sign-off. Dependency updates are reviewed by the maintainer before merge.
