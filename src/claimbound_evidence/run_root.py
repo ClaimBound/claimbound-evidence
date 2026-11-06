@@ -3,12 +3,26 @@
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 
 
 RUN_ROOT_SUBDIRS = ("raw", "logs", "hashes", "reports", "transcripts")
+DEVIATION_JSONL = "deviations.jsonl"
+SOURCE_RIGHTS_FILE = "SOURCE_RIGHTS_CHECKLIST.md"
+SOURCE_RIGHTS_ANSWERS = "source_rights_answers.jsonl"
+DEVIATION_FIELDS = ("timestamp", "step", "planned", "happened", "reason", "who")
+
+SOURCE_RIGHTS_QUESTIONS: tuple[tuple[str, str], ...] = (
+    ("terms", "Did you read the source's terms of use or license? What do they say about automated access and reuse?"),
+    ("robots", "What does the source's robots.txt (or equivalent access policy) say about the paths you fetch?"),
+    ("attribution", "What attribution does the source require, if any?"),
+    ("redistribution", "What does the source say about redistributing raw bytes or derived hashes?"),
+    ("rate_limits", "Are there published rate limits or API key conditions, and did the run respect them?"),
+    ("personal_data", "Does the payload contain personal or sensitive data that must stay local?"),
+)
 
 
 @dataclass(frozen=True)
@@ -43,6 +57,14 @@ def prepare_run_root(request: RunRootRequest) -> list[Path]:
     deviation_path = run_dir / "DEVIATIONS.md"
     deviation_path.write_text(_render_deviation_log(protocol_id), encoding="utf-8")
     created.append(deviation_path)
+
+    jsonl_path = run_dir / DEVIATION_JSONL
+    jsonl_path.touch()
+    created.append(jsonl_path)
+
+    rights_path = run_dir / SOURCE_RIGHTS_FILE
+    rights_path.write_text(_render_source_rights(protocol_id), encoding="utf-8")
+    created.append(rights_path)
 
     manifest_path = run_dir / "LOCAL_MANIFEST.md"
     manifest_path.write_text(_render_local_manifest(protocol_id), encoding="utf-8")
@@ -128,3 +150,94 @@ listed here unless the public data policy explicitly allows it.
 | Local path | SHA-256 or blocked reason | Public replacement |
 | --- | --- | --- |
 """
+
+
+def _render_source_rights(protocol_id: str) -> str:
+    lines = [
+        f"# Source Rights Checklist: {protocol_id}",
+        "",
+        "Operator questionnaire. Record what you observed in the source's own",
+        "words. This file records operator answers only; it is not a legal",
+        "conclusion and does not assert that any use is permitted.",
+        "",
+        "Record answers with `claimbound run-root rights answer` (append-only",
+        f"`{SOURCE_RIGHTS_ANSWERS}`).",
+        "",
+    ]
+    for qid, question in SOURCE_RIGHTS_QUESTIONS:
+        lines += [f"## {qid}", "", question, "", "- Operator answer: _unanswered_", ""]
+    return "\n".join(lines)
+
+
+def record_rights_answer(run_dir: Path, question_id: str, answer: str, who: str) -> dict[str, str]:
+    """Append an operator answer to the source-rights answers log."""
+
+    if question_id not in {qid for qid, _ in SOURCE_RIGHTS_QUESTIONS}:
+        raise ValueError(f"unknown question id: {question_id}")
+    entry = {
+        "timestamp": _now(),
+        "question_id": question_id,
+        "answer": _required(answer, "answer"),
+        "who": _required(who, "who"),
+    }
+    _append_jsonl(_existing_run_dir(run_dir) / SOURCE_RIGHTS_ANSWERS, entry)
+    return entry
+
+
+def add_deviation(
+    run_dir: Path, *, step: str, planned: str, happened: str, reason: str, who: str
+) -> dict[str, str]:
+    """Append one deviation entry to the run root's append-only JSONL log."""
+
+    entry = {
+        "timestamp": _now(),
+        "step": _required(step, "step"),
+        "planned": _required(planned, "planned"),
+        "happened": _required(happened, "happened"),
+        "reason": _required(reason, "reason"),
+        "who": _required(who, "who"),
+    }
+    _append_jsonl(_existing_run_dir(run_dir) / DEVIATION_JSONL, entry)
+    return entry
+
+
+def list_deviations(run_dir: Path) -> list[dict[str, str]]:
+    """Read and validate every deviation entry; raises ValueError on bad lines."""
+
+    path = _existing_run_dir(run_dir) / DEVIATION_JSONL
+    if not path.exists():
+        return []
+    entries: list[dict[str, str]] = []
+    for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        if not line.strip():
+            continue
+        try:
+            entry = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"{DEVIATION_JSONL}:{number}: invalid JSON") from exc
+        if not isinstance(entry, dict) or set(entry) != set(DEVIATION_FIELDS):
+            raise ValueError(f"{DEVIATION_JSONL}:{number}: fields must be {list(DEVIATION_FIELDS)}")
+        entries.append(entry)
+    return entries
+
+
+def _now() -> str:
+    return datetime.now(UTC).replace(microsecond=0).isoformat()
+
+
+def _required(value: str, name: str) -> str:
+    value = value.strip()
+    if not value:
+        raise ValueError(f"{name} must not be empty")
+    return value
+
+
+def _existing_run_dir(run_dir: Path) -> Path:
+    if not run_dir.is_dir():
+        raise ValueError(f"run root does not exist: {run_dir}")
+    return run_dir
+
+
+def _append_jsonl(path: Path, entry: dict[str, str]) -> None:
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(entry, ensure_ascii=False, sort_keys=True) + "\n")

@@ -1,7 +1,7 @@
 # SourceProbe v1 Acceptance Criteria
 
-Status: **design document only — not shipped.** This is not an implementation or
-evidence record. See [Planned work not shipped](PLANNED_NOT_SHIPPED.md).
+Status: **implemented in 0.5.0** (see [SOURCE_PROBE.md](SOURCE_PROBE.md)). These criteria remain the
+acceptance contract. A probe artifact is metadata, never an evidence card.
 
 ## Purpose
 

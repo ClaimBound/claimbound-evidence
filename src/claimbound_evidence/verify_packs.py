@@ -47,14 +47,14 @@ def verify_source_probe_spec(repo_root: Path) -> list[VerifyCheck]:
     return [
         VerifyCheck("doc_exists", doc.is_file(), str(doc)),
         VerifyCheck(
-            "doc_marked_design_only",
-            "design document only" in text.lower(),
-            "expects 'design document only' in status line",
+            "doc_marked_implemented",
+            "status: **implemented" in text.lower(),
+            "expects an 'implemented' status line",
         ),
         VerifyCheck(
-            "probe_script_absent",
-            not script.exists(),
-            "scripts/claimbound_source_probe.py must not exist yet",
+            "probe_script_present",
+            script.is_file(),
+            "scripts/claimbound_source_probe.py must exist",
         ),
         VerifyCheck(
             "no_passed_by_itself",
@@ -72,19 +72,19 @@ def verify_static_registry_spec(repo_root: Path) -> list[VerifyCheck]:
     return [
         VerifyCheck("doc_exists", doc.is_file(), str(doc)),
         VerifyCheck(
-            "doc_marked_design_only",
-            "design document only" in text.lower(),
-            "expects 'design document only' in status line",
+            "doc_names_generator",
+            "claimbound_build_registry_view.py" in text,
+            "spec must name the generator script",
         ),
         VerifyCheck(
-            "registry_view_script_absent",
-            not script.exists(),
-            "scripts/claimbound_build_registry_view.py must not exist yet",
+            "registry_view_script_present",
+            script.is_file(),
+            "scripts/claimbound_build_registry_view.py must exist",
         ),
         VerifyCheck(
-            "registry_views_absent",
-            not views.exists(),
-            "docs/registry/views must not exist yet",
+            "registry_views_present",
+            (views / "index.html").is_file() and (views / "index.md").is_file(),
+            "docs/registry/views/index.{html,md} must exist",
         ),
     ]
 

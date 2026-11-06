@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from collections import Counter
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -25,13 +26,27 @@ def _build_parser() -> argparse.ArgumentParser:
         nargs="?",
         type=Path,
     )
+    parser.add_argument(
+        "--show-warnings",
+        action="store_true",
+        help="print every non-fatal hardening warning (default: counts only)",
+    )
     return parser
 
 
 def main() -> int:
     args = _build_parser().parse_args()
     registry = load_registry(args.registry)
-    violations = validate_registry(registry, REPO_ROOT)
+    warnings: list[str] = []
+    violations = validate_registry(registry, REPO_ROOT, warnings)
+    if warnings:
+        kinds = Counter(w.split(": ", 1)[-1] for w in warnings)
+        print(f"hardening_warnings={len(warnings)}", file=sys.stderr)
+        for kind, count in sorted(kinds.items()):
+            print(f"warning_kind[{count}]: {kind}", file=sys.stderr)
+        if args.show_warnings:
+            for warning in warnings:
+                print(f"warning: {warning}", file=sys.stderr)
     if violations:
         for violation in violations:
             print(f"violation: {violation}", file=sys.stderr)

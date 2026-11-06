@@ -90,8 +90,10 @@ def _render_card(values: dict[str, Any]) -> str:
         (
             f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" '
             f'viewBox="0 0 {WIDTH} {HEIGHT}" role="img" '
-            'aria-label="ClaimBound Evidence Card">'
+            'aria-labelledby="cb-title cb-desc">'
         ),
+        f'  <title id="cb-title">{_e(_accessible_title(values))}</title>',
+        f'  <desc id="cb-desc">{_e(_accessible_description(values))}</desc>',
         *gradient_defs(),
         f'  <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" fill="#eef3f8"/>',
         f'  <rect x="44" y="44" width="{WIDTH - 88}" height="{HEIGHT - 88}" rx="34" fill="#ffffff" stroke="#cfd7e3" stroke-width="3"/>',
@@ -119,6 +121,20 @@ def _render_card(values: dict[str, Any]) -> str:
     out.extend(_wide_note(70, 938, 1860, "Claim boundary", values["claim_boundary"], values["known_limitations"]))
     out.append("</svg>")
     return "\n".join(out) + "\n"
+
+
+def _accessible_title(values: dict[str, Any]) -> str:
+    return f"ClaimBound Evidence Card {values['evidence_id'] or 'unidentified'}"
+
+
+def _accessible_description(values: dict[str, Any]) -> str:
+    parts = [
+        f"Result status: {values['result_status'] or 'n/a'}.",
+        f"Reproduction: {values['reproduction_level'] or 'n/a'}.",
+        f"Allowed narrow claim: {values['allowed_claim_sentence'] or 'n/a'}.",
+        f"Claim boundary: {values['claim_boundary'] or 'n/a'}",
+    ]
+    return " ".join(" ".join(part.split()) for part in parts)
 
 
 def _chip(x: int, y: int, w: int, label: str, value: str, gradient_id: str) -> list[str]:

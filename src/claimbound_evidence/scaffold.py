@@ -4,10 +4,17 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from urllib.parse import urlparse
+
+
+_PROTOCOL_ID_RE = re.compile(r"^[A-Z0-9][A-Z0-9_]{2,63}$")
+_RAW_PROTOCOL_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_ -]{2,63}$")
+_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+_GRAY_BANNER = "STATUS: GRAY DRAFT / NOT_EVIDENCE. Prepared workspace only; no result is claimed."
 
 
 @dataclass(frozen=True)
@@ -20,36 +27,96 @@ class ScaffoldRequest:
     out_dir: Path
     source_name: str
     audience: str
+    # Optional fixed date (YYYY-MM-DD) for deterministic output; defaults to today (UTC).
+    created_at: str | None = None
 
 
-def build_scaffold(request: ScaffoldRequest, repo_root: Path) -> list[Path]:
-    """Create a draft protocol/playbook/checklist/card scaffold.
+def validate_request(request: ScaffoldRequest) -> str:
+    """Validate scaffold inputs and return the normalized protocol id."""
+
+    parsed = urlparse(request.source_url.strip())
+    if parsed.scheme not in ("http", "https") or not parsed.netloc:
+        raise ValueError("source_url must be an http or https URL with a host")
+    if request.source_url != request.source_url.strip() or any(c.isspace() for c in request.source_url):
+        raise ValueError("source_url must not contain whitespace")
+    if not _RAW_PROTOCOL_ID_RE.match(request.protocol_id.strip()):
+        raise ValueError("protocol_id must be 3-64 characters of letters, digits, '_', '-' or space")
+    protocol_id = _normalize_protocol_id(request.protocol_id)
+    if not _PROTOCOL_ID_RE.match(protocol_id):
+        raise ValueError("protocol_id must normalize to [A-Z0-9_], 3-64 characters")
+    for name in ("domain", "track_type", "source_name", "audience"):
+        if not getattr(request, name).strip():
+            raise ValueError(f"{name} must not be empty")
+    if request.created_at is not None and not _DATE_RE.match(request.created_at):
+        raise ValueError("created_at must be YYYY-MM-DD")
+    return protocol_id
+
+
+def plan_scaffold(request: ScaffoldRequest, repo_root: Path) -> list[Path]:
+    """Return the files a scaffold would create, in deterministic order. Writes nothing."""
+
+    protocol_id = validate_request(request)
+    slug = protocol_id.lower()
+    out = request.out_dir
+    return [
+        repo_root / "docs" / "protocols" / f"{protocol_id}_PREREG_CHARTER.md",
+        repo_root / "docs" / "evidence_requests" / f"{protocol_id}_REQUEST.md",
+        out / f"{protocol_id}_PLAYBOOK.md",
+        out / f"{protocol_id}_CHECKLIST.md",
+        out / f"{protocol_id}_OPERATOR_DECLARATION.md",
+        repo_root / "docs" / "evidence_card_drafts" / f"CLAIMBOUND-{protocol_id}-DRAFT.json",
+        repo_root / "docs" / "registry_patch_drafts" / f"{protocol_id}_REGISTRY_PATCH.json",
+        repo_root / "docs" / "track_families" / f"{protocol_id}_FAMILY_LEDGER.json",
+        repo_root / "docs" / "track_families" / f"{protocol_id}_TREE.json",
+        repo_root / "artifacts" / f"{slug}_source_probe_summary.json",
+    ]
+
+
+def _check_paths(paths: list[Path], repo_root: Path, out_dir: Path) -> None:
+    roots = [repo_root.resolve(), out_dir.resolve()]
+    for path in paths:
+        resolved = path.resolve()
+        if not any(resolved.is_relative_to(root) for root in roots):
+            raise ValueError(f"refusing to write outside the repository root or --out: {path}")
+        if path.is_symlink():
+            raise ValueError(f"refusing to write through a symlink: {path}")
+    existing = [str(p) for p in paths if p.exists()]
+    if existing:
+        raise FileExistsError("refusing to overwrite existing files: " + ", ".join(existing))
+
+
+def build_scaffold(request: ScaffoldRequest, repo_root: Path, *, dry_run: bool = False) -> list[Path]:
+    """Create a draft request/protocol/playbook/checklist/declaration/card/patch scaffold.
 
     The scaffold deliberately does not create a result status. A draft track is
     not evidence until an operator executes it and validates a completed card.
+    Existing files are never overwritten and nothing is written outside
+    ``repo_root`` or ``request.out_dir``. With ``dry_run`` only the planned
+    paths are returned.
     """
 
-    created_at = datetime.now(UTC).date().isoformat()
-    protocol_id = _normalize_protocol_id(request.protocol_id)
-    slug = protocol_id.lower()
+    created_at = request.created_at or datetime.now(UTC).date().isoformat()
+    protocol_id = validate_request(request)
+    paths = plan_scaffold(request, repo_root)
+    if dry_run:
+        return paths
+    _check_paths(paths, repo_root, request.out_dir)
 
-    protocol_path = repo_root / "docs" / "protocols" / f"{protocol_id}_PREREG_CHARTER.md"
-    request_path = repo_root / "docs" / "evidence_requests" / f"{protocol_id}_REQUEST.md"
-    playbook_path = request.out_dir / f"{protocol_id}_PLAYBOOK.md"
-    checklist_path = request.out_dir / f"{protocol_id}_CHECKLIST.md"
-    declaration_path = request.out_dir / f"{protocol_id}_OPERATOR_DECLARATION.md"
-    draft_card_path = repo_root / "docs" / "evidence_card_drafts" / f"CLAIMBOUND-{protocol_id}-DRAFT.json"
-    family_ledger_path = repo_root / "docs" / "track_families" / f"{protocol_id}_FAMILY_LEDGER.json"
-    tree_overlay_path = repo_root / "docs" / "track_families" / f"{protocol_id}_TREE.json"
-    source_probe_path = repo_root / "artifacts" / f"{slug}_source_probe_summary.json"
+    (
+        protocol_path,
+        request_path,
+        playbook_path,
+        checklist_path,
+        declaration_path,
+        draft_card_path,
+        patch_path,
+        family_ledger_path,
+        tree_overlay_path,
+        source_probe_path,
+    ) = paths
 
-    request.out_dir.mkdir(parents=True, exist_ok=True)
-    request_path.parent.mkdir(parents=True, exist_ok=True)
-    protocol_path.parent.mkdir(parents=True, exist_ok=True)
-    draft_card_path.parent.mkdir(parents=True, exist_ok=True)
-    family_ledger_path.parent.mkdir(parents=True, exist_ok=True)
-    tree_overlay_path.parent.mkdir(parents=True, exist_ok=True)
-    source_probe_path.parent.mkdir(parents=True, exist_ok=True)
+    for path in paths:
+        path.parent.mkdir(parents=True, exist_ok=True)
 
     _write_text(request_path, _render_request(request, protocol_id))
     _write_text(protocol_path, _render_protocol(request, protocol_id, created_at))
@@ -57,21 +124,29 @@ def build_scaffold(request: ScaffoldRequest, repo_root: Path) -> list[Path]:
     _write_text(checklist_path, _render_checklist(request, protocol_id))
     _write_text(declaration_path, _render_operator_declaration(protocol_id))
     _write_json(draft_card_path, _render_draft_card(request, protocol_id, created_at))
+    _write_json(patch_path, _render_registry_patch(protocol_id))
     _write_json(family_ledger_path, _render_family_ledger(request, protocol_id))
     _write_json(tree_overlay_path, _render_tree_overlay(request, protocol_id))
     _write_json(source_probe_path, _render_source_probe(request, protocol_id, created_at))
 
-    return [
-        protocol_path,
-        request_path,
-        playbook_path,
-        checklist_path,
-        declaration_path,
-        draft_card_path,
-        family_ledger_path,
-        tree_overlay_path,
-        source_probe_path,
-    ]
+    return paths
+
+
+def _render_registry_patch(protocol_id: str) -> dict[str, object]:
+    return {
+        "patch_status": "GRAY_DRAFT_NOT_EVIDENCE",
+        "gray_marker": _GRAY_BANNER,
+        "target_registry": "docs/registry/evidence_index.json",
+        "protocol_id": protocol_id,
+        "evidence_id": f"CLAIMBOUND-{protocol_id}-DRAFT",
+        "apply_only_after": [
+            "protocol frozen before outcome inspection",
+            "completed evidence card validates",
+            "owner approval",
+        ],
+        "entry": "NOT_CREATED_YET",
+        "note": "Scaffold only. Do not merge into the registry while this file says GRAY_DRAFT_NOT_EVIDENCE.",
+    }
 
 
 def _normalize_protocol_id(protocol_id: str) -> str:
@@ -92,7 +167,7 @@ def _write_json(path: Path, data: dict[str, object]) -> None:
 def _render_request(request: ScaffoldRequest, protocol_id: str) -> str:
     return f"""# Evidence Request: {protocol_id}
 
-Status: request scaffold. This is not evidence.
+Status: request scaffold. GRAY DRAFT / NOT_EVIDENCE.
 
 ## Public Claim
 
@@ -142,7 +217,7 @@ Not recorded yet. Must be fixed before execution.
 def _render_protocol(request: ScaffoldRequest, protocol_id: str, created_at: str) -> str:
     return f"""# {protocol_id} Pre-Registration Charter
 
-Status: draft scaffold. This file is not a completed evidence record.
+Status: draft scaffold. GRAY DRAFT / NOT_EVIDENCE. This file is not a completed evidence record.
 
 Created: {created_at}
 
@@ -195,6 +270,8 @@ label, mechanics or gate with cosmetic changes.
 def _render_playbook(request: ScaffoldRequest, protocol_id: str) -> str:
     return f"""# {protocol_id} Playbook
 
+Status: GRAY DRAFT / NOT_EVIDENCE.
+
 This playbook is a scaffold. Follow it only after the protocol is reviewed and
 frozen.
 
@@ -236,6 +313,8 @@ artifacts/{protocol_id.lower()}_summary.json
 def _render_checklist(request: ScaffoldRequest, protocol_id: str) -> str:
     return f"""# {protocol_id} Checklist
 
+Status: GRAY DRAFT / NOT_EVIDENCE.
+
 - [ ] Public claim source opens: {request.source_url}
 - [ ] Exact claim is written narrowly.
 - [ ] Official or public source boundary is recorded.
@@ -265,6 +344,8 @@ def _render_checklist(request: ScaffoldRequest, protocol_id: str) -> str:
 def _render_operator_declaration(protocol_id: str) -> str:
     return f"""# {protocol_id} Operator Declaration
 
+Status: GRAY DRAFT / NOT_EVIDENCE. Unsigned template; the operator must review before use.
+
 ```text
 I fixed source, selection, prompt or target, scoring rule, controls, stop
 conditions and acceptance gate before outcome scoring.
@@ -283,6 +364,8 @@ def _render_draft_card(request: ScaffoldRequest, protocol_id: str, created_at: s
     return {
         "evidence_id": f"CLAIMBOUND-{protocol_id}-DRAFT",
         "draft_status": "GRAY_DRAFT_NOT_EXECUTED",
+        "gray_marker": _GRAY_BANNER,
+        "evidence_status": "NOT_EVIDENCE",
         "registry_sequence": 0,
         "record_type": "protocol_registration",
         "protocol_id": protocol_id,

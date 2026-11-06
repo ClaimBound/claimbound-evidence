@@ -29,14 +29,11 @@ working in this repository. They are binding and override tool defaults.
 - Raw payloads stay local (`raw_payload_committed: false`).
 - See [MAINTAINER_BOUNDARY.md](MAINTAINER_BOUNDARY.md) and [GOVERNANCE.md](GOVERNANCE.md).
 
-## Reserved roadmap work
+## Roadmap work
 
-Items listed in [docs/PLANNED_NOT_SHIPPED.md](docs/PLANNED_NOT_SHIPPED.md) and the
-phases of [docs/ROADMAP_2026.md](docs/ROADMAP_2026.md) (SourceProbe, scaffold
-hardening, run-root/deviation logs, public AI protocol, static registry views,
-independent rerun tooling, schema/validator hardening, accessibility pass) are
-reserved. Do not implement them without explicit owner approval. Keep releases on
-`0.4.x`; `0.5.0` and later are reserved for those milestones.
+The phases in [docs/ROADMAP_2026.md](docs/ROADMAP_2026.md) were released for implementation by the owner on
+2026-11-06 (0.5.0). Status is tracked in [docs/PLANNED_NOT_SHIPPED.md](docs/PLANNED_NOT_SHIPPED.md); keep it
+truthful. Version `1.0.0` stays reserved until an independent external rerun exists.
 
 Do not touch files or issues about the Manifold fair race
 (`docs/manifold_monte_neo_fair_race/`, related scripts, artifacts and issues).

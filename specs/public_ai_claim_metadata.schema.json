@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "claimbound-public-ai-claim-v1",
+  "title": "ClaimBound public AI claim source-audit metadata",
+  "description": "Metadata for a source audit of public AI documentation. It records what a public source says; it never records model safety, quality, runtime behavior or benchmark superiority. See docs/PUBLIC_AI_CLAIM_PROTOCOL.md.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "protocol_id",
+    "source_url",
+    "source_name",
+    "source_kind",
+    "access_date",
+    "capture_method",
+    "content_sha256",
+    "model",
+    "prompt_sha256",
+    "transcript_sha256",
+    "raw_prompt_committed",
+    "raw_transcript_committed",
+    "screenshot_only",
+    "claim_class",
+    "claim_boundary",
+    "forbidden_implications",
+    "stop_rule_triggered",
+    "audit_outcome"
+  ],
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "sha256_or_na": {
+      "type": "string",
+      "pattern": "^([0-9a-f]{64}|NOT_APPLICABLE)$"
+    }
+  },
+  "properties": {
+    "schema_version": { "const": "claimbound-public-ai-claim-v1" },
+    "protocol_id": { "type": "string", "pattern": "^[A-Z0-9][A-Z0-9_]{2,63}$" },
+    "source_url": { "type": "string", "pattern": "^https?://[^\\s/]+\\S*$" },
+    "source_name": { "type": "string", "minLength": 1 },
+    "source_kind": {
+      "enum": [
+        "official_docs",
+        "model_card",
+        "api_reference",
+        "system_card",
+        "repository",
+        "blog_post",
+        "screenshot_only",
+        "other"
+      ]
+    },
+    "access_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "capture_method": { "enum": ["http_fetch", "manual_copy", "archive_snapshot", "screenshot"] },
+    "content_sha256": { "$ref": "#/$defs/sha256" },
+    "model": {
+      "type": "object",
+      "required": ["provider", "model_name", "model_version", "api_metadata_source"],
+      "properties": {
+        "provider": { "type": "string", "minLength": 1 },
+        "model_name": { "type": "string", "minLength": 1 },
+        "model_version": { "type": "string", "minLength": 1, "description": "Use NOT_STATED when the source gives none." },
+        "api_endpoint": { "type": "string" },
+        "api_metadata_source": { "enum": ["documented", "observed", "not_stated"] }
+      }
+    },
+    "prompt_sha256": { "$ref": "#/$defs/sha256_or_na" },
+    "transcript_sha256": { "$ref": "#/$defs/sha256_or_na" },
+    "raw_prompt_committed": { "const": false },
+    "raw_transcript_committed": { "const": false },
+    "screenshot_only": { "type": "boolean" },
+    "screenshot_sha256": { "$ref": "#/$defs/sha256" },
+    "claim_class": { "enum": ["source_audit", "source_audit_screenshot_limited"] },
+    "claim_boundary": { "type": "string", "minLength": 1 },
+    "forbidden_implications": {
+      "type": "array",
+      "items": { "type": "string" },
+      "allOf": [
+        { "contains": { "const": "model_safety" } },
+        { "contains": { "const": "model_quality" } },
+        { "contains": { "const": "runtime_behavior" } },
+        { "contains": { "const": "benchmark_superiority" } }
+      ]
+    },
+    "stop_rule_triggered": {
+      "enum": [
+        "none",
+        "source_blocked",
+        "rights_unclear",
+        "hash_missing",
+        "model_identity_unverifiable",
+        "screenshot_only_coverage",
+        "protocol_changed_after_outcome"
+      ]
+    },
+    "audit_outcome": { "enum": ["recorded", "BLOCKED_SOURCE", "INSUFFICIENT_COVERAGE"] }
+  },
+  "if": { "properties": { "screenshot_only": { "const": true } }, "required": ["screenshot_only"] },
+  "then": {
+    "required": ["screenshot_sha256"],
+    "properties": { "claim_class": { "const": "source_audit_screenshot_limited" } }
+  }
+}

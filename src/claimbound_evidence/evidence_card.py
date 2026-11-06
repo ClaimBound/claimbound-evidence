@@ -224,6 +224,79 @@ def validate_evidence_card(card: dict[str, Any]) -> list[str]:
     return violations
 
 
+_ISO_DATE_PREFIX_RE = re.compile(r"^\d{4}-\d{2}-\d{2}")
+_DATE_FIELDS = ("access_date", "created_at", "last_verified_date")
+_MIN_CLAIM_BOUNDARY_CHARS = 20
+
+
+def warn_evidence_card(card: dict[str, Any]) -> list[str]:
+    """Return non-fatal hardening warnings for a card.
+
+    These checks are intentionally separate from :func:`validate_evidence_card`:
+    they must never turn an already published historical card into a failure.
+    Callers report counts so new violations are visible without reclassifying
+    or editing any card.
+    """
+    warnings: list[str] = []
+
+    sha = card.get("sanitized_report_sha256")
+    if not _is_missing(sha) and not (isinstance(sha, str) and _SHA256_RE.fullmatch(sha)):
+        warnings.append("sanitized_report_sha256 should be a lowercase 64-hex SHA-256 digest")
+
+    for field in _DATE_FIELDS:
+        value = card.get(field)
+        if _is_missing(value):
+            continue
+        if not _is_iso_date_prefix(value):
+            warnings.append(f"{field} should start with an ISO-8601 date (YYYY-MM-DD)")
+
+    boundary = card.get("claim_boundary")
+    if not _is_missing(boundary) and (
+        not isinstance(boundary, str) or len(boundary.strip()) < _MIN_CLAIM_BOUNDARY_CHARS
+    ):
+        warnings.append(
+            f"claim_boundary should be a string of at least {_MIN_CLAIM_BOUNDARY_CHARS} characters"
+        )
+
+    limitations = card.get("known_limitations")
+    if not _is_missing(limitations) and not (
+        isinstance(limitations, list)
+        and all(isinstance(item, str) and item.strip() for item in limitations)
+    ):
+        warnings.append("known_limitations should be a list of non-empty strings")
+
+    url = card.get("official_source_url")
+    if not _is_missing(url):
+        parsed = urlparse(str(url))
+        if parsed.scheme not in {"https", "http"} or not parsed.netloc:
+            warnings.append("official_source_url should be an absolute http(s) URL")
+
+    evidence_id = card.get("evidence_id")
+    if isinstance(evidence_id, str) and evidence_id != evidence_id.strip():
+        warnings.append("evidence_id should not have surrounding whitespace")
+
+    if (
+        isinstance(card.get("verification_count"), int)
+        and card.get("verification_count") == 0
+        and card.get("verification_level") not in {None, "NOT_EXECUTED"}
+        and card.get("result_status") in {"PASSED_UNDER_PROTOCOL", "NEGATIVE_RESULT_UNDER_PROTOCOL"}
+    ):
+        warnings.append("verification_count is 0 although an executed result_status is recorded")
+
+    return warnings
+
+
+def _is_iso_date_prefix(value: object) -> bool:
+    text = str(value)
+    if not _ISO_DATE_PREFIX_RE.match(text):
+        return False
+    try:
+        date.fromisoformat(text[:10])
+    except ValueError:
+        return False
+    return True
+
+
 def _validate_public_claim_binding(card: dict[str, Any]) -> list[str]:
     """Require a source-bound public statement for every newly created card."""
     created = str(card.get("created_at", ""))[:10]

@@ -8,7 +8,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from claimbound_evidence.evidence_card import validate_evidence_card
+from claimbound_evidence.evidence_card import validate_evidence_card, warn_evidence_card
 
 
 ENTRY_CARD_FIELDS = {
@@ -39,8 +39,14 @@ def load_registry(path: Path) -> dict[str, Any]:
     return data
 
 
-def validate_registry(registry: dict[str, Any], repo_root: Path) -> list[str]:
+def validate_registry(
+    registry: dict[str, Any],
+    repo_root: Path,
+    warnings: list[str] | None = None,
+) -> list[str]:
+    """Return registry violations; append non-fatal hardening findings to ``warnings``."""
     violations: list[str] = []
+    warn: list[str] = warnings if warnings is not None else []
     cards = registry.get("cards")
     if not isinstance(cards, list):
         return ["registry.cards must be a list"]
@@ -83,6 +89,11 @@ def validate_registry(registry: dict[str, Any], repo_root: Path) -> list[str]:
         card = json.loads(card_path.read_text(encoding="utf-8"))
         card_violations = validate_evidence_card(card)
         violations.extend(f"{evidence_id}: {item}" for item in card_violations)
+        warn.extend(f"{evidence_id}: {item}" for item in warn_evidence_card(card))
+        if card.get("evidence_id") != evidence_id:
+            warn.append(f"{evidence_id}: card evidence_id differs from registry entry")
+        if card_path.stem != str(card.get("evidence_id", "")):
+            warn.append(f"{evidence_id}: card file name does not match evidence_id")
 
         for field in sorted(ENTRY_CARD_FIELDS):
             if entry.get(field) != card.get(field):
