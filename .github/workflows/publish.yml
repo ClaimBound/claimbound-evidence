@@ -4,13 +4,18 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing release tag to publish to PyPI (for example v0.5.0). Leave empty to publish to TestPyPI."
+        required: false
+        default: ""
 
 permissions:
   contents: read
 
 jobs:
   publish:
-    if: github.event_name == 'release'
+    if: github.event_name == 'release' || (github.event_name == 'workflow_dispatch' && inputs.tag != '')
     runs-on: ubuntu-latest
     environment: pypi
     permissions:
@@ -19,6 +24,8 @@ jobs:
       attestations: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ inputs.tag }}
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
         with:
           python-version: "3.12"
@@ -37,15 +44,19 @@ jobs:
             dist/*
             SHA256SUMS
 
-      - name: Upload release assets and manifest
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release upload "${GITHUB_REF_NAME}" dist/* SHA256SUMS --clobber
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086 # v1.14.3
+      # Releases are immutable once published, so assets can no longer be added after the
+      # release event. PyPI must not depend on this step; the attestation above stays valid.
+      - name: Upload release assets and manifest (only works while the release is mutable)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
+        run: |
+          gh release upload "${RELEASE_TAG}" dist/* SHA256SUMS --clobber
   publish-test:
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' && inputs.tag == ''
     runs-on: ubuntu-latest
     environment:
       name: testpypi
