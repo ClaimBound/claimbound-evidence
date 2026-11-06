@@ -293,7 +293,7 @@ def check_views(repo_root: Path) -> list[str]:
         p = vdir / name
         if not p.is_file():
             problems.append(f"missing: {name}")
-        elif p.read_bytes() != text.encode("utf-8"):
+        elif p.read_bytes().replace(b"\r\n", b"\n") != text.encode("utf-8"):
             problems.append(f"stale: {name}")
     if vdir.is_dir():
         for p in sorted(vdir.iterdir()):
