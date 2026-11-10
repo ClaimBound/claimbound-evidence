@@ -101,6 +101,29 @@ uv run --extra dev python -m pytest -q
 
 Do not edit thresholds, gates or claim boundaries to force a reproduced result.
 
+## Rerun Report Helper
+
+`claimbound rerun report` compares original and rerun SHA-256 maps (JSON
+`{name: sha256}` or `sha256  name` text lines) and writes a report with
+optional fields:
+
+- `reproduction_status`: one of `NOT_RERUN`, `REPRODUCED`,
+  `PARTIALLY_REPRODUCED`, `NOT_REPRODUCED`, `SOURCE_DRIFT`, `BLOCKED_SOURCE`;
+- `source_drift`: per-file `NO_DRIFT`, `SOURCE_BYTE_DRIFT`, `MISSING_ORIGINAL`
+  or `MISSING_RERUN`, plus an overall value;
+- `operator_note`.
+
+```bash
+claimbound rerun report --original orig_hashes.json --rerun new_hashes.json \
+  --outcome matches --out rerun_report.json
+```
+
+`--outcome` is an operator statement (`matches`, `differs`, `unknown`);
+`--blocked` records `BLOCKED_SOURCE`. The helper only reads the two hash files:
+it never opens or edits the original card or claim, and the report states
+`card_modified: false`. This status vocabulary is separate from `result_status`.
+See [DEVIATION_LOG.md](DEVIATION_LOG.md) for recording deviations.
+
 ## Source Drift And Boundary Questions
 
 If a source changed but you are not ready to produce a rerun card, open a

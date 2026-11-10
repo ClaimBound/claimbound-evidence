@@ -1,10 +1,41 @@
 # Changelog
 
-## Unreleased
+## 0.5.0 - 2026-11-06
+
+### Added
+
+- **SourceProbe v1**: `claimbound probe URL [--marker TEXT] [--out FILE] [--json]` records HTTP status,
+  final URL, content type, byte size, SHA-256 (only for fully read bodies under a size cap), marker checks,
+  licence/terms link hints and a `safe_to_continue | needs_human_review | blocked` recommendation.
+  Metadata only: no raw body is stored and a probe never produces a result status
+  ([docs/SOURCE_PROBE.md](docs/SOURCE_PROBE.md)).
+- **Run-root deviation log and source-rights checklist**: `claimbound run-root deviation add|list` and
+  `run-root rights answer` ([docs/DEVIATION_LOG.md](docs/DEVIATION_LOG.md)).
+- **Rerun report**: `claimbound rerun report` classifies reproduction status and source-byte drift from two
+  hash files without modifying the original card.
+- **Static registry views**: `scripts/claimbound_build_registry_view.py` (with `--check`) generates deterministic
+  Markdown and a self-contained HTML index under `docs/registry/views/`
+  ([docs/REGISTRY_VIEWS.md](docs/REGISTRY_VIEWS.md)).
+- **Public AI claim protocol**: [docs/PUBLIC_AI_CLAIM_PROTOCOL.md](docs/PUBLIC_AI_CLAIM_PROTOCOL.md), a JSON
+  schema and validator for model/API metadata and prompt/transcript hash policy.
+- **Scaffold hardening**: `claimbound new` prepares request, charter, playbook, checklist, operator
+  declaration, draft card and registry-patch scaffolds; `--dry-run`; refuses to overwrite or escape `--out`.
+- **Validator hardening**: non-breaking warning checks (`warn_evidence_card`, registry consistency); existing
+  cards are unchanged.
+- **Accessibility**: the SVG renderer now emits `role="img"`, `<title>` and `<desc>` and meets 4.5:1 contrast for
+  declared text colours; `scripts/claimbound_lint_svg_a11y.py` reports gaps
+  ([docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md)). No WCAG conformance is claimed.
+- `scripts/release_gate.sh`: resumable local release gate.
 
 ### Changed
 
 - conda-forge template converted to the v1 `recipe.yaml` format, which staged-recipes now requires for new recipes.
+- DCO check exempts the "Update branch" merge commit in Dependabot pull requests.
+
+### Known limits
+
+- The ~8000 committed SVG previews were not regenerated, so most still lack the new accessibility attributes.
+- No new evidence cards were added in this release, and no independent external rerun has happened yet.
 
 ## 0.4.8 - 2026-09-30
 

@@ -10,12 +10,14 @@ roadmap rows as shipped product.
 Acceptance-criteria documents are specifications only until implementation lands
 and validators pass on `main`.
 
-| Planned item | What exists now | What is not shipped | How to verify honestly |
-| --- | --- | --- | --- |
-| SourceProbe v1 | Scaffold stub in `claimbound new`; [acceptance criteria](SOURCE_PROBE_V1_ACCEPTANCE_CRITERIA.md) | Deterministic HTTP probe CLI, marker checks, standalone probe command | Read the spec; confirm no `scripts/claimbound_source_probe.py` |
-| Static registry MVP | JSON index at [evidence_index.json](registry/evidence_index.json) | Generated HTML/views, filters UI, `claimbound_build_registry_view.py` | Read [acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md); confirm no `docs/registry/views/` |
-| PyPI distribution | Package `claimbound-evidence` on PyPI with the card-level CLI (`validate-card`, `inspect`, `hash`, `run-root`, `doctor`); full workflows via `git clone` + `uv sync` | Registry, runners, reruns and demos inside the pip package | `pip install claimbound-evidence` then `claimbound validate-all` reports that a clone is needed |
-| WCAG / accessibility pass | SVG cards rendered from JSON | Full accessibility audit and remediation pass | Cards are visual aids; no WCAG conformance claim is made |
+| Planned item | Status in 0.5.0 | What is still not shipped |
+| --- | --- | --- |
+| SourceProbe v1 | Shipped: `claimbound probe`, [SOURCE_PROBE.md](SOURCE_PROBE.md) | Live probing of every registry source; probes are metadata, never evidence |
+| Static registry MVP | Shipped: [views](registry/views/index.md), [REGISTRY_VIEWS.md](REGISTRY_VIEWS.md) | Audience filter (no audience field in cards yet) |
+| Run-root deviation log, rerun report, public AI protocol, scaffold hardening | Shipped (see CHANGELOG 0.5.0) | Operator adoption; no external rerun has been reported yet |
+| PyPI distribution | Package `claimbound-evidence` on PyPI with the card-level CLI; full workflows via `git clone` + `uv sync` | Registry, runners, reruns and demos inside the pip package |
+| WCAG / accessibility | Renderer emits accessible SVG; linter reports gaps ([ACCESSIBILITY.md](ACCESSIBILITY.md)) | Regeneration of the ~8000 committed SVGs; no conformance claim |
+| New honest card set, v1.0.0 | Not started | Cards need frozen protocols and a fresh fetch; v1.0.0 waits for an external rerun |
 
 ## What Counts As Shipped Today
 
