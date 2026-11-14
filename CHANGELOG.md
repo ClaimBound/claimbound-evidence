@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+### Removed
+
+- The peer-comparison fair-race material was removed from the tree at the owner's decision (2026-11-14): the card with
+  registry sequence 8073, its protocol charter, artifacts, two runner scripts, the atlas link and the Pages workflow
+  entries. The registry now holds 8072 cards and its statistics and static views were regenerated. The removed files
+  remain in git history before this change; history was not rewritten.
+
 ## 0.5.0 - 2026-11-06
 
 ### Added

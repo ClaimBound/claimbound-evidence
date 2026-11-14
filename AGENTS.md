@@ -35,8 +35,10 @@ The phases in [docs/ROADMAP_2026.md](docs/ROADMAP_2026.md) were released for imp
 2026-11-06 (0.5.0). Status is tracked in [docs/PLANNED_NOT_SHIPPED.md](docs/PLANNED_NOT_SHIPPED.md); keep it
 truthful. Version `1.0.0` stays reserved until an independent external rerun exists.
 
-Do not touch files or issues about the Manifold fair race
-(`docs/manifold_monte_neo_fair_race/`, related scripts, artifacts and issues).
+Manifold is banned from this project entirely (owner decision, 2026-11-14): do not read, edit, run,
+mention or propose anything about it, and do not add any Manifold material, script, artifact, card or issue.
+The fair-race material was removed from the tree; it remains only in git history, which must not be rewritten.
+If a task touches Manifold, stop and tell the owner.
 Never add private background technology or private data to this repository.
 
 ## Working plan

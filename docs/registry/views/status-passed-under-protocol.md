@@ -4,7 +4,7 @@
 
 [Index](index.md) | [HTML view](index.html)
 
-Entries: 7597 (index last_updated: 2026-09-12)
+Entries: 7596 (index last_updated: 2026-11-14)
 
 | # | Evidence | Status | Domain | Source | Reproduction level | Card | SVG |
 |---:|---|---|---|---|---|---|---|
@@ -7604,4 +7604,3 @@ Entries: 7597 (index last_updated: 2026-09-12)
 | 8068 | `CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04` | PASSED_UNDER_PROTOCOL | program-review | Public-interest open-source program eligibility information | not independently reproduced | [json](../../evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json) | [svg](../../evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.svg) |
 | 8071 | `CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11` | PASSED_UNDER_PROTOCOL | software-development | ClaimBound evidence repository | not independently reproduced | [json](../../evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json) | [svg](../../evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.svg) |
 | 8072 | `CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08` | PASSED_UNDER_PROTOCOL | public-data | EEA Air Quality Download Service | not independently reproduced | [json](../../evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json) | [svg](../../evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.svg) |
-| 8073 | `CLAIMBOUND-MANIFOLD_MONTE_NEO_FAIR_RACE_D001-2026-09-12` | PASSED_UNDER_PROTOCOL | software-performance | Manifold-BT public site + PyPI manifoldbt; NeoZorK/Monte-Neo GitHub MIT | not independently reproduced | [json](../../evidence_cards/CLAIMBOUND-MANIFOLD_MONTE_NEO_FAIR_RACE_D001-2026-09-12.json) | n/a |
