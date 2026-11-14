@@ -27,9 +27,9 @@ turned into an automatic positive result.
 ## Rebuild
 
 ```bash
-uv run python scripts/claimbound_run_nasa_factory.py --issue 147 check
+uv run python scripts/protocolith_run_nasa_factory.py --issue 147 check
 uv run python scripts/build_nasa_factory_atlas.py
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev pytest -q
 ```
 

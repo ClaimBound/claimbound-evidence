@@ -72,7 +72,7 @@ def verify(manifest_path: Path, source_file: Path | None) -> dict:
         payload = source_file.read_bytes()
     else:
         request = urllib.request.Request(
-            manifest["source_url"], headers={"User-Agent": "ClaimBound/primary-claim-verifier"}
+            manifest["source_url"], headers={"User-Agent": "Protocolith/primary-claim-verifier"}
         )
         with urllib.request.urlopen(request, timeout=60) as response:
             payload = response.read()

@@ -1,6 +1,6 @@
 # AI Operator Protocol
 
-AI tools may assist ClaimBound work only when they make the evidence trail more
+AI tools may assist Protocolith work only when they make the evidence trail more
 auditable. They must never decide the result after seeing the outcome.
 
 For the compact control-layer rulebook behind this protocol, see

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Tests for the ClaimBound public evidence registry."""
+"""Tests for the Protocolith public evidence registry."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_evidence.registry import load_registry, validate_registry
+from protocolith.registry import load_registry, validate_registry
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -50,13 +50,13 @@ def test_registry_cli_reports_violations(
 
     import importlib.util as ilu
 
-    script_path = REPO_ROOT / "scripts" / "claimbound_validate_registry.py"
-    spec = ilu.spec_from_file_location("claimbound_validate_registry_mod", script_path)
+    script_path = REPO_ROOT / "scripts" / "protocolith_validate_registry.py"
+    spec = ilu.spec_from_file_location("protocolith_validate_registry_mod", script_path)
     assert spec is not None and spec.loader is not None
     module = ilu.module_from_spec(spec)
     spec.loader.exec_module(module)
 
-    monkeypatch.setattr(sys, "argv", ["claimbound_validate_registry.py", str(path)])
+    monkeypatch.setattr(sys, "argv", ["protocolith_validate_registry.py", str(path)])
 
     assert module.main() == 1
     captured = capsys.readouterr()

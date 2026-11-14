@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from datetime import date
 
-from claimbound_evidence.nasa_power import NasaPowerMockConfig, _seed_from_config
+from protocolith.nasa_power import NasaPowerMockConfig, _seed_from_config
 
 
 def test_seed_is_derived_deterministically_when_not_given() -> None:

@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_evidence.noaa_coops_fetch import (
+from protocolith.noaa_coops_fetch import (
     build_datagetter_url,
     fetch_d131_station_payloads,
     merge_hourly_height_payloads,
@@ -24,7 +24,7 @@ def test_year_chunks_for_d131_period() -> None:
 
 
 def test_build_datagetter_url_includes_predictions_interval() -> None:
-    from claimbound_evidence.noaa_coops_fetch import NoaaCoopsFetchConfig
+    from protocolith.noaa_coops_fetch import NoaaCoopsFetchConfig
 
     url = build_datagetter_url(
         NoaaCoopsFetchConfig(

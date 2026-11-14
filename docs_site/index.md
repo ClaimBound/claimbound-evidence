@@ -1,6 +1,6 @@
-# ClaimBound Evidence
+# Protocolith
 
-**Where is the evidence?** ClaimBound turns a narrow public claim about AI, ML, data or
+**Where is the evidence?** Protocolith turns a narrow public claim about AI, ML, data or
 software into a small *evidence card*: frozen protocol, hashed sources, an exact result status,
 a claim boundary and a reproduction level.
 
@@ -33,8 +33,8 @@ It is not a model leaderboard, a hosted scoring service or a certification autho
 ## Install
 
 ```bash
-pipx install claimbound-evidence        # or: uv tool install claimbound-evidence
-claimbound validate-card path/to/card.json
+pipx install protocolith        # or: uv tool install protocolith
+protocolith validate-card path/to/card.json
 ```
 
 See [Install](install.md) for what the pip package includes and for a full clone.

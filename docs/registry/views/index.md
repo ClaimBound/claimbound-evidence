@@ -1,8 +1,8 @@
-# ClaimBound Public Evidence Registry - static view
+# Protocolith Public Evidence Registry - static view
 
-> Read-only generated view of `docs/registry/evidence_index.json`. Do not edit by hand; regenerate with `uv run python scripts/claimbound_build_registry_view.py`. No raw payloads are stored here.
+> Read-only generated view of `docs/registry/evidence_index.json`. Do not edit by hand; regenerate with `uv run python scripts/protocolith_build_registry_view.py`. No raw payloads are stored here.
 
-- Registry: ClaimBound Public Evidence Registry 0.1
+- Registry: Protocolith Public Evidence Registry 0.1
 - Index last_updated: 2026-11-14
 - Entries: 8072
 - Single-file filterable view: [index.html](index.html)

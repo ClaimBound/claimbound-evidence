@@ -14,8 +14,8 @@ correctness or universal API stability.
 
 ## Source
 
-- Source name: ClaimBound evidence repository
-- Source URL: https://github.com/ClaimBound/claimbound-evidence
+- Source name: Protocolith evidence repository
+- Source URL: https://github.com/protocolith/protocolith
 - Domain: software-development
 - Execution mode: MANUAL_NO_AI
 
@@ -23,8 +23,8 @@ correctness or universal API stability.
 
 The gate passes only when all of these are true on the access date:
 
-- `uv run python scripts/claimbound_validate_registry.py` exits 0;
-- `uv run claimbound validate-all` exits 0;
+- `uv run python scripts/protocolith_validate_registry.py` exits 0;
+- `uv run protocolith validate-all` exits 0;
 - `registry_name` and `card_count` in `docs/registry/evidence_index.json` match
   the frozen expectation recorded in the sanitized summary;
 - no registry statistics or gate thresholds were changed after the run.

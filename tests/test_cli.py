@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from claimbound_evidence.cli import build_parser, main
+from protocolith.cli import build_parser, main
 
 
 def test_cli_parser_has_public_workflow_commands() -> None:
@@ -28,7 +28,7 @@ def test_validate_all_command_passes_for_committed_cards() -> None:
 def test_validate_family_accepts_external_absolute_path(tmp_path: Path) -> None:
     ledger = {
         "family_id": "EXAMPLE_D001_FAMILY",
-        "protocol_version": "claimbound-rnd-family-v2",
+        "protocol_version": "protocolith-rnd-family-v2",
         "family_status": "ACTIVE",
         "family_type": "feature_signal_family",
         "parent_claim": "A narrow family claim.",
@@ -83,10 +83,10 @@ def test_validate_family_accepts_external_absolute_path(tmp_path: Path) -> None:
 def test_new_prints_absolute_paths_when_out_dir_is_outside_repo(
     tmp_path: Path, capsys, monkeypatch
 ) -> None:
-    from claimbound_evidence import cli
+    from protocolith import cli
 
     monkeypatch.setattr(cli, "REPO_ROOT", tmp_path)
-    out_dir = tmp_path.parent / "outside_claimbound_repo" / "scaffold"
+    out_dir = tmp_path.parent / "outside_protocolith_repo" / "scaffold"
 
     assert (
         main(
@@ -116,7 +116,7 @@ def test_new_prints_absolute_paths_when_out_dir_is_outside_repo(
 
 def test_validate_frontier_accepts_external_absolute_path(tmp_path: Path) -> None:
     frontier = {
-        "protocol_version": "claimbound-rnd-family-v2",
+        "protocol_version": "protocolith-rnd-family-v2",
         "families": [
             {
                 "family_id": "EXAMPLE_D001_FAMILY",
@@ -137,9 +137,9 @@ def test_validate_frontier_accepts_external_absolute_path(tmp_path: Path) -> Non
 
 
 def _card_path() -> Path:
-    from claimbound_evidence import cli
+    from protocolith import cli
 
-    return cli.REPO_ROOT / "docs" / "evidence_cards" / "CLAIMBOUND-NASA-POWER-D103-2026-04-29.json"
+    return cli.REPO_ROOT / "docs" / "evidence_cards" / "PLITH-NASA-POWER-D103-2026-04-29.json"
 
 
 def test_version_flag_prints_package_version(capsys) -> None:
@@ -148,11 +148,11 @@ def test_version_flag_prints_package_version(capsys) -> None:
     with pytest.raises(SystemExit) as excinfo:
         main(["--version"])
     assert excinfo.value.code == 0
-    assert capsys.readouterr().out.startswith("claimbound ")
+    assert capsys.readouterr().out.startswith("protocolith ")
 
 
 def test_checkout_commands_explain_missing_clone(tmp_path: Path, monkeypatch, capsys) -> None:
-    from claimbound_evidence import cli
+    from protocolith import cli
 
     monkeypatch.setattr(cli, "REPO_ROOT", tmp_path)
     for argv in (["validate-all"], ["demo", "validate-all"], ["verify", "starter-pack"]):
@@ -163,7 +163,7 @@ def test_checkout_commands_explain_missing_clone(tmp_path: Path, monkeypatch, ca
 
 
 def test_doctor_reports_installed_package_mode(tmp_path: Path, monkeypatch, capsys) -> None:
-    from claimbound_evidence import cli
+    from protocolith import cli
 
     monkeypatch.setattr(cli, "REPO_ROOT", tmp_path)
     assert main(["doctor"]) == 0
@@ -176,7 +176,7 @@ def test_doctor_reports_installed_package_mode(tmp_path: Path, monkeypatch, caps
 def test_validate_card_resolves_relative_path_from_cwd_without_clone(
     tmp_path: Path, monkeypatch, capsys
 ) -> None:
-    from claimbound_evidence import cli
+    from protocolith import cli
 
     card = tmp_path / "card.json"
     card.write_text(_card_path().read_text(encoding="utf-8"), encoding="utf-8")

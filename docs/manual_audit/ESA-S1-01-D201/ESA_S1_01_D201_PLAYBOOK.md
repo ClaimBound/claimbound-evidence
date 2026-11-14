@@ -7,8 +7,8 @@ frozen.
 
 ```bash
 uv sync --extra dev
-uv run --extra dev python scripts/claimbound_validate_evidence_card.py --help
-uv run claimbound validate-tree docs/track_families/ESA_S1_01_D201_TREE.json
+uv run --extra dev python scripts/protocolith_validate_evidence_card.py --help
+uv run protocolith validate-tree docs/track_families/ESA_S1_01_D201_TREE.json
 ```
 
 ## Operator Flow
@@ -32,6 +32,6 @@ uv run claimbound validate-tree docs/track_families/ESA_S1_01_D201_TREE.json
 docs/protocols/ESA_S1_01_D201_PREREG_CHARTER.md
 docs/manual_audit/ESA_S1_01_D201_CHECKLIST.md
 docs/track_families/ESA_S1_01_D201_TREE.json
-docs/evidence_cards/CLAIMBOUND-ESA_S1_01_D201-<DATE>.json
+docs/evidence_cards/PLITH-ESA_S1_01_D201-<DATE>.json
 artifacts/esa_s1_01_d201_summary.json
 ```

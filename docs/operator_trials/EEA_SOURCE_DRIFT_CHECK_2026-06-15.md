@@ -1,6 +1,6 @@
 # EEA source drift check (2026-06-15)
 
-Original card: `docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json`
+Original card: `docs/evidence_cards/PLITH-SOURCE_AUDIT_D001-2026-05-08.json`
 Baseline: `artifacts/source_audit_d001_summary.json`
 Fresh: `artifacts/eea_source_audit_drift_check_summary.json`
 

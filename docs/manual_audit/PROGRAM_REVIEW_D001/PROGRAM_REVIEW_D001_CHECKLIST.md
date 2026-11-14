@@ -1,6 +1,6 @@
 # PROGRAM_REVIEW_D001 Checklist
 
-- [ ] Public claim source opens: https://github.com/ClaimBound/claimbound-evidence
+- [ ] Public claim source opens: https://github.com/protocolith/protocolith
 - [ ] Exact claim is written narrowly.
 - [ ] Official or public source boundary is recorded.
 - [ ] Source rights and attribution note are recorded.

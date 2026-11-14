@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Publication guard for the ClaimBound foreground repository."""
+"""Publication guard for the Protocolith foreground repository."""
 
 from __future__ import annotations
 
@@ -97,7 +97,7 @@ def test_no_forbidden_public_tokens_or_ru_text() -> None:
                 record.pop("public_claim_text", None)
                 record.pop("public_claim_verbatim_quote", None)
             text = json.dumps(payload, ensure_ascii=False, sort_keys=True)
-        if rel.name.startswith("CLAIMBOUND-CB7K-") and rel.suffix == ".json":
+        if rel.name.startswith("PLITH-CB7K-") and rel.suffix == ".json":
             payload = json.loads(text)
             payload.pop("public_claim_text", None)
             payload.pop("public_claim_verbatim_quote", None)
@@ -114,7 +114,7 @@ def test_no_forbidden_public_tokens_or_ru_text() -> None:
             }:
                 continue
             if token == "tr" + "ading" and (
-                rel.name.startswith("CLAIMBOUND-CB7K-DOM052-")
+                rel.name.startswith("PLITH-CB7K-DOM052-")
                 or rel.name.startswith("claim_batch_183_")
             ):
                 # DOM052 covers regulated carbon-market mechanisms, where
@@ -122,33 +122,33 @@ def test_no_forbidden_public_tokens_or_ru_text() -> None:
                 # boundary and official URLs rather than project leakage.
                 continue
             if token in {"gr" + "ant", "fun" + "ding"} and (
-                rel.name.startswith("CLAIMBOUND-CB7K-DOM045-")
+                rel.name.startswith("PLITH-CB7K-DOM045-")
                 or rel.name.startswith("claim_batch_180_")
             ):
                 # DOM045 evaluates nonprofit support records. These ordinary
                 # domain terms are allowed only inside that frozen batch.
                 continue
             if token == "fun" + "ding" and (
-                rel.name.startswith(("CLAIMBOUND-CB7K-DOM046-", "CLAIMBOUND-CB7K-DOM047-"))
+                rel.name.startswith(("PLITH-CB7K-DOM046-", "PLITH-CB7K-DOM047-"))
                 or rel.name.startswith("claim_batch_181_")
             ):
                 # DOM046/DOM047 include campaign-finance and public-program
                 # support source boundaries.
                 continue
             if token == "fun" + "ding" and (
-                rel.name.startswith("CLAIMBOUND-CB7K-DOM031-")
+                rel.name.startswith("PLITH-CB7K-DOM031-")
                 or rel.name.startswith("claim_batch_176_")
             ):
                 # DOM031 contains regulated bank-capital source terminology.
                 continue
             if token == "gr" + "ant" and (
-                rel.name.startswith("CLAIMBOUND-CB7K-DOM057-")
+                rel.name.startswith("PLITH-CB7K-DOM057-")
                 or rel.name.startswith("claim_batch_184_")
             ):
                 # DOM057 includes public conservation-program support records.
                 continue
             if token == "gr" + "ant" and (
-                rel.name.startswith("CLAIMBOUND-CB7K-DOM050-")
+                rel.name.startswith("PLITH-CB7K-DOM050-")
                 or rel.name.startswith("claim_batch_182_")
             ):
                 # DOM050 includes public migration-program support records.

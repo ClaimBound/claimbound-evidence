@@ -51,7 +51,7 @@ handoff log.
 
 ```bash
 uv sync --extra dev
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev pytest -q -n auto
 uv build && uvx twine check dist/*
 ```

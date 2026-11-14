@@ -1,6 +1,6 @@
 # External Operator Starter Pack
 
-Use this page when you want to try ClaimBound from outside the project. You do
+Use this page when you want to try Protocolith from outside the project. You do
 not need private data, private technology or a hosted account.
 
 ## Choose One Path
@@ -8,7 +8,7 @@ not need private data, private technology or a hosted account.
 | Path | Use when | Start here |
 | --- | --- | --- |
 | Close VERIFY issues | You were asked to verify maintainer deliverables (#85–#87). | [Volunteer one-pager](external_verification/VOLUNTEER_ONE_PAGER.md) — ~15 min first time, ~5 min per pack after setup |
-| Read existing evidence | You want to understand what ClaimBound cards prove. | [Evidence cards](evidence_cards/README.md) |
+| Read existing evidence | You want to understand what Protocolith cards prove. | [Evidence cards](evidence_cards/README.md) |
 | Request a new card | You have one narrow public claim that should be checked. | Open an `Evidence request` issue. |
 | Rerun an existing card | You want to reproduce or challenge a published card. | Open a `Reproduction request` issue. |
 | Report source drift | A public source changed after a card was published. | Open a `Source drift report` issue. |
@@ -20,15 +20,15 @@ Works on Windows, macOS and Linux. Prerequisites: Python 3.12+, git. See
 [platform support](PLATFORM_SUPPORT.md).
 
 ```bash
-git clone https://github.com/ClaimBound/claimbound-evidence.git
-cd claimbound-evidence
+git clone https://github.com/protocolith/protocolith.git
+cd protocolith
 uv sync --extra dev
-uv run claimbound doctor
-uv run claimbound validate-all
+uv run protocolith doctor
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```
 
-If `uv run claimbound validate-all` passes, the committed cards and registry are
+If `uv run protocolith validate-all` passes, the committed cards and registry are
 valid under the current validators.
 
 ## Try A Local Scaffold
@@ -37,13 +37,13 @@ A scaffold is not evidence. It prepares the files an operator would review
 before freezing a real protocol.
 
 ```bash
-uv run claimbound new \
+uv run protocolith new \
   --source-url "https://example.org/source-docs" \
   --protocol-id "EXAMPLE_D001" \
   --domain "public-data" \
   --track-type "source_audit" \
   --execution-mode "MANUAL_NO_AI" \
-  --out "claimbound_runs/EXAMPLE_D001/scaffold"
+  --out "protocolith_runs/EXAMPLE_D001/scaffold"
 ```
 
 Keep raw payloads, transcripts and restricted source materials outside this
@@ -56,7 +56,7 @@ repository.
 3. Create a local run root:
 
 ```bash
-uv run claimbound run-root \
+uv run protocolith run-root \
   --protocol-id "NASA_POWER_D103" \
   --source-url "https://power.larc.nasa.gov/docs/services/api/temporal/daily/" \
   --operator "your-name-or-handle"
@@ -71,7 +71,7 @@ See [Independent rerun workflow](INDEPENDENT_RERUN_WORKFLOW.md).
 
 ## What Not To Claim
 
-ClaimBound cards are deliberately narrow. A card must not be used to claim:
+Protocolith cards are deliberately narrow. A card must not be used to claim:
 
 - model safety or deployment readiness from a source audit;
 - broad model superiority from a small benchmark;

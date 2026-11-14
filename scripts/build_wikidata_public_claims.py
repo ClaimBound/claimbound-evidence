@@ -21,8 +21,8 @@ from build_public_claim_catalog import domains
 
 API = "https://www.wikidata.org/w/api.php"
 USER_AGENT = (
-    "ClaimBoundEvidence/1.0 "
-    "(https://github.com/ClaimBound/claimbound-evidence; maintainer NeoZorK)"
+    "ProtocolithEvidence/1.0 "
+    "(https://github.com/protocolith/protocolith; maintainer NeoZorK)"
 )
 EXCLUDED_DATATYPES = {"commonsMedia", "external-id", "url"}
 

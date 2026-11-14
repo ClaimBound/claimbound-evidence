@@ -139,3 +139,21 @@ For each reporting period:
 
 This keeps the public project auditable without leaking private operational or
 account metadata.
+
+## Project Rename Record (2026-11-14)
+
+The project was renamed from ClaimBound Evidence to Protocolith after release 0.5.0. This section records how
+the rename was done so that it can be checked.
+
+- Tooling: `scripts/migrations/rename_to_protocolith.py` (phases `report`, `brand`, `cards`). It was prepared with AI
+  assistance and reviewed by the maintainer.
+- Evidence ids: every card id changed from the `CLAIMBOUND-` prefix to `PLITH-`. Each migrated card keeps the old id in
+  `legacy_evidence_id`.
+- Map: `docs/MIGRATION_ID_MAP.json` lists, for every card file, the old id, the new id and the SHA-256 of the file
+  before and after the change.
+- Untouched on purpose: files whose SHA-256 is quoted by another record (frozen artifacts and claim matrices), the
+  changelog history and this log's earlier text. They keep the old name.
+- Checks: `protocolith validate-all` and the test suite pass after the migration; the registry card count is unchanged
+  by the rename itself.
+- Removed in the same period: one peer-comparison card with its files, at the maintainer's decision (see the
+  changelog). Git history was not rewritten.

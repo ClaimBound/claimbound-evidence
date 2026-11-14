@@ -1,8 +1,8 @@
-# ClaimBound Documentation Index
+# Protocolith Documentation Index
 
 Use this page to choose a reading path. You do not need every protocol file to
-try ClaimBound. The same core pages are also published as a
-[documentation site](https://claimbound.github.io/claimbound-evidence/docs/).
+try Protocolith. The same core pages are also published as a
+[documentation site](https://protocolith.github.io/protocolith/docs/).
 
 ## I Want To
 
@@ -19,7 +19,7 @@ try ClaimBound. The same core pages are also published as a
 For first-time readers, program reviewers, journalists and external inspectors:
 
 1. [Reviewer path (one page)](REVIEWER_PATH.md) — fastest honest baseline
-2. [ClaimBound in 30 seconds](CLAIMBOUND_IN_30_SECONDS.md)
+2. [Protocolith in 30 seconds](PROTOCOLITH_IN_30_SECONDS.md)
 3. [Reviewer summary](REVIEWER_SUMMARY.md) — problem, baseline vs planned work,
    differentiation from adjacent projects
 4. [Common misreadings](COMMON_MISREADINGS.md)
@@ -41,7 +41,7 @@ Quick validation:
 
 ```bash
 uv sync --extra dev
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```
 
@@ -51,7 +51,7 @@ For people who want to run or challenge a card locally:
 
 1. [Start without coding](START_WITHOUT_CODING.md) — Windows/macOS/Linux, no jq or bash
 2. [Platform support](PLATFORM_SUPPORT.md)
-3. [ClaimBound in 5 minutes](CLAIMBOUND_IN_5_MINUTES.md)
+3. [Protocolith in 5 minutes](PROTOCOLITH_IN_5_MINUTES.md)
 4. [Getting started](GETTING_STARTED.md)
 5. [External verification packs](external_verification/README.md) — split VERIFY work
 6. [External operator starter pack](EXTERNAL_OPERATOR_STARTER_PACK.md)

@@ -12,10 +12,10 @@ and validators pass on `main`.
 
 | Planned item | Status in 0.5.0 | What is still not shipped |
 | --- | --- | --- |
-| SourceProbe v1 | Shipped: `claimbound probe`, [SOURCE_PROBE.md](SOURCE_PROBE.md) | Live probing of every registry source; probes are metadata, never evidence |
+| SourceProbe v1 | Shipped: `protocolith probe`, [SOURCE_PROBE.md](SOURCE_PROBE.md) | Live probing of every registry source; probes are metadata, never evidence |
 | Static registry MVP | Shipped: [views](registry/views/index.md), [REGISTRY_VIEWS.md](REGISTRY_VIEWS.md) | Audience filter (no audience field in cards yet) |
 | Run-root deviation log, rerun report, public AI protocol, scaffold hardening | Shipped (see CHANGELOG 0.5.0) | Operator adoption; no external rerun has been reported yet |
-| PyPI distribution | Package `claimbound-evidence` on PyPI with the card-level CLI; full workflows via `git clone` + `uv sync` | Registry, runners, reruns and demos inside the pip package |
+| PyPI distribution | Package `protocolith` on PyPI with the card-level CLI; full workflows via `git clone` + `uv sync` | Registry, runners, reruns and demos inside the pip package |
 | WCAG / accessibility | Renderer emits accessible SVG; linter reports gaps ([ACCESSIBILITY.md](ACCESSIBILITY.md)) | Regeneration of the ~8000 committed SVGs; no conformance claim |
 | New honest card set, v1.0.0 | Not started | Cards need frozen protocols and a fresh fetch; v1.0.0 waits for an external rerun |
 
@@ -24,7 +24,7 @@ and validators pass on `main`.
 The current public baseline is:
 
 - evidence-card JSON/SVG and registry index;
-- `uv run claimbound validate-all` and pytest gates (CI on Linux, Windows and macOS);
+- `uv run protocolith validate-all` and pytest gates (CI on Linux, Windows and macOS);
 - cross-platform operator CLI: `doctor`, `inspect`, `hash`, `rerun`, `drift`, `verify`;
 - [platform support](PLATFORM_SUPPORT.md) and [start without coding](START_WITHOUT_CODING.md);
 - manual and AI-assisted workflow docs;
@@ -44,11 +44,11 @@ as registry cards:
 - NYC TLC Phase 4 negative artifact;
 - CDC mirror blocked-source artifact.
 
-Validated blocked cards such as [CIVIC_CLAIM_D001](evidence_cards/CLAIMBOUND-CIVIC_CLAIM_D001-2026-05-07.json)
+Validated blocked cards such as [CIVIC_CLAIM_D001](evidence_cards/PLITH-CIVIC_CLAIM_D001-2026-05-07.json)
 are separate records with explicit `BLOCKED_SOURCE` status.
 
 ## Advanced Optional Registry Card
 
-[PROGRAM_FIT_D001](evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json)
+[PROGRAM_FIT_D001](evidence_cards/PLITH-PROGRAM_FIT_D001-2026-06-04.json)
 remains in the registry as an **advanced optional** methodology demo. It is not
 a first-screen example and does not prove program approval or endorsement.

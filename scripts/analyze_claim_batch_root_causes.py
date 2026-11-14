@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import urlparse
 
-from claimbound_gate_locator import locate_gate
+from protocolith_gate_locator import locate_gate
 
 
 def parse_issue_range(value: str) -> range:

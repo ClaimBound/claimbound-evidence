@@ -1,6 +1,6 @@
 # Governance
 
-ClaimBound is currently a single-maintainer open-source repository. Governance
+Protocolith is currently a single-maintainer open-source repository. Governance
 is intentionally lightweight so that the public evidence workflow stays
 inspectable and reproducible.
 

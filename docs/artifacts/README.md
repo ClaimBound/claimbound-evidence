@@ -13,7 +13,7 @@ here as transparency artifacts, not as missing registry entries by mistake.
 | --- | --- | --- | --- |
 | **Evidence card** | Yes | Exact `result_status` under frozen protocol | Anthropic source audit |
 | **Artifact-only** | No | Run completed; card fields incomplete | NYC TLC Phase 4 summary |
-| **Scaffold** | No | Gray / not executed | `claimbound new` draft output |
+| **Scaffold** | No | Gray / not executed | `protocolith new` draft output |
 
 Artifacts can be useful for transparency, but they must not be cited as completed
 evidence cards until they have protocol, source boundary, sanitized artifact,
@@ -30,7 +30,7 @@ exact status, claim boundary, reproduction level and a registry entry.
 
 ## Related blocked cards (validated, not artifacts)
 
-The [civic claim card](../evidence_cards/CLAIMBOUND-CIVIC_CLAIM_D001-2026-05-07.json)
+The [civic claim card](../evidence_cards/PLITH-CIVIC_CLAIM_D001-2026-05-07.json)
 for NYC TLC is a **validated blocked-source card** (`BLOCKED_SOURCE`). It is
 different from the NYC TLC Phase 4 artifact: the card records a narrow civic
 claim boundary; the artifact records an empirical run without full card promotion.
@@ -43,6 +43,6 @@ To promote an artifact to a card:
 2. Run the check under fixed gates.
 3. Publish sanitized summary + hashes only.
 4. Validate card JSON and update [registry](../registry/evidence_index.json).
-5. Run `uv run claimbound validate-all`.
+5. Run `uv run protocolith validate-all`.
 
 Until then, cite artifacts only as artifact-only records with explicit limits.

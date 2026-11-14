@@ -24,7 +24,7 @@ jobs:
             os: ubuntu-latest
             python: "3.12"
             pytest_args: "-n auto -q"
-            cov_args: "--cov=claimbound_evidence --cov-report=term --cov-report=xml:coverage.xml"
+            cov_args: "--cov=protocolith --cov-report=term --cov-report=xml:coverage.xml"
           - job: "pytest-extra (ubuntu-latest, python 3.14)"
             os: ubuntu-latest
             python: "3.14"
@@ -37,6 +37,30 @@ jobs:
             os: macos-latest
             python: "3.12"
             pytest_args: "-n auto -q"
+          - job: "pytest-extra (ubuntu-latest, python 3.11)"
+            os: ubuntu-latest
+            python: "3.11"
+            pytest_args: "-n auto -q"
+          - job: "pytest-extra (ubuntu-latest, python 3.15)"
+            os: ubuntu-latest
+            python: "3.15"
+            pytest_args: "-n auto -q"
+          - job: "pytest-extra (windows-latest, python 3.11)"
+            os: windows-latest
+            python: "3.11"
+            pytest_args: "-q"
+          - job: "pytest-extra (windows-latest, python 3.15)"
+            os: windows-latest
+            python: "3.15"
+            pytest_args: "-q"
+          - job: "pytest-extra (macos-latest, python 3.11)"
+            os: macos-latest
+            python: "3.11"
+            pytest_args: "-n auto -q"
+          - job: "pytest-extra (macos-latest, python 3.15)"
+            os: macos-latest
+            python: "3.15"
+            pytest_args: "-n auto -q"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -45,8 +69,8 @@ jobs:
       - name: Lint
         if: matrix.cov_args
         run: uv run ruff check src tests
-      - run: uv run claimbound doctor
-      - run: uv run claimbound validate-all
+      - run: uv run protocolith doctor
+      - run: uv run protocolith validate-all
       - name: Run pytest
         id: pytest
         continue-on-error: true

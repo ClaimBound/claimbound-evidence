@@ -10,8 +10,8 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_evidence.baseline_groups import Doc11AcceptanceConfig
-from claimbound_evidence.nasa_power_prereg_runner import (
+from protocolith.baseline_groups import Doc11AcceptanceConfig
+from protocolith.nasa_power_prereg_runner import (
     NASA_POWER_PREREG_REPORT_SCHEMA,
     NasaPowerPreregConfig,
     evaluate_nasa_power_prereg,
@@ -45,7 +45,7 @@ def _write_power_fixture(path: Path, *, days: int, phase: float) -> None:
 
 
 def _load_cli_module():
-    script_path = REPO_ROOT / "scripts" / "claimbound_run_nasa_power_prereg.py"
+    script_path = REPO_ROOT / "scripts" / "protocolith_run_nasa_power_prereg.py"
     import importlib.util as ilu
 
     spec = ilu.spec_from_file_location("pb_run_nasa_power_prereg_mod", script_path)

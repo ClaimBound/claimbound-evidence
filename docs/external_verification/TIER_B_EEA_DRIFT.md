@@ -10,9 +10,9 @@ Playbook: [ISSUE_57_EEA_DRIFT_PLAYBOOK.md](../runbooks/ISSUE_57_EEA_DRIFT_PLAYBO
 Primary path (any OS, no jq or bash diff):
 
 ```bash
-uv run claimbound drift eea-source-audit
+uv run protocolith drift eea-source-audit
 # or checklist shortcut:
-uv run claimbound verify eea-drift
+uv run protocolith verify eea-drift
 ```
 
 Record in your issue comment:
@@ -25,7 +25,7 @@ Record in your issue comment:
 <summary>Optional shell (jq + diff)</summary>
 
 ```bash
-uv run claimbound inspect json artifacts/source_audit_d001_summary.json \
+uv run protocolith inspect json artifacts/source_audit_d001_summary.json \
   --keys http_status final_url page_sha256 rights_link_present direct_link_presence result_status
 ```
 

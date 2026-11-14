@@ -4,7 +4,7 @@ This page is for first-time readers, journalists, program reviewers and external
 operators who need a fast honest picture of the public repository. It is not an
 endorsement, legal opinion or private application document.
 
-## The question ClaimBound answers
+## The question Protocolith answers
 
 ```text
 Where is the evidence?
@@ -16,7 +16,7 @@ level. No card means the statement is still only a claim.
 
 ## Five-minute inspection (no coding depth required)
 
-1. Read [ClaimBound in 30 seconds](CLAIMBOUND_IN_30_SECONDS.md).
+1. Read [Protocolith in 30 seconds](PROTOCOLITH_IN_30_SECONDS.md).
 2. Skim three flagship cards in the README:
    - green source audit (Anthropic or EEA),
    - green gate with yellow reproduction chip (NASA POWER D-103),
@@ -24,11 +24,11 @@ level. No card means the statement is still only a claim.
 3. Run the portable baseline (Windows, macOS or Linux):
 
 ```bash
-git clone https://github.com/ClaimBound/claimbound-evidence.git
-cd claimbound-evidence
+git clone https://github.com/protocolith/protocolith.git
+cd protocolith
 uv sync --extra dev
-uv run claimbound doctor
-uv run claimbound validate-all
+uv run protocolith doctor
+uv run protocolith validate-all
 ```
 
 Expected: `ready=yes`, `valid_cards=48`, exit code `0`.
@@ -55,7 +55,7 @@ All **48** registry cards currently use `SINGLE_OPERATOR` or
 Maintainer bootstrap runs closed VERIFY mirrors #88–#92 for repository hygiene.
 **Independent external closure** of **#85, #86 or #87** is the acceptance signal.
 See [External verification packs](external_verification/README.md): first setup
-~15 min; each open issue closes with one `claimbound verify …` command (~2 min)
+~15 min; each open issue closes with one `protocolith verify …` command (~2 min)
 after baseline. Minimum credible signal: **#85 + one of #86/#87** from an
 operator who is **not** the maintainer.
 

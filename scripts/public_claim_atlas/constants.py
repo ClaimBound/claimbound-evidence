@@ -5,7 +5,7 @@ ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "artifacts/cb7k_wikidata_public_claims.json"
 PRIMARY_MANIFESTS = sorted(ROOT.glob("artifacts/cb7k_dom*_primary_claims.json"))
 CARDS = ROOT / "docs/evidence_cards"
-REPO = "https://github.com/ClaimBound/claimbound-evidence"
+REPO = "https://github.com/protocolith/protocolith"
 PRIMARY_SCHEMA = "CB7K-PRIMARY-PUBLIC-CLAIMS-v1"
 PRIMARY_SCOPE = (
     "exact quoted statement in a named official primary PDF "
@@ -13,7 +13,7 @@ PRIMARY_SCOPE = (
 )
 WIKIDATA_VERIFY = (
     "python3 scripts/build_wikidata_public_claims.py verify-sources "
-    "artifacts/cb7k_wikidata_public_claims.json --cache .cache/claimbound-wikidata "
+    "artifacts/cb7k_wikidata_public_claims.json --cache .cache/protocolith-wikidata "
     "--claim-id {claim_id}"
 )
 PRIMARY_VERIFY = (

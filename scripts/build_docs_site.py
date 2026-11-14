@@ -20,13 +20,13 @@ import sys
 from pathlib import Path, PurePosixPath
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-GITHUB = "https://github.com/ClaimBound/claimbound-evidence"
-RAW = "https://raw.githubusercontent.com/ClaimBound/claimbound-evidence/main"
+GITHUB = "https://github.com/protocolith/protocolith"
+RAW = "https://raw.githubusercontent.com/protocolith/protocolith/main"
 
 # repository path -> file name in the site (flat)
 COPIED = {
-    "docs/CLAIMBOUND_IN_30_SECONDS.md": "CLAIMBOUND_IN_30_SECONDS.md",
-    "docs/CLAIMBOUND_IN_5_MINUTES.md": "CLAIMBOUND_IN_5_MINUTES.md",
+    "docs/PROTOCOLITH_IN_30_SECONDS.md": "PROTOCOLITH_IN_30_SECONDS.md",
+    "docs/PROTOCOLITH_IN_5_MINUTES.md": "PROTOCOLITH_IN_5_MINUTES.md",
     "docs/START_WITHOUT_CODING.md": "START_WITHOUT_CODING.md",
     "docs/PLATFORM_SUPPORT.md": "PLATFORM_SUPPORT.md",
     "docs/GETTING_STARTED.md": "GETTING_STARTED.md",
@@ -45,9 +45,9 @@ COPIED = {
     "SECURITY.md": "SECURITY.md",
 }
 ASSETS = {
-    "docs/assets/logo/claimbound-mark.svg": "assets/claimbound-mark.svg",
-    "docs/assets/logo/claimbound-mark-32.png": "assets/favicon.png",
-    "docs/assets/claimbound_workflow.svg": "assets/claimbound_workflow.svg",
+    "docs/assets/logo/protocolith-mark.svg": "assets/protocolith-mark.svg",
+    "docs/assets/logo/protocolith-mark-32.png": "assets/favicon.png",
+    "docs/assets/protocolith_workflow.svg": "assets/protocolith_workflow.svg",
 }
 IMAGE_SUFFIXES = {".svg", ".png", ".gif", ".jpg", ".jpeg"}
 LINK = re.compile(r"(?<!\\)(\]\()([^)\s]+)((?:\s+\"[^\"]*\")?\))")

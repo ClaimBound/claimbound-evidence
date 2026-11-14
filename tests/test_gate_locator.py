@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from claimbound_gate_locator import build_locator_matrix, locate_gate
+from protocolith_gate_locator import build_locator_matrix, locate_gate
 
 
 def test_gate_locator_finds_verbatim_topic_specific_evidence() -> None:

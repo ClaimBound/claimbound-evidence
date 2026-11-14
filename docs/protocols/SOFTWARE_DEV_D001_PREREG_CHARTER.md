@@ -7,7 +7,7 @@ Created: 2026-06-11
 ## Claim Boundary
 
 This track checks only a narrow `validator_regression_gate` claim for the
-ClaimBound evidence-card validator: whether a card JSON missing the required
+Protocolith evidence-card validator: whether a card JSON missing the required
 field `execution_mode` is rejected by the frozen validation command.
 
 It must not claim general software security, full test-suite adequacy, CI
@@ -15,8 +15,8 @@ replacement, code-review sufficiency or repository-wide quality.
 
 ## Source
 
-- Source name: ClaimBound evidence repository (validator and tests)
-- Source URL: https://github.com/ClaimBound/claimbound-evidence
+- Source name: Protocolith evidence repository (validator and tests)
+- Source URL: https://github.com/protocolith/protocolith
 - Domain: software-development
 - Audience: Software developers and maintainers
 - Execution mode: MANUAL_NO_AI
@@ -27,7 +27,7 @@ The gate passes only when all of these are true on the access date:
 
 - `uv run --extra dev python -m pytest tests/test_evidence_card.py::test_evidence_card_requires_execution_mode -q` exits 0;
 - the test observes violation text `missing required field: execution_mode`;
-- `uv run claimbound validate-all` exits 0 on the committed registry;
+- `uv run protocolith validate-all` exits 0 on the committed registry;
 - no validator thresholds or required-field list were changed after the run.
 
 ## Stop Conditions

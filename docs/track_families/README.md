@@ -1,7 +1,7 @@
 # Track Family Ledgers
 
 This directory is for R&D family ledgers, optional frontier ledgers and optional
-protocol v3 tree overlays created by `uv run claimbound new` or by future family
+protocol v3 tree overlays created by `uv run protocolith new` or by future family
 orchestration tools.
 
 A family ledger is not evidence. It is planning and preflight metadata for one
@@ -17,44 +17,44 @@ proof surfaces.
 A protocol v3 tree overlay is also not evidence. It is a compact tree view for
 one track or many related tracks: iron claims, flow claims, tombstones, badge
 counts and branch-blocking rules. It uses `protocol_version:
-"claimbound-tree-v3"` and is stored as `*_TREE.json`.
+"protocolith-tree-v3"` and is stored as `*_TREE.json`.
 
 Validate a ledger before citing track state:
 
 ```bash
-uv run claimbound validate-family docs/track_families/<ID>_FAMILY_LEDGER.json
+uv run protocolith validate-family docs/track_families/<ID>_FAMILY_LEDGER.json
 ```
 
 or:
 
 ```bash
-uv run python scripts/claimbound_validate_family_ledger.py \
+uv run python scripts/protocolith_validate_family_ledger.py \
   docs/track_families/<ID>_FAMILY_LEDGER.json
 ```
 
 Validate a frontier:
 
 ```bash
-uv run claimbound validate-frontier docs/track_families/<ID>_FRONTIER.json
+uv run protocolith validate-frontier docs/track_families/<ID>_FRONTIER.json
 ```
 
 or:
 
 ```bash
-uv run python scripts/claimbound_validate_family_frontier.py \
+uv run python scripts/protocolith_validate_family_frontier.py \
   docs/track_families/<ID>_FRONTIER.json
 ```
 
 Validate a v3 tree overlay:
 
 ```bash
-uv run claimbound validate-tree docs/track_families/<ID>_TREE.json
+uv run protocolith validate-tree docs/track_families/<ID>_TREE.json
 ```
 
 or:
 
 ```bash
-uv run python scripts/claimbound_validate_family_tree.py \
+uv run python scripts/protocolith_validate_family_tree.py \
   docs/track_families/<ID>_TREE.json
 ```
 

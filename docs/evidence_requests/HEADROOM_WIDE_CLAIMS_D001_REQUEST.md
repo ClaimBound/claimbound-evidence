@@ -13,7 +13,7 @@ paths.
 
 https://github.com/headroomlabs-ai/headroom/tree/v0.27.0
 
-## Narrow ClaimBound Question
+## Narrow Protocolith Question
 
 Which parts of the wide Headroom claim can be checked under a frozen local
 protocol, and which parts should become negative or insufficient evidence rather

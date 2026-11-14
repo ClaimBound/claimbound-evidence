@@ -26,7 +26,7 @@ def test_rewrite_links_maps_copied_docs_and_github_targets() -> None:
     module = _load("build_docs_site")
     text = (
         "[a](RESULT_STATUS.md#reproduction-levels) [b](../CONTRIBUTING.md) "
-        "[c](external_verification/README.md) ![d](assets/claimbound_workflow.svg) "
+        "[c](external_verification/README.md) ![d](assets/protocolith_workflow.svg) "
         "[e](https://example.org/x) [f](#local)"
     )
     new, unresolved = module.rewrite_links(text, "docs/GETTING_STARTED.md")
@@ -35,7 +35,7 @@ def test_rewrite_links_maps_copied_docs_and_github_targets() -> None:
     assert "[a](RESULT_STATUS.md#reproduction-levels)" in new
     assert "[b](CONTRIBUTING.md)" in new
     assert f"[c]({module.GITHUB}/blob/main/docs/external_verification/README.md)" in new
-    assert f"![d]({module.RAW}/docs/assets/claimbound_workflow.svg)" in new
+    assert f"![d]({module.RAW}/docs/assets/protocolith_workflow.svg)" in new
     assert "[e](https://example.org/x)" in new
     assert "[f](#local)" in new
 
@@ -53,4 +53,4 @@ def test_docs_site_source_tree_builds_without_unresolved_links(tmp_path: Path) -
 
     assert unresolved == []
     assert (tmp_path / "site_src" / "index.md").is_file()
-    assert (tmp_path / "site_src" / "assets" / "claimbound-mark.svg").is_file()
+    assert (tmp_path / "site_src" / "assets" / "protocolith-mark.svg").is_file()

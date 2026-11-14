@@ -10,7 +10,7 @@ The official EEA Air Quality download page is reachable and exposes expected
 download-service and rights links on the access date.
 ```
 
-Card: [CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08](../evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json)
+Card: [PLITH-SOURCE_AUDIT_D001-2026-05-08](../evidence_cards/PLITH-SOURCE_AUDIT_D001-2026-05-08.json)
 
 ## What the protocol froze before the outcome
 
@@ -27,7 +27,7 @@ Protocol id: `SOURCE_AUDIT_D001` · version `SOURCE-AUDIT-2026-05-08`
 ## What ran
 
 ```bash
-uv run python scripts/claimbound_run_eea_source_audit.py \
+uv run python scripts/protocolith_run_eea_source_audit.py \
   --report artifacts/source_audit_d001_summary.json
 ```
 
@@ -43,7 +43,7 @@ summary SHA-256 and a page hash in `raw_payload_manifest`.
 | `reproduction_level` | `not independently reproduced` |
 
 SVG preview:
-[CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.svg](../evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.svg)
+[PLITH-SOURCE_AUDIT_D001-2026-05-08.svg](../evidence_cards/PLITH-SOURCE_AUDIT_D001-2026-05-08.svg)
 
 ## Claim boundary (what you must not infer)
 
@@ -57,7 +57,7 @@ From the card `claim_boundary`:
 
 The larger EEA AQ manual track was stopped as `BLOCKED_SOURCE` when the public
 URL manifest was incomplete:
-[CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11](../evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.json).
+[PLITH-EEA-AQ-D001-MANUAL-2026-05-11](../evidence_cards/PLITH-EEA-AQ-D001-MANUAL-2026-05-11.json).
 
 Blocked stops are first-class evidence — they prevent overclaiming.
 
@@ -66,7 +66,7 @@ Blocked stops are first-class evidence — they prevent overclaiming.
 Check whether the live page bytes changed:
 
 ```bash
-uv run claimbound drift eea-source-audit
+uv run protocolith drift eea-source-audit
 ```
 
 External operators closing VERIFY #88 should follow

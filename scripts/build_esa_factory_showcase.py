@@ -189,7 +189,7 @@ def _render_svg(summary: dict[str, Any]) -> str:
   <rect width="1200" height="560" rx="24" fill="url(#bg)"/>
   <rect width="1200" height="560" rx="24" fill="url(#glow)"/>
   <path d="M0 148 H1200" stroke="#41616a" stroke-opacity=".55"/>
-  <text x="52" y="55" class="sub">CLAIMBOUND / OFFICIAL ESA SOURCES / {access_label}</text>
+  <text x="52" y="55" class="sub">PROTOCOLITH / OFFICIAL ESA SOURCES / {access_label}</text>
   <text x="52" y="99" class="title">ESA source-boundary atlas</text>
   <text x="665" y="91" class="metric">500</text>
   <text x="665" y="119" class="metric-label">CARDS</text>

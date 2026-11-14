@@ -1,19 +1,19 @@
 # GitHub Outreach — Copy-Paste Messages for Maintainers
 
 Use these templates to invite **random GitHub volunteers** to close open VERIFY
-issues [#85](https://github.com/ClaimBound/claimbound-evidence/issues/85),
-[#86](https://github.com/ClaimBound/claimbound-evidence/issues/86) or
-[#87](https://github.com/ClaimBound/claimbound-evidence/issues/87).
+issues [#85](https://github.com/protocolith/protocolith/issues/85),
+[#86](https://github.com/protocolith/protocolith/issues/86) or
+[#87](https://github.com/protocolith/protocolith/issues/87).
 
 **Send volunteers here:** [VOLUNTEER_ONE_PAGER.md](VOLUNTEER_ONE_PAGER.md)  
-(link: `https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md`)
+(link: `https://github.com/protocolith/protocolith/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md`)
 
 ---
 
 ## Template A — One line (tweet, short reply)
 
 ```text
-ClaimBound needs independent operators to run 3 copy-paste verify commands (~15 min first time). Guide: https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md — issues #85 #86 #87
+Protocolith needs independent operators to run 3 copy-paste verify commands (~15 min first time). Guide: https://github.com/protocolith/protocolith/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md — issues #85 #86 #87
 ```
 
 ---
@@ -21,12 +21,12 @@ ClaimBound needs independent operators to run 3 copy-paste verify commands (~15 
 ## Template B — Short DM (under 500 characters)
 
 ```text
-Hi — would you run a narrow reproducibility checklist on ClaimBound (open-source evidence-card toolkit)?
+Hi — would you run a narrow reproducibility checklist on Protocolith (open-source evidence-card toolkit)?
 
-Not a code review: clone repo, run baseline + one `claimbound verify` command, post a short report on GitHub issue #85, #86 or #87.
+Not a code review: clone repo, run baseline + one `protocolith verify` command, post a short report on GitHub issue #85, #86 or #87.
 
 ~15 min first time, ~2 min per check after setup. Full steps:
-https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md
+https://github.com/protocolith/protocolith/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md
 
 No certification claims, no PR required. Maintainer runs don't count — we need your handle on the closing comment.
 ```
@@ -42,17 +42,17 @@ We need **non-maintainer** GitHub users to confirm the published checklist
 reproduces outside the maintainer machine.
 
 **Start here (one page, all commands):**
-https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md
+https://github.com/protocolith/protocolith/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md
 
 | Issue | Task | Time after setup |
 | --- | --- | --- |
-| #85 | `uv run claimbound verify starter-pack` | ~2 min |
-| #86 | `uv run claimbound verify nasa-rerun --operator "<your-handle>"` | ~1–2 min |
-| #87 | `uv run claimbound verify noaa-rerun --operator "<your-handle>"` | ~1–2 min |
+| #85 | `uv run protocolith verify starter-pack` | ~2 min |
+| #86 | `uv run protocolith verify nasa-rerun --operator "<your-handle>"` | ~1–2 min |
+| #87 | `uv run protocolith verify noaa-rerun --operator "<your-handle>"` | ~1–2 min |
 
 **First visit:** budget 15–25 min (clone + `uv sync` + baseline).
 
-Post your report using [CLOSING_COMMENT_TEMPLATE.md](https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/external_verification/CLOSING_COMMENT_TEMPLATE.md) and close the issue (or ask us to close).
+Post your report using [CLOSING_COMMENT_TEMPLATE.md](https://github.com/protocolith/protocolith/blob/main/docs/external_verification/CLOSING_COMMENT_TEMPLATE.md) and close the issue (or ask us to close).
 
 You are **not** certifying models or approving deployments — only confirming commands work on your machine.
 ```
@@ -64,15 +64,15 @@ You are **not** certifying models or approving deployments — only confirming c
 **Title:** `Volunteers wanted: run one VERIFY checklist (~15 min)`
 
 ```markdown
-ClaimBound publishes narrow evidence cards for public AI and data claims. Three VERIFY issues are open for **independent** closure — we need operators who are **not** the maintainer (`NeoZorK`).
+Protocolith publishes narrow evidence cards for public AI and data claims. Three VERIFY issues are open for **independent** closure — we need operators who are **not** the maintainer (`NeoZorK`).
 
 ### What you do
 1. Clone the repo and run a 4-command baseline (~15 min first time)
-2. Run **one** `claimbound verify` command for #85, #86 or #87 (~2 min)
+2. Run **one** `protocolith verify` command for #85, #86 or #87 (~2 min)
 3. Paste a short report on the issue and close it
 
 ### Full guide (copy-paste commands)
-https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md
+https://github.com/protocolith/protocolith/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md
 
 ### Open issues
 - #85 — starter pack (easiest, start here)
@@ -94,17 +94,17 @@ Comment on the issue you picked when done (or if you get stuck). Thanks!
 ```markdown
 Thanks! Pick **one** issue to start (recommend #85):
 
-**Guide:** https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md
+**Guide:** https://github.com/protocolith/protocolith/blob/main/docs/external_verification/VOLUNTEER_ONE_PAGER.md
 
 Quick path:
 ```bash
-git clone https://github.com/ClaimBound/claimbound-evidence.git
-cd claimbound-evidence
+git clone https://github.com/protocolith/protocolith.git
+cd protocolith
 uv sync --extra dev
-uv run claimbound doctor
-uv run claimbound validate-all
+uv run protocolith doctor
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
-uv run claimbound verify starter-pack   # for #85
+uv run protocolith verify starter-pack   # for #85
 ```
 
 Post your closing comment on the issue using the template in the guide. Paste `verify_*=PASS` and your `git rev-parse HEAD`.
@@ -126,11 +126,11 @@ If anything fails, paste the full terminal output on the issue — don't close y
 - Environment: Ubuntu 24.04 + Python 3.12.3
 
 ### Baseline
-- [x] `uv run claimbound validate-all` -> exit 0, `valid_cards=48`
+- [x] `uv run protocolith validate-all` -> exit 0, `valid_cards=48`
 - [x] `uv run --extra dev python -m pytest -q` → 86 passed
 
 ### Pack-specific checks
-- [x] `uv run claimbound verify starter-pack` → `verify_starter-pack=PASS`
+- [x] `uv run protocolith verify starter-pack` → `verify_starter-pack=PASS`
 
 ```
 verify_starter-pack: demo_eea=PASS demo_grok=PASS card_nasa_reproduction_level=PASS

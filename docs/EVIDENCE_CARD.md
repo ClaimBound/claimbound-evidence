@@ -1,6 +1,6 @@
-# ClaimBound Evidence Card
+# Protocolith Card
 
-A ClaimBound evidence card is the public unit of record for one narrow result.
+A Protocolith evidence card is the public unit of record for one narrow result.
 
 It should be small enough to read, strict enough to validate, and complete
 enough for another operator to decide whether rerunning the protocol is
@@ -143,24 +143,24 @@ This proves correctness outside the protocol boundary.
 
 Current committed examples:
 
-- [Anthropic system-card source audit](evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json)
-  and [visual SVG](evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg)
-- [NASA POWER D-103 passed evidence card](evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json)
-  and [visual SVG](evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg)
-- [NOAA CO-OPS D-131 negative evidence card](evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json)
-  and [visual SVG](evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg)
+- [Anthropic system-card source audit](evidence_cards/PLITH-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json)
+  and [visual SVG](evidence_cards/PLITH-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg)
+- [NASA POWER D-103 passed evidence card](evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json)
+  and [visual SVG](evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.svg)
+- [NOAA CO-OPS D-131 negative evidence card](evidence_cards/PLITH-NOAA-COOPS-D131-2026-04-30.json)
+  and [visual SVG](evidence_cards/PLITH-NOAA-COOPS-D131-2026-04-30.svg)
 
 Render visual cards from validated JSON:
 
 ```bash
-uv run --extra dev python scripts/claimbound_render_evidence_card_svg.py \
-  docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json \
-  docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg
+uv run --extra dev python scripts/protocolith_render_evidence_card_svg.py \
+  docs/evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json \
+  docs/evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.svg
 ```
 
 ```json
 {
-  "evidence_id": "CLAIMBOUND-NASA-POWER-D103-2026-04-29",
+  "evidence_id": "PLITH-NASA-POWER-D103-2026-04-29",
   "registry_sequence": 8,
   "record_type": "evidence_result",
   "protocol_id": "NASA_POWER_D103",
@@ -179,7 +179,7 @@ uv run --extra dev python scripts/claimbound_render_evidence_card_svg.py \
   "sanitized_report_path": "artifacts/nasa_power_d103_real_run_summary.json",
   "sanitized_report_sha256": "fill with report SHA-256",
   "git_commit": "fill with commit SHA",
-  "runner_command": "uv run python scripts/claimbound_run_nasa_power_prereg.py ...",
+  "runner_command": "uv run python scripts/protocolith_run_nasa_power_prereg.py ...",
   "operator": "maintainer",
   "created_at": "2026-05-01",
   "last_verified_date": "2026-06-15",
@@ -217,8 +217,8 @@ Evidence cards should fail validation when:
 Run the local validator:
 
 ```bash
-uv run python scripts/claimbound_validate_evidence_card.py path/to/evidence_card.json
-uv run python scripts/claimbound_validate_registry.py
+uv run python scripts/protocolith_validate_evidence_card.py path/to/evidence_card.json
+uv run python scripts/protocolith_validate_registry.py
 ```
 
 The validator is deterministic. It does not try to infer hidden AI use from
@@ -229,7 +229,7 @@ overbroad records.
 
 To share a result, link directly to its JSON evidence card in
 `docs/evidence_cards/`. A visual card can be rendered from the same data with
-`scripts/claimbound_render_evidence_card_svg.py`.
+`scripts/protocolith_render_evidence_card_svg.py`.
 
 The public registry index is stored in `docs/registry/evidence_index.json`.
 It is intended to remain freely readable and to expose aggregate counts by

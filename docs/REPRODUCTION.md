@@ -19,8 +19,8 @@ result, even when it is negative or source-blocked.
 Prefer these on Windows, macOS and Linux:
 
 ```bash
-uv run claimbound rerun nasa-d103 --operator "<your-handle>"
-uv run claimbound rerun noaa-d131 --operator "<your-handle>"
+uv run protocolith rerun nasa-d103 --operator "<your-handle>"
+uv run protocolith rerun noaa-d131 --operator "<your-handle>"
 ```
 
 They download payloads, hash files, run the frozen gate and print baseline vs
@@ -52,7 +52,7 @@ Official NASA POWER references:
 Run:
 
 ```bash
-uv run python scripts/claimbound_run_nasa_power_prereg.py \
+uv run python scripts/protocolith_run_nasa_power_prereg.py \
   --point POWER_A --json /path/outside/repo/POWER_A.json \
   --point POWER_B --json /path/outside/repo/POWER_B.json \
   --point POWER_C --json /path/outside/repo/POWER_C.json \
@@ -62,8 +62,8 @@ uv run python scripts/claimbound_run_nasa_power_prereg.py \
 Record:
 
 ```bash
-uv run claimbound hash /path/outside/repo/POWER_A.json /path/outside/repo/POWER_B.json /path/outside/repo/POWER_C.json
-uv run claimbound hash /path/outside/repo/nasa_power_d103_report.json
+uv run protocolith hash /path/outside/repo/POWER_A.json /path/outside/repo/POWER_B.json /path/outside/repo/POWER_C.json
+uv run protocolith hash /path/outside/repo/nasa_power_d103_report.json
 ```
 
 Interpretation:
@@ -93,22 +93,22 @@ Fetch merged payloads for all three D-131 stations:
 
 ```bash
 uv run python scripts/fetch_noaa_coops_d131_payloads.py \
-  --out-dir "$HOME/claimbound_runs/NOAA_COOPS_D131/raw"
+  --out-dir "$HOME/protocolith_runs/NOAA_COOPS_D131/raw"
 ```
 
 Record SHA-256 hashes:
 
 ```bash
-uv run claimbound hash ~/claimbound_runs/NOAA_COOPS_D131/raw/*.json
+uv run protocolith hash ~/protocolith_runs/NOAA_COOPS_D131/raw/*.json
 ```
 
 Run the frozen gate evaluator:
 
 ```bash
-uv run python scripts/claimbound_run_noaa_coops_prereg.py \
-  --raw-dir "$HOME/claimbound_runs/NOAA_COOPS_D131/raw" \
-  --report "$HOME/claimbound_runs/NOAA_COOPS_D131/reports/noaa_coops_d131_report.json" \
-  --summary "$HOME/claimbound_runs/NOAA_COOPS_D131/reports/noaa_coops_d131_summary.json"
+uv run python scripts/protocolith_run_noaa_coops_prereg.py \
+  --raw-dir "$HOME/protocolith_runs/NOAA_COOPS_D131/raw" \
+  --report "$HOME/protocolith_runs/NOAA_COOPS_D131/reports/noaa_coops_d131_report.json" \
+  --summary "$HOME/protocolith_runs/NOAA_COOPS_D131/reports/noaa_coops_d131_summary.json"
 ```
 
 Compare gate outcome and hashes against:
@@ -194,7 +194,7 @@ Stop and record a blocked or negative result if:
 Current manifest probe:
 
 ```bash
-python3 scripts/claimbound_run_eea_manual_track.py \
+python3 scripts/protocolith_run_eea_manual_track.py \
   --probe-eea-api \
   --report artifacts/eea_aq_d001_manual_summary.json
 ```
@@ -202,7 +202,7 @@ python3 scripts/claimbound_run_eea_manual_track.py \
 Current public card:
 
 ```text
-docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.json
+docs/evidence_cards/PLITH-EEA-AQ-D001-MANUAL-2026-05-11.json
 ```
 
 The manual checklist is in:

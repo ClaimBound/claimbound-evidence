@@ -5,7 +5,7 @@
 > a proposal. It records only that a narrow public self-check passed under a
 > frozen manual checklist on one access date.
 
-This example shows how ClaimBound can be used by an applicant to check their own
+This example shows how Protocolith can be used by an applicant to check their own
 public project against program eligibility criteria without turning the
 result into an award decision claim.
 
@@ -22,7 +22,7 @@ Program applications often contain broad statements:
 This project is open source, public-interest oriented and eligible for the call.
 ```
 
-ClaimBound rewrites that into smaller checks:
+Protocolith rewrites that into smaller checks:
 
 ```text
 The public repository declares a recognized open-source license.
@@ -80,8 +80,8 @@ unpublished proposal text.
 
 ```json
 {
-  "claim_id": "CLAIMBOUND-PROGRAM-ELIGIBILITY-SELF-CHECK-D001",
-  "claim": "A public applicant-side self-check can map program eligibility rules to narrow ClaimBound evidence claims without claiming award approval.",
+  "claim_id": "PLITH-PROGRAM-ELIGIBILITY-SELF-CHECK-D001",
+  "claim": "A public applicant-side self-check can map program eligibility rules to narrow Protocolith evidence claims without claiming award approval.",
   "status": "TEMPLATE_ONLY",
   "source_boundary": [
     "Public program page",
@@ -138,11 +138,11 @@ public-interest readers.
 
 The repository includes one completed, non-branded self-check card:
 
-- [PROGRAM_FIT_D001 JSON](../evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json)
-- [PROGRAM_FIT_D001 SVG](../evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.svg)
+- [PROGRAM_FIT_D001 JSON](../evidence_cards/PLITH-PROGRAM_FIT_D001-2026-06-04.json)
+- [PROGRAM_FIT_D001 SVG](../evidence_cards/PLITH-PROGRAM_FIT_D001-2026-06-04.svg)
 
 It records a single-operator `PASSED_UNDER_PROTOCOL` result for mapping public
-ClaimBound materials to selected public-interest open-source program eligibility
+Protocolith materials to selected public-interest open-source program eligibility
 categories. It does not claim approval, endorsement, legal eligibility, reviewer
 acceptance, award likelihood or a complete audit of any private application.
 
@@ -167,21 +167,21 @@ local run root or sanitized source manifest.
 
 ## Local Run For A Specific Public Call
 
-Use this workflow when you want to check ClaimBound Evidence against a specific
+Use this workflow when you want to check Protocolith against a specific
 public eligibility page without committing private application material.
 
 1. Install and validate the current repository.
 
 ```bash
 uv sync --extra dev
-uv run claimbound validate-all
+uv run protocolith validate-all
 ```
 
 2. Create a local-only run root. Use the exact public eligibility URL for the
    target call.
 
 ```bash
-uv run claimbound run-root \
+uv run protocolith run-root \
   --protocol-id PROGRAM_FIT_D001 \
   --source-url "https://example.org/public-call/eligibility/" \
   --operator "your-name-or-handle"
@@ -190,7 +190,7 @@ uv run claimbound run-root \
 3. Create a local scaffold outside committed documentation.
 
 ```bash
-uv run claimbound new \
+uv run protocolith new \
   --source-url "https://example.org/public-call/eligibility/" \
   --protocol-id "PROGRAM_FIT_D001" \
   --domain "program-review" \
@@ -198,7 +198,7 @@ uv run claimbound new \
   --execution-mode "MANUAL_NO_AI" \
   --source-name "Public eligibility pages for the target award call" \
   --audience "applicant-side program reviewers" \
-  --out "$HOME/claimbound_runs/PROGRAM_FIT_D001/scaffold"
+  --out "$HOME/protocolith_runs/PROGRAM_FIT_D001/scaffold"
 ```
 
 4. Freeze the public source manifest before scoring:
@@ -209,8 +209,8 @@ CALL_MAIN,https://example.org/public-call/,public program page,YYYY-MM-DD,html,.
 CALL_ELIGIBILITY,https://example.org/public-call/eligibility/,eligibility criteria,YYYY-MM-DD,html,...
 CALL_GUIDE,https://example.org/public-call/guide/,guide for applicants,YYYY-MM-DD,html,...
 CALL_FAQ,https://example.org/public-call/faq/,public FAQ,YYYY-MM-DD,html,...
-PROJECT_README,https://github.com/ClaimBound/claimbound-evidence,project README,YYYY-MM-DD,html,...
-PROJECT_LICENSE,https://github.com/ClaimBound/claimbound-evidence/blob/main/LICENSE,project license,YYYY-MM-DD,html,...
+PROJECT_README,https://github.com/protocolith/protocolith,project README,YYYY-MM-DD,html,...
+PROJECT_LICENSE,https://github.com/protocolith/protocolith/blob/main/LICENSE,project license,YYYY-MM-DD,html,...
 ```
 
 5. Score only the frozen narrow claims below. Use `PASSED_UNDER_PROTOCOL` only
@@ -231,14 +231,14 @@ PROJECT_LICENSE,https://github.com/ClaimBound/claimbound-evidence/blob/main/LICE
    registry:
 
 ```bash
-uv run python scripts/claimbound_validate_evidence_card.py \
-  docs/evidence_cards/CLAIMBOUND-PROGRAM-ELIGIBILITY-SELF-CHECK-D001-YYYY-MM-DD.json
+uv run python scripts/protocolith_validate_evidence_card.py \
+  docs/evidence_cards/PLITH-PROGRAM-ELIGIBILITY-SELF-CHECK-D001-YYYY-MM-DD.json
 
-uv run python scripts/claimbound_render_evidence_card_svg.py \
-  docs/evidence_cards/CLAIMBOUND-PROGRAM-ELIGIBILITY-SELF-CHECK-D001-YYYY-MM-DD.json \
-  docs/evidence_cards/CLAIMBOUND-PROGRAM-ELIGIBILITY-SELF-CHECK-D001-YYYY-MM-DD.svg
+uv run python scripts/protocolith_render_evidence_card_svg.py \
+  docs/evidence_cards/PLITH-PROGRAM-ELIGIBILITY-SELF-CHECK-D001-YYYY-MM-DD.json \
+  docs/evidence_cards/PLITH-PROGRAM-ELIGIBILITY-SELF-CHECK-D001-YYYY-MM-DD.svg
 
-uv run claimbound validate-all
+uv run protocolith validate-all
 ```
 
 Until those steps are completed, this file remains a public runbook and example,

@@ -26,6 +26,6 @@ Exact field rules live in the [evidence card protocol](EVIDENCE_CARD.md) and the
 | **Rerun / reproduction attempt** | A later run of the same frozen protocol, recorded as its own card that links back to the original. |
 | **Registry** | `docs/registry/evidence_index.json`: sanitized metadata and hashes of all cards. It never stores raw payloads. |
 | **Raw payload** | The downloaded source bytes. Kept locally (`raw_payload_committed: false`), only hashes are published. |
-| **Run root** | A local-only folder with standard subfolders for raw data, logs, hashes and reports, created by `claimbound run-root`. |
+| **Run root** | A local-only folder with standard subfolders for raw data, logs, hashes and reports, created by `protocolith run-root`. |
 | **Artifact-only record** | A summary kept in the artifacts catalog that is not (yet) a registry card. |
 | **Pseudonymous subject** | A confidential method or model referred to by a `SUBJ-…` identifier; see the [pseudonym policy](PSEUDONYM_POLICY.md). |

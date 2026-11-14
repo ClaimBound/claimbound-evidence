@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from claimbound_evidence.evidence_card import validate_evidence_card
+from protocolith.evidence_card import validate_evidence_card
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,7 +28,7 @@ def test_primary_group_cards_match_manifest_and_validate() -> None:
     for manifest_path in MANIFESTS:
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         for row in manifest["records"]:
-            matches = list((ROOT / "docs/evidence_cards").glob(f"CLAIMBOUND-{row['protocol_id']}-*.json"))
+            matches = list((ROOT / "docs/evidence_cards").glob(f"PLITH-{row['protocol_id']}-*.json"))
             assert len(matches) == 1
             card = json.loads(matches[0].read_text(encoding="utf-8"))
             assert card["public_claim_text"] == row["public_claim_text"]

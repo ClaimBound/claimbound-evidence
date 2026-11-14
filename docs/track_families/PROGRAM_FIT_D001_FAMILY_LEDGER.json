@@ -1,26 +1,26 @@
 {
   "family_id": "PROGRAM_FIT_D001_FAMILY",
   "protocol_id": "PROGRAM_FIT_D001",
-  "protocol_version": "claimbound-rnd-family-v2",
+  "protocol_version": "protocolith-rnd-family-v2",
   "family_type": "source_boundary_family",
   "family_status": "ACTIVE",
   "domain": "program-review",
   "created_at": "2026-06-04",
   "operator": "Rostyslav / local operator",
-  "parent_claim": "ClaimBound public materials can be mapped to selected public-interest open-source program eligibility activity categories under a frozen manual program-fit source audit, without claiming program sponsor approval, endorsement, legal eligibility, reviewer acceptance or award likelihood.",
+  "parent_claim": "Protocolith public materials can be mapped to selected public-interest open-source program eligibility activity categories under a frozen manual program-fit source audit, without claiming program sponsor approval, endorsement, legal eligibility, reviewer acceptance or award likelihood.",
   "claim_scope": {
     "allowed": [
-      "ClaimBound public materials have a traceable fit-map to selected public-interest open-source program eligibility activity categories.",
-      "The fit-map is checked against an external public eligibility source snapshot and public ClaimBound materials.",
+      "Protocolith public materials have a traceable fit-map to selected public-interest open-source program eligibility activity categories.",
+      "The fit-map is checked against an external public eligibility source snapshot and public Protocolith materials.",
       "The result may be published as a bounded evidence card with explicit limitations."
     ],
     "forbidden": [
-      "A program sponsor approved ClaimBound.",
-      "A program sponsor endorsed ClaimBound.",
-      "ClaimBound will receive an award.",
-      "ClaimBound is legally eligible in the final reviewer sense.",
-      "ClaimBound replaces human award review.",
-      "ClaimBound is better than every manual review process.",
+      "A program sponsor approved Protocolith.",
+      "A program sponsor endorsed Protocolith.",
+      "Protocolith will receive an award.",
+      "Protocolith is legally eligible in the final reviewer sense.",
+      "Protocolith replaces human award review.",
+      "Protocolith is better than every manual review process.",
       "The private submitted application has been fully audited."
     ]
   },
@@ -28,13 +28,13 @@
     {
       "claim_id": "PROGRAM-FIT-C1",
       "claim_class": "source",
-      "claim_text": "Selected public-interest open-source program eligibility activity categories can be mapped to public ClaimBound materials.",
+      "claim_text": "Selected public-interest open-source program eligibility activity categories can be mapped to public Protocolith materials.",
       "status": "FROZEN",
-      "acceptance_gate": "PASS only if each selected program category has both a public source basis and a public ClaimBound material reference.",
+      "acceptance_gate": "PASS only if each selected program category has both a public source basis and a public Protocolith material reference.",
       "evidence_required": [
         "external public eligibility source snapshot",
         "local source hash",
-        "public ClaimBound materials",
+        "public Protocolith materials",
         "sanitized mapping summary"
       ],
       "forbidden_inference": [
@@ -65,9 +65,9 @@
     {
       "claim_id": "PROGRAM-FIT-C3",
       "claim_class": "diagnostic",
-      "claim_text": "The resulting card is a bounded example of ClaimBound discipline for program-fit self-checking.",
+      "claim_text": "The resulting card is a bounded example of Protocolith discipline for program-fit self-checking.",
       "status": "FROZEN",
-      "acceptance_gate": "PASS only if the card explains what ClaimBound helps with and what it does not replace.",
+      "acceptance_gate": "PASS only if the card explains what Protocolith helps with and what it does not replace.",
       "evidence_required": [
         "evidence card JSON",
         "SVG visual card",
@@ -75,9 +75,9 @@
         "manual-review limitations"
       ],
       "forbidden_inference": [
-        "ClaimBound is better than all manual review",
-        "ClaimBound replaces human award review",
-        "ClaimBound certifies the project"
+        "Protocolith is better than all manual review",
+        "Protocolith replaces human award review",
+        "Protocolith certifies the project"
       ]
     }
   ],
@@ -100,14 +100,14 @@
       "private_application_text_committed": false
     },
     "candidate_or_method_surface": {
-      "candidate": "ClaimBound public evidence-card workflow and registry discipline",
+      "candidate": "Protocolith public evidence-card workflow and registry discipline",
       "public_materials": [
         "README.md",
         "docs/evidence_cards/",
         "docs/registry/evidence_index.json",
-        "src/claimbound_evidence/"
+        "src/protocolith/"
       ],
-      "method": "Manual source-boundary mapping from selected public-interest open-source program eligibility activity categories to public ClaimBound materials."
+      "method": "Manual source-boundary mapping from selected public-interest open-source program eligibility activity categories to public Protocolith materials."
     },
     "label_or_target_surface": {
       "target_label": "program_fit_source_audit",
@@ -118,7 +118,7 @@
     "selection_surface": {
       "included_sources": [
         "external public eligibility page",
-        "public ClaimBound repository materials"
+        "public Protocolith repository materials"
       ],
       "excluded_sources": [
         "private submitted application text",
@@ -129,14 +129,14 @@
     },
     "target_metric": {
       "metric_name": "category_mapping_gate_count",
-      "pass_condition": "Every selected mapped program category has a public source basis and a public ClaimBound material reference.",
+      "pass_condition": "Every selected mapped program category has a public source basis and a public Protocolith material reference.",
       "minimum_required_passes": 3,
       "observed_status": "manual_review_pending_until_summary_card_registry_are_created"
     },
     "acceptance_gates": [
       "No private application text is committed.",
       "Every mapped category is tied to a public source basis.",
-      "Every mapped category is tied to public ClaimBound material.",
+      "Every mapped category is tied to public Protocolith material.",
       "Forbidden claims are explicitly blocked.",
       "The final evidence card does not claim program sponsor approval, endorsement, legal eligibility or award likelihood."
     ],
@@ -144,7 +144,7 @@
   },
   "proof_surface_hash": "e8e88680c7b3a2c4991ae230960d86cfd9ed9cc78d42b70c2b8cc44c37c52439",
   "non_overlap_boundary": {
-    "source_boundary": "Only the external public eligibility page and public ClaimBound materials are used.",
+    "source_boundary": "Only the external public eligibility page and public Protocolith materials are used.",
     "private_boundary": "Private submitted application text is excluded from the public evidence surface.",
     "decision_boundary": "Award decision, reviewer judgment, legal eligibility and award likelihood are outside the claim.",
     "time_boundary": "Source snapshot and manual mapping are bounded to access date 2026-06-04."
@@ -178,8 +178,8 @@
       "dependencies": [],
       "writes_artifacts": [
         "artifacts/program_fit_d001_summary.json",
-        "docs/evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json",
-        "docs/evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.svg",
+        "docs/evidence_cards/PLITH-PROGRAM_FIT_D001-2026-06-04.json",
+        "docs/evidence_cards/PLITH-PROGRAM_FIT_D001-2026-06-04.svg",
         "docs/registry/evidence_index.json"
       ],
       "source_url": "source identity withheld from public card to avoid implying program-sponsor affiliation",
@@ -212,7 +212,7 @@
     },
     {
       "rule_id": "STOP-NO-MAPPING",
-      "condition": "No selected program category can be mapped to public ClaimBound materials.",
+      "condition": "No selected program category can be mapped to public Protocolith materials.",
       "action": "Set family_status to STOPPED and result to NEGATIVE_RESULT_UNDER_PROTOCOL."
     }
   ]

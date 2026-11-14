@@ -23,7 +23,7 @@ from string import Template
 
 PACKAGING = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGING.parent
-PROJECT = "claimbound-evidence"
+PROJECT = "protocolith"
 WHEEL_RE = re.compile(r"^(?P<dist>.+?)-(?P<ver>[^-]+)(?:-(?P<build>\d[^-]*))?-(?P<py>[^-]+)-(?P<abi>[^-]+)-(?P<plat>[^-]+)\.whl$")
 
 # Homebrew platforms and how their wheel tags look
@@ -159,7 +159,7 @@ def render_unsupported(lock: dict[str, dict], python: str) -> str:
         if (os_name, arch) in supported:
             continue
         condition = f"OS.{'mac' if os_name == 'macos' else 'linux'}? && Hardware::CPU.{'intel' if arch == 'intel' else 'arm'}?"
-        checks.append(f'    odie "claimbound-evidence: no dependency wheels for {os_name} {arch}" if {condition}')
+        checks.append(f'    odie "protocolith: no dependency wheels for {os_name} {arch}" if {condition}')
     return "\n".join(checks)
 
 
@@ -188,7 +188,7 @@ def render_all(info: dict[str, str], lock: dict[str, dict], python: str, out: Pa
     written = []
     for template, target in (
         (PACKAGING / "conda-forge" / "recipe.yaml.tmpl", out / "conda-forge" / "recipe.yaml"),
-        (PACKAGING / "homebrew" / "claimbound-evidence.rb.tmpl", out / "homebrew" / "claimbound-evidence.rb"),
+        (PACKAGING / "homebrew" / "protocolith.rb.tmpl", out / "homebrew" / "protocolith.rb"),
     ):
         target.write_text(Template(template.read_text(encoding="utf-8")).substitute(values), encoding="utf-8")
         written.append(target)

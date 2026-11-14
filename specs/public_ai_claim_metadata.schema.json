@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "claimbound-public-ai-claim-v1",
-  "title": "ClaimBound public AI claim source-audit metadata",
+  "$id": "protocolith-public-ai-claim-v1",
+  "title": "Protocolith public AI claim source-audit metadata",
   "description": "Metadata for a source audit of public AI documentation. It records what a public source says; it never records model safety, quality, runtime behavior or benchmark superiority. See docs/PUBLIC_AI_CLAIM_PROTOCOL.md.",
   "type": "object",
   "additionalProperties": true,
@@ -34,7 +34,7 @@
     }
   },
   "properties": {
-    "schema_version": { "const": "claimbound-public-ai-claim-v1" },
+    "schema_version": { "const": "protocolith-public-ai-claim-v1" },
     "protocol_id": { "type": "string", "pattern": "^[A-Z0-9][A-Z0-9_]{2,63}$" },
     "source_url": { "type": "string", "pattern": "^https?://[^\\s/]+\\S*$" },
     "source_name": { "type": "string", "minLength": 1 },

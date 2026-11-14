@@ -10,7 +10,7 @@ for these tracks are GRAY DRAFT / NOT_EVIDENCE until an operator runs and
 validates them.
 
 Machine-readable form: `specs/public_ai_claim_metadata.schema.json`, checked by
-`claimbound_evidence.public_ai_protocol.validate_public_ai_claim_metadata`.
+`protocolith.public_ai_protocol.validate_public_ai_claim_metadata`.
 
 ## 1. Source-Audit Rules
 
@@ -95,7 +95,7 @@ deployment certification.
 ## 7. Validation
 
 ```python
-from claimbound_evidence.public_ai_protocol import validate_public_ai_claim_metadata
+from protocolith.public_ai_protocol import validate_public_ai_claim_metadata
 
 problems = validate_public_ai_claim_metadata(metadata)
 ```

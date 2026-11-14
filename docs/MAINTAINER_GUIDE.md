@@ -1,14 +1,14 @@
 # Maintainer Guide (Public)
 
-Single-maintainer open-source boundary for ClaimBound. This is not a hosted
+Single-maintainer open-source boundary for Protocolith. This is not a hosted
 review service or certification authority.
 
 ## Daily health checks
 
 ```bash
 uv sync --extra dev
-uv run claimbound doctor
-uv run claimbound validate-all
+uv run protocolith doctor
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```
 

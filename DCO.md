@@ -1,6 +1,6 @@
 # Developer Certificate of Origin
 
-ClaimBound uses the Developer Certificate of Origin (DCO) 1.1 for contributions.
+Protocolith uses the Developer Certificate of Origin (DCO) 1.1 for contributions.
 
 By making a contribution to this project, I certify that:
 
@@ -12,7 +12,7 @@ I understand that this project and the contribution are public and that a record
 
 ## Sign-off
 
-Every commit submitted to ClaimBound must contain a `Signed-off-by:` trailer matching the commit author.
+Every commit submitted to Protocolith must contain a `Signed-off-by:` trailer matching the commit author.
 
 Use:
 

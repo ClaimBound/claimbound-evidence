@@ -2,7 +2,7 @@
 
 **VERIFY issues:** #85 (open for external closure), #89, #90, #91, #92  
 **Profile:** documentation review and validator commands; no large downloads.  
-**#85 time:** ~2 min after baseline via `claimbound verify starter-pack`.
+**#85 time:** ~2 min after baseline via `protocolith verify starter-pack`.
 
 Run [baseline](README.md#before-anyone-starts) first. Primary commands work on
 Windows, macOS and Linux without jq or bash.
@@ -17,7 +17,7 @@ Docs: [EXTERNAL_OPERATOR_STARTER_PACK.md](../EXTERNAL_OPERATOR_STARTER_PACK.md)
 **Primary path (~2 min after baseline):**
 
 ```bash
-uv run claimbound verify starter-pack
+uv run protocolith verify starter-pack
 ```
 
 Expected last line: `verify_starter-pack=PASS`.
@@ -26,14 +26,14 @@ Expected last line: `verify_starter-pack=PASS`.
 <summary>Manual equivalent (if you prefer step-by-step)</summary>
 
 ```bash
-uv run claimbound demo eea-source-audit
-uv run claimbound demo grok-source-audit
+uv run protocolith demo eea-source-audit
+uv run protocolith demo grok-source-audit
 
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
+uv run protocolith inspect card docs/evidence_cards/PLITH-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
   --keys evidence_id result_status reproduction_level claim_boundary
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json \
+uv run protocolith inspect card docs/evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json \
   --keys evidence_id result_status reproduction_level claim_boundary
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json \
+uv run protocolith inspect card docs/evidence_cards/PLITH-NOAA-COOPS-D131-2026-04-30.json \
   --keys evidence_id result_status reproduction_level claim_boundary
 ```
 
@@ -46,7 +46,7 @@ Confirm: NASA drift is in `reproduction_level`, not `result_status`.
 
 ```bash
 jq '{evidence_id,result_status,reproduction_level,claim_boundary}' \
-  docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
+  docs/evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json
 ```
 
 </details>
@@ -56,13 +56,13 @@ jq '{evidence_id,result_status,reproduction_level,claim_boundary}' \
 Playbook: [ISSUE_58_AI_BOUNDARY_PLAYBOOK.md](../runbooks/ISSUE_58_AI_BOUNDARY_PLAYBOOK.md)
 
 ```bash
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
+uv run protocolith inspect card docs/evidence_cards/PLITH-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
   --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-OPENAI_GPT5_SYSTEM_CARD_SOURCE_AUDIT_D001-2026-05-08.json \
+uv run protocolith inspect card docs/evidence_cards/PLITH-OPENAI_GPT5_SYSTEM_CARD_SOURCE_AUDIT_D001-2026-05-08.json \
   --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-GOOGLE_DEEPMIND_MODEL_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
+uv run protocolith inspect card docs/evidence_cards/PLITH-GOOGLE_DEEPMIND_MODEL_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
   --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json \
+uv run protocolith inspect card docs/evidence_cards/PLITH-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json \
   --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
 ```
 
@@ -73,9 +73,9 @@ Confirm: no safety, runtime, benchmark-superiority or deployment claims.
 Playbook: [ISSUE_59_API_PARITY_PLAYBOOK.md](../runbooks/ISSUE_59_API_PARITY_PLAYBOOK.md)
 
 ```bash
-uv run claimbound validate-all
-uv run claimbound inspect registry --keys registry_name card_count
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-API_PARITY_D001-2026-06-15.json \
+uv run protocolith validate-all
+uv run protocolith inspect registry --keys registry_name card_count
+uv run protocolith inspect card docs/evidence_cards/PLITH-API_PARITY_D001-2026-06-15.json \
   --keys evidence_id result_status claim_boundary runner_command
 ```
 
@@ -87,7 +87,7 @@ in your issue comment if you use git.
 **Not a runtime reproduction.** Verify the design document only.
 
 ```bash
-uv run claimbound verify source-probe-spec
+uv run protocolith verify source-probe-spec
 ```
 
 Confirm: spec says probe cannot emit `PASSED_UNDER_PROTOCOL` by itself.
@@ -97,7 +97,7 @@ Confirm: spec says probe cannot emit `PASSED_UNDER_PROTOCOL` by itself.
 **Not a UI reproduction.** Verify the design document only.
 
 ```bash
-uv run claimbound verify static-registry-spec
+uv run protocolith verify static-registry-spec
 ```
 
 Confirm: [PLANNED_NOT_SHIPPED.md](../PLANNED_NOT_SHIPPED.md) matches repository state.

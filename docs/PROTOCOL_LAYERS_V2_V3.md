@@ -1,8 +1,8 @@
-# ClaimBound Protocol Layers: v2 And v3
+# Protocolith Protocol Layers: v2 And v3
 
 Status: explanatory documentation. This page does not create a new empirical result, migrate historical cards or change the evidence-card schema.
 
-ClaimBound currently separates result evidence from R&D planning metadata. The practical rule is simple:
+Protocolith currently separates result evidence from R&D planning metadata. The practical rule is simple:
 
 ```text
 evidence card = one completed result
@@ -24,8 +24,8 @@ Neither v2 nor v3 makes an evidence result stronger by itself. They are anti-ove
 | Layer | Main object | Protocol string | What it is for | What it must not do |
 | --- | --- | --- | --- | --- |
 | Evidence-card protocol | Evidence card JSON/SVG | Evidence-card schema/version fields | Publish one completed result with status, boundary, hashes and reproduction level. | Replace a protocol run, broaden a claim, or certify a whole project. |
-| R&D family/frontier v2 | `*_FAMILY_LEDGER.json`, optional `*_FRONTIER.json` | `claimbound-rnd-family-v2` | Coordinate related tracks, claim lists, proof surfaces, budgets, stop rules, frontier state and tombstones. | Turn diagnostics into proof or rescue a failed branch by rerunning cosmetically similar tracks. |
-| Tree overlay v3 | `*_TREE.json` | `claimbound-tree-v3` | Show a compact public tree of iron claims, flow claims, track nodes, tombstones, badge counts and branch-block rules. | Reinterpret old cards, remove tombstones, or claim deployment/correctness outside the frozen boundary. |
+| R&D family/frontier v2 | `*_FAMILY_LEDGER.json`, optional `*_FRONTIER.json` | `protocolith-rnd-family-v2` | Coordinate related tracks, claim lists, proof surfaces, budgets, stop rules, frontier state and tombstones. | Turn diagnostics into proof or rescue a failed branch by rerunning cosmetically similar tracks. |
+| Tree overlay v3 | `*_TREE.json` | `protocolith-tree-v3` | Show a compact public tree of iron claims, flow claims, track nodes, tombstones, badge counts and branch-block rules. | Reinterpret old cards, remove tombstones, or claim deployment/correctness outside the frozen boundary. |
 
 ## Protocol v2 In Plain Language
 
@@ -44,7 +44,7 @@ Its main job is to prevent selective reporting. It requires the family to separa
 
 Important v2 concepts:
 
-- `claimbound-rnd-family-v2`: the protocol string used by family and frontier ledgers.
+- `protocolith-rnd-family-v2`: the protocol string used by family and frontier ledgers.
 - Family ledger: the durable contract for related tracks.
 - Claim list: the narrow claims that may be tested.
 - Proof surface: the source, selection, target, candidate, decision rule, metric and gates that make a result reusable.
@@ -63,7 +63,7 @@ Its main job is visibility. A reader can quickly see which claims are stable pro
 
 Important v3 concepts:
 
-- `claimbound-tree-v3`: the protocol string required by v3 overlays.
+- `protocolith-tree-v3`: the protocol string required by v3 overlays.
 - `iron_claim`: a narrow bounded claim intended to support stable evidence.
 - `flow_claim`: a volatile routing, dependency, availability or scheduling claim; useful, but not proof by itself.
 - `tombstone`: an append-only stop record surfaced directly in the tree.
@@ -115,25 +115,25 @@ A green card for a software track means only that one narrow software claim pass
 Validate a v2 family ledger:
 
 ```bash
-uv run claimbound validate-family docs/track_families/EXAMPLE_D001_FAMILY_LEDGER.json
+uv run protocolith validate-family docs/track_families/EXAMPLE_D001_FAMILY_LEDGER.json
 ```
 
 Validate a v2 frontier ledger:
 
 ```bash
-uv run claimbound validate-frontier docs/track_families/EXAMPLE_D001_FRONTIER.json
+uv run protocolith validate-frontier docs/track_families/EXAMPLE_D001_FRONTIER.json
 ```
 
 Validate a v3 tree overlay:
 
 ```bash
-uv run claimbound validate-tree docs/track_families/EXAMPLE_D001_TREE.json
+uv run protocolith validate-tree docs/track_families/EXAMPLE_D001_TREE.json
 ```
 
 Validate evidence cards, registry, optional v2 ledgers and optional v3 overlays together:
 
 ```bash
-uv run claimbound validate-all
+uv run protocolith validate-all
 ```
 
 ## Recommended Reader Path

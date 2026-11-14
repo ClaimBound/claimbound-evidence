@@ -1,7 +1,7 @@
 # Demo Tracks To Evidence Cards
 
 This document defines the honest path from a public example to a real
-ClaimBound card.
+Protocolith card.
 
 A demo, testimonial or scaffold is not evidence. A README example may point to a
 card only after there is a request, frozen protocol, run or checklist, sanitized
@@ -57,7 +57,7 @@ evidence request
 
 ## Scaffold Files
 
-`uv run claimbound new` creates a draft scaffold:
+`uv run protocolith new` creates a draft scaffold:
 
 ```text
 docs/evidence_requests/<TRACK_ID>_REQUEST.md
@@ -65,7 +65,7 @@ docs/protocols/<TRACK_ID>_PREREG_CHARTER.md
 docs/manual_audit/<TRACK_ID>/<TRACK_ID>_PLAYBOOK.md
 docs/manual_audit/<TRACK_ID>/<TRACK_ID>_CHECKLIST.md
 docs/manual_audit/<TRACK_ID>/<TRACK_ID>_OPERATOR_DECLARATION.md
-docs/evidence_card_drafts/CLAIMBOUND-<TRACK_ID>-DRAFT.json
+docs/evidence_card_drafts/PLITH-<TRACK_ID>-DRAFT.json
 docs/track_families/<TRACK_ID>_FAMILY_LEDGER.json
 artifacts/<track_id>_source_probe_summary.json
 ```
@@ -83,10 +83,10 @@ Manual and AI-assisted runs should keep sensitive or bulky material outside the
 repository:
 
 ```text
-$HOME/claimbound_runs/<run_id>/raw/
-$HOME/claimbound_runs/<run_id>/logs/
-$HOME/claimbound_runs/<run_id>/hashes/
-$HOME/claimbound_runs/<run_id>/transcripts/
+$HOME/protocolith_runs/<run_id>/raw/
+$HOME/protocolith_runs/<run_id>/logs/
+$HOME/protocolith_runs/<run_id>/hashes/
+$HOME/protocolith_runs/<run_id>/transcripts/
 ```
 
 The public repository stores sanitized summaries, hashes and cards, not raw
@@ -108,7 +108,7 @@ main risk.
 For the EEA AQ D-001 manual track, the reusable runner is:
 
 ```bash
-python3 scripts/claimbound_run_eea_manual_track.py \
+python3 scripts/protocolith_run_eea_manual_track.py \
   --probe-eea-api \
   --report artifacts/eea_aq_d001_manual_summary.json
 ```

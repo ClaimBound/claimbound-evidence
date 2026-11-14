@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+### Changed
+
+- **Renamed to Protocolith** (was ClaimBound Evidence). Package and module `protocolith`, command `protocolith` with
+  the short alias `plith`. Releases up to 0.5.0 remain available under the old name.
+- **Evidence ids use the `PLITH-` prefix.** Every card keeps its old id in `legacy_evidence_id`;
+  `docs/MIGRATION_ID_MAP.json` maps old to new ids with file hashes. Hash-pinned artifacts keep their original text.
+- **The core uses only the standard library.** `numpy` moved to the `runners` extra and the PDF libraries to the
+  `campaign` extra; commands that need them explain what to install.
+- **Python 3.11 to 3.15** are supported (was 3.12 and newer).
+- Core specification draft: [docs/spec/CORE_SPEC.md](docs/spec/CORE_SPEC.md).
+
+### Fixed
+
+- A test fixture no longer depends on the developer's global git signing configuration.
+
 ### Removed
 
 - The peer-comparison fair-race material was removed from the tree at the owner's decision (2026-11-14): the card with

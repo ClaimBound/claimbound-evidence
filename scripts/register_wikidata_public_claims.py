@@ -13,14 +13,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from claimbound_evidence.card_svg_render import render_svg
-from claimbound_evidence.evidence_card import validate_evidence_card
-from claimbound_evidence.registry import _compute_statistics, validate_registry
+from protocolith.card_svg_render import render_svg
+from protocolith.evidence_card import validate_evidence_card
+from protocolith.registry import _compute_statistics, validate_registry
 
 MANIFEST = ROOT / "artifacts/cb7k_wikidata_public_claims.json"
 REGISTRY = ROOT / "docs/registry/evidence_index.json"
 CARDS = ROOT / "docs/evidence_cards"
-CARD_RE = re.compile(r"CLAIMBOUND-CB7K-DOM(\d{3})-T\d{2}-G\d{2}-\d{4}-\d{2}-\d{2}\.json")
+CARD_RE = re.compile(r"PLITH-CB7K-DOM(\d{3})-T\d{2}-G\d{2}-\d{4}-\d{2}-\d{2}\.json")
 PROTOCOL = "CB7K-WIKIDATA-PUBLICATION-REVISION-v1"
 RUNNER = (
     "python scripts/build_wikidata_public_claims.py verify-sources "
@@ -30,7 +30,7 @@ RUNNER = (
 
 def load_slots() -> dict[str, list[Path]]:
     slots: dict[str, list[Path]] = {}
-    for path in sorted(CARDS.glob("CLAIMBOUND-CB7K-*.json")):
+    for path in sorted(CARDS.glob("PLITH-CB7K-*.json")):
         match = CARD_RE.fullmatch(path.name)
         if match:
             slots.setdefault(f"DOM{match.group(1)}", []).append(path)
@@ -83,7 +83,7 @@ def build() -> None:
                     "named immutable revision; the revision payload SHA-256 must match."
                 ),
                 "card_svg_rendered": f"docs/evidence_cards/{evidence_id}.svg",
-                "card_svg_template": "docs/assets/claimbound_evidence_card.svg",
+                "card_svg_template": "docs/assets/protocolith_card.svg",
                 "claim_boundary": (
                     "This result establishes only that the named structured statement was "
                     "published in the frozen Wikidata revision. It does not independently "
@@ -94,7 +94,7 @@ def build() -> None:
                 "domain": row["domain_slug"],
                 "evidence_id": evidence_id,
                 "evidence_url": (
-                    "https://github.com/ClaimBound/claimbound-evidence/blob/main/"
+                    "https://github.com/protocolith/protocolith/blob/main/"
                     f"docs/evidence_cards/{evidence_id}.json"
                 ),
                 "execution_mode": "AUTOMATED_AI_ASSISTED",

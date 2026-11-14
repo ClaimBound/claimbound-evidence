@@ -73,8 +73,8 @@ def main() -> None:
             )
         accessed_at_utc = datetime.now(timezone.utc).isoformat()
         with (
-            tempfile.NamedTemporaryFile(prefix="claimbound-retry-", suffix=".bin") as target,
-            tempfile.NamedTemporaryFile(prefix="claimbound-retry-", suffix=".headers") as header_target,
+            tempfile.NamedTemporaryFile(prefix="protocolith-retry-", suffix=".bin") as target,
+            tempfile.NamedTemporaryFile(prefix="protocolith-retry-", suffix=".headers") as header_target,
         ):
             completed = subprocess.run(
                 [

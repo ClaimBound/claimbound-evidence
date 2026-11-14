@@ -2,7 +2,7 @@
 
 Status: public protocol record for the committed negative result. Existing
 card:
-[CLAIMBOUND-NOAA-COOPS-D131-2026-04-30](../evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json).
+[PLITH-NOAA-COOPS-D131-2026-04-30](../evidence_cards/PLITH-NOAA-COOPS-D131-2026-04-30.json).
 
 Protocol version:
 
@@ -61,7 +61,7 @@ min_event_rate: 0.03
 max_event_rate: 0.40
 rng_seed: 20260430
 min_joined_rows: 53603
-runner: scripts/claimbound_run_noaa_coops_prereg.py
+runner: scripts/protocolith_run_noaa_coops_prereg.py
 ```
 
 ## Recorded Negative Outcome

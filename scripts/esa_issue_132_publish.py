@@ -9,8 +9,8 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
-from claimbound_evidence.card_svg_render import render_svg
-from claimbound_evidence.evidence_card import validate_evidence_card
+from protocolith.card_svg_render import render_svg
+from protocolith.evidence_card import validate_evidence_card
 
 from esa_issue_132_common import (
     CARDS_DIR,
@@ -38,7 +38,7 @@ def build_card(
     summary_sha256: str,
 ) -> dict[str, Any]:
     protocol_id = str(result["protocol_id"])
-    evidence_id = f"CLAIMBOUND-{protocol_id}-{access_date}"
+    evidence_id = f"PLITH-{protocol_id}-{access_date}"
     source_sha = result.get("source_sha256")
     status = str(result["result_status"])
 
@@ -79,14 +79,14 @@ def build_card(
             "patterns produce INSUFFICIENT_COVERAGE rather than a forced pass."
         ),
         "card_svg_rendered": f"docs/evidence_cards/{evidence_id}.svg",
-        "card_svg_template": "docs/assets/claimbound_evidence_card.svg",
+        "card_svg_template": "docs/assets/protocolith_card.svg",
         "claim_boundary": claim_boundary,
         "claim_type": "source_boundary",
         "created_at": access_date,
         "domain": "public-data",
         "evidence_id": evidence_id,
         "evidence_url": (
-            "https://github.com/ClaimBound/claimbound-evidence/"
+            "https://github.com/protocolith/protocolith/"
             f"blob/main/docs/evidence_cards/{evidence_id}.json"
         ),
         "execution_mode": "AUTOMATED_AI_ASSISTED",
@@ -116,7 +116,7 @@ def build_card(
         "reproduction_level": "not independently reproduced",
         "result_status": status,
         "runner_command": (
-            "uv run python scripts/claimbound_run_esa_issue_132.py publish "
+            "uv run python scripts/protocolith_run_esa_issue_132.py publish "
             "--preview <local-preview.json> --operator <handle> --confirm-reviewed"
         ),
         "sanitized_report_path": "artifacts/esa_issue_132_batch_summary.json",
@@ -332,7 +332,7 @@ def run_publish(*, preview_arg: str, operator: str, confirm_reviewed: bool) -> i
             "## Local validation",
             "",
             "```bash",
-            "uv run claimbound validate-all",
+            "uv run protocolith validate-all",
             "uv run --extra dev python -m pytest -q",
             "```",
             "",

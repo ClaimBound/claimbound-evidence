@@ -8,9 +8,9 @@ To be written narrowly by the requester before protocol freeze.
 
 ## Claim Source URL
 
-https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
+https://github.com/protocolith/protocolith/blob/main/docs/evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json
 
-## Narrow ClaimBound Question
+## Narrow Protocolith Question
 
 Can this claim be checked under a frozen protocol with source boundary, scoring
 rule, hashes, result status, limitation and rerun path?
@@ -25,7 +25,7 @@ MANUAL_NO_AI
 
 ## Proposed Sources
 
-- ClaimBound NASA POWER D-103 evidence card: https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
+- Protocolith NASA POWER D-103 evidence card: https://github.com/protocolith/protocolith/blob/main/docs/evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json
 
 ## Proposed Scoring Or Resolution Rule
 

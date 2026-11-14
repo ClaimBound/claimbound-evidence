@@ -1,6 +1,6 @@
 # Common Misreadings
 
-ClaimBound is designed to prevent silent overclaiming. These mistakes appear
+Protocolith is designed to prevent silent overclaiming. These mistakes appear
 often in first reviews. This page is a public FAQ, not legal advice.
 
 ## Green card does not mean "safe" or "good"
@@ -9,12 +9,12 @@ often in first reviews. This page is a public FAQ, not legal advice.
 | --- | --- |
 | "The model is safe." | A **narrow** claim passed under a **frozen** protocol on one source boundary. |
 | "The product is ready to deploy." | Source-audit cards check URLs, markers and hashes — not runtime behavior. |
-| "This benchmark proves superiority." | ClaimBound is not a leaderboard; it records one bounded outcome. |
+| "This benchmark proves superiority." | Protocolith is not a leaderboard; it records one bounded outcome. |
 
 ## Yellow reproduction chip is not a failed gate
 
 `reproduction_level` can record source-byte drift while `result_status` stays
-`PASSED_UNDER_PROTOCOL`. Example: [NASA POWER D-103](evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json).
+`PASSED_UNDER_PROTOCOL`. Example: [NASA POWER D-103](evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json).
 
 Drift is explicit evidence, not a hidden downgrade.
 
@@ -25,7 +25,7 @@ Drift is explicit evidence, not a hidden downgrade.
 | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The protocol ran; the narrow claim did not pass. |
 | `BLOCKED_SOURCE` | A fair empirical claim should not be made from the available source. |
 
-A repository that shows only green cards is **less** credible for ClaimBound's
+A repository that shows only green cards is **less** credible for Protocolith's
 purpose.
 
 ## Source audit is not dataset verification
@@ -56,13 +56,13 @@ are **pre-implementation specifications**. See
 
 ## PROGRAM_FIT_D001 is not program approval
 
-[PROGRAM_FIT_D001](evidence_cards/CLAIMBOUND-PROGRAM_FIT_D001-2026-06-04.json) is an
+[PROGRAM_FIT_D001](evidence_cards/PLITH-PROGRAM_FIT_D001-2026-06-04.json) is an
 **advanced optional** methodology demo: a narrow public-materials self-check. It
 does not prove endorsement, award likelihood or reviewer acceptance.
 
 ## Demos and scaffolds are not evidence
 
-`claimbound demo`, `claimbound new` and gray scaffold files are operator aids.
+`protocolith demo`, `protocolith new` and gray scaffold files are operator aids.
 Evidence starts only after protocol freeze, sanitized artifacts, validator pass
 and registry update.
 

@@ -18,12 +18,12 @@ No raw payloads are stored. Output is deterministic (sorted by
 `registry_sequence`, no timestamps; the only date is the index `last_updated`).
 
 ```bash
-uv run python scripts/claimbound_build_registry_view.py          # regenerate
-uv run python scripts/claimbound_build_registry_view.py --check  # fail if stale
+uv run python scripts/protocolith_build_registry_view.py          # regenerate
+uv run python scripts/protocolith_build_registry_view.py --check  # fail if stale
 ```
 
 Generation first validates every index entry against its card JSON (the same
-checks as `claimbound validate-all`) and aborts with a non-zero exit code on any
+checks as `protocolith validate-all`) and aborts with a non-zero exit code on any
 mismatch; cards are never edited. `--check` is also run by
 `tests/test_registry_view.py`. Never edit the generated files by hand.
 

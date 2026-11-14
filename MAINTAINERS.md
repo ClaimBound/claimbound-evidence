@@ -1,6 +1,6 @@
 # Maintainers
 
-ClaimBound is currently maintained by one project participant.
+Protocolith is currently maintained by one project participant.
 
 | Participant | GitHub account | Role | Sensitive resources |
 |---|---|---|---|

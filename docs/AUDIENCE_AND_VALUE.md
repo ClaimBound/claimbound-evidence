@@ -1,6 +1,6 @@
 # Audience And Value
 
-ClaimBound is useful when a public AI, ML, data-analysis or software-development
+Protocolith is useful when a public AI, ML, data-analysis or software-development
 claim should be checked under rules fixed before the result is known.
 
 The project is intentionally narrow. It is not a general model leaderboard,
@@ -9,7 +9,7 @@ certification authority.
 
 ## Main Audiences
 
-| Audience | Why ClaimBound helps |
+| Audience | Why Protocolith helps |
 | --- | --- |
 | AI and LLM evaluation teams | Converts model, RAG, agent and benchmark claims into timestamped, source-bound evidence records. |
 | AI risk, security and automation-control teams | Adds an evidence-bound control layer for AI-assisted decisions, agent actions, security-sensitive changes and robotics/vehicle-software claims without pretending to be a runtime safety controller. |
@@ -33,14 +33,14 @@ For a practical guide to choosing card-only, protocol v2, or protocol v3 stacks
 by audience and work shape, see
 [protocol use by layer and audience](PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md).
 
-For practical guidance on using ClaimBound as an evidence-bound AI risk-control
-layer, see [AI risk control with ClaimBound](AI_RISK_CONTROL_WITH_CLAIMBOUND.md).
-That page explains the difference between ClaimBound and broad mnemonic rules,
+For practical guidance on using Protocolith as an evidence-bound AI risk-control
+layer, see [AI risk control with Protocolith](AI_RISK_CONTROL_WITH_PROTOCOLITH.md).
+That page explains the difference between Protocolith and broad mnemonic rules,
 and gives examples for agent security, robotics and driver-assistance-style
 claims.
 
 For the compact rulebook version, see [12 AI Life Rules](TWELVE_AI_LIFE_CONTROLS.md).
-Those rules describe ClaimBound as a portable evidence-bound control layer for
+Those rules describe Protocolith as a portable evidence-bound control layer for
 AI claims and actions across internal, external and public use.
 
 Software-development guidance is in
@@ -48,7 +48,7 @@ Software-development guidance is in
 keeps software evidence narrow: it helps document complex or risky changes, but
 it does not replace ordinary tests, CI, code review or release judgment.
 
-## Problem ClaimBound Solves
+## Problem Protocolith Solves
 
 Many public AI/ML claims are hard to inspect because:
 
@@ -69,11 +69,11 @@ AI risk-control claims have the same problem when a high-level rule such as
 translated into a concrete source, scenario, command, fixture, log, threshold,
 stop rule and forbidden inference.
 
-ClaimBound makes these points visible in a compact evidence card.
+Protocolith makes these points visible in a compact evidence card.
 
 ## Worked Public Workflow
 
-The public habit ClaimBound wants to support is simple:
+The public habit Protocolith wants to support is simple:
 
 ```text
 Where is the evidence?
@@ -102,9 +102,9 @@ vehicle-software, prompt-injection, security-scan or approval-gate claim. The
 card should say which scenario or command path was checked and must not claim
 that the whole AI, robot, vehicle or software system is safe.
 
-## What ClaimBound Adds
+## What Protocolith Adds
 
-ClaimBound adds a thin evidence layer:
+Protocolith adds a thin evidence layer:
 
 ```text
 frozen protocol
@@ -179,9 +179,9 @@ Examples:
 - AI-agent tool-use, prompt-injection, security-scan, robotics-scenario,
   driver-assistance-style documentation and release-gate evidence records.
 
-## What ClaimBound Should Avoid
+## What Protocolith Should Avoid
 
-ClaimBound should avoid:
+Protocolith should avoid:
 
 - source claims that cannot be sanitized;
 - informal predictions without a resolution rule;

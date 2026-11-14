@@ -1,6 +1,6 @@
 # Architecture
 
-This document describes the released ClaimBound Evidence system as a set of actors and actions. It is intentionally limited to the public repository and its documented release/validation paths.
+This document describes the released Protocolith system as a set of actors and actions. It is intentionally limited to the public repository and its documented release/validation paths.
 
 ## Actors and subsystems
 
@@ -11,7 +11,7 @@ This document describes the released ClaimBound Evidence system as a set of acto
 | GitHub repository | Source and protected integration state | Stores source, issues, PRs, releases, rulesets and workflow definitions |
 | GitHub Actions | Build/test/release outputs | Runs checkout, dependency installation, validation, tests, package build, attestation and publication workflows |
 | Python package tooling | Build artifacts | Builds the Python sdist and wheel from repository state |
-| ClaimBound CLI | Evidence files supplied by an operator | Validates cards, registry data and repository-level evidence according to implemented protocols |
+| Protocolith CLI | Evidence files supplied by an operator | Validates cards, registry data and repository-level evidence according to implemented protocols |
 | Evidence registry | Public metadata index | Maps published evidence identifiers to validated card JSON and metadata |
 | External source / artifact | Input to an evidence run | Supplies public source material or an artifact whose boundary is recorded by a card |
 | PyPI Trusted Publishing | Published Python packages | Receives release artifacts from the protected GitHub Actions workflow using OIDC |
@@ -20,8 +20,8 @@ This document describes the released ClaimBound Evidence system as a set of acto
 
 ### Evidence validation
 
-1. An operator supplies a ClaimBound card, registry entry or supported evidence input.
-2. The ClaimBound CLI reads the declared protocol, source boundary, hashes and result fields.
+1. An operator supplies a Protocolith card, registry entry or supported evidence input.
+2. The Protocolith CLI reads the declared protocol, source boundary, hashes and result fields.
 3. Validators check the applicable schema, protocol constraints and cross-file relationships.
 4. The CLI reports a validation result; it does not provide certification or make a general quality/safety determination.
 5. Maintainers may review the resulting change through the normal pull-request process.
@@ -48,7 +48,7 @@ This document describes the released ClaimBound Evidence system as a set of acto
 - Evidence source material is treated according to the source boundary declared by the evidence card; raw/private payloads are outside the public repository boundary.
 - GitHub Actions workflows are privileged automation and therefore use explicit job permissions.
 - Release publication and repository administration are maintainer-controlled operations.
-- PyPI is an external package distribution service; ClaimBound does not control downstream installations or environments.
+- PyPI is an external package distribution service; Protocolith does not control downstream installations or environments.
 
 ## Update rule
 

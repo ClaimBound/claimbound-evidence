@@ -38,16 +38,16 @@ Build instructions and the dependency policy are in [docs/DEVELOPMENT.md](docs/D
 
 ## Reporting a bug
 
-Open a [Bug Report](https://github.com/ClaimBound/claimbound-evidence/issues/new?template=bug_report.yml)
+Open a [Bug Report](https://github.com/protocolith/protocolith/issues/new?template=bug_report.yml)
 for incorrect tool behavior, failing tests or broken reproducibility. Include:
 
-- the output of `claimbound --version` and `claimbound doctor`;
+- the output of `protocolith --version` and `protocolith doctor`;
 - the exact command you ran and the card file or `evidence_id` involved;
 - what you expected and what happened instead (paste the error text, never raw payloads);
 - your operating system and Python version.
 
 Other issue forms cover source drift, card-boundary questions, evidence requests and
-reproduction requests: <https://github.com/ClaimBound/claimbound-evidence/issues/new/choose>.
+reproduction requests: <https://github.com/protocolith/protocolith/issues/new/choose>.
 Do not open a public issue for a suspected vulnerability; follow [SECURITY.md](SECURITY.md).
 
 ## Default branch (`main`)
@@ -56,7 +56,7 @@ Repository rules enforce the following:
 
 - **Pull requests**: changes must reach `main` through a merged PR (not by direct push).
 - **Reviews**: **one approving review** is required for users who are not covered by a ruleset bypass.
-  **ClaimBound organization owners** can bypass rules in the pull-request merge path (`bypass_mode: pull_request`)
+  **Protocolith organization owners** can bypass rules in the pull-request merge path (`bypass_mode: pull_request`)
   so a solo org owner can still land changes after checks pass; everyone else needs a normal approval.
   GitHub does not count approving your **own** PR toward the required review count.
 - **Status checks**: `pytest` (`.github/workflows/tests.yml`) and `review`
@@ -69,11 +69,11 @@ Repository rules enforce the following:
 The JSON payload for the repo ruleset (for reproducibility) lives at
 [`scripts/github/ruleset_protect_main.json`](scripts/github/ruleset_protect_main.json). To recreate it from
 scratch after deletion, admins can run `gh api --method POST` with `--input` pointing at that file; to
-adjust an existing ruleset without duplicating entries, obtain its numeric id (`gh ruleset list -R ClaimBound/claimbound-evidence`) and use GitHub's `PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}` REST route.
+adjust an existing ruleset without duplicating entries, obtain its numeric id (`gh ruleset list -R Protocolith/protocolith`) and use GitHub's `PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}` REST route.
 
 ## Platform support
 
-ClaimBound targets Windows, macOS and Linux through the `claimbound` Python CLI.
+Protocolith targets Windows, macOS and Linux through the `protocolith` Python CLI.
 You do not need bash, jq, curl or shasum for the primary operator paths. See
 [platform support](docs/PLATFORM_SUPPORT.md).
 
@@ -81,11 +81,11 @@ Before opening a pull request:
 
 ```bash
 uv sync --extra dev
-uv run claimbound doctor
-uv run claimbound validate-all
+uv run protocolith doctor
+uv run protocolith validate-all
 uv run pytest -n auto
 ```
 
 ## Developer Certificate of Origin
 
-ClaimBound requires every commit submitted through a pull request to carry a matching `Signed-off-by:` trailer under the [Developer Certificate of Origin](DCO.md). Use `git commit -s` when creating commits. The `DCO` GitHub Actions check rejects pull requests with a missing or mismatched sign-off.
+Protocolith requires every commit submitted through a pull request to carry a matching `Signed-off-by:` trailer under the [Developer Certificate of Origin](DCO.md). Use `git commit -s` when creating commits. The `DCO` GitHub Actions check rejects pull requests with a missing or mismatched sign-off.

@@ -1,7 +1,7 @@
 <h1 align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo/claimbound-logo-dark.svg">
-    <img src="docs/assets/logo/claimbound-logo-light.svg" alt="ClaimBound Evidence" width="420">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo/protocolith-logo-dark.svg">
+    <img src="docs/assets/logo/protocolith-logo-light.svg" alt="Protocolith" width="420">
   </picture>
 </h1>
 
@@ -12,30 +12,30 @@
 </p>
 
 <p align="center">
-  <a href="https://pypi.org/project/claimbound-evidence/"><img alt="PyPI" src="https://img.shields.io/pypi/v/claimbound-evidence?logo=pypi&logoColor=white"></a>
-  <a href="https://pypi.org/project/claimbound-evidence/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/claimbound-evidence?logo=python&logoColor=white"></a>
-  <a href="https://anaconda.org/conda-forge/claimbound-evidence"><img alt="conda-forge" src="https://img.shields.io/conda/vn/conda-forge/claimbound-evidence?logo=conda-forge&logoColor=white"></a>
+  <a href="https://pypi.org/project/protocolith/"><img alt="PyPI" src="https://img.shields.io/pypi/v/protocolith?logo=pypi&logoColor=white"></a>
+  <a href="https://pypi.org/project/protocolith/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/protocolith?logo=python&logoColor=white"></a>
+  <a href="https://anaconda.org/conda-forge/protocolith"><img alt="conda-forge" src="https://img.shields.io/conda/vn/conda-forge/protocolith?logo=conda-forge&logoColor=white"></a>
   <a href="https://www.bestpractices.dev/projects/15138"><img alt="OpenSSF Best Practices" src="https://www.bestpractices.dev/projects/15138/badge"></a>
   <a href="https://www.bestpractices.dev/projects/15138"><img alt="OpenSSF Baseline" src="https://www.bestpractices.dev/projects/15138/baseline"></a>
-  <a href="https://pypistats.org/packages/claimbound-evidence"><img alt="PyPI downloads per month" src="https://img.shields.io/pypi/dm/claimbound-evidence?label=downloads%2Fmonth"></a>
-  <a href="https://pepy.tech/project/claimbound-evidence"><img alt="Total PyPI downloads" src="https://static.pepy.tech/badge/claimbound-evidence"></a>
-  <a href="https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml"><img alt="tests" src="https://img.shields.io/github/actions/workflow/status/ClaimBound/claimbound-evidence/tests.yml?branch=main&label=tests&logo=github"></a>
+  <a href="https://pypistats.org/packages/protocolith"><img alt="PyPI downloads per month" src="https://img.shields.io/pypi/dm/protocolith?label=downloads%2Fmonth"></a>
+  <a href="https://pepy.tech/project/protocolith"><img alt="Total PyPI downloads" src="https://static.pepy.tech/badge/protocolith"></a>
+  <a href="https://github.com/protocolith/protocolith/actions/workflows/tests.yml"><img alt="tests" src="https://img.shields.io/github/actions/workflow/status/Protocolith/protocolith/tests.yml?branch=main&label=tests&logo=github"></a>
   <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
-  <a href="https://github.com/ClaimBound/claimbound-evidence/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/ClaimBound/claimbound-evidence?label=release"></a>
-  <a href="docs/registry/evidence_index.json"><img alt="Evidence cards" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FClaimBound%2Fclaimbound-evidence%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=0A97BB"></a>
+  <a href="https://github.com/protocolith/protocolith/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/Protocolith/protocolith?label=release"></a>
+  <a href="docs/registry/evidence_index.json"><img alt="Evidence cards" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FProtocolith%2Fprotocolith%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=0A97BB"></a>
 </p>
 
 <p align="center">
-  <img src="docs/assets/demo/quickstart.gif" alt="Terminal recording: claimbound validate-card and inspect card on a real evidence card" width="760">
+  <img src="docs/assets/demo/quickstart.gif" alt="Terminal recording: protocolith validate-card and inspect card on a real evidence card" width="760">
 </p>
 
 ```bash
-pipx install claimbound-evidence        # or: uv tool install claimbound-evidence
-                                        # or: conda install -c conda-forge claimbound-evidence
-claimbound validate-card path/to/card.json
+pipx install protocolith        # or: uv tool install protocolith
+                                        # or: conda install -c conda-forge protocolith
+protocolith validate-card path/to/card.json
 ```
 
-ClaimBound turns a narrow public AI, ML, data or software-development claim into
+Protocolith turns a narrow public AI, ML, data or software-development claim into
 a small evidence card: protocol, source boundary, hashes, exact result status,
 claim boundary and reproduction level.
 
@@ -53,16 +53,16 @@ cards are still `SINGLE_OPERATOR` / `not independently reproduced` until a
 separate rerun records otherwise. Negative, blocked and drift outcomes are
 first-class evidence too.
 
-Read the one-screen walkthrough in [ClaimBound in 30 seconds](docs/CLAIMBOUND_IN_30_SECONDS.md),
+Read the one-screen walkthrough in [Protocolith in 30 seconds](docs/PROTOCOLITH_IN_30_SECONDS.md),
 the [reviewer path](docs/REVIEWER_PATH.md),
 the [non-developer start guide](docs/START_WITHOUT_CODING.md) or the
 [documentation index](docs/README.md) for reviewer, operator and advanced paths.
 
-![ClaimBound workflow](docs/assets/claimbound_workflow.svg)
+![Protocolith workflow](docs/assets/protocolith_workflow.svg)
 
 ## What It Is And Is Not
 
-| ClaimBound is | ClaimBound is not |
+| Protocolith is | Protocolith is not |
 | --- | --- |
 | A card per **one narrow claim**: protocol, source boundary, hashes, result status, claim boundary, reproduction level | A model leaderboard, benchmark ranking or quality score |
 | A validator (`validate-card`, `validate-all`) that anyone can rerun locally | A hosted scoring service or certification authority |
@@ -72,7 +72,7 @@ the [non-developer start guide](docs/START_WITHOUT_CODING.md) or the
 Nearby tools answer different questions: model and data cards describe a system as
 written by its authors, leaderboards rank systems, supply-chain provenance
 (SLSA, in-toto) covers how software was built, and fact-check markup records a
-publisher's verdict. ClaimBound records what one **frozen, reproducible check of a
+publisher's verdict. Protocolith records what one **frozen, reproducible check of a
 public claim** found, and how far anyone has independently reproduced it.
 
 ## Public Workflows
@@ -98,18 +98,18 @@ on the gate outcome itself. None of this implies general model quality.
 
 <p>
   <img
-    src="docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg"
-    alt="Green ClaimBound card for Anthropic system-card source audit"
+    src="docs/evidence_cards/PLITH-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg"
+    alt="Green Protocolith card for Anthropic system-card source audit"
     width="32%"
   />
   <img
-    src="docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg"
-    alt="ClaimBound card with green gate pass and yellow reproduction chip for NASA POWER source-byte drift"
+    src="docs/evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.svg"
+    alt="Protocolith card with green gate pass and yellow reproduction chip for NASA POWER source-byte drift"
     width="32%"
   />
   <img
-    src="docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg"
-    alt="Red ClaimBound card for NOAA negative result"
+    src="docs/evidence_cards/PLITH-NOAA-COOPS-D131-2026-04-30.svg"
+    alt="Red Protocolith card for NOAA negative result"
     width="32%"
   />
 </p>
@@ -137,11 +137,11 @@ More examples, including EU source audits and blocked-source cards:
 
 Independent from [EviBound](https://arxiv.org/abs/2511.05524); see
 [scope split](docs/RELATED_WORK_AND_INDEPENDENCE.md). Not affiliated with
-commercial or similarly named ClaimBound / Claimbound projects or domains
+commercial or similarly named Protocolith / Claimbound projects or domains
 (including on GitHub or GitLab); see
 [similar names](docs/RELATED_WORK_AND_INDEPENDENCE.md#similar-names-and-commercial-lookalikes).
 Canonical home: GitHub
-[ClaimBound/claimbound-evidence](https://github.com/ClaimBound/claimbound-evidence);
+[Protocolith/protocolith](https://github.com/protocolith/protocolith);
 the GitLab repo is a public mirror only.
 
 ## Install
@@ -151,31 +151,31 @@ Works on Windows, macOS and Linux. See [platform support](docs/PLATFORM_SUPPORT.
 From PyPI — card-level CLI (`validate-card`, `inspect card`, `hash`, `run-root`):
 
 ```bash
-pipx install claimbound-evidence      # or: uv tool install claimbound-evidence / pip install claimbound-evidence
-claimbound --version
-claimbound validate-card path/to/card.json
+pipx install protocolith      # or: uv tool install protocolith / pip install protocolith
+protocolith --version
+protocolith validate-card path/to/card.json
 ```
 
 `validate-all`, `demo`, `rerun`, `drift` and `verify` need the cards, registry and
 scripts of a repository clone (see below); from a pip install they print how to get one.
 The full guide, including a lighter sparse clone, is the
-[documentation site](https://claimbound.github.io/claimbound-evidence/docs/).
+[documentation site](https://protocolith.github.io/protocolith/docs/).
 
 From source (dev extras + full checkout):
 
 ```bash
-git clone https://github.com/ClaimBound/claimbound-evidence.git
-cd claimbound-evidence
+git clone https://github.com/protocolith/protocolith.git
+cd protocolith
 uv sync --extra dev
-uv run claimbound doctor
+uv run protocolith doctor
 ```
 
 ## Reproduce In Three Commands
 
 ```bash
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
-uv run claimbound demo eea-source-audit
+uv run protocolith demo eea-source-audit
 ```
 
 If `validate-all` passes, the committed cards and registry match the current
@@ -185,9 +185,9 @@ the run completes, the card validates and the registry is updated.
 ## Quick Start
 
 ```bash
-uv run claimbound new
-uv run claimbound demo grok-source-audit
-uv run claimbound run-root \
+uv run protocolith new
+uv run protocolith demo grok-source-audit
+uv run protocolith run-root \
   --protocol-id EXAMPLE_D001 \
   --source-url https://example.org/source \
   --operator your-name-or-handle
@@ -215,7 +215,7 @@ See [governance](GOVERNANCE.md), [maintainers](MAINTAINERS.md), [architecture](d
 - [Contributing guide](CONTRIBUTING.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [Security policy](SECURITY.md)
-- [Discussions](https://github.com/ClaimBound/claimbound-evidence/discussions)
+- [Discussions](https://github.com/protocolith/protocolith/discussions)
 
 ## License
 

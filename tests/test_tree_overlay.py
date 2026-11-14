@@ -1,15 +1,15 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Tests for ClaimBound protocol v3 tree overlays."""
+"""Tests for Protocolith protocol v3 tree overlays."""
 
 from __future__ import annotations
 
-from claimbound_evidence.tree_overlay import validate_tree_overlay
+from protocolith.tree_overlay import validate_tree_overlay
 
 
 def _valid_tree() -> dict[str, object]:
     return {
         "tree_id": "EXAMPLE_D001_TREE",
-        "protocol_version": "claimbound-tree-v3",
+        "protocol_version": "protocolith-tree-v3",
         "tree_status": "ACTIVE",
         "root_family_id": "EXAMPLE_D001_FAMILY",
         "claim_nodes": [
@@ -60,11 +60,11 @@ def test_valid_tree_overlay_passes() -> None:
 
 def test_tree_overlay_rejects_v2_protocol_string() -> None:
     tree = _valid_tree()
-    tree["protocol_version"] = "claimbound-rnd-family-v2"
+    tree["protocol_version"] = "protocolith-rnd-family-v2"
 
     violations = validate_tree_overlay(tree)
 
-    assert any("claimbound-tree-v3" in violation for violation in violations)
+    assert any("protocolith-tree-v3" in violation for violation in violations)
 
 
 def test_tree_overlay_rejects_bad_badge_counts() -> None:

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Tests for ClaimBound evidence-card validation."""
+"""Tests for Protocolith evidence-card validation."""
 
 from __future__ import annotations
 
@@ -9,14 +9,14 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_evidence.evidence_card import validate_evidence_card
+from protocolith.evidence_card import validate_evidence_card
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
 def _valid_card() -> dict[str, object]:
     return {
-        "evidence_id": "CLAIMBOUND-EXAMPLE-001",
+        "evidence_id": "PLITH-EXAMPLE-001",
         "registry_sequence": 1,
         "record_type": "evidence_result",
         "protocol_id": "EXAMPLE_D001",
@@ -98,7 +98,7 @@ def test_committed_evidence_cards_validate_and_are_indexed() -> None:
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
     indexed_paths = {entry["path"] for entry in registry["cards"]}
 
-    cards = sorted(card_dir.glob("CLAIMBOUND-*.json"))
+    cards = sorted(card_dir.glob("PLITH-*.json"))
     assert cards
     assert registry["card_count"] == len(cards)
 
@@ -192,13 +192,13 @@ def test_evidence_card_cli_reports_violations(
 
     import importlib.util as ilu
 
-    script_path = REPO_ROOT / "scripts" / "claimbound_validate_evidence_card.py"
-    spec = ilu.spec_from_file_location("claimbound_validate_evidence_card_mod", script_path)
+    script_path = REPO_ROOT / "scripts" / "protocolith_validate_evidence_card.py"
+    spec = ilu.spec_from_file_location("protocolith_validate_evidence_card_mod", script_path)
     assert spec is not None and spec.loader is not None
     module = ilu.module_from_spec(spec)
     spec.loader.exec_module(module)
 
-    monkeypatch.setattr(sys, "argv", ["claimbound_validate_evidence_card.py", str(path)])
+    monkeypatch.setattr(sys, "argv", ["protocolith_validate_evidence_card.py", str(path)])
 
     assert module.main() == 1
     captured = capsys.readouterr()

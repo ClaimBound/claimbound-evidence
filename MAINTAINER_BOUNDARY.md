@@ -1,6 +1,6 @@
 # Maintainer Boundary
 
-ClaimBound is reusable open-source evidence infrastructure, not an on-demand
+Protocolith is reusable open-source evidence infrastructure, not an on-demand
 review service.
 
 ## What The Maintainer Can Reasonably Do

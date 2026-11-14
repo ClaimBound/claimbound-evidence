@@ -1,6 +1,6 @@
 # European Dimension
 
-ClaimBound supports European digital commons by making **public-source evidence**
+Protocolith supports European digital commons by making **public-source evidence**
 for AI transparency and open-data claims inspectable under frozen protocols.
 
 This page explains the European public-interest angle. It is not a legal opinion,
@@ -16,18 +16,18 @@ records that show:
 - whether the result passed, failed, was blocked or reproduced with drift;
 - what the card must **not** be used to claim.
 
-ClaimBound keeps those elements together in evidence cards instead of spreading
+Protocolith keeps those elements together in evidence cards instead of spreading
 them across README claims, screenshots or informal success language.
 
 ## Current EU institutional examples
 
 | Example | Status | What it proves |
 | --- | --- | --- |
-| [EEA source audit D001](evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json) | `PASSED_UNDER_PROTOCOL` | The official EEA Air Quality download page passed a narrow source-boundary audit. |
-| [EU Data Portal source audit D001](evidence_cards/CLAIMBOUND-EU_ODP_SOURCE_AUDIT_D001-2026-06-10.json) | `PASSED_UNDER_PROTOCOL` | The European Data Portal landing page exposed expected catalog, search API and copyright links. |
-| [EEA content reuse FAQ source audit D001](evidence_cards/CLAIMBOUND-EEA_LEGAL_REUSE_SOURCE_AUDIT_D001-2026-06-10.json) | `PASSED_UNDER_PROTOCOL` | The EEA reuse FAQ page passed a narrow reachability and navigation-link audit only. |
-| [Eurostat API guidelines source audit D001](evidence_cards/CLAIMBOUND-EUROSTAT_SOURCE_AUDIT_D001-2026-06-10.json) | `PASSED_UNDER_PROTOCOL` | The Eurostat API detailed guidelines page exposed expected copyright and catalogue API doc links. |
-| [EEA AQ manual track D001](evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.json) | `BLOCKED_SOURCE` | A larger manual track was blocked by an incomplete public URL manifest — honest stop before overclaiming. |
+| [EEA source audit D001](evidence_cards/PLITH-SOURCE_AUDIT_D001-2026-05-08.json) | `PASSED_UNDER_PROTOCOL` | The official EEA Air Quality download page passed a narrow source-boundary audit. |
+| [EU Data Portal source audit D001](evidence_cards/PLITH-EU_ODP_SOURCE_AUDIT_D001-2026-06-10.json) | `PASSED_UNDER_PROTOCOL` | The European Data Portal landing page exposed expected catalog, search API and copyright links. |
+| [EEA content reuse FAQ source audit D001](evidence_cards/PLITH-EEA_LEGAL_REUSE_SOURCE_AUDIT_D001-2026-06-10.json) | `PASSED_UNDER_PROTOCOL` | The EEA reuse FAQ page passed a narrow reachability and navigation-link audit only. |
+| [Eurostat API guidelines source audit D001](evidence_cards/PLITH-EUROSTAT_SOURCE_AUDIT_D001-2026-06-10.json) | `PASSED_UNDER_PROTOCOL` | The Eurostat API detailed guidelines page exposed expected copyright and catalogue API doc links. |
+| [EEA AQ manual track D001](evidence_cards/PLITH-EEA-AQ-D001-MANUAL-2026-05-11.json) | `BLOCKED_SOURCE` | A larger manual track was blocked by an incomplete public URL manifest — honest stop before overclaiming. |
 
 These cards do **not** prove EU-wide data completeness, legal redistribution rights
 for all datasets, or pollutant-model correctness.
@@ -36,41 +36,41 @@ for all datasets, or pollutant-model correctness.
 
 <p align="center">
   <img
-    src="evidence_cards/CLAIMBOUND-EU_ODP_SOURCE_AUDIT_D001-2026-06-10.svg"
-    alt="ClaimBound EU Data Portal source audit D001 evidence card"
+    src="evidence_cards/PLITH-EU_ODP_SOURCE_AUDIT_D001-2026-06-10.svg"
+    alt="Protocolith EU Data Portal source audit D001 evidence card"
     width="75%"
   />
 </p>
 
-[CLAIMBOUND-EU_ODP_SOURCE_AUDIT_D001-2026-06-10](evidence_cards/CLAIMBOUND-EU_ODP_SOURCE_AUDIT_D001-2026-06-10.json) ·
-[SVG](evidence_cards/CLAIMBOUND-EU_ODP_SOURCE_AUDIT_D001-2026-06-10.svg)
+[PLITH-EU_ODP_SOURCE_AUDIT_D001-2026-06-10](evidence_cards/PLITH-EU_ODP_SOURCE_AUDIT_D001-2026-06-10.json) ·
+[SVG](evidence_cards/PLITH-EU_ODP_SOURCE_AUDIT_D001-2026-06-10.svg)
 
 <p align="center">
   <img
-    src="evidence_cards/CLAIMBOUND-EEA_LEGAL_REUSE_SOURCE_AUDIT_D001-2026-06-10.svg"
-    alt="ClaimBound EEA legal reuse FAQ source audit D001 evidence card"
+    src="evidence_cards/PLITH-EEA_LEGAL_REUSE_SOURCE_AUDIT_D001-2026-06-10.svg"
+    alt="Protocolith EEA legal reuse FAQ source audit D001 evidence card"
     width="75%"
   />
 </p>
 
-[CLAIMBOUND-EEA_LEGAL_REUSE_SOURCE_AUDIT_D001-2026-06-10](evidence_cards/CLAIMBOUND-EEA_LEGAL_REUSE_SOURCE_AUDIT_D001-2026-06-10.json) ·
-[SVG](evidence_cards/CLAIMBOUND-EEA_LEGAL_REUSE_SOURCE_AUDIT_D001-2026-06-10.svg)
+[PLITH-EEA_LEGAL_REUSE_SOURCE_AUDIT_D001-2026-06-10](evidence_cards/PLITH-EEA_LEGAL_REUSE_SOURCE_AUDIT_D001-2026-06-10.json) ·
+[SVG](evidence_cards/PLITH-EEA_LEGAL_REUSE_SOURCE_AUDIT_D001-2026-06-10.svg)
 
 <p align="center">
   <img
-    src="evidence_cards/CLAIMBOUND-EUROSTAT_SOURCE_AUDIT_D001-2026-06-10.svg"
-    alt="ClaimBound Eurostat API guidelines source audit D001 evidence card"
+    src="evidence_cards/PLITH-EUROSTAT_SOURCE_AUDIT_D001-2026-06-10.svg"
+    alt="Protocolith Eurostat API guidelines source audit D001 evidence card"
     width="75%"
   />
 </p>
 
-[CLAIMBOUND-EUROSTAT_SOURCE_AUDIT_D001-2026-06-10](evidence_cards/CLAIMBOUND-EUROSTAT_SOURCE_AUDIT_D001-2026-06-10.json) ·
-[SVG](evidence_cards/CLAIMBOUND-EUROSTAT_SOURCE_AUDIT_D001-2026-06-10.svg)
+[PLITH-EUROSTAT_SOURCE_AUDIT_D001-2026-06-10](evidence_cards/PLITH-EUROSTAT_SOURCE_AUDIT_D001-2026-06-10.json) ·
+[SVG](evidence_cards/PLITH-EUROSTAT_SOURCE_AUDIT_D001-2026-06-10.svg)
 
 ## Blocked European track (intentional stop)
 
-The [EEA AQ manual track D001](evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.json)
-is an amber `BLOCKED_SOURCE` record. It shows that ClaimBound does not upgrade a
+The [EEA AQ manual track D001](evidence_cards/PLITH-EEA-AQ-D001-MANUAL-2026-05-11.json)
+is an amber `BLOCKED_SOURCE` record. It shows that Protocolith does not upgrade a
 larger empirical PM10 coverage claim when the public URL-list path cannot support
 a fair gate.
 
@@ -96,9 +96,9 @@ External readers can verify the European source-audit runners locally without
 private setup steps:
 
 ```bash
-uv run python scripts/claimbound_run_eu_public_source_audit.py --profile EU_ODP_SOURCE_AUDIT_D001
-uv run python scripts/claimbound_run_eu_public_source_audit.py --profile EEA_LEGAL_REUSE_SOURCE_AUDIT_D001
-uv run python scripts/claimbound_run_eu_public_source_audit.py --profile EUROSTAT_SOURCE_AUDIT_D001
+uv run python scripts/protocolith_run_eu_public_source_audit.py --profile EU_ODP_SOURCE_AUDIT_D001
+uv run python scripts/protocolith_run_eu_public_source_audit.py --profile EEA_LEGAL_REUSE_SOURCE_AUDIT_D001
+uv run python scripts/protocolith_run_eu_public_source_audit.py --profile EUROSTAT_SOURCE_AUDIT_D001
 ```
 
 See also [EEA AQ manual track checklist](manual_audit/EEA_AQ_D001_MANUAL_TRACK.md),
@@ -122,16 +122,16 @@ the European Commission, EEA, Eurostat or any EU member-state authority.
 Allowed public framing:
 
 ```text
-ClaimBound helps inspect narrow European public-data and AI-documentation claims
+Protocolith helps inspect narrow European public-data and AI-documentation claims
 under frozen protocols, with negative and blocked outcomes preserved.
 ```
 
 Forbidden public framing:
 
 ```text
-ClaimBound certifies EU data quality.
-ClaimBound proves EEA or EU institutional endorsement.
-ClaimBound replaces official data stewardship or legal review.
+Protocolith certifies EU data quality.
+Protocolith proves EEA or EU institutional endorsement.
+Protocolith replaces official data stewardship or legal review.
 ```
 
 ## Planned European work (public foreground)

@@ -15,13 +15,13 @@ at [docs/external_verification/README.md](../../docs/external_verification/READM
 ## Quick path
 
 ```bash
-git clone https://github.com/ClaimBound/claimbound-evidence.git
-cd claimbound-evidence
+git clone https://github.com/protocolith/protocolith.git
+cd protocolith
 uv sync --extra dev
 uv run --extra dev python -m pytest -q
-uv run claimbound validate-all
-uv run claimbound demo eea-source-audit
-uv run claimbound demo grok-source-audit
+uv run protocolith validate-all
+uv run protocolith demo eea-source-audit
+uv run protocolith demo grok-source-audit
 ```
 
 ## Expected outputs

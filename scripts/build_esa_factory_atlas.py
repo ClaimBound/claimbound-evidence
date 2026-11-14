@@ -330,7 +330,7 @@ def _render_heatmap(atlas: dict[str, Any]) -> str:
     </style>
   </defs>
   <rect width="1200" height="{height}" rx="22" fill="url(#paper)"/>
-  <text x="40" y="45" class="sub">CLAIMBOUND / OFFICIAL ESA SOURCE BOUNDARIES</text>
+  <text x="40" y="45" class="sub">PROTOCOLITH / OFFICIAL ESA SOURCE BOUNDARIES</text>
   <text x="40" y="86" class="title">Where the evidence is — and where it is not</text>
   <text x="790" y="74" class="metric">25 × 20</text>
   <text x="790" y="96" class="metric-label">MISSION PAGES × SLOTS</text>

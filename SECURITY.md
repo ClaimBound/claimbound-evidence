@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-ClaimBound Evidence is currently pre-1.0 public research tooling. Security fixes are applied to the default branch and to the latest tagged release when practical.
+Protocolith is currently pre-1.0 public research tooling. Security fixes are applied to the default branch and to the latest tagged release when practical.
 
 | Version | Supported |
 | ------- | --------- |
@@ -24,7 +24,7 @@ ClaimBound Evidence is currently pre-1.0 public research tooling. Security fixes
 
 Confirmed vulnerabilities are published, after a fix is available, as GitHub Security
 Advisories (with a CVE identifier when one is assigned) at
-<https://github.com/ClaimBound/claimbound-evidence/security/advisories>. Each advisory
+<https://github.com/protocolith/protocolith/security/advisories>. Each advisory
 states the affected and fixed versions, and the fix is also listed in the release notes
 and `CHANGELOG.md`. No vulnerabilities have been confirmed so far.
 
@@ -32,7 +32,7 @@ and `CHANGELOG.md`. No vulnerabilities have been confirmed so far.
 
 Please report suspected vulnerabilities privately through GitHub Security Advisories:
 
-<https://github.com/ClaimBound/claimbound-evidence/security/advisories/new>
+<https://github.com/protocolith/protocolith/security/advisories/new>
 
 Do not open a public issue for vulnerabilities involving:
 
@@ -50,7 +50,7 @@ If the report is declined, I will explain the reason where possible.
 
 ## Project-Specific Boundaries
 
-This repository is public ClaimBound evidence foreground. It must not contain raw external payloads, credentials, private local paths, private-source code, or private production integrations.
+This repository is public Protocolith evidence foreground. It must not contain raw external payloads, credentials, private local paths, private-source code, or private production integrations.
 
 Security reports about private systems, private-source implementations, or unrelated infrastructure are out of scope for this public repository unless they demonstrate a direct leak or vulnerability in the public evidence code.
 
@@ -79,14 +79,14 @@ If an audit-log export, AI transcript, raw payload, token, private path or
 private-source detail is accidentally committed or disclosed, report it through
 GitHub Security Advisories:
 
-<https://github.com/ClaimBound/claimbound-evidence/security/advisories/new>
+<https://github.com/protocolith/protocolith/security/advisories/new>
 
 ## Supply Chain
 
 - Releases are built and published by GitHub Actions to PyPI through Trusted Publishing
   (OpenID Connect); no long-lived PyPI API token is stored in the repository.
 - Dependabot proposes dependency and GitHub Actions updates weekly.
-- [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/ClaimBound/claimbound-evidence)
+- [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/protocolith/protocolith)
   results for this repository are published by the `scorecard` workflow.
 
 ## Related policies

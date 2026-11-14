@@ -84,7 +84,7 @@ def run_preview(*, run_root_arg: str | None, quiet: bool) -> int:
     run_root = (
         Path(run_root_arg).expanduser().resolve()
         if run_root_arg
-        else Path.home() / "claimbound_runs" / f"ESA_ISSUE_132_{timestamp}"
+        else Path.home() / "protocolith_runs" / f"ESA_ISSUE_132_{timestamp}"
     )
     raw_dir = run_root / "raw"
     reports_dir = run_root / "reports"

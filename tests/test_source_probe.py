@@ -10,8 +10,8 @@ import urllib.request
 
 import pytest
 
-from claimbound_evidence.cli import main
-from claimbound_evidence.source_probe import probe_url, validate_probe_artifact
+from protocolith.cli import main
+from protocolith.source_probe import probe_url, validate_probe_artifact
 
 PAGE = b'<html><body>Dataset Download <a href="/terms">Terms of use</a></body></html>'
 ROUTES = {
@@ -47,7 +47,7 @@ def base(monkeypatch):
     root = "http://example.test"
 
     def fake_urlopen(req, timeout=None):
-        assert req.get_header("User-agent") == "claimbound-source-probe"
+        assert req.get_header("User-agent") == "protocolith-source-probe"
         path = req.full_url[len(root) :]
         if path == "/redir":
             path = "/ok"

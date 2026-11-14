@@ -4,16 +4,16 @@
 
 ```bash
 uv sync --extra dev
-HEADROOM_TELEMETRY=off uv run python scripts/claimbound_run_headroom_semantic_fidelity.py --access-date 2026-06-23
-uv run python scripts/claimbound_render_evidence_card_svg.py --all docs/evidence_cards
-uv run claimbound validate-all
+HEADROOM_TELEMETRY=off uv run python scripts/protocolith_run_headroom_semantic_fidelity.py --access-date 2026-06-23
+uv run python scripts/protocolith_render_evidence_card_svg.py --all docs/evidence_cards
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```
 
 The runner bootstraps public runtime dependencies with:
 
 ```bash
-uv run --with headroom-ai==0.27.0 --with transformers python scripts/claimbound_run_headroom_semantic_fidelity.py
+uv run --with headroom-ai==0.27.0 --with transformers python scripts/protocolith_run_headroom_semantic_fidelity.py
 ```
 
 ## Expected interpretation

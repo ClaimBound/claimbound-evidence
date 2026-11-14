@@ -12,12 +12,12 @@ import pytest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SCRIPT_PATH = REPO_ROOT / "scripts" / "claimbound_run_eu_public_source_audit.py"
-BUILDER_PATH = REPO_ROOT / "scripts" / "claimbound_build_eu_evidence_cards.py"
+SCRIPT_PATH = REPO_ROOT / "scripts" / "protocolith_run_eu_public_source_audit.py"
+BUILDER_PATH = REPO_ROOT / "scripts" / "protocolith_build_eu_evidence_cards.py"
 
 
 def _load_runner():
-    spec = ilu.spec_from_file_location("claimbound_run_eu_public_source_audit_mod", SCRIPT_PATH)
+    spec = ilu.spec_from_file_location("protocolith_run_eu_public_source_audit_mod", SCRIPT_PATH)
     assert spec is not None and spec.loader is not None
     module = ilu.module_from_spec(spec)
     sys.modules[spec.name] = module
@@ -26,7 +26,7 @@ def _load_runner():
 
 
 def _load_builder():
-    spec = ilu.spec_from_file_location("claimbound_build_eu_evidence_cards_mod", BUILDER_PATH)
+    spec = ilu.spec_from_file_location("protocolith_build_eu_evidence_cards_mod", BUILDER_PATH)
     assert spec is not None and spec.loader is not None
     module = ilu.module_from_spec(spec)
     sys.modules[spec.name] = module
@@ -145,7 +145,7 @@ def test_main_writes_report_with_mocked_fetch(runner, tmp_path: Path, monkeypatc
         sys,
         "argv",
         [
-            "claimbound_run_eu_public_source_audit.py",
+            "protocolith_run_eu_public_source_audit.py",
             "--profile",
             "EU_ODP_SOURCE_AUDIT_D001",
             "--report",
@@ -171,7 +171,7 @@ def test_card_builder_uses_summary_access_date() -> None:
     card = builder._build_card(spec, report, "abc123", access_date)
 
     assert access_date == "2026-06-10"
-    assert card["evidence_id"] == "CLAIMBOUND-EU_ODP_SOURCE_AUDIT_D001-2026-06-10"
+    assert card["evidence_id"] == "PLITH-EU_ODP_SOURCE_AUDIT_D001-2026-06-10"
     assert card["access_date"] == "2026-06-10"
 
 

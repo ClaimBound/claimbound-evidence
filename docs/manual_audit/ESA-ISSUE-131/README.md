@@ -18,6 +18,6 @@ Each card records one frozen string-presence source-boundary gate against one of
 ## Local validation
 
 ```bash
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```

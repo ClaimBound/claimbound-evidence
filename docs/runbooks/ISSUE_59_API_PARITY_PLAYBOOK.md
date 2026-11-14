@@ -7,7 +7,7 @@ Pattern: copy `SOFTWARE_DEV_D001`, change the frozen claim to registry parity.
 ## Read first
 
 - `docs/protocols/SOFTWARE_DEV_D001_PREREG_CHARTER.md`
-- `docs/evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json`
+- `docs/evidence_cards/PLITH-SOFTWARE_DEV_D001-2026-06-11.json`
 - `artifacts/software_dev_d001_summary.json`
 - `docs/SOFTWARE_DEVELOPMENT_WORKFLOW.md`
 
@@ -43,8 +43,8 @@ Edit copied files: replace `SOFTWARE_DEV_D001` → `API_PARITY_D001` and command
 Primary path (any OS):
 
 ```bash
-uv run claimbound validate-all
-uv run claimbound inspect registry --keys registry_name card_count registry_version
+uv run protocolith validate-all
+uv run protocolith inspect registry --keys registry_name card_count registry_version
 ```
 
 `validate-all` must exit `0`. Record `git rev-parse HEAD` in your summary if you
@@ -56,22 +56,22 @@ use git.
 cat > artifacts/api_parity_d001_summary.json <<EOF
 {
   "protocol_id": "API_PARITY_D001",
-  "evidence_id": "CLAIMBOUND-API_PARITY_D001-${TODAY}",
+  "evidence_id": "PLITH-API_PARITY_D001-${TODAY}",
   "access_date": "${TODAY}",
   "claim_boundary": "Records registry validation parity only under frozen commands.",
   "execution_mode": "MANUAL_NO_AI",
   "operator": "${OPERATOR}",
   "official_sources": [
     {
-      "name": "ClaimBound evidence repository",
-      "url": "https://github.com/ClaimBound/claimbound-evidence",
+      "name": "Protocolith evidence repository",
+      "url": "https://github.com/protocolith/protocolith",
       "git_commit": "${GIT_SHA}"
     }
   ],
   "checked_claim": "Registry validator passes and registry metadata matches frozen expectation.",
   "frozen_commands": [
-    "uv run python scripts/claimbound_validate_registry.py",
-    "uv run claimbound validate-all"
+    "uv run python scripts/protocolith_validate_registry.py",
+    "uv run protocolith validate-all"
   ],
   "gate_results": [
     {"gate": "validate_registry", "result": "PASS"},
@@ -92,12 +92,12 @@ echo "REPORT_SHA=$REPORT_SHA"
 
 ## 5. Evidence card JSON
 
-Copy `docs/evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json` to
-`docs/evidence_cards/CLAIMBOUND-API_PARITY_D001-${TODAY}.json` and update:
+Copy `docs/evidence_cards/PLITH-SOFTWARE_DEV_D001-2026-06-11.json` to
+`docs/evidence_cards/PLITH-API_PARITY_D001-${TODAY}.json` and update:
 
 | Field | Value |
 | --- | --- |
-| `evidence_id` | `CLAIMBOUND-API_PARITY_D001-${TODAY}` |
+| `evidence_id` | `PLITH-API_PARITY_D001-${TODAY}` |
 | `protocol_id` | `API_PARITY_D001` |
 | `registry_sequence` | next free integer in `docs/registry/evidence_index.json` |
 | `record_type` | `evidence_result` |
@@ -110,9 +110,9 @@ Copy `docs/evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json` to
 Render SVG:
 
 ```bash
-uv run --extra dev python scripts/claimbound_render_evidence_card_svg.py \
-  "docs/evidence_cards/CLAIMBOUND-API_PARITY_D001-${TODAY}.json" \
-  "docs/evidence_cards/CLAIMBOUND-API_PARITY_D001-${TODAY}.svg"
+uv run --extra dev python scripts/protocolith_render_evidence_card_svg.py \
+  "docs/evidence_cards/PLITH-API_PARITY_D001-${TODAY}.json" \
+  "docs/evidence_cards/PLITH-API_PARITY_D001-${TODAY}.svg"
 ```
 
 ## 6. Registry + validation
@@ -121,7 +121,7 @@ Add entry to `docs/registry/evidence_index.json`, increment `card_count`, update
 `statistics`, then:
 
 ```bash
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -n auto -q
 ```
 
