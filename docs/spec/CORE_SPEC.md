@@ -56,8 +56,9 @@ A ledger is a UTF-8 text file with one entry per line (`\n` terminated). Each li
 
 `status` is one of the closed set of result statuses of the evidence-card format: `PASSED_UNDER_PROTOCOL`,
 `NEGATIVE_RESULT_UNDER_PROTOCOL`, `BLOCKED_SOURCE`, `INSUFFICIENT_COVERAGE`, `SOURCE_DRIFT`, `REPRODUCED_OUTCOME`.
-`BLOCKED_SOURCE` requires `block_reason`; `SOURCE_DRIFT` requires `drift_reason`. Absence of evidence is never
-recorded as `NEGATIVE_RESULT_UNDER_PROTOCOL`.
+`BLOCKED_SOURCE` requires `block_reason`; `SOURCE_DRIFT` requires `drift_reason`. `PASSED_UNDER_PROTOCOL`,
+`NEGATIVE_RESULT_UNDER_PROTOCOL` and `REPRODUCED_OUTCOME` require a non-empty `sources` list (code `MISSING_FIELD`).
+Absence of evidence is never recorded as `NEGATIVE_RESULT_UNDER_PROTOCOL`; use `BLOCKED_SOURCE` or `INSUFFICIENT_COVERAGE`.
 
 ### 3.2 Rules
 
@@ -82,7 +83,7 @@ pointing at the hash they were run under.
 
 A valid ledger proves internal consistency and ordering. It does not prove wall-clock time and cannot detect that a
 whole ledger was replaced or that its tail was removed. `head` (the last `hash` plus `seq`) may be published or
-anchored elsewhere (a signed git tag, a timestamp service); a later check against that head detects removal.
+anchored elsewhere (a signed git tag, a timestamp service); a later check against that head detects removal (`verify-ledger --expect-head SEQ:HASH`, planned for 0.6.0; until then `head` only prints it).
 
 ## 4. Local store
 
@@ -108,8 +109,10 @@ All three expose the same operations with the same semantics.
 | issue | `protocolith issue SEQ` | `core.issue(store, seq)` | `protocolith_issue` |
 | log / head | `protocolith log`, `protocolith head` | `core.entries(store)`, `core.head(store)` | `protocolith_log` |
 
-CLI exit codes: `0` ok, `1` verification failed (codes listed on stderr and, with `--json`, on stdout),
-`2` usage or input error, `3` I/O or environment error. `--json` output is PCJ-1.
+CLI exit codes: `0` ok; `1` the stored ledger does not verify (codes on stderr and, with `--json`, on stdout);
+`2` the operation was rejected (bad input, or the new entry would break a rule, including `TS_REGRESSION`) and nothing was written;
+`3` I/O or environment error (missing ledger, lock timeout). `--json` output is PCJ-1. Reading a missing ledger is `NO_LEDGER`
+(exit 3), never an empty pass.
 
 The MCP server speaks stdio JSON-RPC with `initialize`, `tools/list` and `tools/call`, uses no network and no
 third-party package, and never writes outside the store.
@@ -130,3 +133,47 @@ Version 1.0.0 additionally requires an independent external rerun and a second i
 An `issue` entry renders the existing evidence-card JSON and SVG from a verified record, so the registry, validator and
 static views keep working. Cards created before this specification stay valid under the card validator and are mapped to
 their current ids by `docs/MIGRATION_ID_MAP.json`.
+
+## 9. Limits
+
+- One ledger line is at most `MAX_ENTRY_BYTES = 1,048,576` bytes (without the newline). A longer line is not parsed
+  (`ENTRY_TOO_LARGE`).
+- JSON nesting depth is at most 64, counting the top-level container as 1 (`TOO_DEEP`).
+- `protocol_id` and `version` are filename-safe: `[A-Za-z0-9][A-Za-z0-9._-]*`.
+- Lock waits time out after 30 seconds (`LOCK_TIMEOUT`).
+
+## 10. Issuing cards
+
+`record.body` may hold an optional `card` object with extra evidence-card fields (operator, source name and URL, domain,
+claim type, and so on). `issue` builds the card from the record, the frozen protocol and `card`, validates it with the
+evidence-card validator and renders JSON and SVG.
+
+- `evidence_id` is `PLITH-<protocol_id>-<date of the record>`; `registry_sequence` defaults to the record `seq` + 1.
+- A `card` key that contradicts a value derived from the record is `CARD_CONFLICT`; missing required card fields are
+  `MISSING_FIELD` and are named; any other validator failure is `CARD_INVALID`.
+- The card file is the PCJ-1 bytes of the card with no trailing newline, so the file's SHA-256 equals `card_sha256`.
+- Issuing twice writes the same bytes; if the file exists with different content the result is `CARD_EXISTS`.
+- `raw_payload_committed` is always false.
+
+## 11. Error codes
+
+Verification: `BAD_SEQ`, `BAD_PREV`, `BAD_HASH`, `NOT_CANONICAL`, `TS_REGRESSION`, `UNKNOWN_PROTOCOL`, `DUPLICATE_FREEZE`,
+`BAD_STATUS`, `MISSING_FIELD`, `DANGLING_REF`, `BAD_CARD`, `UNKNOWN_VERSION`, `TRUNCATED_TAIL`, `ENTRY_TOO_LARGE`, `TOO_DEEP`,
+`BAD_ENTRY` (structure or type problem; bodies are closed, so unknown keys are rejected).
+
+Canonicalization and input: `BAD_JSON` (including a byte-order mark), `BAD_UTF8`, `BAD_TYPE`, `FLOAT_NOT_ALLOWED`, `NON_FINITE`,
+`INT_RANGE`, `DUPLICATE_KEY`, `LONE_SURROGATE`.
+
+Operations and environment: `NO_LEDGER`, `NO_PARTIAL_TAIL`, `LOCK_TIMEOUT`, `IO_ERROR`, `BAD_CLOCK`, `CARD_EXISTS`, `CARD_CONFLICT`,
+`CARD_INVALID`, `VERIFICATION_FAILED`.
+
+Chain checks: `prev` is compared with the stored `hash` of the previous line, so tampering shows as `BAD_HASH` on that line only;
+after an unparseable line the next `prev` is not checked, to avoid cascades. `supersedes` must name an earlier freeze of the same
+`protocol_id`; a referenced deviation must belong to the same protocol and be listed in the record's `deviations`.
+
+`repair --truncate-partial-tail` removes only an unterminated last line and refuses if the rest does not verify.
+
+## 12. Coverage note
+
+The reference implementation is held at 100% line and branch coverage of `protocolith.core`. The two platform-specific lock
+modules are marked `# pragma: no cover` as a whole because each runs only on its own platform; both are exercised in CI.

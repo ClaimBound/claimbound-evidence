@@ -1,0 +1,49 @@
+{
+ "format": "protocolith-vectors/1",
+ "kind": "hashes",
+ "description": "sha256 of the PCJ-1 bytes of the parsed input.",
+ "cases": [
+  {
+   "name": "hash_0",
+   "input_text": "{}",
+   "canonical": "{}",
+   "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  {
+   "name": "hash_1",
+   "input_text": "[]",
+   "canonical": "[]",
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+   "name": "hash_2",
+   "input_text": "null",
+   "canonical": "null",
+   "sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+  },
+  {
+   "name": "hash_3",
+   "input_text": "\"abc\"",
+   "canonical": "\"abc\"",
+   "sha256": "6cc43f858fbb763301637b5af970e2a46b46f461f27e5a0f41e009c59b827b25"
+  },
+  {
+   "name": "hash_4",
+   "input_text": "{\"b\":[1,\"\u00e9\"],\"a\":null}",
+   "canonical": "{\"a\":null,\"b\":[1,\"\u00e9\"]}",
+   "sha256": "f8f17faab95c024891d173fa43442b0e52007736a1f36715ac721ab22deeefc5"
+  },
+  {
+   "name": "hash_5",
+   "input_text": "0",
+   "canonical": "0",
+   "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+  },
+  {
+   "name": "hash_6",
+   "input_text": "{\"a\":{\"b\":{\"c\":[true,false]}}}",
+   "canonical": "{\"a\":{\"b\":{\"c\":[true,false]}}}",
+   "sha256": "e666b4a8df43285a0b13a8b5d60fe822f75aa25ac88c41796a225fa83d156039"
+  }
+ ]
+}

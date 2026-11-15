@@ -117,6 +117,14 @@ include = ["/src", "/README.md", "/LICENSE", "/NOTICE", "/CHANGELOG.md", "/CITAT
 [tool.hatch.build.targets.wheel]
 packages = ["src/protocolith"]
 
+[tool.coverage.run]
+branch = true
+source = ["protocolith.core"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 

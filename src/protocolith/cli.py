@@ -10,6 +10,7 @@ import sys
 from importlib import metadata
 from pathlib import Path
 
+from protocolith.core.commands import add_core_commands
 from protocolith.doctor import format_doctor_report, run_doctor
 from protocolith.inspect import (
     format_hash_lines,
@@ -346,6 +347,8 @@ def build_parser() -> argparse.ArgumentParser:
         help="Operator handle for network rerun verify packs.",
     )
     verify_parser.set_defaults(func=_cmd_verify)
+
+    add_core_commands(subparsers)
 
     return parser
 

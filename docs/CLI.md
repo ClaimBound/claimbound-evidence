@@ -192,3 +192,72 @@ Run VERIFY pack checklists with PASS/FAIL output.
 
 - `pack` (one of: `ai-boundary`, `api-parity`, `eea-drift`, `nasa-rerun`, `noaa-rerun`, `source-probe-spec`, `starter-pack`, `static-registry-spec`)
 - `--operator OPERATOR` — Operator handle for network rerun verify packs. (default: `verify-operator`)
+
+## `protocolith freeze`
+
+Freeze a protocol from a JSON file.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+- `file`
+- `--supersedes SHA256` — Hash of the protocol version this replaces.
+
+## `protocolith record`
+
+Record a run outcome from a JSON file.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+- `file`
+
+## `protocolith deviation`
+
+Record a deviation from a JSON file.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+- `file`
+
+## `protocolith verify-ledger`
+
+Verify the ledger (rules R1 to R11).
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+
+## `protocolith issue`
+
+Issue the evidence card of a record.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+- `seq`
+- `--out DIR` — Card directory (default <store>/cards).
+
+## `protocolith log`
+
+List ledger entries.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+
+## `protocolith head`
+
+Print the ledger head (last hash and seq).
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+
+## `protocolith repair`
+
+Repair a crash-damaged ledger.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+- `--truncate-partial-tail` — Remove the partial last line. (required)
+
+## `protocolith mcp`
+
+Run the MCP server on stdio.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).

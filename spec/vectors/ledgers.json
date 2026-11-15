@@ -1,0 +1,540 @@
+{
+ "format": "protocolith-vectors/1",
+ "kind": "ledgers",
+ "description": "Verify the ledger text (or the expanded ledger_template: head + fill*count + tail); expect ok and the sorted unique rule codes.",
+ "cases": [
+  {
+   "name": "valid_empty",
+   "rule": "-",
+   "description": "An empty ledger is valid.",
+   "ledger": "",
+   "expect": {
+    "ok": true,
+    "codes": []
+   }
+  },
+  {
+   "name": "valid_freeze_only",
+   "rule": "-",
+   "description": "One freeze.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": true,
+    "codes": []
+   }
+  },
+  {
+   "name": "valid_full_flow",
+   "rule": "-",
+   "description": "Freeze, deviation, record, issue.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"description\":\"The source moved to a new URL.\",\"kind\":\"source_change\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\"},\"hash\":\"d7c1e96be0197a09e835df5e6d0e83072517a9ff95a36a5c9721ecd36bf0535a\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"deviation\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[1],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"71196aa787cb1c1750e817fec5ceb20e39bd0c9c134c79d8f94cbca51bc7c0fe\",\"prev\":\"d7c1e96be0197a09e835df5e6d0e83072517a9ff95a36a5c9721ecd36bf0535a\",\"seq\":2,\"ts\":\"2026-11-15T10:00:02Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"card_sha256\":\"8fb84aa595bf3ee8087889cbe6ff6618ab01d60ecb1a2e8d450a5771f0aa98a1\",\"format\":\"evidence-card-json-svg\",\"record_seq\":2},\"hash\":\"91c245dacbba84effa2427879778a3d107be42c6f30403cd91925d9648c6e796\",\"prev\":\"71196aa787cb1c1750e817fec5ceb20e39bd0c9c134c79d8f94cbca51bc7c0fe\",\"seq\":3,\"ts\":\"2026-11-15T10:00:03Z\",\"type\":\"issue\",\"v\":1}\n",
+   "expect": {
+    "ok": true,
+    "codes": []
+   }
+  },
+  {
+   "name": "valid_new_version",
+   "rule": "-",
+   "description": "A new version supersedes the old; a record keeps its hash.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.6\",\"protocol_id\":\"DEMO_D001\",\"version\":\"2\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"08bf40a85b404eb8db260a2e4e30afc54ce45f00ab292becf35ae0770d3674e2\",\"supersedes\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"version\":\"2\"},\"hash\":\"bdb81db2323d28f3352a5c07c9ece5b61f448f5d2352fd5f1a40af1d9cccfc61\",\"prev\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"seq\":2,\"ts\":\"2026-11-15T10:00:02Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"2efc2797f28ad45a0f017847d0934116b6e944cf678d43b2b32ae98cc4731b63\",\"prev\":\"bdb81db2323d28f3352a5c07c9ece5b61f448f5d2352fd5f1a40af1d9cccfc61\",\"seq\":3,\"ts\":\"2026-11-15T10:00:03Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": true,
+    "codes": []
+   }
+  },
+  {
+   "name": "valid_equal_ts",
+   "rule": "R4",
+   "description": "Equal timestamps are not a regression.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"ef94868453f294d27a81dac62cb7525684e10ed6a77423e4f9b0fbd5dcd738a9\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": true,
+    "codes": []
+   }
+  },
+  {
+   "name": "valid_blocked_without_sources",
+   "rule": "R7",
+   "description": "BLOCKED_SOURCE with a reason and no sources.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"block_reason\":\"The source returned HTTP 403.\",\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[],\"status\":\"BLOCKED_SOURCE\"},\"hash\":\"583d394cf925e0456e7f4f6729b440d64dca94cb45c00c5f2206fcb218cb0e03\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": true,
+    "codes": []
+   }
+  },
+  {
+   "name": "r1_seq_gap",
+   "rule": "R1",
+   "description": "seq jumps from 1 to 3.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"description\":\"The source moved to a new URL.\",\"kind\":\"source_change\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\"},\"hash\":\"89de40e2a959e01adf64e6a52acfd4d489e2d14e0ef0edc1f4dc49f9abd8187c\",\"prev\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"seq\":3,\"ts\":\"2026-11-15T10:00:02Z\",\"type\":\"deviation\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_SEQ"
+    ]
+   }
+  },
+  {
+   "name": "r1_seq_starts_at_one",
+   "rule": "R1",
+   "description": "The first entry has seq 1.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"162be484553d1a3d0e0bec223ad7c9c541935347d7df1379583503f6f6d14ef5\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":1,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_SEQ"
+    ]
+   }
+  },
+  {
+   "name": "r2_bad_prev",
+   "rule": "R2",
+   "description": "prev does not name the previous hash.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"description\":\"The source moved to a new URL.\",\"kind\":\"source_change\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\"},\"hash\":\"9bb6e05a8a618fb26b9d64c8f2e7f25f07ea44f86569effe00f5b9007390dd7d\",\"prev\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"seq\":2,\"ts\":\"2026-11-15T10:00:02Z\",\"type\":\"deviation\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_PREV"
+    ]
+   }
+  },
+  {
+   "name": "r2_first_prev_not_zero",
+   "rule": "R2",
+   "description": "The first prev is not 64 zeros.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"9a713e16d4f1c9e0cab3d315579a5489b6ceb50c39406e2f1f13dd9d8320cb3a\",\"prev\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_PREV"
+    ]
+   }
+  },
+  {
+   "name": "r3_bad_hash",
+   "rule": "R3",
+   "description": "The stored hash is wrong.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_HASH"
+    ]
+   }
+  },
+  {
+   "name": "r3_protocol_hash_mismatch",
+   "rule": "R3",
+   "description": "protocol_sha256 is not the hash of protocol.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"b2274d7fd404e3bb3cccc2e0b165ef49d2ba60ed0cbd0fca2498785f8ac17b46\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_HASH"
+    ]
+   }
+  },
+  {
+   "name": "r3_not_canonical",
+   "rule": "R3",
+   "description": "Correct hash but the line has insignificant whitespace.",
+   "ledger": "{\"body\": {\"protocol\": {\"gate\": \"pass rate at least 0.5\", \"protocol_id\": \"DEMO_D001\", \"version\": \"1\"}, \"protocol_id\": \"DEMO_D001\", \"protocol_sha256\": \"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\", \"supersedes\": null, \"version\": \"1\"}, \"hash\": \"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\", \"prev\": \"0000000000000000000000000000000000000000000000000000000000000000\", \"seq\": 0, \"ts\": \"2026-11-15T10:00:00Z\", \"type\": \"freeze\", \"v\": 1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "NOT_CANONICAL"
+    ]
+   }
+  },
+  {
+   "name": "r4_ts_regression",
+   "rule": "R4",
+   "description": "ts decreases.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"description\":\"The source moved to a new URL.\",\"kind\":\"source_change\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\"},\"hash\":\"4ba706cf474c3cdc5d513d7c5bb413c14bb3399fc9febe87e3c6ab5dfcdebd99\",\"prev\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"seq\":2,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"deviation\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "TS_REGRESSION"
+    ]
+   }
+  },
+  {
+   "name": "r5_record_unknown_protocol",
+   "rule": "R5",
+   "description": "A record names a hash that was never frozen.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"554a85bd8ad01fb42f1fd8a21efab5387fada2e026744e0bebdb37e3ae1e5d02\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "UNKNOWN_PROTOCOL"
+    ]
+   }
+  },
+  {
+   "name": "r5_record_before_freeze",
+   "rule": "R5",
+   "description": "The protocol is frozen only after the record.",
+   "ledger": "{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"65c5e3aef9b3dbd8a596ee951834a59da3e5ce2f2d224325d6f3f22a0b4fb0ea\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"b5b0e8e24ec66d0cf8d4d97c7c5ab81cc0bdbf7f4f68ca30f59abb9e94b9207c\",\"prev\":\"65c5e3aef9b3dbd8a596ee951834a59da3e5ce2f2d224325d6f3f22a0b4fb0ea\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "UNKNOWN_PROTOCOL"
+    ]
+   }
+  },
+  {
+   "name": "r5_deviation_unknown_protocol",
+   "rule": "R5",
+   "description": "A deviation names an unfrozen protocol.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"description\":\"The source moved to a new URL.\",\"kind\":\"source_change\",\"protocol_sha256\":\"fefca14460f2e10c8f6a4731b306c29743837c1e6c325f92c2facc4b55ab5ae6\"},\"hash\":\"0d7b85b8ce0c3228b2113851074a56290647c9bc246b5b46e2fb017ee0781ac3\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"deviation\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "UNKNOWN_PROTOCOL"
+    ]
+   }
+  },
+  {
+   "name": "r5_supersedes_unknown",
+   "rule": "R5",
+   "description": "supersedes names an unfrozen hash.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.6\",\"protocol_id\":\"DEMO_D001\",\"version\":\"2\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"08bf40a85b404eb8db260a2e4e30afc54ce45f00ab292becf35ae0770d3674e2\",\"supersedes\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"version\":\"2\"},\"hash\":\"05e5b148e93b6dcf6012448ebb8756e57a3af686cbef1f6f66e8593124a085d1\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "UNKNOWN_PROTOCOL"
+    ]
+   }
+  },
+  {
+   "name": "r6_duplicate_version",
+   "rule": "R6",
+   "description": "The same protocol_id and version are frozen twice with other content.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"protocol\":{\"gate\":\"changed\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"2e24bfa2534c534d7027b0690ac9d99f1fd826f91303c32c589a9a06b359f9de\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"909234a8cc93a91a2ed9dae228b1be0362210267ed519f85c215486c23f8d159\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "DUPLICATE_FREEZE"
+    ]
+   }
+  },
+  {
+   "name": "r6_identical_refreeze",
+   "rule": "R6",
+   "description": "The same protocol is frozen twice.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"050779bd6195fec61f951295e46382961e3cae53b029a470e682c606af17b0d8\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "DUPLICATE_FREEZE"
+    ]
+   }
+  },
+  {
+   "name": "r7_bad_status",
+   "rule": "R7",
+   "description": "status is not in the closed set.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"BEST_MODEL\"},\"hash\":\"c5579af4fc01ade92665173e6c669571533807c2011dde78cceac93ca8bddfaf\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_STATUS"
+    ]
+   }
+  },
+  {
+   "name": "r7_blocked_without_reason",
+   "rule": "R7",
+   "description": "BLOCKED_SOURCE without block_reason.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"BLOCKED_SOURCE\"},\"hash\":\"987e0b8f28316f876bdaceda3d48de709489c86d2f78dc3b3cc139f8ebedb16d\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "MISSING_FIELD"
+    ]
+   }
+  },
+  {
+   "name": "r7_drift_without_reason",
+   "rule": "R7",
+   "description": "SOURCE_DRIFT without drift_reason.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"SOURCE_DRIFT\"},\"hash\":\"c1dbe6cba91d38490872a82a58ab2e2db23ea4bb7b899f1e237b314833522cfb\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "MISSING_FIELD"
+    ]
+   }
+  },
+  {
+   "name": "r7_missing_run_id",
+   "rule": "R7",
+   "description": "A record without run_id.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"ec21175d67b8826136a2d5547dfc862dda87532a09d90ce9f5f71d2a6d9a137f\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "MISSING_FIELD"
+    ]
+   }
+  },
+  {
+   "name": "r7_negative_without_sources",
+   "rule": "R7",
+   "description": "An executed result without any source hash.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[],\"status\":\"NEGATIVE_RESULT_UNDER_PROTOCOL\"},\"hash\":\"1b537327ed18cc600183bb13fa66a8547b1c96c018bd821d913ae1055cd09127\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "MISSING_FIELD"
+    ]
+   }
+  },
+  {
+   "name": "r8_deviation_ref_missing",
+   "rule": "R8",
+   "description": "deviations names a seq that does not exist.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[7],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"7eb8402d172a3ebb3b27f4cc84c8647dbe00fed08ab1379829893bc17977de6f\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "DANGLING_REF"
+    ]
+   }
+  },
+  {
+   "name": "r8_deviation_ref_wrong_type",
+   "rule": "R8",
+   "description": "deviations names a freeze.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[0],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"9114818c5e9ceca814e840bc6ae920286da7a5a9534e033d8efc6232900156c7\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "DANGLING_REF"
+    ]
+   }
+  },
+  {
+   "name": "r8_deviation_other_protocol",
+   "rule": "R8",
+   "description": "deviations names a deviation of another protocol.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"protocol\":{\"gate\":\"other\",\"protocol_id\":\"OTHER_D001\",\"version\":\"1\"},\"protocol_id\":\"OTHER_D001\",\"protocol_sha256\":\"fefca14460f2e10c8f6a4731b306c29743837c1e6c325f92c2facc4b55ab5ae6\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"c05ba6e2a7da6abe3a89fdc0be40270adb7ad9ebdf6dda448086bfea835c1a43\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"description\":\"The source moved to a new URL.\",\"kind\":\"source_change\",\"protocol_sha256\":\"fefca14460f2e10c8f6a4731b306c29743837c1e6c325f92c2facc4b55ab5ae6\"},\"hash\":\"86b2698f89a422009fd293f0b9f688571886861b6a64b65d0c9ed9ace1a8ddbc\",\"prev\":\"c05ba6e2a7da6abe3a89fdc0be40270adb7ad9ebdf6dda448086bfea835c1a43\",\"seq\":2,\"ts\":\"2026-11-15T10:00:02Z\",\"type\":\"deviation\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[2],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"446e9ad8736c8f85ec8a2b168191a93e6890f927757bfb001ed21b7b6db64691\",\"prev\":\"86b2698f89a422009fd293f0b9f688571886861b6a64b65d0c9ed9ace1a8ddbc\",\"seq\":3,\"ts\":\"2026-11-15T10:00:03Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "DANGLING_REF"
+    ]
+   }
+  },
+  {
+   "name": "r8_issue_ref_not_record",
+   "rule": "R8",
+   "description": "issue.record_seq names a freeze.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"card_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"format\":\"evidence-card-json-svg\",\"record_seq\":0},\"hash\":\"e2ca6cacda7222e5a4399d6c75fed1fc7b7d1493450e3678dae469254383e7f0\",\"prev\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"seq\":2,\"ts\":\"2026-11-15T10:00:02Z\",\"type\":\"issue\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "DANGLING_REF"
+    ]
+   }
+  },
+  {
+   "name": "r8_issue_ref_future",
+   "rule": "R8",
+   "description": "issue.record_seq names a later seq.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"card_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"format\":\"evidence-card-json-svg\",\"record_seq\":5},\"hash\":\"644fbd1b822232b547e37c216c09380532eefcd36f2b23de2c5c286cdd93377c\",\"prev\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"seq\":2,\"ts\":\"2026-11-15T10:00:02Z\",\"type\":\"issue\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "DANGLING_REF"
+    ]
+   }
+  },
+  {
+   "name": "r9_bad_card_hash",
+   "rule": "R9",
+   "description": "card_sha256 is not the hash of the rebuilt card.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"card_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"format\":\"evidence-card-json-svg\",\"record_seq\":1},\"hash\":\"7477e599a7facb83b242260492439cb751195e8950e295656bce1645697d5225\",\"prev\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"seq\":2,\"ts\":\"2026-11-15T10:00:02Z\",\"type\":\"issue\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_CARD"
+    ]
+   }
+  },
+  {
+   "name": "r9_card_cannot_be_built",
+   "rule": "R9",
+   "description": "The record carries no card metadata, so no card can be rebuilt.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"1f0190c46610c14618c5af5775654585c70db1c47493b3abc004b82e36d17b3c\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"card_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"format\":\"evidence-card-json-svg\",\"record_seq\":1},\"hash\":\"5c841e23c4b21589838b401df5f260f393e433f763fbf6144947226220e8006c\",\"prev\":\"1f0190c46610c14618c5af5775654585c70db1c47493b3abc004b82e36d17b3c\",\"seq\":2,\"ts\":\"2026-11-15T10:00:02Z\",\"type\":\"issue\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_CARD"
+    ]
+   }
+  },
+  {
+   "name": "r10_unknown_version",
+   "rule": "R10",
+   "description": "v is 2.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"ffea5eed27bf1ebcb968baf004afbf5688282ef5af304379b55fae4a5512e160\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":2}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "UNKNOWN_VERSION"
+    ]
+   }
+  },
+  {
+   "name": "r10_version_is_string",
+   "rule": "R10",
+   "description": "v is the string \"1\".",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"52c71ec20fb43e50fdb688c60518c1af9ab703fc10a690412ae0f0d953af702f\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":\"1\"}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "UNKNOWN_VERSION"
+    ]
+   }
+  },
+  {
+   "name": "r11_partial_line",
+   "rule": "R11",
+   "description": "The last line is cut and has no newline.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"kind\":\"sour",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "TRUNCATED_TAIL"
+    ]
+   }
+  },
+  {
+   "name": "r11_complete_without_newline",
+   "rule": "R11",
+   "description": "A complete entry without the final newline.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n{\"body\":{\"description\":\"The source moved to a new URL.\",\"kind\":\"source_change\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\"},\"hash\":\"ede0ac81f3be623871df94b503abf194ae3212bf6302b12f2ba043e0ba5401a0\",\"prev\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"seq\":2,\"ts\":\"2026-11-15T10:00:02Z\",\"type\":\"deviation\",\"v\":1}",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "TRUNCATED_TAIL"
+    ]
+   }
+  },
+  {
+   "name": "r11_terminated_garbage",
+   "rule": "R11",
+   "description": "The last line ends with a newline but does not parse.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"5e84fee988c4fa4b9a09be67a7f32c7be492829540821c3dcbcf21d973c3791c\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n{\"body\"\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "TRUNCATED_TAIL"
+    ]
+   }
+  },
+  {
+   "name": "bad_entry_not_object",
+   "rule": "-",
+   "description": "A middle line is not an object.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n[1]\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"d1094002dd0bd8c1d75f4cbc5606b8d8e9be7ff9c72c79b8f5ea80eaa66500fb\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":2,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_ENTRY"
+    ]
+   }
+  },
+  {
+   "name": "bad_entry_extra_key",
+   "rule": "-",
+   "description": "An entry has an unknown key.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"extra\":1,\"hash\":\"1b73a5e137e581b26fc4b1f5c577b9ab3a37cf70faa6a8813b5631de8820b1bf\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_ENTRY"
+    ]
+   }
+  },
+  {
+   "name": "bad_entry_bad_ts",
+   "rule": "-",
+   "description": "ts is not whole-second UTC.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"9078b56944fb5d9dc862291f182acf556e048268baba44131162352c48146ea2\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15 10:00:00\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_ENTRY"
+    ]
+   }
+  },
+  {
+   "name": "bad_entry_empty_line",
+   "rule": "-",
+   "description": "An empty line in the middle.",
+   "ledger": "{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n\n{\"body\":{\"card\":{\"access_date\":\"2026-11-15\",\"ai_assistance\":\"not used\",\"baseline_control_summary\":\"Baseline: previous value, pass rate 0.50.\",\"claim_type\":\"source_audit\",\"domain\":\"demo\",\"execution_mode\":\"MANUAL_NO_AI\",\"git_commit\":\"abc1234\",\"known_limitations\":[\"Single operator.\"],\"manual_review\":\"Reviewed by the operator.\",\"official_source_name\":\"Demo source\",\"official_source_url\":\"https://example.org/data\",\"operator\":\"local operator\",\"public_claim_captured_at\":\"2026-11-15\",\"public_claim_locator\":\"section 1, paragraph 2\",\"public_claim_source_sha256\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"public_claim_source_url\":\"https://example.org/data\",\"public_claim_text\":\"The demo source publishes a statement about demo data.\",\"public_claim_verbatim_quote\":\"A verbatim quote of the demo statement.\",\"raw_payload_manifest\":\"No raw payload committed.\",\"runner_command\":\"manual\",\"sanitized_report_path\":\"artifacts/demo_report.json\",\"sanitized_report_sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"source_rights_note\":\"Public page, no raw payload stored.\",\"verification_count\":1,\"verification_level\":\"SINGLE_OPERATOR\"},\"claim_boundary\":\"Only the stated gate on the stated source and period.\",\"deviations\":[],\"outcome\":{\"pass_rate\":\"0.55\"},\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"reproduction_level\":\"not independently reproduced\",\"run_id\":\"run-1\",\"sources\":[{\"id\":\"source-1\",\"sha256\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}],\"status\":\"PASSED_UNDER_PROTOCOL\"},\"hash\":\"d1094002dd0bd8c1d75f4cbc5606b8d8e9be7ff9c72c79b8f5ea80eaa66500fb\",\"prev\":\"30018355354515e5a02bba0b342bd6db6b9df53db093f13367cef8b53657e368\",\"seq\":2,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"record\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_ENTRY"
+    ]
+   }
+  },
+  {
+   "name": "bad_entry_float",
+   "rule": "-",
+   "description": "A float anywhere in an entry.",
+   "ledger": "{\"body\":{\"x\":1.5},\"hash\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":0,\"ts\":\"2026-11-15T10:00:00Z\",\"type\":\"freeze\",\"v\":1}\n{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"3cba96e18a32ebd713953a5a1dff2e86378d1186f7d835b6d9c5cdf9d0e3a2f4\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_ENTRY"
+    ]
+   }
+  },
+  {
+   "name": "bad_entry_duplicate_key",
+   "rule": "-",
+   "description": "A duplicate key in an entry.",
+   "ledger": "{\"seq\":0,\"seq\":0}\n{\"body\":{\"protocol\":{\"gate\":\"pass rate at least 0.5\",\"protocol_id\":\"DEMO_D001\",\"version\":\"1\"},\"protocol_id\":\"DEMO_D001\",\"protocol_sha256\":\"d1b0699b7c60eef84a25c4c4ea46eb3f0929f1d763da995cb5451ffd57e3dc59\",\"supersedes\":null,\"version\":\"1\"},\"hash\":\"3cba96e18a32ebd713953a5a1dff2e86378d1186f7d835b6d9c5cdf9d0e3a2f4\",\"prev\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"seq\":1,\"ts\":\"2026-11-15T10:00:01Z\",\"type\":\"freeze\",\"v\":1}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "BAD_ENTRY"
+    ]
+   }
+  },
+  {
+   "name": "too_large_entry",
+   "rule": "limit",
+   "description": "A line longer than 1048576 bytes.",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "ENTRY_TOO_LARGE"
+    ]
+   },
+   "ledger_template": {
+    "head": "{\"body\":{\"outcome\":{\"note\":\"",
+    "fill": "x",
+    "count": 1048576,
+    "tail": "\"}}}\n"
+   }
+  },
+  {
+   "name": "too_deep_entry",
+   "rule": "limit",
+   "description": "Nesting deeper than 64.",
+   "ledger": "{\"body\":[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]],\"seq\":0}\n",
+   "expect": {
+    "ok": false,
+    "codes": [
+     "TOO_DEEP"
+    ]
+   }
+  }
+ ]
+}
