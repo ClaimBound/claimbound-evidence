@@ -57,3 +57,6 @@ uv build && uvx twine check dist/*
 ```
 
 If the uv cache is not writable in a sandbox, set `UV_CACHE_DIR` to a temp directory.
+
+Cross-platform and Python-version checks run in GitHub CI (`.github/workflows/tests.yml`). Do not recreate
+them locally in Docker or Apple containers; keep local checks to quick host runs (unit tests, `ruff`).
