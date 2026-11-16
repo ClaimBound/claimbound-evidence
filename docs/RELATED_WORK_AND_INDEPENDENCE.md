@@ -48,3 +48,13 @@ Do not describe Protocolith as derived from EviBound, and do not claim priority 
 The canonical source is [github.com/protocolith/protocolith](https://github.com/protocolith/protocolith); documentation is
 on [protocolith.github.io/protocolith](https://protocolith.github.io/protocolith/). Other repositories, sites or
 services using a similar name are not this project.
+
+## Archived State Before The Rename
+
+The repository state under its former name (ClaimBound Evidence, `github.com/ClaimBound/claimbound-evidence`) was archived by Software Heritage
+on 2026-11-16, before the repository was moved. This is an independent timestamp of the earlier name, history and content:
+
+- Snapshot: `swh:1:snp:6d2917c2ed88f1e41d7270dcd17570f32500dbf7`
+- Revision: `swh:1:rev:842d5897af940acdce39da23c356a18077e0587d`
+- Directory: `swh:1:dir:c1b1d320d52d7554118fb7d576703164068a7339`
+- [Browse the archived origin](https://archive.softwareheritage.org/swh:1:dir:c1b1d320d52d7554118fb7d576703164068a7339;origin=https://github.com/ClaimBound/claimbound-evidence;visit=swh:1:snp:6d2917c2ed88f1e41d7270dcd17570f32500dbf7;anchor=swh:1:rev:842d5897af940acdce39da23c356a18077e0587d)
