@@ -1,0 +1,67 @@
+name: Ledger or core problem
+description: A freeze, record, verify-ledger, issue, summary, atlas or MCP command behaves wrongly (non-security).
+title: "[core] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for the ledger core: `init`, `freeze`, `record`, `deviation`, `verify-ledger`, `issue`, `summary`, `show`,
+        `capture`, `schema`, `atlas` and the MCP server. Do **not** paste secrets or private data. If a ledger fails to verify, the
+        error codes are enough; do not attach the ledger unless it is a small test ledger.
+
+  - type: input
+    id: version
+    attributes:
+      label: Protocolith version
+      description: Output of `protocolith --version`.
+      placeholder: protocolith 0.6.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating system
+      options:
+        - Linux
+        - macOS
+        - Windows
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      description: Output of `python --version`.
+      placeholder: Python 3.13.1
+    validations:
+      required: true
+
+  - type: textarea
+    id: command
+    attributes:
+      label: Command that failed
+      description: The exact command and, if short, the input file.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Output and exit code
+      description: Everything the command printed, including the error code (for example BAD_HASH) and the exit code (0, 1, 2 or 3).
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
