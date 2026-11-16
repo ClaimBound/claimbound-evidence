@@ -1,7 +1,7 @@
 # Start Without Coding
 
 This page is for reviewers, journalists and external operators who are not
-software developers. You only need Python 3.12+, git and a terminal.
+software developers. You only need Python 3.11+, git and a terminal.
 
 See [platform support](PLATFORM_SUPPORT.md) for Windows, macOS and Linux notes.
 

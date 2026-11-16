@@ -1,51 +1,52 @@
 # Protocolith
 
-**Where is the evidence?** Protocolith turns a narrow public claim about AI, ML, data or
-software into a small *evidence card*: frozen protocol, hashed sources, an exact result status,
-a claim boundary and a reproduction level.
+**Records, verifies and issues trial records.**
 
-It is not a model leaderboard, a hosted scoring service or a certification authority.
+Freeze a protocol before a run, record the outcome, verify the hash-chained history, issue a card. One local
+append-only ledger, a command line (`protocolith`, alias `plith`), a Python API and an MCP server. Standard
+library only; Python 3.11 to 3.15; macOS, Linux and Windows; headless.
 
-## Pick a path
+```bash
+protocolith freeze protocol.json
+protocolith record record.json
+protocolith verify-ledger
+protocolith issue 1
+```
+
+## Start here
 
 <div class="grid cards" markdown>
 
-- **Check a card**
+- **Try it in two minutes**
 
-    Validate and read an existing card.
+    [Install](getting-started-install.md) · [Your first record](getting-started-first-record.md)
 
-    [Quick start](quickstart.md) · [Read a card](concepts.md)
+- **Understand it**
 
-- **Rerun a card**
+    [Ledger and hash chain](concepts-ledger.md) · [Result statuses](concepts-result-statuses.md) · [Canonical JSON](concepts-canonical-json.md)
 
-    Repeat a frozen check and record whether it reproduces.
+- **Use it**
 
-    [Independent rerun workflow](INDEPENDENT_RERUN_WORKFLOW.md) · [No-coding start](START_WITHOUT_CODING.md)
+    [Local experiments](getting-started-local-experiments.md) · [CI](getting-started-ci.md) · [MCP](guides-mcp.md) · [Python API](guides-python-api.md)
 
-- **Contribute a card**
+- **Look it up**
 
-    Scaffold a new check with a frozen protocol.
-
-    [Getting started](GETTING_STARTED.md) · [Contributing](CONTRIBUTING.md)
+    [Command reference](CLI.md) · [Core specification](spec-core.md) · [Error codes](reference-error-codes.md)
 
 </div>
 
-## Install
+## What it proves, and what it does not
 
-```bash
-pipx install protocolith        # or: uv tool install protocolith
-protocolith validate-card path/to/card.json
-```
+A valid ledger proves **internal consistency and ordering**. It does not prove wall-clock time, and it cannot
+detect that a whole ledger was replaced or its tail removed unless you anchored the head somewhere else
+([anchoring the head](guides-anchoring-the-head.md)). It does not show that a protocol is sound or that data is
+true. Check against an anchored head with `verify-ledger --expect-head SEQ:HASH`.
 
-See [Install](install.md) for what the pip package includes and for a full clone.
+## Status
 
-## Reading the results honestly
+The ledger commands are on the development branch toward 0.6.0 and installable from source today; the specification
+is a draft (0.1) with one implementation. See the [roadmap](project-roadmap.md) and the [FAQ](FAQ.md).
 
-- A green card means **one narrow claim passed under one frozen protocol**, nothing more.
-- Most public cards are still `SINGLE_OPERATOR` and `not independently reproduced`. Independent
-  reruns are the signal that matters most; see [common misreadings](COMMON_MISREADINGS.md).
-- Many cards were produced with AI assistance (`execution_mode: AUTOMATED_AI_ASSISTED`); the field
-  is part of every card and a validated card is judged by its protocol, hashes and boundary.
-- Negative, blocked and insufficient-coverage outcomes are published like positive ones.
-
-Terms are explained in the [glossary](GLOSSARY.md).
+The earlier evidence-card material (card validators, runners, registry views) is kept under
+[Archive and examples](archive.md). The project was published as ClaimBound Evidence until 0.5.0; see
+[related work and independence](RELATED_WORK_AND_INDEPENDENCE.md).

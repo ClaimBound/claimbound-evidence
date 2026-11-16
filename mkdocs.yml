@@ -1,16 +1,16 @@
 site_name: Protocolith
-site_description: Evidence cards for narrow public AI, ML and data claims.
+site_description: Records, verifies and issues trial records.
 site_url: https://protocolith.github.io/protocolith/docs/
 repo_url: https://github.com/protocolith/protocolith
 repo_name: Protocolith/protocolith
 docs_dir: .docs_build
 site_dir: _site/docs
-copyright: Apache-2.0 licensed. Evidence cards record narrow checks, not endorsements.
+copyright: Apache-2.0 licensed. A valid ledger shows internal consistency and ordering only.
 
 theme:
   name: material
   logo: assets/protocolith-mark.svg
-  favicon: assets/favicon.png
+  favicon: assets/favicon.svg
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -37,28 +37,64 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Get started:
-      - Install: install.md
-      - Quick start: quickstart.md
-      - Start without coding: START_WITHOUT_CODING.md
-      - Platform support: PLATFORM_SUPPORT.md
+  - Getting started:
+      - Install: getting-started-install.md
+      - Your first record: getting-started-first-record.md
+      - Local experiments: getting-started-local-experiments.md
+      - Using it in CI: getting-started-ci.md
   - Concepts:
+      - Protocol: concepts-protocol.md
+      - Freeze: concepts-freeze.md
+      - Ledger and hash chain: concepts-ledger.md
+      - Result statuses: concepts-result-statuses.md
+      - Canonical JSON: concepts-canonical-json.md
+      - Cards: concepts-cards.md
+  - Guides:
+      - Local experiment workflow: guides-local-experiment-workflow.md
+      - Headless and CI use: guides-headless-ci.md
+      - MCP integration: guides-mcp.md
+      - Python API: guides-python-api.md
+      - Repair and crash recovery: guides-repair-and-crash-recovery.md
+      - Anchoring the head: guides-anchoring-the-head.md
+  - Reference:
+      - Command reference: CLI.md
+      - Core specification: spec-core.md
+      - Error codes: reference-error-codes.md
+      - Conformance vectors: reference-conformance-vectors.md
+      - File formats: reference-file-formats.md
+      - Configuration: reference-configuration.md
+  - Examples:
+      - Overview: examples.md
+      - Statuses and versions: examples-statuses-and-versions.md
+  - Development:
+      - Architecture: development-architecture.md
+      - Testing and coverage: development-testing.md
+      - Release process: development-release-process.md
+      - Contributing: CONTRIBUTING.md
+  - Project:
+      - Roadmap: project-roadmap.md
+      - Governance: GOVERNANCE.md
+      - Security: SECURITY.md
+      - Related work: RELATED_WORK_AND_INDEPENDENCE.md
+      - FAQ: FAQ.md
+      - Changelog: CHANGELOG.md
+  - Archive and examples:
+      - Overview: archive.md
+      - Card install (card tools): install.md
+      - Card quick start: quickstart.md
       - Reading a card: concepts.md
-      - Result status: RESULT_STATUS.md
       - Evidence card protocol: EVIDENCE_CARD.md
+      - Result status protocol: RESULT_STATUS.md
       - Common misreadings: COMMON_MISREADINGS.md
       - Glossary: GLOSSARY.md
       - Pseudonym policy: PSEUDONYM_POLICY.md
-  - Use it:
-      - Getting started: GETTING_STARTED.md
+      - Start without coding: START_WITHOUT_CODING.md
+      - Getting started (cards): GETTING_STARTED.md
       - Protocolith in 5 minutes: PROTOCOLITH_IN_5_MINUTES.md
-      - Independent rerun workflow: INDEPENDENT_RERUN_WORKFLOW.md
-      - Command reference: CLI.md
-  - Project:
       - Protocolith in 30 seconds: PROTOCOLITH_IN_30_SECONDS.md
+      - Independent rerun workflow: INDEPENDENT_RERUN_WORKFLOW.md
       - Reviewer path: REVIEWER_PATH.md
+      - Platform support (card tools): PLATFORM_SUPPORT.md
+      - Earlier architecture: ARCHITECTURE.md
+      - Earlier roadmap 2026: ROADMAP_2026.md
       - Planned work not shipped: PLANNED_NOT_SHIPPED.md
-      - Roadmap 2026: ROADMAP_2026.md
-      - Contributing: CONTRIBUTING.md
-      - Security: SECURITY.md
-      - Changelog: CHANGELOG.md

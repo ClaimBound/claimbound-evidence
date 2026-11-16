@@ -40,7 +40,7 @@ installed.**
 
 | Tool | Required | Install hint |
 | --- | --- | --- |
-| Python 3.12+ | Yes | https://www.python.org/downloads/ |
+| Python 3.11+ | Yes | https://www.python.org/downloads/ |
 | git | Yes | https://git-scm.com/downloads |
 | uv | Recommended | `pip install uv` or https://docs.astral.sh/uv/ |
 
@@ -187,7 +187,7 @@ Full template with all pack lines:
 | Problem | Fix |
 | --- | --- |
 | `uv: command not found` | `pip install uv` or use `pip install -e ".[dev]"` from repo root |
-| `ready=no` from doctor | Install Python 3.12+, ensure `git` is on PATH |
+| `ready=no` from doctor | Install Python 3.11+, ensure `git` is on PATH |
 | `validate-all` fails | `git pull origin main` — you may be on an old commit |
 | NASA/NOAA verify times out | Retry; needs outbound HTTPS to NASA POWER / NOAA CO-OPS APIs |
 | `verify_*=FAIL` | Paste full terminal output in the issue comment; do not close |

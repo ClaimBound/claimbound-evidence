@@ -4,6 +4,13 @@ Use this page to choose a reading path. You do not need every protocol file to
 try Protocolith. The same core pages are also published as a
 [documentation site](https://protocolith.github.io/protocolith/docs/).
 
+## Core documentation
+
+Protocolith records, verifies and issues trial records. Start with [your first record](getting-started/first-record.md),
+then [the ledger](concepts/ledger.md), the [core specification](spec/CORE_SPEC.md) and the [FAQ](FAQ.md).
+The full list is in the [documentation map](docs-map.md). The older evidence-card material below is indexed in the
+[archive](archive/README.md).
+
 ## I Want To
 
 | Goal | Start here |

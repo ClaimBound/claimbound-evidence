@@ -40,13 +40,46 @@ COPIED = {
     "docs/PSEUDONYM_POLICY.md": "PSEUDONYM_POLICY.md",
     "docs/PLANNED_NOT_SHIPPED.md": "PLANNED_NOT_SHIPPED.md",
     "docs/ROADMAP_2026.md": "ROADMAP_2026.md",
+    # core documentation (flat names in the site; sources live in subfolders of docs/)
+    "docs/getting-started/install.md": "getting-started-install.md",
+    "docs/getting-started/first-record.md": "getting-started-first-record.md",
+    "docs/getting-started/local-experiments.md": "getting-started-local-experiments.md",
+    "docs/getting-started/ci.md": "getting-started-ci.md",
+    "docs/concepts/protocol.md": "concepts-protocol.md",
+    "docs/concepts/freeze.md": "concepts-freeze.md",
+    "docs/concepts/ledger.md": "concepts-ledger.md",
+    "docs/concepts/result-statuses.md": "concepts-result-statuses.md",
+    "docs/concepts/canonical-json.md": "concepts-canonical-json.md",
+    "docs/concepts/cards.md": "concepts-cards.md",
+    "docs/guides/local-experiment-workflow.md": "guides-local-experiment-workflow.md",
+    "docs/guides/headless-ci.md": "guides-headless-ci.md",
+    "docs/guides/mcp.md": "guides-mcp.md",
+    "docs/guides/python-api.md": "guides-python-api.md",
+    "docs/guides/repair-and-crash-recovery.md": "guides-repair-and-crash-recovery.md",
+    "docs/guides/anchoring-the-head.md": "guides-anchoring-the-head.md",
+    "docs/spec/CORE_SPEC.md": "spec-core.md",
+    "docs/reference/error-codes.md": "reference-error-codes.md",
+    "docs/reference/conformance-vectors.md": "reference-conformance-vectors.md",
+    "docs/reference/file-formats.md": "reference-file-formats.md",
+    "docs/reference/configuration.md": "reference-configuration.md",
+    "docs/examples/README.md": "examples.md",
+    "docs/examples/statuses-and-versions.md": "examples-statuses-and-versions.md",
+    "docs/development/architecture.md": "development-architecture.md",
+    "docs/development/testing.md": "development-testing.md",
+    "docs/development/release-process.md": "development-release-process.md",
+    "docs/project/roadmap.md": "project-roadmap.md",
+    "docs/FAQ.md": "FAQ.md",
+    "docs/RELATED_WORK_AND_INDEPENDENCE.md": "RELATED_WORK_AND_INDEPENDENCE.md",
+    "docs/ARCHITECTURE.md": "ARCHITECTURE.md",
+    "docs/archive/README.md": "archive.md",
+    "GOVERNANCE.md": "GOVERNANCE.md",
     "CONTRIBUTING.md": "CONTRIBUTING.md",
     "CHANGELOG.md": "CHANGELOG.md",
     "SECURITY.md": "SECURITY.md",
 }
 ASSETS = {
-    "docs/assets/logo/protocolith-mark.svg": "assets/protocolith-mark.svg",
-    "docs/assets/logo/protocolith-mark-32.png": "assets/favicon.png",
+    "docs/assets/protocolith/logo-mark.svg": "assets/protocolith-mark.svg",
+    "docs/assets/protocolith/favicon.svg": "assets/favicon.svg",
     "docs/assets/protocolith_workflow.svg": "assets/protocolith_workflow.svg",
 }
 IMAGE_SUFFIXES = {".svg", ".png", ".gif", ".jpg", ".jpeg"}
@@ -70,6 +103,8 @@ def rewrite_links(text: str, source: str, root: Path = REPO_ROOT) -> tuple[str, 
         suffix = f"#{fragment}" if fragment else ""
         if key in COPIED:
             new = COPIED[key] + suffix
+        elif key.startswith("docs_site/") and (root / key).is_file():
+            new = key.removeprefix("docs_site/") + suffix
         elif (root / key).exists():
             is_image = resolved.suffix.lower() in IMAGE_SUFFIXES
             if is_image:

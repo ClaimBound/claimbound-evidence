@@ -16,7 +16,7 @@ not need private data, private technology or a hosted account.
 
 ## Minimal Local Setup
 
-Works on Windows, macOS and Linux. Prerequisites: Python 3.12+, git. See
+Works on Windows, macOS and Linux. Prerequisites: Python 3.11+, git. See
 [platform support](PLATFORM_SUPPORT.md).
 
 ```bash

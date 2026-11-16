@@ -1,4 +1,6 @@
-# Quick start
+# Validate a card (archive)
+
+> This is the card-level quick start of earlier releases. For the ledger, see [Your first record](getting-started-first-record.md).
 
 Validate one card, look at its result and see what it does not claim.
 

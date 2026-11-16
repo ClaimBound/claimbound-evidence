@@ -1,6 +1,8 @@
-# Install
+# Install the card tools (archive)
 
-Protocolith needs Python 3.12 or newer and works on Windows, macOS and Linux
+> The ledger commands are installed as described in [Install](getting-started-install.md). This page describes the older card-level tools and is kept for reference; its Python version note may be out of date.
+
+Protocolith needs Python 3.11 or newer and works on Windows, macOS and Linux
 ([platform support](PLATFORM_SUPPORT.md)).
 
 ## Card-level CLI from PyPI
