@@ -68,8 +68,12 @@ class VerificationFailed(ProtocolithError):
 
 @contextmanager
 def io_guard() -> Iterator[None]:
-    """Turn OSError into EnvError so no raw I/O error escapes the API."""
+    """Turn OSError (and a NUL in a path) into EnvError so no raw I/O error escapes the API."""
     try:
         yield
     except OSError as exc:
+        raise EnvError("IO_ERROR", f"{type(exc).__name__}: {exc}") from exc
+    except ValueError as exc:
+        if "embedded null" not in str(exc):  # a NUL in a path is a ValueError, not an OSError
+            raise
         raise EnvError("IO_ERROR", f"{type(exc).__name__}: {exc}") from exc

@@ -83,7 +83,7 @@ pointing at the hash they were run under.
 
 A valid ledger proves internal consistency and ordering. It does not prove wall-clock time and cannot detect that a
 whole ledger was replaced or that its tail was removed. `head` (the last `hash` plus `seq`) may be published or
-anchored elsewhere (a signed git tag, a timestamp service); a later check against that head detects removal (`verify-ledger --expect-head SEQ:HASH`, planned for 0.6.0; until then `head` only prints it).
+anchored elsewhere (a signed git tag, a timestamp service); a later check against that head detects removal (`verify-ledger --expect-head SEQ:HASH`; a mismatch yields `HEAD_MISMATCH`, exit 1).
 
 ## 4. Local store
 
@@ -139,7 +139,7 @@ their current ids by `docs/MIGRATION_ID_MAP.json`.
 - One ledger line is at most `MAX_ENTRY_BYTES = 1,048,576` bytes (without the newline). A longer line is not parsed
   (`ENTRY_TOO_LARGE`).
 - JSON nesting depth is at most 64, counting the top-level container as 1 (`TOO_DEEP`).
-- `protocol_id` and `version` are filename-safe: `[A-Za-z0-9][A-Za-z0-9._-]*`.
+- `protocol_id` (at most 128 characters) and `version` (at most 64 characters) are filename-safe: `[A-Za-z0-9][A-Za-z0-9._+-]*` (`+` is allowed in `version` only).
 - Lock waits time out after 30 seconds (`LOCK_TIMEOUT`).
 
 ## 10. Issuing cards
@@ -159,7 +159,7 @@ evidence-card validator and renders JSON and SVG.
 
 Verification: `BAD_SEQ`, `BAD_PREV`, `BAD_HASH`, `NOT_CANONICAL`, `TS_REGRESSION`, `UNKNOWN_PROTOCOL`, `DUPLICATE_FREEZE`,
 `BAD_STATUS`, `MISSING_FIELD`, `DANGLING_REF`, `BAD_CARD`, `UNKNOWN_VERSION`, `TRUNCATED_TAIL`, `ENTRY_TOO_LARGE`, `TOO_DEEP`,
-`BAD_ENTRY` (structure or type problem; bodies are closed, so unknown keys are rejected).
+`BAD_ENTRY` (structure or type problem; bodies are closed, so unknown keys are rejected), `HEAD_MISMATCH` (`--expect-head` check failed).
 
 Canonicalization and input: `BAD_JSON` (including a byte-order mark), `BAD_UTF8`, `BAD_TYPE`, `FLOAT_NOT_ALLOWED`, `NON_FINITE`,
 `INT_RANGE`, `DUPLICATE_KEY`, `LONE_SURROGATE`.

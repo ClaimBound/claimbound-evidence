@@ -56,6 +56,7 @@ dev = [
     "pytest>=9.1.1",
     "pytest-cov>=6.0",
     "pytest-xdist>=3.5",
+    "hypothesis>=6",
     "ruff>=0.15",
 ]
 docs = [
@@ -127,6 +128,11 @@ skip_covered = false
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "-m 'not slow and not perf'"
+markers = [
+    "slow: long-running stress tests (run with -m 'slow or perf')",
+    "perf: CPU-time performance measurements (run with -m 'slow or perf')",
+]
 
 [tool.ruff]
 target-version = "py312"

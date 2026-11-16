@@ -331,3 +331,22 @@ def scan(data: bytes, card_hasher: CardHasher | None = None) -> tuple[Verdict, V
     head_hash = verifier.prev_hash if count else None
     verdict = Verdict(not violations, count, count - 1 if head_hash else None, head_hash, violations)
     return verdict, verifier
+
+
+def apply_expected_head(verdict: Verdict, verifier: Verifier, seq: int, digest: str) -> Verdict:
+    """After a passing verification, require the entry at ``seq`` to have hash ``digest``; else add HEAD_MISMATCH.
+
+    A ledger that already fails keeps its own violations: the head is only meaningful for an intact ledger.
+    """
+    if not verdict.ok:
+        return verdict
+    entry = verifier.entries.get(seq)
+    if entry is None:
+        message = f"the ledger has no entry at seq {seq} (it has {verdict.count} entries)"
+    elif entry["hash"] != digest:
+        message = f"entry {seq} has hash {entry['hash']}, expected {digest}"
+    else:
+        return verdict
+    verdict.violations.append(Violation("HEAD_MISMATCH", seq, message))
+    verdict.ok = False
+    return verdict

@@ -20,7 +20,7 @@ from typing import Any
 from protocolith.core import MAX_ENTRY_BYTES, CanonError, decode, encode, scan
 from protocolith.core.issue import card_hash
 from protocolith.core.ledger import ZERO_HASH, entry_hash, serialize
-from protocolith.core.rules import Verifier
+from protocolith.core.rules import Verifier, apply_expected_head
 
 VECTOR_DIR = Path(__file__).resolve().parents[1] / "spec" / "vectors"
 HASH_A = "a" * 64
@@ -295,7 +295,40 @@ def hash_cases() -> list[dict[str, Any]]:
     ]
 
 
-def check(canonical: list[dict[str, Any]], hashes: list[dict[str, Any]], ledgers: list[dict[str, Any]]) -> None:
+def head_hashes(text: str) -> list[str]:
+    return [json.loads(line)["hash"] for line in text.splitlines()]
+
+
+def head_cases() -> list[dict[str, Any]]:
+    """Cases for ``verify-ledger --expect-head SEQ:HASH``: verify first, then require that entry."""
+    three = chain(FLOW)
+    h3 = head_hashes(three)
+    two = "".join(three.splitlines(keepends=True)[:2])
+    broken = chain([*BASE, spec("deviation", deviation_body(), TS[2], seq=3)])
+
+    def case(name: str, description: str, ledger: str, expect_head: str, codes: list[str]) -> dict[str, Any]:
+        return {
+            "name": name,
+            "description": description,
+            "ledger": ledger,
+            "expect_head": expect_head,
+            "expect": {"ok": not codes, "codes": codes},
+        }
+
+    return [
+        case("head_matches_last", "The expected head is the last entry.", three, f"2:{h3[2]}", []),
+        case("head_matches_earlier_entry", "An earlier entry also satisfies the check.", three, f"0:{h3[0]}", []),
+        case("head_wrong_hash", "The entry exists but its hash differs.", three, f"2:{HASH_A}", ["HEAD_MISMATCH"]),
+        case("head_hash_of_another_seq", "The hash belongs to a different seq.", three, f"1:{h3[2]}", ["HEAD_MISMATCH"]),
+        case("head_tail_removed", "The tail was removed: the ledger verifies but has no entry 2.", two, f"2:{h3[2]}", ["HEAD_MISMATCH"]),
+        case("head_empty_ledger", "An empty ledger has no entry 0.", "", f"0:{HASH_A}", ["HEAD_MISMATCH"]),
+        case("head_ignored_when_ledger_fails", "A ledger that fails verification reports its own codes only.", broken, f"1:{HASH_A}", ["BAD_SEQ"]),
+    ]
+
+
+def check(
+    canonical: list[dict[str, Any]], hashes: list[dict[str, Any]], ledgers: list[dict[str, Any]], heads: list[dict[str, Any]]
+) -> None:
     """Refuse to write vectors the reference implementation does not reproduce."""
     for case in canonical:
         raw = bytes.fromhex(case["input_hex"]) if "input_hex" in case else case["input_text"].encode("utf-8")
@@ -311,6 +344,11 @@ def check(canonical: list[dict[str, Any]], hashes: list[dict[str, Any]], ledgers
         verdict, _ = scan(expand(case), card_hash)
         assert verdict.codes == case["expect"]["codes"], (case["name"], verdict.codes, verdict.violations)
         assert verdict.ok == case["expect"]["ok"], case["name"]
+    for case in heads:
+        verdict, verifier = scan(str(case["ledger"]).encode("utf-8"), card_hash)
+        seq, digest = str(case["expect_head"]).split(":")
+        verdict = apply_expected_head(verdict, verifier, int(seq), digest)
+        assert verdict.codes == case["expect"]["codes"] and verdict.ok == case["expect"]["ok"], case["name"]
 
 
 def dump(name: str, description: str, cases: list[dict[str, Any]]) -> str:
@@ -319,8 +357,8 @@ def dump(name: str, description: str, cases: list[dict[str, Any]]) -> str:
 
 
 def build_vectors() -> dict[str, str]:
-    canonical, hashes, ledgers = canonical_cases(), hash_cases(), ledger_cases()
-    check(canonical, hashes, ledgers)
+    canonical, hashes, ledgers, heads = canonical_cases(), hash_cases(), ledger_cases(), head_cases()
+    check(canonical, hashes, ledgers, heads)
     return {
         "canonical.json": dump(
             "canonical",
@@ -333,6 +371,12 @@ def build_vectors() -> dict[str, str]:
             "Verify the ledger text (or the expanded ledger_template: head + fill*count + tail); "
             "expect ok and the sorted unique rule codes.",
             ledgers,
+        ),
+        "heads.json": dump(
+            "heads",
+            "Verify the ledger text, then require the entry named by expect_head (SEQ:HASH) to exist with that hash; "
+            "expect ok and the sorted unique codes. A ledger that already fails reports only its own codes.",
+            heads,
         ),
     }
 

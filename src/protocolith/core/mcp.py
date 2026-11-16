@@ -52,8 +52,8 @@ def _deviation(store: Store, arguments: dict[str, Any], clock: Clock | None) -> 
 
 
 def _verify(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
-    _take(arguments, ())
-    return ops.verify(store).to_dict()
+    args = _take(arguments, (), ("expect_head",))
+    return ops.verify(store, args.get("expect_head")).to_dict()
 
 
 def _issue(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
@@ -96,7 +96,14 @@ TOOLS: dict[str, Tool] = {
         ),
         Tool("protocolith_record", "Record the outcome of a run against a frozen protocol.", {"body": _OBJECT}, ("body",), _record),
         Tool("protocolith_deviation", "Record a deviation from a frozen protocol.", {"body": _OBJECT}, ("body",), _deviation),
-        Tool("protocolith_verify", "Verify the whole ledger; isError is true when it does not verify.", {}, (), _verify),
+        Tool(
+            "protocolith_verify",
+            "Verify the whole ledger; isError is true when it does not verify. "
+            "With expect_head (SEQ:HASH) the ledger must also contain that entry, else HEAD_MISMATCH.",
+            {"expect_head": {"type": "string", "description": "SEQ:HASH of a previously published head"}},
+            (),
+            _verify,
+        ),
         Tool(
             "protocolith_issue",
             "Issue the evidence card (JSON and SVG, inside the store) for the record at seq.",

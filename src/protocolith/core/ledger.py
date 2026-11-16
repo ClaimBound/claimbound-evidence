@@ -9,6 +9,7 @@ from datetime import datetime
 from typing import Any
 
 from .canonical import encode, sha256_hex
+from .errors import InputError
 
 FORMAT_VERSION = 1
 ZERO_HASH = "0" * 64
@@ -32,11 +33,20 @@ RESULT_STATUSES = frozenset(
 Entry = dict[str, Any]
 
 _HASH_RE = re.compile(r"[0-9a-f]{64}")
+_HEAD_REF_RE = re.compile(r"(0|[1-9][0-9]*):([0-9a-f]{64})")
 _TS_RE = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z")
 
 
 def is_hash(value: object) -> bool:
     return isinstance(value, str) and _HASH_RE.fullmatch(value) is not None
+
+
+def parse_head_ref(value: object) -> tuple[int, str]:
+    """Parse ``SEQ:HASH`` (decimal seq without leading zeros, lowercase 64-hex hash)."""
+    found = _HEAD_REF_RE.fullmatch(value) if isinstance(value, str) else None
+    if found is None:
+        raise InputError("BAD_ENTRY", "expected head must look like SEQ:HASH (decimal seq, 64 lowercase hex characters)")
+    return int(found.group(1)), found.group(2)
 
 
 def is_ts(value: object) -> bool:

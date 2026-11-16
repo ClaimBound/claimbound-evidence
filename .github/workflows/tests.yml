@@ -61,6 +61,10 @@ jobs:
             os: macos-latest
             python: "3.15"
             pytest_args: "-n auto -q"
+          - job: "pytest-extra (ubuntu-latest, python 3.13)"
+            os: ubuntu-latest
+            python: "3.13"
+            pytest_args: "-n auto -q"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -92,3 +96,19 @@ jobs:
       - name: Preserve pytest failure
         if: steps.pytest.outcome == 'failure'
         run: exit 1
+
+  core-coverage:
+    # The core is held at 100% line and branch coverage on every platform; the other platform's lock module is
+    # excluded by its own pragma.
+    name: core coverage (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+      - run: uv sync --extra dev --python 3.13
+      - name: Core tests with a 100% gate
+        run: uv run pytest tests/core tests/core_hardening --cov=protocolith.core --cov-branch --cov-report=term-missing --cov-fail-under=100 -q

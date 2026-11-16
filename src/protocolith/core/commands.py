@@ -84,7 +84,7 @@ def _cmd_deviation(args: argparse.Namespace, parser: argparse.ArgumentParser) ->
 
 def _cmd_verify_ledger(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
     def work(store: Store) -> Outcome:
-        verdict = ops.verify(store)
+        verdict = ops.verify(store, args.expect_head)
         if verdict.ok:
             head = f"head seq={verdict.head_seq} hash={verdict.head_hash}" if verdict.count else "empty"
             return Outcome(verdict.to_dict(), f"OK entries={verdict.count} {head}")
@@ -163,7 +163,13 @@ def add_core_commands(subparsers: Any) -> None:
     freeze.add_argument("--supersedes", default=None, metavar="SHA256", help="Hash of the protocol version this replaces.")
     add("record", _cmd_record, "Record a run outcome from a JSON file.", with_json).add_argument("file", metavar="FILE")
     add("deviation", _cmd_deviation, "Record a deviation from a JSON file.", with_json).add_argument("file", metavar="FILE")
-    add("verify-ledger", _cmd_verify_ledger, "Verify the ledger (rules R1 to R11).", with_json)
+    verify = add("verify-ledger", _cmd_verify_ledger, "Verify the ledger (rules R1 to R11).", with_json)
+    verify.add_argument(
+        "--expect-head",
+        default=None,
+        metavar="SEQ:HASH",
+        help="Also require the entry at SEQ to have this hash (detects a removed tail); else HEAD_MISMATCH, exit 1.",
+    )
     issue = add("issue", _cmd_issue, "Issue the evidence card of a record.", with_json)
     issue.add_argument("seq", type=int, metavar="SEQ")
     issue.add_argument("--out", default=None, metavar="DIR", help="Card directory (default <store>/cards).")

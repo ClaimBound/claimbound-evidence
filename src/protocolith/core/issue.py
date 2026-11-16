@@ -17,6 +17,7 @@ from .rules import Verifier
 
 _MISSING_RE = re.compile(r"^missing (?:required |forecast |public claim )?field: (\w+)$")
 _MUST_INCLUDE_RE = re.compile(r"must include (\w+)$")
+_XML_INVALID = re.compile("[\x00-\x08\x0b\x0c\x0e-\x1f\ufffe\uffff]")  # not allowed in XML 1.0 documents
 
 
 def _missing_names(violations: list[str]) -> list[str]:
@@ -58,7 +59,10 @@ def build_card(verifier: Verifier, record_seq: int) -> dict[str, Any]:
         raise InputError("CARD_CONFLICT", "card fields contradict the record: " + ", ".join(conflicts))
     defaults = {"last_verified_date": day, "record_type": "evidence_result", "registry_sequence": record_seq + 1}
     card = {**defaults, **extra, **fixed}
-    violations = validate_evidence_card(card)
+    try:
+        violations = validate_evidence_card(card)
+    except Exception as exc:  # the validator was written for trusted input; card metadata is user data
+        raise InputError("CARD_INVALID", f"card cannot be validated: {type(exc).__name__}") from None
     if violations:
         names = _missing_names(violations)
         if names:
@@ -89,5 +93,6 @@ def write_card_files(card: dict[str, Any], out_dir: Path) -> tuple[Path, Path]:
     if json_path.exists() and json_path.read_bytes() != payload:
         raise InputError("CARD_EXISTS", f"{json_path.name} already exists with different content; use another --out")
     _atomic_write(json_path, payload)
-    _atomic_write(svg_path, render_svg(json_path).encode("utf-8"))
+    # Card text is user data and may hold characters XML 1.0 forbids; the JSON card keeps them verbatim.
+    _atomic_write(svg_path, _XML_INVALID.sub("\ufffd", render_svg(json_path)).encode("utf-8"))
     return json_path, svg_path

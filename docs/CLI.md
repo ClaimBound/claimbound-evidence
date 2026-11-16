@@ -224,6 +224,7 @@ Verify the ledger (rules R1 to R11).
 
 - `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
 - `--json` — Print the result as canonical JSON.
+- `--expect-head SEQ:HASH` — Also require the entry at SEQ to have this hash (detects a removed tail); else HEAD_MISMATCH, exit 1.
 
 ## `protocolith issue`
 

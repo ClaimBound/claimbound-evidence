@@ -13,8 +13,8 @@ from .canonical import sha256_hex
 from .clock import Clock, now_utc
 from .errors import InputError, VerificationFailed, io_guard
 from .issue import build_card, card_hash, write_card_files
-from .ledger import CARD_FORMAT, Entry, make_entry, serialize
-from .rules import Verdict, Verifier, scan
+from .ledger import CARD_FORMAT, Entry, make_entry, parse_head_ref, serialize
+from .rules import Verdict, Verifier, apply_expected_head, scan
 from .store import Store
 
 StoreLike = Store | str | os.PathLike[str]
@@ -84,9 +84,12 @@ def _typed(store: StoreLike, type: str, body: Any, clock: Clock | None) -> Entry
         return _append(real, type, body, clock)
 
 
-def verify(store: StoreLike) -> Verdict:
+def verify(store: StoreLike, expect_head: str | None = None) -> Verdict:
+    """Verify the ledger; with ``expect_head="SEQ:HASH"`` also require that entry (HEAD_MISMATCH otherwise)."""
+    wanted = None if expect_head is None else parse_head_ref(expect_head)
     with _session(store, write=False) as real:
-        return scan(real.read(missing_ok=False), card_hash)[0]
+        verdict, verifier = scan(real.read(missing_ok=False), card_hash)
+    return verdict if wanted is None else apply_expected_head(verdict, verifier, *wanted)
 
 
 def entries(store: StoreLike) -> list[Entry]:
