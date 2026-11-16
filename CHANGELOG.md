@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+- Citation metadata: Zenodo DOI of 0.6.0 (`10.5281/zenodo.24291830`), a DOI badge (concept DOI `10.5281/zenodo.24021995`) and an abstract that describes the ledger core.
+
 ## 0.6.0 - 2026-11-16
 
 ### Changed

@@ -11,6 +11,7 @@
   <a href="https://github.com/protocolith/protocolith/actions/workflows/tests.yml"><img alt="tests" src="https://github.com/protocolith/protocolith/actions/workflows/tests.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
   <img alt="Python 3.11 to 3.15" src="https://img.shields.io/badge/python-3.11%20to%203.15-blue">
+  <a href="https://doi.org/10.5281/zenodo.24021995"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.24021995.svg"></a>
 </p>
 
 <!-- Add these badges only after the packages exist (planned for the 0.6.0 release):
