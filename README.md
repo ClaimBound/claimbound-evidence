@@ -8,17 +8,45 @@
 <p align="center"><b>Records, verifies and issues trial records.</b></p>
 
 <p align="center">
-  <a href="https://github.com/protocolith/protocolith/actions/workflows/tests.yml"><img alt="tests" src="https://github.com/protocolith/protocolith/actions/workflows/tests.yml/badge.svg"></a>
+  <a href="https://github.com/Protocolith/protocolith/actions/workflows/tests.yml"><img alt="tests" src="https://github.com/Protocolith/protocolith/actions/workflows/tests.yml/badge.svg"></a>
+  <a href="https://github.com/Protocolith/protocolith/actions/workflows/codeql.yml"><img alt="codeql" src="https://img.shields.io/github/actions/workflow/status/Protocolith/protocolith/codeql.yml?label=codeql"></a>
+  <a href="https://github.com/Protocolith/protocolith/actions/workflows/docs.yml"><img alt="docs" src="https://img.shields.io/github/actions/workflow/status/Protocolith/protocolith/docs.yml?label=docs"></a>
+  <a href="https://scorecard.dev/viewer/?uri=github.com/Protocolith/protocolith"><img alt="OpenSSF Scorecard" src="https://api.scorecard.dev/projects/github.com/Protocolith/protocolith/badge"></a>
+  <a href="https://www.bestpractices.dev/projects/15138"><img alt="OpenSSF Best Practices" src="https://www.bestpractices.dev/projects/15138/badge"></a>
+</p>
+
+<p align="center">
+  <a href="https://pypi.org/project/protocolith/"><img alt="PyPI" src="https://img.shields.io/pypi/v/protocolith?logo=pypi&logoColor=white"></a>
+  <a href="https://pypi.org/project/protocolith/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/protocolith?logo=python&logoColor=white"></a>
+  <a href="https://pypi.org/project/protocolith/#files"><img alt="PyPI wheel" src="https://img.shields.io/pypi/wheel/protocolith"></a>
   <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
-  <img alt="Python 3.11 to 3.15" src="https://img.shields.io/badge/python-3.11%20to%203.15-blue">
   <a href="https://doi.org/10.5281/zenodo.24021995"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.24021995.svg"></a>
 </p>
 
-<!-- Add these badges only after the packages exist (planned for the 0.6.0 release):
-<a href="https://pypi.org/project/protocolith/"><img alt="PyPI" src="https://img.shields.io/pypi/v/protocolith"></a>
-<a href="https://pypi.org/project/protocolith/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/protocolith"></a>
-<a href="docs/registry/evidence_index.json"><img alt="Evidence cards" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FProtocolith%2Fprotocolith%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=0A97BB"></a>
+<p align="center">
+  <a href="https://github.com/Protocolith/protocolith/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/Protocolith/protocolith?logo=github"></a>
+  <a href="https://github.com/Protocolith/protocolith/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/Protocolith/protocolith"></a>
+  <a href="https://github.com/Protocolith/protocolith/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/Protocolith/protocolith?style=flat"></a>
+  <a href="https://github.com/Protocolith/protocolith/issues"><img alt="Open issues" src="https://img.shields.io/github/issues/Protocolith/protocolith"></a>
+  <a href="https://github.com/Protocolith/protocolith/discussions"><img alt="Discussions" src="https://img.shields.io/github/discussions/Protocolith/protocolith"></a>
+  <a href="https://github.com/Protocolith/protocolith"><img alt="Top language" src="https://img.shields.io/github/languages/top/Protocolith/protocolith"></a>
+</p>
+
+<p align="center">
+  <a href="docs/development/testing.md"><img alt="Core coverage 100 percent" src="https://img.shields.io/badge/core%20coverage-100%25-brightgreen"></a>
+  <a href="pyproject.toml"><img alt="Runtime dependencies: none" src="https://img.shields.io/badge/runtime%20dependencies-0-brightgreen"></a>
+  <a href="docs/PLATFORM_SUPPORT.md"><img alt="Platforms" src="https://img.shields.io/badge/platforms-Linux%20%7C%20macOS%20%7C%20Windows-blue"></a>
+  <a href="docs/reference/mcp.md"><img alt="MCP server" src="https://img.shields.io/badge/MCP-stdio%20server-8A2BE2"></a>
+  <a href="src/protocolith/py.typed"><img alt="Typed" src="https://img.shields.io/badge/typing-py.typed-blue"></a>
+  <a href="pyproject.toml"><img alt="Lint: ruff" src="https://img.shields.io/badge/lint-ruff-261230"></a>
+  <a href="CONTRIBUTING.md"><img alt="DCO" src="https://img.shields.io/badge/DCO-signed--off-blue"></a>
+  <a href="docs/AI_USE.md"><img alt="AI use disclosed" src="https://img.shields.io/badge/AI%20use-disclosed-lightgrey"></a>
+  <a href="docs/registry/evidence_index.json"><img alt="Evidence cards" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FProtocolith%2Fprotocolith%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=0A97BB"></a>
+</p>
+
+<!-- Add after the packages exist and have data:
 <a href="https://anaconda.org/conda-forge/protocolith"><img alt="conda-forge" src="https://img.shields.io/conda/vn/conda-forge/protocolith"></a>
+<a href="https://pypistats.org/packages/protocolith"><img alt="PyPI downloads per month" src="https://img.shields.io/pypi/dm/protocolith"></a>
 -->
 
 <p align="center">
