@@ -26,6 +26,21 @@ The API is the `protocolith.core` package. For a worked example see the [Python 
 
 `Verdict` has `ok`, `count`, `head_seq`, `head_hash`, `violations`, `codes` and `to_dict()`.
 
+## Atlas
+
+```python
+from protocolith import core
+
+page = core.build_atlas(store=".protocolith")            # bytes of one self-contained HTML file
+page = core.build_atlas(cards=["docs/evidence_cards"], title="My atlas", max_rows=5000)
+```
+
+`build_atlas(*, store=None, cards=(), title=..., i18n_dir=None, default_lang="en", max_rows=None)` returns the page. With
+neither `store` nor `cards` it uses a local ledger, else `docs/evidence_cards` (`NO_SOURCE` if there is none).
+`protocolith.core.atlas.build_atlas_result` returns an `AtlasResult` (`html`, `ok`, `total`, `shown`, `skipped`,
+`warnings`, `ledger`); `ok` is false when the ledger does not verify. `write_atlas(page, out)` writes it atomically.
+The output is deterministic: same input, same bytes.
+
 ## Errors
 
 All errors derive from `ProtocolithError` and carry `code`, `message` and `violations`.

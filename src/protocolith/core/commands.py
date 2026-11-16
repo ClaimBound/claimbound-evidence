@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from . import ops
+from .atlas import DEFAULT_OUT, DEFAULT_TITLE, build_atlas_result, write_atlas
 from .capture import capture
 from .canonical import decode, encode
 from .errors import InputError, ProtocolithError, hint_for, io_guard
@@ -225,6 +226,30 @@ def _cmd_repair(args: argparse.Namespace, parser: argparse.ArgumentParser) -> in
     return _run(args, work)
 
 
+def _cmd_atlas(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    try:
+        result = build_atlas_result(
+            store=args.store,
+            cards=args.cards,
+            title=args.title,
+            i18n_dir=args.i18n,
+            default_lang=args.default_lang,
+            max_rows=args.max_rows,
+        )
+        path = write_atlas(result.html, args.out)
+    except ProtocolithError as exc:
+        return _fail(args, exc)
+    for warning in result.warnings:
+        print(f"warning: {warning}", file=sys.stderr)
+    if result.ledger is not None and not result.ledger["ok"]:
+        print(f"ledger FAILED verification ({result.ledger['problem_count']} problems); the atlas shows a warning", file=sys.stderr)
+    data = {**result.to_dict(), "path": str(path)}
+    state = "" if result.ok else " ledger=FAILED"
+    text = f"wrote {path} bytes={len(result.html)} records={result.total} shown={result.shown} skipped={result.skipped}{state}"
+    print(encode(data).decode("utf-8") if args.json else text)
+    return 0 if result.ok else 1
+
+
 def _cmd_mcp(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
     serve(resolve_store(args.store), sys.stdin.buffer, sys.stdout.buffer)
     return 0
@@ -307,4 +332,25 @@ def add_core_commands(subparsers: Any) -> None:
     repair.add_argument(
         "--truncate-partial-tail", action="store_true", required=True, help="Remove the partial last line."
     )
+    atlas = add(
+        "atlas",
+        _cmd_atlas,
+        "Build a self-contained offline HTML atlas of experiments from a ledger and/or evidence card directories.",
+        with_json,
+    )
+    atlas.add_argument(
+        "--cards",
+        action="append",
+        default=[],
+        metavar="DIR",
+        help="Directory of evidence card JSON files, searched recursively; repeat for several. "
+        "Without --store and --cards: a local ledger, else docs/evidence_cards.",
+    )
+    atlas.add_argument("--out", default=DEFAULT_OUT, metavar="FILE_OR_DIR", help=f"Output .html file or directory (default {DEFAULT_OUT}).")
+    atlas.add_argument("--title", default=DEFAULT_TITLE, metavar="TEXT", help="Page title.")
+    atlas.add_argument(
+        "--i18n", default=None, metavar="DIR", help="Directory of <code>.json translation files; adds a language switcher."
+    )
+    atlas.add_argument("--default-lang", default="en", metavar="CODE", help="Initial language (default en).")
+    atlas.add_argument("--max-rows", default=None, type=int, metavar="N", help="Embed at most N records (the newest); counts stay complete.")
     add("mcp", _cmd_mcp, "Run the MCP server on stdio.", common)

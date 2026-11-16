@@ -298,6 +298,19 @@ Repair a crash-damaged ledger.
 - `--json` — Print the result as canonical JSON.
 - `--truncate-partial-tail` — Remove the partial last line. (required)
 
+## `protocolith atlas`
+
+Build a self-contained offline HTML atlas of experiments from a ledger and/or evidence card directories.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+- `--cards DIR` — Directory of evidence card JSON files, searched recursively; repeat for several. Without --store and --cards: a local ledger, else docs/evidence_cards.
+- `--out FILE_OR_DIR` — Output .html file or directory (default protocolith-atlas.html). (default: `protocolith-atlas.html`)
+- `--title TEXT` — Page title. (default: `Protocolith atlas`)
+- `--i18n DIR` — Directory of <code>.json translation files; adds a language switcher.
+- `--default-lang CODE` — Initial language (default en). (default: `en`)
+- `--max-rows N` — Embed at most N records (the newest); counts stay complete.
+
 ## `protocolith mcp`
 
 Run the MCP server on stdio.

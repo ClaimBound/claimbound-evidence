@@ -112,6 +112,7 @@ All three expose the same operations with the same semantics.
 | summary | `protocolith summary [--protocol ID]` | `core.summary(store, protocol=None)` | `protocolith_summary` |
 | capture | `protocolith capture [--file PATH ...] [--env]` | `core.capture(files, env=False)` | `protocolith_capture` |
 | schema | `protocolith schema [NAME]` | `core.schema_for(name)` | `protocolith_schema` |
+| atlas | `protocolith atlas [--store DIR] [--cards DIR ...] [--out FILE_OR_DIR]` | `core.build_atlas(...)` | `protocolith_atlas` |
 | init | `protocolith init` | `core.init(store)` | |
 
 CLI exit codes: `0` ok; `1` the stored ledger does not verify (codes on stderr and, with `--json`, on stdout);
@@ -120,7 +121,7 @@ CLI exit codes: `0` ok; `1` the stored ledger does not verify (codes on stderr a
 (exit 3), never an empty pass.
 
 The MCP server speaks stdio JSON-RPC with `initialize`, `tools/list`, `tools/call`, `resources/list` and
-`resources/read`, uses no network and no third-party package, and never writes outside the store.
+`resources/read`, uses no network and no third-party package, and never writes outside the store, except the one atlas page of `protocolith_atlas` inside the working directory.
 
 ### 5.1 Read commands
 
@@ -161,6 +162,32 @@ The MCP server lists and reads these read-only resources (`mimeType` `applicatio
 
 An error may carry a one-line `hint`: printed as `hint (CODE): ...` on stderr and, in JSON, as `error.hint`. Hints are
 advice, not part of the contract; codes and exit codes are.
+
+### 5.5 Atlas
+
+`atlas` writes one self-contained HTML file (default `protocolith-atlas.html`; `--out` is a `.html` file or a directory).
+Sources: a ledger (`--store`, verified like `verify-ledger`; only `record` entries become rows, with the card derived as for
+`issue`) and/or evidence card JSON files found recursively under each `--cards DIR`. With neither option a local
+ledger is used, else `docs/evidence_cards`. A file that is not valid UTF-8 JSON, not an object, larger than 2 MiB, or lacking
+a string `evidence_id` and `result_status` is skipped and counted (`issues`); unknown fields are kept. Equal
+`evidence_id` values keep the first record. Cards read from files are not verified against any ledger.
+
+- **Failure semantics.** A ledger that does not verify still produces the atlas, with a red integrity banner and the
+  problems; the command exits `1`. Other errors keep the usual codes (`2` input, `3` environment); nothing is written then.
+- **Page.** Inline CSS and JavaScript, the data as `<script type="application/json" id="atlas-data">`, no network request,
+  no external font or library, a Content-Security-Policy meta element that forbids connections. The JSON is ASCII with `<`,
+  `>` and `&` written as `\u` escapes, so no content can end the script block. The script writes data with `textContent`
+  and DOM calls only. The same input gives the same bytes; the page holds no wall-clock value.
+- **Data size.** A row holds the evidence id, protocol, status, domain, reproduction level, date, claim boundary, hash and
+  a source text; every other field travels deflate-compressed in blocks of 128 records and is decoded when a record is
+  opened (a browser without `DecompressionStream` shows the row fields only). Strings are clipped at 2000 characters,
+  lists at 100 items and nesting at 8 levels. `--max-rows N` embeds only the newest N records; totals stay complete.
+- **Statuses.** The six statuses of this specification have a letter and a symbol in addition to a colour; any other
+  status is displayed as found and never hidden or reclassified.
+- **Languages.** `atlas_i18n/en.json` is the English catalog (every visible string has a key). `--i18n DIR` adds every
+  `<code>.json` (`{"_name": "Native name", "key": "text"}`); unknown keys and non-string values are ignored with a warning,
+  empty values and missing keys fall back to English, and the language switcher appears only when one is present.
+  `--default-lang` must name an available language (`BAD_LANG`). No translation ships in the package.
 
 ## 6. Conformance vectors
 

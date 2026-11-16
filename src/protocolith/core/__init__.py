@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+from .atlas import build_atlas
 from .canonical import CanonError, decode, encode, sha256_hex
 from .clock import now_utc
 from .errors import EnvError, InputError, ProtocolithError, VerificationFailed, Violation
@@ -38,6 +39,7 @@ __all__ = [
     "VerificationFailed",
     "Verifier",
     "Violation",
+    "build_atlas",
     "capture",
     "decode",
     "deviation",

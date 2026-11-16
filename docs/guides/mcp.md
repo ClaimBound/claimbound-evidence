@@ -2,7 +2,7 @@
 
 `protocolith mcp` runs a Model Context Protocol server on stdio, so an MCP client (an agent or an editor) can
 freeze, record, verify, issue and query without a shell. It uses newline-delimited JSON-RPC 2.0, needs no network and no
-third-party package, and writes only inside the store.
+third-party package, and writes only inside the store (the atlas tool writes one page inside the working directory).
 
 This page is the short version. The step-by-step guide with a session transcript is
 [Use Protocolith from an AI agent](ai-agent-mcp.md); the tools and resources are listed in the
@@ -27,8 +27,8 @@ is not on the client's `PATH`, give the full path to the executable in your envi
 
 ## What the server offers
 
-Ten tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`, `protocolith_schema`,
-`protocolith_capture`, `protocolith_freeze`, `protocolith_record`, `protocolith_deviation`, `protocolith_verify`,
+Eleven tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`, `protocolith_schema`,
+`protocolith_capture`, `protocolith_atlas`, `protocolith_freeze`, `protocolith_record`, `protocolith_deviation`, `protocolith_verify`,
 `protocolith_issue`) and read-only resources (`protocolith://summary`, `protocolith://ledger`,
 `protocolith://schema/<name>`). Arguments not listed in a tool's schema are rejected. `isError` is true when an
 operation was rejected or the ledger does not verify; the JSON then carries `codes`, `error` (with a `hint` where

@@ -21,6 +21,7 @@ canonical JSON. `isError` is true when the operation was rejected or the ledger 
 | `protocolith_show` | `seq` (integer, at least 0) | `protocolith show` |
 | `protocolith_schema` | optional `name` (`freeze`, `record`, `deviation`, `issue`, `entry`, `all`) | `protocolith schema` |
 | `protocolith_capture` | optional `files` (paths inside the working directory), `env` | `protocolith capture` |
+| `protocolith_atlas` | optional `out`, `title`, `cards` (directories), `i18n`, `default_lang`, `max_rows` | `protocolith atlas`; returns the path written |
 | `protocolith_freeze` | `protocol` (object), optional `supersedes` | `protocolith freeze` |
 | `protocolith_record` | `body` (object) | `protocolith record` |
 | `protocolith_deviation` | `body` (object) | `protocolith deviation` |
@@ -30,6 +31,9 @@ canonical JSON. `isError` is true when the operation was rejected or the ledger 
 `protocolith_issue` writes cards inside the store (`<store>/cards`); there is no output directory argument.
 `protocolith_capture` refuses paths that leave the server's working directory (`BAD_PATH`), runs nothing and reads no
 environment values. Only the freeze, record, deviation and issue tools write to the store.
+`protocolith_atlas` writes one HTML page and nothing else: `out` (default `protocolith-atlas.html`), `cards` and `i18n`
+must stay inside the working directory (`BAD_PATH`). Without `cards` it uses the server's ledger; `isError` is true
+when the ledger does not verify (the page is still written, with a warning banner).
 
 ## Resources
 

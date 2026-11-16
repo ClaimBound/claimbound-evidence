@@ -21,6 +21,12 @@
 
 ### Added
 
+- `protocolith atlas` (also `core.build_atlas` and the MCP tool `protocolith_atlas`): one self-contained, offline HTML
+  atlas of experiments from a ledger and/or evidence card directories, with summary tiles, status chart and timeline,
+  search, filters, a sortable paged table, a detail drawer with permalinks and keyboard navigation, light and dark
+  themes and a print style. English UI catalog `atlas_i18n/en.json`; further languages only from user files
+  (`--i18n DIR`). A ledger that fails verification still produces the atlas with a red banner and exit code 1.
+  See [the atlas guide](docs/guides/atlas.md).
 - `protocolith summary [--protocol ID]` (also `core.summary` and the MCP tool `protocolith_summary`): verdict, head,
   counts by entry type and result status, a per-protocol table and the problems found, in one fast call.
 - `protocolith show SEQ` (`core.show`, `protocolith_show`): one entry with its protocol context and references.

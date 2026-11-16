@@ -6,9 +6,11 @@ from __future__ import annotations
 import json
 from collections.abc import Callable, Iterable, Mapping
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any, BinaryIO
 
 from . import ops
+from .atlas import DEFAULT_OUT, DEFAULT_TITLE, build_atlas_result, confine, write_atlas
 from .capture import capture
 from .canonical import CanonError, decode, encode
 from .clock import Clock
@@ -87,6 +89,26 @@ def _capture(store: Store, arguments: dict[str, Any], clock: Clock | None) -> An
 def _schema(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
     name = _take(arguments, (), ("name",)).get("name", "all")
     return all_schemas() if name == "all" else schema_for(name)
+
+
+def _atlas(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
+    args = _take(arguments, (), ("out", "title", "cards", "i18n", "default_lang", "max_rows"))
+    cards = args.get("cards", [])
+    if not (isinstance(cards, list) and all(isinstance(name, str) for name in cards)):
+        raise InputError("BAD_ENTRY", "cards must be a list of strings")
+    folders = [confine(name) for name in cards]
+    i18n = confine(args["i18n"]) if "i18n" in args else None
+    out = confine(args.get("out", DEFAULT_OUT))
+    result = build_atlas_result(
+        store=None if folders else store,
+        cards=folders,
+        title=args.get("title", DEFAULT_TITLE),
+        i18n_dir=i18n,
+        default_lang=args.get("default_lang", "en"),
+        max_rows=args.get("max_rows"),
+    )
+    path = write_atlas(result.html, out)
+    return {**result.to_dict(), "path": path.relative_to(Path.cwd().resolve()).as_posix()}
 
 
 @dataclass(frozen=True)
@@ -192,6 +214,22 @@ TOOLS: dict[str, Tool] = {
             },
             (),
             _capture,
+        ),
+        Tool(
+            "protocolith_atlas",
+            "Write a self-contained offline HTML atlas of the experiments (the ledger records, or the evidence card "
+            "directories named in cards) and return the path written, inside the working directory. "
+            "isError is true when the ledger fails verification; the atlas is still written, with a warning banner.",
+            {
+                "out": {"type": "string", "description": "output .html file or directory (default protocolith-atlas.html)"},
+                "title": {"type": "string"},
+                "cards": {"type": "array", "items": {"type": "string"}, "description": "card directories, used instead of the ledger"},
+                "i18n": {"type": "string", "description": "directory of <code>.json translation files"},
+                "default_lang": {"type": "string"},
+                "max_rows": {"type": "integer", "minimum": 1},
+            },
+            (),
+            _atlas,
         ),
         Tool(
             "protocolith_schema",

@@ -59,6 +59,7 @@ COPIED = {
     "docs/guides/python-api.md": "guides-python-api.md",
     "docs/guides/repair-and-crash-recovery.md": "guides-repair-and-crash-recovery.md",
     "docs/guides/anchoring-the-head.md": "guides-anchoring-the-head.md",
+    "docs/guides/atlas.md": "guides-atlas.md",
     "docs/spec/CORE_SPEC.md": "spec-core.md",
     "docs/reference/error-codes.md": "reference-error-codes.md",
     "docs/reference/mcp.md": "reference-mcp.md",

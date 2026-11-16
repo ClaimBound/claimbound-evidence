@@ -57,7 +57,7 @@ def test_tools_list_names_and_schemas(store: Store) -> None:
     assert [t["name"] for t in tools] == [
         "protocolith_freeze", "protocolith_record", "protocolith_deviation",
         "protocolith_verify", "protocolith_issue", "protocolith_log", "protocolith_show",
-        "protocolith_summary", "protocolith_capture", "protocolith_schema",
+        "protocolith_summary", "protocolith_capture", "protocolith_atlas", "protocolith_schema",
     ]  # fmt: skip
     for entry in tools:
         schema = entry["inputSchema"]
@@ -161,7 +161,7 @@ def test_serve_loop_skips_blank_lines_and_writes_only_replies(store: Store) -> N
 
 
 def test_tools_table_matches_the_spec_names() -> None:
-    assert set(TOOLS) == {f"protocolith_{n}" for n in ("freeze", "record", "deviation", "verify", "issue", "log", "show", "summary", "capture", "schema")}
+    assert set(TOOLS) == {f"protocolith_{n}" for n in ("freeze", "record", "deviation", "verify", "issue", "log", "show", "summary", "capture", "atlas", "schema")}
 
 
 def test_stdio_subprocess(tmp_path: Any) -> None:
@@ -241,3 +241,39 @@ def test_schema_tool_and_resources(recorded: Store) -> None:
 def test_resource_read_reports_a_missing_ledger(store: Store) -> None:
     error = rpc(store, "resources/read", {"uri": "protocolith://ledger"})["error"]
     assert error["code"] == -32000 and error["message"].startswith("NO_LEDGER")
+
+
+def test_atlas_tool(recorded: Store, tmp_path: Any, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.chdir(tmp_path)
+    is_error, data = tool(recorded, "protocolith_atlas", {})
+    assert not is_error and data["path"] == "protocolith-atlas.html" and data["cards"] == 1 and data["ok"] is True
+    assert (tmp_path / "protocolith-atlas.html").is_file()
+    (tmp_path / "cards").mkdir()
+    (tmp_path / "cards" / "c.json").write_text(
+        json.dumps({"evidence_id": "A", "result_status": "BLOCKED_SOURCE"}), encoding="utf-8"
+    )
+    (tmp_path / "i18n").mkdir()
+    (tmp_path / "i18n" / "de.json").write_text('{"_name": "Deutsch"}', encoding="utf-8")
+    args = {"cards": ["cards"], "out": "site/atlas.html", "title": "T", "i18n": "i18n", "default_lang": "de", "max_rows": 1}
+    is_error, data = tool(recorded, "protocolith_atlas", args)
+    assert not is_error and data["path"] == "site/atlas.html" and data["cards"] == 1 and data["warnings"] == []
+    assert b'<html lang="de">' in (tmp_path / "site" / "atlas.html").read_bytes()
+
+
+def test_atlas_tool_refuses_paths_outside_the_working_directory(
+    recorded: Store, tmp_path: Any, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.chdir(tmp_path)
+    for bad in ({"out": "../x.html"}, {"cards": ["/etc"]}, {"i18n": "../x"}, {"cards": "cards"}, {"cards": [3]}, {"extra": 1}):
+        is_error, data = tool(recorded, "protocolith_atlas", bad)
+        assert is_error and data["ok"] is False
+    assert not (tmp_path.parent / "x.html").exists()
+
+
+def test_atlas_tool_reports_a_failing_ledger(recorded: Store, tmp_path: Any, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.chdir(tmp_path)
+    lines = recorded.ledger_path.read_text().splitlines()
+    lines[1] = lines[1].replace("run-1", "run-X")
+    recorded.ledger_path.write_text("\n".join(lines) + "\n")
+    is_error, data = tool(recorded, "protocolith_atlas", {"out": "bad.html"})
+    assert is_error and data["ok"] is False and (tmp_path / "bad.html").is_file()

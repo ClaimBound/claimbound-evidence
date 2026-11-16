@@ -121,13 +121,25 @@ print(core.head(store))                   # {'count': 3, 'hash': '...', 'seq': 2
 Errors are exceptions with a stable `code` (`core.InputError`, `core.EnvError`, `core.VerificationFailed`).
 See the [Python API guide](docs/guides/python-api.md).
 
+## Atlas: browse the experiments
+
+`protocolith atlas` builds one self-contained HTML page (inline CSS and JavaScript, no network, works from `file://`)
+from the local ledger or a directory of evidence cards: summary tiles, a status chart and monthly timeline, search,
+filters, a sortable paged table and a detail drawer with permalinks. Languages other than English come only from
+files you supply. See [the atlas guide](docs/guides/atlas.md).
+
+```bash
+protocolith atlas --out atlas.html            # the local ledger
+protocolith atlas --cards docs/evidence_cards --out site/
+```
+
 ## MCP client configuration
 
-`protocolith mcp` is a stdio server with ten tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`,
-`protocolith_schema`, `protocolith_capture`, `protocolith_freeze`, `protocolith_record`, `protocolith_deviation`,
-`protocolith_verify`, `protocolith_issue`) and read-only resources (`protocolith://summary`, `protocolith://ledger`,
+`protocolith mcp` is a stdio server with eleven tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`,
+`protocolith_schema`, `protocolith_capture`, `protocolith_atlas`, `protocolith_freeze`, `protocolith_record`,
+`protocolith_deviation`, `protocolith_verify`, `protocolith_issue`) and read-only resources (`protocolith://summary`, `protocolith://ledger`,
 `protocolith://schema/<name>`), so an agent can discover the formats itself. It uses no network and writes only
-inside the store. Add it to an MCP client:
+inside the store, apart from the atlas page that `protocolith_atlas` writes inside the working directory. Add it to an MCP client:
 
 ```json
 {

@@ -32,7 +32,8 @@ All three interfaces call the same operations in `core/ops.py`, so they have the
 | `capture.py` | Environment and input-file fragment for a record `outcome` |
 | `issue.py` | Build, validate and write the card; uses the evidence-card validator and SVG renderer of the package |
 | `commands.py` | CLI glue and exit codes |
-| `mcp.py` | stdio JSON-RPC server: ten tools and read-only resources |
+| `mcp.py` | stdio JSON-RPC server: eleven tools and read-only resources |
+| `atlas.py`, `atlas_assets/`, `atlas_i18n/` | Offline HTML atlas builder; page template, style and script; the English UI catalog |
 | `errors.py`, `clock.py` | Error classes with stable codes; injectable UTC clock |
 
 ## Write path

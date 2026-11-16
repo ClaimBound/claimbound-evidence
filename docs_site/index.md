@@ -27,7 +27,7 @@ protocolith issue 1
 
 - **Use it**
 
-    [Local experiments](getting-started-local-experiments.md) · [CI](getting-started-ci.md) · [Use it from an AI agent](guides-ai-agent-mcp.md) · [Query the ledger](guides-query-the-ledger.md) · [Python API](guides-python-api.md)
+    [Local experiments](getting-started-local-experiments.md) · [CI](getting-started-ci.md) · [Use it from an AI agent](guides-ai-agent-mcp.md) · [Query the ledger](guides-query-the-ledger.md) · [Python API](guides-python-api.md) · [Browse experiments (atlas)](guides-atlas.md)
 
 - **Look it up**
 
