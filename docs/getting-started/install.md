@@ -8,11 +8,8 @@ code and no network access. It runs headless on macOS, Linux and Windows.
 | Route | State |
 | --- | --- |
 | From a source checkout with `uv sync` | Works today. |
-| `pip install protocolith` | Planned for the 0.6.0 release. Until it is published, use the source checkout. |
+| `pip install protocolith` | Available from 0.6.0. |
 | conda-forge | Planned, no date. |
-
-The version in `pyproject.toml` is still 0.5.0; the ledger commands are part of the 0.6.0 work and are on the
-development branch.
 
 ## From source, per operating system
 
