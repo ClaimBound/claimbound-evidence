@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.6.0 - 2026-11-16
+
 ### Changed
 
 - **Renamed to Protocolith** (was ClaimBound Evidence). Package and module `protocolith`, command `protocolith` with
