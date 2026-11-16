@@ -15,7 +15,7 @@ CLI (protocolith.cli, core/commands.py)   MCP server (core/mcp.py)   Python API 
                   ledger.py (entry format)  canonical.py (PCJ-1)  clock.py  errors.py
 ```
 
-All three interfaces call the same six operations in `core/ops.py`, so they have the same semantics.
+All three interfaces call the same operations in `core/ops.py`, so they have the same semantics.
 
 ## Modules of `protocolith.core`
 
@@ -26,10 +26,13 @@ All three interfaces call the same six operations in `core/ops.py`, so they have
 | `rules.py` | `Verifier`: an incremental checker fed one line at a time; `scan` verifies a whole file |
 | `store.py` | Store directory, advisory lock, durable append, truncate |
 | `_lock_posix.py`, `_lock_windows.py` | `fcntl.flock` and `msvcrt.locking` wrappers, chosen at import time |
-| `ops.py` | `freeze`, `record`, `deviation`, `verify`, `entries`, `head`, `issue`, `repair_truncate_partial_tail` |
+| `ops.py` | `freeze`, `record`, `deviation`, `verify`, `entries`, `log`, `show`, `summary`, `head`, `init`, `issue`, `repair_truncate_partial_tail` |
+| `views.py` | Read-only views over a loaded ledger: filtered log, one entry with context, summary |
+| `schema.py` | JSON Schema (draft 2020-12) derived from the rules |
+| `capture.py` | Environment and input-file fragment for a record `outcome` |
 | `issue.py` | Build, validate and write the card; uses the evidence-card validator and SVG renderer of the package |
 | `commands.py` | CLI glue and exit codes |
-| `mcp.py` | stdio JSON-RPC server with six tools |
+| `mcp.py` | stdio JSON-RPC server: ten tools and read-only resources |
 | `errors.py`, `clock.py` | Error classes with stable codes; injectable UTC clock |
 
 ## Write path

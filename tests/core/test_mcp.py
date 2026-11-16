@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 from __future__ import annotations
 
+import hashlib
 import io
 import json
 import os
@@ -40,7 +41,7 @@ def tool(store: Store, name: str, arguments: Any = None) -> tuple[bool, Any]:
 def test_initialize_negotiates_the_protocol_version(store: Store) -> None:
     result = rpc(store, "initialize", {"protocolVersion": "2025-03-26"})["result"]
     assert result["protocolVersion"] == "2025-03-26"
-    assert result["serverInfo"]["name"] == "protocolith" and result["capabilities"] == {"tools": {}}
+    assert result["serverInfo"]["name"] == "protocolith" and result["capabilities"] == {"resources": {}, "tools": {}}
     assert rpc(store, "initialize", {"protocolVersion": "1999-01-01"})["result"]["protocolVersion"] == "2025-06-18"
     assert rpc(store, "initialize", {})["result"]["protocolVersion"] == "2025-06-18"
 
@@ -55,7 +56,8 @@ def test_tools_list_names_and_schemas(store: Store) -> None:
     tools = rpc(store, "tools/list")["result"]["tools"]
     assert [t["name"] for t in tools] == [
         "protocolith_freeze", "protocolith_record", "protocolith_deviation",
-        "protocolith_verify", "protocolith_issue", "protocolith_log",
+        "protocolith_verify", "protocolith_issue", "protocolith_log", "protocolith_show",
+        "protocolith_summary", "protocolith_capture", "protocolith_schema",
     ]  # fmt: skip
     for entry in tools:
         schema = entry["inputSchema"]
@@ -69,14 +71,22 @@ def test_tool_flow(store: Store) -> None:
     assert not is_error and entry["seq"] == 0
     is_error, entry = tool(store, "protocolith_record", {"body": record_body()})
     assert not is_error and entry["type"] == "record"
-    assert not tool(store, "protocolith_deviation", {"body": {"protocol_sha256": entry["body"]["protocol_sha256"], "kind": "k", "description": "d"}})[0]
+    assert not tool(
+        store,
+        "protocolith_deviation",
+        {"body": {"protocol_sha256": entry["body"]["protocol_sha256"], "kind": "k", "description": "d"}},
+    )[0]
     is_error, result = tool(store, "protocolith_issue", {"seq": 1})
     assert not is_error and result["json_path"].startswith(str(store.cards_dir))
     is_error, verdict = tool(store, "protocolith_verify", {})
     assert not is_error and verdict["ok"] and verdict["count"] == 4
     is_error, log = tool(store, "protocolith_log")
     assert not is_error and len(log["entries"]) == 4 and log["head"]["seq"] == 3
-    is_error, entry = tool(store, "protocolith_freeze", {"protocol": {**protocol(), "version": "2"}, "supersedes": log["entries"][0]["body"]["protocol_sha256"]})
+    is_error, entry = tool(
+        store,
+        "protocolith_freeze",
+        {"protocol": {**protocol(), "version": "2"}, "supersedes": log["entries"][0]["body"]["protocol_sha256"]},
+    )
     assert not is_error
 
 
@@ -106,7 +116,13 @@ def test_json_rpc_errors(store: Store) -> None:
     assert call(store, "{not json", raw=True)["error"]["code"] == -32700
     assert call(store, '{"id":1.5}', raw=True)["error"]["code"] == -32700
     assert call(store, b"\xff", raw=True)["error"]["code"] == -32700
-    for bad in ([1], 5, {"id": 7, "method": "ping"}, {"jsonrpc": "2.0", "id": 8, "method": 5}, {"jsonrpc": "1.0", "method": "ping"}):
+    for bad in (
+        [1],
+        5,
+        {"id": 7, "method": "ping"},
+        {"jsonrpc": "2.0", "id": 8, "method": 5},
+        {"jsonrpc": "1.0", "method": "ping"},
+    ):
         reply = call(store, bad)
         assert reply["error"]["code"] == -32600 and reply["jsonrpc"] == "2.0"
     assert call(store, {"id": 7, "method": "ping"})["id"] == 7
@@ -123,7 +139,11 @@ def test_internal_errors_do_not_kill_the_server(store: Store, monkeypatch: pytes
 
 def test_handle_message_direct(store: Store) -> None:
     assert handle_message({"jsonrpc": "2.0", "method": "ping"}, store) is None
-    assert handle_message({"jsonrpc": "2.0", "id": "x", "method": "ping"}, store) == {"jsonrpc": "2.0", "id": "x", "result": {}}
+    assert handle_message({"jsonrpc": "2.0", "id": "x", "method": "ping"}, store) == {
+        "jsonrpc": "2.0",
+        "id": "x",
+        "result": {},
+    }
 
 
 def test_serve_loop_skips_blank_lines_and_writes_only_replies(store: Store) -> None:
@@ -141,7 +161,7 @@ def test_serve_loop_skips_blank_lines_and_writes_only_replies(store: Store) -> N
 
 
 def test_tools_table_matches_the_spec_names() -> None:
-    assert set(TOOLS) == {f"protocolith_{n}" for n in ("freeze", "record", "deviation", "verify", "issue", "log")}
+    assert set(TOOLS) == {f"protocolith_{n}" for n in ("freeze", "record", "deviation", "verify", "issue", "log", "show", "summary", "capture", "schema")}
 
 
 def test_stdio_subprocess(tmp_path: Any) -> None:
@@ -149,7 +169,12 @@ def test_stdio_subprocess(tmp_path: Any) -> None:
     requests = [
         {"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-06-18"}},
         {"jsonrpc": "2.0", "method": "notifications/initialized"},
-        {"jsonrpc": "2.0", "id": 2, "method": "tools/call", "params": {"name": "protocolith_freeze", "arguments": {"protocol": protocol()}}},
+        {
+            "jsonrpc": "2.0",
+            "id": 2,
+            "method": "tools/call",
+            "params": {"name": "protocolith_freeze", "arguments": {"protocol": protocol()}},
+        },
         {"jsonrpc": "2.0", "id": 3, "method": "tools/call", "params": {"name": "protocolith_verify", "arguments": {}}},
     ]
     stdin = "".join(json.dumps(r) + "\n" for r in requests)
@@ -161,3 +186,58 @@ def test_stdio_subprocess(tmp_path: Any) -> None:
     replies = [json.loads(line) for line in done.stdout.splitlines()]
     assert [r["id"] for r in replies] == [1, 2, 3]
     assert json.loads(replies[2]["result"]["content"][0]["text"])["ok"] is True
+
+
+def test_filtered_log_show_and_summary_tools(recorded: Store) -> None:
+    is_error, data = tool(recorded, "protocolith_log", {"type": "record", "tail": 1})
+    assert not is_error and [e["seq"] for e in data["entries"]] == [1] and data["head"]["seq"] == 1
+    assert tool(recorded, "protocolith_log", {"status": "BLOCKED_SOURCE"})[1]["entries"] == []
+    assert tool(recorded, "protocolith_log", {"tail": 0})[1]["error"]["code"] == "BAD_ENTRY"
+    is_error, shown = tool(recorded, "protocolith_show", {"seq": 1})
+    assert not is_error and shown["protocol"]["protocol_id"] == "DEMO_D001"
+    assert tool(recorded, "protocolith_show", {"seq": 9})[1]["error"]["code"] == "DANGLING_REF"
+    is_error, summary = tool(recorded, "protocolith_summary")
+    assert not is_error and summary["protocols"][0]["records"] == 1
+    assert tool(recorded, "protocolith_summary", {"protocol": "NOPE"})[1]["error"]["code"] == "UNKNOWN_PROTOCOL"
+    recorded.ledger_path.write_bytes(recorded.ledger_path.read_bytes() + b"x\n")
+    is_error, broken = tool(recorded, "protocolith_summary")
+    assert is_error and broken["ok"] is False and broken["problems"]
+
+
+def test_capture_tool_stays_inside_the_working_directory(store: Store, tmp_path: Any, monkeypatch: pytest.MonkeyPatch) -> None:
+    work = tmp_path / "work"
+    work.mkdir()
+    (work / "data.txt").write_text("abc", encoding="utf-8")
+    (tmp_path / "secret.txt").write_text("x", encoding="utf-8")
+    monkeypatch.chdir(work)
+    is_error, data = tool(store, "protocolith_capture", {"files": ["data.txt"]})
+    assert not is_error and data["inputs"] == [
+        {"path": "data.txt", "sha256": hashlib.sha256(b"abc").hexdigest(), "size": 3}
+    ]
+    assert "environment" not in data and "environment" in tool(store, "protocolith_capture", {"env": True})[1]
+    assert "environment" in tool(store, "protocolith_capture")[1]
+    assert tool(store, "protocolith_capture", {"files": ["../secret.txt"]})[1]["error"]["code"] == "BAD_PATH"
+    assert tool(store, "protocolith_capture", {"files": [1]})[1]["error"]["code"] == "BAD_ENTRY"
+    assert tool(store, "protocolith_capture", {"files": "data.txt"})[1]["error"]["code"] == "BAD_ENTRY"
+
+
+def test_schema_tool_and_resources(recorded: Store) -> None:
+    assert tool(recorded, "protocolith_schema", {"name": "record"})[1]["title"] == "protocolith record"
+    assert set(tool(recorded, "protocolith_schema")[1]) == {"freeze", "record", "deviation", "issue", "entry"}
+    assert tool(recorded, "protocolith_schema", {"name": "x"})[1]["error"]["code"] == "BAD_ENTRY"
+    listed = rpc(recorded, "resources/list")["result"]["resources"]
+    uris = [r["uri"] for r in listed]
+    assert uris[:2] == ["protocolith://summary", "protocolith://ledger"] and "protocolith://schema/entry" in uris
+    for uri in uris:
+        contents = rpc(recorded, "resources/read", {"uri": uri})["result"]["contents"]
+        assert contents[0]["uri"] == uri and contents[0]["mimeType"] == "application/json"
+        json.loads(contents[0]["text"])
+    ledger = json.loads(rpc(recorded, "resources/read", {"uri": "protocolith://ledger"})["result"]["contents"][0]["text"])
+    assert len(ledger["entries"]) == 2
+    for bad in ("protocolith://nope", "protocolith://schema/nope", "http://x", None):
+        assert rpc(recorded, "resources/read", {"uri": bad})["error"]["code"] == -32002
+
+
+def test_resource_read_reports_a_missing_ledger(store: Store) -> None:
+    error = rpc(store, "resources/read", {"uri": "protocolith://ledger"})["error"]
+    assert error["code"] == -32000 and error["message"].startswith("NO_LEDGER")

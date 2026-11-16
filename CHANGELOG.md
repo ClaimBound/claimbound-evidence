@@ -13,6 +13,29 @@
 - **Python 3.11 to 3.15** are supported (was 3.12 and newer).
 - Core specification draft: [docs/spec/CORE_SPEC.md](docs/spec/CORE_SPEC.md).
 
+- **`evidence_id` is unique per record**: `PLITH-<protocol_id>-<date>-<seq>`, where `seq` is the ledger `seq` of the
+  record (six digits), so two records of one protocol on one day can both be issued. Ledger format `v` stays 1; this is a
+  0.6.0 pre-release change; a ledger written by an earlier development build reports `BAD_CARD` on its `issue` entries.
+- `log` accepts `--protocol`, `--type`, `--status` and `--tail`; `protocolith_log` takes the same arguments.
+- Errors print a one-line `hint (CODE): ...` (and `error.hint` in JSON) where advice is cheap. Exit codes are unchanged.
+
+### Added
+
+- `protocolith summary [--protocol ID]` (also `core.summary` and the MCP tool `protocolith_summary`): verdict, head,
+  counts by entry type and result status, a per-protocol table and the problems found, in one fast call.
+- `protocolith show SEQ` (`core.show`, `protocolith_show`): one entry with its protocol context and references.
+- `protocolith capture [--file PATH ...] [--env]` (`core.capture`, `protocolith_capture`): a JSON fragment with
+  environment and input file hashes for a record `outcome`; runs nothing, reads no environment values, confines files to
+  the working directory (`BAD_PATH`).
+- `protocolith schema [NAME]` (`core.schema_for`, `protocolith_schema`): JSON Schema (draft 2020-12) generated from the
+  verifier's field rules.
+- MCP resources `protocolith://summary`, `protocolith://ledger` and `protocolith://schema/<name>`
+  (`resources/list`, `resources/read`).
+- `protocolith init`: create an empty store (idempotent).
+- Guides: [Use Protocolith from an AI agent](docs/guides/ai-agent-mcp.md) and
+  [Query the ledger quickly](docs/guides/query-the-ledger.md); reference pages for [MCP](docs/reference/mcp.md) and the
+  [Python API](docs/reference/python-api.md); `SUPPORT.md`.
+
 ### Fixed
 
 - A test fixture no longer depends on the developer's global git signing configuration.

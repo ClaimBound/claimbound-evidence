@@ -42,7 +42,6 @@ class LedgerMachine(RuleBasedStateMachine):
         self.versions: set[tuple[str, str]] = set()
         self.deviations: dict[int, str] = {}  # seq -> protocol sha
         self.records: dict[int, str] = {}  # seq -> protocol sha
-        self.issued: dict[str, int] = {}  # protocol_id -> record seq whose card file exists (one per id and day)
 
     def teardown(self) -> None:
         shutil.rmtree(self.dir, ignore_errors=True)
@@ -69,7 +68,11 @@ class LedgerMachine(RuleBasedStateMachine):
         if supersede and self.protocols:
             old = data.draw(st.sampled_from(sorted(self.protocols)))
         sha = model_sha(protocol)
-        will_fail = (pid, version) in self.versions or sha in self.protocols or (old is not None and self.protocols[old][0] != pid)
+        will_fail = (
+            (pid, version) in self.versions
+            or sha in self.protocols
+            or (old is not None and self.protocols[old][0] != pid)
+        )
         before = self.store.ledger_path.read_bytes() if self.store.ledger_path.exists() else b""
         if will_fail:
             try:
@@ -96,7 +99,9 @@ class LedgerMachine(RuleBasedStateMachine):
 
     @rule(data=st.data(), status=st.sampled_from(STATUSES), with_sources=st.booleans(), with_reason=st.booleans(),
           pick_dev=st.booleans(), unknown=st.booleans())  # fmt: skip
-    def add_record(self, data: st.DataObject, status: str, with_sources: bool, with_reason: bool, pick_dev: bool, unknown: bool) -> None:
+    def add_record(
+        self, data: st.DataObject, status: str, with_sources: bool, with_reason: bool, pick_dev: bool, unknown: bool
+    ) -> None:
         if not self.protocols and not unknown:
             unknown = True
         sha = HASH_A if unknown else data.draw(st.sampled_from(sorted(self.protocols)))
@@ -112,7 +117,11 @@ class LedgerMachine(RuleBasedStateMachine):
             body["block_reason"] = "blocked"
             body["drift_reason"] = "drifted"
         valid = not unknown and not (status in NEEDS_SOURCES and not with_sources)
-        valid = valid and not (status == "BLOCKED_SOURCE" and not with_reason) and not (status == "SOURCE_DRIFT" and not with_reason)
+        valid = (
+            valid
+            and not (status == "BLOCKED_SOURCE" and not with_reason)
+            and not (status == "SOURCE_DRIFT" and not with_reason)
+        )
         if not valid:
             before = self.store.ledger_path.read_bytes() if self.store.ledger_path.exists() else b""
             try:
@@ -136,7 +145,11 @@ class LedgerMachine(RuleBasedStateMachine):
             return
         before = self.store.ledger_path.read_bytes()
         try:
-            deviation(self.store, {"protocol_sha256": next(iter(self.protocols)), "kind": "k", "description": "d"}, clock=lambda: earlier)
+            deviation(
+                self.store,
+                {"protocol_sha256": next(iter(self.protocols)), "kind": "k", "description": "d"},
+                clock=lambda: earlier,
+            )
         except InputError as exc:
             assert exc.code == "TS_REGRESSION"
         else:
@@ -147,20 +160,7 @@ class LedgerMachine(RuleBasedStateMachine):
     @rule(data=st.data())
     def issue_card(self, data: st.DataObject) -> None:
         seq = data.draw(st.sampled_from(sorted(self.records)))
-        pid = self.protocols[self.records[seq]][0]
-        if self.issued.get(pid, seq) != seq:
-            # evidence_id is PLITH-<protocol_id>-<day>: a second record of the same protocol on the same day collides.
-            before = self.store.ledger_path.read_bytes()
-            try:
-                issue(self.store, seq, clock=self.tick())
-            except InputError as exc:
-                assert exc.code == "CARD_EXISTS"
-            else:
-                raise AssertionError("a different card under the same evidence_id must be refused")
-            assert self.store.ledger_path.read_bytes() == before
-            return
         result = issue(self.store, seq, clock=self.tick())
-        self.issued[pid] = seq
         assert result["entry"]["body"]["card_sha256"] == model_sha(result["card"])
         self.commit("issue", result["entry"]["body"], result["entry"])
 

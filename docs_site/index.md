@@ -27,11 +27,11 @@ protocolith issue 1
 
 - **Use it**
 
-    [Local experiments](getting-started-local-experiments.md) · [CI](getting-started-ci.md) · [MCP](guides-mcp.md) · [Python API](guides-python-api.md)
+    [Local experiments](getting-started-local-experiments.md) · [CI](getting-started-ci.md) · [Use it from an AI agent](guides-ai-agent-mcp.md) · [Query the ledger](guides-query-the-ledger.md) · [Python API](guides-python-api.md)
 
 - **Look it up**
 
-    [Command reference](CLI.md) · [Core specification](spec-core.md) · [Error codes](reference-error-codes.md)
+    [Command reference](CLI.md) · [MCP tools](reference-mcp.md) · [Core specification](spec-core.md) · [Error codes](reference-error-codes.md)
 
 </div>
 

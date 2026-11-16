@@ -107,15 +107,60 @@ All three expose the same operations with the same semantics.
 | deviation | `protocolith deviation FILE` | `core.deviation(store, body)` | `protocolith_deviation` |
 | verify | `protocolith verify-ledger` | `core.verify(store)` | `protocolith_verify` |
 | issue | `protocolith issue SEQ` | `core.issue(store, seq)` | `protocolith_issue` |
-| log / head | `protocolith log`, `protocolith head` | `core.entries(store)`, `core.head(store)` | `protocolith_log` |
+| log / head | `protocolith log`, `protocolith head` | `core.entries(store)`, `core.log(store, ...)`, `core.head(store)` | `protocolith_log` |
+| show | `protocolith show SEQ` | `core.show(store, seq)` | `protocolith_show` |
+| summary | `protocolith summary [--protocol ID]` | `core.summary(store, protocol=None)` | `protocolith_summary` |
+| capture | `protocolith capture [--file PATH ...] [--env]` | `core.capture(files, env=False)` | `protocolith_capture` |
+| schema | `protocolith schema [NAME]` | `core.schema_for(name)` | `protocolith_schema` |
+| init | `protocolith init` | `core.init(store)` | |
 
 CLI exit codes: `0` ok; `1` the stored ledger does not verify (codes on stderr and, with `--json`, on stdout);
 `2` the operation was rejected (bad input, or the new entry would break a rule, including `TS_REGRESSION`) and nothing was written;
 `3` I/O or environment error (missing ledger, lock timeout). `--json` output is PCJ-1. Reading a missing ledger is `NO_LEDGER`
 (exit 3), never an empty pass.
 
-The MCP server speaks stdio JSON-RPC with `initialize`, `tools/list` and `tools/call`, uses no network and no
-third-party package, and never writes outside the store.
+The MCP server speaks stdio JSON-RPC with `initialize`, `tools/list`, `tools/call`, `resources/list` and
+`resources/read`, uses no network and no third-party package, and never writes outside the store.
+
+### 5.1 Read commands
+
+- `log` accepts the filters `protocol` (a `protocol_id`; an unknown one is `UNKNOWN_PROTOCOL`), `type` (an entry type),
+  `status` (only records with that result status; a value outside the closed set is `BAD_STATUS`) and `tail` (an
+  integer of at least 1: keep the last N matches). Filters combine with AND and keep ledger order.
+- `show SEQ` returns the entry, its protocol (`protocol_id`, `version`, `protocol_sha256`, `freeze_seq`; an `issue`
+  entry has the protocol of its record), `points_at` (the `deviations` of a record, or the `record_seq` of an issue) and
+  `pointed_by` (the entries that point at it). An unknown `seq` is `DANGLING_REF`.
+- `summary` returns, as one object: `ok`, `head` (`count`, `hash`, `seq`), `entries_by_type`, `records_by_status`,
+  `protocols` (one row per `protocol_id`: `versions`, `latest_version`, `records`, `latest_status`, `deviations`,
+  `cards`) and `problems` (the violations, each `code`, `seq`, `message`). Unlike other reads it does not fail when the
+  ledger does not verify: `ok` is false and `problems` says why (CLI exit 1, MCP `isError`). Entries whose protocol was
+  never frozen are not tabulated. `--protocol` limits the table and the counts to one protocol.
+- `init` creates the store with an empty ledger; repeating it changes nothing. An empty ledger verifies.
+
+### 5.2 Capture
+
+`capture` returns `{"environment": {"machine", "platform", "protocolith", "python"}, "inputs": [{"path", "sha256", "size"}]}`
+to be pasted into the free-form `outcome` of a record. `inputs` lists each named file with its path relative to the
+working directory (`/` separators), size in bytes and sha256. `environment` is included with `--env` and whenever no
+file is named. It executes nothing and reads no environment variable values. A file outside the working directory (after
+resolving links), a missing file or a non-regular file is `BAD_PATH`. The MCP tool takes `files` and `env`.
+
+### 5.3 Schemas and MCP resources
+
+`schema` prints JSON Schema (draft 2020-12) for `freeze` (the protocol object), `record`, `deviation`, `issue` (the input
+`{"seq": n}`) and `entry` (the ledger line; `$defs` hold the stored body of each type), or `all`. The schemas are
+generated from the same field rules the verifier uses, so they cannot drift from it; conditional requirements
+(`block_reason`, `drift_reason`, non-empty `sources`) are included. A schema cannot express every rule (references
+between entries, hashes, ordering); the verifier is authoritative.
+
+The MCP server lists and reads these read-only resources (`mimeType` `application/json`): `protocolith://summary`,
+`protocolith://ledger` (all entries and the head) and `protocolith://schema/<name>` for each schema name above except
+`all`. An unknown URI is JSON-RPC error `-32002`; a failure such as `NO_LEDGER` is `-32000` with the code in the message.
+
+### 5.4 Error hints
+
+An error may carry a one-line `hint`: printed as `hint (CODE): ...` on stderr and, in JSON, as `error.hint`. Hints are
+advice, not part of the contract; codes and exit codes are.
 
 ## 6. Conformance vectors
 
@@ -148,7 +193,9 @@ their current ids by `docs/MIGRATION_ID_MAP.json`.
 claim type, and so on). `issue` builds the card from the record, the frozen protocol and `card`, validates it with the
 evidence-card validator and renders JSON and SVG.
 
-- `evidence_id` is `PLITH-<protocol_id>-<date of the record>`; `registry_sequence` defaults to the record `seq` + 1.
+- `evidence_id` is `PLITH-<protocol_id>-<date of the record>-<seq>`, where `seq` is the ledger `seq` of the record as six
+  digits (more if needed), so two records of one protocol on one day each get their own card; `registry_sequence` defaults
+  to the record `seq` + 1.
 - A `card` key that contradicts a value derived from the record is `CARD_CONFLICT`; missing required card fields are
   `MISSING_FIELD` and are named; any other validator failure is `CARD_INVALID`.
 - The card file is the PCJ-1 bytes of the card with no trailing newline, so the file's SHA-256 equals `card_sha256`.
@@ -164,7 +211,7 @@ Verification: `BAD_SEQ`, `BAD_PREV`, `BAD_HASH`, `NOT_CANONICAL`, `TS_REGRESSION
 Canonicalization and input: `BAD_JSON` (including a byte-order mark), `BAD_UTF8`, `BAD_TYPE`, `FLOAT_NOT_ALLOWED`, `NON_FINITE`,
 `INT_RANGE`, `DUPLICATE_KEY`, `LONE_SURROGATE`.
 
-Operations and environment: `NO_LEDGER`, `NO_PARTIAL_TAIL`, `LOCK_TIMEOUT`, `IO_ERROR`, `BAD_CLOCK`, `CARD_EXISTS`, `CARD_CONFLICT`,
+Operations and environment: `BAD_PATH`, `NO_LEDGER`, `NO_PARTIAL_TAIL`, `LOCK_TIMEOUT`, `IO_ERROR`, `BAD_CLOCK`, `CARD_EXISTS`, `CARD_CONFLICT`,
 `CARD_INVALID`, `VERIFICATION_FAILED`.
 
 Chain checks: `prev` is compared with the stored `hash` of the previous line, so tampering shows as `BAD_HASH` on that line only;

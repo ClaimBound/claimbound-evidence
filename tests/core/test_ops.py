@@ -49,7 +49,7 @@ def test_full_flow_through_the_python_api(store: Store, tmp_path: Path) -> None:
     rec = record(store, record_body(deviations=[1]), clock=clock("2026-11-15T10:00:01Z"))
     assert (dev["seq"], rec["seq"]) == (1, 2)
     result = issue(store, 2, clock=clock("2026-11-15T10:00:02Z"))
-    assert result["card"]["evidence_id"] == "PLITH-DEMO_D001-2026-11-15"
+    assert result["card"]["evidence_id"] == "PLITH-DEMO_D001-2026-11-15-000002"
     assert Path(result["json_path"]).parent == store.cards_dir
     assert Path(result["svg_path"]).read_text(encoding="utf-8").startswith("<?xml")
     verdict = verify(store)
@@ -78,7 +78,7 @@ def test_issue_to_custom_out_dir_and_reissue(recorded: Store, tmp_path: Path) ->
 def test_card_exists_with_different_content(recorded: Store, tmp_path: Path) -> None:
     out = tmp_path / "cards"
     out.mkdir()
-    (out / "PLITH-DEMO_D001-2026-11-15.json").write_bytes(b"{}")
+    (out / "PLITH-DEMO_D001-2026-11-15-000001.json").write_bytes(b"{}")
     raises("CARD_EXISTS", issue, recorded, 1, out=out, clock=clock(NOW))
     assert verify(recorded).count == 2
 
@@ -338,3 +338,12 @@ def test_build_card_for_an_unfrozen_protocol() -> None:
     entry = make_entry(seq=0, prev=ZERO_HASH, ts=NOW, type="record", body=record_body())
     verifier = scan(serialize(entry))[1]
     raises("UNKNOWN_PROTOCOL", build_card, verifier, 0)
+
+
+def test_two_records_of_one_protocol_on_one_day_both_issue(recorded: Store) -> None:
+    record(recorded, record_body(run_id="run-2"), clock=clock(NOW))
+    first = issue(recorded, 1, clock=clock(NOW))
+    second = issue(recorded, 2, clock=clock(NOW))
+    assert first["card"]["evidence_id"] == "PLITH-DEMO_D001-2026-11-15-000001"
+    assert second["card"]["evidence_id"] == "PLITH-DEMO_D001-2026-11-15-000002"
+    assert verify(recorded).ok

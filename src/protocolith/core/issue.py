@@ -40,7 +40,7 @@ def build_card(verifier: Verifier, record_seq: int) -> dict[str, Any]:
     fixed: dict[str, Any] = {
         "claim_boundary": body["claim_boundary"],
         "created_at": entry["ts"],
-        "evidence_id": f"PLITH-{frozen['protocol_id']}-{day}",
+        "evidence_id": f"PLITH-{frozen['protocol_id']}-{day}-{record_seq:06d}",
         "ledger_record_seq": record_seq,
         "protocol_id": frozen["protocol_id"],
         "protocol_sha256": body["protocol_sha256"],

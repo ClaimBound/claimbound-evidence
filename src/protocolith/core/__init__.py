@@ -7,8 +7,23 @@ from .canonical import CanonError, decode, encode, sha256_hex
 from .clock import now_utc
 from .errors import EnvError, InputError, ProtocolithError, VerificationFailed, Violation
 from .ledger import MAX_ENTRY_BYTES, RESULT_STATUSES
-from .ops import deviation, entries, freeze, head, issue, record, repair_truncate_partial_tail, verify
+from .capture import capture
+from .ops import (
+    deviation,
+    entries,
+    freeze,
+    head,
+    init,
+    issue,
+    log,
+    record,
+    repair_truncate_partial_tail,
+    show,
+    summary,
+    verify,
+)
 from .rules import Verdict, Verifier, scan
+from .schema import schema_for
 from .store import Store, resolve_store
 
 __all__ = [
@@ -23,18 +38,24 @@ __all__ = [
     "VerificationFailed",
     "Verifier",
     "Violation",
+    "capture",
     "decode",
     "deviation",
     "encode",
     "entries",
     "freeze",
     "head",
+    "init",
     "issue",
+    "log",
     "now_utc",
     "record",
     "repair_truncate_partial_tail",
     "resolve_store",
     "scan",
+    "schema_for",
+    "show",
     "sha256_hex",
+    "summary",
     "verify",
 ]

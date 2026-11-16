@@ -18,43 +18,15 @@ assert verdict.ok
 result = core.issue(store, 1)
 print(result["json_path"], result["card"]["result_status"])
 print(core.head(store))
+
+found = core.summary(store)                   # what was done and which results are honest
+print(found["records_by_status"], [row["protocol_id"] for row in found["protocols"]])
+print([e["seq"] for e in core.log(store, type="record", tail=5)])
 ```
 
-## Functions
+## Reference
 
-| Function | Returns | Notes |
-| --- | --- | --- |
-| `freeze(store, protocol, *, supersedes=None, clock=None)` | the new entry (dict) | `protocol` must be an object |
-| `record(store, body, *, clock=None)` | the new entry | |
-| `deviation(store, body, *, clock=None)` | the new entry | |
-| `verify(store, expect_head=None)` | `Verdict` | `expect_head="SEQ:HASH"` adds the anchored-head check; never raises for a bad ledger; raises `EnvError` (`NO_LEDGER`) for a missing one |
-| `entries(store)` | list of entries | raises `VerificationFailed` if the ledger does not verify |
-| `head(store)` | `{"count", "hash", "seq"}` | `hash` and `seq` are `None` for an empty ledger |
-| `issue(store, seq, *, out=None, clock=None)` | `{"card", "entry", "json_path", "svg_path"}` | |
-| `repair_truncate_partial_tail(store)` | bytes removed | see [repair](repair-and-crash-recovery.md) |
-| `scan(data, card_hasher=None)` | `(Verdict, Verifier)` | verify bytes without a store |
-| `encode(value)`, `decode(raw)`, `sha256_hex(value)` | bytes, value, str | [canonical JSON](../concepts/canonical-json.md) |
-| `resolve_store(path)` | `Store` | explicit path, then `PROTOCOLITH_STORE`, then `.protocolith` |
-
-`Verdict` has `ok`, `count`, `head_seq`, `head_hash`, `violations`, `codes` and `to_dict()`.
-
-## Errors
-
-All errors derive from `ProtocolithError` and carry `code`, `message` and `violations`.
-
-| Class | CLI exit code | Meaning |
-| --- | --- | --- |
-| `InputError` | 2 | bad input or a rejected operation; nothing was written |
-| `VerificationFailed` | 1 | the stored ledger does not verify |
-| `EnvError` | 3 | I/O or environment problem (`NO_LEDGER`, `LOCK_TIMEOUT`, `IO_ERROR`) |
-| `CanonError` | | invalid JSON input for `decode` or `encode` |
-
-```python
-try:
-    core.freeze(store, protocol)
-except core.InputError as exc:
-    print(exc.code, exc.message)             # e.g. DUPLICATE_FREEZE
-```
+Functions, return values and error classes are listed in the [Python API reference](../reference/python-api.md).
 
 ## The clock
 

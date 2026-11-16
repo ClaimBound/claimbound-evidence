@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""The six operations: freeze, record, deviation, verify, issue, log/head, plus repair."""
+"""The operations: freeze, record, deviation, verify, issue, log/head/show/summary, init and repair."""
 
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ from .issue import build_card, card_hash, write_card_files
 from .ledger import CARD_FORMAT, Entry, make_entry, parse_head_ref, serialize
 from .rules import Verdict, Verifier, apply_expected_head, scan
 from .store import Store
+from .views import select, show as _show, summarize
 
 StoreLike = Store | str | os.PathLike[str]
 
@@ -98,6 +99,45 @@ def entries(store: StoreLike) -> list[Entry]:
     return [verifier.entries[i] for i in range(verifier.index)]
 
 
+def log(
+    store: StoreLike,
+    *,
+    protocol: str | None = None,
+    type: str | None = None,
+    status: str | None = None,
+    tail: int | None = None,
+) -> list[Entry]:
+    """Entries in ledger order, optionally filtered by protocol_id, entry type and record status; ``tail`` keeps the last N."""
+    with _session(store, write=False) as real:
+        verifier = _load(real, missing_ok=False)
+    return select(verifier, protocol=protocol, entry_type=type, status=status, tail=tail)
+
+
+def show(store: StoreLike, seq: int) -> dict[str, Any]:
+    """One entry with its protocol, the entries it points at and the entries that point at it."""
+    with _session(store, write=False) as real:
+        verifier = _load(real, missing_ok=False)
+    return _show(verifier, seq)
+
+
+def summary(store: StoreLike, protocol: str | None = None) -> dict[str, Any]:
+    """Verdict, head, counts by entry type and result status, a per-protocol table and the problems found.
+
+    Unlike the other reads this does not raise when the ledger fails verification: ``ok`` is false and ``problems`` lists why.
+    """
+    with _session(store, write=False) as real:
+        verdict, verifier = scan(real.read(missing_ok=False), card_hash)
+    return summarize(verdict, verifier, protocol)
+
+
+def init(store: StoreLike) -> dict[str, Any]:
+    """Create the store with an empty ledger; harmless if it exists."""
+    with _session(store, write=True) as real:
+        created = not real.ledger_path.exists()
+        real.append_line(b"")
+    return {"created": created, "path": str(real.path)}
+
+
 def head(store: StoreLike) -> dict[str, Any]:
     """The last entry hash and seq, to be published or anchored elsewhere."""
     with _session(store, write=False) as real:
@@ -110,7 +150,9 @@ def head(store: StoreLike) -> dict[str, Any]:
     }
 
 
-def issue(store: StoreLike, seq: int, *, out: str | os.PathLike[str] | None = None, clock: Clock | None = None) -> dict[str, Any]:
+def issue(
+    store: StoreLike, seq: int, *, out: str | os.PathLike[str] | None = None, clock: Clock | None = None
+) -> dict[str, Any]:
     """Render the card of record ``seq`` to JSON and SVG and record an ``issue`` entry."""
     if type(seq) is not int:
         raise InputError("BAD_ENTRY", "seq must be an integer")

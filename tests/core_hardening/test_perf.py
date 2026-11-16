@@ -17,7 +17,7 @@ from typing import Any
 import pytest
 from hardening_support import clock_at, deviation_body, fast_ledger, protocol, record_body
 
-from protocolith.core import Store, decode, deviation, encode, freeze, scan, sha256_hex, verify
+from protocolith.core import Store, decode, deviation, encode, freeze, log, scan, sha256_hex, summary, verify
 from protocolith.core.issue import card_hash
 
 pytestmark = pytest.mark.perf
@@ -84,6 +84,24 @@ def test_verify_throughput_and_linearity(ledger_10k: bytes, tmp_path: Path) -> N
     }
     assert t_full < 30.0 and t_file < 30.0  # about 0.6 s on a quiet machine
     assert t_full / t_half < 3.0, "verification time must scale roughly linearly"
+
+
+def test_summary_and_filtered_log_on_10k_entries(ledger_10k: bytes, tmp_path: Path) -> None:
+    store = Store(tmp_path / "s")
+    store.path.mkdir()
+    store.ledger_path.write_bytes(ledger_10k)
+    t_verify = cpu(lambda: verify(store), repeat=3)
+    t_summary = cpu(lambda: summary(store), repeat=3)
+    t_log = cpu(lambda: log(store, type="deviation", tail=20), repeat=3)
+    found = summary(store)
+    assert found["ok"] and found["head"]["count"] == 10_000 and len(log(store, type="deviation", tail=20)) == 20
+    RESULTS["summary"] = {
+        "entries": 10_000,
+        "verify_cpu_s": round(t_verify, 3),
+        "summary_cpu_s": round(t_summary, 3),
+        "filtered_log_cpu_s": round(t_log, 3),
+    }
+    assert t_summary < 5.0 and t_log < 5.0  # well under 1 s on a quiet machine; summary costs about one verification
 
 
 def test_append_throughput(tmp_path: Path) -> None:

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Minimal MCP server over stdio: newline-delimited JSON-RPC 2.0, six tools, no network."""
+"""Minimal MCP server over stdio: newline-delimited JSON-RPC 2.0, tools and read-only resources, no network."""
 
 from __future__ import annotations
 
@@ -9,9 +9,12 @@ from dataclasses import dataclass
 from typing import Any, BinaryIO
 
 from . import ops
+from .capture import capture
 from .canonical import CanonError, decode, encode
 from .clock import Clock
 from .errors import InputError, ProtocolithError
+from .schema import NAMES, all_schemas, schema_for
+from .ledger import ENTRY_TYPES, RESULT_STATUSES
 from .store import Store
 
 PROTOCOL_VERSIONS = ("2025-06-18", "2025-03-26", "2024-11-05")
@@ -61,8 +64,29 @@ def _issue(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
 
 
 def _log(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
-    _take(arguments, ())
-    return {"entries": ops.entries(store), "head": ops.head(store)}
+    args = _take(arguments, (), ("protocol", "type", "status", "tail"))
+    return {"entries": ops.log(store, **args), "head": ops.head(store)}
+
+
+def _show(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
+    return ops.show(store, _take(arguments, ("seq",))["seq"])
+
+
+def _summary(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
+    return ops.summary(store, _take(arguments, (), ("protocol",)).get("protocol"))
+
+
+def _capture(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
+    args = _take(arguments, (), ("files", "env"))
+    files = args.get("files", [])
+    if not (isinstance(files, list) and all(isinstance(name, str) for name in files)):
+        raise InputError("BAD_ENTRY", "files must be a list of strings")
+    return capture(files, env=args.get("env") is True)
+
+
+def _schema(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
+    name = _take(arguments, (), ("name",)).get("name", "all")
+    return all_schemas() if name == "all" else schema_for(name)
 
 
 @dataclass(frozen=True)
@@ -90,12 +114,27 @@ TOOLS: dict[str, Tool] = {
         Tool(
             "protocolith_freeze",
             "Freeze a protocol (an object with protocol_id and version) before a run.",
-            {"protocol": _OBJECT, "supersedes": {"type": ["string", "null"], "description": "sha256 of the old version"}},
+            {
+                "protocol": _OBJECT,
+                "supersedes": {"type": ["string", "null"], "description": "sha256 of the old version"},
+            },
             ("protocol",),
             _freeze,
         ),
-        Tool("protocolith_record", "Record the outcome of a run against a frozen protocol.", {"body": _OBJECT}, ("body",), _record),
-        Tool("protocolith_deviation", "Record a deviation from a frozen protocol.", {"body": _OBJECT}, ("body",), _deviation),
+        Tool(
+            "protocolith_record",
+            "Record the outcome of a run against a frozen protocol.",
+            {"body": _OBJECT},
+            ("body",),
+            _record,
+        ),
+        Tool(
+            "protocolith_deviation",
+            "Record a deviation from a frozen protocol.",
+            {"body": _OBJECT},
+            ("body",),
+            _deviation,
+        ),
         Tool(
             "protocolith_verify",
             "Verify the whole ledger; isError is true when it does not verify. "
@@ -111,7 +150,56 @@ TOOLS: dict[str, Tool] = {
             ("seq",),
             _issue,
         ),
-        Tool("protocolith_log", "List all ledger entries and the current head.", {}, (), _log),
+        Tool(
+            "protocolith_log",
+            "List ledger entries (optionally filtered) and the current head.",
+            {
+                "protocol": {"type": "string", "description": "only entries of this protocol_id"},
+                "type": {"enum": list(ENTRY_TYPES)},
+                "status": {"enum": sorted(RESULT_STATUSES), "description": "only records with this status"},
+                "tail": {"type": "integer", "minimum": 1, "description": "keep the last N matches"},
+            },
+            (),
+            _log,
+        ),
+        Tool(
+            "protocolith_show",
+            "One entry with its protocol, the entries it points at and the entries that point at it.",
+            {"seq": {"type": "integer", "minimum": 0}},
+            ("seq",),
+            _show,
+        ),
+        Tool(
+            "protocolith_summary",
+            "What was done and which results are honest: verdict, head, counts by type and status, "
+            "a per-protocol table and the problems found. One fast call; start here.",
+            {"protocol": {"type": "string", "description": "only this protocol_id"}},
+            (),
+            _summary,
+        ),
+        Tool(
+            "protocolith_capture",
+            "Describe the environment (Python, platform, machine, protocolith version) and hash input files inside "
+            "the current directory. Returns a fragment for the outcome object of a record. Runs nothing; reads no "
+            "environment values.",
+            {
+                "files": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "paths inside the working directory",
+                },
+                "env": {"type": "boolean", "description": "include the environment (default when no file is given)"},
+            },
+            (),
+            _capture,
+        ),
+        Tool(
+            "protocolith_schema",
+            "JSON Schema (draft 2020-12) of the inputs: freeze, record, deviation, issue, entry, or all.",
+            {"name": {"enum": [*NAMES, "all"]}},
+            (),
+            _schema,
+        ),
     )
 }
 
@@ -125,13 +213,45 @@ def _initialize(store: Store, params: dict[str, Any], clock: Clock | None) -> di
     version = wanted if wanted in PROTOCOL_VERSIONS else PROTOCOL_VERSIONS[0]
     return {
         "protocolVersion": version,
-        "capabilities": {"tools": {}},
+        "capabilities": {"resources": {}, "tools": {}},
         "serverInfo": {"name": SERVER_NAME, "version": SERVER_VERSION},
     }
 
 
 def _ping(store: Store, params: dict[str, Any], clock: Clock | None) -> dict[str, Any]:
     return {}
+
+
+def _resources_list(store: Store, params: dict[str, Any], clock: Clock | None) -> dict[str, Any]:
+    items = [("summary", "Ledger summary"), ("ledger", "All ledger entries and the head")]
+    items += [(f"schema/{name}", f"JSON Schema: {name}") for name in NAMES]
+    return {
+        "resources": [
+            {"uri": f"protocolith://{path}", "name": path, "description": text, "mimeType": "application/json"}
+            for path, text in items
+        ]
+    }
+
+
+def _resource_data(store: Store, uri: Any) -> Any:
+    prefix = "protocolith://"
+    path = uri[len(prefix) :] if isinstance(uri, str) and uri.startswith(prefix) else ""
+    if path == "summary":
+        return ops.summary(store)
+    if path == "ledger":
+        return {"entries": ops.entries(store), "head": ops.head(store)}
+    if path.startswith("schema/") and path[7:] in NAMES:
+        return schema_for(path[7:])
+    raise RpcError(-32002, f"resource not found: {uri!r}")
+
+
+def _resources_read(store: Store, params: dict[str, Any], clock: Clock | None) -> dict[str, Any]:
+    uri = params.get("uri")
+    try:
+        data = _resource_data(store, uri)
+    except ProtocolithError as exc:
+        raise RpcError(-32000, f"{exc.code}: {exc.message}") from None
+    return {"contents": [{"uri": uri, "mimeType": "application/json", "text": encode(data).decode("utf-8")}]}
 
 
 def _tools_list(store: Store, params: dict[str, Any], clock: Clock | None) -> dict[str, Any]:
@@ -156,6 +276,8 @@ def _tools_call(store: Store, params: dict[str, Any], clock: Clock | None) -> di
 METHODS: dict[str, Callable[[Store, dict[str, Any], Clock | None], dict[str, Any]]] = {
     "initialize": _initialize,
     "ping": _ping,
+    "resources/list": _resources_list,
+    "resources/read": _resources_read,
     "tools/list": _tools_list,
     "tools/call": _tools_call,
 }

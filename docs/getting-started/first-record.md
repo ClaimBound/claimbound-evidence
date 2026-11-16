@@ -66,8 +66,8 @@ protocolith verify-ledger
 ```text
 OK entries=2 head seq=1 hash=...
 issued record seq=1 card_sha256=...
-.protocolith/cards/PLITH-QUICKSTART_D001-<date>.json
-.protocolith/cards/PLITH-QUICKSTART_D001-<date>.svg
+.protocolith/cards/PLITH-QUICKSTART_D001-<date>-000001.json
+.protocolith/cards/PLITH-QUICKSTART_D001-<date>-000001.svg
 OK entries=3 head seq=2 hash=...
 ```
 

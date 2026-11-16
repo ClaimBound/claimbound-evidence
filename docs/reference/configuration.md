@@ -20,6 +20,8 @@ An empty value counts as unset.
 | `--expect-head SEQ:HASH` | `verify-ledger` | Also require the entry at `SEQ` to have this hash |
 | `--supersedes SHA256` | `freeze` | Hash of the version this one replaces |
 | `--out DIR` | `issue` | Card directory, default `<store>/cards` |
+| `--protocol ID`, `--type TYPE`, `--status STATUS`, `--tail N` | `log` | Filters; `--protocol` also on `summary` |
+| `--file PATH` (repeatable), `--env` | `capture` | Files to hash (inside the working directory); include the environment |
 | `--truncate-partial-tail` | `repair` | Required; remove the partial last line |
 | `--version` | global | Print the installed version |
 

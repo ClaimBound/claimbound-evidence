@@ -71,8 +71,8 @@ $ protocolith verify-ledger
 OK entries=2 head seq=1 hash=...
 $ protocolith issue 1
 issued record seq=1 card_sha256=...
-.protocolith/cards/PLITH-QUICKSTART_D001-<date>.json
-.protocolith/cards/PLITH-QUICKSTART_D001-<date>.svg
+.protocolith/cards/PLITH-QUICKSTART_D001-<date>-000001.json
+.protocolith/cards/PLITH-QUICKSTART_D001-<date>-000001.svg
 $ protocolith log
 0 freeze <time> 5bbd5c8c7543 QUICKSTART_D001 1
 1 record <time> e6fdb7f2c7f6 run-1 PASSED_UNDER_PROTOCOL
@@ -88,6 +88,16 @@ that was not frozen earlier is rejected (`UNKNOWN_PROTOCOL`). To see verificatio
 Exit codes: `0` ok, `1` the stored ledger does not verify, `2` the operation was rejected and nothing was written,
 `3` I/O or environment error. `--json` prints canonical JSON for every command. These steps are run by
 `tests/test_readme_examples.py`.
+
+## Query the ledger
+
+```bash
+protocolith summary                  # what was done and which results are honest, in one call
+protocolith log --status BLOCKED_SOURCE
+protocolith show 1
+```
+
+See [Query the ledger quickly](docs/guides/query-the-ledger.md).
 
 ## Python API
 
@@ -113,9 +123,11 @@ See the [Python API guide](docs/guides/python-api.md).
 
 ## MCP client configuration
 
-`protocolith mcp` is a stdio server with six tools (`protocolith_freeze`, `protocolith_record`,
-`protocolith_deviation`, `protocolith_verify`, `protocolith_issue`, `protocolith_log`). It uses no network and
-writes only inside the store. Add it to an MCP client:
+`protocolith mcp` is a stdio server with ten tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`,
+`protocolith_schema`, `protocolith_capture`, `protocolith_freeze`, `protocolith_record`, `protocolith_deviation`,
+`protocolith_verify`, `protocolith_issue`) and read-only resources (`protocolith://summary`, `protocolith://ledger`,
+`protocolith://schema/<name>`), so an agent can discover the formats itself. It uses no network and writes only
+inside the store. Add it to an MCP client:
 
 ```json
 {
@@ -128,7 +140,7 @@ writes only inside the store. Add it to an MCP client:
 }
 ```
 
-See the [MCP guide](docs/guides/mcp.md).
+See [Use Protocolith from an AI agent](docs/guides/ai-agent-mcp.md) and the [MCP reference](docs/reference/mcp.md).
 
 ## Install
 
@@ -158,7 +170,12 @@ protected by an advisory file lock (`fcntl` on POSIX, `msvcrt` on Windows) and a
 | `deviation FILE` | Record a deviation from a frozen protocol |
 | `verify-ledger [--expect-head SEQ:HASH]` | Check rules R1 to R11, and optionally an anchored head |
 | `issue SEQ [--out DIR]` | Issue the card of a record |
-| `log` / `head` | List entries / print the last `seq` and `hash` |
+| `summary [--protocol ID]` | Verdict, head, counts and a per-protocol table in one call |
+| `log [--protocol ID] [--type T] [--status S] [--tail N]` / `head` | List (filtered) entries / print the last `seq` and `hash` |
+| `show SEQ` | One entry with its protocol context |
+| `capture [--file PATH ...] [--env]` | JSON fragment with environment and input file hashes for a record `outcome` |
+| `schema [NAME]` | JSON Schema of the input bodies and the entry |
+| `init` | Create an empty store (safe to repeat) |
 | `repair --truncate-partial-tail` | Remove a partial last line left by a crash |
 | `mcp` | Run the MCP server on stdio |
 
@@ -193,5 +210,5 @@ See [RELATED_WORK_AND_INDEPENDENCE.md](docs/RELATED_WORK_AND_INDEPENDENCE.md).
 ## Contributing, security, license
 
 - [CONTRIBUTING.md](CONTRIBUTING.md), [DCO.md](DCO.md), [GOVERNANCE.md](GOVERNANCE.md), [AGENTS.md](AGENTS.md)
-- Report vulnerabilities as described in [SECURITY.md](SECURITY.md); do not open a public issue for them.
+- Report vulnerabilities as described in [SECURITY.md](SECURITY.md); do not open a public issue for them. Questions: [SUPPORT.md](SUPPORT.md).
 - [Apache-2.0](LICENSE).

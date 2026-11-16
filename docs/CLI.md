@@ -237,10 +237,51 @@ Issue the evidence card of a record.
 
 ## `protocolith log`
 
-List ledger entries.
+List ledger entries, optionally filtered.
 
 - `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
 - `--json` — Print the result as canonical JSON.
+- `--protocol ID` — Only entries of this protocol_id.
+- `--type TYPE` — Only entries of this type. (choices: `freeze`, `record`, `deviation`, `issue`)
+- `--status STATUS` — Only records with this result status. (choices: `BLOCKED_SOURCE`, `INSUFFICIENT_COVERAGE`, `NEGATIVE_RESULT_UNDER_PROTOCOL`, `PASSED_UNDER_PROTOCOL`, `REPRODUCED_OUTCOME`, `SOURCE_DRIFT`)
+- `--tail N` — Keep only the last N matching entries.
+
+## `protocolith show`
+
+Show one entry with its protocol context.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+- `seq`
+
+## `protocolith summary`
+
+Verdict, head, counts and a per-protocol table in one call.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+- `--protocol ID` — Only this protocol_id.
+
+## `protocolith init`
+
+Create the store with an empty ledger (safe to repeat).
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+
+## `protocolith capture`
+
+Print a JSON fragment for the outcome object of a record: Python, platform, machine and protocolith version, and the relative path, size and sha256 of each --file (inside the current directory). Runs nothing and reads no environment values.
+
+- `--json` — Print errors as canonical JSON.
+- `--file PATH` — File to hash; repeat for several.
+- `--env` — Include the environment (implied when no --file is given).
+
+## `protocolith schema`
+
+Print a JSON Schema (draft 2020-12) generated from the rules.
+
+- `name` — Which schema (default all). (one of: `freeze`, `record`, `deviation`, `issue`, `entry`, `all`)
 
 ## `protocolith head`
 

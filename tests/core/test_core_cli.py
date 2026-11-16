@@ -13,6 +13,8 @@ import pytest
 from core_support import NOW, PROTOCOL_SHA, protocol, record_body
 
 from protocolith.cli import main
+from protocolith.core import ProtocolithError
+from protocolith.core.errors import hint_for
 
 
 @pytest.fixture(autouse=True)
@@ -70,7 +72,7 @@ def test_json_output_is_canonical(capsys: pytest.CaptureFixture[str], tmp_path: 
     out_dir = tmp_path / "cards"
     run(capsys, "record", files["record"], *s)
     code, out, _ = run(capsys, "issue", "1", "--out", str(out_dir), *s)
-    assert code == 0 and (out_dir / "PLITH-DEMO_D001-2026-11-15.svg").is_file()
+    assert code == 0 and (out_dir / "PLITH-DEMO_D001-2026-11-15-000001.svg").is_file()
     assert json.loads(out)["entry"]["body"]["record_seq"] == 1
     assert json.loads(run(capsys, "verify-ledger", *s)[1])["ok"] is True
     assert json.loads(run(capsys, "head", *s)[1])["seq"] == 2
@@ -121,7 +123,9 @@ def test_environment_errors_exit_3(capsys: pytest.CaptureFixture[str], tmp_path:
     assert code == 3 and "IO_ERROR" in err
 
 
-def test_store_from_environment_and_default(capsys: pytest.CaptureFixture[str], tmp_path: Path, files: dict[str, str], monkeypatch: pytest.MonkeyPatch) -> None:
+def test_store_from_environment_and_default(
+    capsys: pytest.CaptureFixture[str], tmp_path: Path, files: dict[str, str], monkeypatch: pytest.MonkeyPatch
+) -> None:
     monkeypatch.chdir(tmp_path)
     assert run(capsys, "freeze", files["protocol"])[0] == 0
     assert (tmp_path / ".protocolith" / "ledger.jsonl").is_file()
@@ -149,7 +153,10 @@ def test_repair(capsys: pytest.CaptureFixture[str], tmp_path: Path, files: dict[
     assert code == 0 and out == "removed 4 bytes of partial tail\n" and ledger.read_bytes() == good
     code, _, err = run(capsys, "repair", "--truncate-partial-tail", *s)
     assert code == 2 and "NO_PARTIAL_TAIL" in err
-    assert json.loads(run(capsys, "repair", "--truncate-partial-tail", "--json", *s)[1])["error"]["code"] == "NO_PARTIAL_TAIL"
+    assert (
+        json.loads(run(capsys, "repair", "--truncate-partial-tail", "--json", *s)[1])["error"]["code"]
+        == "NO_PARTIAL_TAIL"
+    )
 
 
 def test_mcp_command_in_process(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
@@ -184,3 +191,100 @@ def test_subprocess_exit_codes_and_flow(tmp_path: Path, files: dict[str, str]) -
     assert cli(tmp_path, "verify-ledger", *s).returncode == 1
     assert cli(tmp_path, "freeze", "nofile.json", *s).returncode == 3
     assert cli(tmp_path, "issue", "x").returncode == 2
+
+
+@pytest.fixture
+def filled(capsys: pytest.CaptureFixture[str], tmp_path: Path, files: dict[str, str]) -> list[str]:
+    s = ["--store", str(tmp_path / "st")]
+    run(capsys, "freeze", files["protocol"], *s)
+    run(capsys, "deviation", files["deviation"], *s)
+    run(capsys, "record", files["record"], *s)
+    run(capsys, "issue", "2", *s)
+    return s
+
+
+def test_summary_text_and_json(capsys: pytest.CaptureFixture[str], filled: list[str]) -> None:
+    code, out, _ = run(capsys, "summary", *filled)
+    lines = out.splitlines()
+    assert code == 0 and lines[0].startswith("ledger OK  entries=4  head seq=3 hash=")
+    assert lines[1] == "entries: freeze 1, record 1, deviation 1, issue 1"
+    assert lines[2] == "results: PASSED_UNDER_PROTOCOL 1"
+    assert lines[3].split() == ["PROTOCOL", "VERSIONS", "LATEST", "RECORDS", "LATEST_STATUS", "DEVIATIONS", "CARDS"]
+    assert lines[4].split() == ["DEMO_D001", "1", "1", "1", "PASSED_UNDER_PROTOCOL", "1", "1"]
+    assert lines[3].index("VERSIONS") == lines[4].index("1", 10) and lines[-1] == "problems: none"
+    code, out, _ = run(capsys, "summary", "--protocol", "DEMO_D001", "--json", *filled)
+    assert code == 0 and json.loads(out)["protocols"][0]["records"] == 1
+    assert run(capsys, "summary", "--protocol", "NOPE", *filled)[0] == 2
+
+
+def test_summary_of_empty_and_damaged_ledgers(capsys: pytest.CaptureFixture[str], tmp_path: Path, filled: list[str]) -> None:
+    empty = ["--store", str(tmp_path / "e")]
+    assert run(capsys, "init", *empty)[0] == 0
+    code, out, _ = run(capsys, "summary", *empty)
+    assert code == 0 and out.splitlines()[0] == "ledger OK  entries=0  empty" and "results: none" in out
+    ledger = tmp_path / "st" / "ledger.jsonl"
+    ledger.write_bytes(ledger.read_bytes().replace(b"pass rate", b"pass RATE"))
+    code, out, _ = run(capsys, "summary", *filled)
+    assert code == 1 and out.startswith("ledger FAILED") and "problems: none" not in out and "BAD_HASH line 0" in out
+
+
+def test_log_filters_and_show(capsys: pytest.CaptureFixture[str], filled: list[str]) -> None:
+    out = run(capsys, "log", "--type", "record", *filled)[1]
+    assert [line.split()[:2] for line in out.splitlines()] == [["2", "record"]]
+    assert len(run(capsys, "log", "--protocol", "DEMO_D001", "--tail", "2", *filled)[1].splitlines()) == 2
+    assert run(capsys, "log", "--status", "PASSED_UNDER_PROTOCOL", *filled)[1].startswith("2 record")
+    assert json.loads(run(capsys, "log", "--tail", "1", "--json", *filled)[1])[0]["seq"] == 3
+    assert run(capsys, "log", "--tail", "0", *filled)[0] == 2
+    with pytest.raises(SystemExit):
+        main(["log", "--type", "nope"])
+    code, out, _ = run(capsys, "show", "2", *filled)
+    assert code == 0 and "protocol DEMO_D001 1 (frozen at seq 0)" in out
+    assert "points at: 1" not in out and "pointed at by: 3" in out and out.splitlines()[-1].startswith("body: {")
+    assert "points at: -" in run(capsys, "show", "0", *filled)[1]
+    shown = json.loads(run(capsys, "show", "3", "--json", *filled)[1])
+    assert shown["points_at"] == [2] and shown["protocol"]["protocol_id"] == "DEMO_D001"
+    assert run(capsys, "show", "9", *filled)[0] == 2
+
+
+def test_init_is_idempotent(capsys: pytest.CaptureFixture[str], tmp_path: Path, files: dict[str, str]) -> None:
+    s = ["--store", str(tmp_path / "new")]
+    code, out, _ = run(capsys, "init", *s)
+    assert code == 0 and out == f"created {tmp_path / 'new'}\n"
+    assert run(capsys, "init", *s)[1] == f"exists {tmp_path / 'new'}\n"
+    assert json.loads(run(capsys, "init", "--json", *s)[1]) == {"created": False, "path": str(tmp_path / "new")}
+    assert run(capsys, "head", *s)[1] == "empty\n" and run(capsys, "freeze", files["protocol"], *s)[0] == 0
+
+
+def test_capture_and_schema_commands(capsys: pytest.CaptureFixture[str], tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    (tmp_path / "data.csv").write_text("a,b\n", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    code, out, _ = run(capsys, "capture", "--file", "data.csv")
+    found = json.loads(out)
+    assert code == 0 and found["inputs"][0]["path"] == "data.csv" and "environment" not in found
+    assert set(json.loads(run(capsys, "capture", "--env")[1])) == {"environment", "inputs"}
+    code, out, err = run(capsys, "capture", "--file", "../x")
+    assert code == 2 and "BAD_PATH" in err and "hint (BAD_PATH)" in err
+    assert json.loads(run(capsys, "capture", "--file", "nope", "--json")[1])["error"]["code"] == "BAD_PATH"
+    assert json.loads(run(capsys, "schema", "record")[1])["title"] == "protocolith record"
+    assert set(json.loads(run(capsys, "schema")[1])) == {"freeze", "record", "deviation", "issue", "entry"}
+    with pytest.raises(SystemExit):
+        main(["schema", "nope"])
+
+
+def test_errors_carry_a_hint(capsys: pytest.CaptureFixture[str], tmp_path: Path, files: dict[str, str]) -> None:
+    code, _, err = run(capsys, "head", "--store", str(tmp_path / "none"))
+    assert code == 3 and "hint (NO_LEDGER): run `protocolith freeze FILE`" in err
+    s = ["--store", str(tmp_path / "st")]
+    run(capsys, "freeze", files["protocol"], *s)
+    code, out, err = run(capsys, "verify-ledger", "--expect-head", "0:" + "e" * 64, *s)
+    assert code == 1 and "hint (HEAD_MISMATCH)" in err
+    code, out, _ = run(capsys, "freeze", files["protocol"], "--json", *s)
+    assert json.loads(out)["error"] == {
+        "code": "DUPLICATE_FREEZE",
+        "hint": hint_for("DUPLICATE_FREEZE"),
+        "message": "DEMO_D001 version 1 is already frozen",
+    }
+    assert "hint" not in ProtocolithError("NO_SUCH_CODE", "x").to_dict()["error"]
+    ledger = tmp_path / "st" / "ledger.jsonl"
+    ledger.write_bytes(ledger.read_bytes() + b'{"bo')
+    assert "hint (TRUNCATED_TAIL): a write was interrupted" in run(capsys, "verify-ledger", *s)[2]

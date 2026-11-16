@@ -7,8 +7,8 @@
   ledger.jsonl          the ledger
   lock                  advisory lock file, created on the first write
   cards/                issued cards (default of `issue`)
-    PLITH-<protocol_id>-<date>.json
-    PLITH-<protocol_id>-<date>.svg
+    PLITH-<protocol_id>-<date>-<seq>.json
+    PLITH-<protocol_id>-<date>-<seq>.svg
 ```
 
 Paths are handled with `pathlib`; files are written in binary mode so newlines are always `\n`.
@@ -53,6 +53,9 @@ Bodies are closed: unknown keys are rejected with `BAD_ENTRY`.
 | `drift_reason` | string, optional | required for `SOURCE_DRIFT` |
 | `card` | object, optional | extra evidence-card fields, used by `issue` |
 
+The `outcome` object is free-form (no floats). `protocolith capture` prints a fragment with `environment` and `inputs`
+(relative path, size and sha256 of input files) that you can paste into it.
+
 ### deviation
 
 `protocol_sha256` (a frozen protocol), `kind` (non-empty string), `description` (non-empty string).
@@ -72,7 +75,7 @@ Lowercase 64-character hexadecimal, SHA-256 of the canonical bytes.
 ## Card JSON
 
 The canonical bytes of the evidence card, no trailing newline. Fields derived from the record are
-`claim_boundary`, `created_at` (the record's `ts`), `evidence_id` (`PLITH-<protocol_id>-<date>`),
+`claim_boundary`, `created_at` (the record's `ts`), `evidence_id` (`PLITH-<protocol_id>-<date>-<seq>`, `seq` being the record's ledger `seq` in 6 digits, so every record has its own card),
 `ledger_record_seq`, `protocol_id`, `protocol_sha256`, `protocol_version`, `raw_payload_committed` (always
 `false`), `reproduction_level`, `result_status`, `sources`, and `block_reason` or `drift_reason` when present.
 Defaults that `card` may override: `last_verified_date`, `record_type` (`evidence_result`), `registry_sequence`

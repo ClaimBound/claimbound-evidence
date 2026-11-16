@@ -1,8 +1,9 @@
 # Error codes
 
 Every error carries a stable machine code. On the CLI the first line on stderr is
-`protocolith: CODE: message`, followed by one indented line per rule violation; with `--json` a canonical JSON
-object is printed on stdout (`ok`, `codes`, `error`, `violations`). In Python the codes are `exc.code` and
+`protocolith: CODE: message`, followed by one indented line per rule violation and one `hint (CODE): ...` line with
+what to do next where a hint exists; with `--json` a canonical JSON
+object is printed on stdout (`ok`, `codes`, `error`, `violations`); `error` also has `hint` when there is one. In Python the codes are `exc.code` and
 `exc.codes()`.
 
 ## Exit codes
@@ -60,6 +61,7 @@ is the zero-based line index.
 | `NO_PARTIAL_TAIL` | 2 | `repair` found no partial last line |
 | `LOCK_TIMEOUT` | 3 | the lock was not obtained within 30 seconds |
 | `IO_ERROR` | 3 | an operating-system error, with its class and text |
+| `BAD_PATH` | 2 | `capture`: the file is outside the current directory, missing, or not a regular file |
 | `BAD_CLOCK` | 2 | the clock value is not `YYYY-MM-DDTHH:MM:SSZ` |
 | `CARD_EXISTS` | 2 | the card file exists with different content |
 | `CARD_CONFLICT` | 2 | `card` keys contradict values derived from the record |
