@@ -5,6 +5,7 @@
 ```bash
 uv sync --extra dev
 uv run ruff check src tests
+uv run mypy                       # strict type check of protocolith.core
 uv run --extra dev pytest -q -n auto
 uv run pytest -q tests/core                       # the core only
 uv run pytest -q tests/test_readme_examples.py    # README commands
@@ -53,3 +54,8 @@ enforced in CI; each platform-specific lock module is excluded on the other plat
 Tests that depend on the outcome of an evidence run must not change a blocked or insufficient result into a pass.
 `BLOCKED_SOURCE`, `INSUFFICIENT_COVERAGE`, `NEGATIVE_RESULT_UNDER_PROTOCOL` and source drift are first-class
 outcomes; see [AGENTS.md](../../AGENTS.md).
+
+## Mutation score
+
+Measured on 2026-11-16 with `scripts/mutation_core.sh` (mutmut 3.8.1) over `canonical.py`, `ledger.py` and `rules.py`: 826 of 911 mutants
+killed (90.7 percent), 85 survived (mostly error-message text and equivalent mutants). The target for the core is at least 90 percent.

@@ -11,6 +11,7 @@ from importlib import metadata
 from pathlib import Path
 
 from protocolith.core.commands import add_core_commands
+from protocolith._paths import home_dir
 from protocolith.doctor import format_doctor_report, run_doctor
 from protocolith.inspect import (
     format_hash_lines,
@@ -47,7 +48,7 @@ from protocolith.tree_overlay import (
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_DEMO_ROOT = Path.home() / "protocolith_runs" / "protocolith_demo"
+DEFAULT_DEMO_ROOT = home_dir() / "protocolith_runs" / "protocolith_demo"
 CLONE_URL = "https://github.com/protocolith/protocolith.git"
 CHECKOUT_COMMANDS = frozenset({"demo", "validate-all", "rerun", "drift", "verify"})
 DEFAULT_CARD_KEYS = (
@@ -205,7 +206,7 @@ def build_parser() -> argparse.ArgumentParser:
     run_root_parser.add_argument(
         "--root",
         type=Path,
-        default=Path.home() / "protocolith_runs",
+        default=home_dir() / "protocolith_runs",
         help="Local-only parent directory. Defaults to ~/protocolith_runs.",
     )
     run_root_parser.set_defaults(func=_cmd_run_root)
@@ -292,7 +293,7 @@ def build_parser() -> argparse.ArgumentParser:
     ):
         sub = rerun_sub.add_parser(name)
         sub.add_argument("--operator", default="local operator")
-        sub.add_argument("--root", type=Path, default=Path.home() / "protocolith_runs")
+        sub.add_argument("--root", type=Path, default=home_dir() / "protocolith_runs")
         sub.add_argument("--run-dir", type=Path)
         sub.add_argument("--baseline", type=Path)
         sub.set_defaults(func=handler)
