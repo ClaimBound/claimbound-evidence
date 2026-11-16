@@ -22,7 +22,7 @@
 -->
 
 <p align="center">
-  <img src="docs/assets/protocolith/demo.gif" alt="Terminal recording of the card-level commands: version, doctor, inspect, validate-card, hash and verify" width="760">
+  <img src="docs/assets/protocolith/demo.gif" alt="Terminal recording: init, freeze a protocol, record a result, verify the ledger, summary, issue a card, build the atlas, then a one-word edit of the ledger that verify-ledger detects" width="760">
 </p>
 
 ## Why
