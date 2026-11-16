@@ -23,7 +23,7 @@ from importlib import resources
 from pathlib import Path
 from typing import Any
 
-from .errors import InputError, ProtocolithError, io_guard
+from .errors import EnvError, InputError, ProtocolithError, io_guard
 from .issue import _atomic_write, build_card, card_hash
 from .rules import Verdict, Verifier, scan
 from .store import Store
@@ -394,6 +394,8 @@ def confine(name: object, base: Path | None = None) -> Path:
     """A path that stays inside ``base`` (default: the working directory) after links are resolved."""
     if not isinstance(name, str) or not name:
         raise InputError("BAD_PATH", "a path must be a non-empty string")
+    if "\x00" in name:
+        raise EnvError("IO_ERROR", "a path must not contain a NUL byte")
     with io_guard():
         root = (base or Path.cwd()).resolve()
         path = (root / name).resolve()

@@ -15,7 +15,7 @@ from importlib import metadata
 from pathlib import Path
 from typing import Any
 
-from .errors import InputError, io_guard
+from .errors import EnvError, InputError, io_guard
 
 _CHUNK = 1 << 20
 
@@ -38,6 +38,8 @@ def environment() -> dict[str, str]:
 
 def describe_file(name: str, base: Path) -> dict[str, Any]:
     """Relative path, size and sha256 of a regular file inside ``base`` (symbolic links are resolved first)."""
+    if "\x00" in name:
+        raise EnvError("IO_ERROR", "a path must not contain a NUL byte")
     with io_guard():
         root = base.resolve()
         path = (root / name).resolve()

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import subprocess
 import sys
 import textwrap
@@ -23,6 +24,9 @@ BLOCKER = textwrap.dedent(
 )
 
 
+_KEEP = ("SYSTEMROOT", "USERPROFILE", "HOME", "HOMEDRIVE", "HOMEPATH", "TEMP", "TMP")
+
+
 def _run(code: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         [sys.executable, "-I", "-c", BLOCKER + textwrap.dedent(code)],
@@ -30,7 +34,7 @@ def _run(code: str) -> subprocess.CompletedProcess[str]:
         text=True,
         check=False,
         cwd=ROOT,
-        env={"PYTHONPATH": str(ROOT / "src")},
+        env={"PYTHONPATH": str(ROOT / "src"), **{k: v for k, v in os.environ.items() if k in _KEEP}},
     )
 
 
