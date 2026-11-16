@@ -8,13 +8,13 @@ This is **NASA**, not NOAA. NOAA is issue #56.
 ## Quick path (any OS)
 
 ```bash
-uv run claimbound rerun nasa-d103 --operator "<your-handle>"
+uv run protocolith rerun nasa-d103 --operator "<your-handle>"
 ```
 
 ## Read first
 
 - `docs/protocols/NASA_POWER_D103_PREREG_CHARTER.md`
-- `docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json`
+- `docs/evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json`
 - `artifacts/nasa_power_d103_real_run_summary.json`
 - `docs/INDEPENDENT_RERUN_WORKFLOW.md`
 
@@ -24,13 +24,13 @@ Use only if you need step-by-step control. Prefer the **Quick path** above on an
 
 ## 1. Create local run root
 
-`claimbound run-root` prints the real directory as its **first line** (timestamped name).
+`protocolith run-root` prints the real directory as its **first line** (timestamped name).
 
 ```bash
 cd "$REPO_ROOT"
 
 export RUN_DIR="$(
-  uv run claimbound run-root \
+  uv run protocolith run-root \
     --protocol-id "NASA_POWER_D103" \
     --source-url "https://power.larc.nasa.gov/docs/services/api/temporal/daily/" \
     --operator "$OPERATOR" \
@@ -45,7 +45,7 @@ echo "RUN_DIR=$RUN_DIR"
 
 ## 2. Download 3 official JSON payloads
 
-Points are frozen in `src/claimbound_evidence/nasa_power.py`.
+Points are frozen in `src/protocolith/nasa_power.py`.
 
 ```bash
 API="https://power.larc.nasa.gov/api/temporal/daily/point"
@@ -67,7 +67,7 @@ shasum -a 256 "$NASA_RAW"/*.json | tee "$RUN_DIR/hashes/nasa_raw_sha256.txt"
 ## 3. Run frozen gate
 
 ```bash
-uv run python scripts/claimbound_run_nasa_power_prereg.py \
+uv run python scripts/protocolith_run_nasa_power_prereg.py \
   --point POWER_A --json "$NASA_RAW/POWER_A.json" \
   --point POWER_B --json "$NASA_RAW/POWER_B.json" \
   --point POWER_C --json "$NASA_RAW/POWER_C.json" \
@@ -116,7 +116,7 @@ Interpretation:
 
 The maintainer `reproduction_attempt` card is already committed:
 
-- `docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-RERUN-2026-06-15.json`
+- `docs/evidence_cards/PLITH-NASA-POWER-D103-RERUN-2026-06-15.json`
 - `artifacts/nasa_power_d103_maintainer_rerun_summary.json`
 - registry entry in `docs/registry/evidence_index.json`
 
@@ -132,7 +132,7 @@ If you publish your own rerun card:
 cp "$NASA_REPORTS/nasa_power_d103_report.json" \
    "$REPO_ROOT/artifacts/nasa_power_d103_<operator>_rerun_summary.json"
 
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -n auto -q
 ```
 

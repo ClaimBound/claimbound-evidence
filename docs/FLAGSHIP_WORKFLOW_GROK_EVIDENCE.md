@@ -1,6 +1,6 @@
 # Worked Example: Grok Prompt Source Audit
 
-ClaimBound should make one public habit simple:
+Protocolith should make one public habit simple:
 
 ```text
 Before trusting a public AI, ML or data claim, ask for the evidence card.
@@ -12,7 +12,7 @@ repository. It does not verify Grok model quality or live runtime equivalence.
 
 ## Correct Workflow
 
-A ClaimBound track has five distinct states. Do not skip them.
+A Protocolith track has five distinct states. Do not skip them.
 
 ```text
 1. Evidence request
@@ -20,7 +20,7 @@ A ClaimBound track has five distinct states. Do not skip them.
    scoring rule. This is only a request.
 
 2. Scaffold
-   ClaimBound creates draft protocol, playbook, checklist and draft evidence
+   Protocolith creates draft protocol, playbook, checklist and draft evidence
    card. This is still not evidence.
 
 3. Protocol freeze
@@ -69,7 +69,7 @@ Useful source pages:
 - xAI Grok 4 model card:
   <https://data.x.ai/2025-08-20-grok-4-model-card.pdf>
 
-The ClaimBound question is not:
+The Protocolith question is not:
 
 ```text
 Does this prove exactly what prompt the free Grok 4 chat fast runtime uses?
@@ -77,7 +77,7 @@ Does this prove exactly what prompt the free Grok 4 chat fast runtime uses?
 
 That is too broad.
 
-The ClaimBound question is:
+The Protocolith question is:
 
 ```text
 Can the public prompt-disclosure source boundary be verified with repository
@@ -90,16 +90,16 @@ commit, README/license presence, prompt file list and SHA-256 hashes?
 Public claim: xAI publishes Grok system prompts in the public xai-org/grok-prompts
 repository.
 
-ClaimBound status today: green source-audit card exists in this repository.
+Protocolith status today: green source-audit card exists in this repository.
 
 Why green is allowed: this card checks only public repository source boundary,
 commit identity, README/license presence and prompt file hashes. It does not
 claim live runtime equivalence.
 
-ClaimBound output now: PASSED_UNDER_PROTOCOL / GREEN_VALIDATED source audit.
+Protocolith output now: PASSED_UNDER_PROTOCOL / GREEN_VALIDATED source audit.
 
-Card: docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json
-Visual card: docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.svg
+Card: docs/evidence_cards/PLITH-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json
+Visual card: docs/evidence_cards/PLITH-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.svg
 ```
 
 ## Narrow Protocol
@@ -154,7 +154,7 @@ confirms the source boundary before accepting the card.
 5. Record commit hash.
 6. Confirm README and LICENSE presence.
 7. Hash prompt files by path, byte size and SHA-256.
-8. Commit no prompt text into ClaimBound.
+8. Commit no prompt text into Protocolith.
 9. Create sanitized source-audit report.
 10. Validate evidence card.
 11. Publish exact status and claim boundary.
@@ -220,7 +220,7 @@ Use these controls for prompt-source transparency:
 This is the intended scaffold shape. A generated draft must not claim a result.
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://github.com/xai-org/grok-prompts" \
   --protocol-id "GROK_PROMPTS_SOURCE_AUDIT_D001" \
   --domain "ai-transparency" \
@@ -236,7 +236,7 @@ docs/protocols/GROK_PROMPTS_SOURCE_AUDIT_D001_PREREG_CHARTER.md
 docs/manual_audit/GROK_PROMPTS_SOURCE_AUDIT_D001/GROK_PROMPTS_SOURCE_AUDIT_D001_PLAYBOOK.md
 docs/manual_audit/GROK_PROMPTS_SOURCE_AUDIT_D001/GROK_PROMPTS_SOURCE_AUDIT_D001_CHECKLIST.md
 docs/manual_audit/GROK_PROMPTS_SOURCE_AUDIT_D001/GROK_PROMPTS_SOURCE_AUDIT_D001_OPERATOR_DECLARATION.md
-docs/evidence_card_drafts/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-DRAFT.json
+docs/evidence_card_drafts/PLITH-GROK_PROMPTS_SOURCE_AUDIT_D001-DRAFT.json
 docs/track_families/GROK_PROMPTS_SOURCE_AUDIT_D001_FAMILY_LEDGER.json
 artifacts/grok_prompts_source_audit_d001_source_probe_summary.json
 ```

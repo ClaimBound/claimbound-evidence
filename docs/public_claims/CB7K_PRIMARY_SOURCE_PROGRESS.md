@@ -41,7 +41,7 @@ python3 scripts/verify_primary_public_claim_group.py \
 python3 scripts/register_primary_public_claim_group.py \
   artifacts/cb7k_domNNN_t01_primary_claims.json
 # 5) validate
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run pytest tests -n auto
 ```
 

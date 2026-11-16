@@ -1,9 +1,9 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Tests for ClaimBound R&D family ledgers."""
+"""Tests for Protocolith R&D family ledgers."""
 
 from __future__ import annotations
 
-from claimbound_evidence.family_ledger import (
+from protocolith.family_ledger import (
     validate_family_ledger,
     validate_frontier_ledger,
 )
@@ -12,7 +12,7 @@ from claimbound_evidence.family_ledger import (
 def _valid_ledger() -> dict[str, object]:
     return {
         "family_id": "EXAMPLE_D001_FAMILY",
-        "protocol_version": "claimbound-rnd-family-v2",
+        "protocol_version": "protocolith-rnd-family-v2",
         "family_status": "ACTIVE",
         "family_type": "feature_signal_family",
         "parent_claim": "A narrow family claim.",
@@ -118,7 +118,7 @@ def test_family_ledger_rejects_unknown_claim_reference() -> None:
 
 def test_valid_frontier_ledger_passes() -> None:
     frontier = {
-        "protocol_version": "claimbound-rnd-family-v2",
+        "protocol_version": "protocolith-rnd-family-v2",
         "families": [
             {
                 "family_id": "EXAMPLE_D001_FAMILY",
@@ -148,7 +148,7 @@ def test_valid_frontier_ledger_passes() -> None:
 
 def test_frontier_rejects_missing_consumed_tombstone() -> None:
     frontier = {
-        "protocol_version": "claimbound-rnd-family-v2",
+        "protocol_version": "protocolith-rnd-family-v2",
         "families": [
             {
                 "family_id": "EXAMPLE_D001_FAMILY",
@@ -171,7 +171,7 @@ def test_frontier_rejects_missing_consumed_tombstone() -> None:
 def test_program_fit_frontier_ledger_passes() -> None:
     from pathlib import Path
 
-    from claimbound_evidence.family_ledger import load_frontier_ledger
+    from protocolith.family_ledger import load_frontier_ledger
 
     repo_root = Path(__file__).resolve().parents[1]
     path = repo_root / "docs/track_families/PROGRAM_FIT_D001_FRONTIER.json"

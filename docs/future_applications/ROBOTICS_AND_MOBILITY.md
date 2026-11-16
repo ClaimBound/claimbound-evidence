@@ -1,6 +1,6 @@
 # Robotics And Mobility (Future Application)
 
-ClaimBound can support **evidence around release engineering** for robotics,
+Protocolith can support **evidence around release engineering** for robotics,
 autonomous systems and mobility software. It is not a millisecond-level safety
 controller and does not certify vehicles or robots.
 
@@ -20,7 +20,7 @@ controller and does not certify vehicles or robots.
 
 | Record | Type | Status |
 | --- | --- | --- |
-| [Civic claim D001](../evidence_cards/CLAIMBOUND-CIVIC_CLAIM_D001-2026-05-07.json) | Validated card | `BLOCKED_SOURCE` |
+| [Civic claim D001](../evidence_cards/PLITH-CIVIC_CLAIM_D001-2026-05-07.json) | Validated card | `BLOCKED_SOURCE` |
 | [NYC TLC Phase 4](../evidence/NYC_TLC_PHASE4_NEGATIVE_RESULT.md) | Artifact-only | Negative run |
 
 The civic card shows blocked-source discipline for mobility-related public data.
@@ -29,5 +29,5 @@ completed card.
 
 ## Read next
 
-- [AI risk control with ClaimBound](../AI_RISK_CONTROL_WITH_CLAIMBOUND.md)
+- [AI risk control with Protocolith](../AI_RISK_CONTROL_WITH_PROTOCOLITH.md)
 - [Protocol use by layer and audience](../PROTOCOL_USE_BY_LAYER_AND_AUDIENCE.md)

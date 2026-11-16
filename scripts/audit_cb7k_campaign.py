@@ -21,7 +21,7 @@ from build_public_claim_catalog import (
 )
 
 CARD_RE = re.compile(
-    r"CLAIMBOUND-(CB7K-DOM\d{3}-T\d{2}-G\d{2})-\d{4}-\d{2}-\d{2}\.json$"
+    r"PLITH-(CB7K-DOM\d{3}-T\d{2}-G\d{2})-\d{4}-\d{2}-\d{2}\.json$"
 )
 REASON_RE = re.compile(r"Reason:\s*([A-Z0-9_-]+)")
 HTTP_RE = re.compile(r"HTTP\s+(\d+)")
@@ -31,7 +31,7 @@ CANONICAL_RE = re.compile(r"canonical\s+(https://\S+?)(?:;|$)")
 
 def load_cards() -> dict[str, tuple[Path, dict[str, Any]]]:
     result: dict[str, tuple[Path, dict[str, Any]]] = {}
-    for path in sorted((ROOT / "docs/evidence_cards").glob("CLAIMBOUND-CB7K-*.json")):
+    for path in sorted((ROOT / "docs/evidence_cards").glob("PLITH-CB7K-*.json")):
         match = CARD_RE.search(path.name)
         if match:
             claim_id = match.group(1)
@@ -393,7 +393,7 @@ def audit_campaign(run_validator: bool = False) -> dict[str, Any]:
         _check("card-git-commit", "Evidence cards reference a resolvable git commit object", "PASS" if valid_git_commits == 7000 else "FAIL", valid_git_commits, 7000, "Cards contain placeholders such as local-before-merge; candidate hex values, if any, are resolved with git cat-file rather than accepted by shape alone."),
         _check("concrete-source-claim", "A dedicated concrete claim-under-test is captured", "FAIL", 0, 7000, "The catalog stores generated topic × gate questions and no dedicated claim-under-test field. Some evidence locators contain supporting excerpts, but those excerpts are not explicitly frozen as the claim being checked."),
         _check("runner-availability", "The recorded runner command points to a published script", "PASS" if runner_paths_present == 7000 else "FAIL", runner_paths_present, 7000, f"{7000-runner_paths_present} cards still point to an unavailable historical runner."),
-        _check("maintainer-operator", "The human maintainer is named as the card operator", "PASS" if maintainer_operator == 7000 else "FAIL", maintainer_operator, 7000, f"{7000-maintainer_operator} cards name ClaimBound rather than the NeoZorK maintainer handle."),
+        _check("maintainer-operator", "The human maintainer is named as the card operator", "PASS" if maintainer_operator == 7000 else "FAIL", maintainer_operator, 7000, f"{7000-maintainer_operator} cards name Protocolith rather than the NeoZorK maintainer handle."),
         _check("executable-pass-reproduction", "Passes in execution-required gates were independently reproduced", "PASS" if independently_reproduced_executable_passes == executable_passes else "FAIL", independently_reproduced_executable_passes, executable_passes, f"{executable_passes} passes occur in gates categorized as execution-required by the historical runner; {independently_reproduced_executable_passes} state independent reproduction. This does not establish whether a single-operator execution artifact existed."),
         _check("reproducibility-pass-consistency", "A reproducibility PASS agrees with the card reproduction level", "PASS" if reproducibility_passes == 0 else "FAIL", 0, reproducibility_passes, f"{reproducibility_passes} reproducibility-gate checks are marked passed while their cards state not independently reproduced."),
         _check("report-status", "Manual-review rows exactly cover cards and agree on status", "PASS" if set(reviews) == set(candidates) and report_status_mismatches == 0 else "FAIL", len(set(reviews) & set(candidates))-report_status_mismatches, 7000, f"Unique review records: {len(reviews)}; missing={len(set(candidates)-set(reviews))}, extra={len(set(reviews)-set(candidates))}, status mismatches={report_status_mismatches}."),

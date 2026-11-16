@@ -22,8 +22,8 @@ RUNBOOK_RESULT_PATH = (
     REPO_ROOT / "docs" / "manual_audit" / "ESA-ISSUE-132" / "README.md"
 )
 USER_AGENT = (
-    "Mozilla/5.0 ClaimBound/1.0 "
-    "(public ESA source-boundary audit; ClaimBound/claimbound-evidence)"
+    "Mozilla/5.0 Protocolith/1.0 "
+    "(public ESA source-boundary audit; Protocolith/protocolith)"
 )
 
 

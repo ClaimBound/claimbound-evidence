@@ -11,9 +11,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from claimbound_evidence.card_svg_render import render_svg
-from claimbound_evidence.evidence_card import validate_evidence_card
-from claimbound_evidence.registry import _compute_statistics, validate_registry
+from protocolith.card_svg_render import render_svg
+from protocolith.evidence_card import validate_evidence_card
+from protocolith.registry import _compute_statistics, validate_registry
 
 REGISTRY = ROOT / "docs/registry/evidence_index.json"
 CARDS = ROOT / "docs/evidence_cards"
@@ -68,14 +68,14 @@ def main() -> int:
                 "exact quoted statement occurs in normalized source text."
             ),
             "card_svg_rendered": f"docs/evidence_cards/{evidence_id}.svg",
-            "card_svg_template": "docs/assets/claimbound_evidence_card.svg",
+            "card_svg_template": "docs/assets/protocolith_card.svg",
             "claim_boundary": manifest["claim_boundary"],
             "claim_type": "primary_source_public_statement",
             "created_at": manifest["access_date"],
             "domain": previous_card["domain"],
             "evidence_id": evidence_id,
             "evidence_url": (
-                "https://github.com/ClaimBound/claimbound-evidence/blob/main/"
+                "https://github.com/protocolith/protocolith/blob/main/"
                 f"docs/evidence_cards/{evidence_id}.json"
             ),
             "execution_mode": "AUTOMATED_AI_ASSISTED",

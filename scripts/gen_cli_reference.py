@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
-"""Generate docs/CLI.md from the argparse definitions of the claimbound CLI.
+"""Generate docs/CLI.md from the argparse definitions of the protocolith CLI.
 
 Run ``python scripts/gen_cli_reference.py`` to rewrite the file, or with ``--check`` to
 fail when it is out of date. The output does not depend on the terminal width or the
@@ -16,7 +16,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
-from claimbound_evidence.cli import CHECKOUT_COMMANDS, build_parser  # noqa: E402
+from protocolith.cli import CHECKOUT_COMMANDS, build_parser  # noqa: E402
 
 OUTPUT = REPO_ROOT / "docs" / "CLI.md"
 HEADER = """# Command Reference
@@ -25,7 +25,7 @@ Generated from the CLI definitions by `scripts/gen_cli_reference.py`. Do not edi
 
 Commands marked **needs a clone** use cards, registry or scripts that are not part of the
 pip package; from a pip install they print how to clone the repository and exit with code 2.
-All other commands work after `pip install claimbound-evidence`.
+All other commands work after `pip install protocolith`.
 """
 
 
@@ -115,7 +115,7 @@ def build_reference() -> str:
     out.append("")
     for name, sub in _subparsers(root).items():
         aliases = _aliases(root, sub)
-        title = f"claimbound {name}" + (f" (alias: {', '.join(aliases)})" if aliases else "")
+        title = f"protocolith {name}" + (f" (alias: {', '.join(aliases)})" if aliases else "")
         _render(sub, title, 2, name in CHECKOUT_COMMANDS, out)
     return "\n".join(out).rstrip("\n") + "\n"
 

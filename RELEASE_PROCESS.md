@@ -1,6 +1,6 @@
 # Release Process
 
-Use this process when publishing a ClaimBound release or patch release.
+Use this process when publishing a Protocolith release or patch release.
 
 ## Pre-Release Checks
 
@@ -8,7 +8,7 @@ Run:
 
 ```bash
 uv sync --extra dev
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```
 
@@ -52,7 +52,7 @@ the build attestation, use GitHub CLI:
 
 ```bash
 gh attestation verify PATH/TO/ARTIFACT \
-  -R ClaimBound/claimbound-evidence
+  -R Protocolith/protocolith
 ```
 
 The attestation links the artifact to the repository and workflow that produced it.

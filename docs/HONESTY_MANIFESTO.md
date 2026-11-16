@@ -1,6 +1,6 @@
-# ClaimBound Honesty Manifesto
+# Protocolith Honesty Manifesto
 
-ClaimBound exists to make narrow public-source claims harder to overstate and
+Protocolith exists to make narrow public-source claims harder to overstate and
 easier to challenge.
 
 The project is built around a simple rule:
@@ -27,7 +27,7 @@ Rules first. Source second. Run third. Claim last.
 
 ## What Counts As Evidence
 
-A ClaimBound evidence record can include:
+A Protocolith evidence record can include:
 
 - frozen protocol;
 - family ledger for related tracks;
@@ -48,7 +48,7 @@ For new cards, “what was claimed?” is mandatory data rather than prose hidde
 `public_claim_source_url`, `public_claim_locator`, `public_claim_captured_at` and
 `public_claim_source_sha256` must all validate before registration.
 
-A ClaimBound evidence record does not rely on:
+A Protocolith evidence record does not rely on:
 
 - screenshots as the only source of truth;
 - model confidence;
@@ -59,7 +59,7 @@ A ClaimBound evidence record does not rely on:
 
 ## Anti-Cheating Design
 
-ClaimBound should make manipulation visible through:
+Protocolith should make manipulation visible through:
 
 - protocol files committed before real runs;
 - family and frontier ledgers that separate diagnostic, proof, closure and
@@ -92,7 +92,7 @@ The result proves a universal effect.
 
 ## Durable Purpose
 
-ClaimBound can remain useful as long as public claims need disciplined evidence.
+Protocolith can remain useful as long as public claims need disciplined evidence.
 Individual domains may change, APIs may drift and models may be replaced, but
 the core record stays useful:
 

@@ -7,7 +7,7 @@ The public repository now contains a completed blocked-source readiness card for
 the manifest path:
 
 ```text
-docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-MANUAL-2026-05-11.json
+docs/evidence_cards/PLITH-EEA-AQ-D001-MANUAL-2026-05-11.json
 ```
 
 That card does not claim PM10 coverage pass/fail. It records that the fixed API
@@ -21,7 +21,7 @@ General manual audit rules are defined in [`docs/MANUAL_AUDIT_PROTOCOL.md`](../M
 To reproduce the current blocked-source manifest probe:
 
 ```bash
-python3 scripts/claimbound_run_eea_manual_track.py \
+python3 scripts/protocolith_run_eea_manual_track.py \
   --probe-eea-api \
   --operator "local operator" \
   --access-date 2026-05-11 \
@@ -119,20 +119,20 @@ Run from the public repository root.
 ```bash
 set -euo pipefail
 
-CLAIMBOUND_REPO="$(pwd -P)"
+PROTOCOLITH_REPO="$(pwd -P)"
 git status --short --branch
 
 STARTING_GIT_COMMIT="$(git rev-parse --short HEAD)"
 RUN_STARTED_UTC="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 RUN_ID="eea_aq_d001_$(date -u +%Y%m%d_%H%M%S)"
-RUN_ROOT="$HOME/claimbound_runs/$RUN_ID"
+RUN_ROOT="$HOME/protocolith_runs/$RUN_ID"
 OPERATOR_NAME="YOUR_PUBLIC_OPERATOR_NAME"
 EXECUTION_MODE="MANUAL_NO_AI"
 
 mkdir -p "$RUN_ROOT"/{raw,downloads,hashes,logs,reports,scripts,work}
 
 cat > "$RUN_ROOT/logs/run_env.sh" <<EOF
-export CLAIMBOUND_REPO="$CLAIMBOUND_REPO"
+export PROTOCOLITH_REPO="$PROTOCOLITH_REPO"
 export RUN_ID="$RUN_ID"
 export RUN_ROOT="$RUN_ROOT"
 export STARTING_GIT_COMMIT="$STARTING_GIT_COMMIT"
@@ -168,7 +168,7 @@ Operator: $OPERATOR_NAME
 Execution mode: $EXECUTION_MODE
 Run started UTC: $RUN_STARTED_UTC
 Starting git commit: $STARTING_GIT_COMMIT
-Public repository: $CLAIMBOUND_REPO
+Public repository: $PROTOCOLITH_REPO
 External run root: $RUN_ROOT
 
 ## Protocol Lock
@@ -542,7 +542,7 @@ else:
 grouped.to_csv(OUT_DIR / "station_coverage.csv", index=False)
 selected.to_csv(OUT_DIR / "selected_sampling_points.csv", index=False)
 summary = {
-  "schema": "claimbound_eea_aq_d001_manual_summary_v1",
+  "schema": "protocolith_eea_aq_d001_manual_summary_v1",
   "track_id": "EEA_AQ_D001",
   "source": {"name": "EEA Air Quality Download Service", "download_page": "https://aqportal.discomap.eea.europa.eu/download-data/", "web_application": "https://eeadmz1-downloads-webapp.azurewebsites.net/", "api_swagger": "https://eeadmz1-downloads-api-appservice.azurewebsites.net/swagger/index.html", "raw_payload_committed": False},
   "fixed_scope": {"dataset": "verified E1a", "pollutant": "PM10", "countries": sorted(COUNTRIES), "period": "2018-01-01..2024-12-31", "aggregation": "daily records", "coverage_gate": "at least 85 percent daily coverage per sampling point", "selection_rule": "first five eligible sampling points per country after sorting"},
@@ -643,7 +643,7 @@ python3 - <<PY
 import json, os
 root = os.environ["RUN_ROOT"]
 summary = {
-  "schema": "claimbound_eea_aq_d001_manual_summary_v1",
+  "schema": "protocolith_eea_aq_d001_manual_summary_v1",
   "track_id": "EEA_AQ_D001",
   "source": {"name": "EEA Air Quality Download Service", "download_page": "https://aqportal.discomap.eea.europa.eu/download-data/", "web_application": "https://eeadmz1-downloads-webapp.azurewebsites.net/", "api_swagger": "https://eeadmz1-downloads-api-appservice.azurewebsites.net/swagger/index.html", "raw_payload_committed": False},
   "fixed_scope": {"dataset": "verified E1a", "pollutant": "PM10", "countries": ["BE", "DE", "NL"], "period": "2018-01-01..2024-12-31", "aggregation": "daily records", "coverage_gate": "at least 85 percent daily coverage per sampling point", "selection_rule": "first five eligible sampling points per country after sorting"},
@@ -674,7 +674,7 @@ EOF
 
 ```bash
 source "$RUN_ROOT/logs/run_env.sh"
-cd "$CLAIMBOUND_REPO"
+cd "$PROTOCOLITH_REPO"
 
 git switch -c manual/eea-aq-d001-result
 mkdir -p artifacts docs/evidence_cards
@@ -683,7 +683,7 @@ cp "$RUN_ROOT/reports/eea_aq_d001_manual_summary.json" artifacts/eea_aq_d001_man
 SUMMARY_SHA="$(shasum -a 256 artifacts/eea_aq_d001_manual_summary.json | awk '{print $1}')"
 RAW_MANIFEST_SHA="$(awk '{print $1}' "$RUN_ROOT/hashes/raw_payloads_manifest.sha256" 2>/dev/null || printf 'not_available')"
 CARD_DATE="$(date -u +%Y-%m-%d)"
-CARD_PATH="docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-${CARD_DATE}.json"
+CARD_PATH="docs/evidence_cards/PLITH-EEA-AQ-D001-${CARD_DATE}.json"
 STATUS="$(python3 - <<'PY'
 import json
 with open("artifacts/eea_aq_d001_manual_summary.json", encoding="utf-8") as f: print(json.load(f)["result"]["result_status"])
@@ -702,13 +702,13 @@ card = {
   "access_date": "$CARD_DATE",
   "ai_assistance": "not used during manual status decision",
   "baseline_control_summary": "Fixed source-readiness controls: official source, verified E1a dataset, PM10 pollutant, BE/DE/NL country set, daily aggregation, 2018-2024 period, 85 percent coverage gate, first five eligible sampling points per country.",
-  "card_svg_template": "docs/assets/claimbound_evidence_card.svg",
+  "card_svg_template": "docs/assets/protocolith_card.svg",
   "claim_boundary": "EEA AQ D-001 reports only source-readiness and PM10 daily coverage status under the fixed manual protocol.",
   "claim_type": "source audit",
   "created_at": "$CARD_DATE",
   "domain": "air-quality",
-  "evidence_id": "CLAIMBOUND-EEA-AQ-D001-$CARD_DATE",
-  "evidence_url": "https://github.com/ClaimBound/claimbound-evidence/blob/main/$CARD_PATH",
+  "evidence_id": "PLITH-EEA-AQ-D001-$CARD_DATE",
+  "evidence_url": "https://github.com/protocolith/protocolith/blob/main/$CARD_PATH",
   "execution_mode": "$EXECUTION_MODE",
   "git_commit": "$(git rev-parse --short HEAD)",
   "known_limitations": ["source-readiness and coverage audit only", "no forecasting-performance claim", "no deployment-readiness claim", "no model-superiority claim", "no health-impact claim", "no raw payloads committed"],
@@ -731,9 +731,9 @@ card = {
 Path("$CARD_PATH").write_text(json.dumps(card, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 PY
 
-python3 -m json.tool "$CARD_PATH" >/tmp/claimbound_card_check.json
-if [ -f scripts/claimbound_validate_evidence_card.py ]; then
-  uv run --extra dev python scripts/claimbound_validate_evidence_card.py "$CARD_PATH"
+python3 -m json.tool "$CARD_PATH" >/tmp/protocolith_card_check.json
+if [ -f scripts/protocolith_validate_evidence_card.py ]; then
+  uv run --extra dev python scripts/protocolith_validate_evidence_card.py "$CARD_PATH"
 fi
 ```
 
@@ -741,14 +741,14 @@ Create SVG card from the validated JSON:
 
 ```bash
 SVG_PATH="${CARD_PATH%.json}.svg"
-python scripts/claimbound_render_evidence_card_svg.py "$CARD_PATH" "$SVG_PATH"
+python scripts/protocolith_render_evidence_card_svg.py "$CARD_PATH" "$SVG_PATH"
 xmllint --noout "$SVG_PATH"
 ```
 
 Update `docs/registry/evidence_index.json` manually, then validate:
 
 ```bash
-python3 -m json.tool docs/registry/evidence_index.json >/tmp/claimbound_registry_check.json
+python3 -m json.tool docs/registry/evidence_index.json >/tmp/protocolith_registry_check.json
 ```
 
 - [ ] New branch created.
@@ -764,7 +764,7 @@ python3 -m json.tool docs/registry/evidence_index.json >/tmp/claimbound_registry
 ## 12. Final Checks And PR
 
 ```bash
-cd "$CLAIMBOUND_REPO"
+cd "$PROTOCOLITH_REPO"
 
 if command -v uv >/dev/null 2>&1; then
   uv run --extra dev python -m pytest -n auto
@@ -794,8 +794,8 @@ Stage and commit:
 
 ```bash
 git add artifacts/eea_aq_d001_manual_summary.json
-git add docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-*.json
-git add docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-*.svg
+git add docs/evidence_cards/PLITH-EEA-AQ-D001-*.json
+git add docs/evidence_cards/PLITH-EEA-AQ-D001-*.svg
 git add docs/registry/evidence_index.json
 
 git status --short

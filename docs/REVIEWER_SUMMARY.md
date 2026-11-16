@@ -1,17 +1,17 @@
-# ClaimBound Reviewer Summary
+# Protocolith Reviewer Summary
 
 This page is a public orientation note for first-time readers, reviewers and
 external operators. It is not an endorsement, selection note, legal opinion or
 private project document.
 
-## What Problem ClaimBound Addresses
+## What Problem Protocolith Addresses
 
 Public AI, ML, data and software claims often travel faster than their evidence.
 A claim such as "we checked this", "this source exists", "this benchmark
 reproduced" or "this model is better" is hard to inspect unless the source,
 protocol, status and limitations are kept together.
 
-ClaimBound turns one narrow public claim into a compact evidence card:
+Protocolith turns one narrow public claim into a compact evidence card:
 
 ```text
 public claim
@@ -36,7 +36,7 @@ planned to harden that baseline into additional reusable infrastructure.
 | Evidence-card JSON/SVG, registry index, validators, pytest suite | SourceProbe v1 implementation |
 | Cross-platform CLI (`doctor`, `inspect`, `rerun`, `drift`, `verify`) on Windows/macOS/Linux | Static registry generated views |
 | EU and public AI source-audit runners for existing card types | Scaffold workflow hardening |
-| Scaffold drafts via `claimbound new` | Operator workflow hardening and external adoption |
+| Scaffold drafts via `protocolith new` | Operator workflow hardening and external adoption |
 | Manual and AI-assisted workflow docs; CI on ubuntu + windows | Independent external reruns (`INDEPENDENT_RERUN`, `MULTI_OPERATOR`) |
 | Rerun workflow docs, issue templates, maintainer rerun cards; 48 honest cards | Expanded tutorial set and accessibility pass |
 
@@ -52,10 +52,10 @@ close **open** VERIFY mirrors #85–#87 using split packs in
 
 ## Not A Duplicate Of
 
-ClaimBound is intentionally narrow. It complements adjacent projects instead of
+Protocolith is intentionally narrow. It complements adjacent projects instead of
 replacing them.
 
-| Adjacent project | What it already does | ClaimBound boundary |
+| Adjacent project | What it already does | Protocolith boundary |
 | --- | --- | --- |
 | OSF / preregistration platforms | Register study plans before outcomes are known | Publish **outcome evidence cards** with exact status, hashes, claim boundary and forbidden inferences |
 | OpenML / MLCommons-style benchmarks | Broad model evaluation and leaderboard tables | Small frozen protocols and source-boundary checks; no global ranking by default |
@@ -65,7 +65,7 @@ replacing them.
 Key sentence:
 
 ```text
-OSF registers the plan; ClaimBound publishes the outcome card with exact status
+OSF registers the plan; Protocolith publishes the outcome card with exact status
 and forbidden claims.
 ```
 
@@ -97,7 +97,7 @@ Representative public examples:
 
 ## European Dimension
 
-ClaimBound includes European public-data examples such as the EEA source-audit,
+Protocolith includes European public-data examples such as the EEA source-audit,
 EU Data Portal, EEA reuse FAQ and Eurostat source-audit cards, plus the blocked
 EEA AQ manual-track card. See [European Dimension](EUROPEAN_DIMENSION.md) for
 the public-interest framing, SVG previews, operator rerun commands and explicit
@@ -145,7 +145,7 @@ Planned public deliverables:
 
 ## European Public-Interest Dimension
 
-ClaimBound supports digital commons by making public technology claims more
+Protocolith supports digital commons by making public technology claims more
 inspectable, reproducible and limitation-aware. The current public example set
 includes a European Environment Agency source audit and an EEA Air Quality
 manual-track blocked-source card. These examples are used only as public-data
@@ -163,7 +163,7 @@ Useful public-interest applications include:
 ## Status Semantics
 
 Positive, negative, blocked and drift outcomes are all useful evidence states.
-ClaimBound is not optimized to produce only green cards. It is optimized to
+Protocolith is not optimized to produce only green cards. It is optimized to
 prevent unsupported public claims from being silently upgraded into stronger
 claims.
 

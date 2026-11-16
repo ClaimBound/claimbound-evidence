@@ -7,12 +7,12 @@ frozen.
 
 ```bash
 uv sync --extra dev
-uv run --extra dev python scripts/claimbound_validate_evidence_card.py --help
+uv run --extra dev python scripts/protocolith_validate_evidence_card.py --help
 ```
 
 ## Operator Flow
 
-1. Open the public claim source: https://github.com/ClaimBound/claimbound-evidence
+1. Open the public claim source: https://github.com/protocolith/protocolith
 2. Record the exact claim being checked.
 3. Freeze the protocol before collecting outcomes.
 4. Create a run root outside this repository.
@@ -29,6 +29,6 @@ uv run --extra dev python scripts/claimbound_validate_evidence_card.py --help
 ```text
 docs/protocols/PROGRAM_REVIEW_D001_PREREG_CHARTER.md
 docs/manual_audit/PROGRAM_REVIEW_D001/PROGRAM_REVIEW_D001_CHECKLIST.md
-docs/evidence_cards/CLAIMBOUND-PROGRAM_REVIEW_D001-<DATE>.json
+docs/evidence_cards/PLITH-PROGRAM_REVIEW_D001-<DATE>.json
 artifacts/program_review_d001_summary.json
 ```

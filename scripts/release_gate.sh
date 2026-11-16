@@ -69,8 +69,8 @@ wheel_smoke() {
   local tmp; tmp="$(mktemp -d)"
   python3 -m venv "$tmp/v" || return 1
   "$tmp/v/bin/pip" install --quiet dist/*.whl || return 1
-  "$tmp/v/bin/claimbound" --version || return 1
-  "$tmp/v/bin/claimbound" doctor || return 1
+  "$tmp/v/bin/protocolith" --version || return 1
+  "$tmp/v/bin/protocolith" doctor || return 1
   rm -rf "$tmp"
 }
 
@@ -78,7 +78,7 @@ step "tree clean and equal to origin/main" check_clean_main || true
 step "versions consistent (pyproject, spec, CITATION.cff, CHANGELOG, badge, .zenodo.json)" check_versions || true
 step "uv sync" uv sync --extra dev || true
 step "ruff" uv run ruff check src tests || true
-step "claimbound validate-all" uv run claimbound validate-all || true
+step "protocolith validate-all" uv run protocolith validate-all || true
 step "pytest" uv run --extra dev pytest -q -n auto || true
 step "build sdist+wheel (clean dist)" bash -c 'rm -rf dist && uv build' || true
 step "twine check" uvx twine check dist/* || true

@@ -4,7 +4,7 @@ This document is the autonomous AI-assisted version of the EEA AQ D-001 track.
 It intentionally contains one operator prompt instead of a long manual runbook.
 
 Use this file when you want an AI coding agent to execute the track end to end
-under ClaimBound rules, while preserving honesty, reproducibility, source
+under Protocolith rules, while preserving honesty, reproducibility, source
 boundaries, raw-payload separation, and exact result-status reporting.
 
 If an operator wants a step-by-step human workflow, use
@@ -31,9 +31,9 @@ local filesystem, no terminal, and no way to verify command output.
 Copy the full prompt below into the AI agent. Do not edit the fixed scope.
 
 ```text
-You are operating inside the ClaimBound evidence repository.
+You are operating inside the Protocolith evidence repository.
 
-Your task is to run or prepare the EEA AQ D-001 AI-assisted ClaimBound track
+Your task is to run or prepare the EEA AQ D-001 AI-assisted Protocolith track
 honestly, reproducibly, and without broadening the claim.
 
 You must follow these non-negotiable rules:
@@ -107,7 +107,7 @@ Required workflow:
 3. Confirm the git worktree state.
 4. If unrelated local changes exist, do not overwrite or revert them.
 5. Create an external run root outside the repository:
-   `$HOME/claimbound_runs/eea_aq_d001_ai_<UTC_DATE>`.
+   `$HOME/protocolith_runs/eea_aq_d001_ai_<UTC_DATE>`.
 6. Inside the external run root, create:
    - raw/
    - downloads/
@@ -165,7 +165,7 @@ Required workflow:
 21. Derive the result status from deterministic processing and source-rights
     checks, not from AI opinion.
 22. Copy only the sanitized summary JSON into the repository under artifacts/.
-23. Create a ClaimBound evidence card JSON under docs/evidence_cards/.
+23. Create a Protocolith evidence card JSON under docs/evidence_cards/.
 24. Set `execution_mode` to `AUTOMATED_AI_ASSISTED` only if you completed or
     prepared the AI track under this protocol and deterministic validation
     produced the status. If a human must perform source-download or source-access
@@ -175,7 +175,7 @@ Required workflow:
 26. The evidence card must state that AI did not have authority to change the
     gate, select favorable stations, fabricate hashes, or broaden the claim.
 27. Validate the evidence card with the repository validator.
-28. Create a visual SVG card from docs/assets/claimbound_evidence_card.svg.
+28. Create a visual SVG card from docs/assets/protocolith_card.svg.
 29. Update docs/registry/evidence_index.json if a completed public card is
     added.
 30. Run local tests.
@@ -211,8 +211,8 @@ artifacts such as:
 
 ```text
 artifacts/eea_aq_d001_ai_assisted_summary.json
-docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-AI-YYYY-MM-DD.json
-docs/evidence_cards/CLAIMBOUND-EEA-AQ-D001-AI-YYYY-MM-DD.svg
+docs/evidence_cards/PLITH-EEA-AQ-D001-AI-YYYY-MM-DD.json
+docs/evidence_cards/PLITH-EEA-AQ-D001-AI-YYYY-MM-DD.svg
 docs/registry/evidence_index.json
 ```
 
@@ -225,7 +225,7 @@ Use this disclosure in the evidence card or PR body:
 
 ```text
 AI assistance was used to execute or prepare the EEA AQ D-001 track under a
-fixed ClaimBound protocol. AI was not allowed to change the fixed scope after
+fixed Protocolith protocol. AI was not allowed to change the fixed scope after
 source or outcome inspection, choose favorable stations, lower gates, fabricate
 hashes, fabricate source-rights notes, alter raw payloads, or broaden the claim
 boundary.

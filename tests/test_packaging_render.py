@@ -50,7 +50,7 @@ def test_render_all_fills_templates_from_the_lock_file(tmp_path: Path) -> None:
     info = {
         "version": "9.9.9",
         "sdist_sha256": "a" * 64,
-        "wheel_url": "https://files.example/claimbound_evidence-9.9.9-py3-none-any.whl",
+        "wheel_url": "https://files.example/protocolith-9.9.9-py3-none-any.whl",
         "wheel_sha256": "b" * 64,
     }
     conda, formula = render.render_all(info, lock, "3.13", tmp_path)

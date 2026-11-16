@@ -6,7 +6,7 @@ honestly. Do not turn a negative result into success.
 ## Quick path (any OS)
 
 ```bash
-uv run claimbound rerun noaa-d131 --operator "<your-handle>"
+uv run protocolith rerun noaa-d131 --operator "<your-handle>"
 ```
 
 ## Important limits in this repository
@@ -14,7 +14,7 @@ uv run claimbound rerun noaa-d131 --operator "<your-handle>"
 | Step | Status |
 | --- | --- |
 | Download official payloads | **Supported** — `scripts/fetch_noaa_coops_d131_payloads.py` |
-| Statistical gate evaluator | **Supported** — `scripts/claimbound_run_noaa_coops_prereg.py` |
+| Statistical gate evaluator | **Supported** — `scripts/protocolith_run_noaa_coops_prereg.py` |
 | Full reproduction card PR | Ready once rerun artifacts are committed |
 
 ## Common mistakes
@@ -22,7 +22,7 @@ uv run claimbound rerun noaa-d131 --operator "<your-handle>"
 Skip this section if you use the **Quick path** above.
 
 1. **Wrong issue** — `jq '.inputs' artifacts/noaa_coops_d131_negative_result_summary.json` is **NOAA #56**, not NASA #55.
-2. **`mapfile` in zsh** — macOS default shell is zsh; use `RUN_DIR="$(uv run claimbound run-root ... | head -1)"` instead of bash `mapfile`.
+2. **`mapfile` in zsh** — macOS default shell is zsh; use `RUN_DIR="$(uv run protocolith run-root ... | head -1)"` instead of bash `mapfile`.
 3. **Wrong path** — if `RUN_DIR` is empty, `NOAA_RAW` becomes `/raw` and fetch fails. Always `echo "$RUN_DIR"` before fetch.
 4. **Wrong curl range** — one 2018–2024 request returns HTTP 400 (`365 days` NOAA limit). Use the fetch script.
 5. **Wrong SHA expectation** — fresh merged JSON will usually **not** match committed baseline SHA-256. Compare **`joined_rows` first**, then gate outcome once runner exists.
@@ -45,7 +45,7 @@ Use only if you need step-by-step control. Prefer the **Quick path** above on an
 cd "$REPO_ROOT"
 
 export RUN_DIR="$(
-  uv run claimbound run-root \
+  uv run protocolith run-root \
     --protocol-id "NOAA_COOPS_D131" \
     --source-url "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter" \
     --operator "$OPERATOR" \
@@ -151,7 +151,7 @@ Failed gates (must stay failed unless protocol changes):
 ## 4. Run frozen gate
 
 ```bash
-uv run python scripts/claimbound_run_noaa_coops_prereg.py \
+uv run python scripts/protocolith_run_noaa_coops_prereg.py \
   --raw-dir "$NOAA_RAW" \
   --report "$NOAA_REPORTS/noaa_coops_d131_report.json" \
   --summary "$NOAA_REPORTS/noaa_coops_d131_summary.json"
@@ -170,7 +170,7 @@ jq '.failed_gates' "$NOAA_REPORTS/noaa_coops_d131_summary.json"
 
 The maintainer `reproduction_attempt` card is already committed:
 
-- `docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-RERUN-2026-06-15.json`
+- `docs/evidence_cards/PLITH-NOAA-COOPS-D131-RERUN-2026-06-15.json`
 - `artifacts/noaa_coops_d131_maintainer_rerun_summary.json`
 - registry entry in `docs/registry/evidence_index.json`
 

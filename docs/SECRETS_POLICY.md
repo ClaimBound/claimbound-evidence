@@ -36,6 +36,6 @@ and signing material.
   with access leaves.
 - A suspected exposure is handled at once: revoke the credential first, then replace it, then
   review the logs of the affected service. Report it through a private
-  [GitHub Security Advisory](https://github.com/ClaimBound/claimbound-evidence/security/advisories/new).
+  [GitHub Security Advisory](https://github.com/protocolith/protocolith/security/advisories/new).
 - Trusted Publishing needs no rotation; the publisher configuration is reviewed whenever the
   release workflow or repository name changes.

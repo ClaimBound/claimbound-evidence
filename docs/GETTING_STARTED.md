@@ -1,11 +1,11 @@
-# Getting Started With ClaimBound
+# Getting Started With Protocolith
 
-ClaimBound is easiest to understand as a small evidence pipeline for one narrow
+Protocolith is easiest to understand as a small evidence pipeline for one narrow
 claim.
 
 If there is no evidence card, the statement is still only a claim.
 
-![ClaimBound workflow](assets/claimbound_workflow.svg)
+![Protocolith workflow](assets/protocolith_workflow.svg)
 
 ```text
 official source
@@ -21,14 +21,14 @@ official source
 
 Write the rules before looking at the outcome.
 
-A good ClaimBound result says:
+A good Protocolith result says:
 
 ```text
 Under protocol P, using official source S, candidate C received status R under
 frozen gate G.
 ```
 
-A bad ClaimBound result says:
+A bad Protocolith result says:
 
 ```text
 This model works generally.
@@ -74,33 +74,33 @@ make source limits visible.
 
 ```bash
 uv sync --extra dev
-uv run claimbound doctor
+uv run protocolith doctor
 uv run --extra dev python -m pytest -n auto
-uv run claimbound validate-all
-uv run --extra dev python scripts/claimbound_validate_evidence_card.py \
-  docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
+uv run protocolith validate-all
+uv run --extra dev python scripts/protocolith_validate_evidence_card.py \
+  docs/evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json
 ```
 
 ## Common Commands
 
 | Command | What it does |
 | --- | --- |
-| `uv run claimbound new` | Creates a draft request, protocol, playbook, checklist, operator declaration, draft card, family ledger and source-probe summary. Prompts interactively in a terminal. |
-| `uv run claimbound new-track` | Alias for `new`; kept for people who think in "track" language. |
-| `uv run claimbound run-root --protocol-id ... --source-url ...` | Creates a local-only run directory under `$HOME/claimbound_runs/` with `raw/`, `logs/`, `hashes/`, `reports/` and `transcripts/`. |
-| `uv run claimbound demo eea-source-audit` | Runs the EEA source-audit demo helper and writes a sanitized report under the demo run root. |
-| `uv run claimbound demo eea-manual-probe` | Runs the EEA AQ manual-track probe helper and writes a blocked-readiness summary under the demo run root. |
-| `uv run claimbound demo grok-source-audit` | Clones or reuses the public `xai-org/grok-prompts` repository in a local-only demo root, then writes source-audit metadata and hashes. |
-| `uv run claimbound validate-tree docs/track_families/<ID>_TREE.json` | Validates optional v3 tree overlays for related manual tracks. |
-| `uv run claimbound validate-family docs/track_families/<ID>_FAMILY_LEDGER.json` | Validates claim IDs, family budget, track modes and stop/closure structure for related R&D tracks. |
-| `uv run python scripts/claimbound_validate_family_ledger.py docs/track_families/<ID>_FAMILY_LEDGER.json` | Script entrypoint for the same family-ledger validation, useful in shell workflows. |
-| `uv run claimbound validate-frontier docs/track_families/<ID>_FRONTIER.json` | Validates a compact frontier/tombstone ledger for related R&D families. |
-| `uv run python scripts/claimbound_validate_family_frontier.py docs/track_families/<ID>_FRONTIER.json` | Script entrypoint for the same frontier validation. |
-| `uv run claimbound validate-all` | Validates all committed evidence cards, the registry index and any optional `*_FAMILY_LEDGER.json` or `*_FRONTIER.json` files. |
-| `uv run claimbound doctor` | Checks Python, git and repo layout on Windows, macOS or Linux. |
+| `uv run protocolith new` | Creates a draft request, protocol, playbook, checklist, operator declaration, draft card, family ledger and source-probe summary. Prompts interactively in a terminal. |
+| `uv run protocolith new-track` | Alias for `new`; kept for people who think in "track" language. |
+| `uv run protocolith run-root --protocol-id ... --source-url ...` | Creates a local-only run directory under `$HOME/protocolith_runs/` with `raw/`, `logs/`, `hashes/`, `reports/` and `transcripts/`. |
+| `uv run protocolith demo eea-source-audit` | Runs the EEA source-audit demo helper and writes a sanitized report under the demo run root. |
+| `uv run protocolith demo eea-manual-probe` | Runs the EEA AQ manual-track probe helper and writes a blocked-readiness summary under the demo run root. |
+| `uv run protocolith demo grok-source-audit` | Clones or reuses the public `xai-org/grok-prompts` repository in a local-only demo root, then writes source-audit metadata and hashes. |
+| `uv run protocolith validate-tree docs/track_families/<ID>_TREE.json` | Validates optional v3 tree overlays for related manual tracks. |
+| `uv run protocolith validate-family docs/track_families/<ID>_FAMILY_LEDGER.json` | Validates claim IDs, family budget, track modes and stop/closure structure for related R&D tracks. |
+| `uv run python scripts/protocolith_validate_family_ledger.py docs/track_families/<ID>_FAMILY_LEDGER.json` | Script entrypoint for the same family-ledger validation, useful in shell workflows. |
+| `uv run protocolith validate-frontier docs/track_families/<ID>_FRONTIER.json` | Validates a compact frontier/tombstone ledger for related R&D families. |
+| `uv run python scripts/protocolith_validate_family_frontier.py docs/track_families/<ID>_FRONTIER.json` | Script entrypoint for the same frontier validation. |
+| `uv run protocolith validate-all` | Validates all committed evidence cards, the registry index and any optional `*_FAMILY_LEDGER.json` or `*_FRONTIER.json` files. |
+| `uv run protocolith doctor` | Checks Python, git and repo layout on Windows, macOS or Linux. |
 
 These commands are useful for private local work too. Shell tools such as jq,
-curl and shasum are not required for the primary `claimbound` workflows. See
+curl and shasum are not required for the primary `protocolith` workflows. See
 [platform support](PLATFORM_SUPPORT.md). A person or organization
 can keep raw payloads, prompt text, transcripts and logs inside a local run
 root, while publishing only the sanitized hashes and evidence card.
@@ -110,13 +110,13 @@ root, while publishing only the sanitized hashes and evidence card.
 Interactive:
 
 ```bash
-uv run claimbound new
+uv run protocolith new
 ```
 
 Non-interactive:
 
 ```bash
-uv run claimbound new \
+uv run protocolith new \
   --source-url "https://example.org/source-docs" \
   --protocol-id "EXAMPLE_D001" \
   --domain "public-data" \
@@ -139,20 +139,20 @@ track budget, stop rules and closure decisions.
 Manual and AI-assisted runs should keep raw payloads outside this repository:
 
 ```bash
-uv run claimbound run-root \
+uv run protocolith run-root \
   --protocol-id "EXAMPLE_D001" \
   --source-url "https://example.org/source-docs" \
   --operator "your-name-or-handle"
 ```
 
 This creates a local-only directory under your home folder (by default
-`claimbound_runs/` there) with standard
+`protocolith_runs/` there) with standard
 `raw/`, `logs/`, `hashes/`, `reports/` and `transcripts/` folders, plus
 `RUN_CONTEXT.md`, `DEVIATIONS.md` and `LOCAL_MANIFEST.md`.
 
 ## Read Next
 
-- [ClaimBound in 5 minutes](CLAIMBOUND_IN_5_MINUTES.md)
+- [Protocolith in 5 minutes](PROTOCOLITH_IN_5_MINUTES.md)
 - [Audience and value](AUDIENCE_AND_VALUE.md)
 - [Current evidence tracks](CURRENT_EVIDENCE_TRACKS.md)
 - [Evidence card specification](EVIDENCE_CARD.md)

@@ -11,7 +11,7 @@ def esc(value: object) -> str:
 
 
 def shell(title: str, body: str, root: str = "") -> str:
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} · ClaimBound</title><style>
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} · Protocolith</title><style>
 :root{{--ink:#142d32;--muted:#5c7074;--paper:#f2eee5;--card:#fffdf8;--line:#c9c2b4;--accent:#006d68;--pass:#217a55}}*{{box-sizing:border-box}}body{{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,sans-serif}}main{{max-width:1280px;margin:auto;padding:28px 22px 80px}}a{{color:var(--accent)}}nav,.links{{display:flex;gap:14px;flex-wrap:wrap}}h1,h2{{font-family:Georgia,serif}}h1{{font-size:clamp(36px,6vw,68px);line-height:1.03}}.lede{{font-size:19px;max-width:960px}}.alert,.claim,.tile,.metric{{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:17px}}.alert{{border:2px solid var(--accent)}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:12px}}.claims{{display:grid;gap:16px}}.tag{{display:inline-block;padding:4px 9px;border-radius:99px;background:#e3ece8;margin:0 6px 6px 0;font-size:13px}}.pass{{background:var(--pass);color:white}}.metric strong{{display:block;font:700 30px Georgia,serif}}blockquote{{margin:10px 0;border-left:4px solid var(--accent);padding:4px 0 4px 14px;overflow-wrap:anywhere}}dl{{display:grid;grid-template-columns:210px 1fr;gap:7px 14px}}dt{{font-weight:700}}dd{{margin:0;overflow-wrap:anywhere}}details{{border-top:1px solid var(--line);padding-top:10px}}code{{overflow-wrap:anywhere}}small,.muted{{color:var(--muted)}}@media(max-width:650px){{dl{{grid-template-columns:1fr}}}}
 </style></head><body><main><nav><a href="{root}index.html">All categories</a><a href="{root}audit/">Verification audit</a><a href="{REPO}">Repository</a></nav>{body}</main></body></html>'''
 
@@ -28,7 +28,7 @@ def tile_copy(primary_count: int) -> str:
 def category_metrics(primary_count: int, reference_count: int) -> str:
     metrics = [
         f'<article class="metric"><strong>{primary_count} / 70</strong>primary-source statements</article>',
-        '<article class="metric"><strong>0 / 70</strong>independent ClaimBound reruns</article>',
+        '<article class="metric"><strong>0 / 70</strong>independent Protocolith reruns</article>',
     ]
     if primary_count < 70:
         metrics.insert(
@@ -50,7 +50,7 @@ def home_page(primary_count: int, wikidata_count: int, reference_bound: int, til
         metrics = (
             '<article class="metric"><strong>7,000 / 7,000</strong>primary-source statements</article>'
             '<article class="metric"><strong>100 × 70</strong>categories with primary PDF bindings</article>'
-            '<article class="metric"><strong>0 / 7,000</strong>independent ClaimBound reruns</article>'
+            '<article class="metric"><strong>0 / 7,000</strong>independent Protocolith reruns</article>'
         )
         reproduce = (
             "Yes, with the named official PDF and the committed dual-extractor verifier. "
@@ -76,7 +76,7 @@ def home_page(primary_count: int, wikidata_count: int, reference_bound: int, til
             f'<article class="metric"><strong>{primary_count:,} / 7,000</strong>primary-source statements</article>'
             f'<article class="metric"><strong>{wikidata_count:,} / 7,000</strong>Wikidata revision bindings</article>'
             f'<article class="metric"><strong>{reference_bound:,} / 7,000</strong>Wikidata statements with reference blocks</article>'
-            '<article class="metric"><strong>0 / 7,000</strong>independent ClaimBound reruns</article>'
+            '<article class="metric"><strong>0 / 7,000</strong>independent Protocolith reruns</article>'
         )
         reproduce = (
             "Primary cards use the dual-extractor PDF verifier on each card. "
@@ -89,13 +89,13 @@ def home_page(primary_count: int, wikidata_count: int, reference_bound: int, til
             "as ground truth, and no second operator has registered a rerun."
         )
     return (
-        "<p>CLAIMBOUND / 7,000 SOURCE-PUBLICATION CHECKS</p>"
+        "<p>PROTOCOLITH / 7,000 SOURCE-PUBLICATION CHECKS</p>"
         "<h1>What do these cards actually prove?</h1>"
         f'<div class="alert">{alert}</div><h2>Audit answer</h2>'
         f'<section class="grid">{metrics}</section>'
         "<h2>Can another person reproduce any card?</h2>"
         f'<p class="lede">{reproduce}</p>'
-        f"<h2>ClaimBound honesty assessment</h2><p>{honesty}</p>"
+        f"<h2>Protocolith honesty assessment</h2><p>{honesty}</p>"
         f'<h2>100 categories</h2><section class="grid">{"".join(tiles)}</section>'
     )
 
@@ -154,7 +154,7 @@ def audit_page(primary_count: int, wikidata_count: int, reference_bound: int, qu
             f"<pre><code>{esc(WIKIDATA_VERIFY.format(claim_id='CB7K-DOM001-C01'))}</code></pre>"
         )
     return (
-        "<p>CLAIMBOUND / HONESTY AND REPRODUCIBILITY AUDIT</p>"
+        "<p>PROTOCOLITH / HONESTY AND REPRODUCIBILITY AUDIT</p>"
         "<h1>Complete source bindings.<br>Limited evidentiary claim.</h1>"
         f'<section class="grid">{metrics}</section>'
         f"<h2>Passed checks</h2><ul>{passed}</ul>"

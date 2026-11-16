@@ -10,7 +10,7 @@ To be written narrowly by the requester before protocol freeze.
 
 Public-interest open-source program eligibility source, identity withheld from public card to avoid implying program-sponsor affiliation.
 
-## Narrow ClaimBound Question
+## Narrow Protocolith Question
 
 Can this claim be checked under a frozen protocol with source boundary, scoring
 rule, hashes, result status, limitation and rerun path?

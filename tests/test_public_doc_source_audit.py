@@ -6,8 +6,8 @@ import sys
 from pathlib import Path
 
 
-SCRIPT_PATH = Path(__file__).resolve().parents[1] / "scripts" / "claimbound_run_public_doc_source_audit.py"
-SPEC = importlib.util.spec_from_file_location("claimbound_run_public_doc_source_audit", SCRIPT_PATH)
+SCRIPT_PATH = Path(__file__).resolve().parents[1] / "scripts" / "protocolith_run_public_doc_source_audit.py"
+SPEC = importlib.util.spec_from_file_location("protocolith_run_public_doc_source_audit", SCRIPT_PATH)
 assert SPEC is not None
 MODULE = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None

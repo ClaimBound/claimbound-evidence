@@ -18,7 +18,7 @@ official_source_name, reproduction_level, sanitized_report_path, share_url, svg_
 
 ## Validation acceptance
 
-- uv run claimbound validate-all passes.
+- uv run protocolith validate-all passes.
 - Every registry entry path resolves to a valid evidence card JSON.
 
 ## Non-goals
@@ -30,4 +30,4 @@ official_source_name, reproduction_level, sanitized_report_path, share_url, svg_
 
 ## Future generator
 
-scripts/claimbound_build_registry_view.py -> docs/registry/views/
+scripts/protocolith_build_registry_view.py -> docs/registry/views/

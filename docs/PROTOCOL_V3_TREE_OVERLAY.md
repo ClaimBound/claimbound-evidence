@@ -1,4 +1,4 @@
-# ClaimBound Protocol v3 Tree Overlay
+# Protocolith Protocol v3 Tree Overlay
 
 Status: additive protocol v3 overlay. This document does not migrate historical
 evidence cards, change evidence-card schemas or create a new empirical result.
@@ -10,9 +10,9 @@ evidence-card protocol and above the v2 family/frontier ledgers.
 ## Compatibility
 
 - Existing evidence cards remain valid under their original evidence-card rules.
-- Existing `claimbound-rnd-family-v2` family ledgers remain valid.
+- Existing `protocolith-rnd-family-v2` family ledgers remain valid.
 - Existing `*_FRONTIER.json` files remain optional.
-- New protocol v3 overlays use `protocol_version: "claimbound-tree-v3"`.
+- New protocol v3 overlays use `protocol_version: "protocolith-tree-v3"`.
 - New protocol v3 overlays are stored as `docs/track_families/*_TREE.json`.
 
 The tree overlay is planning, scheduling and anti-overclaim metadata. It is not
@@ -20,7 +20,7 @@ a result card.
 
 ## How The Layers Fit
 
-ClaimBound keeps three protocol layers separate and universal:
+Protocolith keeps three protocol layers separate and universal:
 
 | Layer | One-track use | Multi-track use |
 | --- | --- | --- |
@@ -29,7 +29,7 @@ ClaimBound keeps three protocol layers separate and universal:
 | Tree overlay v3 | Publish a one-node status map with optional iron, flow and tombstone references. | Publish a larger tree of evidence leaves, reusable bounded claims, volatile gates and stopped branches. |
 
 A one-track overlay is not a weaker or special-case protocol. It is the same
-`claimbound-tree-v3` structure with one node and small counts.
+`protocolith-tree-v3` structure with one node and small counts.
 
 ## Why v3 Exists
 
@@ -53,7 +53,7 @@ stopped paths from being confused with proof.
 | `iron_claim` | A narrow bounded claim with stable evidence and proof-surface hash placeholder or hash. |
 | `flow_claim` | A volatile routing, dependency, availability or scheduling claim that may unlock later work but is not proof by itself. |
 | `tombstone` | An append-only stop record for a failed, closed, superseded or poisoned branch. |
-| `claimbound-tree-v3` | The protocol string required by v3 tree overlays. |
+| `protocolith-tree-v3` | The protocol string required by v3 tree overlays. |
 | Badge counts | Machine-readable counts of iron claims, flow claims and tombstones for quick review. |
 | Branch block rules | Rules that prevent stopped or poisoned work from being reused as success evidence. |
 
@@ -62,7 +62,7 @@ stopped paths from being confused with proof.
 ```json
 {
   "tree_id": "EXAMPLE_D001_TREE",
-  "protocol_version": "claimbound-tree-v3",
+  "protocol_version": "protocolith-tree-v3",
   "tree_status": "ACTIVE",
   "root_family_id": "EXAMPLE_D001_FAMILY",
   "claim_nodes": [
@@ -112,13 +112,13 @@ stopped paths from being confused with proof.
 Validate one v3 tree overlay:
 
 ```bash
-uv run claimbound validate-tree docs/track_families/EXAMPLE_D001_TREE.json
+uv run protocolith validate-tree docs/track_families/EXAMPLE_D001_TREE.json
 ```
 
 Equivalent script entrypoint:
 
 ```bash
-uv run python scripts/claimbound_validate_family_tree.py \
+uv run python scripts/protocolith_validate_family_tree.py \
   docs/track_families/EXAMPLE_D001_TREE.json
 ```
 
@@ -126,7 +126,7 @@ Validate all public evidence cards, the registry, optional v2 family/frontier
 ledgers and optional v3 tree overlays:
 
 ```bash
-uv run claimbound validate-all
+uv run protocolith validate-all
 ```
 
 ## What v3 Must Not Do

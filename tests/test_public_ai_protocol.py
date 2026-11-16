@@ -10,7 +10,7 @@ from typing import Any
 
 import pytest
 
-from claimbound_evidence import public_ai_protocol as p
+from protocolith import public_ai_protocol as p
 
 SCHEMA = Path(__file__).resolve().parents[1] / "specs" / "public_ai_claim_metadata.schema.json"
 H = "a" * 64

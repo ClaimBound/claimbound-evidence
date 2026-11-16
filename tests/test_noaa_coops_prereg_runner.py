@@ -11,8 +11,8 @@ from pathlib import Path
 
 import numpy as np
 
-from claimbound_evidence.baseline_groups import Doc11AcceptanceConfig
-from claimbound_evidence.noaa_coops_prereg_runner import (
+from protocolith.baseline_groups import Doc11AcceptanceConfig
+from protocolith.noaa_coops_prereg_runner import (
     NOAA_COOPS_NEGATIVE_SUMMARY_SCHEMA,
     NOAA_COOPS_PREREG_REPORT_SCHEMA,
     NoaaCoopsPreregConfig,
@@ -50,7 +50,7 @@ def _write_station_pair(
 
 
 def _load_cli_module():
-    script_path = REPO_ROOT / "scripts" / "claimbound_run_noaa_coops_prereg.py"
+    script_path = REPO_ROOT / "scripts" / "protocolith_run_noaa_coops_prereg.py"
     spec = ilu.spec_from_file_location("pb_run_noaa_coops_prereg_mod", script_path)
     assert spec is not None and spec.loader is not None
     module = ilu.module_from_spec(spec)
@@ -130,7 +130,7 @@ def test_noaa_coops_prereg_cli_writes_report_and_summary(tmp_path: Path) -> None
     report_path = tmp_path / "report.json"
     summary_path = tmp_path / "summary.json"
     argv = [
-        "claimbound_run_noaa_coops_prereg.py",
+        "protocolith_run_noaa_coops_prereg.py",
         "--station",
         "8518750",
         "--observed",

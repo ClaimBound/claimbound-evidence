@@ -88,7 +88,7 @@ def build(output: Path) -> None:
         primary_count = sum(row["source_kind"] == "primary" for row in category_rows)
         reference_count = sum(row["wikidata_reference_count"] > 0 for row in category_rows)
         category_body = (
-            f"<p>CLAIMBOUND / SOURCE-PUBLICATION EVIDENCE</p><h1>{esc(first['domain_title'])}</h1>"
+            f"<p>PROTOCOLITH / SOURCE-PUBLICATION EVIDENCE</p><h1>{esc(first['domain_title'])}</h1>"
             f'<div class="alert"><strong>70 distinct source statements, not 70 independently proven facts.</strong> '
             f"{primary_count} results use an official primary source; "
             f"{70 - primary_count} retain their explicitly limited Wikidata publication boundary.</div>"

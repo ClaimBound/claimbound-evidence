@@ -1,13 +1,13 @@
 # R&D Family Protocol v2
 
-ClaimBound evidence cards are intentionally small: one narrow claim, one frozen
+Protocolith evidence cards are intentionally small: one narrow claim, one frozen
 protocol, one exact status. Real research often needs a connected sequence of
 tracks before a final evidence card is justified. This document defines how to
 run that sequence without turning exploration into selective reporting.
 
 The protocol applies to ML, source audits, public-data checks, benchmark
 claims, forecasts, reproducibility work, software-development evidence tracks
-and any other ClaimBound workflow where multiple tracks test related
+and any other Protocolith workflow where multiple tracks test related
 hypotheses.
 
 Status: v2 family-orchestration protocol. This document does not migrate
@@ -60,7 +60,7 @@ Minimum fields:
 ```json
 {
   "family_id": "EXAMPLE_D001_FAMILY",
-  "protocol_version": "claimbound-rnd-family-v2",
+  "protocol_version": "protocolith-rnd-family-v2",
   "family_status": "DRAFT",
   "family_type": "feature_signal_family",
   "parent_claim": "Write the narrow parent hypothesis before protocol freeze.",
@@ -102,25 +102,25 @@ Minimum fields:
 Validate the ledger:
 
 ```bash
-uv run claimbound validate-family docs/track_families/EXAMPLE_D001_FAMILY_LEDGER.json
+uv run protocolith validate-family docs/track_families/EXAMPLE_D001_FAMILY_LEDGER.json
 ```
 
 Equivalent script entrypoint:
 
 ```bash
-uv run python scripts/claimbound_validate_family_ledger.py \
+uv run python scripts/protocolith_validate_family_ledger.py \
   docs/track_families/EXAMPLE_D001_FAMILY_LEDGER.json
 ```
 
-`uv run claimbound validate-all` also validates every optional
+`uv run protocolith validate-all` also validates every optional
 `docs/track_families/*_FAMILY_LEDGER.json` file. It does not require historical
 evidence cards or old draft scaffolds to have ledgers.
 
 Frontier ledgers are optional and additive:
 
 ```bash
-uv run claimbound validate-frontier docs/track_families/EXAMPLE_D001_FRONTIER.json
-uv run python scripts/claimbound_validate_family_frontier.py \
+uv run protocolith validate-frontier docs/track_families/EXAMPLE_D001_FRONTIER.json
+uv run python scripts/protocolith_validate_family_frontier.py \
   docs/track_families/EXAMPLE_D001_FRONTIER.json
 ```
 
@@ -166,7 +166,7 @@ A frontier ledger records only currently relevant state:
 
 ```json
 {
-  "protocol_version": "claimbound-rnd-family-v2",
+  "protocol_version": "protocolith-rnd-family-v2",
   "families": [
     {
       "family_id": "EXAMPLE_D001_FAMILY",
@@ -275,7 +275,7 @@ The model works and is ready to use.
 ```
 
 That sentence mixes predictive, economic, deployment and operational claims. It
-cannot be fairly tested by one ClaimBound track.
+cannot be fairly tested by one Protocolith track.
 
 ## Recommended Family Order
 
@@ -370,7 +370,7 @@ When a family stops, add a closure decision to the ledger:
 }
 ```
 
-Closure is not failure. It is how ClaimBound prevents a weak family from
+Closure is not failure. It is how Protocolith prevents a weak family from
 becoming a long sequence of selective reruns.
 
 ## Bounded Context

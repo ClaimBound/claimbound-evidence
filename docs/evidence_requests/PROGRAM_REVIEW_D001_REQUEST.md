@@ -8,9 +8,9 @@ To be written narrowly by the requester before protocol freeze.
 
 ## Claim Source URL
 
-https://github.com/ClaimBound/claimbound-evidence
+https://github.com/protocolith/protocolith
 
-## Narrow ClaimBound Question
+## Narrow Protocolith Question
 
 Can this claim be checked under a frozen protocol with source boundary, scoring
 rule, hashes, result status, limitation and rerun path?
@@ -25,7 +25,7 @@ MANUAL_NO_AI
 
 ## Proposed Sources
 
-- ClaimBound evidence repository: https://github.com/ClaimBound/claimbound-evidence
+- Protocolith evidence repository: https://github.com/protocolith/protocolith
 
 ## Proposed Scoring Or Resolution Rule
 

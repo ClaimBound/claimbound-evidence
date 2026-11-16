@@ -1,16 +1,18 @@
-# Install
+# Install the card tools (archive)
 
-ClaimBound needs Python 3.12 or newer and works on Windows, macOS and Linux
+> The ledger commands are installed as described in [Install](getting-started-install.md). This page describes the older card-level tools and is kept for reference; its Python version note may be out of date.
+
+Protocolith needs Python 3.11 or newer and works on Windows, macOS and Linux
 ([platform support](PLATFORM_SUPPORT.md)).
 
 ## Card-level CLI from PyPI
 
 ```bash
-pipx install claimbound-evidence        # or: uv tool install claimbound-evidence
-                                        # or: pip install claimbound-evidence
-                                        # or: conda install -c conda-forge claimbound-evidence   (pixi add claimbound-evidence)
-claimbound --version
-claimbound doctor
+pipx install protocolith        # or: uv tool install protocolith
+                                        # or: pip install protocolith
+                                        # or: conda install -c conda-forge protocolith   (pixi add protocolith)
+protocolith --version
+protocolith doctor
 ```
 
 The package contains the validator and the card-level commands: `validate-card`, `inspect`,
@@ -21,18 +23,18 @@ the registry or the runner scripts. Commands that need them (`validate-all`, `de
 ## Full clone
 
 ```bash
-git clone https://github.com/ClaimBound/claimbound-evidence.git
-cd claimbound-evidence
+git clone https://github.com/protocolith/protocolith.git
+cd protocolith
 uv sync --extra dev
-uv run claimbound validate-all
+uv run protocolith validate-all
 ```
 
 The repository is large because it holds every card and its SVG. If you only need the code,
 tests and registry index:
 
 ```bash
-git clone --filter=blob:none --sparse https://github.com/ClaimBound/claimbound-evidence.git
-cd claimbound-evidence
+git clone --filter=blob:none --sparse https://github.com/protocolith/protocolith.git
+cd protocolith
 git sparse-checkout set src tests docs/registry docs/evidence_cards docs/track_families
 ```
 

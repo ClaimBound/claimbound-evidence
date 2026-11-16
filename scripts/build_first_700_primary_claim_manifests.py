@@ -28,7 +28,7 @@ REJECT = re.compile(
     r"references\s*$|acknowledg(?:e)?ments\s*$|this page intentionally left blank|"
     r"performing organization name|how to cite|comments on .+ may be sent|"
     r"official journal of the european union|does not contain export-controlled|"
-    r"claimboundsectionbreak|contains nonbinding recommendations|[]|\(fig\.$|"
+    r"protocolithsectionbreak|contains nonbinding recommendations|[]|\(fig\.$|"
     r"special publication .+ guidelines .+ [A-Z][a-z]+ [A-Z][a-z]+)",
     re.IGNORECASE,
 )
@@ -104,16 +104,16 @@ def clean(text: str) -> str:
         line = re.sub(r"^\d+\s+(?=[A-Za-z•])", "", line)
         line = re.sub(r"^[•]\s*", "", line)
         if not line or re.fullmatch(r"[ivxlcdm\d\s.\-]+", line, re.IGNORECASE):
-            kept.append("CLAIMBOUNDSECTIONBREAK.")
+            kept.append("PROTOCOLITHSECTIONBREAK.")
             continue
         if len(line) < 90 and (line.isupper() or re.match(r"^\d+(?:\.\d+)*\s+[^.!?]+$", line)):
-            kept.append("CLAIMBOUNDSECTIONBREAK.")
+            kept.append("PROTOCOLITHSECTIONBREAK.")
             continue
         if re.match(r"^(?:NIST (?:AI|CSWP|SP|IR)|February \d|January \d|March \d|July \d)", line):
-            kept.append("CLAIMBOUNDSECTIONBREAK.")
+            kept.append("PROTOCOLITHSECTIONBREAK.")
             continue
         if re.match(r"^\d+[.)]\s+[^.!?]+$", line):
-            kept.append("CLAIMBOUNDSECTIONBREAK.")
+            kept.append("PROTOCOLITHSECTIONBREAK.")
             continue
         kept.append(line)
     text = "\n".join(kept)
@@ -293,7 +293,7 @@ def write_manifests(source: dict, selected: list[dict], start: int, access_date:
                 "public_claim_verbatim_quote": row["quote"],
             })
         manifest = {
-            "schema_version": "claimbound-primary-public-claim-group-v1",
+            "schema_version": "protocolith-primary-public-claim-group-v1",
             "protocol_version": "CB7K-PRIMARY-SOURCE-PUBLICATION-RETROSPECTIVE-v1",
             "claim_boundary": (
                 f"Each result verifies that one exact public statement appeared in the fetched "

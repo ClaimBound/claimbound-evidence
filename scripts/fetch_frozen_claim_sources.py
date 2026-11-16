@@ -18,7 +18,7 @@ import urllib.request
 
 BLOCKED_RETRY_STATUSES = {0, 403, 429, 444}
 BOT_HEADERS = {
-    "User-Agent": "ClaimBoundEvidence/1.1 (+https://github.com/ClaimBound/claimbound-evidence)",
+    "User-Agent": "ProtocolithEvidence/1.1 (+https://github.com/protocolith/protocolith)",
     "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
     "Accept-Encoding": "identity",
@@ -169,7 +169,7 @@ def main() -> None:
         accessed_at_utc = ""
         redirect_chain: list[dict[str, object]] = []
         for index, headers in enumerate(profiles):
-            selected_profile = "browser-compatible" if headers is BROWSER_HEADERS else "claimbound-bot"
+            selected_profile = "browser-compatible" if headers is BROWSER_HEADERS else "protocolith-bot"
             request = urllib.request.Request(url, headers=headers)
             redirect_handler = RecordingRedirectHandler()
             opener = urllib.request.build_opener(

@@ -10,7 +10,7 @@ To be written narrowly by the requester before protocol freeze.
 
 https://github.com/xai-org/grok-prompts
 
-## Narrow ClaimBound Question
+## Narrow Protocolith Question
 
 Can this claim be checked under a frozen protocol with source boundary, scoring
 rule, hashes, result status, limitation and rerun path?

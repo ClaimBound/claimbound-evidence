@@ -1,6 +1,6 @@
-# ClaimBound Positioning
+# Protocolith Positioning
 
-ClaimBound is a public evidence framework for narrow, pre-registered claims on
+Protocolith is a public evidence framework for narrow, pre-registered claims on
 public sources.
 
 The project should remain small, auditable and claim-boundary driven. Its value
@@ -10,7 +10,7 @@ certification authority.
 
 ## Unique Strength
 
-ClaimBound treats a result as a public evidence record with four properties:
+Protocolith treats a result as a public evidence record with four properties:
 
 1. The protocol and acceptance gate are fixed before outcome inspection.
 2. The source boundary is audited before a performance claim is made.
@@ -21,19 +21,19 @@ ClaimBound treats a result as a public evidence record with four properties:
 The strongest public message is:
 
 ```text
-ClaimBound turns a narrow public-source ML claim into a reproducible evidence
+Protocolith turns a narrow public-source ML claim into a reproducible evidence
 card with protocol, source lineage, hashes, status, claim boundary and
 reproduction level.
 ```
 
-## What ClaimBound Should Not Duplicate
+## What Protocolith Should Not Duplicate
 
-ClaimBound should not duplicate established projects.
+Protocolith should not duplicate established projects.
 
 For scope boundary vs adjacent arXiv work (EviBound), see
 [Related Work And Independence](RELATED_WORK_AND_INDEPENDENCE.md).
 
-| Existing project type | Already covered elsewhere | ClaimBound boundary |
+| Existing project type | Already covered elsewhere | Protocolith boundary |
 | --- | --- | --- |
 | Experiment database | Datasets, tasks, runs and many model setups | Store only compact evidence records for narrow public claims. |
 | Preregistration platform | Full study-plan registration and review workflows | Keep protocol files close to runnable code and evidence artifacts. |
@@ -60,7 +60,7 @@ The public repository should not contain:
 
 ML is a candidate method inside a protocol, not the product by itself.
 
-ClaimBound should use ML for:
+Protocolith should use ML for:
 
 - fixed candidate signals;
 - baseline and control comparisons;
@@ -70,7 +70,7 @@ ClaimBound should use ML for:
   are frozen before resolution.
 - automated report validation when validation rules are deterministic.
 
-ClaimBound should not use ML for:
+Protocolith should not use ML for:
 
 - broad claims that a model is best overall;
 - tuning thresholds after seeing the outcome;

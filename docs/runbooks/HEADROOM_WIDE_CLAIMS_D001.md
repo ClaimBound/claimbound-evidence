@@ -1,7 +1,7 @@
 # HEADROOM_WIDE_CLAIMS_D001 Runbook
 
 This runbook reproduces the single-operator Headroom wide-claim split into
-narrow ClaimBound evidence cards.
+narrow Protocolith evidence cards.
 
 ## Local Setup
 
@@ -14,7 +14,7 @@ Prerequisites:
 
 ```bash
 uv sync --extra dev
-uv run claimbound doctor
+uv run protocolith doctor
 ollama list
 curl -sS http://127.0.0.1:11434/api/version
 ```
@@ -23,22 +23,22 @@ The runner keeps Headroom out of the base project dependencies. If Headroom is
 not importable, it re-executes itself through:
 
 ```bash
-uv run --with headroom-ai==0.27.0 --with transformers python scripts/claimbound_run_headroom_wide_claims.py
+uv run --with headroom-ai==0.27.0 --with transformers python scripts/protocolith_run_headroom_wide_claims.py
 ```
 
 ## Execute
 
 ```bash
 HEADROOM_TELEMETRY=off \
-uv run python scripts/claimbound_run_headroom_wide_claims.py
+uv run python scripts/protocolith_run_headroom_wide_claims.py
 ```
 
 Optional flags:
 
 ```bash
-uv run python scripts/claimbound_run_headroom_wide_claims.py --skip-ollama
-uv run python scripts/claimbound_run_headroom_wide_claims.py --model qwen3:8b
-uv run python scripts/claimbound_run_headroom_wide_claims.py --access-date 2026-06-23
+uv run python scripts/protocolith_run_headroom_wide_claims.py --skip-ollama
+uv run python scripts/protocolith_run_headroom_wide_claims.py --model qwen3:8b
+uv run python scripts/protocolith_run_headroom_wide_claims.py --access-date 2026-06-23
 ```
 
 `--skip-ollama` is only for debugging the source-boundary path. It should not be
@@ -48,8 +48,8 @@ used for the committed runtime cards unless the cards are marked
 ## Validate
 
 ```bash
-uv run python scripts/claimbound_render_evidence_card_svg.py --all
-uv run claimbound validate-all
+uv run python scripts/protocolith_render_evidence_card_svg.py --all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```
 
@@ -100,7 +100,7 @@ After the public cards validate, open a neutral Headroom GitHub issue or
 discussion:
 
 ```text
-We used ClaimBound to split Headroom's wide token-compression statement into
+We used Protocolith to split Headroom's wide token-compression statement into
 narrow evidence cards. This is not a certification or endorsement request. The
 cards include positive, negative and insufficient outcomes under one local
 MacBook Pro / Ollama / Qwen run. Would you like a link to the cards or runbook
@@ -114,7 +114,7 @@ when the user has the right page admin role. Publish only after the cards and
 registry are public. Recommended title:
 
 ```text
-Independent ClaimBound evidence cards for Headroom token-compression claims
+Independent Protocolith evidence cards for Headroom token-compression claims
 ```
 
 The article must say: single-operator local run, MacBook Pro M1 Pro 16 GB, not

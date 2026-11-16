@@ -9,7 +9,7 @@ ESA factory campaign without hiding the boundary of any individual card.
 The map contains **25 rows x 20 columns = 500 cells**.
 
 - A row is one selected official ESA mission landing page.
-- A cell is one frozen ClaimBound source gate applied to that page.
+- A cell is one frozen Protocolith source gate applied to that page.
 - A column is a protocol position from `01` to `20`.
 
 The columns must not be read as 20 universal scientific metrics. Issues
@@ -54,7 +54,7 @@ both the launch-site and launch-vehicle markers required by slots `08` and `09`.
 This is a useful information-architecture result. It shows that most selected
 landing pages expose broad mission and science descriptions consistently, while
 some operational launch metadata requires a deeper source than the page chosen
-for this campaign. ClaimBound preserves that distinction rather than widening
+for this campaign. Protocolith preserves that distinction rather than widening
 the search after seeing the result.
 
 ## How the interactive filters work
@@ -91,7 +91,7 @@ Rebuild and validate:
 
 ```bash
 uv run python scripts/build_esa_factory_atlas.py
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev pytest -q
 ```
 

@@ -2,7 +2,7 @@
 
 Status: practical guidance. This page does not create an empirical result, change the evidence-card schema, or make protocol v2/v3 mandatory for every card.
 
-ClaimBound should be used as the thinnest honest evidence layer that fits the risk. The evidence card is the result. Protocol v2 and protocol v3 are planning and visibility layers around the result.
+Protocolith should be used as the thinnest honest evidence layer that fits the risk. The evidence card is the result. Protocol v2 and protocol v3 are planning and visibility layers around the result.
 
 ```text
 minimal result proof      -> evidence card
@@ -27,7 +27,7 @@ Use the smallest layer stack that prevents overclaiming.
 | Request/scaffold layer | request, charter, playbook, checklist, draft card | What are we preparing to check? | A claim is still being narrowed. | That evidence exists. |
 | Evidence-card layer | validated JSON/SVG card and sanitized report | What happened under the frozen protocol? | A completed source audit, reproduction, regression, parity, benchmark, AI-control or checklist run has one exact status. | Whole-project correctness, certification, runtime safety, deployment readiness or broad model superiority. |
 | Protocol v2 family/frontier layer | `*_FAMILY_LEDGER.json`, optional `*_FRONTIER.json` | How do related tracks stay fair? | There are multiple related attempts, diagnostics, proof surfaces, budgets, dependencies or closure decisions. | That a diagnostic or exploratory result is proof. |
-| Protocol v3 tree overlay | `*_TREE.json` with `claimbound-tree-v3` | What is alive, stopped, proof-ready or blocked? | Public readers need a compact status map across one or many tracks. | That a flow claim, dependency or tombstone is a positive result. |
+| Protocol v3 tree overlay | `*_TREE.json` with `protocolith-tree-v3` | What is alive, stopped, proof-ready or blocked? | Public readers need a compact status map across one or many tracks. | That a flow claim, dependency or tombstone is a positive result. |
 | Registry/reporting layer | registry entry, README link, changelog, release note | Where can the public find the validated record? | A card is validated and ready to be discovered. | That unvalidated drafts are evidence. |
 
 ## Choosing The Right Stack
@@ -61,7 +61,7 @@ Use the smallest layer stack that prevents overclaiming.
 
 ## AI Risk-Control Examples
 
-Use ClaimBound to make AI-control claims small enough to review. Do not use it to claim that an AI, robot, vehicle or software system is generally safe.
+Use Protocolith to make AI-control claims small enough to review. Do not use it to claim that an AI, robot, vehicle or software system is generally safe.
 
 Good examples:
 
@@ -79,11 +79,11 @@ Bad examples:
 - “the agent obeys policy” without a frozen tool, command, scenario, prompt and validator boundary;
 - using a card instead of safety engineering, cybersecurity controls, access control, sandboxing, runtime monitoring, emergency stop, code review or release approval.
 
-See [AI risk control with ClaimBound](AI_RISK_CONTROL_WITH_CLAIMBOUND.md) for the full guidance.
+See [AI risk control with Protocolith](AI_RISK_CONTROL_WITH_PROTOCOLITH.md) for the full guidance.
 
 ## Software Development Examples
 
-Use ClaimBound only for changes where an evidence trail is worth the overhead.
+Use Protocolith only for changes where an evidence trail is worth the overhead.
 
 Good examples:
 
@@ -128,10 +128,10 @@ Bad examples:
 ## Quick Commands
 
 ```bash
-uv run claimbound validate-family docs/track_families/EXAMPLE_D001_FAMILY_LEDGER.json
-uv run claimbound validate-frontier docs/track_families/EXAMPLE_D001_FRONTIER.json
-uv run claimbound validate-tree docs/track_families/EXAMPLE_D001_TREE.json
-uv run claimbound validate-all
+uv run protocolith validate-family docs/track_families/EXAMPLE_D001_FAMILY_LEDGER.json
+uv run protocolith validate-frontier docs/track_families/EXAMPLE_D001_FRONTIER.json
+uv run protocolith validate-tree docs/track_families/EXAMPLE_D001_TREE.json
+uv run protocolith validate-all
 ```
 
 ## Reader Path

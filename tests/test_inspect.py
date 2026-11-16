@@ -4,8 +4,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from claimbound_evidence.cli import main
-from claimbound_evidence.inspect import format_hash_lines, hash_files, pick_fields
+from protocolith.cli import main
+from protocolith.inspect import format_hash_lines, hash_files, pick_fields
 
 
 def test_pick_fields_extracts_subset() -> None:
@@ -25,10 +25,10 @@ def test_hash_files_produces_stable_digest(tmp_path: Path) -> None:
 
 
 def test_cli_inspect_card_flagship(tmp_path: Path, monkeypatch, capsys) -> None:
-    from claimbound_evidence import cli
+    from protocolith import cli
 
     card = {
-        "evidence_id": "CLAIMBOUND-NASA-POWER-D103-2026-04-29",
+        "evidence_id": "PLITH-NASA-POWER-D103-2026-04-29",
         "result_status": "PASSED_UNDER_PROTOCOL",
         "reproduction_level": "REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT",
         "claim_boundary": "narrow gate",

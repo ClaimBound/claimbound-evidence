@@ -6,20 +6,20 @@ Completed example (validator regression gate under frozen pytest commands):
 
 <p>
   <img
-    src="evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.svg"
-    alt="ClaimBound SOFTWARE_DEV_D001 evidence card"
+    src="evidence_cards/PLITH-SOFTWARE_DEV_D001-2026-06-11.svg"
+    alt="Protocolith SOFTWARE_DEV_D001 evidence card"
     width="75%"
   />
 </p>
 
-[CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11](evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.json) ·
-[SVG](evidence_cards/CLAIMBOUND-SOFTWARE_DEV_D001-2026-06-11.svg)
+[PLITH-SOFTWARE_DEV_D001-2026-06-11](evidence_cards/PLITH-SOFTWARE_DEV_D001-2026-06-11.json) ·
+[SVG](evidence_cards/PLITH-SOFTWARE_DEV_D001-2026-06-11.svg)
 
-## Where ClaimBound Was Used Here
+## Where Protocolith Was Used Here
 
 This repository ships two linked software examples:
 
-| Layer | Where | How ClaimBound was used |
+| Layer | Where | How Protocolith was used |
 | --- | --- | --- |
 | In-repo card | [SOFTWARE_DEV_D001](protocols/SOFTWARE_DEV_D001_PREREG_CHARTER.md) | Frozen protocol, fixed pytest gate, `validate-all`, sanitized summary hash, validated JSON/SVG card and registry entry. |
 | External case study | [software-rnd-evidence-case-study](case_studies/SOFTWARE_RND_EVIDENCE_CASE_STUDY.md) | Same evidence-chain discipline on a private multi-protocol R&D track: protocol → run → report → negative/blocked record, with explicit NO-GO track closure. |
@@ -34,7 +34,7 @@ This repository ships two linked software examples:
 1. Pre-registered charter froze one narrow claim before the run.
 2. Operator ran fixed commands only:
    `pytest tests/test_evidence_card.py::test_evidence_card_requires_execution_mode`
-   and `claimbound validate-all`.
+   and `protocolith validate-all`.
 3. Sanitized summary went to `artifacts/software_dev_d001_summary.json` with SHA-256.
 4. Card JSON/SVG and registry entry recorded exact status, limitations and forbidden interpretations.
 
@@ -51,7 +51,7 @@ boundary without reading the whole test suite or inferring deployment readiness.
 **How:** Hardgate A/B protocol ladder, negative/blocked YAML records, closure
 docs and an explicit tombstone when replication candidates stayed at zero.
 
-**Why:** utility R&D often overclaims from early deltas. ClaimBound-style rules
+**Why:** utility R&D often overclaims from early deltas. Protocolith-style rules
 forced frozen protocols, first-class negative records and honest track closure.
 
 **What it gave:** a public methodology example that shows NO-GO and BLOCKED
@@ -75,7 +75,7 @@ publication language should not drift beyond the evidence.
 cards. It blocks overclaiming without forcing every local experiment into the
 public registry.
 
-## Why ClaimBound — Strengths For Software Work
+## Why Protocolith — Strengths For Software Work
 
 | Strength | What it means in practice |
 | --- | --- |
@@ -92,12 +92,12 @@ For this repository, the card above is green only for one validator regression
 gate. It is not proof that the whole toolkit, CI or any external R&D program is
 production-ready.
 
-## What Would Change Without ClaimBound
+## What Would Change Without Protocolith
 
 Without this discipline, the same work would likely look like ordinary engineering
 documentation:
 
-| Without ClaimBound | Typical failure mode |
+| Without Protocolith | Typical failure mode |
 | --- | --- |
 | `pytest` green only | Readers assume full validator coverage or project correctness. |
 | README success narrative | A small Mission1 delta can be marketed as overall utility success. |
@@ -107,12 +107,12 @@ documentation:
 | No hashed sanitized report | “We checked it” has no stable artifact to compare later. |
 | No registry card | The check is not discoverable, citable or independently rerunnable. |
 
-ClaimBound does not make software correct. It makes **what was checked, under
+Protocolith does not make software correct. It makes **what was checked, under
 which limits, with which outcome** hard to exaggerate later.
 
 ## Core Principle
 
-Use ClaimBound as a thin evidence layer around normal software engineering:
+Use Protocolith as a thin evidence layer around normal software engineering:
 
 ```text
 ordinary engineering work
@@ -130,12 +130,12 @@ complete, stable or deployment-ready.
 
 For AI-assisted changes, see [12 AI Life Rules](TWELVE_AI_LIFE_CONTROLS.md).
 
-ClaimBound is not a replacement for unit tests, integration tests, CLI, CI,
+Protocolith is not a replacement for unit tests, integration tests, CLI, CI,
 manual QA, code review, release engineering or security review.
 
 ## When It Fits
 
-Use ClaimBound for complex, risky, public, AI-assisted or regression-sensitive
+Use Protocolith for complex, risky, public, AI-assisted or regression-sensitive
 software changes — including R&D sequences where proof, reproduction and closure
 must not be confused.
 
@@ -148,7 +148,7 @@ production language.
 
 ## Practical Advantages
 
-| Development problem | ClaimBound contribution |
+| Development problem | Protocolith contribution |
 | --- | --- |
 | Broad claims such as `the feature works` | Converts the statement into narrow, testable claims. |
 | Regression risk | Records exact commands, fixtures, logs and limitations. |
@@ -159,7 +159,7 @@ production language.
 
 ## Examples Of Narrow Software Claims
 
-| Vague statement | Better ClaimBound claim |
+| Vague statement | Better Protocolith claim |
 | --- | --- |
 | `The feature works.` | `The feature command returns exit code 0 for fixture set A on commit X.` |
 | `The crash is fixed.` | `The documented reproduction path completes without crash on the declared environment.` |
@@ -167,17 +167,17 @@ production language.
 
 More track patterns: [TRACK_PATTERN_EXAMPLES.md](software_development/TRACK_PATTERN_EXAMPLES.md).
 
-## What ClaimBound Does Not Replace
+## What Protocolith Does Not Replace
 
 Unit tests, integration tests, CI, linters, code review, maintainer judgment,
 manual QA, security review, release engineering and production monitoring.
 
 ```text
 Tests / CI / review decide engineering quality.
-ClaimBound records one narrow evidence claim about selected checks and their limits.
+Protocolith records one narrow evidence claim about selected checks and their limits.
 ```
 
-## Where ClaimBound Should Not Be Applied
+## Where Protocolith Should Not Be Applied
 
 Do not use a full track when overhead exceeds risk or the claim cannot be narrow
 and checkable. Do not claim whole-project correctness, production readiness or

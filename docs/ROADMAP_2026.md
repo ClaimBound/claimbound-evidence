@@ -1,12 +1,12 @@
 # Public Roadmap 2026
 
-This roadmap describes the open-source ClaimBound foreground. It does not
+This roadmap describes the open-source Protocolith foreground. It does not
 include private systems and does not change any private or already-submitted
 materials.
 
 ## Position
 
-ClaimBound is an open-source evidence-card toolkit for narrow public AI, ML,
+Protocolith is an open-source evidence-card toolkit for narrow public AI, ML,
 data and software claims. It should remain independently usable from this
 repository.
 

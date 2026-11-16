@@ -6,15 +6,15 @@ works.
 
 ## Short Answer
 
-ClaimBound is most useful in software R&D as a lightweight discipline for
+Protocolith is most useful in software R&D as a lightweight discipline for
 important claims, not as a heavy framework around every commit, debug run or
 exploratory script.
 
 The practical rule is:
 
 ```text
-Move fast without ClaimBound for exploration.
-Use ClaimBound-style boundaries for claims that affect publication, roadmap,
+Move fast without Protocolith for exploration.
+Use Protocolith-style boundaries for claims that affect publication, roadmap,
 alpha, release, production or external trust.
 ```
 
@@ -42,7 +42,7 @@ But important R&D conclusions need discipline:
 - negative or blocked results can disappear into informal notes;
 - production language can appear before gates have passed.
 
-Lightweight ClaimBound use sits between those two needs. It does not require a
+Lightweight Protocolith use sits between those two needs. It does not require a
 completed card for every experiment. It does require important claims to be
 small, checkable and status-bound before they are reused.
 
@@ -53,9 +53,9 @@ feature engineering, labels, multi-timeframe datasets and model gates. A full
 public evidence card was not created for that work, so this section should be
 read only as a methodology example.
 
-The lightweight ClaimBound layer would have been useful around claims such as:
+The lightweight Protocolith layer would have been useful around claims such as:
 
-| R&D statement | Common failure mode without claim boundaries | Lightweight ClaimBound boundary |
+| R&D statement | Common failure mode without claim boundaries | Lightweight Protocolith boundary |
 | --- | --- | --- |
 | `Direction works` | Later review may reveal that it depends on a specific rule, output buffer or preprocessing path. | Specify rule, output field, dataset, command and expected distribution before using the statement. |
 | `The channel is invalid` | A zero-width channel may be invalid for one mode but expected for another. | Add a rule-specific exception and record what the channel can and cannot prove. |
@@ -116,7 +116,7 @@ production_allowed: false
 This record is not a card. It is a lightweight claim boundary that prevents the
 team from saying more than the evidence supports.
 
-## When To Use Lightweight ClaimBound
+## When To Use Lightweight Protocolith
 
 Use lightweight claim discipline when the statement will influence:
 
@@ -133,9 +133,9 @@ attached to source, command, artifact, baseline, metric and status.
 
 ## When Not To Use It
 
-Do not require a ClaimBound record for every low-risk step.
+Do not require a Protocolith record for every low-risk step.
 
-| Skip full ClaimBound for | Why |
+| Skip full Protocolith for | Why |
 | --- | --- |
 | Typo fixes and formatting | No meaningful claim is being made. |
 | Disposable exploration | The branch may die before any claim is reused. |
@@ -153,8 +153,8 @@ For software R&D, use three levels:
 
 | Level | Use | Artifact |
 | --- | --- | --- |
-| No ClaimBound | Coding, plumbing, debugging, throwaway exploration. | Ordinary commits, notes or local logs. |
-| Lightweight ClaimBound | Important R&D claims before a full public card exists. | Small claim record with scope, baseline, command, artifact, metric, status and forbidden inference. |
+| No Protocolith | Coding, plumbing, debugging, throwaway exploration. | Ordinary commits, notes or local logs. |
+| Lightweight Protocolith | Important R&D claims before a full public card exists. | Small claim record with scope, baseline, command, artifact, metric, status and forbidden inference. |
 | Full Evidence Card | Public result, release gate, completed source audit, reproducibility record or externally relied-on claim. | Validated evidence-card JSON/SVG, registry entry and sanitized report. |
 
 This hybrid mode keeps normal software development fast while making important

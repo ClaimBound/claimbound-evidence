@@ -9,19 +9,19 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_evidence.card_svg_render import render_svg
-from claimbound_evidence.card_svg_styles import (
+from protocolith.card_svg_render import render_svg
+from protocolith.card_svg_styles import (
     MIN_TEXT_CONTRAST,
     contrast_ratio,
     text_color_pairs,
 )
-from claimbound_evidence.evidence_card import validate_evidence_card, warn_evidence_card
-from claimbound_evidence.registry import load_registry, validate_registry
-from claimbound_evidence.svg_a11y import lint_svg_text
+from protocolith.evidence_card import validate_evidence_card, warn_evidence_card
+from protocolith.registry import load_registry, validate_registry
+from protocolith.svg_a11y import lint_svg_text
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CARDS_DIR = REPO_ROOT / "docs" / "evidence_cards"
-GOOD_CARD = CARDS_DIR / "CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json"
+GOOD_CARD = CARDS_DIR / "PLITH-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json"
 
 
 @pytest.fixture()

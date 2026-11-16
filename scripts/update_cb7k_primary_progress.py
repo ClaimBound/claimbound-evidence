@@ -70,7 +70,7 @@ def counts() -> tuple[int, int, int | None]:
     primary_domains: set[int] = set()
     for card in registry["cards"]:
         evidence_id = card.get("evidence_id", "")
-        if not evidence_id.startswith("CLAIMBOUND-CB7K-"):
+        if not evidence_id.startswith("PLITH-CB7K-"):
             continue
         match = re.search(r"DOM(\d{3})", evidence_id)
         path = card.get("sanitized_report_path") or ""

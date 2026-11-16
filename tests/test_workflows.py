@@ -5,13 +5,13 @@ import json
 from pathlib import Path
 from unittest.mock import patch
 
-from claimbound_evidence.workflows import drift_eea_source_audit
+from protocolith.workflows import drift_eea_source_audit
 
 
 def test_drift_eea_source_audit_reports_changed_fields(
     tmp_path: Path, monkeypatch, capsys
 ) -> None:
-    from claimbound_evidence import cli
+    from protocolith import cli
 
     repo = tmp_path / "repo"
     repo.mkdir()
@@ -37,7 +37,7 @@ def test_drift_eea_source_audit_reports_changed_fields(
     monkeypatch.setattr(cli, "REPO_ROOT", repo)
 
     with patch(
-        "claimbound_evidence.workflows.subprocess.call",
+        "protocolith.workflows.subprocess.call",
         return_value=0,
     ):
         assert (

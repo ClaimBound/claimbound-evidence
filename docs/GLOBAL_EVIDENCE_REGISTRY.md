@@ -6,7 +6,7 @@
 > roadmap items — see [Planned work not shipped](PLANNED_NOT_SHIPPED.md) and
 > [Static registry MVP acceptance criteria](STATIC_REGISTRY_MVP_ACCEPTANCE_CRITERIA.md).
 
-ClaimBound can grow from a single repository into a small global registry of
+Protocolith can grow from a single repository into a small global registry of
 pre-registered public evidence records.
 
 The goal is not to replace research repositories, benchmark suites or DOI
@@ -104,7 +104,7 @@ rights clearly allow redistribution.
 
 ## Blockchain Moratorium
 
-Blockchain is not part of the ClaimBound roadmap. No review date is assigned for
+Blockchain is not part of the Protocolith roadmap. No review date is assigned for
 adding it.
 
 This moratorium includes:
@@ -128,7 +128,7 @@ Project rule:
 
 ```text
 Do not add blockchain features, token features, wallet flows, on-chain storage
-or chain timestamp requirements to the public ClaimBound roadmap.
+or chain timestamp requirements to the public Protocolith roadmap.
 ```
 
 ## Development Phases

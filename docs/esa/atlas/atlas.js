@@ -6,7 +6,7 @@
     throw new Error("ESA atlas data did not load.");
   }
 
-  const repositoryRoot = "https://github.com/ClaimBound/claimbound-evidence/blob/main/";
+  const repositoryRoot = "https://github.com/protocolith/protocolith/blob/main/";
   const elements = {
     form: document.querySelector("#filters"),
     batch: document.querySelector("#batch-filter"),

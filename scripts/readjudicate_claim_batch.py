@@ -11,9 +11,9 @@ from typing import Any
 from urllib.parse import urlparse
 
 from build_public_claim_catalog import domains, make_claims, validate
-from claimbound_gate_locator import locate_gate
-from claimbound_evidence.card_svg_render import render_svg
-from claimbound_evidence.evidence_card import validate_evidence_card
+from protocolith_gate_locator import locate_gate
+from protocolith.card_svg_render import render_svg
+from protocolith.evidence_card import validate_evidence_card
 
 ROOT = Path(__file__).resolve().parents[1]
 CARDS = ROOT / "docs/evidence_cards"
@@ -215,7 +215,7 @@ def main() -> None:
     registry = json.loads(REGISTRY.read_text())
     registry_by_protocol = {entry["protocol_id"]: entry for entry in registry["cards"]}
     for row in rows:
-        matches = list(CARDS.glob(f"CLAIMBOUND-{row['claim_id']}-*.json"))
+        matches = list(CARDS.glob(f"PLITH-{row['claim_id']}-*.json"))
         if len(matches) != 1:
             raise SystemExit(f"{row['claim_id']}: expected one existing card, found {len(matches)}")
         path = matches[0]

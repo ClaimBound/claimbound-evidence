@@ -99,7 +99,7 @@ def run_preview(
         Path(run_root_arg).expanduser().resolve()
         if run_root_arg
         else Path.home()
-        / "claimbound_runs"
+        / "protocolith_runs"
         / f"ESA_ISSUE_131_{timestamp}"
     )
     raw_dir = run_root / "raw"

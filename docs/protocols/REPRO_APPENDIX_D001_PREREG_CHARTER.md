@@ -12,8 +12,8 @@ legal certification, or correctness outside this protocol.
 
 ## Source
 
-- Source name: ClaimBound NASA POWER D-103 evidence card
-- Source URL: https://github.com/ClaimBound/claimbound-evidence/blob/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
+- Source name: Protocolith NASA POWER D-103 evidence card
+- Source URL: https://github.com/protocolith/protocolith/blob/main/docs/evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json
 - Domain: open-science
 - Audience: Open-science and reproducibility researchers
 - Execution mode: MANUAL_NO_AI

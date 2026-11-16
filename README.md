@@ -1,222 +1,227 @@
-<h1 align="center">
+<p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo/claimbound-logo-dark.svg">
-    <img src="docs/assets/logo/claimbound-logo-light.svg" alt="ClaimBound Evidence" width="420">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/protocolith/logo-dark.svg">
+    <img src="docs/assets/protocolith/logo.svg" alt="Protocolith" width="420">
   </picture>
-</h1>
-
-<p align="center">
-  <b>Where is the evidence?</b><br>
-  Evidence cards for narrow public AI, ML and data claims: frozen protocol,
-  hashed sources, honest result status.
 </p>
 
+<p align="center"><b>Records, verifies and issues trial records.</b></p>
+
 <p align="center">
-  <a href="https://pypi.org/project/claimbound-evidence/"><img alt="PyPI" src="https://img.shields.io/pypi/v/claimbound-evidence?logo=pypi&logoColor=white"></a>
-  <a href="https://pypi.org/project/claimbound-evidence/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/claimbound-evidence?logo=python&logoColor=white"></a>
-  <a href="https://anaconda.org/conda-forge/claimbound-evidence"><img alt="conda-forge" src="https://img.shields.io/conda/vn/conda-forge/claimbound-evidence?logo=conda-forge&logoColor=white"></a>
-  <a href="https://www.bestpractices.dev/projects/15138"><img alt="OpenSSF Best Practices" src="https://www.bestpractices.dev/projects/15138/badge"></a>
-  <a href="https://www.bestpractices.dev/projects/15138"><img alt="OpenSSF Baseline" src="https://www.bestpractices.dev/projects/15138/baseline"></a>
-  <a href="https://pypistats.org/packages/claimbound-evidence"><img alt="PyPI downloads per month" src="https://img.shields.io/pypi/dm/claimbound-evidence?label=downloads%2Fmonth"></a>
-  <a href="https://pepy.tech/project/claimbound-evidence"><img alt="Total PyPI downloads" src="https://static.pepy.tech/badge/claimbound-evidence"></a>
-  <a href="https://github.com/ClaimBound/claimbound-evidence/actions/workflows/tests.yml"><img alt="tests" src="https://img.shields.io/github/actions/workflow/status/ClaimBound/claimbound-evidence/tests.yml?branch=main&label=tests&logo=github"></a>
+  <a href="https://github.com/protocolith/protocolith/actions/workflows/tests.yml"><img alt="tests" src="https://github.com/protocolith/protocolith/actions/workflows/tests.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
-  <a href="https://github.com/ClaimBound/claimbound-evidence/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/ClaimBound/claimbound-evidence?label=release"></a>
-  <a href="docs/registry/evidence_index.json"><img alt="Evidence cards" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FClaimBound%2Fclaimbound-evidence%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=0A97BB"></a>
+  <img alt="Python 3.11 to 3.15" src="https://img.shields.io/badge/python-3.11%20to%203.15-blue">
 </p>
 
+<!-- Add these badges only after the packages exist (planned for the 0.6.0 release):
+<a href="https://pypi.org/project/protocolith/"><img alt="PyPI" src="https://img.shields.io/pypi/v/protocolith"></a>
+<a href="https://pypi.org/project/protocolith/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/protocolith"></a>
+<a href="docs/registry/evidence_index.json"><img alt="Evidence cards" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FProtocolith%2Fprotocolith%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=0A97BB"></a>
+<a href="https://anaconda.org/conda-forge/protocolith"><img alt="conda-forge" src="https://img.shields.io/conda/vn/conda-forge/protocolith"></a>
+-->
+
 <p align="center">
-  <img src="docs/assets/demo/quickstart.gif" alt="Terminal recording: claimbound validate-card and inspect card on a real evidence card" width="760">
+  <img src="docs/assets/protocolith/demo.gif" alt="Terminal recording of the card-level commands: version, doctor, inspect, validate-card, hash and verify" width="760">
 </p>
+
+## Why
+
+A result is easy to believe and hard to check when the protocol was written after the run, the history can be
+edited silently, or a failed run quietly disappears. Protocolith keeps a small local record that makes those
+three things visible: what was fixed beforehand, what happened, and whether the history still adds up.
+
+It does not run experiments, fetch data or judge whether a protocol is a good one. It is a ledger with rules.
+
+## What it does
+
+| Stage | Command | What is stored |
+| --- | --- | --- |
+| 1. **Freeze** a protocol before the run | `protocolith freeze protocol.json` | The protocol and its SHA-256 |
+| 2. **Record** the outcome against that protocol | `protocolith record record.json` | Status, outcome, source hashes, claim boundary |
+| 3. **Verify** the hash-chained history | `protocolith verify-ledger` | Nothing; it reports rule violations (R1 to R11) |
+| 4. **Issue** a card from a verified record | `protocolith issue SEQ` | A JSON and SVG card, plus an `issue` entry |
+
+Everything lives in one append-only file, `.protocolith/ledger.jsonl`, one canonical JSON line per entry.
+Each line contains the hash of the line before it. The core uses only the Python standard library.
+
+## Quickstart (2 minutes)
+
+You need the repository checkout with its environment active (see [Install](#install)). The example files are in
+[`examples/quickstart/`](examples/quickstart/): `protocol.json`, `record.json` and the source `results.txt`.
 
 ```bash
-pipx install claimbound-evidence        # or: uv tool install claimbound-evidence
-                                        # or: conda install -c conda-forge claimbound-evidence
-claimbound validate-card path/to/card.json
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+mkdir demo && cd demo
+cp ../examples/quickstart/protocol.json ../examples/quickstart/record.json ../examples/quickstart/results.txt .
+protocolith freeze protocol.json
+protocolith record record.json
+protocolith verify-ledger
+protocolith issue 1
+protocolith log
+protocolith head
 ```
 
-ClaimBound turns a narrow public AI, ML, data or software-development claim into
-a small evidence card: protocol, source boundary, hashes, exact result status,
-claim boundary and reproduction level.
-
-It is not a model leaderboard, hosted scoring service or certification authority.
-It is an open-source toolkit for asking one plain question:
+Real output of one run (hashes and times differ in yours, because the entries contain the time):
 
 ```text
-Where is the evidence?
+$ protocolith freeze protocol.json
+frozen QUICKSTART_D001 1 seq=0 hash=5bbd5c8c75437c20d77415469374ac990993803c1c9deed91ff6adf2f74714b2 protocol_sha256=802a1675aef8623a44d79272ca50c036ffc7c2d2ecd267ca440afdb19948369f
+$ protocolith record record.json
+recorded run-1 PASSED_UNDER_PROTOCOL seq=1 hash=...
+$ protocolith verify-ledger
+OK entries=2 head seq=1 hash=...
+$ protocolith issue 1
+issued record seq=1 card_sha256=...
+.protocolith/cards/PLITH-QUICKSTART_D001-<date>-000001.json
+.protocolith/cards/PLITH-QUICKSTART_D001-<date>-000001.svg
+$ protocolith log
+0 freeze <time> 5bbd5c8c7543 QUICKSTART_D001 1
+1 record <time> e6fdb7f2c7f6 run-1 PASSED_UNDER_PROTOCOL
+2 issue <time> 7e991c8d63f3 record_seq=1
+$ protocolith head
+seq=2 hash=7e991c8d63f3f661894015c450b41cdb3809af305af4f562f8224466314eecd7
 ```
 
-If there is no evidence card, the statement is still only a claim. Green means
-one narrow claim passed under a frozen protocol — not "trust everything".
-`PASSED_UNDER_PROTOCOL` is not the same as independently reproduced: most public
-cards are still `SINGLE_OPERATOR` / `not independently reproduced` until a
-separate rerun records otherwise. Negative, blocked and drift outcomes are
-first-class evidence too.
+The `protocol_sha256` printed by `freeze` is already written into `record.json`; a record that names a hash
+that was not frozen earlier is rejected (`UNKNOWN_PROTOCOL`). To see verification fail, change one character in
+`.protocolith/ledger.jsonl` and run `protocolith verify-ledger` again: it prints the violated rules and exits with 1.
 
-Read the one-screen walkthrough in [ClaimBound in 30 seconds](docs/CLAIMBOUND_IN_30_SECONDS.md),
-the [reviewer path](docs/REVIEWER_PATH.md),
-the [non-developer start guide](docs/START_WITHOUT_CODING.md) or the
-[documentation index](docs/README.md) for reviewer, operator and advanced paths.
+Exit codes: `0` ok, `1` the stored ledger does not verify, `2` the operation was rejected and nothing was written,
+`3` I/O or environment error. `--json` prints canonical JSON for every command. These steps are run by
+`tests/test_readme_examples.py`.
 
-![ClaimBound workflow](docs/assets/claimbound_workflow.svg)
+## Query the ledger
 
-## What It Is And Is Not
+```bash
+protocolith summary                  # what was done and which results are honest, in one call
+protocolith log --status BLOCKED_SOURCE
+protocolith show 1
+```
 
-| ClaimBound is | ClaimBound is not |
-| --- | --- |
-| A card per **one narrow claim**: protocol, source boundary, hashes, result status, claim boundary, reproduction level | A model leaderboard, benchmark ranking or quality score |
-| A validator (`validate-card`, `validate-all`) that anyone can rerun locally | A hosted scoring service or certification authority |
-| Honest about negative, blocked and drifted results (they are first-class evidence) | A way to declare a system safe, compliant or correct |
-| Open registry of sanitized metadata and hashes | An archive of raw payloads or private data |
+See [Query the ledger quickly](docs/guides/query-the-ledger.md).
 
-Nearby tools answer different questions: model and data cards describe a system as
-written by its authors, leaderboards rank systems, supply-chain provenance
-(SLSA, in-toto) covers how software was built, and fact-check markup records a
-publisher's verdict. ClaimBound records what one **frozen, reproducible check of a
-public claim** found, and how far anyone has independently reproduced it.
+## Python API
 
-## Public Workflows
+```python
+from pathlib import Path
 
-| Workflow | Question it helps answer | Start here |
-| --- | --- | --- |
-| Public AI transparency | Did a public system-card or model-card **source boundary** pass a frozen audit? | [Current evidence tracks](docs/CURRENT_EVIDENCE_TRACKS.md) |
-| European and public open data | Did an official public-data source pass a source-boundary or narrow empirical gate? | [Evidence card examples](docs/evidence_cards/README.md) |
-| Software development evidence | Did a narrow build, validator or regression claim pass under fixed commands? | [Software development workflow](docs/SOFTWARE_DEVELOPMENT_WORKFLOW.md) |
+from protocolith import core
 
-Blocked cards, artifact-only records and optional advanced protocol layers are
-documented separately. They are not hidden failures. See
-[future applications](docs/future_applications/README.md),
-[artifacts catalog](docs/artifacts/README.md) and
-[advanced optional docs](docs/README.md#advanced-optional).
+store = core.Store(".protocolith")
+core.freeze(store, core.decode(Path("protocol.json").read_bytes()))
+core.record(store, core.decode(Path("record.json").read_bytes()))
 
-## Example Cards
+verdict = core.verify(store)
+print(verdict.ok, verdict.count)          # True 2
 
-Each SVG uses separate chips. **Green** and **red** on the result-status chip
-mean a narrow gate pass or honest non-pass. **Yellow** appears on the
-**reproduction** chip when `reproduction_level` records source-byte drift — not
-on the gate outcome itself. None of this implies general model quality.
+result = core.issue(store, 1)
+print(result["json_path"])
+print(core.head(store))                   # {'count': 3, 'hash': '...', 'seq': 2}
+```
 
-<p>
-  <img
-    src="docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg"
-    alt="Green ClaimBound card for Anthropic system-card source audit"
-    width="32%"
-  />
-  <img
-    src="docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.svg"
-    alt="ClaimBound card with green gate pass and yellow reproduction chip for NASA POWER source-byte drift"
-    width="32%"
-  />
-  <img
-    src="docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.svg"
-    alt="Red ClaimBound card for NOAA negative result"
-    width="32%"
-  />
-</p>
+Errors are exceptions with a stable `code` (`core.InputError`, `core.EnvError`, `core.VerificationFailed`).
+See the [Python API guide](docs/guides/python-api.md).
 
-More examples, including EU source audits and blocked-source cards:
-[evidence cards](docs/evidence_cards/README.md) ·
-[registry index](docs/registry/evidence_index.json)
+## Atlas: browse the experiments
 
-## For Reviewers And External Operators
+`protocolith atlas` builds one self-contained HTML page (inline CSS and JavaScript, no network, works from `file://`)
+from the local ledger or a directory of evidence cards: summary tiles, a status chart and monthly timeline, search,
+filters, a sortable paged table and a detail drawer with permalinks. Languages other than English come only from
+files you supply. See [the atlas guide](docs/guides/atlas.md).
 
-- [Reviewer path](docs/REVIEWER_PATH.md) — one-page orientation and credibility gaps
-- [Reviewer summary](docs/REVIEWER_SUMMARY.md) — problem, strongest cards, baseline
-  versus roadmap, differentiation from adjacent projects
-- [Common misreadings](docs/COMMON_MISREADINGS.md) — green ≠ safe, yellow drift FAQ
-- [European Dimension](docs/EUROPEAN_DIMENSION.md) — EU open-data angle and limits
-- [Volunteer one-pager](docs/external_verification/VOLUNTEER_ONE_PAGER.md) — close
-  VERIFY #85–#87 (~15 min first time)
-- [External verification packs](docs/external_verification/README.md) — split VERIFY
-  work across Tier A/B/C operators
-- [External operator starter pack](docs/EXTERNAL_OPERATOR_STARTER_PACK.md) — read,
-  rerun, drift report or boundary question paths
-- [Planned work not shipped](docs/PLANNED_NOT_SHIPPED.md) — roadmap vs current code
-- [Artifacts catalog](docs/artifacts/README.md) — NYC TLC / CDC artifact-only records
-- [Public roadmap 2026](docs/ROADMAP_2026.md) — planned open-source hardening work
+```bash
+protocolith atlas --out atlas.html            # the local ledger
+protocolith atlas --cards docs/evidence_cards --out site/
+```
 
-Independent from [EviBound](https://arxiv.org/abs/2511.05524); see
-[scope split](docs/RELATED_WORK_AND_INDEPENDENCE.md). Not affiliated with
-commercial or similarly named ClaimBound / Claimbound projects or domains
-(including on GitHub or GitLab); see
-[similar names](docs/RELATED_WORK_AND_INDEPENDENCE.md#similar-names-and-commercial-lookalikes).
-Canonical home: GitHub
-[ClaimBound/claimbound-evidence](https://github.com/ClaimBound/claimbound-evidence);
-the GitLab repo is a public mirror only.
+## MCP client configuration
+
+`protocolith mcp` is a stdio server with eleven tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`,
+`protocolith_schema`, `protocolith_capture`, `protocolith_atlas`, `protocolith_freeze`, `protocolith_record`,
+`protocolith_deviation`, `protocolith_verify`, `protocolith_issue`) and read-only resources (`protocolith://summary`, `protocolith://ledger`,
+`protocolith://schema/<name>`), so an agent can discover the formats itself. It uses no network and writes only
+inside the store, apart from the atlas page that `protocolith_atlas` writes inside the working directory. Add it to an MCP client:
+
+```json
+{
+  "mcpServers": {
+    "protocolith": {
+      "command": "protocolith",
+      "args": ["mcp", "--store", "/path/to/project/.protocolith"]
+    }
+  }
+}
+```
+
+See [Use Protocolith from an AI agent](docs/guides/ai-agent-mcp.md) and the [MCP reference](docs/reference/mcp.md).
 
 ## Install
 
-Works on Windows, macOS and Linux. See [platform support](docs/PLATFORM_SUPPORT.md).
-
-From PyPI — card-level CLI (`validate-card`, `inspect card`, `hash`, `run-root`):
+From source today (Python 3.11 to 3.15; [uv](https://docs.astral.sh/uv/) recommended):
 
 ```bash
-pipx install claimbound-evidence      # or: uv tool install claimbound-evidence / pip install claimbound-evidence
-claimbound --version
-claimbound validate-card path/to/card.json
+git clone https://github.com/protocolith/protocolith.git
+cd protocolith
+uv sync
+uv run protocolith --version      # or: source .venv/bin/activate
 ```
 
-`validate-all`, `demo`, `rerun`, `drift` and `verify` need the cards, registry and
-scripts of a repository clone (see below); from a pip install they print how to get one.
-The full guide, including a lighter sparse clone, is the
-[documentation site](https://claimbound.github.io/claimbound-evidence/docs/).
+`pip install protocolith` is available from the 0.6.0 release (planned); it is not published with the ledger commands yet.
+The package has no required dependencies.
 
-From source (dev extras + full checkout):
+## Platforms
 
-```bash
-git clone https://github.com/ClaimBound/claimbound-evidence.git
-cd claimbound-evidence
-uv sync --extra dev
-uv run claimbound doctor
-```
+macOS, Linux and Windows, Python 3.11 to 3.15, headless (no display, no network, no daemon). Appends are
+protected by an advisory file lock (`fcntl` on POSIX, `msvcrt` on Windows) and are flushed with `fsync`.
 
-## Reproduce In Three Commands
+## Commands
 
-```bash
-uv run claimbound validate-all
-uv run --extra dev python -m pytest -q
-uv run claimbound demo eea-source-audit
-```
+| Command | Purpose |
+| --- | --- |
+| `freeze FILE [--supersedes SHA256]` | Freeze a protocol (a new version supersedes the old one) |
+| `record FILE` | Record a run outcome |
+| `deviation FILE` | Record a deviation from a frozen protocol |
+| `verify-ledger [--expect-head SEQ:HASH]` | Check rules R1 to R11, and optionally an anchored head |
+| `issue SEQ [--out DIR]` | Issue the card of a record |
+| `summary [--protocol ID]` | Verdict, head, counts and a per-protocol table in one call |
+| `log [--protocol ID] [--type T] [--status S] [--tail N]` / `head` | List (filtered) entries / print the last `seq` and `hash` |
+| `show SEQ` | One entry with its protocol context |
+| `capture [--file PATH ...] [--env]` | JSON fragment with environment and input file hashes for a record `outcome` |
+| `schema [NAME]` | JSON Schema of the input bodies and the entry |
+| `init` | Create an empty store (safe to repeat) |
+| `repair --truncate-partial-tail` | Remove a partial last line left by a crash |
+| `mcp` | Run the MCP server on stdio |
 
-If `validate-all` passes, the committed cards and registry match the current
-validators. A scaffold or demo output is not evidence until a protocol is frozen,
-the run completes, the card validates and the registry is updated.
+All take `--store DIR` (or `PROTOCOLITH_STORE`; default `.protocolith`) and, except `mcp`, `--json`. The alias
+`plith` runs the same program. Full list, including the older card commands: [docs/CLI.md](docs/CLI.md).
 
-## Quick Start
+## Documentation
 
-```bash
-uv run claimbound new
-uv run claimbound demo grok-source-audit
-uv run claimbound run-root \
-  --protocol-id EXAMPLE_D001 \
-  --source-url https://example.org/source \
-  --operator your-name-or-handle
-```
+- Documentation site: <https://protocolith.github.io/protocolith/docs/> (source in [docs/](docs/), map in [docs/docs-map.md](docs/docs-map.md))
+- [Getting started](docs/getting-started/first-record.md) and [concepts](docs/concepts/ledger.md)
+- [Core specification](docs/spec/CORE_SPEC.md) and [conformance vectors](docs/reference/conformance-vectors.md)
+- [Error codes](docs/reference/error-codes.md), [FAQ](docs/FAQ.md), [roadmap](docs/ROADMAP_2026.md), [changelog](CHANGELOG.md)
 
-Non-interactive scaffold, EU runners, card protocols and operator runbooks:
-[getting started](docs/GETTING_STARTED.md).
+## What Protocolith does not prove
 
-Portable AI control rules for evidence-bound work:
-[12 AI Life Rules](docs/TWELVE_AI_LIFE_CONTROLS.md).
+- **Internal consistency and ordering only.** A valid ledger shows that every entry follows the rules and that
+  no entry was changed or reordered without breaking the chain.
+- **No wall-clock proof.** Timestamps are written by the machine that appends; the ledger only guarantees they
+  never decrease. It does not show that an entry was made at the time it states.
+- **No protection against replacing a whole ledger.** Someone who can rewrite the file can write a new, valid
+  one, or cut off its end. Publish or anchor the output of `protocolith head` somewhere you do not control
+  alone (for example a signed git tag), then check against it with `protocolith verify-ledger --expect-head SEQ:HASH`.
+  See [anchoring the head](docs/guides/anchoring-the-head.md).
+- It does not show that a protocol is sound, that data is true, or that a result generalises.
 
-## Boundary
+## Earlier name and unrelated works
 
-This repository is an independently usable open evidence foreground. It does not
-include or require private background technology.
+The project was published as ClaimBound Evidence until 0.5.0 and was renamed because unrelated works use a
+similar name. It is not a fork of or affiliated with them, and it makes no claim of priority.
+See [RELATED_WORK_AND_INDEPENDENCE.md](docs/RELATED_WORK_AND_INDEPENDENCE.md).
 
-Evidence cards are reusable examples and validation records, not a hosted review
-service, legal advice, or on-demand third-party check queue. The registry stores
-sanitized metadata and hashes, not raw payloads.
+## Contributing, security, license
 
-See [governance](GOVERNANCE.md), [maintainers](MAINTAINERS.md), [architecture](docs/ARCHITECTURE.md), [security assessment](docs/SECURITY_ASSESSMENT.md), [DCO](DCO.md), [maintainer boundary](MAINTAINER_BOUNDARY.md) and [release process](RELEASE_PROCESS.md).
-
-## Community
-
-- [Contributing guide](CONTRIBUTING.md)
-- [Code of Conduct](CODE_OF_CONDUCT.md)
-- [Security policy](SECURITY.md)
-- [Discussions](https://github.com/ClaimBound/claimbound-evidence/discussions)
-
-## License
-
-Apache-2.0. See [LICENSE](LICENSE).
+- [CONTRIBUTING.md](CONTRIBUTING.md), [DCO.md](DCO.md), [GOVERNANCE.md](GOVERNANCE.md), [AGENTS.md](AGENTS.md)
+- Report vulnerabilities as described in [SECURITY.md](SECURITY.md); do not open a public issue for them. Questions: [SUPPORT.md](SUPPORT.md).
+- [Apache-2.0](LICENSE).

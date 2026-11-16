@@ -6,12 +6,12 @@ since `2026-05-08`. Source drift is not automatically an invalid card.
 ## Quick path (any OS)
 
 ```bash
-uv run claimbound drift eea-source-audit
+uv run protocolith drift eea-source-audit
 ```
 
 ## Read first
 
-- `docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json`
+- `docs/evidence_cards/PLITH-SOURCE_AUDIT_D001-2026-05-08.json`
 - `artifacts/source_audit_d001_summary.json`
 - `docs/protocols/SOURCE_AUDIT_D001_PREREG_CHARTER.md`
 
@@ -46,7 +46,7 @@ beb658db375df6eac841da35484243ff2d0799b0f3d71ba86be6355fb765d51b
 ## 2. Fresh probe
 
 ```bash
-uv run python scripts/claimbound_run_eea_source_audit.py \
+uv run python scripts/protocolith_run_eea_source_audit.py \
   --report artifacts/eea_source_audit_drift_check_summary.json
 ```
 
@@ -83,7 +83,7 @@ mkdir -p docs/operator_trials
 cat > "docs/operator_trials/EEA_SOURCE_DRIFT_CHECK_${TODAY}.md" <<EOF
 # EEA source drift check (${TODAY})
 
-Original card: docs/evidence_cards/CLAIMBOUND-SOURCE_AUDIT_D001-2026-05-08.json
+Original card: docs/evidence_cards/PLITH-SOURCE_AUDIT_D001-2026-05-08.json
 Baseline: artifacts/source_audit_d001_summary.json
 Fresh: artifacts/eea_source_audit_drift_check_summary.json
 
@@ -109,7 +109,7 @@ EOF
   the honest gate outcome in `result_status`
 
 ```bash
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```
 

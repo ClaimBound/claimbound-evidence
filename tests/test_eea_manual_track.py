@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
 def _load_runner():
-    script_path = REPO_ROOT / "scripts" / "claimbound_run_eea_manual_track.py"
-    spec = ilu.spec_from_file_location("claimbound_run_eea_manual_track_mod", script_path)
+    script_path = REPO_ROOT / "scripts" / "protocolith_run_eea_manual_track.py"
+    spec = ilu.spec_from_file_location("protocolith_run_eea_manual_track_mod", script_path)
     assert spec is not None and spec.loader is not None
     module = ilu.module_from_spec(spec)
     sys.modules[spec.name] = module

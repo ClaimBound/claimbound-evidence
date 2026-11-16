@@ -52,7 +52,7 @@ SECURITY policy.
 
 ## Scope
 
-This Code applies to all interaction spaces tied to contributing to ClaimBound
+This Code applies to all interaction spaces tied to contributing to Protocolith
 Evidence, including issues, discussions, pull requests, and project
 communications where contributors meet.
 

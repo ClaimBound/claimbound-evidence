@@ -1,6 +1,6 @@
 # Manual Audit Protocol
 
-Manual audit is a first-class ClaimBound path. It is not a fallback for missing
+Manual audit is a first-class Protocolith path. It is not a fallback for missing
 automation.
 
 Manual tracks are useful when source rights, station selection, units, coverage
@@ -19,7 +19,7 @@ Manual judgment after scoring is a deviation.
 
 1. Identify the official source.
 2. Create a local run root:
-   `uv run claimbound run-root --protocol-id <ID> --source-url <URL>`.
+   `uv run protocolith run-root --protocol-id <ID> --source-url <URL>`.
 3. Read source rights and attribution requirements.
 4. Decide raw payload handling.
 5. Fix domain, period, target, candidate, baselines and controls.

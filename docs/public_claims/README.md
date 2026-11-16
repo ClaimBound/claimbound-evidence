@@ -1,6 +1,6 @@
 # Public Claim Candidate Catalog
 
-This catalog expands ClaimBound with a preregistered backlog of **7,000 candidate
+This catalog expands Protocolith with a preregistered backlog of **7,000 candidate
 claims across 100 public-interest domains**.
 
 The catalog is not evidence and does not add 7,000 green cards. Every record starts
@@ -31,7 +31,7 @@ local cache and is not committed.
 The narrow result is deliberately precise: `PASSED_UNDER_PROTOCOL` means the
 exact statement GUID and verbatim JSON excerpt occur in the named Wikidata
 revision and the frozen revision content matches the recorded SHA-256. It does
-not mean that ClaimBound independently proved the value's real-world truth.
+not mean that Protocolith independently proved the value's real-world truth.
 
 Reproduce the local source binding checks:
 
@@ -46,7 +46,7 @@ Reproduce one selected card from an empty cache:
 ```bash
 python3 scripts/build_wikidata_public_claims.py verify-sources \
   artifacts/cb7k_wikidata_public_claims.json \
-  --cache .cache/claimbound-wikidata \
+  --cache .cache/protocolith-wikidata \
   --claim-id CB7K-DOM001-C01
 ```
 

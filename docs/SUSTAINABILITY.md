@@ -1,6 +1,6 @@
 # Sustainability And Maintenance
 
-ClaimBound is a single-maintainer open-source foreground project. This page
+Protocolith is a single-maintainer open-source foreground project. This page
 describes how the repository is intended to remain usable without becoming a
 hosted certification service.
 

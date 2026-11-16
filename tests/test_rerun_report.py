@@ -5,15 +5,15 @@ import json
 
 import pytest
 
-from claimbound_evidence.cli import main
-from claimbound_evidence.rerun_report import (
+from protocolith.cli import main
+from protocolith.rerun_report import (
     REPRODUCTION_STATUSES,
     build_report,
     classify_hashes,
     suggest_status,
     validate_report,
 )
-from claimbound_evidence.run_root import RunRootRequest, prepare_run_root
+from protocolith.run_root import RunRootRequest, prepare_run_root
 
 
 def test_classify_hashes() -> None:

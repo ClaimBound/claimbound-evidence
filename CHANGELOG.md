@@ -1,5 +1,58 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- **Renamed to Protocolith** (was ClaimBound Evidence). Package and module `protocolith`, command `protocolith` with
+  the short alias `plith`. Releases up to 0.5.0 remain available under the old name.
+- **Evidence ids use the `PLITH-` prefix.** Every card keeps its old id in `legacy_evidence_id`;
+  `docs/MIGRATION_ID_MAP.json` maps old to new ids with file hashes. Hash-pinned artifacts keep their original text.
+- **The core uses only the standard library.** `numpy` moved to the `runners` extra and the PDF libraries to the
+  `campaign` extra; commands that need them explain what to install.
+- **Python 3.11 to 3.15** are supported (was 3.12 and newer).
+- Core specification draft: [docs/spec/CORE_SPEC.md](docs/spec/CORE_SPEC.md).
+
+- **`evidence_id` is unique per record**: `PLITH-<protocol_id>-<date>-<seq>`, where `seq` is the ledger `seq` of the
+  record (six digits), so two records of one protocol on one day can both be issued. Ledger format `v` stays 1; this is a
+  0.6.0 pre-release change; a ledger written by an earlier development build reports `BAD_CARD` on its `issue` entries.
+- `log` accepts `--protocol`, `--type`, `--status` and `--tail`; `protocolith_log` takes the same arguments.
+- Errors print a one-line `hint (CODE): ...` (and `error.hint` in JSON) where advice is cheap. Exit codes are unchanged.
+
+### Added
+
+- `protocolith atlas` (also `core.build_atlas` and the MCP tool `protocolith_atlas`): one self-contained, offline HTML
+  atlas of experiments from a ledger and/or evidence card directories, with summary tiles, status chart and timeline,
+  search, filters, a sortable paged table, a detail drawer with permalinks and keyboard navigation, light and dark
+  themes and a print style. English UI catalog `atlas_i18n/en.json`; further languages only from user files
+  (`--i18n DIR`). A ledger that fails verification still produces the atlas with a red banner and exit code 1.
+  See [the atlas guide](docs/guides/atlas.md).
+- `protocolith summary [--protocol ID]` (also `core.summary` and the MCP tool `protocolith_summary`): verdict, head,
+  counts by entry type and result status, a per-protocol table and the problems found, in one fast call.
+- `protocolith show SEQ` (`core.show`, `protocolith_show`): one entry with its protocol context and references.
+- `protocolith capture [--file PATH ...] [--env]` (`core.capture`, `protocolith_capture`): a JSON fragment with
+  environment and input file hashes for a record `outcome`; runs nothing, reads no environment values, confines files to
+  the working directory (`BAD_PATH`).
+- `protocolith schema [NAME]` (`core.schema_for`, `protocolith_schema`): JSON Schema (draft 2020-12) generated from the
+  verifier's field rules.
+- MCP resources `protocolith://summary`, `protocolith://ledger` and `protocolith://schema/<name>`
+  (`resources/list`, `resources/read`).
+- `protocolith init`: create an empty store (idempotent).
+- Guides: [Use Protocolith from an AI agent](docs/guides/ai-agent-mcp.md) and
+  [Query the ledger quickly](docs/guides/query-the-ledger.md); reference pages for [MCP](docs/reference/mcp.md) and the
+  [Python API](docs/reference/python-api.md); `SUPPORT.md`.
+
+### Fixed
+
+- A test fixture no longer depends on the developer's global git signing configuration.
+
+### Removed
+
+- The peer-comparison fair-race material was removed from the tree at the owner's decision (2026-11-14): the card with
+  registry sequence 8073, its protocol charter, artifacts, two runner scripts, the atlas link and the Pages workflow
+  entries. The registry now holds 8072 cards and its statistics and static views were regenerated. The removed files
+  remain in git history before this change; history was not rewritten.
+
 ## 0.5.0 - 2026-11-06
 
 ### Added

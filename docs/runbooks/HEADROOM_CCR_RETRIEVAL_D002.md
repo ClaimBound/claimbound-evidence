@@ -10,16 +10,16 @@ together with the D001 cards.
 
 ```bash
 uv sync --extra dev
-HEADROOM_TELEMETRY=off uv run python scripts/claimbound_run_headroom_ccr_retrieval.py --access-date 2026-06-23
-uv run python scripts/claimbound_render_evidence_card_svg.py docs/evidence_cards
-uv run claimbound validate-all
+HEADROOM_TELEMETRY=off uv run python scripts/protocolith_run_headroom_ccr_retrieval.py --access-date 2026-06-23
+uv run python scripts/protocolith_render_evidence_card_svg.py docs/evidence_cards
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```
 
 The runner bootstraps the required public packages with:
 
 ```bash
-uv run --with headroom-ai==0.27.0 --with transformers --with mcp python scripts/claimbound_run_headroom_ccr_retrieval.py
+uv run --with headroom-ai==0.27.0 --with transformers --with mcp python scripts/protocolith_run_headroom_ccr_retrieval.py
 ```
 
 ## Expected cards

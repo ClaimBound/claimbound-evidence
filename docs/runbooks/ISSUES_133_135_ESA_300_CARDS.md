@@ -7,17 +7,17 @@ This runbook covers the final three batches in the 500-card ESA factory:
 - #135: Ariel, Plato, XMM-Newton, Rosetta and Cluster.
 
 Each issue contains 100 unique source-boundary gates: 20 gates against each of
-five official ESA mission pages. Raw HTML stays in `~/claimbound_runs/` and is
+five official ESA mission pages. Raw HTML stays in `~/protocolith_runs/` and is
 never committed.
 
 ## 1. Check the frozen matrices
 
 ```bash
 uv sync --extra dev
-uv run claimbound doctor
+uv run protocolith doctor
 
 for ISSUE in 133 134 135; do
-  uv run python scripts/claimbound_run_esa_factory.py \
+  uv run python scripts/protocolith_run_esa_factory.py \
     --issue "$ISSUE" check
 done
 ```
@@ -29,7 +29,7 @@ Each issue must report `matrix_cards=100` and `matrix_status=VALID`.
 Run one issue at a time and retain the printed path:
 
 ```bash
-uv run python scripts/claimbound_run_esa_factory.py \
+uv run python scripts/protocolith_run_esa_factory.py \
   --issue 133 preview
 ```
 
@@ -54,7 +54,7 @@ change it explicitly and create a new preview.
 ## 3. Publish a reviewed issue
 
 ```bash
-uv run python scripts/claimbound_run_esa_factory.py \
+uv run python scripts/protocolith_run_esa_factory.py \
   --issue 133 publish \
   --preview <preview.json> \
   --operator <github-handle> \
@@ -67,7 +67,7 @@ new registry sequence numbers.
 ## 4. Validate the repository
 
 ```bash
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 git diff --check
 ```

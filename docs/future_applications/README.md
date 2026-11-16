@@ -1,6 +1,6 @@
 # Future Applications
 
-ClaimBound can support additional domains beyond the three **primary public
+Protocolith can support additional domains beyond the three **primary public
 workflows** in the README. This section documents secondary and future use cases
 without making them the first-screen project focus.
 
@@ -20,10 +20,10 @@ without making them the first-screen project focus.
 
 ## Important boundary
 
-These guides describe **how ClaimBound could be used**. They do not certify
+These guides describe **how Protocolith could be used**. They do not certify
 robot, vehicle, procurement or classroom safety. Blocked cards in the registry
 show where a fair public result was not yet possible — that is intentional
 anti-overclaiming, not project failure.
 
 For AI risk control patterns (including robotics-style release gates), see
-[AI risk control with ClaimBound](../AI_RISK_CONTROL_WITH_CLAIMBOUND.md).
+[AI risk control with Protocolith](../AI_RISK_CONTROL_WITH_PROTOCOLITH.md).

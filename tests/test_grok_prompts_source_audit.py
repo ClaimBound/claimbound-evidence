@@ -8,11 +8,11 @@ import subprocess
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-SCRIPT_PATH = REPO_ROOT / "scripts" / "claimbound_run_grok_prompts_source_audit.py"
+SCRIPT_PATH = REPO_ROOT / "scripts" / "protocolith_run_grok_prompts_source_audit.py"
 
 
 def _load_script():
-    spec = ilu.spec_from_file_location("claimbound_run_grok_prompts_source_audit", SCRIPT_PATH)
+    spec = ilu.spec_from_file_location("protocolith_run_grok_prompts_source_audit", SCRIPT_PATH)
     assert spec is not None and spec.loader is not None
     module = ilu.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -25,6 +25,8 @@ def test_grok_prompts_source_audit_passes_on_minimal_repo(tmp_path: Path) -> Non
     subprocess.check_call(["git", "-C", str(repo), "init", "-q"])
     subprocess.check_call(["git", "-C", str(repo), "config", "user.email", "test@example.org"])
     subprocess.check_call(["git", "-C", str(repo), "config", "user.name", "Test"])
+    # The fixture must not depend on the developer's global signing configuration.
+    subprocess.check_call(["git", "-C", str(repo), "config", "commit.gpgsign", "false"])
     subprocess.check_call(
         ["git", "-C", str(repo), "remote", "add", "origin", "https://github.com/xai-org/grok-prompts.git"]
     )

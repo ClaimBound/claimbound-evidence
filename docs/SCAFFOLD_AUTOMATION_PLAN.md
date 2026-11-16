@@ -1,6 +1,6 @@
 # Scaffold Automation Plan
 
-This document describes the next practical automation step for ClaimBound.
+This document describes the next practical automation step for Protocolith.
 
 The goal is to generate a track scaffold from a public source description
 without producing an unsupported result.
@@ -62,7 +62,7 @@ The scaffold must not:
 ## Proposed Command
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.org/source-docs" \
   --protocol-id "EXAMPLE_D001" \
   --domain "public-data" \
@@ -79,7 +79,7 @@ docs/protocols/EXAMPLE_D001_PREREG_CHARTER.md
 docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_PLAYBOOK.md
 docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_CHECKLIST.md
 docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_OPERATOR_DECLARATION.md
-docs/evidence_card_drafts/CLAIMBOUND-EXAMPLE_D001-DRAFT.json
+docs/evidence_card_drafts/PLITH-EXAMPLE_D001-DRAFT.json
 docs/track_families/EXAMPLE_D001_FAMILY_LEDGER.json
 artifacts/example_d001_source_probe_summary.json
 ```

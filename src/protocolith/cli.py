@@ -1,0 +1,796 @@
+# SPDX-License-Identifier: Apache-2.0
+"""Small command-line helpers for Protocolith public workflows."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+import sys
+from importlib import metadata
+from pathlib import Path
+
+from protocolith.core.commands import add_core_commands
+from protocolith.doctor import format_doctor_report, run_doctor
+from protocolith.inspect import (
+    format_hash_lines,
+    format_json_subset,
+    hash_files,
+    load_json,
+    pick_fields,
+)
+from protocolith.evidence_card import (
+    load_evidence_card,
+    validate_evidence_card,
+)
+from protocolith.family_ledger import (
+    load_frontier_ledger,
+    load_family_ledger,
+    validate_frontier_ledger,
+    validate_family_ledger,
+)
+from protocolith.registry import load_registry, validate_registry
+from protocolith.rerun_report import build_report, load_hash_map
+from protocolith.run_root import (
+    RunRootRequest,
+    add_deviation,
+    list_deviations,
+    prepare_run_root,
+    record_rights_answer,
+)
+from protocolith.verify_packs import VERIFY_PACKS, run_verify_pack
+from protocolith.scaffold import ScaffoldRequest, build_scaffold
+from protocolith.tree_overlay import (
+    load_tree_overlay,
+    validate_tree_overlay,
+)
+
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_DEMO_ROOT = Path.home() / "protocolith_runs" / "protocolith_demo"
+CLONE_URL = "https://github.com/protocolith/protocolith.git"
+CHECKOUT_COMMANDS = frozenset({"demo", "validate-all", "rerun", "drift", "verify"})
+DEFAULT_CARD_KEYS = (
+    "evidence_id",
+    "record_type",
+    "result_status",
+    "reproduction_level",
+    "verification_level",
+    "protocol_id",
+    "official_source_url",
+    "access_date",
+    "claim_boundary",
+)
+
+
+def has_checkout() -> bool:
+    """Return True when running from a repository clone that ships cards and registry."""
+    return (REPO_ROOT / "docs" / "evidence_cards").is_dir() and (
+        REPO_ROOT / "docs" / "registry" / "evidence_index.json"
+    ).is_file()
+
+
+def package_version() -> str:
+    try:
+        return metadata.version("protocolith")
+    except metadata.PackageNotFoundError:
+        return "unknown (not installed as a package)"
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="protocolith",
+        description="Protocolith helper commands for requests, scaffolds, demos and validation.",
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"protocolith {package_version()}",
+    )
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    new_parser = subparsers.add_parser(
+        "new",
+        aliases=("new-track",),
+        description="Create a draft track scaffold. Prompts interactively when run in a terminal.",
+    )
+    new_parser.add_argument("--source-url")
+    new_parser.add_argument("--protocol-id")
+    new_parser.add_argument("--domain")
+    new_parser.add_argument("--track-type")
+    new_parser.add_argument(
+        "--execution-mode",
+        choices=("MANUAL_NO_AI", "AUTOMATED_AI_ASSISTED"),
+        default="MANUAL_NO_AI",
+    )
+    new_parser.add_argument("--out", type=Path)
+    new_parser.add_argument("--source-name", default="Public source under review")
+    new_parser.add_argument("--audience", default="public evidence operators")
+    new_parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="List the files that would be created and write nothing.",
+    )
+    new_parser.set_defaults(func=_cmd_new)
+
+    demo_parser = subparsers.add_parser(
+        "demo",
+        description="Run a small public demo helper.",
+    )
+    demo_parser.add_argument(
+        "name",
+        choices=("grok-source-audit", "eea-source-audit", "eea-manual-probe", "validate-all"),
+    )
+    demo_parser.add_argument("--report", type=Path)
+    demo_parser.add_argument(
+        "--demo-root",
+        type=Path,
+        default=DEFAULT_DEMO_ROOT,
+        help="Local-only root for demo source clones and reports.",
+    )
+    demo_parser.add_argument(
+        "--grok-repo-dir",
+        type=Path,
+        help="Existing local clone for xai-org/grok-prompts. Defaults to a local-only demo clone.",
+    )
+    demo_parser.set_defaults(func=_cmd_demo)
+
+    validate_parser = subparsers.add_parser(
+        "validate-all",
+        description="Validate all public evidence cards and the registry.",
+    )
+    validate_parser.add_argument(
+        "--cards-dir",
+        type=Path,
+        default=REPO_ROOT / "docs" / "evidence_cards",
+    )
+    validate_parser.add_argument(
+        "--registry",
+        type=Path,
+        default=REPO_ROOT / "docs" / "registry" / "evidence_index.json",
+    )
+    validate_parser.add_argument(
+        "--families-dir",
+        type=Path,
+        default=REPO_ROOT / "docs" / "track_families",
+        help="Directory containing optional *_FAMILY_LEDGER.json files.",
+    )
+    validate_parser.add_argument(
+        "--frontiers-dir",
+        type=Path,
+        default=REPO_ROOT / "docs" / "track_families",
+        help="Directory containing optional *_FRONTIER.json files.",
+    )
+    validate_parser.add_argument(
+        "--trees-dir",
+        type=Path,
+        default=REPO_ROOT / "docs" / "track_families",
+        help="Directory containing optional protocol v3 *_TREE.json files.",
+    )
+    validate_parser.set_defaults(func=_cmd_validate_all)
+
+    family_parser = subparsers.add_parser(
+        "validate-family",
+        description="Validate one R&D family ledger JSON file.",
+    )
+    family_parser.add_argument("path", type=Path)
+    family_parser.set_defaults(func=_cmd_validate_family)
+
+    frontier_parser = subparsers.add_parser(
+        "validate-frontier",
+        description="Validate one R&D family frontier JSON file.",
+    )
+    frontier_parser.add_argument("path", type=Path)
+    frontier_parser.add_argument(
+        "--base-dir",
+        type=Path,
+        help="Optional base directory for context capsule and tombstone path checks.",
+    )
+    frontier_parser.set_defaults(func=_cmd_validate_frontier)
+
+    tree_parser = subparsers.add_parser(
+        "validate-tree",
+        description="Validate one protocol v3 R&D tree overlay JSON file.",
+    )
+    tree_parser.add_argument("path", type=Path)
+    tree_parser.set_defaults(func=_cmd_validate_tree)
+
+    run_root_parser = subparsers.add_parser(
+        "run-root",
+        description="Create a local-only run root with standard raw/log/hash/report folders.",
+    )
+    run_root_parser.add_argument("--protocol-id")
+    run_root_parser.add_argument("--source-url")
+    run_root_parser.add_argument("--operator", default="local operator")
+    run_root_parser.add_argument(
+        "--root",
+        type=Path,
+        default=Path.home() / "protocolith_runs",
+        help="Local-only parent directory. Defaults to ~/protocolith_runs.",
+    )
+    run_root_parser.set_defaults(func=_cmd_run_root)
+    rr_sub = run_root_parser.add_subparsers(dest="run_root_cmd")
+    dev_sub = rr_sub.add_parser("deviation").add_subparsers(dest="dev_cmd", required=True)
+    dev_add = dev_sub.add_parser("add")
+    dev_add.add_argument("--run-dir", type=Path, required=True)
+    for field in ("step", "planned", "happened", "reason", "who"):
+        dev_add.add_argument(f"--{field}", required=True)
+    dev_add.set_defaults(func=_cmd_deviation_add)
+    dev_list = dev_sub.add_parser("list")
+    dev_list.add_argument("--run-dir", type=Path, required=True)
+    dev_list.set_defaults(func=_cmd_deviation_list)
+    rights_sub = rr_sub.add_parser("rights").add_subparsers(dest="rights_cmd", required=True)
+    rights_answer = rights_sub.add_parser("answer")
+    rights_answer.add_argument("--run-dir", type=Path, required=True)
+    for field in ("question-id", "answer", "who"):
+        rights_answer.add_argument(f"--{field}", required=True)
+    rights_answer.set_defaults(func=_cmd_rights_answer)
+
+    doctor_parser = subparsers.add_parser(
+        "doctor",
+        description="Check Python, git and repo layout for cross-platform workflows.",
+    )
+    doctor_parser.set_defaults(func=_cmd_doctor)
+
+    inspect_parser = subparsers.add_parser(
+        "inspect",
+        description="Print selected JSON fields from cards, registry or artifacts.",
+    )
+    inspect_sub = inspect_parser.add_subparsers(dest="inspect_target", required=True)
+
+    inspect_card = inspect_sub.add_parser("card", help="Inspect one evidence card JSON file.")
+    inspect_card.add_argument("path", type=Path)
+    inspect_card.add_argument(
+        "--keys",
+        nargs="+",
+        default=list(DEFAULT_CARD_KEYS),
+        help="Top-level JSON keys to print (default: a short card summary).",
+    )
+    inspect_card.set_defaults(func=_cmd_inspect_card)
+
+    inspect_registry = inspect_sub.add_parser("registry", help="Inspect the registry index.")
+    inspect_registry.add_argument(
+        "--registry",
+        type=Path,
+        default=REPO_ROOT / "docs" / "registry" / "evidence_index.json",
+    )
+    inspect_registry.add_argument(
+        "--keys",
+        nargs="+",
+        default=["registry_name", "card_count"],
+    )
+    inspect_registry.set_defaults(func=_cmd_inspect_registry)
+
+    inspect_json = inspect_sub.add_parser("json", help="Inspect any JSON object file.")
+    inspect_json.add_argument("path", type=Path)
+    inspect_json.add_argument("--keys", nargs="+", required=True)
+    inspect_json.set_defaults(func=_cmd_inspect_json)
+
+    hash_parser = subparsers.add_parser(
+        "hash",
+        description="Print SHA-256 hashes for local files.",
+    )
+    hash_parser.add_argument("paths", nargs="+", type=Path)
+    hash_parser.add_argument("--out", type=Path, help="Optional file to write hash lines.")
+    hash_parser.set_defaults(func=_cmd_hash)
+
+    validate_card_parser = subparsers.add_parser(
+        "validate-card",
+        description="Validate one evidence card JSON file.",
+    )
+    validate_card_parser.add_argument("path", type=Path)
+    validate_card_parser.set_defaults(func=_cmd_validate_card)
+
+    rerun_parser = subparsers.add_parser(
+        "rerun",
+        description="Run frozen public-data reruns with cross-platform commands.",
+    )
+    rerun_sub = rerun_parser.add_subparsers(dest="rerun_name", required=True)
+    for name, handler in (
+        ("nasa-d103", _cmd_rerun_nasa_d103),
+        ("noaa-d131", _cmd_rerun_noaa_d131),
+    ):
+        sub = rerun_sub.add_parser(name)
+        sub.add_argument("--operator", default="local operator")
+        sub.add_argument("--root", type=Path, default=Path.home() / "protocolith_runs")
+        sub.add_argument("--run-dir", type=Path)
+        sub.add_argument("--baseline", type=Path)
+        sub.set_defaults(func=handler)
+
+    rerun_report = rerun_sub.add_parser(
+        "report",
+        description="Compare original vs rerun hashes; never modifies a card or claim.",
+    )
+    rerun_report.add_argument("--original", type=Path, required=True)
+    rerun_report.add_argument("--rerun", type=Path, required=True)
+    rerun_report.add_argument(
+        "--outcome", choices=("matches", "differs", "unknown"), default="unknown"
+    )
+    rerun_report.add_argument("--blocked", action="store_true")
+    rerun_report.add_argument("--note", default="")
+    rerun_report.add_argument("--out", type=Path)
+    rerun_report.set_defaults(func=_cmd_rerun_report)
+
+    drift_parser = subparsers.add_parser(
+        "drift",
+        description="Compare fresh public-source probes against frozen baselines.",
+    )
+    drift_sub = drift_parser.add_subparsers(dest="drift_name", required=True)
+    eea_drift = drift_sub.add_parser("eea-source-audit")
+    eea_drift.add_argument("--baseline", type=Path)
+    eea_drift.add_argument("--report", type=Path)
+    eea_drift.set_defaults(func=_cmd_drift_eea)
+
+    probe_parser = subparsers.add_parser(
+        "probe",
+        description="SourceProbe v1: metadata-only probe of one public URL (no legal conclusion).",
+    )
+    probe_parser.add_argument("url")
+    probe_parser.add_argument(
+        "--marker", action="append", default=[], help="Case-sensitive text to look for."
+    )
+    probe_parser.add_argument("--out", type=Path, help="Write the JSON probe artifact here.")
+    probe_parser.add_argument("--json", action="store_true", help="Print the JSON artifact.")
+    probe_parser.set_defaults(func=_cmd_probe)
+
+    verify_parser = subparsers.add_parser(
+        "verify",
+        description="Run VERIFY pack checklists with PASS/FAIL output.",
+    )
+    verify_parser.add_argument(
+        "pack",
+        choices=sorted(VERIFY_PACKS),
+    )
+    verify_parser.add_argument(
+        "--operator",
+        default="verify-operator",
+        help="Operator handle for network rerun verify packs.",
+    )
+    verify_parser.set_defaults(func=_cmd_verify)
+
+    add_core_commands(subparsers)
+
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if args.command in CHECKOUT_COMMANDS and not has_checkout():
+        print(
+            f"protocolith {args.command}: this command needs a clone of the repository "
+            "(cards, registry and scripts are not part of the pip package).\n"
+            f"  git clone {CLONE_URL}\n"
+            "  cd protocolith && uv sync --extra dev\n"
+            "For a single card use: protocolith validate-card FILE.json",
+            file=sys.stderr,
+        )
+        return 2
+    return int(args.func(args, parser) or 0)
+
+
+def _cmd_new(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    source_url = _value_or_prompt(args.source_url, "Source URL", parser)
+    protocol_id = _value_or_prompt(args.protocol_id, "Protocol ID", parser)
+    domain = _value_or_prompt(args.domain, "Domain", parser)
+    track_type = _value_or_prompt(args.track_type, "Track type", parser)
+    out = args.out or _prompt_path("Output directory", parser)
+
+    if not out.is_absolute():
+        out = _base_dir() / out
+
+    request = ScaffoldRequest(
+        source_url=source_url,
+        protocol_id=protocol_id,
+        domain=domain,
+        track_type=track_type,
+        execution_mode=args.execution_mode,
+        out_dir=out,
+        source_name=args.source_name,
+        audience=args.audience,
+    )
+    try:
+        paths = build_scaffold(request, REPO_ROOT, dry_run=args.dry_run)
+    except (ValueError, FileExistsError) as exc:
+        print(f"protocolith new: {exc}", file=sys.stderr)
+        return 2
+    if args.dry_run:
+        print("dry-run: nothing written; would create:")
+    for path in paths:
+        print(_display_path(path))
+    return 0
+
+
+def _cmd_demo(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    if args.name == "validate-all":
+        validate_args = argparse.Namespace(
+            cards_dir=REPO_ROOT / "docs" / "evidence_cards",
+            registry=REPO_ROOT / "docs" / "registry" / "evidence_index.json",
+            families_dir=REPO_ROOT / "docs" / "track_families",
+            frontiers_dir=REPO_ROOT / "docs" / "track_families",
+            trees_dir=REPO_ROOT / "docs" / "track_families",
+        )
+        return _cmd_validate_all(validate_args, build_parser())
+
+    if args.name == "eea-source-audit":
+        report = args.report or (args.demo_root / "reports" / "source_audit_d001_demo_summary.json")
+        return _run_script("protocolith_run_eea_source_audit.py", "--report", str(report))
+
+    if args.name == "eea-manual-probe":
+        report = args.report or (args.demo_root / "reports" / "eea_aq_d001_manual_summary.json")
+        return _run_script(
+            "protocolith_run_eea_manual_track.py",
+            "--probe-eea-api",
+            "--report",
+            str(report),
+        )
+
+    if args.name == "grok-source-audit":
+        repo_dir = args.grok_repo_dir or args.demo_root / "sources" / "grok-prompts"
+        _ensure_grok_clone(repo_dir)
+        report = args.report or (args.demo_root / "reports" / "grok_prompts_source_audit_d001_demo_summary.json")
+        return _run_script(
+            "protocolith_run_grok_prompts_source_audit.py",
+            "--repo-dir",
+            str(repo_dir),
+            "--report",
+            str(report),
+        )
+
+    raise AssertionError(args.name)
+
+
+def _cmd_validate_all(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    card_paths = sorted(args.cards_dir.glob("*.json"))
+    violations: list[str] = []
+
+    for card_path in card_paths:
+        for violation in validate_evidence_card(load_evidence_card(card_path)):
+            violations.append(f"{_display_path(card_path)}: {violation}")
+
+    registry = load_registry(args.registry)
+    for violation in validate_registry(registry, REPO_ROOT):
+        violations.append(f"{_display_path(args.registry)}: {violation}")
+
+    family_paths = sorted(args.families_dir.glob("*_FAMILY_LEDGER.json"))
+    for family_path in family_paths:
+        for violation in validate_family_ledger(load_family_ledger(family_path)):
+            violations.append(f"{_display_path(family_path)}: {violation}")
+
+    frontier_paths = sorted(args.frontiers_dir.glob("*_FRONTIER.json"))
+    for frontier_path in frontier_paths:
+        for violation in validate_frontier_ledger(
+            load_frontier_ledger(frontier_path),
+            frontier_path.parent,
+        ):
+            violations.append(f"{_display_path(frontier_path)}: {violation}")
+
+    tree_paths = sorted(args.trees_dir.glob("*_TREE.json"))
+    for tree_path in tree_paths:
+        for violation in validate_tree_overlay(load_tree_overlay(tree_path)):
+            violations.append(f"{_display_path(tree_path)}: {violation}")
+
+    if violations:
+        for violation in violations:
+            print(f"violation: {violation}", file=sys.stderr)
+        return 1
+
+    print(f"valid_cards={len(card_paths)}")
+    print(f"valid_registry={_display_path(args.registry)}")
+    print(f"valid_family_ledgers={len(family_paths)}")
+    print(f"valid_frontier_ledgers={len(frontier_paths)}")
+    print(f"valid_tree_overlays={len(tree_paths)}")
+    return 0
+
+
+def _cmd_validate_family(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = args.path
+    if not path.is_absolute():
+        path = REPO_ROOT / path
+
+    violations = validate_family_ledger(load_family_ledger(path))
+    if violations:
+        for violation in violations:
+            print(f"violation: {_display_path(path)}: {violation}", file=sys.stderr)
+        return 1
+
+    print(f"valid_family_ledger={_display_path(path)}")
+    return 0
+
+
+def _cmd_validate_frontier(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = args.path
+    if not path.is_absolute():
+        path = REPO_ROOT / path
+    base_dir = args.base_dir
+    if base_dir is not None and not base_dir.is_absolute():
+        base_dir = REPO_ROOT / base_dir
+
+    violations = validate_frontier_ledger(load_frontier_ledger(path), base_dir or path.parent)
+    if violations:
+        for violation in violations:
+            print(f"violation: {_display_path(path)}: {violation}", file=sys.stderr)
+        return 1
+
+    print(f"valid_frontier_ledger={_display_path(path)}")
+    return 0
+
+
+def _cmd_validate_tree(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = args.path
+    if not path.is_absolute():
+        path = REPO_ROOT / path
+
+    violations = validate_tree_overlay(load_tree_overlay(path))
+    if violations:
+        for violation in violations:
+            print(f"violation: {_display_path(path)}: {violation}", file=sys.stderr)
+        return 1
+
+    print(f"valid_tree_overlay={_display_path(path)}")
+    return 0
+
+
+def _base_dir() -> Path:
+    """Relative paths resolve against the clone in a checkout, otherwise against cwd."""
+    return REPO_ROOT if has_checkout() else Path.cwd()
+
+
+def _resolve_repo_path(path: Path) -> Path:
+    return path if path.is_absolute() else _base_dir() / path
+
+
+def _cmd_inspect_card(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = _resolve_repo_path(args.path)
+    try:
+        subset = pick_fields(load_json(path), tuple(args.keys))
+    except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
+        print(f"inspect error: {exc}", file=sys.stderr)
+        return 1
+    print(format_json_subset(subset), end="")
+    return 0
+
+
+def _cmd_inspect_registry(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = _resolve_repo_path(args.registry)
+    try:
+        subset = pick_fields(load_json(path), tuple(args.keys))
+    except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
+        print(f"inspect error: {exc}", file=sys.stderr)
+        return 1
+    print(format_json_subset(subset), end="")
+    return 0
+
+
+def _cmd_inspect_json(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    return _cmd_inspect_card(args, parser)
+
+
+def _cmd_hash(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    paths = tuple(_resolve_repo_path(path) for path in args.paths)
+    try:
+        lines = format_hash_lines(hash_files(paths))
+    except OSError as exc:
+        print(f"hash error: {exc}", file=sys.stderr)
+        return 1
+    if args.out is not None:
+        out_path = _resolve_repo_path(args.out) if not args.out.is_absolute() else args.out
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(lines, encoding="utf-8")
+        print(_display_path(out_path))
+        return 0
+    print(lines, end="")
+    return 0
+
+
+def _cmd_probe(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    from protocolith.source_probe import probe_url
+
+    try:
+        result = probe_url(args.url, args.marker)
+    except ValueError as exc:
+        print(f"probe error: {exc}", file=sys.stderr)
+        return 2
+    text = json.dumps(result, indent=2, sort_keys=True) + "\n"
+    if args.out is not None:
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_text(text, encoding="utf-8")
+    if args.json or args.out is None:
+        print(text, end="")
+    else:
+        print(f"{result['recommendation']} http_status={result['http_status']} -> {args.out}")
+    return 0
+
+
+def _cmd_validate_card(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    path = _resolve_repo_path(args.path)
+    violations = validate_evidence_card(load_evidence_card(path))
+    if violations:
+        for violation in violations:
+            print(f"violation: {_display_path(path)}: {violation}", file=sys.stderr)
+        return 1
+    print(f"valid_card={_display_path(path)}")
+    return 0
+
+
+def _workflows():
+    """Load the runner workflows lazily so the core CLI works without the optional runner extras."""
+    try:
+        from protocolith import workflows
+    except ModuleNotFoundError as exc:
+        raise SystemExit(
+            f"This command needs the optional runner dependencies (missing module: {exc.name}); "
+            "install them with: pip install 'protocolith[runners]'"
+        ) from exc
+    return workflows
+
+
+def _cmd_verify(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    return run_verify_pack(REPO_ROOT, args.pack, operator=args.operator)
+
+
+def _cmd_rerun_nasa_d103(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    return _workflows().rerun_nasa_d103(
+        REPO_ROOT,
+        operator=args.operator,
+        root=args.root,
+        run_dir=args.run_dir,
+        baseline_path=args.baseline,
+    )
+
+
+def _cmd_rerun_noaa_d131(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    return _workflows().rerun_noaa_d131(
+        REPO_ROOT,
+        operator=args.operator,
+        root=args.root,
+        run_dir=args.run_dir,
+        baseline_path=args.baseline,
+    )
+
+
+def _cmd_drift_eea(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del parser
+    return _workflows().drift_eea_source_audit(
+        REPO_ROOT,
+        baseline_path=args.baseline,
+        report_path=args.report,
+    )
+
+
+def _cmd_doctor(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    del args, parser
+    report = run_doctor(REPO_ROOT)
+    print(f"protocolith={package_version()}")
+    print(format_doctor_report(report))
+    return 0 if report.ok else 1
+
+
+def _cmd_deviation_add(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    try:
+        entry = add_deviation(
+            args.run_dir, step=args.step, planned=args.planned,
+            happened=args.happened, reason=args.reason, who=args.who,
+        )
+    except ValueError as exc:
+        parser.error(str(exc))
+    print(json.dumps(entry, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
+def _cmd_deviation_list(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    try:
+        entries = list_deviations(args.run_dir)
+    except ValueError as exc:
+        parser.error(str(exc))
+    for entry in entries:
+        print(json.dumps(entry, ensure_ascii=False, sort_keys=True))
+    print(f"deviations={len(entries)}")
+    return 0
+
+
+def _cmd_rights_answer(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    try:
+        entry = record_rights_answer(args.run_dir, args.question_id, args.answer, args.who)
+    except ValueError as exc:
+        parser.error(str(exc))
+    print(json.dumps(entry, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
+def _cmd_rerun_report(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    outcome = {"matches": True, "differs": False, "unknown": None}[args.outcome]
+    try:
+        report = build_report(
+            load_hash_map(args.original), load_hash_map(args.rerun),
+            outcome_matches=outcome, blocked=args.blocked, operator_note=args.note,
+        )
+    except (ValueError, OSError) as exc:
+        parser.error(str(exc))
+    text = json.dumps(report, indent=2, sort_keys=True)
+    if args.out:
+        args.out.write_text(text + "\n", encoding="utf-8")
+    print(text)
+    return 0
+
+
+def _cmd_run_root(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    if not args.protocol_id or not args.source_url:
+        parser.error("--protocol-id and --source-url are required to create a run root")
+    paths = prepare_run_root(
+        RunRootRequest(
+            protocol_id=args.protocol_id,
+            operator=args.operator,
+            source_url=args.source_url,
+            root=args.root,
+        )
+    )
+    for path in paths:
+        print(path.as_posix())
+    return 0
+
+
+def _value_or_prompt(
+    value: str | None, prompt: str, parser: argparse.ArgumentParser
+) -> str:
+    if value:
+        return value
+    if sys.stdin.isatty():
+        entered = input(f"{prompt}: ").strip()
+        if entered:
+            return entered
+    parser.error(f"--{prompt.lower().replace(' ', '-')} is required outside interactive mode")
+    raise AssertionError("unreachable")
+
+
+def _prompt_path(prompt: str, parser: argparse.ArgumentParser) -> Path:
+    if sys.stdin.isatty():
+        entered = input(f"{prompt}: ").strip()
+        if entered:
+            return Path(entered)
+    parser.error("--out is required outside interactive mode")
+    raise AssertionError("unreachable")
+
+
+def _run_script(script_name: str, *args: str) -> int:
+    cmd = [sys.executable, str(REPO_ROOT / "scripts" / script_name), *args]
+    return subprocess.call(cmd, cwd=REPO_ROOT)
+
+
+def _display_path(path: Path) -> str:
+    try:
+        return path.relative_to(REPO_ROOT).as_posix()
+    except ValueError:
+        return path.as_posix()
+
+
+def _ensure_grok_clone(repo_dir: Path) -> None:
+    if (repo_dir / ".git").is_dir():
+        return
+    repo_dir.parent.mkdir(parents=True, exist_ok=True)
+    subprocess.check_call(
+        [
+            "git",
+            "clone",
+            "--depth=1",
+            "https://github.com/xai-org/grok-prompts",
+            str(repo_dir),
+        ]
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

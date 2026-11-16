@@ -5,7 +5,7 @@ The commands below are executed for real; their output is captured and drawn as 
 terminal recording. The only edit is display wrapping and replacing the temporary
 working directory with ``.``.
 
-Usage: python make_demo.py --claimbound /path/to/claimbound --card /path/to/card.json
+Usage: python make_demo.py --protocolith /path/to/protocolith --card /path/to/card.json
 Requires Pillow. Font: Menlo on macOS, DejaVu Sans Mono elsewhere.
 """
 
@@ -21,9 +21,9 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 COMMANDS = (
-    "claimbound validate-card card.json",
-    "claimbound inspect card card.json --keys evidence_id result_status reproduction_level",
-    "claimbound validate-all",
+    "protocolith validate-card card.json",
+    "protocolith inspect card card.json --keys evidence_id result_status reproduction_level",
+    "protocolith validate-all",
 )
 FONT_CANDIDATES = (
     "/System/Library/Fonts/Menlo.ttc",
@@ -34,13 +34,13 @@ WRAP = 104
 BG, BAR, FG, PROMPT, DIM = "#0d1117", "#161b22", "#e6edf3", "#3fb950", "#8b949e"
 
 
-def run_commands(claimbound: Path, card: Path) -> list[tuple[str, list[str]]]:
+def run_commands(protocolith: Path, card: Path) -> list[tuple[str, list[str]]]:
     with tempfile.TemporaryDirectory() as tmp:
         work = Path(tmp)
         shutil.copy(card, work / "card.json")
         results = []
         for command in COMMANDS:
-            argv = [str(claimbound), *command.split()[1:]]
+            argv = [str(protocolith), *command.split()[1:]]
             proc = subprocess.run(argv, cwd=work, capture_output=True, text=True, check=False)
             text = (proc.stdout + proc.stderr).replace(str(work.resolve()), ".").replace(str(work), ".")
             lines: list[str] = []
@@ -63,7 +63,7 @@ def draw_frame(font, lines: list[tuple[str, str]], cursor: bool) -> Image.Image:
     d.rectangle((0, 0, WIDTH, 34), fill=BAR)
     for i, colour in enumerate(("#ff5f56", "#ffbd2e", "#27c93f")):
         d.ellipse((16 + i * 22, 11, 28 + i * 22, 23), fill=colour)
-    d.text((WIDTH // 2, 17), "claimbound-evidence", font=font, fill=DIM, anchor="mm")
+    d.text((WIDTH // 2, 17), "protocolith", font=font, fill=DIM, anchor="mm")
     visible = lines[-((HEIGHT - 34 - 2 * PAD) // LINE):]
     y = 34 + PAD
     for kind, text in visible:
@@ -110,11 +110,11 @@ def build(results, out: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--claimbound", type=Path, required=True)
+    parser.add_argument("--protocolith", type=Path, required=True)
     parser.add_argument("--card", type=Path, required=True)
     parser.add_argument("--out", type=Path, default=Path(__file__).with_name("quickstart.gif"))
     args = parser.parse_args()
-    build(run_commands(args.claimbound, args.card), args.out)
+    build(run_commands(args.protocolith, args.card), args.out)
 
 
 if __name__ == "__main__":

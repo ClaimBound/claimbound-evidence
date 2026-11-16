@@ -14,14 +14,14 @@ The runner never forces all cards green. Each frozen gate records one honest sta
 - `INSUFFICIENT_COVERAGE`
 - `BLOCKED_SOURCE`
 
-Raw ESA HTML stays under `~/claimbound_runs/` and is not committed.
+Raw ESA HTML stays under `~/protocolith_runs/` and is not committed.
 
 ## 1. Prepare the checkout
 
 ```bash
-cd <path-to-claimbound-evidence-checkout>
+cd <path-to-protocolith-checkout>
 uv sync --extra dev
-uv run claimbound doctor
+uv run protocolith doctor
 ```
 
 Review local changes before running a batch workflow:
@@ -33,9 +33,9 @@ git status --short
 ## 2. Validate the committed state
 
 ```bash
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
-uv run python scripts/claimbound_run_esa_issue_132.py check
+uv run python scripts/protocolith_run_esa_issue_132.py check
 ```
 
 Expected matrix output:
@@ -84,7 +84,7 @@ The preview fetches ESA public pages into the local run root, evaluates the froz
 
 ```bash
 PREVIEW="$(
-  uv run python scripts/claimbound_run_esa_issue_132.py \
+  uv run python scripts/protocolith_run_esa_issue_132.py \
     preview --quiet
 )"
 
@@ -95,7 +95,7 @@ test -f "$PREVIEW"
 Inspect the preview:
 
 ```bash
-uv run claimbound inspect json "$PREVIEW" \
+uv run protocolith inspect json "$PREVIEW" \
   --keys issue_number access_date result_counts claim_boundary
 ```
 
@@ -138,7 +138,7 @@ The preview freezes:
 Run publication only after reading the preview:
 
 ```bash
-uv run python scripts/claimbound_run_esa_issue_132.py publish \
+uv run python scripts/protocolith_run_esa_issue_132.py publish \
   --preview "$PREVIEW" \
   --operator "<your-github-handle>" \
   --confirm-reviewed
@@ -149,14 +149,14 @@ The command writes or refreshes ESA issue #132 evidence outputs, the registry an
 ## 5. Validate generated evidence
 
 ```bash
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```
 
 Inspect the committed batch report:
 
 ```bash
-uv run claimbound inspect json \
+uv run protocolith inspect json \
   artifacts/esa_issue_132_batch_summary.json \
   --keys issue_number access_date operator result_counts claim_boundary
 ```
@@ -183,6 +183,6 @@ git diff -- docs/registry/evidence_index.json
 Then rerun:
 
 ```bash
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```

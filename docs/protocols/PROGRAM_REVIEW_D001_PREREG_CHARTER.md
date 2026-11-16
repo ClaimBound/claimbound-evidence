@@ -12,8 +12,8 @@ legal certification, or correctness outside this protocol.
 
 ## Source
 
-- Source name: ClaimBound evidence repository
-- Source URL: https://github.com/ClaimBound/claimbound-evidence
+- Source name: Protocolith evidence repository
+- Source URL: https://github.com/protocolith/protocolith
 - Domain: program-review
 - Audience: Program reviewers and evaluators
 - Execution mode: MANUAL_NO_AI

@@ -1,7 +1,7 @@
 ## I Reproduced This Card
 
 Use this PR template for an independent rerun or reproduction attempt of an
-existing ClaimBound evidence card.
+existing Protocolith evidence card.
 
 ## Card Reproduced
 
@@ -47,7 +47,7 @@ hashes or manual judgment that became necessary.
 
 ## Verification
 
-- [ ] `uv run claimbound validate-all` passes.
+- [ ] `uv run protocolith validate-all` passes.
 - [ ] `uv run --extra dev python -m pytest -q` passes.
 - [ ] The PR does not claim model superiority, deployment readiness,
       certification or correctness outside the reproduced protocol.

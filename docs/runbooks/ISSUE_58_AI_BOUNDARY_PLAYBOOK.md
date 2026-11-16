@@ -10,13 +10,13 @@ This is a **wording review**. Network reruns are optional.
 Primary path (any OS):
 
 ```bash
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
+uv run protocolith inspect card docs/evidence_cards/PLITH-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
   --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-OPENAI_GPT5_SYSTEM_CARD_SOURCE_AUDIT_D001-2026-05-08.json \
+uv run protocolith inspect card docs/evidence_cards/PLITH-OPENAI_GPT5_SYSTEM_CARD_SOURCE_AUDIT_D001-2026-05-08.json \
   --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-GOOGLE_DEEPMIND_MODEL_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
+uv run protocolith inspect card docs/evidence_cards/PLITH-GOOGLE_DEEPMIND_MODEL_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
   --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
-uv run claimbound inspect card docs/evidence_cards/CLAIMBOUND-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json \
+uv run protocolith inspect card docs/evidence_cards/PLITH-GROK_PROMPTS_SOURCE_AUDIT_D001-2026-05-07.json \
   --keys evidence_id claim_boundary allowed_claim_sentence known_limitations
 ```
 
@@ -39,7 +39,7 @@ open README.md
 ## Optional fresh source probes
 
 ```bash
-uv run python scripts/claimbound_run_public_doc_source_audit.py \
+uv run python scripts/protocolith_run_public_doc_source_audit.py \
   --protocol-id ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001 \
   --source-name "Anthropic Model System Cards" \
   --source-url "https://www.anthropic.com/system-cards/" \
@@ -47,7 +47,7 @@ uv run python scripts/claimbound_run_public_doc_source_audit.py \
   --claim-boundary "Source audit only." \
   --report /tmp/anthropic_boundary_check.json
 
-uv run python scripts/claimbound_run_public_doc_source_audit.py \
+uv run python scripts/protocolith_run_public_doc_source_audit.py \
   --protocol-id OPENAI_GPT5_SYSTEM_CARD_SOURCE_AUDIT_D001 \
   --source-name "OpenAI GPT-5 System Card PDF" \
   --source-url "https://cdn.openai.com/gpt-5-system-card.pdf" \
@@ -55,7 +55,7 @@ uv run python scripts/claimbound_run_public_doc_source_audit.py \
   --claim-boundary "Source audit only." \
   --report /tmp/openai_boundary_check.json
 
-uv run python scripts/claimbound_run_public_doc_source_audit.py \
+uv run python scripts/protocolith_run_public_doc_source_audit.py \
   --protocol-id GOOGLE_DEEPMIND_MODEL_CARDS_SOURCE_AUDIT_D001 \
   --source-name "Google DeepMind Model Cards" \
   --source-url "https://deepmind.google/models/model-cards" \
@@ -65,7 +65,7 @@ uv run python scripts/claimbound_run_public_doc_source_audit.py \
 
 rm -rf /tmp/grok-prompts
 git clone --depth 1 https://github.com/xai-org/grok-prompts /tmp/grok-prompts
-uv run python scripts/claimbound_run_grok_prompts_source_audit.py \
+uv run python scripts/protocolith_run_grok_prompts_source_audit.py \
   --repo-dir /tmp/grok-prompts \
   --report /tmp/grok_boundary_check.json
 ```
@@ -92,11 +92,11 @@ open "docs/reviews/AI_SOURCE_AUDIT_BOUNDARY_REVIEW_${TODAY}.md"
 If JSON wording changes:
 
 ```bash
-uv run --extra dev python scripts/claimbound_render_evidence_card_svg.py \
-  docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
-  docs/evidence_cards/CLAIMBOUND-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg
+uv run --extra dev python scripts/protocolith_render_evidence_card_svg.py \
+  docs/evidence_cards/PLITH-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.json \
+  docs/evidence_cards/PLITH-ANTHROPIC_SYSTEM_CARDS_SOURCE_AUDIT_D001-2026-05-08.svg
 
-uv run claimbound validate-all
+uv run protocolith validate-all
 ```
 
 Closes #58.

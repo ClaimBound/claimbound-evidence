@@ -1,6 +1,6 @@
 # Independent Rerun Workflow
 
-Independent reruns make ClaimBound cards stronger without turning the project
+Independent reruns make Protocolith cards stronger without turning the project
 into a certification authority.
 
 ## When To Use This
@@ -42,17 +42,17 @@ Frozen public-data reruns do not require bash, jq, curl or shasum on the primary
 path. See [platform support](PLATFORM_SUPPORT.md).
 
 ```bash
-uv run claimbound rerun nasa-d103 --operator "<your-handle>"
-uv run claimbound rerun noaa-d131 --operator "<your-handle>"
-uv run claimbound drift eea-source-audit
+uv run protocolith rerun nasa-d103 --operator "<your-handle>"
+uv run protocolith rerun noaa-d131 --operator "<your-handle>"
+uv run protocolith drift eea-source-audit
 ```
 
 Or run VERIFY shortcuts:
 
 ```bash
-uv run claimbound verify nasa-rerun --operator "<your-handle>"
-uv run claimbound verify noaa-rerun --operator "<your-handle>"
-uv run claimbound verify eea-drift
+uv run protocolith verify nasa-rerun --operator "<your-handle>"
+uv run protocolith verify noaa-rerun --operator "<your-handle>"
+uv run protocolith verify eea-drift
 ```
 
 Tier packs: [external verification](external_verification/README.md).
@@ -95,7 +95,7 @@ Do not put `REPRODUCED_OUTCOME_WITH_SOURCE_BYTE_DRIFT` in `result_status`.
 Before opening the PR:
 
 ```bash
-uv run claimbound validate-all
+uv run protocolith validate-all
 uv run --extra dev python -m pytest -q
 ```
 
@@ -103,7 +103,7 @@ Do not edit thresholds, gates or claim boundaries to force a reproduced result.
 
 ## Rerun Report Helper
 
-`claimbound rerun report` compares original and rerun SHA-256 maps (JSON
+`protocolith rerun report` compares original and rerun SHA-256 maps (JSON
 `{name: sha256}` or `sha256  name` text lines) and writes a report with
 optional fields:
 
@@ -114,7 +114,7 @@ optional fields:
 - `operator_note`.
 
 ```bash
-claimbound rerun report --original orig_hashes.json --rerun new_hashes.json \
+protocolith rerun report --original orig_hashes.json --rerun new_hashes.json \
   --outcome matches --out rerun_report.json
 ```
 

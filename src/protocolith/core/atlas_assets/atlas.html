@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:">
+<title>{{TITLE}}</title>
+<style>
+{{CSS}}
+</style>
+</head>
+<body>
+<a class="skip" href="#table-wrap" data-i18n="skip_link"></a>
+<header class="top">
+  <h1 id="atlas-title"></h1>
+  <div class="tools">
+    <label id="lang-wrap" class="lang" hidden><span data-i18n="lang_label"></span>
+      <select id="lang"></select></label>
+    <button type="button" id="theme" data-i18n-attr="aria-label:theme_toggle,title:theme_toggle">&#9680;</button>
+  </div>
+</header>
+<noscript><p class="banner bad">{{T:noscript}}</p></noscript>
+<p id="fatal" class="banner bad" role="alert" hidden>{{T:load_error}}</p>
+<main id="app" hidden>
+  <section id="integrity" aria-live="polite"></section>
+  <section id="tiles" class="tiles" aria-label="summary" data-i18n-attr="aria-label:tiles_label"></section>
+  <section class="charts">
+    <figure><figcaption data-i18n="chart_status"></figcaption><div id="chart-status" class="bars"></div></figure>
+    <figure><figcaption data-i18n="chart_timeline"></figcaption><div id="chart-time"></div></figure>
+  </section>
+  <section class="filters" role="search">
+    <label class="grow"><span data-i18n="search_label"></span>
+      <input id="q" type="search" autocomplete="off" data-i18n-attr="placeholder:search_placeholder"></label>
+    <label><span data-i18n="filter_status"></span><select id="f-status"></select></label>
+    <label><span data-i18n="filter_domain"></span><select id="f-domain"></select></label>
+    <label><span data-i18n="filter_level"></span><select id="f-level"></select></label>
+    <label><span data-i18n="filter_from"></span><input id="f-from" type="date"></label>
+    <label><span data-i18n="filter_to"></span><input id="f-to" type="date"></label>
+    <button type="button" id="reset" data-i18n="filter_reset"></button>
+  </section>
+  <p id="count" class="muted" role="status"></p>
+  <div id="table-wrap" class="wrap" tabindex="-1">
+    <table id="table">
+      <caption class="sr" data-i18n="table_caption"></caption>
+      <thead><tr id="head"></tr></thead>
+      <tbody id="body"></tbody>
+    </table>
+    <p id="empty" class="muted" hidden data-i18n="no_results"></p>
+  </div>
+  <nav class="pager" aria-label="pagination" data-i18n-attr="aria-label:pager_label">
+    <button type="button" id="prev" data-i18n="page_prev"></button>
+    <span id="page-info" class="muted"></span>
+    <button type="button" id="next" data-i18n="page_next"></button>
+  </nav>
+  <p class="muted keys" data-i18n="shortcuts"></p>
+</main>
+<aside id="drawer" role="dialog" aria-modal="false" aria-labelledby="drawer-title" hidden>
+  <div class="drawer-head">
+    <h2 id="drawer-title" data-i18n="drawer_title"></h2>
+    <button type="button" id="close" data-i18n="drawer_close"></button>
+  </div>
+  <div class="drawer-actions">
+    <button type="button" id="copy-id" data-i18n="copy_id"></button>
+    <button type="button" id="copy-hash" data-i18n="copy_hash"></button>
+    <button type="button" id="copy-link" data-i18n="copy_link"></button>
+    <span id="live" class="muted" role="status"></span>
+  </div>
+  <p id="drawer-id" class="mono wrapany"></p>
+  <p id="drawer-hash" class="mono wrapany muted"></p>
+  <p id="drawer-note" class="muted" role="status"></p>
+  <h3 data-i18n="fields_heading"></h3>
+  <dl id="fields"></dl>
+  <p class="muted" data-i18n="clipped_note"></p>
+  <h3 data-i18n="raw_heading"></h3>
+  <pre id="raw"></pre>
+</aside>
+<footer class="foot muted" data-i18n="footer_honest"></footer>
+<script type="application/json" id="atlas-data">{{DATA}}</script>
+<script>
+{{JS}}
+</script>
+</body>
+</html>

@@ -1,4 +1,6 @@
-# Reading a card
+# Reading a card (archive)
+
+> Older description of evidence-card fields. For cards issued by the ledger see [Cards](concepts-cards.md).
 
 An evidence card answers one question about one claim. These fields matter most:
 

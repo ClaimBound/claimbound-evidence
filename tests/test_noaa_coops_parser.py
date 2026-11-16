@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_evidence.noaa_coops_parser import join_observed_predictions, parse_noaa_coops_series
+from protocolith.noaa_coops_parser import join_observed_predictions, parse_noaa_coops_series
 
 
 def _write_hourly_payload(path: Path, *, product: str, values: list[float]) -> None:

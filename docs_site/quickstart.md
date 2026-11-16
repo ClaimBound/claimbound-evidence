@@ -1,12 +1,14 @@
-# Quick start
+# Validate a card (archive)
+
+> This is the card-level quick start of earlier releases. For the ledger, see [Your first record](getting-started-first-record.md).
 
 Validate one card, look at its result and see what it does not claim.
 
 ```bash
-pipx install claimbound-evidence
-curl -LO https://raw.githubusercontent.com/ClaimBound/claimbound-evidence/main/docs/evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
-claimbound validate-card CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
-claimbound inspect card CLAIMBOUND-NASA-POWER-D103-2026-04-29.json
+pipx install protocolith
+curl -LO https://raw.githubusercontent.com/protocolith/protocolith/main/docs/evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json
+protocolith validate-card PLITH-NASA-POWER-D103-2026-04-29.json
+protocolith inspect card PLITH-NASA-POWER-D103-2026-04-29.json
 ```
 
 `validate-card` checks the card against the protocol rules: required fields, exact status and
@@ -20,6 +22,6 @@ Before quoting a card, read three fields: `result_status`, `reproduction_level` 
 
 ## Next
 
-- Run the whole registry check from a clone: `uv run claimbound validate-all`.
+- Run the whole registry check from a clone: `uv run protocolith validate-all`.
 - Repeat a card yourself: [independent rerun workflow](INDEPENDENT_RERUN_WORKFLOW.md).
 - Every command and option: [command reference](CLI.md).

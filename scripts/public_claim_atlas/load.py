@@ -21,7 +21,7 @@ def load() -> tuple[dict, list[dict]]:
                 raise SystemExit(f"ERROR: duplicate primary protocol {row['protocol_id']}")
             primary_by_protocol[row["protocol_id"]] = (row, primary_manifest, primary_report_sha)
     rows: list[dict] = []
-    card_paths = sorted(CARDS.glob("CLAIMBOUND-CB7K-*.json"))
+    card_paths = sorted(CARDS.glob("PLITH-CB7K-*.json"))
     cards_by_protocol = {
         json.loads(path.read_text(encoding="utf-8"))["protocol_id"]: (
             path,

@@ -1,6 +1,6 @@
 # Education And Open Science (Future Application)
 
-ClaimBound can support teaching reproducible ML and open-science appendices
+Protocolith can support teaching reproducible ML and open-science appendices
 when claims stay narrow and protocols are frozen before runs.
 
 ## Suitable narrow claims
@@ -19,11 +19,11 @@ when claims stay narrow and protocols are frozen before runs.
 
 | Record | Status |
 | --- | --- |
-| [Education repro D001](../evidence_cards/CLAIMBOUND-EDU_REPRO_D001-2026-05-07.json) | `BLOCKED_SOURCE` |
-| [ML appendix D001](../evidence_cards/CLAIMBOUND-ML_APPENDIX_D001-2026-05-07.json) | `BLOCKED_SOURCE` |
-| [Repro appendix D001](../evidence_cards/CLAIMBOUND-REPRO_APPENDIX_D001-2026-05-07.json) | `BLOCKED_SOURCE` |
-| [NASA POWER D-103](../evidence_cards/CLAIMBOUND-NASA-POWER-D103-2026-04-29.json) | Passed with source-byte drift |
-| [NOAA CO-OPS D-131](../evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-2026-04-30.json) | `NEGATIVE_RESULT_UNDER_PROTOCOL` |
+| [Education repro D001](../evidence_cards/PLITH-EDU_REPRO_D001-2026-05-07.json) | `BLOCKED_SOURCE` |
+| [ML appendix D001](../evidence_cards/PLITH-ML_APPENDIX_D001-2026-05-07.json) | `BLOCKED_SOURCE` |
+| [Repro appendix D001](../evidence_cards/PLITH-REPRO_APPENDIX_D001-2026-05-07.json) | `BLOCKED_SOURCE` |
+| [NASA POWER D-103](../evidence_cards/PLITH-NASA-POWER-D103-2026-04-29.json) | Passed with source-byte drift |
+| [NOAA CO-OPS D-131](../evidence_cards/PLITH-NOAA-COOPS-D131-2026-04-30.json) | `NEGATIVE_RESULT_UNDER_PROTOCOL` |
 
 NASA and NOAA show honest positive and negative empirical outcomes. Edu/ML/repro
 blocked cards show scaffold or source-boundary limits.

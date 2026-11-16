@@ -6,7 +6,7 @@ approval process.
 
 ## Core Idea
 
-ClaimBound can be used as a portable evidence-bound control layer for AI claims
+Protocolith can be used as a portable evidence-bound control layer for AI claims
 and actions.
 
 ```text
@@ -14,7 +14,7 @@ AI may assist, but evidence must bind.
 ```
 
 The rules can be used internally by builders and operators, externally by
-reviewers and users, or publicly through ClaimBound evidence cards. They do not
+reviewers and users, or publicly through Protocolith evidence cards. They do not
 replace an AI system's hidden policies, tests, review, access control,
 sandboxing, monitoring or human judgment. They add a visible evidence layer
 around claims, actions, approvals, blocked states and tombstones.
@@ -22,7 +22,7 @@ around claims, actions, approvals, blocked states and tombstones.
 The practical rule is simple:
 
 ```text
-AI output is not trusted until it passes visible ClaimBound checks.
+AI output is not trusted until it passes visible Protocolith checks.
 ```
 
 For v1, these rules are guidance and mapping language. They do not add new
@@ -37,7 +37,7 @@ Each rule has the same shape:
 | Part | Meaning |
 | --- | --- |
 | Human rule | The plain-language behavior expected from an AI-assisted workflow. |
-| ClaimBound gate | The checkable evidence requirement. |
+| Protocolith gate | The checkable evidence requirement. |
 | Internal use | How a team, maintainer, CI flow or operator can use it privately. |
 | External use | How a reviewer, user or public reader can challenge the claim. |
 | Blocked state | What happens when evidence is missing or the boundary is too weak. |
@@ -46,7 +46,7 @@ Each rule has the same shape:
 
 Human rule: AI must not expand a narrow checked claim into a broad conclusion.
 
-ClaimBound gate: Every AI claim needs a `claim_boundary` tied to a card,
+Protocolith gate: Every AI claim needs a `claim_boundary` tied to a card,
 checklist, report or blocked state.
 
 Internal use: PR summaries, release notes, model notes and operator reports say
@@ -63,7 +63,7 @@ unsupported and should not be presented as evidence.
 Human rule: AI must not treat model confidence, brand, role, title or fluent
 language as proof.
 
-ClaimBound gate: A trusted AI claim needs a source, protocol or checklist,
+Protocolith gate: A trusted AI claim needs a source, protocol or checklist,
 hashes or retained artifacts when applicable, exact result status and limitation
 text.
 
@@ -80,7 +80,7 @@ is treated as unsupported or blocked rather than accepted.
 
 Human rule: AI must not change success criteria after seeing the result.
 
-ClaimBound gate: Source boundary, target, scorer, baseline, controls, acceptance
+Protocolith gate: Source boundary, target, scorer, baseline, controls, acceptance
 gate and forbidden inference are fixed before execution.
 
 Internal use: CI jobs, agent tasks and evaluation runs keep the command path,
@@ -97,7 +97,7 @@ produce a trusted positive claim.
 Human rule: AI must know where the claim, data, prompt, file, document or result
 came from.
 
-ClaimBound gate: Record source URL or path, access date, commit or version,
+Protocolith gate: Record source URL or path, access date, commit or version,
 hashes or manifest references, and source-rights or payload policy.
 
 Internal use: Operators can keep raw or restricted materials outside the public
@@ -113,7 +113,7 @@ summary, the claim should block instead of turning green.
 
 Human rule: AI must not convert missing evidence into a weak positive result.
 
-ClaimBound gate: Missing source access, rights, coverage, model identity,
+Protocolith gate: Missing source access, rights, coverage, model identity,
 scoring evidence, logs or hashes becomes a documented blocked or insufficient
 state.
 
@@ -130,7 +130,7 @@ trust claim is made.
 
 Human rule: AI should prefer reversible steps before hard-to-reverse actions.
 
-ClaimBound gate: Risky AI-assisted workflows record whether the action is
+Protocolith gate: Risky AI-assisted workflows record whether the action is
 read-only, draft, reversible, hard to reverse or irreversible.
 
 Internal use: Agents start with read-only audit, local dry run, draft PR,
@@ -147,7 +147,7 @@ should not proceed as trusted evidence.
 Human rule: AI must not complete high-impact or irreversible actions without a
 human approval gate.
 
-ClaimBound gate: The workflow records approval requirement, approval reference,
+Protocolith gate: The workflow records approval requirement, approval reference,
 protected surfaces and the final human-reviewed boundary.
 
 Internal use: Maintainers can require approval before merge, release,
@@ -165,7 +165,7 @@ gate. This is a blocker reason, not a new v1 `result_status`.
 Human rule: AI must not replace the user's stated goal with a different goal
 that is easier, flashier or more favorable to the AI output.
 
-ClaimBound gate: Each AI-assisted task records the user-intent surface, allowed
+Protocolith gate: Each AI-assisted task records the user-intent surface, allowed
 scope and forbidden substitutions.
 
 Internal use: Operators keep agent work tied to the request, issue, protocol or
@@ -181,7 +181,7 @@ problem, the result should be rewritten, narrowed or blocked.
 
 Human rule: AI should use and publish only the data needed for the claim.
 
-ClaimBound gate: Public records store sanitized summaries, hashes, paths and
+Protocolith gate: Public records store sanitized summaries, hashes, paths and
 limitations instead of raw private payloads, full transcripts or restricted
 source material.
 
@@ -199,7 +199,7 @@ summarized or hashed, the public claim should block or stay local.
 Human rule: AI must look for contradiction, absence and negative evidence, not
 only support.
 
-ClaimBound gate: The protocol or checklist records expected counterclaims,
+Protocolith gate: The protocol or checklist records expected counterclaims,
 negative controls, missing-evidence checks or forbidden positive inferences.
 
 Internal use: Operators ask what would disprove, weaken or block the AI claim
@@ -216,7 +216,7 @@ claim is not ready for trusted publication.
 Human rule: AI-assisted work must leave a record of what happened, why, by which
 tool and with what result.
 
-ClaimBound gate: Keep command paths, tool surfaces, source references, output
+Protocolith gate: Keep command paths, tool surfaces, source references, output
 hashes, sanitized reports, operator notes and final status together.
 
 Internal use: Teams can reconstruct an agent run, PR check, rerun or manual
@@ -233,7 +233,7 @@ should not be promoted as trusted evidence.
 Human rule: AI must not quietly forget a claim that became wrong, stale,
 overbroad, blocked or superseded.
 
-ClaimBound gate: Failed, stopped, drifted or superseded branches get a tombstone
+Protocolith gate: Failed, stopped, drifted or superseded branches get a tombstone
 or explicit supersession record when v2 or v3 tracking is used.
 
 Internal use: Teams can stop repeated attempts from recycling the same weak

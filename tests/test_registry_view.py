@@ -12,8 +12,8 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_evidence.registry import load_registry
-from claimbound_evidence.registry_view import (
+from protocolith.registry import load_registry
+from protocolith.registry_view import (
     INDEX_REL,
     RegistryViewError,
     build_views,
@@ -55,7 +55,7 @@ def test_committed_views_are_current() -> None:
 
 def test_check_cli_exit_code() -> None:
     proc = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "claimbound_build_registry_view.py"), "--check"],
+        [sys.executable, str(ROOT / "scripts" / "protocolith_build_registry_view.py"), "--check"],
         capture_output=True,
         text=True,
         check=False,

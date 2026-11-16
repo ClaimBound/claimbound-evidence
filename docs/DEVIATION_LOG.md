@@ -1,6 +1,6 @@
 # Deviation Log And Source-Rights Checklist
 
-Every local run root created by `claimbound run-root` contains two operator
+Every local run root created by `protocolith run-root` contains two operator
 records. Both stay local with the run root; do not commit raw payloads.
 
 ## Deviation log
@@ -17,10 +17,10 @@ records. Both stay local with the run root; do not commit raw payloads.
 | `who` | Operator who recorded it |
 
 ```bash
-claimbound run-root deviation add --run-dir RUN_DIR --step fetch \
+protocolith run-root deviation add --run-dir RUN_DIR --step fetch \
   --planned "fetch 30 points" --happened "fetched 28" \
   --reason "HTTP 404 on two points" --who operator-handle
-claimbound run-root deviation list --run-dir RUN_DIR
+protocolith run-root deviation list --run-dir RUN_DIR
 ```
 
 `list` validates every line and fails on malformed entries. Entries are never
@@ -36,7 +36,7 @@ robots/access policy, attribution, redistribution, rate limits and personal
 data. Record answers in the source's own words:
 
 ```bash
-claimbound run-root rights answer --run-dir RUN_DIR --question-id robots \
+protocolith run-root rights answer --run-dir RUN_DIR --question-id robots \
   --answer "robots.txt has no Disallow for the fetched path" --who operator-handle
 ```
 

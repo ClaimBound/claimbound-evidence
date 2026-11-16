@@ -1,10 +1,10 @@
-# ClaimBound Public Evidence Registry - static view
+# Protocolith Public Evidence Registry - static view
 
-> Read-only generated view of `docs/registry/evidence_index.json`. Do not edit by hand; regenerate with `uv run python scripts/claimbound_build_registry_view.py`. No raw payloads are stored here.
+> Read-only generated view of `docs/registry/evidence_index.json`. Do not edit by hand; regenerate with `uv run python scripts/protocolith_build_registry_view.py`. No raw payloads are stored here.
 
-- Registry: ClaimBound Public Evidence Registry 0.1
-- Index last_updated: 2026-09-12
-- Entries: 8073
+- Registry: Protocolith Public Evidence Registry 0.1
+- Index last_updated: 2026-11-14
+- Entries: 8072
 - Single-file filterable view: [index.html](index.html)
 
 ## By result status
@@ -14,7 +14,7 @@
 | [BLOCKED_SOURCE](status-blocked-source.md) | 17 |
 | [INSUFFICIENT_COVERAGE](status-insufficient-coverage.md) | 450 |
 | [NEGATIVE_RESULT_UNDER_PROTOCOL](status-negative-result-under-protocol.md) | 9 |
-| [PASSED_UNDER_PROTOCOL](status-passed-under-protocol.md) | 7597 |
+| [PASSED_UNDER_PROTOCOL](status-passed-under-protocol.md) | 7596 |
 
 ## By domain
 
@@ -119,7 +119,6 @@
 | [satellites](domain-satellites.md) | 70 |
 | [shipping](domain-shipping.md) | 70 |
 | [software-development](domain-software-development.md) | 2 |
-| [software-performance](domain-software-performance.md) | 1 |
 | [software-supply-chain](domain-software-supply-chain.md) | 70 |
 | [space_safety](domain-space-safety.md) | 2 |
 | [sports](domain-sports.md) | 70 |

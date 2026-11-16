@@ -2,14 +2,14 @@
 
 ## Build instructions
 
-Requirements: Python 3.12 or newer and [uv](https://docs.astral.sh/uv/). Nothing else is needed:
+Requirements: Python 3.11 or newer and [uv](https://docs.astral.sh/uv/). Nothing else is needed:
 the package is pure Python, with no compiler, SDK or system library.
 
 ```bash
-git clone https://github.com/ClaimBound/claimbound-evidence.git
-cd claimbound-evidence
+git clone https://github.com/protocolith/protocolith.git
+cd protocolith
 uv sync --extra dev          # creates .venv with the locked dependencies
-uv run claimbound doctor     # checks the environment
+uv run protocolith doctor     # checks the environment
 uv build                     # builds the sdist and the wheel into dist/
 uvx twine check dist/*       # checks the package metadata
 ```

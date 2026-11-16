@@ -1,6 +1,6 @@
 # Current Evidence Tracks
 
-This page explains the current public ClaimBound tracks in plain language.
+This page explains the current public Protocolith tracks in plain language.
 
 It is not a new result record. The source of truth remains the committed
 protocols, sanitized artifacts, evidence cards and registry entries.
@@ -20,8 +20,8 @@ protocols, sanitized artifacts, evidence cards and registry entries.
 | NASA POWER D-103 maintainer rerun | NASA POWER Daily point API | `PASSED_UNDER_PROTOCOL` | A maintainer `reproduction_attempt` card under the same protocol; `reproduction_level` records source-byte drift. `SINGLE_OPERATOR_RERUN` only. |
 | NOAA CO-OPS D-131 | NOAA CO-OPS Data API | `NEGATIVE_RESULT_UNDER_PROTOCOL` | The official-source run completed, but the candidate did not pass the frozen acceptance gate. Source-byte drift is recorded in `reproduction_level`. |
 | NOAA CO-OPS D-131 maintainer rerun | NOAA CO-OPS Data API | `NEGATIVE_RESULT_UNDER_PROTOCOL` | A maintainer `reproduction_attempt` card under the same protocol; gate still did not pass. `SINGLE_OPERATOR_RERUN` only. |
-| Software dev validator gate D-001 | ClaimBound evidence repository | `PASSED_UNDER_PROTOCOL` | The evidence-card validator rejected a card JSON missing `execution_mode` when exercised by the frozen pytest gate in protocol SOFTWARE_DEV_D001 only. |
-| API parity registry gate D-001 | ClaimBound evidence repository | `PASSED_UNDER_PROTOCOL` | Frozen registry validation commands exited 0 and registry metadata matched expectation. Registry parity only; not production readiness or full validator coverage. |
+| Software dev validator gate D-001 | Protocolith evidence repository | `PASSED_UNDER_PROTOCOL` | The evidence-card validator rejected a card JSON missing `execution_mode` when exercised by the frozen pytest gate in protocol SOFTWARE_DEV_D001 only. |
+| API parity registry gate D-001 | Protocolith evidence repository | `PASSED_UNDER_PROTOCOL` | Frozen registry validation commands exited 0 and registry metadata matched expectation. Registry parity only; not production readiness or full validator coverage. |
 | NYC TLC Phase 4 | NYC TLC public trip records | Negative artifact | The official-source run completed, but the candidate did not pass all required controls. A full evidence card should be added or the record should remain clearly marked as artifact-only. |
 | CDC mirror path | Public mirror path | Blocked-source style artifact | The proof path completed, but external source equivalence remained unresolved. No empirical pass or fail claim should be made. |
 
@@ -32,7 +32,7 @@ examples for new readers.
 
 | Track | Source | Public outcome | Interpretation |
 | --- | --- | --- | --- |
-| Program-fit self-check D-001 | Public-interest open-source program eligibility information | `PASSED_UNDER_PROTOCOL` | Public ClaimBound materials mapped to selected program eligibility categories under a frozen manual checklist, without claiming approval, endorsement, legal eligibility, reviewer acceptance or selection likelihood. Single-operator only. |
+| Program-fit self-check D-001 | Public-interest open-source program eligibility information | `PASSED_UNDER_PROTOCOL` | Public Protocolith materials mapped to selected program eligibility categories under a frozen manual checklist, without claiming approval, endorsement, legal eligibility, reviewer acceptance or selection likelihood. Single-operator only. |
 
 See [Program eligibility self-check example](examples/PROGRAM_ELIGIBILITY_SELF_CHECK.md).
 
@@ -50,7 +50,7 @@ Current non-card or artifact-only records:
 | NYC TLC Phase 4 | Negative artifact only. | Add a validated evidence-card JSON/SVG and registry entry, or keep it outside the completed-card list. |
 | CDC mirror path | Blocked-source style artifact only. | Resolve source equivalence or publish a blocked-source card with explicit source-boundary limitations. |
 
-This distinction is intentional. ClaimBound does not upgrade artifacts into
+This distinction is intentional. Protocolith does not upgrade artifacts into
 evidence cards just because a technical run completed.
 
 ## Grok Prompts Source Audit
@@ -126,7 +126,7 @@ want an applicant-side methodology demo. It is not a first-screen card.
 Allowed interpretation:
 
 ```text
-ClaimBound public materials mapped to selected public-interest open-source
+Protocolith public materials mapped to selected public-interest open-source
 program eligibility categories under the frozen manual checklist.
 ```
 
@@ -260,7 +260,7 @@ source boundary still prevents a performance claim.
 
 ## Why This Mix Is Good
 
-A healthy ClaimBound repository should contain:
+A healthy Protocolith repository should contain:
 
 - positive records;
 - negative records;

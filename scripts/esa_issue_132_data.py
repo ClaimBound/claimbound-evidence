@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Frozen claim matrix for ClaimBound issue #132."""
+"""Frozen claim matrix for Protocolith issue #132."""
 
 from __future__ import annotations
 

@@ -3,8 +3,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from claimbound_evidence.nasa_power import NASA_POWER_POINTS
-from claimbound_evidence.nasa_power_fetch import (
+from protocolith.nasa_power import NASA_POWER_POINTS
+from protocolith.nasa_power_fetch import (
     build_nasa_power_point_url,
     download_nasa_power_d103_points,
 )

@@ -6,8 +6,8 @@ target repository by hand after a release exists on PyPI.
 
 | Channel | Files | Tested here | Submitted |
 | --- | --- | --- | --- |
-| conda-forge | `conda-forge/recipe.yaml.tmpl` (v1 format) | Package names and versions checked against conda-forge; not built: no conda tooling on the authoring machine; YAML structure and the v1 layout follow the staged-recipes example | yes: merged as staged-recipes#35003, feedstock `conda-forge/claimbound-evidence-feedstock`, `claimbound-evidence 0.4.8` (noarch) published \|
-| Homebrew tap | `homebrew/claimbound-evidence.rb.tmpl` | Ruby syntax; the dependency wheels it lists were downloaded, hash-checked and installed offline into a fresh Python 3.13 environment (macOS arm64). `brew install` itself was not run | no |
+| conda-forge | `conda-forge/recipe.yaml.tmpl` (v1 format) | Package names and versions checked against conda-forge; not built: no conda tooling on the authoring machine; YAML structure and the v1 layout follow the staged-recipes example | yes: merged as staged-recipes#35003, feedstock `conda-forge/protocolith-feedstock`, `protocolith 0.4.8` (noarch) published \|
+| Homebrew tap | `homebrew/protocolith.rb.tmpl` | Ruby syntax; the dependency wheels it lists were downloaded, hash-checked and installed offline into a fresh Python 3.13 environment (macOS arm64). `brew install` itself was not run | no |
 | Docker image | `docker/Dockerfile`, `docker/publish.yml.example` | Not built (Docker daemon was not running) | no |
 
 ## Render for a release
@@ -17,12 +17,12 @@ python packaging/render.py --version 0.4.8      # release must already be on PyP
 ```
 
 Output goes to `packaging/build/` (git-ignored): `conda-forge/recipe.yaml` and
-`homebrew/claimbound-evidence.rb`. Hashes come from the PyPI JSON API; dependency wheels for
+`homebrew/protocolith.rb`. Hashes come from the PyPI JSON API; dependency wheels for
 Homebrew come from `uv.lock` of the checked-out commit, so render from the release tag.
 
 ## conda-forge
 
-1. Fork `conda-forge/staged-recipes`, add `recipes/claimbound-evidence/recipe.yaml` from the
+1. Fork `conda-forge/staged-recipes`, add `recipes/protocolith/recipe.yaml` from the
    rendered file (staged-recipes requires the v1 format; v0 `meta.yaml` is deprecated for new recipes), open a pull request from the owner's GitHub account.
 2. The linter and CI in that pull request are the real test; expect requests to adjust
    `about` fields. After merge, a feedstock is created and updated by a bot on each release.
@@ -33,11 +33,11 @@ exist on conda-forge. The build needs `hatchling` and `hatch-fancy-pypi-readme`.
 
 ## Homebrew (own tap)
 
-1. Create the repository `ClaimBound/homebrew-tap` (owner action), add
-   `Formula/claimbound-evidence.rb` from the rendered file.
-2. Test on a Mac: `brew install --build-from-source ./claimbound-evidence.rb`, then
-   `brew test claimbound-evidence` and `brew audit --strict --new claimbound-evidence`.
-3. Users install with `brew install claimbound/tap/claimbound-evidence`.
+1. Create the repository `Protocolith/homebrew-tap` (owner action), add
+   `Formula/protocolith.rb` from the rendered file.
+2. Test on a Mac: `brew install --build-from-source ./protocolith.rb`, then
+   `brew test protocolith` and `brew audit --strict --new protocolith`.
+3. Users install with `brew install protocolith/tap/protocolith`.
 
 Homebrew builds run without network access, so the formula installs the project wheel and
 every dependency as a pinned binary wheel resource (SHA-256 each) with `pip --no-index`.
@@ -50,8 +50,8 @@ notability thresholds the project does not meet yet.
 
 ```bash
 python -m build --wheel
-docker build -f packaging/docker/Dockerfile -t claimbound-evidence .
-docker run --rm -v "$PWD:/work" claimbound-evidence validate-card card.json
+docker build -f packaging/docker/Dockerfile -t protocolith .
+docker run --rm -v "$PWD:/work" protocolith validate-card card.json
 ```
 
 `publish.yml.example` would push an image to GHCR on each release. It is not active; copy it

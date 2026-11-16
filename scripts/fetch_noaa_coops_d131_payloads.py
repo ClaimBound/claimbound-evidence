@@ -16,7 +16,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, str(REPO_ROOT / "src"))
 
-from claimbound_evidence.noaa_coops_fetch import (  # noqa: E402
+from protocolith.noaa_coops_fetch import (  # noqa: E402
     NOAA_COOPS_D131_BEGIN,
     NOAA_COOPS_D131_END,
     NOAA_COOPS_D131_STATIONS,

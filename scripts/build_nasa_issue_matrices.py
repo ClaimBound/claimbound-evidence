@@ -4,7 +4,7 @@
 
 The source snapshot is newline-delimited JSON returned by:
 
-    gh api 'repos/ClaimBound/claimbound-evidence/issues?state=open&per_page=100'
+    gh api 'repos/Protocolith/protocolith/issues?state=open&per_page=100'
 
 Only issues #147 through #156 are accepted.  The resulting matrices commit the
 pre-fetch claims, source URLs, protocol IDs, and deterministic lexical gates;
@@ -263,7 +263,7 @@ def _parse_issue(snapshot: dict[str, Any]) -> dict[str, Any]:
     return {
         "version": MATRIX_VERSION,
         "issue_number": issue_number,
-        "source_issue_url": f"https://github.com/ClaimBound/claimbound-evidence/issues/{issue_number}",
+        "source_issue_url": f"https://github.com/protocolith/protocolith/issues/{issue_number}",
         "card_count": len(cards),
         "claim_boundary": (
             "Each card tests one frozen candidate against exactly one listed NASA page. "

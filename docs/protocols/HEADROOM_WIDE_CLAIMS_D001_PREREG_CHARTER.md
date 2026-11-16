@@ -37,7 +37,7 @@ certification of Headroom, Codex, Ollama, Qwen, Gemma or any cloud provider.
 
 ## Runtime Procedure
 
-1. Use `uv run python scripts/claimbound_run_headroom_wide_claims.py`.
+1. Use `uv run python scripts/protocolith_run_headroom_wide_claims.py`.
 2. The runner may bootstrap `headroom-ai==0.27.0` and `transformers` through
    `uv --with` when they are not installed in the project environment.
 3. Set `HEADROOM_TELEMETRY=off` and do not enable `--log-messages`.
@@ -93,9 +93,9 @@ these local direct-chat results.
 - Request: `docs/evidence_requests/HEADROOM_WIDE_CLAIMS_D001_REQUEST.md`
 - Protocol: `docs/protocols/HEADROOM_WIDE_CLAIMS_D001_PREREG_CHARTER.md`
 - Runbook: `docs/runbooks/HEADROOM_WIDE_CLAIMS_D001.md`
-- Runner: `scripts/claimbound_run_headroom_wide_claims.py`
+- Runner: `scripts/protocolith_run_headroom_wide_claims.py`
 - Summaries: `artifacts/headroom_*_summary.json`
-- Cards: `docs/evidence_cards/CLAIMBOUND-HEADROOM_*-2026-06-23.json`
+- Cards: `docs/evidence_cards/PLITH-HEADROOM_*-2026-06-23.json`
 - Registry: `docs/registry/evidence_index.json`
 
 ## Stop Conditions

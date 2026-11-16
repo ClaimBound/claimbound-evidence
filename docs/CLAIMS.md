@@ -1,6 +1,6 @@
 # Claim Boundaries
 
-ClaimBound Evidence publishes narrow evidence records. A result can be
+Protocolith publishes narrow evidence records. A result can be
 positive, negative, blocked by source access, or not yet reproduced.
 
 ## Allowed Current Claim

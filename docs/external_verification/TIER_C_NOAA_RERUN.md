@@ -14,9 +14,9 @@ Playbook: [ISSUE_56_NOAA_RERUN_PLAYBOOK.md](../runbooks/ISSUE_56_NOAA_RERUN_PLAY
 Primary path (any OS):
 
 ```bash
-uv run claimbound rerun noaa-d131 --operator "<your-handle>"
+uv run protocolith rerun noaa-d131 --operator "<your-handle>"
 # or checklist shortcut:
-uv run claimbound verify noaa-rerun --operator "<your-handle>"
+uv run protocolith verify noaa-rerun --operator "<your-handle>"
 ```
 
 The command fetches frozen D-131 payloads, hashes them, runs the gate and prints
@@ -26,7 +26,7 @@ Expected: `overall_go_no_go: false`, `result_status: NEGATIVE_RESULT_UNDER_PROTO
 Do not rename a negative gate as success.
 
 Maintainer rerun card already exists:
-`docs/evidence_cards/CLAIMBOUND-NOAA-COOPS-D131-RERUN-2026-06-15.json`.
+`docs/evidence_cards/PLITH-NOAA-COOPS-D131-RERUN-2026-06-15.json`.
 
 <details>
 <summary>Optional shell (curl + shasum)</summary>

@@ -3,11 +3,11 @@ context:
   python_min: "3.12"
 
 package:
-  name: claimbound-evidence
+  name: protocolith
   version: $${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/c/claimbound-evidence/claimbound_evidence-$${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/c/protocolith/protocolith-$${{ version }}.tar.gz
   sha256: $sdist_sha256
 
 build:
@@ -16,7 +16,7 @@ build:
   script: $${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
     entry_points:
-      - claimbound = claimbound_evidence.cli:main
+      - protocolith = protocolith.cli:main
 
 requirements:
   host:
@@ -33,7 +33,7 @@ requirements:
 tests:
   - python:
       imports:
-        - claimbound_evidence
+        - protocolith
       pip_check: true
       python_version:
         - $${{ python_min }}.*
@@ -42,14 +42,14 @@ tests:
       run:
         - python $${{ python_min }}.*
     script:
-      - claimbound --version
-      - claimbound doctor
+      - protocolith --version
+      - protocolith doctor
 
 about:
-  homepage: https://github.com/ClaimBound/claimbound-evidence
+  homepage: https://github.com/protocolith/protocolith
   summary: Evidence cards for narrow public AI, ML and data claims
   description: |
-    ClaimBound turns a narrow public claim into an evidence card with a frozen
+    Protocolith turns a narrow public claim into an evidence card with a frozen
     protocol, hashed sources, an exact result status, a claim boundary and a
     reproduction level. The package provides the card validator and the
     card-level command-line tools.
@@ -57,8 +57,8 @@ about:
   license_file:
     - LICENSE
     - NOTICE
-  documentation: https://claimbound.github.io/claimbound-evidence/docs/
-  repository: https://github.com/ClaimBound/claimbound-evidence
+  documentation: https://protocolith.github.io/protocolith/docs/
+  repository: https://github.com/protocolith/protocolith
 
 extra:
   recipe-maintainers:

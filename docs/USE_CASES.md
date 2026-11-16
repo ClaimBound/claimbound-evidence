@@ -1,6 +1,6 @@
-# ClaimBound Use Cases
+# Protocolith Use Cases
 
-ClaimBound is useful when a claim should be tested under rules fixed before the
+Protocolith is useful when a claim should be tested under rules fixed before the
 run, and the result should remain useful even when it is negative, blocked or
 only partially reproduced.
 
@@ -9,7 +9,7 @@ small enough to audit, and the claim boundary can be written in plain language.
 
 ## Primary Uses
 
-| Use case | Question ClaimBound can answer | Public value |
+| Use case | Question Protocolith can answer | Public value |
 | --- | --- | --- |
 | Public-source forecast audit | Did a fixed signal pass a frozen gate on an official public source? | Reduces after-result tuning and selective reporting. |
 | Environmental data method check | Did a pollution, weather or climate-resource signal survive baseline and control comparisons? | Creates reusable evidence for public-interest domains. |
@@ -55,7 +55,7 @@ publication rule for completed demo cards is in
 
 For software-development use, see
 [software development workflow](SOFTWARE_DEVELOPMENT_WORKFLOW.md). It explains
-how ClaimBound can support risky, public or AI-assisted changes while remaining
+how Protocolith can support risky, public or AI-assisted changes while remaining
 a thin evidence layer rather than a replacement for tests, CI or review.
 
 ## Evidence Card Pattern
@@ -110,9 +110,9 @@ Good first scope:
 - no prompt changes after the answer is recorded;
 - ambiguous resolutions recorded as blocked, not forced into pass or fail.
 
-## Where ClaimBound Should Not Be Used
+## Where Protocolith Should Not Be Used
 
-ClaimBound is not the right public foreground for:
+Protocolith is not the right public foreground for:
 
 - informal or speculative claims;
 - production alerts;

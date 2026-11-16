@@ -2,7 +2,7 @@
 
 These are scenario testimonials, not endorsements from real users and not
 completed evidence cards. They show how each audience category would use
-ClaimBound through both a manual track and an AI-assisted track.
+Protocolith through both a manual track and an AI-assisted track.
 
 Each workflow ends with a validated evidence card or with an honest draft,
 blocked, negative or limited-reproducibility status.
@@ -39,7 +39,7 @@ AI-assisted track:
 Scaffold:
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.com/official-ai-doc" \
   --protocol-id "AI_TRANSPARENCY_SOURCE_AUDIT_D001" \
   --domain "ai-transparency" \
@@ -79,7 +79,7 @@ AI-assisted track:
 Scaffold:
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.org/model-claim" \
   --protocol-id "MODEL_EVAL_D001" \
   --domain "ai-model-evaluation" \
@@ -117,7 +117,7 @@ AI-assisted track:
 Scaffold:
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.org/paper-or-artifact" \
   --protocol-id "REPRO_APPENDIX_D001" \
   --domain "open-science" \
@@ -153,7 +153,7 @@ AI-assisted track:
 Scaffold:
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.org/program-review-result" \
   --protocol-id "PROGRAM_REVIEW_D001" \
   --domain "program-review" \
@@ -189,7 +189,7 @@ AI-assisted track:
 Scaffold:
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.org/public-data-docs" \
   --protocol-id "SOURCE_AUDIT_D001" \
   --domain "public-data" \
@@ -225,7 +225,7 @@ AI-assisted track:
 Scaffold:
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.gov/open-data" \
   --protocol-id "CIVIC_CLAIM_D001" \
   --domain "civic-tech" \
@@ -260,7 +260,7 @@ AI-assisted track:
 Scaffold:
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.org/research-method" \
   --protocol-id "ML_APPENDIX_D001" \
   --domain "ml-research" \
@@ -295,7 +295,7 @@ AI-assisted track:
 Scaffold:
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.edu/course-dataset" \
   --protocol-id "EDU_REPRO_D001" \
   --domain "education" \
@@ -332,7 +332,7 @@ AI-assisted track:
 Scaffold:
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.com/product-claim" \
   --protocol-id "AI_PRODUCT_CLAIM_D001" \
   --domain "ai-product-evidence" \
@@ -369,7 +369,7 @@ AI-assisted track:
 Scaffold:
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.com/vendor-ai-claim" \
   --protocol-id "PROCUREMENT_AI_D001" \
   --domain "public-procurement" \
@@ -409,7 +409,7 @@ AI-assisted track:
 Scaffold:
 
 ```bash
-uv run python scripts/claimbound_scaffold_track.py \
+uv run python scripts/protocolith_scaffold_track.py \
   --source-url "https://example.org/software-change" \
   --protocol-id "SOFTWARE_CHANGE_D001" \
   --domain "software-development" \

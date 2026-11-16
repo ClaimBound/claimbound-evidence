@@ -50,8 +50,8 @@ Exact baseline and rerun SHA-256 values, canonical URLs, HTTP results, matches, 
 ## Reproduce
 
 ```bash
-uv run python scripts/claimbound_run_leqembi_campaign.py publish --operator <handle>
-uv run claimbound validate-all
+uv run python scripts/protocolith_run_leqembi_campaign.py publish --operator <handle>
+uv run protocolith validate-all
 uv run --extra dev pytest -q
 git diff --check
 ```

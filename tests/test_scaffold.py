@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Tests for ClaimBound track scaffolding."""
+"""Tests for Protocolith track scaffolding."""
 
 from __future__ import annotations
 
@@ -8,9 +8,9 @@ from pathlib import Path
 
 import pytest
 
-from claimbound_evidence.family_ledger import validate_family_ledger
-from claimbound_evidence.scaffold import ScaffoldRequest, build_scaffold
-from claimbound_evidence.tree_overlay import validate_tree_overlay
+from protocolith.family_ledger import validate_family_ledger
+from protocolith.scaffold import ScaffoldRequest, build_scaffold
+from protocolith.tree_overlay import validate_tree_overlay
 
 
 def test_scaffold_creates_draft_without_result_status(tmp_path: Path) -> None:
@@ -34,7 +34,7 @@ def test_scaffold_creates_draft_without_result_status(tmp_path: Path) -> None:
         "docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_PLAYBOOK.md",
         "docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_CHECKLIST.md",
         "docs/manual_audit/EXAMPLE_D001/EXAMPLE_D001_OPERATOR_DECLARATION.md",
-        "docs/evidence_card_drafts/CLAIMBOUND-EXAMPLE_D001-DRAFT.json",
+        "docs/evidence_card_drafts/PLITH-EXAMPLE_D001-DRAFT.json",
         "docs/registry_patch_drafts/EXAMPLE_D001_REGISTRY_PATCH.json",
         "docs/track_families/EXAMPLE_D001_FAMILY_LEDGER.json",
         "docs/track_families/EXAMPLE_D001_TREE.json",
@@ -42,7 +42,7 @@ def test_scaffold_creates_draft_without_result_status(tmp_path: Path) -> None:
     }
 
     card = json.loads(
-        (tmp_path / "docs/evidence_card_drafts/CLAIMBOUND-EXAMPLE_D001-DRAFT.json").read_text(
+        (tmp_path / "docs/evidence_card_drafts/PLITH-EXAMPLE_D001-DRAFT.json").read_text(
             encoding="utf-8"
         )
     )
@@ -72,7 +72,7 @@ def test_scaffold_creates_draft_without_result_status(tmp_path: Path) -> None:
             encoding="utf-8"
         )
     )
-    assert tree["protocol_version"] == "claimbound-tree-v3"
+    assert tree["protocol_version"] == "protocolith-tree-v3"
     assert validate_tree_overlay(tree) == []
 
 

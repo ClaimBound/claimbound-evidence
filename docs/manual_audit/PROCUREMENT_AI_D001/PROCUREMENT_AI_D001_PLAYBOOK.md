@@ -7,7 +7,7 @@ frozen.
 
 ```bash
 uv sync --extra dev
-uv run --extra dev python scripts/claimbound_validate_evidence_card.py --help
+uv run --extra dev python scripts/protocolith_validate_evidence_card.py --help
 ```
 
 ## Operator Flow
@@ -29,6 +29,6 @@ uv run --extra dev python scripts/claimbound_validate_evidence_card.py --help
 ```text
 docs/protocols/PROCUREMENT_AI_D001_PREREG_CHARTER.md
 docs/manual_audit/PROCUREMENT_AI_D001/PROCUREMENT_AI_D001_CHECKLIST.md
-docs/evidence_cards/CLAIMBOUND-PROCUREMENT_AI_D001-<DATE>.json
+docs/evidence_cards/PLITH-PROCUREMENT_AI_D001-<DATE>.json
 artifacts/procurement_ai_d001_summary.json
 ```

@@ -7,12 +7,12 @@ platform work. The public repository must remain independently usable.
 
 Keep the open project understandable before adding more machinery:
 
-1. Lead with the simple message: ClaimBound turns a public claim into a small
+1. Lead with the simple message: Protocolith turns a public claim into a small
    evidence card.
 2. Show real cards early: one green source audit, one card with a yellow
    reproduction chip for source-byte drift and one red negative result.
 3. Keep the beginner path in this order:
-   [ClaimBound in 5 minutes](CLAIMBOUND_IN_5_MINUTES.md),
+   [Protocolith in 5 minutes](PROTOCOLITH_IN_5_MINUTES.md),
    [evidence cards](evidence_cards/README.md),
    [getting started](GETTING_STARTED.md),
    [result statuses](RESULT_STATUS.md).
@@ -29,7 +29,7 @@ Keep the open project understandable before adding more machinery:
 These are good first-screen examples because they are familiar public AI claims
 but can be narrowed safely.
 
-| Public claim candidate | Narrow ClaimBound question | Current repository state |
+| Public claim candidate | Narrow Protocolith question | Current repository state |
 | --- | --- | --- |
 | Anthropic publishes public system-card documentation for its AI models. | Can the official system-card page be source-audited by URL, access date, expected markers and SHA-256? | Green source-audit card exists. It does not prove Claude safety or runtime behavior. |
 | OpenAI publishes a GPT-5 system-card PDF. | Can the official PDF source be audited by content type, byte size, expected marker and SHA-256? | Green source-audit card exists. It does not prove model quality or deployment readiness. |
