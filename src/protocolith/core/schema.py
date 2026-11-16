@@ -13,7 +13,7 @@ from typing import Any
 
 from . import rules
 from .errors import InputError
-from .ledger import _HASH_RE, _TS_RE, CARD_FORMAT, ENTRY_TYPES, FORMAT_VERSION, RESULT_STATUSES
+from .ledger import _HASH_RE, _TS_RE, CARD_FORMAT, ENTRY_TYPES, FORMAT_VERSION, RESULT_STATUSES, is_hash, is_ts
 
 DIALECT = "https://json-schema.org/draft/2020-12/schema"
 NAMES = ("freeze", "record", "deviation", "issue", "entry")
@@ -33,12 +33,12 @@ _BY_PRED: dict[Any, dict[str, Any]] = {
     rules._uint: _UINT,
     rules._uint_list: {"type": "array", "items": _UINT},
     rules._sources: {"type": "array", "items": _SOURCE},
-    rules.is_hash: _HASH,
+    is_hash: _HASH,
     rules._hash_or_null: {"anyOf": [_HASH, {"type": "null"}]},
     rules._protocol_id: {"type": "string", "pattern": "^" + rules._ID_RE.pattern + "$"},
     rules._version: {"type": "string", "pattern": "^" + rules._VERSION_RE.pattern + "$"},
     rules._is_format: {"const": CARD_FORMAT},
-    rules.is_ts: {"type": "string", "pattern": "^" + _TS_RE.pattern + "$"},
+    is_ts: {"type": "string", "pattern": "^" + _TS_RE.pattern + "$"},
     rules._any: {},
 }
 # Fields whose predicate is a closed-set check living outside the predicate itself.
