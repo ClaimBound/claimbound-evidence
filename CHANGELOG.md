@@ -4,6 +4,24 @@
 
 ### Added
 
+- **Example `examples/phantom_mean_reversion/`.** A published simulation study as a retrospective record: frozen protocol, two
+  anchors, a card, and `reproduce.py`, which re-runs the study (numpy only, about five seconds) and compares the output with the
+  committed results (IDENTICAL, or EQUAL within 1e-9 where floating-point rounding differs). The README states plainly what a retrospective record proves and what it does not.
+- **External anchoring of the ledger head.** `protocolith anchor` (also `core.anchor_head` and the MCP tool `protocolith_anchor`)
+  writes an anchor statement (canonical JSON of the head; its sha256 is the `anchor_id`) to `<store>/anchors/`, and optionally
+  adds an RFC 3161 time-stamp (`--tsa URL`; the signature is not verified by the core, the `openssl ts -verify` command is printed),
+  a Wayback snapshot (`--wayback URL`), a local git tag (`--git-tag [--sign]`, never pushed) and a statement file
+  (`--write-head FILE`). Nothing networked or git-related happens without its option. `verify-ledger --anchors`
+  (`core.verify(store, anchors=True)`, `core.verify_anchors`, MCP `protocolith_verify` with `anchors`) reports
+  `ANCHOR_MISMATCH` (ledger rewritten), `ANCHOR_AHEAD` (truncated) and `ANCHOR_INVALID`; `summary` shows the number of
+  anchors and the last anchored `seq`. New error codes: `ANCHOR_MISMATCH`, `ANCHOR_AHEAD`, `ANCHOR_INVALID`,
+  `ANCHOR_EXISTS`, `ANCHOR_FAILED`, `NOT_A_GIT_REPO`, `EMPTY_LEDGER`, `BAD_URL`. Conformance vectors: `spec/vectors/anchors.json`.
+  Specification section 13 and the guide [Anchor your results](docs/guides/anchor-your-results.md).
+- **`claim_check`** (`protocolith claim-check --seq N | --protocol ID`, `core.claim_check`, MCP `protocolith_claim_check`):
+  what may and may not be said about a record (`supported`, `may_say`, `must_not_say`, anchored, frozen before the record,
+  independent reproduction), from fixed templates. Specification section 14.
+- **MCP prompts**: `prompts/list` and `prompts/get` with `research-agent-protocol`, instructions for an AI agent;
+  `initialize` advertises tools, resources and prompts. The server now has thirteen tools.
 - `mypy --strict` runs in CI over `protocolith.core` (`uv run mypy`); `mypy` joins the `dev` extra.
 - README badges for status, package, repository and project facts; a ledger and core issue form; a ledger demo GIF generated from a real run (`scripts/build_demo_gif.py`).
 

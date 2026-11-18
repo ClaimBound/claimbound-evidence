@@ -134,19 +134,23 @@ class Verdict:
     head_seq: int | None
     head_hash: str | None
     violations: list[Violation]
+    anchors: int | None = None  # number of anchor files checked, when anchors were requested
 
     @property
     def codes(self) -> list[str]:
         return sorted({v.code for v in self.violations})
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        found: dict[str, Any] = {
             "codes": self.codes,
             "count": self.count,
             "head": {"hash": self.head_hash, "seq": self.head_seq},
             "ok": self.ok,
             "violations": [v.to_dict() for v in self.violations],
         }
+        if self.anchors is not None:
+            found["anchors"] = self.anchors
+        return found
 
 
 def _tip_of(obj: Any) -> str | None:

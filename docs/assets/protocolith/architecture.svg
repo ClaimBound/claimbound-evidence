@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-labelledby="t d">
+<title id="t">Protocolith architecture</title>
+<desc id="d">Three interfaces (command line, Python API, MCP server) call one standard-library core. The core freezes protocols, records results, verifies a hash chain, issues cards and anchors the head. It writes a ledger, cards and anchor statements; anchors can be copied to a git tag, an archive, a time-stamp authority or Zenodo.</desc>
+<style>text{font-family:system-ui,-apple-system,Segoe UI,sans-serif;fill:#1c2733}.s{font-size:12px;fill:#52606e}.h{font-size:14px;font-weight:700}</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#52606e"/></marker></defs>
+<rect width="800" height="400" rx="12" fill="#f7f9fb"/>
+<text x="30" y="34" class="h" style="font-size:18px">One small core, three ways in</text>
+<g fill="#fff" stroke="#c8d2dc">
+<rect x="30" y="56" width="220" height="56" rx="8"/><rect x="290" y="56" width="220" height="56" rx="8"/><rect x="550" y="56" width="220" height="56" rx="8"/>
+</g>
+<text x="140" y="80" text-anchor="middle" class="h">CLI  plith</text><text x="140" y="98" text-anchor="middle" class="s">humans, CI, scripts</text>
+<text x="400" y="80" text-anchor="middle" class="h">Python API</text><text x="400" y="98" text-anchor="middle" class="s">import protocolith.core</text>
+<text x="660" y="80" text-anchor="middle" class="h">MCP server</text><text x="660" y="98" text-anchor="middle" class="s">13 tools, resources, prompts</text>
+<path d="M140 112V146M400 112V146M660 112V146" stroke="#52606e" fill="none" marker-end="url(#a)"/>
+<rect x="30" y="150" width="740" height="104" rx="10" fill="#fdf3dc" stroke="#e8b04a" stroke-width="1.5"/>
+<text x="400" y="174" text-anchor="middle" class="h">protocolith.core  (standard library only, 100% line and branch coverage)</text>
+<g fill="#fff" stroke="#e8b04a">
+<rect x="50" y="190" width="120" height="48" rx="6"/><rect x="190" y="190" width="120" height="48" rx="6"/><rect x="330" y="190" width="120" height="48" rx="6"/><rect x="470" y="190" width="120" height="48" rx="6"/><rect x="610" y="190" width="140" height="48" rx="6"/>
+</g>
+<text x="110" y="212" text-anchor="middle" class="h">freeze</text><text x="110" y="228" text-anchor="middle" class="s">protocol first</text>
+<text x="250" y="212" text-anchor="middle" class="h">record</text><text x="250" y="228" text-anchor="middle" class="s">outcome + hashes</text>
+<text x="390" y="212" text-anchor="middle" class="h">verify</text><text x="390" y="228" text-anchor="middle" class="s">chain, rules R1-R11</text>
+<text x="530" y="212" text-anchor="middle" class="h">issue</text><text x="530" y="228" text-anchor="middle" class="s">card JSON + SVG</text>
+<text x="680" y="212" text-anchor="middle" class="h">anchor</text><text x="680" y="228" text-anchor="middle" class="s">head outside your disk</text>
+<path d="M150 254V290M400 254V290M660 254V290" stroke="#52606e" fill="none" marker-end="url(#a)"/>
+<g fill="#fff" stroke="#c8d2dc">
+<rect x="30" y="294" width="240" height="64" rx="8"/><rect x="290" y="294" width="220" height="64" rx="8"/><rect x="530" y="294" width="240" height="64" rx="8"/>
+</g>
+<text x="150" y="320" text-anchor="middle" class="h">.protocolith/ledger.jsonl</text><text x="150" y="340" text-anchor="middle" class="s">append-only hash chain</text>
+<text x="400" y="320" text-anchor="middle" class="h">cards/</text><text x="400" y="340" text-anchor="middle" class="s">evidence cards, atlas HTML</text>
+<text x="650" y="320" text-anchor="middle" class="h">anchors/</text><text x="650" y="340" text-anchor="middle" class="s">git tag, Wayback, RFC 3161, Zenodo</text>
+<text x="400" y="384" text-anchor="middle" class="s">No server, no network by default, no runtime dependencies.</text>
+</svg>

@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from . import ops
+from .anchor import anchor_head
 from .atlas import DEFAULT_OUT, DEFAULT_TITLE, build_atlas_result, write_atlas
 from .capture import capture
 from .canonical import decode, encode
@@ -91,13 +92,57 @@ def _cmd_deviation(args: argparse.Namespace, parser: argparse.ArgumentParser) ->
 
 def _cmd_verify_ledger(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
     def work(store: Store) -> Outcome:
-        verdict = ops.verify(store, args.expect_head)
+        verdict = ops.verify(store, args.expect_head, anchors=args.anchors)
         if verdict.ok:
             head = f"head seq={verdict.head_seq} hash={verdict.head_hash}" if verdict.count else "empty"
-            return Outcome(verdict.to_dict(), f"OK entries={verdict.count} {head}")
+            checked = "" if verdict.anchors is None else f" anchors={verdict.anchors}"
+            return Outcome(verdict.to_dict(), f"OK entries={verdict.count} {head}{checked}")
         lines = [f"{v.code} line {v.seq}: {v.message}" for v in verdict.violations]
         lines += [f"hint ({code}): {hint}" for code in verdict.codes if (hint := hint_for(code)) is not None]
         return Outcome(verdict.to_dict(), "FAILED: " + ", ".join(verdict.codes), 1, "\n".join(lines))
+
+    return _run(args, work)
+
+
+def _cmd_anchor(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    def work(store: Store) -> Outcome:
+        found = anchor_head(
+            store,
+            tsa=args.tsa,
+            wayback=args.wayback,
+            git_tag=args.git_tag,
+            sign=args.sign,
+            write_head=args.write_head,
+        )
+        statement = found["statement"]
+        lines = [
+            f"anchored seq={statement['head_seq']} hash={statement['head_hash']} anchor_id={found['anchor_id']}",
+            found["path"],
+        ]
+        lines += [f"method {m['type']} {m.get('url') or m.get('tag')}" for m in found["added"]]
+        if found["head_file"] is not None:
+            lines.append(f"wrote {found['head_file']}")
+        lines += [f"note: {note}" for note in found["notes"]]
+        if not found["methods"]:
+            lines.append("note: this anchor is local only; publish the statement or add --tsa, --wayback or --git-tag")
+        return Outcome(found, "\n".join(lines))
+
+    return _run(args, work)
+
+
+def _cmd_claim_check(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    def work(store: Store) -> Outcome:
+        found = ops.claim_check(store, seq=args.seq, protocol=args.protocol)
+        flags = ["frozen_before_record", "anchored", "independent_reproduction"]
+        keys = ["protocol_frozen_before_record", "anchored", "independent_reproduction"]
+        lines = [
+            f"supported={str(found['supported']).lower()} status={found['status']} seq={found['seq']}",
+            f"may say: {found['may_say']}",
+            "must not say: " + "; ".join(found["must_not_say"]),
+            "  ".join(f"{flag}={str(found[key]).lower()}" for flag, key in zip(flags, keys, strict=True))
+            + f"  deviations={found['deviations']}",
+        ]
+        return Outcome(found, "\n".join(lines))
 
     return _run(args, work)
 
@@ -174,6 +219,8 @@ def _summary_text(found: dict[str, Any]) -> str:
     ]
     if rows:
         lines += _table(["PROTOCOL", "VERSIONS", "LATEST", "RECORDS", "LATEST_STATUS", "DEVIATIONS", "CARDS"], rows)
+    last = found["anchors"]["last_seq"]
+    lines.append(f"anchors: {found['anchors']['count']}, last anchored seq: {'none' if last is None else last}")
     lines.append("problems: " + ("none" if not found["problems"] else str(len(found["problems"]))))
     lines += [f"  {p['code']} line {p['seq']}: {p['message']}" for p in found["problems"]]
     return "\n".join(lines)
@@ -287,6 +334,28 @@ def add_core_commands(subparsers: Any) -> None:
         metavar="SEQ:HASH",
         help="Also require the entry at SEQ to have this hash (detects a removed tail); else HEAD_MISMATCH, exit 1.",
     )
+    verify.add_argument(
+        "--anchors",
+        action="store_true",
+        help="Also check every anchor in the store: ANCHOR_MISMATCH (rewritten), ANCHOR_AHEAD (truncated), exit 1.",
+    )
+    anchor = add(
+        "anchor",
+        _cmd_anchor,
+        "Anchor the ledger head: a local anchor file, and optionally a time-stamp, an archive copy or a git tag.",
+        with_json,
+    )
+    anchor.add_argument("--tsa", default=None, metavar="URL", help="Also get an RFC 3161 time-stamp (a network request; the signature is not verified here).")
+    anchor.add_argument(
+        "--wayback", default=None, metavar="URL", help="Ask the Wayback Machine to save URL, where you published the statement."
+    )
+    anchor.add_argument("--git-tag", action="store_true", help="Create the git tag anchor/SEQ-HASH12 in this repository (never pushed).")
+    anchor.add_argument("--sign", action="store_true", help="Sign the git tag (needs --git-tag and a configured key).")
+    anchor.add_argument("--write-head", default=None, metavar="FILE", help="Write the anchor statement to FILE to publish or archive it.")
+    claim = add("claim-check", _cmd_claim_check, "State what the ledger supports about a record (what may and may not be said).", with_json)
+    which = claim.add_mutually_exclusive_group(required=True)
+    which.add_argument("--seq", type=int, default=None, metavar="N", help="The record at ledger seq N.")
+    which.add_argument("--protocol", default=None, metavar="ID", help="The latest record of this protocol_id.")
     issue = add("issue", _cmd_issue, "Issue the evidence card of a record.", with_json)
     issue.add_argument("seq", type=int, metavar="SEQ")
     issue.add_argument("--out", default=None, metavar="DIR", help="Card directory (default <store>/cards).")

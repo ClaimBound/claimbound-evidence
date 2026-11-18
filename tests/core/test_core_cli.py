@@ -288,3 +288,63 @@ def test_errors_carry_a_hint(capsys: pytest.CaptureFixture[str], tmp_path: Path,
     ledger = tmp_path / "st" / "ledger.jsonl"
     ledger.write_bytes(ledger.read_bytes() + b'{"bo')
     assert "hint (TRUNCATED_TAIL): a write was interrupted" in run(capsys, "verify-ledger", *s)[2]
+
+
+def test_anchor_and_verify_anchors_commands(capsys: pytest.CaptureFixture[str], filled: list[str], tmp_path: Path) -> None:
+    code, out, _ = run(capsys, "anchor", *filled)
+    lines = out.splitlines()
+    assert code == 0 and lines[0].startswith("anchored seq=3 hash=") and "anchor_id=" in lines[0]
+    assert lines[1].endswith(".json") and lines[-1].startswith("note: this anchor is local only")
+    head = tmp_path / "head.txt"
+    code, out, _ = run(capsys, "anchor", "--write-head", str(head), "--json", *filled)
+    data = json.loads(out)
+    assert code == 0 and data["head_file"] == str(head) and head.read_bytes().startswith(b'{"created_at"')
+    code, out, _ = run(capsys, "anchor", "--write-head", str(head), *filled)
+    assert f"wrote {head}" in out
+    code, out, _ = run(capsys, "verify-ledger", "--anchors", *filled)
+    assert code == 0 and out.strip().endswith("anchors=1")
+    assert "anchors" not in run(capsys, "verify-ledger", *filled)[1]
+    code, out, _ = run(capsys, "summary", *filled)
+    assert "anchors: 1, last anchored seq: 3" in out
+    ledger = tmp_path / "st" / "ledger.jsonl"
+    ledger.write_bytes(b"".join(ledger.read_bytes().splitlines(keepends=True)[:2]))
+    code, out, err = run(capsys, "verify-ledger", "--anchors", *filled)
+    assert code == 1 and out.strip() == "FAILED: ANCHOR_AHEAD" and "hint (ANCHOR_AHEAD)" in err
+    assert run(capsys, "verify-ledger", *filled)[0] == 0
+
+
+def test_anchor_command_methods_and_errors(
+    capsys: pytest.CaptureFixture[str], filled: list[str], monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    import subprocess
+
+    from protocolith.core import anchor as anchor_module
+
+    calls: list[list[str]] = []
+
+    def fake_run(argv: list[str], **kwargs: Any) -> Any:
+        calls.append(argv)
+        return subprocess.CompletedProcess(argv, 0, "", "")
+
+    monkeypatch.setattr(anchor_module.subprocess, "run", fake_run)
+    code, out, _ = run(capsys, "anchor", "--git-tag", "--sign", *filled)
+    assert code == 0 and "method git-tag anchor/3-" in out and "git push origin anchor/3-" in out
+    assert calls[1][:3] == ["git", "tag", "-s"]
+    assert run(capsys, "anchor", "--sign", *filled)[0] == 2
+    code, _, err = run(capsys, "anchor", "--tsa", "ftp://x", *filled)
+    assert code == 2 and "BAD_URL" in err
+    assert run(capsys, "anchor", "--store", str(tmp_path / "nowhere"))[0] == 3
+
+
+def test_claim_check_command(capsys: pytest.CaptureFixture[str], filled: list[str]) -> None:
+    code, out, _ = run(capsys, "claim-check", "--seq", "2", *filled)
+    lines = out.splitlines()
+    assert code == 0 and lines[0] == "supported=true status=PASSED_UNDER_PROTOCOL seq=2"
+    assert lines[1].startswith("may say: Under protocol DEMO_D001 version 1, run run-1 passed")
+    assert lines[2].startswith("must not say: ") and lines[3] == "frozen_before_record=false  anchored=false  independent_reproduction=false  deviations=0"
+    code, out, _ = run(capsys, "claim-check", "--protocol", "DEMO_D001", "--json", *filled)
+    assert code == 0 and json.loads(out)["seq"] == 2
+    with pytest.raises(SystemExit) as exit_info:
+        run(capsys, "claim-check", *filled)
+    assert exit_info.value.code == 2
+    assert run(capsys, "claim-check", "--seq", "0", *filled)[0] == 2

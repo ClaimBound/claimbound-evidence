@@ -225,6 +225,28 @@ Verify the ledger (rules R1 to R11).
 - `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
 - `--json` — Print the result as canonical JSON.
 - `--expect-head SEQ:HASH` — Also require the entry at SEQ to have this hash (detects a removed tail); else HEAD_MISMATCH, exit 1.
+- `--anchors` — Also check every anchor in the store: ANCHOR_MISMATCH (rewritten), ANCHOR_AHEAD (truncated), exit 1.
+
+## `protocolith anchor`
+
+Anchor the ledger head: a local anchor file, and optionally a time-stamp, an archive copy or a git tag.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+- `--tsa URL` — Also get an RFC 3161 time-stamp (a network request; the signature is not verified here).
+- `--wayback URL` — Ask the Wayback Machine to save URL, where you published the statement.
+- `--git-tag` — Create the git tag anchor/SEQ-HASH12 in this repository (never pushed).
+- `--sign` — Sign the git tag (needs --git-tag and a configured key).
+- `--write-head FILE` — Write the anchor statement to FILE to publish or archive it.
+
+## `protocolith claim-check`
+
+State what the ledger supports about a record (what may and may not be said).
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+- `--seq N` — The record at ledger seq N.
+- `--protocol ID` — The latest record of this protocol_id.
 
 ## `protocolith issue`
 

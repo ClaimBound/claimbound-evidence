@@ -27,7 +27,7 @@ protocolith issue 1
 
 - **Use it**
 
-    [Local experiments](getting-started-local-experiments.md) · [CI](getting-started-ci.md) · [Use it from an AI agent](guides-ai-agent-mcp.md) · [Query the ledger](guides-query-the-ledger.md) · [Python API](guides-python-api.md) · [Browse experiments (atlas)](guides-atlas.md)
+    [Local experiments](getting-started-local-experiments.md) · [CI](getting-started-ci.md) · [Use it from an AI agent](guides-ai-agent-mcp.md) · [Anchor your results](guides-anchor-your-results.md) · [Query the ledger](guides-query-the-ledger.md) · [Python API](guides-python-api.md) · [Browse experiments (atlas)](guides-atlas.md)
 
 - **Look it up**
 
@@ -40,7 +40,8 @@ protocolith issue 1
 A valid ledger proves **internal consistency and ordering**. It does not prove wall-clock time, and it cannot
 detect that a whole ledger was replaced or its tail removed unless you anchored the head somewhere else
 ([anchoring the head](guides-anchoring-the-head.md)). It does not show that a protocol is sound or that data is
-true. Check against an anchored head with `verify-ledger --expect-head SEQ:HASH`.
+true. Anchor the head with `protocolith anchor` ([anchor your results](guides-anchor-your-results.md)) and check later with
+`verify-ledger --anchors`, or against a published head with `verify-ledger --expect-head SEQ:HASH`.
 
 ## Status
 

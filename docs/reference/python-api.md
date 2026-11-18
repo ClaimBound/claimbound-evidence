@@ -9,7 +9,10 @@ The API is the `protocolith.core` package. For a worked example see the [Python 
 | `freeze(store, protocol, *, supersedes=None, clock=None)` | the new entry (dict) | `protocol` must be an object |
 | `record(store, body, *, clock=None)` | the new entry | |
 | `deviation(store, body, *, clock=None)` | the new entry | |
-| `verify(store, expect_head=None)` | `Verdict` | `expect_head="SEQ:HASH"` adds the anchored-head check; never raises for a bad ledger; raises `EnvError` (`NO_LEDGER`) for a missing one |
+| `verify(store, expect_head=None, *, anchors=False)` | `Verdict` | `expect_head="SEQ:HASH"` adds the anchored-head check; with `anchors=True` also checks every anchor: `ANCHOR_MISMATCH`, `ANCHOR_AHEAD`, `ANCHOR_INVALID`; `verdict.anchors` is the number of anchor files; never raises for a bad ledger, raises `EnvError` (`NO_LEDGER`) for a missing one |
+| `anchor_head(store, *, tsa=None, wayback=None, git_tag=False, sign=False, write_head=None, clock=None, opener=None, runner=None, random_bytes=None)` | dict: `anchor_id`, `path`, `statement`, `statement_path`, `methods`, `added`, `head_file`, `notes` | local anchor plus the requested methods; `opener` (urlopen-like) and `runner` (subprocess.run-like) are injectable; nothing networked happens unless asked |
+| `verify_anchors(store)` | `AnchorReport` (`ok`, `count`, `last_seq`, `violations`, `to_dict()`) | compares every anchor file with the ledger |
+| `claim_check(store, *, seq=None, protocol=None)` | dict | what may and may not be said about a record; exactly one argument; see [spec section 14](../spec/CORE_SPEC.md) |
 | `entries(store)` | list of entries | raises `VerificationFailed` if the ledger does not verify |
 | `log(store, *, protocol=None, type=None, status=None, tail=None)` | list of entries | filtered `entries`; unknown `protocol` is `UNKNOWN_PROTOCOL` |
 | `show(store, seq)` | `{"entry", "protocol", "points_at", "pointed_by"}` | unknown `seq` is `DANGLING_REF` |
