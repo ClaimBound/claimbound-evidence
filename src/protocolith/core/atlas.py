@@ -26,6 +26,7 @@ from typing import Any
 from .errors import EnvError, InputError, ProtocolithError, io_guard
 from .issue import _atomic_write, build_card, card_hash
 from .rules import Verdict, Verifier, scan
+from .disclosure import LEVELS, Policy, levels_of, summarize_entry
 from .store import Store
 from .views import protocol_of
 
@@ -33,6 +34,7 @@ DEFAULT_TITLE = "Protocolith atlas"
 DEFAULT_OUT = "protocolith-atlas.html"
 DEFAULT_CARDS_DIR = "docs/evidence_cards"
 DATA_VERSION = 1
+HIDDEN_STATUS = "HIDDEN"
 MAX_FILE_BYTES = 2_097_152
 MAX_STRING = 2000
 MAX_ITEMS = 100
@@ -247,15 +249,62 @@ def _ledger_card(verifier: Verifier, seq: int) -> dict[str, Any]:
         }
 
 
-def _from_ledger(store: Store) -> tuple[list[Pair], dict[str, Any]]:
+def _summary_row(verifier: Verifier, seq: int, policy: Policy) -> Pair:
+    entry = verifier.entries[seq]
+    body = entry["body"]
+    protocol = protocol_of(verifier, entry)
+    shown = summarize_entry(entry, protocol, policy.summary_fields)
+    card = {
+        "claim_boundary": shown.get("claim_boundary"),
+        "created_at": entry["ts"],
+        "evidence_id": f"LEDGER-RECORD-{seq:06d}",
+        "ledger_record_seq": seq,
+        "protocol_id": protocol,
+        "reproduction_level": shown.get("reproduction_level"),
+        "result_status": shown.get("status", body.get("status")),
+        "visibility": "summary",
+    }
+    extra_keys = [k for k in ("outcome", "public_claim_text", "run_id") if k in shown]
+    card.update({key: shown[key] for key in extra_keys})
+    return _row(card, entry["hash"])
+
+
+def _hidden_row(seq: int, digest: str) -> Pair:
+    card = {
+        "evidence_id": f"HIDDEN-{seq:06d}",
+        "ledger_record_seq": seq,
+        "note": "Hidden by the publisher. The hash shown for this record is committed in the published hash chain.",
+        "result_status": HIDDEN_STATUS,
+        "visibility": "hidden",
+    }
+    return _row(card, digest)
+
+
+def _from_ledger(store: Store, policy: Policy | None = None) -> tuple[list[Pair], dict[str, Any], dict[str, Any] | None]:
     with io_guard(), store.locked(write=False):
         verdict, verifier = scan(store.read(missing_ok=False), card_hash)
-    rows = [
-        _row(_ledger_card(verifier, seq), verifier.entries[seq]["hash"])
-        for seq in sorted(verifier.entries)
-        if verifier.entries[seq]["type"] == "record"
-    ]
-    return rows, _ledger_integrity(verdict)
+    levels = None if policy is None else levels_of(verifier, policy)
+    rows: list[Pair] = []
+    for seq in sorted(verifier.entries):
+        if verifier.entries[seq]["type"] != "record":
+            continue
+        level = "full" if levels is None else levels[seq]
+        if level == "full":
+            rows.append(_row(_ledger_card(verifier, seq), verifier.entries[seq]["hash"]))
+        elif level == "summary":
+            assert policy is not None
+            rows.append(_summary_row(verifier, seq, policy))
+        else:
+            rows.append(_hidden_row(seq, verifier.entries[seq]["hash"]))
+    disclosure = None
+    if levels is not None:
+        disclosure = {
+            "counts": {name: levels.count(name) for name in LEVELS},
+            "head_hash": verdict.head_hash,
+            "head_seq": verdict.head_seq,
+            "kind": "disclosure",
+        }
+    return rows, _ledger_integrity(verdict), disclosure
 
 
 def _ledger_integrity(verdict: Verdict) -> dict[str, Any]:
@@ -306,6 +355,7 @@ def build_atlas_result(
     i18n_dir: str | os.PathLike[str] | None = None,
     default_lang: str = "en",
     max_rows: int | None = None,
+    policy: Policy | None = None,
 ) -> AtlasResult:
     """Build the page. With no ``store`` and no ``cards`` a local ledger, else ``docs/evidence_cards``, is used."""
     if max_rows is not None and not (type(max_rows) is int and max_rows >= 1):
@@ -316,14 +366,20 @@ def build_atlas_result(
         raise InputError(
             "BAD_LANG", f"default language {default_lang!r} is not available: " + ", ".join(sorted(languages))
         )
+    if policy is not None and cards:
+        raise InputError("BAD_ENTRY", "a visibility policy applies to a ledger; it cannot be combined with card directories")
     real_store, folders = _auto_sources(store, cards)
+    if policy is not None and real_store is None:
+        raise InputError("NO_SOURCE", "a visibility policy needs a ledger (--store)")
     rows: list[Pair] = []
     integrity: list[dict[str, Any]] = []
     issues: list[dict[str, str]] = []
     ledger = None
     if real_store is not None:
-        rows, ledger = _from_ledger(real_store)
+        rows, ledger, disclosure = _from_ledger(real_store, policy)
         integrity.append(ledger)
+        if disclosure is not None:
+            integrity.append(disclosure)
     if folders:
         found, issues = _from_cards(folders)
         rows += found

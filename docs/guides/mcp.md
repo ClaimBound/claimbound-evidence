@@ -1,8 +1,8 @@
 # MCP integration
 
 `protocolith mcp` runs a Model Context Protocol server on stdio, so an MCP client (an agent or an editor) can
-freeze, record, verify, issue and query without a shell. It uses newline-delimited JSON-RPC 2.0, needs no third-party package, and writes only inside the store (the atlas tool
-writes one page inside the working directory). It uses the network only when `protocolith_anchor` is called with a `tsa` URL.
+freeze, record, verify, issue and query without a shell. It uses newline-delimited JSON-RPC 2.0, needs no third-party package, and writes only inside the store (the atlas and disclose tools
+write one file each inside the working directory). It uses the network only when `protocolith_anchor` is called with a `tsa` URL.
 
 This page is the short version. The step-by-step guide with a session transcript is
 [Use Protocolith from an AI agent](ai-agent-mcp.md); the tools and resources are listed in the
@@ -27,9 +27,9 @@ is not on the client's `PATH`, give the full path to the executable in your envi
 
 ## What the server offers
 
-Thirteen tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`, `protocolith_schema`,
+Fifteen tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`, `protocolith_schema`,
 `protocolith_capture`, `protocolith_atlas`, `protocolith_freeze`, `protocolith_record`, `protocolith_deviation`, `protocolith_verify`,
-`protocolith_claim_check`, `protocolith_anchor`, `protocolith_issue`), read-only resources (`protocolith://summary`,
+`protocolith_claim_check`, `protocolith_anchor`, `protocolith_disclose`, `protocolith_verify_disclosure`, `protocolith_issue`), read-only resources (`protocolith://summary`,
 `protocolith://ledger`, `protocolith://schema/<name>`) and the prompt `research-agent-protocol`. Arguments not listed in a tool's schema are rejected. `isError` is true when an
 operation was rejected or the ledger does not verify; the JSON then carries `codes`, `error` (with a `hint` where
 there is one) and `violations`, exactly as with `--json`.

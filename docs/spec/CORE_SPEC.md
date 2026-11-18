@@ -116,6 +116,8 @@ All three expose the same operations with the same semantics.
 | atlas | `protocolith atlas [--store DIR] [--cards DIR ...] [--out FILE_OR_DIR]` | `core.build_atlas(...)` | `protocolith_atlas` |
 | anchor | `protocolith anchor [--tsa URL] [--wayback URL] [--git-tag [--sign]] [--write-head FILE]` | `core.anchor_head(store, ...)` | `protocolith_anchor` (local anchor and optional `tsa` only) |
 | claim check | `protocolith claim-check --seq N \| --protocol ID` | `core.claim_check(store, seq=N)` or `protocol=ID` | `protocolith_claim_check` |
+| disclose | `protocolith disclose --policy FILE [--out FILE]` | `core.build_disclosure(store, policy)` | `protocolith_disclose` |
+| verify disclosure | `protocolith verify-disclosure FILE [--anchors DIR] [--reveal ENTRY]` | `core.verify_disclosure(data, anchors_dir)`, `core.verify_reveal(data, entry)` | `protocolith_verify_disclosure` |
 | init | `protocolith init` | `core.init(store)` | |
 
 CLI exit codes: `0` ok; `1` the stored ledger does not verify (codes on stderr and, with `--json`, on stdout);
@@ -125,7 +127,7 @@ CLI exit codes: `0` ok; `1` the stored ledger does not verify (codes on stderr a
 
 The MCP server speaks stdio JSON-RPC with `initialize`, `tools/list`, `tools/call`, `resources/list`, `resources/read`,
 `prompts/list` and `prompts/get`, and uses no third-party package. `initialize` advertises `tools`, `resources` and `prompts`.
-It makes a network request only when `protocolith_anchor` is called with `tsa`, and never writes outside the store, except the
+It makes a network request only when `protocolith_anchor` is called with `tsa`, and never writes outside the store, except the disclosure file that `protocolith_disclose` writes and the
 one atlas page of `protocolith_atlas` inside the working directory. The prompt `research-agent-protocol` (no arguments) holds
 fixed instructions for an AI agent: freeze before any run, record every run including failures and blocked sources, call
 `claim_check` before stating a result and use its `may_say` wording, then verify and anchor and report the `anchor_id`.
@@ -248,6 +250,10 @@ Verification: `BAD_SEQ`, `BAD_PREV`, `BAD_HASH`, `NOT_CANONICAL`, `TS_REGRESSION
 Canonicalization and input: `BAD_JSON` (including a byte-order mark), `BAD_UTF8`, `BAD_TYPE`, `FLOAT_NOT_ALLOWED`, `NON_FINITE`,
 `INT_RANGE`, `DUPLICATE_KEY`, `LONE_SURROGATE`.
 
+Disclosure (section 15): `BAD_DISCLOSURE` (the file is not a disclosure, or a line is damaged), `DISCLOSURE_HASH` (a full entry does
+not hash to its hash) and `DISCLOSURE_CHAIN` (a `prev` is not the hash of the line before) are verification codes of
+`verify-disclosure` (exit 1); `BAD_POLICY` (an invalid policy, exit 2) belongs to `disclose` and `atlas --policy`.
+
 Anchors (section 13): `ANCHOR_MISMATCH` (an anchored entry is not the one in the ledger: the ledger was rewritten),
 `ANCHOR_AHEAD` (the ledger is shorter than an anchor: truncated), `ANCHOR_INVALID` (an anchor file or a stored time-stamp
 response is malformed, edited or missing) are verification codes of `verify-ledger --anchors` (exit 1). `ANCHOR_EXISTS`
@@ -350,3 +356,48 @@ A protocol with no record yields `supported` false, `seq` null, `may_say` saying
 `["any result", "passed", "failed", "reproduced"]`. The output is deterministic and contains no text beyond these templates, the
 recorded values and the claim boundary text as written by the recorder. `claim_check` limits what an agent can honestly
 report; it does not check that the analysis itself was sound.
+
+## 15. Disclosure
+
+A **disclosure** is a publishable view of a ledger in which each entry is shown in full, as a summary, or hidden. It does not
+change the ledger or rules R1 to R11. It is a canonical JSON Lines file (PCJ-1, one object per line, newline-terminated).
+
+**Line 0, the manifest:** `{"counts": {"full": n, "hidden": n, "summary": n}, "entries": N, "head_hash": H, "head_seq": N-1,
+"kind": "protocolith-disclosure", "v": 1}`. For an empty ledger `head_hash` and `head_seq` are `null`.
+
+**Lines 1 to N, one per ledger entry in order, by level:**
+
+| level | keys |
+| --- | --- |
+| `full` | `entry` (the whole ledger entry, unchanged), `level`, `seq` |
+| `summary` | `hash`, `level`, `prev`, `seq`, `summary` (an object), `ts`, `type` |
+| `hidden` | `hash`, `level`, `prev`, `seq` |
+
+`hash` and `prev` are the entry's own hash and the hash of the entry before it (64 zeros for `seq` 0).
+
+**Verification** (`verify-disclosure`): every line is canonical JSON; line 0 is a manifest of this version whose counts, entry
+count and head equal what the lines show; `seq` runs from 0 without a gap; `prev` of each line equals the `hash` of the
+line before (`DISCLOSURE_CHAIN`); a `full` entry has exactly the keys of a ledger entry and hashes to its `hash`
+(`DISCLOSURE_HASH`); a `summary` line has a known `type`, a valid time-stamp and an object. Any other structural problem is
+`BAD_DISCLOSURE`. With anchors, each anchor statement is compared with the `hash` at its `head_seq` (`ANCHOR_MISMATCH`,
+`ANCHOR_AHEAD`), exactly as for a ledger. Exit code `0` ok, `1` not ok.
+
+**Reveal** (`--reveal ENTRY`): the owner hands over one complete ledger entry. It matches when its own hash is consistent,
+its `hash` and `prev` equal the disclosed ones, and, for a `summary` line, every summary field that can be derived from the
+entry equals the published value and `type` and `ts` agree. A mismatch is reported with a reason; exit code `1`.
+
+**Policy** (`protocolith schema policy`): `{"v": 1, "default": LEVEL, "rules": [...], "summary_fields": [...]}`. A rule has a
+`level` and exactly one selector: `protocol_id` (an exact id, or a prefix ending in `*`), `seq` (an integer or a list) or
+`from_seq` with `to_seq` (inclusive). The first matching rule wins; `default` (itself `hidden` when absent) applies when none
+matches. A freeze, a record, a deviation and an issue entry belong to the protocol they refer to. A summary carries
+`protocol_id` and, by type: `version` (freeze), the listed fields of `claim_boundary`, `outcome`, `public_claim_text`,
+`reproduction_level`, `run_id`, `status` (record), `record_seq` (issue); `question` of a freeze only when listed. The default
+`summary_fields` are `status`, `reproduction_level` and `claim_boundary`. Building a disclosure from a ledger that does not
+verify is refused.
+
+**What it guarantees and what it does not.** The chain and the head cover hidden entries, so a reader sees how many entries
+exist and that none was dropped or replaced once the head is anchored. A hidden hash does not reveal the content, but a
+reader who can guess an entire entry can confirm the guess. A summary is the owner's statement; it is checked only when the entry
+is revealed. Hiding an entry does not hide that it exists.
+
+Conformance vectors for this section are in `spec/vectors/disclosures.json`.

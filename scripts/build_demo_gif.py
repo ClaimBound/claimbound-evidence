@@ -9,7 +9,7 @@ are shortened to their first 12 characters followed by "..." so that lines fit t
 
 Pillow is needed only here, not by Protocolith:
 
-    uv run --no-project --with pillow python scripts/build_demo_gif.py [--scenario ledger|anchor] [--out FILE]
+    uv run --no-project --with pillow python scripts/build_demo_gif.py [--scenario ledger|anchor|disclose] [--out FILE]
 
 Standard output shows the progress in percent. The frames contain the current date (it is part of the card ids).
 """
@@ -76,6 +76,38 @@ def anchor_script(work: Path) -> list[tuple[str, list[str], int]]:
     steps.append(("head -n 1 ledger.jsonl > tmp && mv tmp ledger.jsonl   # drop the last entry", [], 0))
     step("protocolith verify-ledger", ["verify-ledger"])
     step("protocolith verify-ledger --anchors", ["verify-ledger", "--anchors"])
+    return steps
+
+
+def disclose_script(work: Path) -> list[tuple[str, list[str], int]]:
+    """A private notebook, a policy, the published view, a reveal, and an edit that is caught."""
+    import json
+
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from build_disclosure_demo import OUT, build_private
+    from protocolith.core import Store, entries
+
+    steps: list[tuple[str, list[str], int]] = []
+
+    def step(shown: str, argv: list[str]) -> None:
+        out, code = run(argv, work)
+        steps.append((shown, out, code))
+
+    build_private(Store(work / ".protocolith"))
+    shutil.copy(OUT / "policy.json", work / "policy.json")
+    ledger = entries(Store(work / ".protocolith"))
+    revealed = next(e for e in ledger if e["type"] == "record" and e["body"]["run_id"] == "run-03" and 13 < e["seq"] < 22)
+    (work / "entry.json").write_text(json.dumps(revealed), encoding="utf-8")
+    step("protocolith summary | head -n 3", ["summary"])
+    steps[-1] = (steps[-1][0], steps[-1][1][:3], 0)
+    step("protocolith disclose --policy policy.json --out public.jsonl", ["disclose", "--policy", "policy.json", "--out", "public.jsonl"])
+    lines = (work / "public.jsonl").read_text(encoding="utf-8").splitlines()
+    steps.append(("head -n 3 public.jsonl", [short(line) for line in lines[:3]], 0))
+    step("protocolith verify-disclosure public.jsonl", ["verify-disclosure", "public.jsonl"])
+    step("protocolith verify-disclosure public.jsonl --reveal entry.json", ["verify-disclosure", "public.jsonl", "--reveal", "entry.json"])
+    (work / "public.jsonl").write_text("\n".join(lines[:16] + lines[17:]) + "\n", encoding="utf-8")
+    steps.append(("# someone drops one hidden entry from the published file", [], 0))
+    step("protocolith verify-disclosure public.jsonl", ["verify-disclosure", "public.jsonl"])
     return steps
 
 
@@ -175,7 +207,7 @@ def build(steps: list[tuple[str, list[str], int]], font: ImageFont.FreeTypeFont)
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("--out", default=None)
-    parser.add_argument("--scenario", choices=("ledger", "anchor"), default="ledger")
+    parser.add_argument("--scenario", choices=("ledger", "anchor", "disclose"), default="ledger")
     parser.add_argument("--font", default=None, help="path to a monospace font")
     args = parser.parse_args()
     if args.font:
@@ -187,11 +219,11 @@ def main() -> int:
         work = Path(tmp)
         for name in ("protocol.json", "record.json", "results.txt"):
             shutil.copy(ROOT / "examples" / "quickstart" / name, work / name)
-        steps = anchor_script(work) if args.scenario == "anchor" else script(work)
+        steps = {"anchor": anchor_script, "disclose": disclose_script}.get(args.scenario, script)(work)
     frames, delays = build(steps, font)
     palette = frames[0].quantize(colors=48, method=Image.Quantize.MEDIANCUT)
     quantized = [f.quantize(palette=palette, dither=Image.Dither.NONE) for f in frames]
-    default_name = "anchor-demo.gif" if args.scenario == "anchor" else "demo.gif"
+    default_name = {"anchor": "anchor-demo.gif", "disclose": "disclosure-demo.gif"}.get(args.scenario, "demo.gif")
     out = Path(args.out) if args.out else ROOT / "docs" / "assets" / "protocolith" / default_name
     quantized[0].save(out, save_all=True, append_images=quantized[1:], duration=delays, loop=0, optimize=True, disposal=1)
     print(f"wrote {out} frames={len(frames)} bytes={out.stat().st_size}")

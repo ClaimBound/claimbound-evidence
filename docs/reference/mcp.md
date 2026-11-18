@@ -21,12 +21,14 @@ canonical JSON. `isError` is true when the operation was rejected or the ledger 
 | `protocolith_show` | `seq` (integer, at least 0) | `protocolith show` |
 | `protocolith_schema` | optional `name` (`freeze`, `record`, `deviation`, `issue`, `entry`, `all`) | `protocolith schema` |
 | `protocolith_capture` | optional `files` (paths inside the working directory), `env` | `protocolith capture` |
-| `protocolith_atlas` | optional `out`, `title`, `cards` (directories), `i18n`, `default_lang`, `max_rows` | `protocolith atlas`; returns the path written |
+| `protocolith_atlas` | optional `out`, `title`, `cards` (directories), `i18n`, `default_lang`, `max_rows`, `policy` | `protocolith atlas`; returns the path written |
 | `protocolith_freeze` | `protocol` (object), optional `supersedes` | `protocolith freeze` |
 | `protocolith_record` | `body` (object) | `protocolith record` |
 | `protocolith_deviation` | `body` (object) | `protocolith deviation` |
 | `protocolith_verify` | optional `expect_head` (`SEQ:HASH`), `anchors` (boolean) | `protocolith verify-ledger [--expect-head] [--anchors]` |
 | `protocolith_claim_check` | `seq` or `protocol` (exactly one) | `protocolith claim-check`: what may and may not be said about a record. Call it before stating any result. |
+| `protocolith_disclose` | `policy` (object); optional `out` | `protocolith disclose`: writes a publishable view of the ledger (each entry full, summary or hidden) inside the working directory |
+| `protocolith_verify_disclosure` | `file`; optional `anchors` (directory), `reveal` (a ledger entry) | `protocolith verify-disclosure`; `isError` when anything does not verify |
 | `protocolith_anchor` | optional `tsa` (URL) | `protocolith anchor [--tsa URL]`: the local anchor, plus an RFC 3161 time-stamp when `tsa` is given |
 | `protocolith_issue` | `seq` (integer, at least 0) | `protocolith issue` |
 

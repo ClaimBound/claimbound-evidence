@@ -46,6 +46,10 @@ _BY_FIELD: dict[str, dict[str, Any]] = {
     "status": {"enum": sorted(RESULT_STATUSES)},
     "type": {"enum": list(ENTRY_TYPES)},
 }
+_POLICY_DESCRIPTION = (
+    "A visibility policy for `protocolith disclose` and `protocolith atlas --policy`: which ledger entries are shown "
+    "in full, as a summary, or hidden."
+)
 _DESCRIPTIONS = {
     "freeze": "Input of `freeze`: the protocol object. protocol_id and version are required; any other key is part of the protocol.",
     "record": "Input of `record` and body of a record entry.",
@@ -118,19 +122,49 @@ def _entry() -> dict[str, Any]:
     return schema
 
 
+def _policy_schema() -> dict[str, Any]:
+    from .disclosure import LEVELS, SUMMARY_CHOICES
+
+    level = {"enum": list(LEVELS)}
+    rule = {
+        "type": "object",
+        "properties": {
+            "level": level,
+            "protocol_id": {"type": "string", "minLength": 1, "description": "an exact protocol_id, or a prefix ending in *"},
+            "seq": {"oneOf": [_UINT, {"type": "array", "items": _UINT, "minItems": 1}]},
+            "from_seq": _UINT,
+            "to_seq": _UINT,
+        },
+        "required": ["level"],
+        "additionalProperties": False,
+    }
+    return {
+        "type": "object",
+        "properties": {
+            "v": {"const": 1},
+            "default": {**level, "description": "level of an entry no rule matches (default hidden)"},
+            "rules": {"type": "array", "items": rule, "description": "the first matching rule wins"},
+            "summary_fields": {"type": "array", "items": {"enum": list(SUMMARY_CHOICES)}, "uniqueItems": True},
+        },
+        "additionalProperties": False,
+    }
+
+
 def schema_for(name: str) -> dict[str, Any]:
     """The JSON Schema for one input (``freeze``, ``record``, ``deviation``, ``issue``) or the ledger ``entry``."""
     if name == "freeze":
         body = _freeze_input()
     elif name == "issue":
         body = {"type": "object", "properties": {"seq": _UINT}, "required": ["seq"], "additionalProperties": False}
+    elif name == "policy":
+        body = _policy_schema()
     elif name == "entry":
         body = _entry()
     elif name in NAMES:
         body = _bodies()[name]
     else:
-        raise InputError("BAD_ENTRY", "schema name must be one of: " + ", ".join(NAMES) + ", all")
-    return {"$schema": DIALECT, "title": f"protocolith {name}", "description": _DESCRIPTIONS[name], **body}
+        raise InputError("BAD_ENTRY", "schema name must be one of: " + ", ".join(NAMES) + ", policy, all")
+    return {"$schema": DIALECT, "title": f"protocolith {name}", "description": _DESCRIPTIONS.get(name, _POLICY_DESCRIPTION), **body}
 
 
 def all_schemas() -> dict[str, dict[str, Any]]:

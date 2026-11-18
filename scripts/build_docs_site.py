@@ -61,6 +61,8 @@ COPIED = {
     "docs/guides/anchoring-the-head.md": "guides-anchoring-the-head.md",
     "docs/guides/anchor-your-results.md": "guides-anchor-your-results.md",
     "docs/guides/atlas.md": "guides-atlas.md",
+    "docs/guides/selective-disclosure.md": "guides-selective-disclosure.md",
+    "examples/selective_disclosure/README.md": "examples-selective-disclosure.md",
     "docs/spec/CORE_SPEC.md": "spec-core.md",
     "docs/reference/error-codes.md": "reference-error-codes.md",
     "docs/reference/mcp.md": "reference-mcp.md",

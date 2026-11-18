@@ -11,7 +11,7 @@
   var GLYPH = {
     PASSED_UNDER_PROTOCOL: ["\u2713", "P"], NEGATIVE_RESULT_UNDER_PROTOCOL: ["\u2717", "N"],
     BLOCKED_SOURCE: ["\u25A0", "B"], INSUFFICIENT_COVERAGE: ["\u25D0", "I"],
-    SOURCE_DRIFT: ["\u21AF", "D"], REPRODUCED_OUTCOME: ["\u21BB", "R"]
+    SOURCE_DRIFT: ["\u21AF", "D"], REPRODUCED_OUTCOME: ["\u21BB", "R"], HIDDEN: ["\u25A2", "H"]
   };
   var ORDER = Object.keys(GLYPH);
   var PAGE = 50;
@@ -108,6 +108,8 @@
       var b;
       if (g.kind === "ledger" && g.ok) {
         b = el("p", { "class": "banner ok", role: "status", text: t("integrity_ledger_ok", { count: g.count, seq: g.head_seq === null ? "-" : g.head_seq, hash: g.head_hash === null ? "-" : g.head_hash }) });
+      } else if (g.kind === "disclosure") {
+        b = el("p", { "class": "banner", role: "note", text: t("integrity_disclosure", { full: g.counts.full, summary: g.counts.summary, hidden: g.counts.hidden }) });
       } else if (g.kind === "ledger") {
         var ul = el("ul");
         g.problems.forEach(function (p) { ul.appendChild(el("li", { text: t("problem_item", { code: p.code, seq: p.seq, message: p.message }) })); });

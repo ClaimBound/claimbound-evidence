@@ -4,6 +4,16 @@
 
 ### Added
 
+- **Selective disclosure.** `protocolith disclose --policy FILE` (also `core.build_disclosure`, MCP `protocolith_disclose`) writes a
+  publishable view of a ledger in which each entry is shown in full, as a summary, or hidden; the hash chain stays intact, so a
+  reader sees how many entries exist and that none was dropped. A policy chooses the level by protocol (exact or prefix), by
+  `seq` or by a range, first match wins, default hidden. `protocolith verify-disclosure FILE [--anchors DIR] [--reveal ENTRY]`
+  (`core.verify_disclosure`, `core.verify_reveal`, MCP `protocolith_verify_disclosure`) checks structure, chain, full entries,
+  anchors, and that a revealed entry is exactly the one committed to. `protocolith atlas --policy FILE` builds the matching atlas
+  (hidden records shown as `HIDDEN` rows). New codes `BAD_POLICY`, `BAD_DISCLOSURE`, `DISCLOSURE_HASH`, `DISCLOSURE_CHAIN`;
+  `protocolith schema policy`; conformance vectors `spec/vectors/disclosures.json`; core specification section 15; MCP now
+  has 15 tools. See `docs/guides/selective-disclosure.md` and `examples/selective_disclosure/`.
+
 - **Example `examples/phantom_mean_reversion/`.** A published simulation study as a retrospective record: frozen protocol, two
   anchors, a card, and `reproduce.py`, which re-runs the study (numpy only, about five seconds) and compares the output with the
   committed results (IDENTICAL, or EQUAL within 1e-9 where floating-point rounding differs). The README states plainly what a retrospective record proves and what it does not.

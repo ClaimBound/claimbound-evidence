@@ -59,7 +59,7 @@ def test_tools_list_names_and_schemas(store: Store) -> None:
     assert [t["name"] for t in tools] == [
         "protocolith_freeze", "protocolith_record", "protocolith_deviation",
         "protocolith_verify", "protocolith_claim_check", "protocolith_anchor", "protocolith_issue", "protocolith_log", "protocolith_show",
-        "protocolith_summary", "protocolith_capture", "protocolith_atlas", "protocolith_schema",
+        "protocolith_summary", "protocolith_capture", "protocolith_atlas", "protocolith_disclose", "protocolith_verify_disclosure", "protocolith_schema",
     ]  # fmt: skip
     for entry in tools:
         schema = entry["inputSchema"]
@@ -163,7 +163,7 @@ def test_serve_loop_skips_blank_lines_and_writes_only_replies(store: Store) -> N
 
 
 def test_tools_table_matches_the_spec_names() -> None:
-    assert set(TOOLS) == {f"protocolith_{n}" for n in ("freeze", "record", "deviation", "verify", "issue", "log", "show", "summary", "capture", "atlas", "schema", "claim_check", "anchor")}
+    assert set(TOOLS) == {f"protocolith_{n}" for n in ("freeze", "record", "deviation", "verify", "issue", "log", "show", "summary", "capture", "atlas", "schema", "claim_check", "anchor", "disclose", "verify_disclosure")}
 
 
 def test_stdio_subprocess(tmp_path: Any) -> None:

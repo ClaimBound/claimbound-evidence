@@ -152,7 +152,7 @@ def test_readme_mcp_tool_names(workdir: Path) -> None:
     assert done.returncode == 0, done.stderr
     replies = [json.loads(line) for line in done.stdout.splitlines()]
     names = [tool["name"] for tool in replies[1]["result"]["tools"]]
-    assert len(names) == 13
+    assert len(names) == 15
     for name in names:
         assert name in text
     config = re.search(r"```json\n(\{\n  \"mcpServers\".*?)```", text, re.S)

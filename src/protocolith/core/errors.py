@@ -41,6 +41,10 @@ HINTS: dict[str, str] = {
     "NOT_A_GIT_REPO": "run the command inside a git repository, or use another anchoring option",
     "EMPTY_LEDGER": "record at least one entry before anchoring",
     "BAD_URL": "give an http or https URL",
+    "BAD_POLICY": "run `protocolith schema policy` to see the allowed keys; a rule needs a level and one selector",
+    "BAD_DISCLOSURE": "the file is not a disclosure written by `protocolith disclose`, or it was edited; fetch it again from its source",
+    "DISCLOSURE_HASH": "a full entry was edited after it was disclosed; fetch the disclosure again from its source",
+    "DISCLOSURE_CHAIN": "an entry was removed, reordered or replaced in the disclosure; fetch it again from its source",
 }
 
 

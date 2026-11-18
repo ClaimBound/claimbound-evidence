@@ -38,6 +38,9 @@ object is printed on stdout (`ok`, `codes`, `error`, `violations`); `error` also
 | `BAD_ENTRY` | structure | wrong keys or types; bodies are closed, unknown keys are rejected |
 | `ANCHOR_MISMATCH` | anchor | `--anchors`: the entry at an anchored `seq` has another hash: the ledger was rewritten (exit 1) |
 | `ANCHOR_AHEAD` | anchor | `--anchors`: the ledger has fewer entries than an anchor says: it was truncated (exit 1) |
+| `BAD_DISCLOSURE` | disclosure | `verify-disclosure`: not a disclosure of this version, or a line, a count or the head is wrong (exit 1) |
+| `DISCLOSURE_HASH` | disclosure | `verify-disclosure`: a full entry does not hash to its stated hash (exit 1) |
+| `DISCLOSURE_CHAIN` | disclosure | `verify-disclosure`: a `prev` is not the hash of the line before: an entry was removed, reordered or replaced (exit 1) |
 | `ANCHOR_INVALID` | anchor | `--anchors`: an anchor file, or a stored time-stamp response it lists, is malformed, edited or missing (exit 1) |
 
 After an unparseable line the next `prev` is not checked, to avoid a cascade of reports. In a violation, `seq`
@@ -69,6 +72,7 @@ is the zero-based line index.
 | `CARD_EXISTS` | 2 | the card file exists with different content |
 | `CARD_CONFLICT` | 2 | `card` keys contradict values derived from the record |
 | `CARD_INVALID` | 2 | the card failed validation for another reason |
+| `BAD_POLICY` | 2 | `disclose`, `atlas --policy`: the visibility policy is not valid (`protocolith schema policy`) |
 | `ANCHOR_EXISTS` | 2 | `anchor`: an anchor file or statement file of this head exists with other content |
 | `EMPTY_LEDGER` | 2 | `anchor`: the ledger has no entries |
 | `BAD_URL` | 2 | `anchor`: `--tsa` or `--wayback` is not an http or https URL |
