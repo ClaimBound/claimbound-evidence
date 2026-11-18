@@ -53,7 +53,7 @@
 -->
 
 <p align="center">
-  <img src="docs/assets/protocolith/demo.gif" alt="Terminal recording: init, freeze a protocol, record a result, verify the ledger, summary, issue a card, build the atlas, then a one-word edit of the ledger that verify-ledger detects" width="760">
+  <img src="docs/assets/protocolith/protocolith-story.gif" alt="Animation: why a result is hard to check, then freeze, record, verify, anchor and publish only what you choose, with the hash chain catching an edited or cut-off ledger" width="760">
 </p>
 
 ## Why
@@ -72,6 +72,7 @@ It does not run experiments, fetch data or judge whether a protocol is a good on
 | 2. **Record** the outcome against that protocol | `protocolith record record.json` | Status, outcome, source hashes, claim boundary |
 | 3. **Verify** the hash-chained history | `protocolith verify-ledger` | Nothing; it reports rule violations (R1 to R11) |
 | 4. **Issue** a card from a verified record | `protocolith issue SEQ` | A JSON and SVG card, plus an `issue` entry |
+| 6. **Disclose** a view of the ledger | `protocolith disclose --policy FILE` | A public file: each entry in full, as a summary, or hidden |
 | 5. **Anchor** the head outside your disk | `protocolith anchor` | An anchor statement; optional git tag, Wayback or RFC 3161 time-stamp |
 
 Everything lives in one append-only file, `.protocolith/ledger.jsonl`, one canonical JSON line per entry.
@@ -166,10 +167,29 @@ from the local ledger or a directory of evidence cards: summary tiles, a status 
 filters, a sortable paged table and a detail drawer with permalinks. Languages other than English come only from
 files you supply. See [the atlas guide](docs/guides/atlas.md).
 
+<p align="center">
+  <img src="docs/assets/protocolith/atlas-tour.gif" alt="Tour of the atlas: overview with filters and charts, then a full record, a summary and a hidden record" width="760">
+</p>
+
 ```bash
 protocolith atlas --out atlas.html            # the local ledger
 protocolith atlas --cards docs/evidence_cards --out site/
 ```
+
+## Publish what you choose: full, summary or hidden
+
+A researcher may keep thousands of entries and publish a few. `protocolith disclose --policy policy.json` writes a view of the
+ledger in which each entry is shown **in full**, **as a summary** or **hidden** (only its place and hash). The chain stays intact,
+so a reader sees how many entries exist and that none was dropped; the owner can reveal a hidden entry later and anyone checks it.
+`protocolith atlas --policy policy.json` builds the matching browsable page. See the
+[guide](docs/guides/selective-disclosure.md) and the [example](examples/selective_disclosure/).
+
+<p align="center">
+  <img src="docs/assets/protocolith/disclosure-levels.svg" alt="Eight ledger entries pass through a policy; the published view shows each in full, as a summary or hidden, and the chain stays linked" width="760">
+</p>
+<p align="center">
+  <img src="docs/assets/protocolith/disclosure-demo.gif" alt="Terminal recording: disclose with a policy, verify, reveal a hidden entry, then a dropped entry is caught" width="760">
+</p>
 
 ## Anchor the head, and catch a cut-off ledger
 
@@ -195,12 +215,12 @@ README says what that does and does not prove.
 
 ## MCP client configuration
 
-`protocolith mcp` is a stdio server with thirteen tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`,
-`protocolith_schema`, `protocolith_capture`, `protocolith_atlas`, `protocolith_claim_check`, `protocolith_anchor`, `protocolith_freeze`, `protocolith_record`,
+`protocolith mcp` is a stdio server with fifteen tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`,
+`protocolith_schema`, `protocolith_capture`, `protocolith_atlas`, `protocolith_claim_check`, `protocolith_anchor`, `protocolith_disclose`, `protocolith_verify_disclosure`, `protocolith_freeze`, `protocolith_record`,
 `protocolith_deviation`, `protocolith_verify`, `protocolith_issue`) read-only resources (`protocolith://summary`, `protocolith://ledger`,
 `protocolith://schema/<name>`) and the prompt `research-agent-protocol`, so an agent can discover the formats and the rules
 itself; `protocolith_claim_check` tells it what it may and may not say about a result. It uses the network only when
-`protocolith_anchor` is given a time-stamp URL, and writes only inside the store, apart from the atlas page that `protocolith_atlas` writes inside the working directory. Add it to an MCP client:
+`protocolith_anchor` is given a time-stamp URL, and writes only inside the store, apart from the atlas page and the disclosure file that `protocolith_atlas` and `protocolith_disclose` write inside the working directory. Add it to an MCP client:
 
 ```json
 {
@@ -226,7 +246,7 @@ uv sync
 uv run protocolith --version      # or: source .venv/bin/activate
 ```
 
-`pip install protocolith` is available from the 0.6.0 release (planned); it is not published with the ledger commands yet.
+`pip install protocolith` installs the current release from PyPI (since 0.6.0).
 The package has no required dependencies.
 
 ## Platforms

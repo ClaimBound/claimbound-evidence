@@ -10,6 +10,7 @@ from .clock import now_utc
 from .errors import EnvError, InputError, ProtocolithError, VerificationFailed, Violation
 from .ledger import MAX_ENTRY_BYTES, RESULT_STATUSES
 from .capture import capture
+from .disclosure import Policy, build_disclosure, load_policy, parse_policy, verify_disclosure, verify_reveal
 from .ops import (
     claim_check,
     deviation,
@@ -37,6 +38,7 @@ __all__ = [
     "EnvError",
     "InputError",
     "ProtocolithError",
+    "Policy",
     "Store",
     "Verdict",
     "VerificationFailed",
@@ -44,6 +46,7 @@ __all__ = [
     "Violation",
     "anchor_head",
     "build_atlas",
+    "build_disclosure",
     "capture",
     "claim_check",
     "decode",
@@ -54,7 +57,9 @@ __all__ = [
     "head",
     "init",
     "issue",
+    "load_policy",
     "log",
+    "parse_policy",
     "now_utc",
     "record",
     "repair_truncate_partial_tail",
@@ -66,4 +71,6 @@ __all__ = [
     "summary",
     "verify",
     "verify_anchors",
+    "verify_disclosure",
+    "verify_reveal",
 ]

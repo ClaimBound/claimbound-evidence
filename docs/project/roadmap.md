@@ -20,8 +20,9 @@ pre-rename project and keep their original status wording.
 
 | Item | Target | Notes |
 | --- | --- | --- |
-| Release 0.6.0 with `pip install protocolith` | 0.6.0 | Needs the owner's approval to tag and publish. |
-| conda-forge package | no date | After the PyPI release. |
+| Release 0.6.0 with `pip install protocolith` | 0.6.0 | Released 2026-11-16. |
+| Release 0.7.0: anchoring, claim-check, selective disclosure | 0.7.0 | In preparation. |
+| conda-forge package | no date | Submitted; waiting for review. |
 | A second implementation that passes the vectors | before 1.0.0 | None exists. |
 | An independent external rerun of a recorded run | before 1.0.0 | None has been reported. |
 

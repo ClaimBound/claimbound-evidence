@@ -18,6 +18,7 @@ from pathlib import Path
 from typing import Any
 
 from protocolith.core import MAX_ENTRY_BYTES, CanonError, decode, encode, scan
+from protocolith.core.disclosure import disclose_verifier, parse_policy, verify_disclosure
 from protocolith.core.issue import card_hash
 from protocolith.core.ledger import ZERO_HASH, entry_hash, serialize
 from protocolith.core.rules import Verifier, apply_expected_head
@@ -357,12 +358,48 @@ def anchor_cases() -> list[dict[str, Any]]:
     return cases
 
 
+DISCLOSURE_POLICIES = {
+    "all_full": {"default": "full"},
+    "all_summary": {"default": "summary"},
+    "all_hidden": {},
+    "mixed": {"default": "hidden", "rules": [{"seq": 0, "level": "full"}, {"seq": [1, 2], "level": "summary"}]},
+}
+
+
+def disclosure_cases(ledgers: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Disclosures of the valid_full_flow ledger under four policies, plus two edited disclosures that must fail."""
+    base = next(case for case in ledgers if case["name"] == "valid_full_flow")
+    _, verifier = scan(str(base["ledger"]).encode("utf-8"), card_hash)
+    cases: list[dict[str, Any]] = []
+    for name, doc in DISCLOSURE_POLICIES.items():
+        built = disclose_verifier(verifier, parse_policy(doc))
+        cases.append(
+            {
+                "name": name,
+                "ledger": base["ledger"],
+                "policy": doc,
+                "disclosure": built.data.decode("utf-8"),
+                "expect": {"ok": True, "codes": [], "counts": built.counts},
+            }
+        )
+    full = cases[0]["disclosure"].split("\n")
+    chain = cases[1]["disclosure"].split("\n")
+    edited = json.loads(full[2])
+    edited["entry"]["body"]["run_id"] = "edited"
+    full[2] = encode(edited).decode("utf-8")
+    dropped = chain[:2] + chain[3:]
+    cases.append({"name": "edited_full_entry", "disclosure": "\n".join(full), "expect": {"ok": False, "codes": ["DISCLOSURE_HASH"]}})
+    cases.append({"name": "dropped_entry", "disclosure": "\n".join(dropped), "expect": {"ok": False, "codes": ["BAD_DISCLOSURE"]}})
+    return cases
+
+
 def check(
     canonical: list[dict[str, Any]],
     hashes: list[dict[str, Any]],
     ledgers: list[dict[str, Any]],
     heads: list[dict[str, Any]],
     anchors: list[dict[str, Any]],
+    disclosures: list[dict[str, Any]],
 ) -> None:
     """Refuse to write vectors the reference implementation does not reproduce."""
     for case in canonical:
@@ -388,6 +425,9 @@ def check(
         text = encode(case["statement"]).decode("utf-8")
         assert text == case["canonical"], case["name"]
         assert hashlib.sha256(text.encode("utf-8")).hexdigest() == case["anchor_id"], case["name"]
+    for case in disclosures:
+        report = verify_disclosure(str(case["disclosure"]).encode("utf-8"))
+        assert report.ok == case["expect"]["ok"] and report.codes == case["expect"]["codes"], (case["name"], report.codes)
 
 
 def dump(name: str, description: str, cases: list[dict[str, Any]]) -> str:
@@ -398,7 +438,8 @@ def dump(name: str, description: str, cases: list[dict[str, Any]]) -> str:
 def build_vectors() -> dict[str, str]:
     canonical, hashes, ledgers, heads = canonical_cases(), hash_cases(), ledger_cases(), head_cases()
     anchors = anchor_cases()
-    check(canonical, hashes, ledgers, heads, anchors)
+    disclosures = disclosure_cases(ledgers)
+    check(canonical, hashes, ledgers, heads, anchors, disclosures)
     return {
         "canonical.json": dump(
             "canonical",
@@ -423,6 +464,12 @@ def build_vectors() -> dict[str, str]:
             "An anchor statement (an object): its PCJ-1 text is canonical and the lowercase hex sha256 of those UTF-8 bytes "
             "is the anchor_id; the local anchor file is named file_name.",
             anchors,
+        ),
+        "disclosures.json": dump(
+            "disclosures",
+            "A disclosure file (JSON Lines text): verify its structure, hash chain and full entries; expect ok and the sorted "
+            "unique codes. Cases that carry a ledger and a policy are what that policy must produce from that ledger, byte for byte.",
+            disclosures,
         ),
     }
 

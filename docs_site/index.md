@@ -45,8 +45,8 @@ true. Anchor the head with `protocolith anchor` ([anchor your results](guides-an
 
 ## Status
 
-The ledger commands are on the development branch toward 0.6.0 and installable from source today; the specification
-is a draft (0.1) with one implementation. See the [roadmap](project-roadmap.md) and the [FAQ](FAQ.md).
+The ledger commands ship in the PyPI package (`pip install protocolith`); the specification is a draft (0.1) with one
+implementation. See the [roadmap](project-roadmap.md) and the [FAQ](FAQ.md).
 
 The earlier evidence-card material (card validators, runners, registry views) is kept under
 [Archive and examples](archive.md). The project was published as ClaimBound Evidence until 0.5.0; see

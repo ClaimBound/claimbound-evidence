@@ -18,7 +18,7 @@ import subprocess
 import tempfile
 import urllib.parse
 import urllib.request
-from collections.abc import Callable
+from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -142,7 +142,7 @@ class AnchorReport:
         }
 
 
-def _check_one(directory: Path, path: Path, verifier: Verifier, count: int) -> tuple[int | None, list[Violation]]:
+def _check_one(directory: Path, path: Path, entries: Mapping[int, Mapping[str, Any]], count: int) -> tuple[int | None, list[Violation]]:
     """Problems of one anchor file, and its head_seq when it is clean."""
     doc, why = _read_doc(path)
     if doc is None:
@@ -161,7 +161,7 @@ def _check_one(directory: Path, path: Path, verifier: Verifier, count: int) -> t
         found.append(
             Violation("ANCHOR_AHEAD", seq, f"{path.name}: anchored entry {seq} but the ledger has {count} entries: truncated")
         )
-    elif seq not in verifier.entries or verifier.entries[seq]["hash"] != digest:
+    elif seq not in entries or entries[seq]["hash"] != digest:
         found.append(
             Violation("ANCHOR_MISMATCH", seq, f"{path.name}: entry {seq} is not the anchored one: the ledger was rewritten")
         )
@@ -181,11 +181,20 @@ def _check_tsr(directory: Path, anchor_path: Path, seq: int, method: dict[str, A
 
 def check_anchors(directory: Path, verifier: Verifier, count: int) -> AnchorReport:
     """Check every ``*.json`` file in ``directory`` against a scanned ledger of ``count`` lines."""
+    return _check_all(directory, verifier.entries, count)
+
+
+def check_anchor_hashes(directory: Path, hashes: Mapping[int, str], count: int) -> AnchorReport:
+    """Check every anchor against known entry hashes (a disclosure holds the hash of each entry, not its content)."""
+    return _check_all(directory, {seq: {"hash": digest} for seq, digest in hashes.items()}, count)
+
+
+def _check_all(directory: Path, entries: Mapping[int, Mapping[str, Any]], count: int) -> AnchorReport:
     violations: list[Violation] = []
     clean: list[int] = []
     paths = sorted(directory.glob("*.json"))
     for path in paths:
-        seq, found = _check_one(directory, path, verifier, count)
+        seq, found = _check_one(directory, path, entries, count)
         violations += found
         if seq is not None:
             clean.append(seq)

@@ -12,10 +12,12 @@ from typing import Any
 
 from . import ops
 from .anchor import anchor_head
+from .disclosure import build_disclosure, load_policy, verify_disclosure, verify_reveal
 from .atlas import DEFAULT_OUT, DEFAULT_TITLE, build_atlas_result, write_atlas
 from .capture import capture
 from .canonical import decode, encode
 from .errors import InputError, ProtocolithError, hint_for, io_guard
+from .issue import _atomic_write
 from .ledger import ENTRY_TYPES, RESULT_STATUSES
 from .mcp import serve
 from .schema import NAMES, all_schemas, schema_for
@@ -128,6 +130,52 @@ def _cmd_anchor(args: argparse.Namespace, parser: argparse.ArgumentParser) -> in
         return Outcome(found, "\n".join(lines))
 
     return _run(args, work)
+
+
+def _cmd_disclose(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    def work(store: Store) -> Outcome:
+        found = build_disclosure(store, load_policy(args.policy))
+        with io_guard():
+            path = Path(args.out)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            _atomic_write(path, found.data)
+        c = found.counts
+        head = "empty" if found.head_seq is None else f"head seq={found.head_seq} hash={found.head_hash}"
+        lines = [f"wrote {path} entries={sum(c.values())} full={c['full']} summary={c['summary']} hidden={c['hidden']} {head}"]
+        lines += [f"warning: {w}" for w in found.warnings]
+        return Outcome({**found.to_dict(), "path": str(path)}, "\n".join(lines))
+
+    return _run(args, work)
+
+
+def _cmd_verify_disclosure(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
+    try:
+        with io_guard():
+            data = Path(args.file).read_bytes()
+        report = verify_disclosure(data, args.anchors)
+        reveal = None
+        if args.reveal is not None and report.ok:
+            reveal = verify_reveal(data, read_input(args.reveal))
+    except ProtocolithError as exc:
+        return _fail(args, exc)
+    code = 0 if report.ok and (reveal is None or reveal["matches"]) else 1
+    if args.json:
+        print(encode({**report.to_dict(), "reveal": reveal}).decode("utf-8"))
+        return code
+    if not report.ok:
+        for v in report.violations:
+            print(f"{v.code} line {v.seq}: {v.message}", file=sys.stderr)
+        for name, hint in ((n, hint_for(n)) for n in report.codes):
+            print(f"hint ({name}): {hint}", file=sys.stderr)
+        print("FAILED: " + ", ".join(report.codes))
+        return code
+    c = report.counts
+    head = "empty" if report.head_seq is None else f"head seq={report.head_seq} hash={report.head_hash}"
+    checked = "" if report.anchors is None else f" anchors={report.anchors}"
+    print(f"OK entries={report.entries} full={c['full']} summary={c['summary']} hidden={c['hidden']} {head}{checked}")
+    if reveal is not None:
+        print(f"reveal seq={reveal['seq']} level={reveal['level']}: " + ("MATCHES" if reveal["matches"] else f"DIFFERENT ({reveal['reason']})"))
+    return code
 
 
 def _cmd_claim_check(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int:
@@ -282,6 +330,7 @@ def _cmd_atlas(args: argparse.Namespace, parser: argparse.ArgumentParser) -> int
             i18n_dir=args.i18n,
             default_lang=args.default_lang,
             max_rows=args.max_rows,
+            policy=None if args.policy is None else load_policy(args.policy),
         )
         path = write_atlas(result.html, args.out)
     except ProtocolithError as exc:
@@ -352,6 +401,26 @@ def add_core_commands(subparsers: Any) -> None:
     anchor.add_argument("--git-tag", action="store_true", help="Create the git tag anchor/SEQ-HASH12 in this repository (never pushed).")
     anchor.add_argument("--sign", action="store_true", help="Sign the git tag (needs --git-tag and a configured key).")
     anchor.add_argument("--write-head", default=None, metavar="FILE", help="Write the anchor statement to FILE to publish or archive it.")
+    disclose = add(
+        "disclose",
+        _cmd_disclose,
+        "Write a publishable view of the ledger: each entry shown in full, as a summary, or hidden, as a policy says.",
+        with_json,
+    )
+    disclose.add_argument("--policy", required=True, metavar="FILE", help="Visibility policy (`protocolith schema policy`).")
+    disclose.add_argument("--out", default="disclosure.jsonl", metavar="FILE", help="Output file (default disclosure.jsonl).")
+    vdisc = subparsers.add_parser(
+        "verify-disclosure",
+        help="Verify a disclosure file; optionally against anchors and a revealed entry.",
+        description="Check the structure and hash chain of a disclosure and the hash of every full entry. "
+        "--anchors DIR compares the anchor statements there with the entry hashes; --reveal FILE checks that a "
+        "ledger entry you were given is exactly the one the disclosure committed to.",
+    )
+    vdisc.set_defaults(func=_cmd_verify_disclosure)
+    vdisc.add_argument("file", metavar="DISCLOSURE")
+    vdisc.add_argument("--anchors", default=None, metavar="DIR", help="Directory of anchor statements (.json) to check.")
+    vdisc.add_argument("--reveal", default=None, metavar="ENTRY", help="JSON file holding one revealed ledger entry.")
+    vdisc.add_argument("--json", action="store_true", help="Print the result as canonical JSON.")
     claim = add("claim-check", _cmd_claim_check, "State what the ledger supports about a record (what may and may not be said).", with_json)
     which = claim.add_mutually_exclusive_group(required=True)
     which.add_argument("--seq", type=int, default=None, metavar="N", help="The record at ledger seq N.")
@@ -394,7 +463,7 @@ def add_core_commands(subparsers: Any) -> None:
     )
     schema_parser.set_defaults(func=_cmd_schema)
     schema_parser.add_argument(
-        "name", nargs="?", default="all", choices=[*NAMES, "all"], help="Which schema (default all)."
+        "name", nargs="?", default="all", choices=[*NAMES, "policy", "all"], help="Which schema (default all)."
     )
     add("head", _cmd_head, "Print the ledger head (last hash and seq).", with_json)
     repair = add("repair", _cmd_repair, "Repair a crash-damaged ledger.", with_json)
@@ -421,5 +490,8 @@ def add_core_commands(subparsers: Any) -> None:
         "--i18n", default=None, metavar="DIR", help="Directory of <code>.json translation files; adds a language switcher."
     )
     atlas.add_argument("--default-lang", default="en", metavar="CODE", help="Initial language (default en).")
+    atlas.add_argument(
+        "--policy", default=None, metavar="FILE", help="Visibility policy: show each record in full, as a summary, or hidden."
+    )
     atlas.add_argument("--max-rows", default=None, type=int, metavar="N", help="Embed at most N records (the newest); counts stay complete.")
     add("mcp", _cmd_mcp, "Run the MCP server on stdio.", common)

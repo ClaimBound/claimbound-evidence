@@ -37,6 +37,23 @@ difference instead of hiding it, and `DIFFERENT` only if a number moves by more 
 
 Rebuild everything with `python3 build_ledger.py` (it refuses to overwrite an existing `evidence/`).
 
+## Time-stamps (RFC 3161)
+
+The final head (`seq 2`) carries two independent time-stamps, from DigiCert and from FreeTSA, both made on 2026-11-18 and stored next to
+the anchor statement. Protocolith does not verify their signatures; `openssl` does:
+
+```bash
+cd evidence/.protocolith/anchors
+S=2-19c345a87e50.statement
+# DigiCert (its root is in the system trust store)
+openssl ts -verify -in d99a52e0cee5e0cf6e6fbe5c10e332c844399bfcf4e0ecf6b05d398cb8536141.tsr -data $S -CAfile /etc/ssl/cert.pem
+# FreeTSA (download its CA first: https://freetsa.org/files/cacert.pem and tsa.crt)
+openssl ts -verify -in d99a52e0cee5e0cf6e6fbe5c10e332c844399bfcf4e0ecf6b05d398cb8536141.4d1b6aec322a.tsr -data $S -CAfile cacert.pem -untrusted tsa.crt
+```
+
+Both print `Verification: OK`. A time-stamp shows that the statement (and so the whole ledger up to `seq 2`) existed at that time; it does not
+show that the analysis was planned earlier.
+
 ## What this record does and does not prove
 
 - It proves the files with these hashes existed when the anchors say, that the chain was not edited afterwards (once the

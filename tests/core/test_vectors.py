@@ -91,6 +91,19 @@ def test_every_rule_has_a_failing_vector() -> None:
     assert {f"R{n}" for n in range(1, 12)} <= rules
 
 
+@pytest.mark.parametrize("case", cases("disclosures.json"), ids=lambda c: c["name"])
+def test_disclosure_vector(case: dict[str, Any]) -> None:
+    from protocolith.core import parse_policy, verify_disclosure
+    from protocolith.core.disclosure import disclose_verifier
+
+    report = verify_disclosure(case["disclosure"].encode("utf-8"))
+    assert report.ok == case["expect"]["ok"] and report.codes == case["expect"]["codes"]
+    if "ledger" in case:
+        _, verifier = scan(case["ledger"].encode("utf-8"), card_hash)
+        built = disclose_verifier(verifier, parse_policy(case["policy"]))
+        assert built.data.decode("utf-8") == case["disclosure"] and built.counts == case["expect"]["counts"]
+
+
 @pytest.mark.parametrize("case", cases("anchors.json"), ids=lambda c: c["name"])
 def test_anchor_vector(case: dict[str, Any]) -> None:
     from protocolith.core.anchor import anchor_name, build_statement

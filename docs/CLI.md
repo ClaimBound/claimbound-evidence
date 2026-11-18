@@ -239,6 +239,24 @@ Anchor the ledger head: a local anchor file, and optionally a time-stamp, an arc
 - `--sign` — Sign the git tag (needs --git-tag and a configured key).
 - `--write-head FILE` — Write the anchor statement to FILE to publish or archive it.
 
+## `protocolith disclose`
+
+Write a publishable view of the ledger: each entry shown in full, as a summary, or hidden, as a policy says.
+
+- `--store STORE` — Store directory (env PROTOCOLITH_STORE, default .protocolith).
+- `--json` — Print the result as canonical JSON.
+- `--policy FILE` — Visibility policy (`protocolith schema policy`). (required)
+- `--out FILE` — Output file (default disclosure.jsonl). (default: `disclosure.jsonl`)
+
+## `protocolith verify-disclosure`
+
+Check the structure and hash chain of a disclosure and the hash of every full entry. --anchors DIR compares the anchor statements there with the entry hashes; --reveal FILE checks that a ledger entry you were given is exactly the one the disclosure committed to.
+
+- `file`
+- `--anchors DIR` — Directory of anchor statements (.json) to check.
+- `--reveal ENTRY` — JSON file holding one revealed ledger entry.
+- `--json` — Print the result as canonical JSON.
+
 ## `protocolith claim-check`
 
 State what the ledger supports about a record (what may and may not be said).
@@ -303,7 +321,7 @@ Print a JSON fragment for the outcome object of a record: Python, platform, mach
 
 Print a JSON Schema (draft 2020-12) generated from the rules.
 
-- `name` — Which schema (default all). (one of: `freeze`, `record`, `deviation`, `issue`, `entry`, `all`)
+- `name` — Which schema (default all). (one of: `freeze`, `record`, `deviation`, `issue`, `entry`, `policy`, `all`)
 
 ## `protocolith head`
 
@@ -331,6 +349,7 @@ Build a self-contained offline HTML atlas of experiments from a ledger and/or ev
 - `--title TEXT` — Page title. (default: `Protocolith atlas`)
 - `--i18n DIR` — Directory of <code>.json translation files; adds a language switcher.
 - `--default-lang CODE` — Initial language (default en). (default: `en`)
+- `--policy FILE` — Visibility policy: show each record in full, as a summary, or hidden.
 - `--max-rows N` — Embed at most N records (the newest); counts stay complete.
 
 ## `protocolith mcp`

@@ -15,9 +15,11 @@ from . import ops
 from .anchor import anchor_head
 from .atlas import DEFAULT_OUT, DEFAULT_TITLE, build_atlas_result, confine, write_atlas
 from .capture import capture
+from .disclosure import build_disclosure, parse_policy, verify_disclosure, verify_reveal
+from .issue import _atomic_write
 from .canonical import CanonError, decode, encode
 from .clock import Clock
-from .errors import InputError, ProtocolithError
+from .errors import InputError, ProtocolithError, io_guard
 from .prompts import PROMPTS
 from .schema import NAMES, all_schemas, schema_for
 from .ledger import ENTRY_TYPES, RESULT_STATUSES
@@ -25,7 +27,7 @@ from .store import Store
 
 PROTOCOL_VERSIONS = ("2025-06-18", "2025-03-26", "2024-11-05")
 SERVER_NAME = "protocolith"
-SERVER_VERSION = "0.6.0"
+SERVER_VERSION = "0.7.0"
 
 Handler = Callable[[Store, dict[str, Any], Clock | None], Any]
 
@@ -106,7 +108,7 @@ def _schema(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any
 
 
 def _atlas(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
-    args = _take(arguments, (), ("out", "title", "cards", "i18n", "default_lang", "max_rows"))
+    args = _take(arguments, (), ("out", "title", "cards", "i18n", "default_lang", "max_rows", "policy"))
     cards = args.get("cards", [])
     if not (isinstance(cards, list) and all(isinstance(name, str) for name in cards)):
         raise InputError("BAD_ENTRY", "cards must be a list of strings")
@@ -120,9 +122,30 @@ def _atlas(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
         i18n_dir=i18n,
         default_lang=args.get("default_lang", "en"),
         max_rows=args.get("max_rows"),
+        policy=parse_policy(args["policy"]) if "policy" in args else None,
     )
     path = write_atlas(result.html, out)
     return {**result.to_dict(), "path": path.relative_to(Path.cwd().resolve()).as_posix()}
+
+
+def _disclose(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
+    args = _take(arguments, ("policy",), ("out",))
+    found = build_disclosure(store, parse_policy(args["policy"]))
+    out = confine(args.get("out", "disclosure.jsonl"))
+    with io_guard():
+        out.parent.mkdir(parents=True, exist_ok=True)
+        _atomic_write(out, found.data)
+    return {**found.to_dict(), "path": out.relative_to(Path.cwd().resolve()).as_posix()}
+
+
+def _verify_disclosure(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
+    args = _take(arguments, ("file",), ("anchors", "reveal"))
+    path = confine(args["file"])
+    with io_guard():
+        data = path.read_bytes()
+    report = verify_disclosure(data, confine(args["anchors"]) if "anchors" in args else None)
+    reveal = verify_reveal(data, args["reveal"]) if "reveal" in args and report.ok else None
+    return {**report.to_dict(), "ok": report.ok and (reveal is None or reveal["matches"]), "reveal": reveal}
 
 
 @dataclass(frozen=True)
@@ -268,14 +291,41 @@ TOOLS: dict[str, Tool] = {
                 "i18n": {"type": "string", "description": "directory of <code>.json translation files"},
                 "default_lang": {"type": "string"},
                 "max_rows": {"type": "integer", "minimum": 1},
+                "policy": {"type": "object", "description": "visibility policy (see protocolith_schema policy): show records in full, as a summary, or hidden"},
             },
             (),
             _atlas,
         ),
         Tool(
+            "protocolith_disclose",
+            "Write a publishable view of the ledger as a JSON Lines file inside the working directory: each entry is shown in "
+            "full, as a summary, or hidden, as the policy says (first matching rule wins; the default is hidden). The hash "
+            "chain stays intact, so a reader sees how many entries exist and that none was dropped. Use this before "
+            "publishing anything from a private ledger. See protocolith_schema with name policy.",
+            {
+                "policy": {"type": "object", "description": "default level, rules and summary_fields"},
+                "out": {"type": "string", "description": "output file (default disclosure.jsonl)"},
+            },
+            ("policy",),
+            _disclose,
+        ),
+        Tool(
+            "protocolith_verify_disclosure",
+            "Verify a disclosure file written by protocolith_disclose: structure, hash chain, the hash of every full entry, "
+            "optionally the anchor statements in a directory, and optionally a revealed ledger entry (reveal) that must be "
+            "exactly the entry the disclosure committed to. isError is true when anything does not verify.",
+            {
+                "file": {"type": "string", "description": "the disclosure file"},
+                "anchors": {"type": "string", "description": "directory of anchor statements"},
+                "reveal": {"type": "object", "description": "one full ledger entry the owner revealed"},
+            },
+            ("file",),
+            _verify_disclosure,
+        ),
+        Tool(
             "protocolith_schema",
-            "JSON Schema (draft 2020-12) of the inputs: freeze, record, deviation, issue, entry, or all.",
-            {"name": {"enum": [*NAMES, "all"]}},
+            "JSON Schema (draft 2020-12) of the inputs: freeze, record, deviation, issue, entry, policy, or all.",
+            {"name": {"enum": [*NAMES, "policy", "all"]}},
             (),
             _schema,
         ),

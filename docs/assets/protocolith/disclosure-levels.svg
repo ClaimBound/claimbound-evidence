@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-labelledby="t d">
+<title id="t">Three disclosure levels</title>
+<desc id="d">A private ledger of eight entries is passed through a visibility policy. In the published view each entry is shown in full, as a summary with a few chosen fields, or hidden, where only its place and hash remain. The hash chain links all eight entries in both views.</desc>
+<style>text{font-family:system-ui,-apple-system,Segoe UI,sans-serif;fill:#1c2733}.s{font-size:11px;fill:#52606e}.h{font-size:13px;font-weight:700}</style>
+<rect width="800" height="340" rx="12" fill="#f7f9fb"/>
+<text x="24" y="30" class="h" style="font-size:17px">Publish what you choose; the chain proves nothing was dropped</text>
+<text x="24" y="62" class="h">Private ledger (your disk)</text>
+<g stroke="#c8d2dc" fill="#fff">
+<rect x="24" y="72" width="80" height="46" rx="6"/><rect x="120" y="72" width="80" height="46" rx="6"/><rect x="216" y="72" width="80" height="46" rx="6"/><rect x="312" y="72" width="80" height="46" rx="6"/><rect x="408" y="72" width="80" height="46" rx="6"/><rect x="504" y="72" width="80" height="46" rx="6"/><rect x="600" y="72" width="80" height="46" rx="6"/><rect x="696" y="72" width="80" height="46" rx="6"/>
+</g>
+<g class="s" text-anchor="middle"><text x="64" y="100">seq 0</text><text x="160" y="100">seq 1</text><text x="256" y="100">seq 2</text><text x="352" y="100">seq 3</text><text x="448" y="100">seq 4</text><text x="544" y="100">seq 5</text><text x="640" y="100">seq 6</text><text x="736" y="100">seq 7</text></g>
+<path d="M104 95H120M200 95H216M296 95H312M392 95H408M488 95H504M584 95H600M680 95H696" stroke="#52606e" stroke-width="2"/>
+<rect x="250" y="140" width="300" height="38" rx="19" fill="#fdf3dc" stroke="#e8b04a" stroke-width="1.5"/>
+<text x="400" y="164" text-anchor="middle" class="h">policy.json  (first matching rule wins)</text>
+<path d="M400 120V138M400 180V204" stroke="#52606e" fill="none" stroke-width="1.5"/>
+<text x="24" y="206" class="h">Published view (disclosure.jsonl, atlas.html)</text>
+<g stroke-width="1.5">
+<rect x="24" y="216" width="80" height="62" rx="6" fill="#e3f4e8" stroke="#4aa86b"/>
+<rect x="120" y="216" width="80" height="62" rx="6" fill="#e3f4e8" stroke="#4aa86b"/>
+<rect x="216" y="216" width="80" height="62" rx="6" fill="#e6eefb" stroke="#5a8fd8"/>
+<rect x="312" y="216" width="80" height="62" rx="6" fill="#ecedf0" stroke="#9aa5b1" stroke-dasharray="5 3"/>
+<rect x="408" y="216" width="80" height="62" rx="6" fill="#ecedf0" stroke="#9aa5b1" stroke-dasharray="5 3"/>
+<rect x="504" y="216" width="80" height="62" rx="6" fill="#ecedf0" stroke="#9aa5b1" stroke-dasharray="5 3"/>
+<rect x="600" y="216" width="80" height="62" rx="6" fill="#e6eefb" stroke="#5a8fd8"/>
+<rect x="696" y="216" width="80" height="62" rx="6" fill="#ecedf0" stroke="#9aa5b1" stroke-dasharray="5 3"/>
+</g>
+<g text-anchor="middle"><text x="64" y="240" class="h">full</text><text x="160" y="240" class="h">full</text><text x="256" y="240" class="h">summary</text><text x="352" y="240" class="h">hidden</text><text x="448" y="240" class="h">hidden</text><text x="544" y="240" class="h">hidden</text><text x="640" y="240" class="h">summary</text><text x="736" y="240" class="h">hidden</text></g>
+<g class="s" text-anchor="middle"><text x="64" y="258">whole entry</text><text x="160" y="258">whole entry</text><text x="256" y="258">status, claim</text><text x="352" y="258">hash only</text><text x="448" y="258">hash only</text><text x="544" y="258">hash only</text><text x="640" y="258">status, claim</text><text x="736" y="258">hash only</text></g>
+<path d="M104 247H120M200 247H216M296 247H312M392 247H408M488 247H504M584 247H600M680 247H696" stroke="#52606e" stroke-width="2"/>
+<text x="24" y="306" class="s">Every line keeps its own hash and the hash before it, so the chain stays linked and an anchored head covers hidden entries too.</text>
+<text x="24" y="324" class="s">Later you can reveal a hidden entry: anyone checks that it has exactly the published hash.</text>
+</svg>
