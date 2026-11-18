@@ -1,9 +1,18 @@
 name: tests
 
 on:
+  # A pull request is tested once (not again for its branch push); main and release tags are tested on push.
   push:
+    branches: [main]
+    tags: ["v*"]
   pull_request:
   workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * 1"  # weekly: the full matrix, including every macOS Python version
+
+concurrency:
+  group: tests-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
   contents: read
@@ -16,6 +25,9 @@ jobs:
     # The first two job names are required status checks of the branch ruleset; keep them
     # exactly as they are. The others are informational.
     name: ${{ matrix.job }}
+    # The macOS runners are the scarce ones: a pull request runs one macOS Python version, the weekly run all of them.
+    if: ${{ !matrix.weekly || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
@@ -55,10 +67,12 @@ jobs:
             pytest_args: "-q"
           - job: "pytest-extra (macos-latest, python 3.11)"
             os: macos-latest
+            weekly: true
             python: "3.11"
             pytest_args: "-n auto -q"
           - job: "pytest-extra (macos-latest, python 3.15)"
             os: macos-latest
+            weekly: true
             python: "3.15"
             pytest_args: "-n auto -q"
           - job: "pytest-extra (ubuntu-latest, python 3.13)"
@@ -104,6 +118,7 @@ jobs:
     # The core is held at 100% line and branch coverage on every platform; the other platform's lock module is
     # excluded by its own pragma.
     name: core coverage (${{ matrix.os }})
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
