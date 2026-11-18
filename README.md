@@ -186,7 +186,7 @@ uploads. Details: [anchor your results](docs/guides/anchor-your-results.md).
 
 [`examples/phantom_mean_reversion/`](examples/phantom_mean_reversion/) holds a simulation study (rolling hedge ratios make a spread
 backtest look profitable on random walks) as a frozen protocol, two anchors and a card. `python3 reproduce.py` re-runs it in
-about five seconds and compares the output with the committed results byte for byte. It is a *retrospective* record, and its
+about five seconds and compares the output with the committed results (identical bytes here, equal to within rounding on other platforms). It is a *retrospective* record, and its
 README says what that does and does not prove.
 
 <p align="center">

@@ -1,4 +1,4 @@
-"""The committed phantom-mean-reversion example verifies and (with numpy) reproduces byte for byte."""
+"""The committed phantom-mean-reversion example verifies and (with numpy) reproduces (identical or equal within rounding)."""
 
 from __future__ import annotations
 
@@ -38,6 +38,6 @@ def test_claim_check_is_honest() -> None:
 
 
 @pytest.mark.skipif(importlib.util.find_spec("numpy") is None, reason="numpy not installed")
-def test_results_reproduce_byte_for_byte() -> None:
+def test_results_reproduce() -> None:
     proc = subprocess.run([sys.executable, str(EXAMPLE / "reproduce.py")], capture_output=True, text=True, check=False)
     assert proc.returncode == 0, proc.stdout + proc.stderr

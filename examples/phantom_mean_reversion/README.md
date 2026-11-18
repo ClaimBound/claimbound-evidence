@@ -1,7 +1,7 @@
 # Example: phantom mean reversion, a retrospective record
 
-A published simulation study kept as a Protocolith record that you can **re-run in about five seconds and compare byte for
-byte**. The study: *Phantom Mean Reversion: How Rolling Hedge Ratios Manufacture Profits in Pairs Backtests* (Monte-Neo,
+A published simulation study kept as a Protocolith record that you can **re-run in about five seconds and compare with the
+committed results**. The study: *Phantom Mean Reversion: How Rolling Hedge Ratios Manufacture Profits in Pairs Backtests* (Monte-Neo,
 `paper/phantom-mean-reversion`). On two independent random walks, a book that re-estimates its hedge ratio on a rolling window
 shows a high Sharpe ratio (4.4 to 14.8 here) although a position that holds the previous hedge earns nothing (median Sharpe
 between -0.07 and 0.13). Not investment advice; simulated data only.
@@ -14,14 +14,15 @@ Redraw the chart from `results.json` with `python3 scripts/build_phantom_chart.p
 
 ```bash
 pip install protocolith numpy
-python3 reproduce.py                                  # re-runs both simulations; prints IDENTICAL or DIFFERENT
+python3 reproduce.py                                  # re-runs both simulations; IDENTICAL, EQUAL (within 1e-9) or DIFFERENT
 protocolith verify-ledger --anchors --store evidence/.protocolith
 protocolith claim-check --seq 1 --store evidence/.protocolith
 ```
 
 `reproduce.py` runs `code/phantom_mr_sim.py` and `code/other_hedges.py` (seed 20261015) and compares the output with the committed
-`results.json` and `results_other.json`. If numpy on your machine rounds differently it prints the largest numeric difference
-instead of hiding it.
+`results.json` and `results_other.json`. On the author's machine the bytes are identical; on another platform or numpy build the
+last bits of some numbers can differ (about 1e-15 on a Linux runner), so the script reports `EQUAL` with the largest relative
+difference instead of hiding it, and `DIFFERENT` only if a number moves by more than 1e-9.
 
 ## What the ledger contains
 
@@ -39,7 +40,7 @@ Rebuild everything with `python3 build_ledger.py` (it refuses to overwrite an ex
 ## What this record does and does not prove
 
 - It proves the files with these hashes existed when the anchors say, that the chain was not edited afterwards (once the
-  anchors are published somewhere you do not control), and that anyone can re-run the code and get the same bytes.
+  anchors are published somewhere you do not control), and that anyone can re-run the code and get the same numbers.
 - It is **retrospective**: the study was run and written up before this protocol was frozen. A timestamp proves a record
   existed at time T, not that the analysis was planned earlier. The card says so under known limitations, and the gate was
   written after the numbers were known. `claim-check` therefore lists `independent_reproduction=false`.

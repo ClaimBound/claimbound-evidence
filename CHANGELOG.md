@@ -6,7 +6,7 @@
 
 - **Example `examples/phantom_mean_reversion/`.** A published simulation study as a retrospective record: frozen protocol, two
   anchors, a card, and `reproduce.py`, which re-runs the study (numpy only, about five seconds) and compares the output with the
-  committed results byte for byte. The README states plainly what a retrospective record proves and what it does not.
+  committed results (IDENTICAL, or EQUAL within 1e-9 where floating-point rounding differs). The README states plainly what a retrospective record proves and what it does not.
 - **External anchoring of the ledger head.** `protocolith anchor` (also `core.anchor_head` and the MCP tool `protocolith_anchor`)
   writes an anchor statement (canonical JSON of the head; its sha256 is the `anchor_id`) to `<store>/anchors/`, and optionally
   adds an RFC 3161 time-stamp (`--tsa URL`; the signature is not verified by the core, the `openssl ts -verify` command is printed),
