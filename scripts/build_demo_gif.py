@@ -9,7 +9,7 @@ are shortened to their first 12 characters followed by "..." so that lines fit t
 
 Pillow is needed only here, not by Protocolith:
 
-    uv run --no-project --with pillow python scripts/build_demo_gif.py [--out FILE]
+    uv run --no-project --with pillow python scripts/build_demo_gif.py [--scenario ledger|anchor] [--out FILE]
 
 Standard output shows the progress in percent. The frames contain the current date (it is part of the card ids).
 """
@@ -56,6 +56,27 @@ def run(argv: list[str], cwd: Path) -> tuple[list[str], int]:
     )
     lines = (proc.stdout + proc.stderr).rstrip("\n").splitlines()
     return [short(line) for line in lines], proc.returncode
+
+
+def anchor_script(work: Path) -> list[tuple[str, list[str], int]]:
+    """Freeze, record, anchor, then cut the last entry off: plain verification passes, the anchor catches it."""
+    steps: list[tuple[str, list[str], int]] = []
+
+    def step(shown: str, argv: list[str]) -> None:
+        out, code = run(argv, work)
+        steps.append((shown, out, code))
+
+    step("protocolith init", ["init"])
+    step("protocolith freeze protocol.json", ["freeze", "protocol.json"])
+    step("protocolith record record.json", ["record", "record.json"])
+    step("protocolith anchor --write-head head.txt", ["anchor", "--write-head", "head.txt"])
+    ledger = work / ".protocolith" / "ledger.jsonl"
+    lines = ledger.read_text(encoding="utf-8").splitlines(keepends=True)
+    ledger.write_text("".join(lines[:-1]), encoding="utf-8")
+    steps.append(("head -n 1 ledger.jsonl > tmp && mv tmp ledger.jsonl   # drop the last entry", [], 0))
+    step("protocolith verify-ledger", ["verify-ledger"])
+    step("protocolith verify-ledger --anchors", ["verify-ledger", "--anchors"])
+    return steps
 
 
 def script(work: Path) -> list[tuple[str, list[str], int]]:
@@ -153,7 +174,8 @@ def build(steps: list[tuple[str, list[str], int]], font: ImageFont.FreeTypeFont)
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    parser.add_argument("--out", default=str(ROOT / "docs" / "assets" / "protocolith" / "demo.gif"))
+    parser.add_argument("--out", default=None)
+    parser.add_argument("--scenario", choices=("ledger", "anchor"), default="ledger")
     parser.add_argument("--font", default=None, help="path to a monospace font")
     args = parser.parse_args()
     if args.font:
@@ -165,11 +187,12 @@ def main() -> int:
         work = Path(tmp)
         for name in ("protocol.json", "record.json", "results.txt"):
             shutil.copy(ROOT / "examples" / "quickstart" / name, work / name)
-        steps = script(work)
+        steps = anchor_script(work) if args.scenario == "anchor" else script(work)
     frames, delays = build(steps, font)
     palette = frames[0].quantize(colors=48, method=Image.Quantize.MEDIANCUT)
     quantized = [f.quantize(palette=palette, dither=Image.Dither.NONE) for f in frames]
-    out = Path(args.out)
+    default_name = "anchor-demo.gif" if args.scenario == "anchor" else "demo.gif"
+    out = Path(args.out) if args.out else ROOT / "docs" / "assets" / "protocolith" / default_name
     quantized[0].save(out, save_all=True, append_images=quantized[1:], duration=delays, loop=0, optimize=True, disposal=1)
     print(f"wrote {out} frames={len(frames)} bytes={out.stat().st_size}")
     return 0

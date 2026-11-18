@@ -6,6 +6,10 @@ byte**. The study: *Phantom Mean Reversion: How Rolling Hedge Ratios Manufacture
 shows a high Sharpe ratio (4.4 to 14.8 here) although a position that holds the previous hedge earns nothing (median Sharpe
 between -0.07 and 0.13). Not investment advice; simulated data only.
 
+![Median Sharpe of the booked and the tradable series for five windows](../../docs/assets/protocolith/phantom-chart.svg)
+
+Redraw the chart from `results.json` with `python3 scripts/build_phantom_chart.py`.
+
 ## Verify it yourself (no trust in the author needed)
 
 ```bash

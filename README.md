@@ -40,6 +40,9 @@
   <a href="src/protocolith/py.typed"><img alt="Typed" src="https://img.shields.io/badge/typing-py.typed-blue"></a>
   <a href="pyproject.toml"><img alt="Lint: ruff" src="https://img.shields.io/badge/lint-ruff-261230"></a>
   <a href="CONTRIBUTING.md"><img alt="DCO" src="https://img.shields.io/badge/DCO-signed--off-blue"></a>
+  <a href="docs/development/testing.md"><img alt="Type checking: mypy strict" src="https://img.shields.io/badge/mypy-strict-2a6db2"></a>
+  <a href="docs/development/testing.md"><img alt="Mutation score 90.7 percent" src="https://img.shields.io/badge/mutation%20score-90.7%25-brightgreen"></a>
+  <a href="docs/guides/anchor-your-results.md"><img alt="Anchors: git tag, Wayback, RFC 3161" src="https://img.shields.io/badge/anchors-git%20%7C%20Wayback%20%7C%20RFC%203161-8A2BE2"></a>
   <a href="docs/AI_USE.md"><img alt="AI use disclosed" src="https://img.shields.io/badge/AI%20use-disclosed-lightgrey"></a>
   <a href="docs/registry/evidence_index.json"><img alt="Evidence cards" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FProtocolith%2Fprotocolith%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=0A97BB"></a>
 </p>
@@ -69,9 +72,14 @@ It does not run experiments, fetch data or judge whether a protocol is a good on
 | 2. **Record** the outcome against that protocol | `protocolith record record.json` | Status, outcome, source hashes, claim boundary |
 | 3. **Verify** the hash-chained history | `protocolith verify-ledger` | Nothing; it reports rule violations (R1 to R11) |
 | 4. **Issue** a card from a verified record | `protocolith issue SEQ` | A JSON and SVG card, plus an `issue` entry |
+| 5. **Anchor** the head outside your disk | `protocolith anchor` | An anchor statement; optional git tag, Wayback or RFC 3161 time-stamp |
 
 Everything lives in one append-only file, `.protocolith/ledger.jsonl`, one canonical JSON line per entry.
 Each line contains the hash of the line before it. The core uses only the Python standard library.
+
+<p align="center">
+  <img src="docs/assets/protocolith/architecture.svg" alt="Three interfaces (CLI, Python API, MCP server) call one standard-library core that writes a ledger, cards and anchors" width="760">
+</p>
 
 ## Quickstart (2 minutes)
 
@@ -162,6 +170,28 @@ files you supply. See [the atlas guide](docs/guides/atlas.md).
 protocolith atlas --out atlas.html            # the local ledger
 protocolith atlas --cards docs/evidence_cards --out site/
 ```
+
+## Anchor the head, and catch a cut-off ledger
+
+A ledger is a file its owner writes, so plain verification cannot notice that the last entries were removed. An anchor puts the
+head somewhere you cannot edit alone; `verify-ledger --anchors` then catches a rewrite (`ANCHOR_MISMATCH`) or a truncation
+(`ANCHOR_AHEAD`). One 32-byte head covers every earlier entry, so ten thousand experiments need one anchor, not ten thousand
+uploads. Details: [anchor your results](docs/guides/anchor-your-results.md).
+
+<p align="center">
+  <img src="docs/assets/protocolith/anchor-demo.gif" alt="Terminal recording: the last ledger entry is removed, plain verify-ledger still passes, verify-ledger --anchors fails with ANCHOR_AHEAD" width="760">
+</p>
+
+## Example: a published study as a record
+
+[`examples/phantom_mean_reversion/`](examples/phantom_mean_reversion/) holds a simulation study (rolling hedge ratios make a spread
+backtest look profitable on random walks) as a frozen protocol, two anchors and a card. `python3 reproduce.py` re-runs it in
+about five seconds and compares the output with the committed results byte for byte. It is a *retrospective* record, and its
+README says what that does and does not prove.
+
+<p align="center">
+  <img src="docs/assets/protocolith/phantom-chart.svg" alt="Bar chart: booked Sharpe 4.4 to 14.8 against tradable Sharpe near zero, for five windows" width="640">
+</p>
 
 ## MCP client configuration
 
