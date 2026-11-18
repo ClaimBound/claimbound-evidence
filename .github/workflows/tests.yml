@@ -25,8 +25,6 @@ jobs:
     # The first two job names are required status checks of the branch ruleset; keep them
     # exactly as they are. The others are informational.
     name: ${{ matrix.job }}
-    # The macOS runners are the scarce ones: a pull request runs one macOS Python version, the weekly run all of them.
-    if: ${{ !matrix.weekly || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
     timeout-minutes: 30
     strategy:
       fail-fast: false
@@ -65,16 +63,6 @@ jobs:
             os: windows-latest
             python: "3.15"
             pytest_args: "-q"
-          - job: "pytest-extra (macos-latest, python 3.11)"
-            os: macos-latest
-            weekly: true
-            python: "3.11"
-            pytest_args: "-n auto -q"
-          - job: "pytest-extra (macos-latest, python 3.15)"
-            os: macos-latest
-            weekly: true
-            python: "3.15"
-            pytest_args: "-n auto -q"
           - job: "pytest-extra (ubuntu-latest, python 3.13)"
             os: ubuntu-latest
             python: "3.13"
@@ -113,6 +101,25 @@ jobs:
       - name: Preserve pytest failure
         if: steps.pytest.outcome == 'failure'
         run: exit 1
+
+  pytest-macos-weekly:
+    # The macOS runners are the scarce ones: a pull request runs one macOS Python version (pytest-extra, python 3.12 above)
+    # and the core coverage job; the other macOS versions run here, in the weekly scheduled run or on demand.
+    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+    name: pytest-extra (macos-latest, python ${{ matrix.python }})
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.15"]
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+      - run: uv sync --extra dev --python ${{ matrix.python }}
+      - run: uv run protocolith doctor
+      - run: uv run protocolith validate-all
+      - run: uv run --extra dev pytest -n auto -q
 
   core-coverage:
     # The core is held at 100% line and branch coverage on every platform; the other platform's lock module is
