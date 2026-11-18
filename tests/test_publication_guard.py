@@ -37,6 +37,8 @@ FORBIDDEN_IMPORT_PREFIXES = (
 
 TEXT_SUFFIXES = {".py", ".md", ".toml", ".txt", ".json", ".yml", ".yaml"}
 RAW_PAYLOAD_SUFFIXES = {".csv", ".parquet", ".zip", ".jsonl", ".env", ".key", ".pem"}
+# Ledgers that are published on purpose as example evidence (not raw payloads).
+PUBLISHED_LEDGERS = {"examples/phantom_mean_reversion/evidence/.protocolith/ledger.jsonl"}
 RAW_PAYLOAD_DIR_NAMES = {"raw", "payloads", "data"}
 
 
@@ -187,6 +189,8 @@ def test_no_raw_payload_files_or_dirs_are_committed() -> None:
                 violations.append(f"{path.relative_to(REPO_ROOT)}: raw payload directory")
                 break
         if path.is_dir():
+            continue
+        if path.relative_to(REPO_ROOT).as_posix() in PUBLISHED_LEDGERS:
             continue
         if path.suffix.lower() in RAW_PAYLOAD_SUFFIXES:
             violations.append(f"{path.relative_to(REPO_ROOT)}: raw payload-like suffix")

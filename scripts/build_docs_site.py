@@ -70,6 +70,7 @@ COPIED = {
     "docs/reference/configuration.md": "reference-configuration.md",
     "docs/examples/README.md": "examples.md",
     "docs/examples/statuses-and-versions.md": "examples-statuses-and-versions.md",
+    "examples/phantom_mean_reversion/README.md": "examples-phantom-mean-reversion.md",
     "docs/development/architecture.md": "development-architecture.md",
     "docs/development/testing.md": "development-testing.md",
     "docs/development/release-process.md": "development-release-process.md",
