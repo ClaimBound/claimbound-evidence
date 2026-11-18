@@ -36,6 +36,9 @@ object is printed on stdout (`ok`, `codes`, `error`, `violations`); `error` also
 | `TOO_DEEP` | limit | nesting deeper than 64 |
 | `HEAD_MISMATCH` | anchor | `--expect-head`: the entry at `SEQ` is missing or has another hash (exit 1) |
 | `BAD_ENTRY` | structure | wrong keys or types; bodies are closed, unknown keys are rejected |
+| `ANCHOR_MISMATCH` | anchor | `--anchors`: the entry at an anchored `seq` has another hash: the ledger was rewritten (exit 1) |
+| `ANCHOR_AHEAD` | anchor | `--anchors`: the ledger has fewer entries than an anchor says: it was truncated (exit 1) |
+| `ANCHOR_INVALID` | anchor | `--anchors`: an anchor file, or a stored time-stamp response it lists, is malformed, edited or missing (exit 1) |
 
 After an unparseable line the next `prev` is not checked, to avoid a cascade of reports. In a violation, `seq`
 is the zero-based line index.
@@ -66,6 +69,11 @@ is the zero-based line index.
 | `CARD_EXISTS` | 2 | the card file exists with different content |
 | `CARD_CONFLICT` | 2 | `card` keys contradict values derived from the record |
 | `CARD_INVALID` | 2 | the card failed validation for another reason |
+| `ANCHOR_EXISTS` | 2 | `anchor`: an anchor file or statement file of this head exists with other content |
+| `EMPTY_LEDGER` | 2 | `anchor`: the ledger has no entries |
+| `BAD_URL` | 2 | `anchor`: `--tsa` or `--wayback` is not an http or https URL |
+| `NOT_A_GIT_REPO` | 2 | `anchor --git-tag`: the current directory is not inside a git repository |
+| `ANCHOR_FAILED` | 3 | `anchor`: a network request, a time-stamp response or a git command failed; the local anchor and the methods that succeeded were kept |
 | `VERIFICATION_FAILED` | 1 | the ledger could not be loaded because it does not verify; the violations are attached |
 
 The authoritative list is section 11 of the [core specification](../spec/CORE_SPEC.md).

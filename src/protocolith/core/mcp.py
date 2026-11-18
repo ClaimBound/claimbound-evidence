@@ -1,5 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Minimal MCP server over stdio: newline-delimited JSON-RPC 2.0, tools and read-only resources, no network."""
+"""Minimal MCP server over stdio: newline-delimited JSON-RPC 2.0, tools, read-only resources and prompts.
+
+The only network access is the optional ``tsa`` argument of ``protocolith_anchor``."""
 
 from __future__ import annotations
 
@@ -10,11 +12,13 @@ from pathlib import Path
 from typing import Any, BinaryIO
 
 from . import ops
+from .anchor import anchor_head
 from .atlas import DEFAULT_OUT, DEFAULT_TITLE, build_atlas_result, confine, write_atlas
 from .capture import capture
 from .canonical import CanonError, decode, encode
 from .clock import Clock
 from .errors import InputError, ProtocolithError
+from .prompts import PROMPTS
 from .schema import NAMES, all_schemas, schema_for
 from .ledger import ENTRY_TYPES, RESULT_STATUSES
 from .store import Store
@@ -57,8 +61,18 @@ def _deviation(store: Store, arguments: dict[str, Any], clock: Clock | None) -> 
 
 
 def _verify(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
-    args = _take(arguments, (), ("expect_head",))
-    return ops.verify(store, args.get("expect_head")).to_dict()
+    args = _take(arguments, (), ("expect_head", "anchors"))
+    return ops.verify(store, args.get("expect_head"), anchors=args.get("anchors") is True).to_dict()
+
+
+def _anchor(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
+    args = _take(arguments, (), ("tsa",))
+    return anchor_head(store, tsa=args.get("tsa"), clock=clock)
+
+
+def _claim_check(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
+    args = _take(arguments, (), ("seq", "protocol"))
+    return ops.claim_check(store, seq=args.get("seq"), protocol=args.get("protocol"))
 
 
 def _issue(store: Store, arguments: dict[str, Any], clock: Clock | None) -> Any:
@@ -160,10 +174,37 @@ TOOLS: dict[str, Tool] = {
         Tool(
             "protocolith_verify",
             "Verify the whole ledger; isError is true when it does not verify. "
-            "With expect_head (SEQ:HASH) the ledger must also contain that entry, else HEAD_MISMATCH.",
-            {"expect_head": {"type": "string", "description": "SEQ:HASH of a previously published head"}},
+            "With expect_head (SEQ:HASH) the ledger must also contain that entry, else HEAD_MISMATCH. "
+            "With anchors true every anchor is checked too: ANCHOR_MISMATCH means the ledger was rewritten, "
+            "ANCHOR_AHEAD that it was truncated.",
+            {
+                "expect_head": {"type": "string", "description": "SEQ:HASH of a previously published head"},
+                "anchors": {"type": "boolean", "description": "also check the anchor files"},
+            },
             (),
             _verify,
+        ),
+        Tool(
+            "protocolith_claim_check",
+            "Call this before stating any result. For a record (seq) or the latest record of a protocol it returns "
+            "supported, status, claim_boundary, sources, protocol_frozen_before_record, deviations, anchored, "
+            "independent_reproduction, may_say (the sentence you may use) and must_not_say (phrases the ledger does not "
+            "support). Give exactly one of seq and protocol.",
+            {
+                "seq": {"type": "integer", "minimum": 0},
+                "protocol": {"type": "string", "description": "protocol_id: checks its latest record"},
+            },
+            (),
+            _claim_check,
+        ),
+        Tool(
+            "protocolith_anchor",
+            "Anchor the ledger head: write a local anchor file (statement and anchor_id) in the store and, with tsa, "
+            "also have an RFC 3161 time-stamp authority at that URL stamp it (a network request). The time-stamp "
+            "signature is not verified here. Report the anchor_id. Later, protocolith_verify with anchors true checks it.",
+            {"tsa": {"type": "string", "description": "http(s) URL of an RFC 3161 time-stamp authority"}},
+            (),
+            _anchor,
         ),
         Tool(
             "protocolith_issue",
@@ -251,7 +292,7 @@ def _initialize(store: Store, params: dict[str, Any], clock: Clock | None) -> di
     version = wanted if wanted in PROTOCOL_VERSIONS else PROTOCOL_VERSIONS[0]
     return {
         "protocolVersion": version,
-        "capabilities": {"resources": {}, "tools": {}},
+        "capabilities": {"prompts": {}, "resources": {}, "tools": {}},
         "serverInfo": {"name": SERVER_NAME, "version": SERVER_VERSION},
     }
 
@@ -292,6 +333,23 @@ def _resources_read(store: Store, params: dict[str, Any], clock: Clock | None) -
     return {"contents": [{"uri": uri, "mimeType": "application/json", "text": encode(data).decode("utf-8")}]}
 
 
+def _prompts_list(store: Store, params: dict[str, Any], clock: Clock | None) -> dict[str, Any]:
+    return {
+        "prompts": [
+            {"name": name, "description": prompt["description"], "arguments": []} for name, prompt in PROMPTS.items()
+        ]
+    }
+
+
+def _prompts_get(store: Store, params: dict[str, Any], clock: Clock | None) -> dict[str, Any]:
+    name = params.get("name")
+    prompt = PROMPTS.get(name) if isinstance(name, str) else None
+    if prompt is None:
+        raise RpcError(-32602, f"unknown prompt: {name!r}")
+    message = {"role": "user", "content": {"type": "text", "text": prompt["text"]}}
+    return {"description": prompt["description"], "messages": [message]}
+
+
 def _tools_list(store: Store, params: dict[str, Any], clock: Clock | None) -> dict[str, Any]:
     return {"tools": [tool.listing() for tool in TOOLS.values()]}
 
@@ -314,6 +372,8 @@ def _tools_call(store: Store, params: dict[str, Any], clock: Clock | None) -> di
 METHODS: dict[str, Callable[[Store, dict[str, Any], Clock | None], dict[str, Any]]] = {
     "initialize": _initialize,
     "ping": _ping,
+    "prompts/list": _prompts_list,
+    "prompts/get": _prompts_get,
     "resources/list": _resources_list,
     "resources/read": _resources_read,
     "tools/list": _tools_list,

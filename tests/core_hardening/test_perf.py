@@ -126,3 +126,21 @@ def test_append_throughput(tmp_path: Path) -> None:
     }
     assert small < 10.0 and large < 60.0
     assert large / small < 30.0  # about 10x for 10x the entries; 30x would mean worse than linear growth
+
+
+def test_verify_with_anchors_costs_about_the_same_on_10k_entries(ledger_10k: bytes, tmp_path: Path) -> None:
+    from protocolith.core import anchor_head
+
+    store = Store(tmp_path / "s")
+    store.path.mkdir()
+    store.ledger_path.write_bytes(ledger_10k)
+    for cut in (2_000, 6_000, 10_000):  # three anchors at different heads
+        full = store.ledger_path.read_bytes()
+        store.ledger_path.write_bytes(b"".join(ledger_10k.splitlines(keepends=True)[:cut]))
+        anchor_head(store, clock=clock_at(1))
+        store.ledger_path.write_bytes(full)
+    assert verify(store, anchors=True).ok and verify(store, anchors=True).anchors == 3
+    plain = cpu(lambda: verify(store), repeat=3)
+    anchored = cpu(lambda: verify(store, anchors=True), repeat=3)
+    RESULTS["verify_anchors"] = {"entries": 10_000, "anchors": 3, "plain_cpu_s": round(plain, 3), "anchored_cpu_s": round(anchored, 3)}
+    assert anchored < plain * 1.5 + 0.05, "anchor checks must not dominate verification"

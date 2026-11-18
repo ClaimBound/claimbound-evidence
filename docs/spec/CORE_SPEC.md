@@ -84,6 +84,7 @@ pointing at the hash they were run under.
 A valid ledger proves internal consistency and ordering. It does not prove wall-clock time and cannot detect that a
 whole ledger was replaced or that its tail was removed. `head` (the last `hash` plus `seq`) may be published or
 anchored elsewhere (a signed git tag, a timestamp service); a later check against that head detects removal (`verify-ledger --expect-head SEQ:HASH`; a mismatch yields `HEAD_MISMATCH`, exit 1).
+Section 13 defines anchor statements and anchor files, which make this check systematic (`verify-ledger --anchors`).
 
 ## 4. Local store
 
@@ -105,7 +106,7 @@ All three expose the same operations with the same semantics.
 | freeze | `protocolith freeze FILE` | `core.freeze(store, protocol)` | `protocolith_freeze` |
 | record | `protocolith record FILE` | `core.record(store, body)` | `protocolith_record` |
 | deviation | `protocolith deviation FILE` | `core.deviation(store, body)` | `protocolith_deviation` |
-| verify | `protocolith verify-ledger` | `core.verify(store)` | `protocolith_verify` |
+| verify | `protocolith verify-ledger [--expect-head SEQ:HASH] [--anchors]` | `core.verify(store, expect_head=None, anchors=False)` | `protocolith_verify` (`expect_head`, `anchors`) |
 | issue | `protocolith issue SEQ` | `core.issue(store, seq)` | `protocolith_issue` |
 | log / head | `protocolith log`, `protocolith head` | `core.entries(store)`, `core.log(store, ...)`, `core.head(store)` | `protocolith_log` |
 | show | `protocolith show SEQ` | `core.show(store, seq)` | `protocolith_show` |
@@ -113,6 +114,8 @@ All three expose the same operations with the same semantics.
 | capture | `protocolith capture [--file PATH ...] [--env]` | `core.capture(files, env=False)` | `protocolith_capture` |
 | schema | `protocolith schema [NAME]` | `core.schema_for(name)` | `protocolith_schema` |
 | atlas | `protocolith atlas [--store DIR] [--cards DIR ...] [--out FILE_OR_DIR]` | `core.build_atlas(...)` | `protocolith_atlas` |
+| anchor | `protocolith anchor [--tsa URL] [--wayback URL] [--git-tag [--sign]] [--write-head FILE]` | `core.anchor_head(store, ...)` | `protocolith_anchor` (local anchor and optional `tsa` only) |
+| claim check | `protocolith claim-check --seq N \| --protocol ID` | `core.claim_check(store, seq=N)` or `protocol=ID` | `protocolith_claim_check` |
 | init | `protocolith init` | `core.init(store)` | |
 
 CLI exit codes: `0` ok; `1` the stored ledger does not verify (codes on stderr and, with `--json`, on stdout);
@@ -120,8 +123,13 @@ CLI exit codes: `0` ok; `1` the stored ledger does not verify (codes on stderr a
 `3` I/O or environment error (missing ledger, lock timeout). `--json` output is PCJ-1. Reading a missing ledger is `NO_LEDGER`
 (exit 3), never an empty pass.
 
-The MCP server speaks stdio JSON-RPC with `initialize`, `tools/list`, `tools/call`, `resources/list` and
-`resources/read`, uses no network and no third-party package, and never writes outside the store, except the one atlas page of `protocolith_atlas` inside the working directory.
+The MCP server speaks stdio JSON-RPC with `initialize`, `tools/list`, `tools/call`, `resources/list`, `resources/read`,
+`prompts/list` and `prompts/get`, and uses no third-party package. `initialize` advertises `tools`, `resources` and `prompts`.
+It makes a network request only when `protocolith_anchor` is called with `tsa`, and never writes outside the store, except the
+one atlas page of `protocolith_atlas` inside the working directory. The prompt `research-agent-protocol` (no arguments) holds
+fixed instructions for an AI agent: freeze before any run, record every run including failures and blocked sources, call
+`claim_check` before stating a result and use its `may_say` wording, then verify and anchor and report the `anchor_id`.
+An unknown prompt name is JSON-RPC error `-32602`.
 
 ### 5.1 Read commands
 
@@ -135,7 +143,9 @@ The MCP server speaks stdio JSON-RPC with `initialize`, `tools/list`, `tools/cal
   `protocols` (one row per `protocol_id`: `versions`, `latest_version`, `records`, `latest_status`, `deviations`,
   `cards`) and `problems` (the violations, each `code`, `seq`, `message`). Unlike other reads it does not fail when the
   ledger does not verify: `ok` is false and `problems` says why (CLI exit 1, MCP `isError`). Entries whose protocol was
-  never frozen are not tabulated. `--protocol` limits the table and the counts to one protocol.
+  never frozen are not tabulated. `--protocol` limits the table and the counts to one protocol. It also holds
+  `anchors` (`count` of anchor files and `last_seq`, the highest anchored `seq` that matches the ledger, or null);
+  anchor problems (section 13) are added to `problems` and make `ok` false.
 - `init` creates the store with an empty ledger; repeating it changes nothing. An empty ledger verifies.
 
 ### 5.2 Capture
@@ -192,7 +202,7 @@ a string `evidence_id` and `result_status` is skipped and counted (`issues`); un
 ## 6. Conformance vectors
 
 `spec/vectors/` holds language-neutral JSON files: canonicalization cases (input text, expected bytes or error),
-hash cases, and ledgers (each with the expected verdict and codes). Every rule R1 to R11 has at least one failing vector.
+hash cases, ledgers (each with the expected verdict and codes), expected-head cases and anchor statements. Every rule R1 to R11 has at least one failing vector.
 A change to the vectors is a change to the specification and needs a version bump.
 
 ## 7. Versioning
@@ -238,6 +248,12 @@ Verification: `BAD_SEQ`, `BAD_PREV`, `BAD_HASH`, `NOT_CANONICAL`, `TS_REGRESSION
 Canonicalization and input: `BAD_JSON` (including a byte-order mark), `BAD_UTF8`, `BAD_TYPE`, `FLOAT_NOT_ALLOWED`, `NON_FINITE`,
 `INT_RANGE`, `DUPLICATE_KEY`, `LONE_SURROGATE`.
 
+Anchors (section 13): `ANCHOR_MISMATCH` (an anchored entry is not the one in the ledger: the ledger was rewritten),
+`ANCHOR_AHEAD` (the ledger is shorter than an anchor: truncated), `ANCHOR_INVALID` (an anchor file or a stored time-stamp
+response is malformed, edited or missing) are verification codes of `verify-ledger --anchors` (exit 1). `ANCHOR_EXISTS`
+(an anchor of this head exists with other content, exit 2), `EMPTY_LEDGER` (nothing to anchor, exit 2), `BAD_URL` (exit 2),
+`NOT_A_GIT_REPO` (exit 2) and `ANCHOR_FAILED` (a network, time-stamp or git step failed, exit 3) belong to `anchor`.
+
 Operations and environment: `BAD_PATH`, `NO_LEDGER`, `NO_PARTIAL_TAIL`, `LOCK_TIMEOUT`, `IO_ERROR`, `BAD_CLOCK`, `CARD_EXISTS`, `CARD_CONFLICT`,
 `CARD_INVALID`, `VERIFICATION_FAILED`.
 
@@ -251,3 +267,86 @@ after an unparseable line the next `prev` is not checked, to avoid cascades. `su
 
 The reference implementation is held at 100% line and branch coverage of `protocolith.core`. The two platform-specific lock
 modules are marked `# pragma: no cover` as a whole because each runs only on its own platform; both are exercised in CI.
+
+## 13. Anchors
+
+The ledger is self-attested: whoever can write the file can rewrite the whole hash chain consistently, and `verify-ledger`
+passes. An anchor ties the head to something the writer cannot change alone.
+
+**Statement.** The PCJ-1 canonical JSON of `{"v": 1, "kind": "protocolith-anchor", "head_seq": N, "head_hash": H, "entries": N+1,
+"protocolith_version": V, "created_at": T}` (`created_at` comes from the injected clock; `protocolith_version` is the installed
+version or `unknown`). `anchor_id` is the lowercase hex sha256 of those bytes. Vectors: `spec/vectors/anchors.json`.
+
+**Files.** Anchoring writes into `<store>/anchors/` (atomic write through a temporary file, then rename):
+
+- `<seq>-<hash12>.json`: PCJ-1 of `{"anchor_id", "methods": [...], "statement": {...}}` (`hash12` is the first 12 characters of
+  the head hash). The statement and `anchor_id` never change: anchoring the same head again reuses the file; only `methods`
+  grows, and an equal method is not added twice. A file of the same name that is not an anchor of this head is `ANCHOR_EXISTS`.
+- `<seq>-<hash12>.statement`: exactly the statement bytes (no trailing newline), written once; different content is `ANCHOR_EXISTS`.
+- `<anchor_id>.tsr`: a stored RFC 3161 response, written once; a different response from another authority is stored as
+  `<anchor_id>.<hash12 of the response>.tsr`. A response is never overwritten.
+
+Anchoring requires a ledger that verifies (else `VerificationFailed`) and at least one entry (`EMPTY_LEDGER`). Nothing
+networked or git-related happens unless its option is given; the default `anchor` is local. The network and the git program
+are reached through injectable callables, so the core is tested without either.
+
+**Methods** (entries of `methods`; every extra option adds one):
+
+| Option | Method | What is recorded |
+| --- | --- | --- |
+| `--tsa URL` | `rfc3161` | `url`, `file` (the `.tsr` name), `tsr_sha256`, `gen_time` |
+| `--wayback URL` | `wayback` | `url` (where you published the statement), `snapshot` (a URL on `web.archive.org`) |
+| `--git-tag [--sign]` | `git-tag` | `tag` (`anchor/<seq>-<hash12>`), `signed` |
+
+- *RFC 3161.* A DER TimeStampReq (version 1, SHA-256 imprint of the statement bytes, random 64-bit nonce, `certReq` true) is
+  POSTed with content type `application/timestamp-query` (timeout 30 s, response at most 1 MiB). The response must have PKIStatus
+  0 or 1 and a message imprint equal to the statement hash; `genTime` is recorded. The core does **not** verify the
+  time-stamp signature or the certificate chain. Verify offline with
+  `openssl ts -verify -in ID.tsr -data SEQ-HASH12.statement -CAfile CA.pem -untrusted TSA-CERT.pem`; the output of `anchor` prints this command.
+- *Wayback.* `GET https://web.archive.org/save/<URL>`; the snapshot is taken from the `Content-Location` or `Location`
+  response header and must be on the archive host. It is evidence only if `URL` served exactly the statement (publish the file
+  written by `--write-head` first); compare the snapshot with the statement hash yourself.
+- *Git tag.* `git tag -a|-s anchor/<seq>-<hash12> -m <statement>` in the current repository, as a fixed argument list, after
+  `git rev-parse --is-inside-work-tree` (`NOT_A_GIT_REPO` otherwise). It never pushes; the output prints `git push origin <tag>`.
+- Methods are tried in the order tsa, wayback, git tag. If one fails, the methods that succeeded earlier are kept in the anchor
+  file and the failure is raised (`ANCHOR_FAILED`, exit 3).
+- `--write-head FILE` writes the statement bytes to `FILE` (atomic replace) so that it can be committed, attached to a release,
+  uploaded or archived. The MCP tool offers only the local anchor and `tsa`: no git, no arbitrary file write.
+
+**Verification.** `verify-ledger --anchors` (Python `verify(store, anchors=True)`, MCP `protocolith_verify` with `anchors`; also
+`core.verify_anchors(store)`) reads every `*.json` file in `anchors/` and reports, with `seq` = the anchored `head_seq`:
+
+- `ANCHOR_INVALID`: the file is unreadable, not valid JSON, not an anchor file, `sha256(canonical statement)` differs from
+  `anchor_id`, `entries` differs from `head_seq + 1`, or a listed `rfc3161` response file is missing or does not hash to
+  `tsr_sha256` (the `file` must be a plain name without a path separator).
+- `ANCHOR_AHEAD`: the ledger has `head_seq` or fewer entries (it was truncated).
+- `ANCHOR_MISMATCH`: the ledger has an entry at `head_seq` but its hash differs from `head_hash` (the ledger was rewritten).
+
+Any of these makes the verdict fail (exit 1). A longer ledger whose anchored prefix is unchanged passes. An attacker with write
+access to the store can also edit or delete the local anchor files; what resists this is a copy outside the store (the
+published statement, the time-stamp, the archive copy, the pushed tag), compared with `verify-ledger --expect-head`
+or by hash. A time-stamp proves the statement existed at time T, not that the analysis was planned before T.
+
+## 14. Claim check
+
+`claim_check` answers, from the ledger alone, what may be said about a record. Give exactly one of `seq` (a record) or `protocol`
+(the latest record of that `protocol_id`; an unknown one is `UNKNOWN_PROTOCOL`); a `seq` that is not a record is `DANGLING_REF`;
+a ledger that does not verify raises `VerificationFailed`. The result is a JSON object with:
+
+| Field | Meaning |
+| --- | --- |
+| `supported` | true when the status is `PASSED_UNDER_PROTOCOL`, `NEGATIVE_RESULT_UNDER_PROTOCOL` or `REPRODUCED_OUTCOME` |
+| `status`, `claim_boundary`, `seq` | as recorded |
+| `protocol_id`, `protocol_version`, `protocol_sha256` | the frozen protocol the record names |
+| `sources` | the record sources, `id` and `sha256` |
+| `protocol_frozen_before_record` | the `ts` of the freeze is strictly earlier than the `ts` of the record (timestamps have a resolution of one second, so equal is not shown to be earlier) |
+| `deviations` | the number of deviations listed in the record |
+| `anchored` | the record `seq` is at most the highest `head_seq` of an anchor that matches the ledger |
+| `independent_reproduction` | a `REPRODUCED_OUTCOME` record exists for the same `protocol_sha256` |
+| `may_say` | one sentence built from fixed templates: protocol id and version, run id, a phrase for the status, and the boundary |
+| `must_not_say` | phrases the ledger does not support, in this order when they apply: `independently reproduced` (no reproduction), `negative result` and `positive result` (status is `BLOCKED_SOURCE`, `INSUFFICIENT_COVERAGE` or `SOURCE_DRIFT`), `prospective` and `preregistered` (not frozen before the record), `externally anchored` (not anchored), `followed the protocol without deviations` (deviations), and always `applies beyond the claim boundary` |
+
+A protocol with no record yields `supported` false, `seq` null, `may_say` saying that no result is recorded, and `must_not_say`
+`["any result", "passed", "failed", "reproduced"]`. The output is deterministic and contains no text beyond these templates, the
+recorded values and the claim boundary text as written by the recorder. `claim_check` limits what an agent can honestly
+report; it does not check that the analysis itself was sound.

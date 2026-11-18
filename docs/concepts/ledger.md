@@ -58,5 +58,6 @@ most one partial last line; see [repair and crash recovery](../guides/repair-and
   monotonicity is checked.
 - It cannot detect that a **whole ledger was replaced** by another valid one, or that its **tail was removed**.
   For that, publish the head somewhere you do not control alone and check against it with
-  `verify-ledger --expect-head`; see [anchoring the head](../guides/anchoring-the-head.md).
+  `verify-ledger --expect-head`; see [anchoring the head](../guides/anchoring-the-head.md) and
+  [anchor your results](../guides/anchor-your-results.md) (`protocolith anchor`, `verify-ledger --anchors`).
 - It says nothing about whether the data is true or the protocol sound.

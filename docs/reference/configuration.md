@@ -18,6 +18,9 @@ An empty value counts as unset.
 | `--store DIR` | all ledger commands and `mcp` | Store directory |
 | `--json` | all ledger commands except `mcp` | Canonical JSON on stdout |
 | `--expect-head SEQ:HASH` | `verify-ledger` | Also require the entry at `SEQ` to have this hash |
+| `--anchors` | `verify-ledger` | Also check every anchor in `<store>/anchors` (`ANCHOR_MISMATCH`, `ANCHOR_AHEAD`, `ANCHOR_INVALID`) |
+| `--tsa URL`, `--wayback URL`, `--git-tag`, `--sign`, `--write-head FILE` | `anchor` | Extra anchoring methods and the statement file; nothing networked or git-related happens without them |
+| `--seq N` or `--protocol ID` | `claim-check` | Exactly one: the record, or the latest record of a protocol |
 | `--supersedes SHA256` | `freeze` | Hash of the version this one replaces |
 | `--out DIR` | `issue` | Card directory, default `<store>/cards` |
 | `--protocol ID`, `--type TYPE`, `--status STATUS`, `--tail N` | `log` | Filters; `--protocol` also on `summary` |

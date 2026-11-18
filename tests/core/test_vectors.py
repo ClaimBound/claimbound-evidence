@@ -89,3 +89,17 @@ def test_every_rule_has_a_failing_vector() -> None:
     assert required <= codes
     rules = {case["rule"] for case in cases("ledgers.json")}
     assert {f"R{n}" for n in range(1, 12)} <= rules
+
+
+@pytest.mark.parametrize("case", cases("anchors.json"), ids=lambda c: c["name"])
+def test_anchor_vector(case: dict[str, Any]) -> None:
+    from protocolith.core.anchor import anchor_name, build_statement
+    from protocolith.core import sha256_hex
+
+    statement = case["statement"]
+    assert encode(statement).decode("utf-8") == case["canonical"]
+    assert hashlib.sha256(case["canonical"].encode("utf-8")).hexdigest() == case["anchor_id"] == sha256_hex(statement)
+    rebuilt = build_statement(
+        statement["head_seq"], statement["head_hash"], statement["entries"], statement["created_at"], statement["protocolith_version"]
+    )
+    assert rebuilt == statement and f"{anchor_name(statement['head_seq'], statement['head_hash'])}.json" == case["file_name"]

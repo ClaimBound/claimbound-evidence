@@ -9,6 +9,7 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
+from .anchor import check_anchors
 from .canonical import sha256_hex
 from .clock import Clock, now_utc
 from .errors import InputError, VerificationFailed, io_guard
@@ -16,7 +17,7 @@ from .issue import build_card, card_hash, write_card_files
 from .ledger import CARD_FORMAT, Entry, make_entry, parse_head_ref, serialize
 from .rules import Verdict, Verifier, apply_expected_head, scan
 from .store import Store
-from .views import select, show as _show, summarize
+from .views import claim_check as _claim_check, select, show as _show, summarize
 
 StoreLike = Store | str | os.PathLike[str]
 
@@ -85,12 +86,23 @@ def _typed(store: StoreLike, type: str, body: Any, clock: Clock | None) -> Entry
         return _append(real, type, body, clock)
 
 
-def verify(store: StoreLike, expect_head: str | None = None) -> Verdict:
-    """Verify the ledger; with ``expect_head="SEQ:HASH"`` also require that entry (HEAD_MISMATCH otherwise)."""
+def verify(store: StoreLike, expect_head: str | None = None, *, anchors: bool = False) -> Verdict:
+    """Verify the ledger; with ``expect_head="SEQ:HASH"`` also require that entry (HEAD_MISMATCH otherwise).
+
+    With ``anchors=True`` every anchor file is checked too: ANCHOR_MISMATCH (the ledger was rewritten), ANCHOR_AHEAD
+    (truncated) or ANCHOR_INVALID (a damaged anchor file or time-stamp response) make the verdict fail.
+    """
     wanted = None if expect_head is None else parse_head_ref(expect_head)
     with _session(store, write=False) as real:
         verdict, verifier = scan(real.read(missing_ok=False), card_hash)
-    return verdict if wanted is None else apply_expected_head(verdict, verifier, *wanted)
+        report = check_anchors(real.anchors_dir, verifier, verdict.count) if anchors else None
+    if wanted is not None:
+        verdict = apply_expected_head(verdict, verifier, *wanted)
+    if report is not None:
+        verdict.violations.extend(report.violations)
+        verdict.ok = not verdict.violations
+        verdict.anchors = report.count
+    return verdict
 
 
 def entries(store: StoreLike) -> list[Entry]:
@@ -127,7 +139,25 @@ def summary(store: StoreLike, protocol: str | None = None) -> dict[str, Any]:
     """
     with _session(store, write=False) as real:
         verdict, verifier = scan(real.read(missing_ok=False), card_hash)
-    return summarize(verdict, verifier, protocol)
+        report = check_anchors(real.anchors_dir, verifier, verdict.count)
+    found = summarize(verdict, verifier, protocol)
+    found["anchors"] = {"count": report.count, "last_seq": report.last_seq}
+    found["problems"] += [v.to_dict() for v in report.violations]
+    found["ok"] = found["ok"] and report.ok
+    return found
+
+
+def claim_check(store: StoreLike, *, seq: int | None = None, protocol: str | None = None) -> dict[str, Any]:
+    """What an agent may say about record ``seq`` or the latest record of ``protocol`` (give exactly one).
+
+    Returns ``supported``, ``status``, ``claim_boundary``, ``sources``, ``protocol_frozen_before_record``, ``deviations``,
+    ``anchored``, ``independent_reproduction``, ``may_say`` (a fixed-template sentence) and ``must_not_say`` (phrases the
+    ledger does not support). Raises ``VerificationFailed`` when the ledger does not verify.
+    """
+    with _session(store, write=False) as real:
+        verifier = _load(real, missing_ok=False)
+        report = check_anchors(real.anchors_dir, verifier, verifier.index)
+    return _claim_check(verifier, report.last_seq, seq=seq, protocol=protocol)
 
 
 def init(store: StoreLike) -> dict[str, Any]:

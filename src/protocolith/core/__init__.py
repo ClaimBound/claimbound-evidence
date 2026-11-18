@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+from .anchor import AnchorReport, anchor_head, verify_anchors
 from .atlas import build_atlas
 from .canonical import CanonError, decode, encode, sha256_hex
 from .clock import now_utc
@@ -10,6 +11,7 @@ from .errors import EnvError, InputError, ProtocolithError, VerificationFailed, 
 from .ledger import MAX_ENTRY_BYTES, RESULT_STATUSES
 from .capture import capture
 from .ops import (
+    claim_check,
     deviation,
     entries,
     freeze,
@@ -28,6 +30,7 @@ from .schema import schema_for
 from .store import Store, resolve_store
 
 __all__ = [
+    "AnchorReport",
     "MAX_ENTRY_BYTES",
     "RESULT_STATUSES",
     "CanonError",
@@ -39,8 +42,10 @@ __all__ = [
     "VerificationFailed",
     "Verifier",
     "Violation",
+    "anchor_head",
     "build_atlas",
     "capture",
+    "claim_check",
     "decode",
     "deviation",
     "encode",
@@ -60,4 +65,5 @@ __all__ = [
     "sha256_hex",
     "summary",
     "verify",
+    "verify_anchors",
 ]

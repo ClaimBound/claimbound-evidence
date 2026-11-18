@@ -26,13 +26,14 @@ All three interfaces call the same operations in `core/ops.py`, so they have the
 | `rules.py` | `Verifier`: an incremental checker fed one line at a time; `scan` verifies a whole file |
 | `store.py` | Store directory, advisory lock, durable append, truncate |
 | `_lock_posix.py`, `_lock_windows.py` | `fcntl.flock` and `msvcrt.locking` wrappers, chosen at import time |
-| `ops.py` | `freeze`, `record`, `deviation`, `verify`, `entries`, `log`, `show`, `summary`, `head`, `init`, `issue`, `repair_truncate_partial_tail` |
-| `views.py` | Read-only views over a loaded ledger: filtered log, one entry with context, summary |
+| `ops.py` | `freeze`, `record`, `deviation`, `verify`, `entries`, `log`, `show`, `summary`, `head`, `claim_check`, `init`, `issue`, `repair_truncate_partial_tail` |
+| `views.py` | Read-only views over a loaded ledger: filtered log, one entry with context, summary, claim check |
 | `schema.py` | JSON Schema (draft 2020-12) derived from the rules |
 | `capture.py` | Environment and input-file fragment for a record `outcome` |
 | `issue.py` | Build, validate and write the card; uses the evidence-card validator and SVG renderer of the package |
 | `commands.py` | CLI glue and exit codes |
-| `mcp.py` | stdio JSON-RPC server: eleven tools and read-only resources |
+| `mcp.py`, `prompts.py` | stdio JSON-RPC server: thirteen tools, read-only resources and the `research-agent-protocol` prompt |
+| `anchor.py` | Anchor statements and files, RFC 3161 request (DER) and response walk, Wayback and git tag methods through injectable callables, anchor verification |
 | `atlas.py`, `atlas_assets/`, `atlas_i18n/` | Offline HTML atlas builder; page template, style and script; the English UI catalog |
 | `errors.py`, `clock.py` | Error classes with stable codes; injectable UTC clock |
 
