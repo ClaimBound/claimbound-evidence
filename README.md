@@ -5,56 +5,66 @@
   </picture>
 </p>
 
-<p align="center"><b>Records, verifies and issues trial records.</b></p>
+<p align="center"><b>Freeze the protocol. Record the result. Verify the history.</b><br>
+An open-source ledger for trial records, for people and for AI agents. No runtime dependencies, works offline.</p>
 
 <p align="center">
-  <a href="https://github.com/Protocolith/protocolith/actions/workflows/tests.yml"><img alt="tests" src="https://github.com/Protocolith/protocolith/actions/workflows/tests.yml/badge.svg"></a>
-  <a href="https://github.com/Protocolith/protocolith/actions/workflows/codeql.yml"><img alt="codeql" src="https://img.shields.io/github/actions/workflow/status/Protocolith/protocolith/codeql.yml?label=codeql"></a>
-  <a href="https://github.com/Protocolith/protocolith/actions/workflows/docs.yml"><img alt="docs" src="https://img.shields.io/github/actions/workflow/status/Protocolith/protocolith/docs.yml?label=docs"></a>
-  <a href="https://scorecard.dev/viewer/?uri=github.com/Protocolith/protocolith"><img alt="OpenSSF Scorecard" src="https://api.scorecard.dev/projects/github.com/Protocolith/protocolith/badge"></a>
-  <a href="https://www.bestpractices.dev/projects/15138"><img alt="OpenSSF Best Practices" src="https://www.bestpractices.dev/projects/15138/badge"></a>
+  <a href="https://pypi.org/project/protocolith/"><img alt="PyPI" src="https://img.shields.io/pypi/v/protocolith?style=flat-square&labelColor=1c2733&logo=pypi&logoColor=white&color=3c6aa5"></a>
+  <a href="https://pypi.org/project/protocolith/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/protocolith?style=flat-square&labelColor=1c2733&logo=python&logoColor=white&color=3c6aa5"></a>
+  <a href="LICENSE"><img alt="License Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+  <a href="https://github.com/Protocolith/protocolith/actions/workflows/tests.yml"><img alt="Tests" src="https://img.shields.io/github/actions/workflow/status/Protocolith/protocolith/tests.yml?style=flat-square&labelColor=1c2733&label=tests"></a>
+  <a href="docs/development/testing.md"><img alt="Core coverage 100 percent" src="https://img.shields.io/badge/core%20coverage-100%25-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+  <a href="pyproject.toml"><img alt="Runtime dependencies: none" src="https://img.shields.io/badge/runtime%20dependencies-0-3c6aa5?style=flat-square&labelColor=1c2733"></a>
 </p>
 
-<p align="center">
-  <a href="https://pypi.org/project/protocolith/"><img alt="PyPI" src="https://img.shields.io/pypi/v/protocolith?logo=pypi&logoColor=white"></a>
-  <a href="https://pypi.org/project/protocolith/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/protocolith?logo=python&logoColor=white"></a>
-  <a href="https://pypi.org/project/protocolith/#files"><img alt="PyPI wheel" src="https://img.shields.io/pypi/wheel/protocolith"></a>
-  <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
-  <a href="https://doi.org/10.5281/zenodo.24021995"><img alt="DOI" src="https://zenodo.org/badge/DOI/10.5281/zenodo.24021995.svg"></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Protocolith/protocolith/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/Protocolith/protocolith?logo=github"></a>
-  <a href="https://github.com/Protocolith/protocolith/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/Protocolith/protocolith"></a>
-  <a href="https://github.com/Protocolith/protocolith/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/Protocolith/protocolith?style=flat"></a>
-  <a href="https://github.com/Protocolith/protocolith/issues"><img alt="Open issues" src="https://img.shields.io/github/issues/Protocolith/protocolith"></a>
-  <a href="https://github.com/Protocolith/protocolith/discussions"><img alt="Discussions" src="https://img.shields.io/github/discussions/Protocolith/protocolith"></a>
-  <a href="https://github.com/Protocolith/protocolith"><img alt="Top language" src="https://img.shields.io/github/languages/top/Protocolith/protocolith"></a>
-</p>
-
-<p align="center">
-  <a href="docs/development/testing.md"><img alt="Core coverage 100 percent" src="https://img.shields.io/badge/core%20coverage-100%25-brightgreen"></a>
-  <a href="pyproject.toml"><img alt="Runtime dependencies: none" src="https://img.shields.io/badge/runtime%20dependencies-0-brightgreen"></a>
-  <a href="docs/PLATFORM_SUPPORT.md"><img alt="Platforms" src="https://img.shields.io/badge/platforms-Linux%20%7C%20macOS%20%7C%20Windows-blue"></a>
-  <a href="docs/reference/mcp.md"><img alt="MCP server" src="https://img.shields.io/badge/MCP-stdio%20server-8A2BE2"></a>
-  <a href="src/protocolith/py.typed"><img alt="Typed" src="https://img.shields.io/badge/typing-py.typed-blue"></a>
-  <a href="pyproject.toml"><img alt="Lint: ruff" src="https://img.shields.io/badge/lint-ruff-261230"></a>
-  <a href="CONTRIBUTING.md"><img alt="DCO" src="https://img.shields.io/badge/DCO-signed--off-blue"></a>
-  <a href="docs/development/testing.md"><img alt="Type checking: mypy strict" src="https://img.shields.io/badge/mypy-strict-2a6db2"></a>
-  <a href="docs/development/testing.md"><img alt="Mutation score 90.7 percent" src="https://img.shields.io/badge/mutation%20score-90.7%25-brightgreen"></a>
-  <a href="docs/guides/anchor-your-results.md"><img alt="Anchors: git tag, Wayback, RFC 3161" src="https://img.shields.io/badge/anchors-git%20%7C%20Wayback%20%7C%20RFC%203161-8A2BE2"></a>
-  <a href="docs/AI_USE.md"><img alt="AI use disclosed" src="https://img.shields.io/badge/AI%20use-disclosed-lightgrey"></a>
-  <a href="docs/registry/evidence_index.json"><img alt="Evidence cards" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FProtocolith%2Fprotocolith%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=0A97BB"></a>
-</p>
-
-<!-- Add after the packages exist and have data:
-<a href="https://anaconda.org/conda-forge/protocolith"><img alt="conda-forge" src="https://img.shields.io/conda/vn/conda-forge/protocolith"></a>
-<a href="https://pypistats.org/packages/protocolith"><img alt="PyPI downloads per month" src="https://img.shields.io/pypi/dm/protocolith"></a>
--->
+<p align="center"><a href="https://protocolith.github.io/protocolith/docs/">Docs</a> &middot; <a href="#quickstart-2-minutes">Quickstart</a> &middot; <a href="examples/">Examples</a> &middot; <a href="docs/reference/mcp.md">MCP for AI agents</a> &middot; <a href="docs/spec/CORE_SPEC.md">Specification</a> &middot; <a href="CHANGELOG.md">Changelog</a></p>
 
 <p align="center">
   <img src="docs/assets/protocolith/protocolith-story.gif" alt="Animation: why a result is hard to check, then freeze, record, verify, anchor and publish only what you choose, with the hash chain catching an edited or cut-off ledger" width="760">
 </p>
+
+<details>
+<summary><b>Project at a glance</b>: quality, release, security, interfaces, activity</summary>
+
+<div align="center">
+<table>
+<tr><th align="right" nowrap>Quality</th><td>
+  <a href="https://github.com/Protocolith/protocolith/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://img.shields.io/github/actions/workflow/status/Protocolith/protocolith/codeql.yml?style=flat-square&labelColor=1c2733&label=codeql"></a>
+  <a href="https://github.com/Protocolith/protocolith/actions/workflows/docs.yml"><img alt="Docs build" src="https://img.shields.io/github/actions/workflow/status/Protocolith/protocolith/docs.yml?style=flat-square&labelColor=1c2733&label=docs"></a>
+  <a href="docs/development/testing.md"><img alt="mypy strict" src="https://img.shields.io/badge/mypy-strict-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+  <a href="docs/development/testing.md"><img alt="Mutation score 90.7 percent" src="https://img.shields.io/badge/mutation%20score-90.7%25-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+  <a href="pyproject.toml"><img alt="Lint: ruff" src="https://img.shields.io/badge/lint-ruff-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+  <a href="src/protocolith/py.typed"><img alt="Typed" src="https://img.shields.io/badge/typing-py.typed-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+</td></tr>
+<tr><th align="right" nowrap>Release</th><td>
+  <a href="https://github.com/Protocolith/protocolith/releases"><img alt="GitHub release" src="https://img.shields.io/github/v/release/Protocolith/protocolith?style=flat-square&labelColor=1c2733&logo=github&color=3c6aa5"></a>
+  <a href="https://pypi.org/project/protocolith/#files"><img alt="PyPI wheel" src="https://img.shields.io/pypi/wheel/protocolith?style=flat-square&labelColor=1c2733&color=3c6aa5"></a>
+  <a href="https://doi.org/10.5281/zenodo.24021995"><img alt="DOI" src="https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24021995-3c6aa5?style=flat-square&labelColor=1c2733&logo=zenodo&logoColor=white"></a>
+  <a href="docs/registry/evidence_index.json"><img alt="Evidence cards" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FProtocolith%2Fprotocolith%2Fmain%2Fdocs%2Fregistry%2Fevidence_index.json&query=%24.card_count&label=evidence%20cards&color=3c6aa5&style=flat-square&labelColor=1c2733"></a>
+</td></tr>
+<tr><th align="right" nowrap>Security and trust</th><td>
+  <a href="https://scorecard.dev/viewer/?uri=github.com/Protocolith/protocolith"><img alt="OpenSSF Scorecard" src="https://api.scorecard.dev/projects/github.com/Protocolith/protocolith/badge?style=flat-square"></a>
+  <a href="CONTRIBUTING.md"><img alt="DCO" src="https://img.shields.io/badge/DCO-signed--off-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+  <a href="docs/AI_USE.md"><img alt="AI use disclosed" src="https://img.shields.io/badge/AI%20use-disclosed-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+  <a href="docs/guides/anchor-your-results.md"><img alt="Anchors: git tag, Wayback, RFC 3161" src="https://img.shields.io/badge/anchors-git%20%C2%B7%20Wayback%20%C2%B7%20RFC%203161-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+</td></tr>
+<tr><th align="right" nowrap>Interfaces</th><td>
+  <a href="docs/reference/mcp.md"><img alt="MCP server" src="https://img.shields.io/badge/MCP-15%20tools-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+  <a href="docs/CLI.md"><img alt="CLI" src="https://img.shields.io/badge/CLI-protocolith%20%7C%20plith-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+  <a href="docs/guides/python-api.md"><img alt="Python API" src="https://img.shields.io/badge/Python%20API-core-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+  <a href="docs/PLATFORM_SUPPORT.md"><img alt="Platforms" src="https://img.shields.io/badge/platforms-Linux%20%C2%B7%20macOS%20%C2%B7%20Windows-3c6aa5?style=flat-square&labelColor=1c2733"></a>
+</td></tr>
+<tr><th align="right" nowrap>Activity</th><td>
+  <a href="https://github.com/Protocolith/protocolith/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/Protocolith/protocolith?style=flat-square&labelColor=1c2733&color=3c6aa5"></a>
+  <a href="https://github.com/Protocolith/protocolith/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/Protocolith/protocolith?style=flat-square&labelColor=1c2733&color=3c6aa5"></a>
+  <a href="https://github.com/Protocolith/protocolith/issues"><img alt="Open issues" src="https://img.shields.io/github/issues/Protocolith/protocolith?style=flat-square&labelColor=1c2733&color=3c6aa5"></a>
+  <a href="https://github.com/Protocolith/protocolith/discussions"><img alt="Discussions" src="https://img.shields.io/github/discussions/Protocolith/protocolith?style=flat-square&labelColor=1c2733&color=3c6aa5"></a>
+</td></tr>
+</table>
+</div>
+
+</details>
+
 
 ## Why
 
