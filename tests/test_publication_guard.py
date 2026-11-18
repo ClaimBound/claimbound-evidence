@@ -38,7 +38,10 @@ FORBIDDEN_IMPORT_PREFIXES = (
 TEXT_SUFFIXES = {".py", ".md", ".toml", ".txt", ".json", ".yml", ".yaml"}
 RAW_PAYLOAD_SUFFIXES = {".csv", ".parquet", ".zip", ".jsonl", ".env", ".key", ".pem"}
 # Ledgers that are published on purpose as example evidence (not raw payloads).
-PUBLISHED_LEDGERS = {"examples/phantom_mean_reversion/evidence/.protocolith/ledger.jsonl"}
+PUBLISHED_LEDGERS = {
+    "examples/phantom_mean_reversion/evidence/.protocolith/ledger.jsonl",
+    "examples/selective_disclosure/public/disclosure.jsonl",
+}
 RAW_PAYLOAD_DIR_NAMES = {"raw", "payloads", "data"}
 
 

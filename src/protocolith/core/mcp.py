@@ -27,7 +27,7 @@ from .store import Store
 
 PROTOCOL_VERSIONS = ("2025-06-18", "2025-03-26", "2024-11-05")
 SERVER_NAME = "protocolith"
-SERVER_VERSION = "0.6.0"
+SERVER_VERSION = "0.7.0"
 
 Handler = Callable[[Store, dict[str, Any], Clock | None], Any]
 

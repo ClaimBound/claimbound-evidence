@@ -31,6 +31,12 @@ the shape of a release and says which parts are done by hand.
 
 ## 0.6.0
 
-The 0.6.0 release is planned to ship the core ledger commands, the specification and the conformance vectors,
-and to make `pip install protocolith` available. It is not released. The packaging, publication and documentation
-steps above are still to do.
+The 0.6.0 release (2026-11-16) shipped the core ledger commands, the specification and the conformance vectors, and made
+`pip install protocolith` available from PyPI, with a Zenodo DOI.
+
+## 0.7.0
+
+The 0.7.0 release adds anchoring of the ledger head, `claim-check`, the MCP research prompt and selective disclosure. Before
+tagging: bump the version in `pyproject.toml`, `CITATION.cff`, `specs/repo_version.yaml` and `core/mcp.py`; rebuild the examples
+whose anchors record the version (`examples/phantom_mean_reversion/build_ledger.py`, `scripts/build_disclosure_demo.py`); then
+tag and publish through the protected workflow.

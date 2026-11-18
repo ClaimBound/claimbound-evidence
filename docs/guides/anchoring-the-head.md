@@ -52,7 +52,7 @@ otherwise it reports `HEAD_MISMATCH` and exits with 1 (for example when the tail
 replaced). The value must be a decimal `SEQ`, a colon and 64 lowercase hex characters, else the command exits with 2.
 A ledger that is longer than the anchor still passes: the check proves the anchored prefix is unchanged.
 
-The option is part of the 0.6.0 development work. It cannot show that the anchor itself is trustworthy.
+The option exists since 0.6.0. It cannot show that the anchor itself is trustworthy.
 
 ## When to anchor
 

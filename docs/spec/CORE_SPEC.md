@@ -1,6 +1,6 @@
 # Protocolith Core Specification
 
-Status: draft 0.1 (target: Protocolith 0.6.0). This document defines the core. The reference
+Status: draft 0.1 (implemented in Protocolith 0.6.0; sections 13 to 15 in 0.7.0). This document defines the core. The reference
 implementation is the `protocolith.core` package; any other implementation must pass the
 conformance vectors in `spec/vectors/` to claim compatibility.
 

@@ -53,7 +53,7 @@
 -->
 
 <p align="center">
-  <img src="docs/assets/protocolith/demo.gif" alt="Terminal recording: init, freeze a protocol, record a result, verify the ledger, summary, issue a card, build the atlas, then a one-word edit of the ledger that verify-ledger detects" width="760">
+  <img src="docs/assets/protocolith/protocolith-story.gif" alt="Animation: why a result is hard to check, then freeze, record, verify, anchor and publish only what you choose, with the hash chain catching an edited or cut-off ledger" width="760">
 </p>
 
 ## Why
@@ -246,7 +246,7 @@ uv sync
 uv run protocolith --version      # or: source .venv/bin/activate
 ```
 
-`pip install protocolith` is available from the 0.6.0 release (planned); it is not published with the ledger commands yet.
+`pip install protocolith` installs the current release from PyPI (since 0.6.0).
 The package has no required dependencies.
 
 ## Platforms

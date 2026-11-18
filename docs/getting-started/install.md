@@ -8,8 +8,8 @@ code and no network access. It runs headless on macOS, Linux and Windows.
 | Route | State |
 | --- | --- |
 | From a source checkout with `uv sync` | Works today. |
-| `pip install protocolith` | Available from 0.6.0. |
-| conda-forge | Planned, no date. |
+| `pip install protocolith` | Available (PyPI, since 0.6.0). |
+| conda-forge | Submitted to conda-forge, waiting for review. |
 
 ## From source, per operating system
 

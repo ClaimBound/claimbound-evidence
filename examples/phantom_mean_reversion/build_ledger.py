@@ -4,6 +4,9 @@
 Run it from anywhere; it needs `protocolith` (0.7.0 or later, for `anchor`) importable and numpy installed:
 
     python3 build_ledger.py            # writes ./evidence/ (refuses to overwrite an existing one)
+    python3 build_ledger.py --tsa=http://timestamp.digicert.com --tsa=https://freetsa.org/tsr   # also RFC 3161 time-stamps
+
+A time-stamp request sends only the hash of the anchor statement to the authority you name.
 
 The order is the point. The protocol is frozen and anchored BEFORE the results are re-computed, and the record is added
 afterwards. This is a retrospective record: the study itself was run and written up before this protocol was frozen, so the
@@ -46,6 +49,7 @@ def plith(*args: str) -> str:
 
 
 def main() -> int:
+    tsas = [a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--tsa=")]
     if EVIDENCE.exists():
         raise SystemExit(f"{EVIDENCE} exists; remove it first (a ledger is append-only, this script never edits one)")
     EVIDENCE.mkdir()
@@ -104,6 +108,8 @@ def main() -> int:
     plith("issue", "1")
     plith("verify-ledger")
     plith("anchor", "--write-head", "anchor-after-record.txt")
+    for url in tsas:
+        plith("anchor", "--tsa", url)
     plith("verify-ledger", "--anchors")
     plith("claim-check", "--seq", "1")
     return 0
