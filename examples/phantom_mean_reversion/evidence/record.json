@@ -1,0 +1,74 @@
+{
+  "protocol_sha256": "10d8d37361cda4c4248be947912e0c3faca75b8c765ecc8089e6e01dfad43323",
+  "run_id": "run-1",
+  "status": "PASSED_UNDER_PROTOCOL",
+  "outcome": {
+    "windows": "30,60,100,250,500",
+    "min_booked_sharpe_median": "4.39",
+    "max_abs_tradable_sharpe_median": "0.13",
+    "phantom_share_min": "0.98",
+    "phantom_share_max": "1.017",
+    "windows_passing_gate": "5",
+    "windows_total": "5"
+  },
+  "sources": [
+    {
+      "id": "results.json",
+      "sha256": "89dd6efe060a3058f071ca0a24abec28311bd3b49c8153da971b9a50723ebad3"
+    },
+    {
+      "id": "results_other.json",
+      "sha256": "7ba9fa0ce0e8dcc2f7020a7310418101fe01e2d51f6b6f49ade2576060f9099e"
+    },
+    {
+      "id": "code/phantom_mr_sim.py",
+      "sha256": "1019a9064ab0b1be4dfb4197566f633bd2a36f4db94bc742a7e0f6c43439458d"
+    },
+    {
+      "id": "code/other_hedges.py",
+      "sha256": "13ffabc1e2bd9fd1112c5b9bc953adcdaa53cf7a87c6edfa29398ff6c63218be"
+    },
+    {
+      "id": "code/mechanism_check.py",
+      "sha256": "1f35d5b311be9cf3bc3b331c519359d8ef8f36ddca6e27c25084cbfef7f34159"
+    },
+    {
+      "id": "code/make_figures.py",
+      "sha256": "05dde7f2cab8d9219125f06518ae51679016d9442228a646f03fd64b607aa3df"
+    }
+  ],
+  "reproduction_level": "not independently reproduced",
+  "claim_boundary": "Simulated independent random walks only, seed 20261015, 400 paths of 5000 hourly bars. Says nothing about real markets or about any investment result.",
+  "deviations": [],
+  "card": {
+    "operator": "Rostyslav Shcherbyna",
+    "official_source_name": "Monte-Neo paper sources (phantom-mean-reversion)",
+    "official_source_url": "https://github.com/NeoZorK/Monte-Neo",
+    "domain": "quantitative research",
+    "claim_type": "source_audit",
+    "access_date": "2026-11-18",
+    "source_rights_note": "Own simulation code and output, MIT licence in the source repository; no third-party data.",
+    "raw_payload_manifest": "No raw payload; the simulation generates its own random walks.",
+    "sanitized_report_path": "examples/phantom_mean_reversion/results.json",
+    "sanitized_report_sha256": "89dd6efe060a3058f071ca0a24abec28311bd3b49c8153da971b9a50723ebad3",
+    "git_commit": "none",
+    "runner_command": "python3 reproduce.py",
+    "verification_count": 2,
+    "verification_level": "SINGLE_OPERATOR",
+    "execution_mode": "AUTOMATED_AI_ASSISTED",
+    "ai_assistance": "An AI assistant copied the files and wrote the protocol, the reproduce script and this record; the operator reviewed them.",
+    "manual_review": "The operator compared the table in the preprint with results.json.",
+    "known_limitations": [
+      "Retrospective record: the study predates this frozen protocol.",
+      "Single operator.",
+      "Simulation only."
+    ],
+    "baseline_control_summary": "Control: the tradable P&L series of the same paths, which holds the previous hedge.",
+    "public_claim_text": "Rolling-hedge spread books look profitable on independent random walks while the tradable P&L is near zero.",
+    "public_claim_verbatim_quote": "Rolling-hedge spread books look profitable on independent random walks while the tradable P&L is near zero.",
+    "public_claim_source_url": "https://github.com/NeoZorK/Monte-Neo",
+    "public_claim_locator": "paper/phantom-mean-reversion, Table 1",
+    "public_claim_captured_at": "2026-11-18",
+    "public_claim_source_sha256": "89dd6efe060a3058f071ca0a24abec28311bd3b49c8153da971b9a50723ebad3"
+  }
+}

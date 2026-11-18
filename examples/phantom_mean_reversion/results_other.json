@@ -1,0 +1,71 @@
+{
+  "seed": 20261015,
+  "paths": 400,
+  "bars": 5000,
+  "runs": {
+    "rolling OLS, window 100 (independent walks)": {
+      "sharpe_booked_median": 9.25075040383502,
+      "share_booked_positive": 1.0,
+      "sharpe_tradable_median": -0.03369935675552527,
+      "share_tradable_positive": 0.4875,
+      "phantom_share_of_booked_pnl": 1.0029516226879656,
+      "share_of_pairs_that_traded": 1.0
+    },
+    "EWMA OLS, half-life 50": {
+      "sharpe_booked_median": 6.172917519625053,
+      "share_booked_positive": 1.0,
+      "sharpe_tradable_median": -0.0784569059563183,
+      "share_tradable_positive": 0.4775,
+      "phantom_share_of_booked_pnl": 1.0136893864621837,
+      "share_of_pairs_that_traded": 1.0
+    },
+    "EWMA OLS, half-life 250": {
+      "sharpe_booked_median": 3.294053801128865,
+      "share_booked_positive": 1.0,
+      "sharpe_tradable_median": 0.0496544579196551,
+      "share_tradable_positive": 0.525,
+      "phantom_share_of_booked_pnl": 0.9990422965734397,
+      "share_of_pairs_that_traded": 1.0
+    },
+    "Kalman, delta 1e-5": {
+      "sharpe_booked_median": 12.665885417928694,
+      "share_booked_positive": 1.0,
+      "sharpe_tradable_median": 0.1274842756265644,
+      "share_tradable_positive": 0.5375,
+      "phantom_share_of_booked_pnl": 0.9954554226966496,
+      "share_of_pairs_that_traded": 1.0
+    },
+    "Kalman, delta 1e-4": {
+      "sharpe_booked_median": 0.0,
+      "share_booked_positive": 0.0,
+      "sharpe_tradable_median": 0.0,
+      "share_tradable_positive": 0.0,
+      "phantom_share_of_booked_pnl": null,
+      "share_of_pairs_that_traded": 0.0
+    },
+    "Kalman, delta 1e-3": {
+      "sharpe_booked_median": 0.0,
+      "share_booked_positive": 0.0,
+      "sharpe_tradable_median": 0.0,
+      "share_tradable_positive": 0.0,
+      "phantom_share_of_booked_pnl": null,
+      "share_of_pairs_that_traded": 0.0
+    },
+    "rolling OLS, window 100 (cointegrated pair)": {
+      "sharpe_booked_median": 12.800928618838764,
+      "share_booked_positive": 1.0,
+      "sharpe_tradable_median": 7.56652288402117,
+      "share_tradable_positive": 1.0,
+      "phantom_share_of_booked_pnl": 0.4054411423674295,
+      "share_of_pairs_that_traded": 1.0
+    },
+    "rolling OLS, window 500 (cointegrated pair)": {
+      "sharpe_booked_median": 9.842951614011247,
+      "share_booked_positive": 1.0,
+      "sharpe_tradable_median": 8.793330164796924,
+      "share_tradable_positive": 1.0,
+      "phantom_share_of_booked_pnl": 0.11241083412381231,
+      "share_of_pairs_that_traded": 1.0
+    }
+  }
+}
