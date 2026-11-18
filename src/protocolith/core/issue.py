@@ -17,7 +17,13 @@ from .rules import Verifier
 
 _MISSING_RE = re.compile(r"^missing (?:required |forecast |public claim )?field: (\w+)$")
 _MUST_INCLUDE_RE = re.compile(r"must include (\w+)$")
-_XML_INVALID = re.compile("[\x00-\x08\x0b\x0c\x0e-\x1f\ufffe\uffff]")  # not allowed in XML 1.0 documents
+# Characters that are not allowed in XML 1.0 documents (listed as code points, not as a regular expression range).
+_XML_INVALID = frozenset(map(chr, (*range(0x00, 0x09), 0x0B, 0x0C, *range(0x0E, 0x20), 0xFFFE, 0xFFFF)))
+
+
+def _xml_safe(text: str) -> str:
+    """Replace the characters XML 1.0 cannot carry with U+FFFD."""
+    return "".join("\ufffd" if ch in _XML_INVALID else ch for ch in text)
 
 
 def _missing_names(violations: list[str]) -> list[str]:
@@ -94,5 +100,5 @@ def write_card_files(card: dict[str, Any], out_dir: Path) -> tuple[Path, Path]:
         raise InputError("CARD_EXISTS", f"{json_path.name} already exists with different content; use another --out")
     _atomic_write(json_path, payload)
     # Card text is user data and may hold characters XML 1.0 forbids; the JSON card keeps them verbatim.
-    _atomic_write(svg_path, _XML_INVALID.sub("\ufffd", render_svg(json_path)).encode("utf-8"))
+    _atomic_write(svg_path, _xml_safe(render_svg(json_path)).encode("utf-8"))
     return json_path, svg_path

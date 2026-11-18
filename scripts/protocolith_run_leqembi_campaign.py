@@ -47,7 +47,7 @@ def sha(data: bytes) -> str:
 
 def normalized(data: bytes) -> str:
     text = data.decode("utf-8", "replace")
-    text = re.sub(r"<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>", " ", text, flags=re.I | re.S)
+    text = re.sub(r"<script\b[^>]*>.*?</script[^>]*>|<style\b[^>]*>.*?</style[^>]*>", " ", text, flags=re.I | re.S)
     text = html.unescape(re.sub(r"<[^>]+>", " ", text))
     return re.sub(r"\s+", " ", text).strip()
 
