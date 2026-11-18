@@ -72,8 +72,8 @@ def _write_json(path: Path, data: object) -> bytes:
 
 def _normalize_html(payload: bytes) -> str:
     text = payload.decode("utf-8", errors="replace")
-    text = re.sub(r"<script\b[^>]*>.*?</script>", " ", text, flags=re.I | re.S)
-    text = re.sub(r"<style\b[^>]*>.*?</style>", " ", text, flags=re.I | re.S)
+    text = re.sub(r"<script\b[^>]*>.*?</script[^>]*>", " ", text, flags=re.I | re.S)
+    text = re.sub(r"<style\b[^>]*>.*?</style[^>]*>", " ", text, flags=re.I | re.S)
     text = re.sub(r"<[^>]+>", " ", text)
     text = html.unescape(text)
     for before, after in {
