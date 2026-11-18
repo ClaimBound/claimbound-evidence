@@ -73,6 +73,9 @@ jobs:
       - name: Lint
         if: matrix.cov_args
         run: uv run ruff check src tests
+      - name: Type check the core (mypy strict)
+        if: matrix.cov_args
+        run: uv run mypy
       - run: uv run protocolith doctor
       - run: uv run protocolith validate-all
       - name: Run pytest

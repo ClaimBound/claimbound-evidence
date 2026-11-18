@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from protocolith._paths import home_dir
 from protocolith.inspect import format_hash_lines, format_json_subset, hash_files, load_json, pick_fields
 from protocolith.nasa_power_fetch import download_nasa_power_d103_points
 from protocolith.nasa_power_prereg_runner import evaluate_nasa_power_prereg
@@ -105,7 +106,7 @@ def rerun_nasa_d103(
     run_dir: Path | None = None,
     baseline_path: Path | None = None,
 ) -> int:
-    runs_root = root or Path.home() / "protocolith_runs"
+    runs_root = root or home_dir() / "protocolith_runs"
     resolved_run_dir = resolve_or_create_run_dir(
         protocol_id="NASA_POWER_D103",
         source_url="https://power.larc.nasa.gov/docs/services/api/temporal/daily/",
@@ -150,7 +151,7 @@ def rerun_noaa_d131(
     run_dir: Path | None = None,
     baseline_path: Path | None = None,
 ) -> int:
-    runs_root = root or Path.home() / "protocolith_runs"
+    runs_root = root or home_dir() / "protocolith_runs"
     resolved_run_dir = resolve_or_create_run_dir(
         protocol_id="NOAA_COOPS_D131",
         source_url="https://api.tidesandcurrents.noaa.gov/api/prod/datagetter",

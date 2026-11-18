@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### Added
+
+- `mypy --strict` runs in CI over `protocolith.core` (`uv run mypy`); `mypy` joins the `dev` extra.
+- README badges for status, package, repository and project facts; a ledger and core issue form; a ledger demo GIF generated from a real run (`scripts/build_demo_gif.py`).
+
+### Fixed
+
+- The command line no longer fails at import or at parser build when the home directory cannot be determined: it falls back to the temporary directory (`protocolith._paths.home_dir`).
+
 ### Changed
 
 - Citation metadata: Zenodo DOI of 0.6.0 (`10.5281/zenodo.24291830`), a DOI badge (concept DOI `10.5281/zenodo.24021995`) and an abstract that describes the ledger core.

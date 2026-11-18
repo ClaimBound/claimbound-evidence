@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+from protocolith._paths import home_dir
+
 import platform
 import shutil
 import sys
@@ -113,7 +115,7 @@ def run_doctor(repo_root: Path) -> DoctorReport:
         platform_release=platform.release(),
         python_version=f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}",
         repo_root=repo_root.resolve(),
-        runs_root=Path.home() / "protocolith_runs",
+        runs_root=home_dir() / "protocolith_runs",
         today_iso=date.today().isoformat(),
         mode="installed-package" if installed else "checkout",
     )
