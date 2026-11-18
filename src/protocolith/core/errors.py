@@ -32,6 +32,15 @@ HINTS: dict[str, str] = {
     "BAD_JSON": "the file is not valid JSON (a byte-order mark is also refused)",
     "BAD_PATH": "name an existing regular file inside the current directory",
     "IO_ERROR": "check that the path exists and is readable and writable",
+    "ANCHOR_MISMATCH": "the ledger was rewritten after it was anchored: restore the original ledger, or treat everything "
+    "after the mismatch as unanchored",
+    "ANCHOR_AHEAD": "the ledger is shorter than an anchor says: entries were removed; restore them from a copy",
+    "ANCHOR_INVALID": "an anchor file is damaged or edited; restore it from a copy or from where you published it",
+    "ANCHOR_EXISTS": "an anchor for this head exists with other content; keep the first one and do not edit anchor files",
+    "ANCHOR_FAILED": "check the URL and the network, then retry; the local anchor was kept",
+    "NOT_A_GIT_REPO": "run the command inside a git repository, or use another anchoring option",
+    "EMPTY_LEDGER": "record at least one entry before anchoring",
+    "BAD_URL": "give an http or https URL",
 }
 
 

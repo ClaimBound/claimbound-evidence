@@ -40,6 +40,10 @@ class Store:
         return self.path / LOCK_NAME
 
     @property
+    def anchors_dir(self) -> Path:
+        return self.path / "anchors"
+
+    @property
     def cards_dir(self) -> Path:
         return self.path / "cards"
 

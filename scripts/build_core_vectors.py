@@ -326,8 +326,43 @@ def head_cases() -> list[dict[str, Any]]:
     ]
 
 
+def anchor_cases() -> list[dict[str, Any]]:
+    """Anchor statements: the canonical bytes and their sha256 (the anchor_id), computed independently of the library."""
+    statements = [
+        ("first_entry", 0, HASH_A, 1, TS[0], "0.6.0"),
+        ("third_entry", 2, HASH_B, 3, TS[2], "0.7.0"),
+        ("large_seq", 9999, "0123456789abcdef" * 4, 10000, "2026-11-18T10:15:00Z", "unknown"),
+    ]
+    cases = []
+    for name, seq, digest, entries, created, version in statements:
+        statement = {
+            "created_at": created,
+            "entries": entries,
+            "head_hash": digest,
+            "head_seq": seq,
+            "kind": "protocolith-anchor",
+            "protocolith_version": version,
+            "v": 1,
+        }
+        text = json.dumps(statement, sort_keys=True, separators=(",", ":"))
+        cases.append(
+            {
+                "name": name,
+                "statement": statement,
+                "canonical": text,
+                "anchor_id": hashlib.sha256(text.encode()).hexdigest(),
+                "file_name": f"{seq}-{digest[:12]}.json",
+            }
+        )
+    return cases
+
+
 def check(
-    canonical: list[dict[str, Any]], hashes: list[dict[str, Any]], ledgers: list[dict[str, Any]], heads: list[dict[str, Any]]
+    canonical: list[dict[str, Any]],
+    hashes: list[dict[str, Any]],
+    ledgers: list[dict[str, Any]],
+    heads: list[dict[str, Any]],
+    anchors: list[dict[str, Any]],
 ) -> None:
     """Refuse to write vectors the reference implementation does not reproduce."""
     for case in canonical:
@@ -349,6 +384,10 @@ def check(
         seq, digest = str(case["expect_head"]).split(":")
         verdict = apply_expected_head(verdict, verifier, int(seq), digest)
         assert verdict.codes == case["expect"]["codes"] and verdict.ok == case["expect"]["ok"], case["name"]
+    for case in anchors:
+        text = encode(case["statement"]).decode("utf-8")
+        assert text == case["canonical"], case["name"]
+        assert hashlib.sha256(text.encode("utf-8")).hexdigest() == case["anchor_id"], case["name"]
 
 
 def dump(name: str, description: str, cases: list[dict[str, Any]]) -> str:
@@ -358,7 +397,8 @@ def dump(name: str, description: str, cases: list[dict[str, Any]]) -> str:
 
 def build_vectors() -> dict[str, str]:
     canonical, hashes, ledgers, heads = canonical_cases(), hash_cases(), ledger_cases(), head_cases()
-    check(canonical, hashes, ledgers, heads)
+    anchors = anchor_cases()
+    check(canonical, hashes, ledgers, heads, anchors)
     return {
         "canonical.json": dump(
             "canonical",
@@ -377,6 +417,12 @@ def build_vectors() -> dict[str, str]:
             "Verify the ledger text, then require the entry named by expect_head (SEQ:HASH) to exist with that hash; "
             "expect ok and the sorted unique codes. A ledger that already fails reports only its own codes.",
             heads,
+        ),
+        "anchors.json": dump(
+            "anchors",
+            "An anchor statement (an object): its PCJ-1 text is canonical and the lowercase hex sha256 of those UTF-8 bytes "
+            "is the anchor_id; the local anchor file is named file_name.",
+            anchors,
         ),
     }
 

@@ -1,0 +1,52 @@
+{
+ "format": "protocolith-vectors/1",
+ "kind": "anchors",
+ "description": "An anchor statement (an object): its PCJ-1 text is canonical and the lowercase hex sha256 of those UTF-8 bytes is the anchor_id; the local anchor file is named file_name.",
+ "cases": [
+  {
+   "name": "first_entry",
+   "statement": {
+    "created_at": "2026-11-15T10:00:00Z",
+    "entries": 1,
+    "head_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "head_seq": 0,
+    "kind": "protocolith-anchor",
+    "protocolith_version": "0.6.0",
+    "v": 1
+   },
+   "canonical": "{\"created_at\":\"2026-11-15T10:00:00Z\",\"entries\":1,\"head_hash\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"head_seq\":0,\"kind\":\"protocolith-anchor\",\"protocolith_version\":\"0.6.0\",\"v\":1}",
+   "anchor_id": "67634ebda6181d5e03b0915c2bc8807997844d44b18d3d8d047fdfd317317cf4",
+   "file_name": "0-aaaaaaaaaaaa.json"
+  },
+  {
+   "name": "third_entry",
+   "statement": {
+    "created_at": "2026-11-15T10:00:02Z",
+    "entries": 3,
+    "head_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "head_seq": 2,
+    "kind": "protocolith-anchor",
+    "protocolith_version": "0.7.0",
+    "v": 1
+   },
+   "canonical": "{\"created_at\":\"2026-11-15T10:00:02Z\",\"entries\":3,\"head_hash\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"head_seq\":2,\"kind\":\"protocolith-anchor\",\"protocolith_version\":\"0.7.0\",\"v\":1}",
+   "anchor_id": "4b4cec87ef8967c3a4a8d9b59e1409be67336cc230d188d66b1969c615d2c3da",
+   "file_name": "2-bbbbbbbbbbbb.json"
+  },
+  {
+   "name": "large_seq",
+   "statement": {
+    "created_at": "2026-11-18T10:15:00Z",
+    "entries": 10000,
+    "head_hash": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "head_seq": 9999,
+    "kind": "protocolith-anchor",
+    "protocolith_version": "unknown",
+    "v": 1
+   },
+   "canonical": "{\"created_at\":\"2026-11-18T10:15:00Z\",\"entries\":10000,\"head_hash\":\"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\",\"head_seq\":9999,\"kind\":\"protocolith-anchor\",\"protocolith_version\":\"unknown\",\"v\":1}",
+   "anchor_id": "d81dceb19e074ca71d505ca79311ed8ee8f4364b7a46c9c179a65917796d3963",
+   "file_name": "9999-0123456789ab.json"
+  }
+ ]
+}

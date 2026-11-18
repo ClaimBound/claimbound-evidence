@@ -8,6 +8,8 @@ the language-neutral vectors in `spec/vectors/`.
 | `canonical.json` | 43 | Parse the input strictly (`input_text`, or `input_hex` for raw bytes) and compare with the canonical text, or with an error code. |
 | `hashes.json` | 7 | `sha256` of the canonical bytes of a parsed input. |
 | `ledgers.json` | 45 | Verify the ledger text (or the expanded `ledger_template`: `head` + `fill` repeated `count` times + `tail`) and compare `ok` and the sorted unique rule codes. |
+| `heads.json` | 7 | Verify the ledger, then require the entry named by `expect_head` (`SEQ:HASH`). |
+| `anchors.json` | 3 | An anchor `statement`: its canonical text and the sha256 of those bytes (the `anchor_id`), and the anchor file name. |
 
 Every rule R1 to R11 has at least one failing ledger vector, and there are vectors for the size and depth
 limits and for valid flows (empty ledger, freeze only, full flow, new version). All files carry

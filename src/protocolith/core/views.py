@@ -134,3 +134,105 @@ def summarize(verdict: Verdict, verifier: Verifier, protocol: str | None = None)
         "protocols": [table[pid] for pid in sorted(table)],
         "records_by_status": dict(sorted(by_status.items())),
     }
+
+
+_RESULT_PHRASE = {
+    "PASSED_UNDER_PROTOCOL": "passed its gate",
+    "NEGATIVE_RESULT_UNDER_PROTOCOL": "did not meet its gate (a negative result under the protocol)",
+    "REPRODUCED_OUTCOME": "reproduced an earlier outcome",
+}
+_NO_RESULT_PHRASE = {
+    "BLOCKED_SOURCE": "was blocked because a required source was not available",
+    "INSUFFICIENT_COVERAGE": "had insufficient coverage",
+    "SOURCE_DRIFT": "saw its source change during the run",
+}
+
+
+def _no_record(verifier: Verifier, protocol: str) -> dict[str, Any]:
+    """The answer for a frozen protocol that has no record yet: nothing may be reported."""
+    freeze = select(verifier, protocol=protocol, entry_type="freeze")[-1]["body"]
+    return {
+        "anchored": False,
+        "claim_boundary": None,
+        "deviations": 0,
+        "independent_reproduction": False,
+        "may_say": f"No result is recorded for protocol {protocol} version {freeze['version']}; nothing may be reported as a result.",
+        "must_not_say": ["any result", "passed", "failed", "reproduced"],
+        "protocol_frozen_before_record": False,
+        "protocol_id": protocol,
+        "protocol_sha256": freeze["protocol_sha256"],
+        "protocol_version": freeze["version"],
+        "seq": None,
+        "sources": [],
+        "status": None,
+        "supported": False,
+    }
+
+
+def claim_check(
+    verifier: Verifier, last_anchored: int | None, *, seq: int | None = None, protocol: str | None = None
+) -> dict[str, Any]:
+    """What may be said about one record (``seq``) or the latest record of a protocol (``protocol``).
+
+    Deterministic: every field is computed from the ledger; the sentences are fixed templates. ``last_anchored`` is the
+    highest ``head_seq`` of an anchor that matches the ledger, or None.
+    """
+    if (seq is None) == (protocol is None):
+        raise InputError("BAD_ENTRY", "give exactly one of seq and protocol")
+    if protocol is not None:
+        records = select(verifier, protocol=protocol, entry_type="record")
+        if not records:
+            return _no_record(verifier, protocol)
+        entry = records[-1]
+    else:
+        found = verifier.entries.get(seq) if type(seq) is int else None
+        if found is None or found["type"] != "record":
+            raise InputError("DANGLING_REF", f"there is no record at seq {seq!r}")
+        entry = found
+    body = entry["body"]
+    sha = body["protocol_sha256"]
+    frozen = verifier.protocols[sha]
+    status = body["status"]
+    before = verifier.entries[frozen["seq"]]["ts"] < entry["ts"]
+    reproduced = any(
+        other["type"] == "record" and other["body"]["status"] == "REPRODUCED_OUTCOME" and other["body"]["protocol_sha256"] == sha
+        for other in verifier.entries.values()
+    )
+    anchored = last_anchored is not None and entry["seq"] <= last_anchored
+    deviations = len(body["deviations"])
+    where = f"Under protocol {frozen['protocol_id']} version {frozen['version']}, run {body['run_id']}"
+    if status in _RESULT_PHRASE:
+        may_say = f"{where} {_RESULT_PHRASE[status]}; this holds only within this boundary: {body['claim_boundary']}"
+    else:
+        may_say = (
+            f"{where} {_NO_RESULT_PHRASE[status]}; no result was obtained and none may be inferred. "
+            f"Boundary: {body['claim_boundary']}"
+        )
+    must_not_say: list[str] = []
+    if not reproduced:
+        must_not_say.append("independently reproduced")
+    if status not in _RESULT_PHRASE:
+        must_not_say += ["negative result", "positive result"]
+    if not before:
+        must_not_say += ["prospective", "preregistered"]
+    if not anchored:
+        must_not_say.append("externally anchored")
+    if deviations:
+        must_not_say.append("followed the protocol without deviations")
+    must_not_say.append("applies beyond the claim boundary")
+    return {
+        "anchored": anchored,
+        "claim_boundary": body["claim_boundary"],
+        "deviations": deviations,
+        "independent_reproduction": reproduced,
+        "may_say": may_say,
+        "must_not_say": must_not_say,
+        "protocol_frozen_before_record": before,
+        "protocol_id": frozen["protocol_id"],
+        "protocol_sha256": sha,
+        "protocol_version": frozen["version"],
+        "seq": entry["seq"],
+        "sources": [{"id": source["id"], "sha256": source["sha256"]} for source in body["sources"]],
+        "status": status,
+        "supported": status in _RESULT_PHRASE,
+    }

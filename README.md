@@ -165,11 +165,12 @@ protocolith atlas --cards docs/evidence_cards --out site/
 
 ## MCP client configuration
 
-`protocolith mcp` is a stdio server with eleven tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`,
-`protocolith_schema`, `protocolith_capture`, `protocolith_atlas`, `protocolith_freeze`, `protocolith_record`,
-`protocolith_deviation`, `protocolith_verify`, `protocolith_issue`) and read-only resources (`protocolith://summary`, `protocolith://ledger`,
-`protocolith://schema/<name>`), so an agent can discover the formats itself. It uses no network and writes only
-inside the store, apart from the atlas page that `protocolith_atlas` writes inside the working directory. Add it to an MCP client:
+`protocolith mcp` is a stdio server with thirteen tools (`protocolith_summary`, `protocolith_log`, `protocolith_show`,
+`protocolith_schema`, `protocolith_capture`, `protocolith_atlas`, `protocolith_claim_check`, `protocolith_anchor`, `protocolith_freeze`, `protocolith_record`,
+`protocolith_deviation`, `protocolith_verify`, `protocolith_issue`) read-only resources (`protocolith://summary`, `protocolith://ledger`,
+`protocolith://schema/<name>`) and the prompt `research-agent-protocol`, so an agent can discover the formats and the rules
+itself; `protocolith_claim_check` tells it what it may and may not say about a result. It uses the network only when
+`protocolith_anchor` is given a time-stamp URL, and writes only inside the store, apart from the atlas page that `protocolith_atlas` writes inside the working directory. Add it to an MCP client:
 
 ```json
 {
@@ -240,7 +241,9 @@ All take `--store DIR` (or `PROTOCOLITH_STORE`; default `.protocolith`) and, exc
 - **No protection against replacing a whole ledger.** Someone who can rewrite the file can write a new, valid
   one, or cut off its end. Publish or anchor the output of `protocolith head` somewhere you do not control
   alone (for example a signed git tag), then check against it with `protocolith verify-ledger --expect-head SEQ:HASH`.
-  See [anchoring the head](docs/guides/anchoring-the-head.md).
+  See [anchoring the head](docs/guides/anchoring-the-head.md). `protocolith anchor` automates this (a local anchor file, and
+  optionally an RFC 3161 time-stamp, a Wayback snapshot or a git tag), and `verify-ledger --anchors` detects a rewritten or
+  truncated ledger: see [anchor your results](docs/guides/anchor-your-results.md).
 - It does not show that a protocol is sound, that data is true, or that a result generalises.
 
 ## Earlier name and unrelated works

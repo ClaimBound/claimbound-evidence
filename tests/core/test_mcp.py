@@ -41,7 +41,9 @@ def tool(store: Store, name: str, arguments: Any = None) -> tuple[bool, Any]:
 def test_initialize_negotiates_the_protocol_version(store: Store) -> None:
     result = rpc(store, "initialize", {"protocolVersion": "2025-03-26"})["result"]
     assert result["protocolVersion"] == "2025-03-26"
-    assert result["serverInfo"]["name"] == "protocolith" and result["capabilities"] == {"resources": {}, "tools": {}}
+    assert result["serverInfo"]["name"] == "protocolith" and result["capabilities"] == {
+        "prompts": {}, "resources": {}, "tools": {},
+    }
     assert rpc(store, "initialize", {"protocolVersion": "1999-01-01"})["result"]["protocolVersion"] == "2025-06-18"
     assert rpc(store, "initialize", {})["result"]["protocolVersion"] == "2025-06-18"
 
@@ -56,7 +58,7 @@ def test_tools_list_names_and_schemas(store: Store) -> None:
     tools = rpc(store, "tools/list")["result"]["tools"]
     assert [t["name"] for t in tools] == [
         "protocolith_freeze", "protocolith_record", "protocolith_deviation",
-        "protocolith_verify", "protocolith_issue", "protocolith_log", "protocolith_show",
+        "protocolith_verify", "protocolith_claim_check", "protocolith_anchor", "protocolith_issue", "protocolith_log", "protocolith_show",
         "protocolith_summary", "protocolith_capture", "protocolith_atlas", "protocolith_schema",
     ]  # fmt: skip
     for entry in tools:
@@ -161,7 +163,7 @@ def test_serve_loop_skips_blank_lines_and_writes_only_replies(store: Store) -> N
 
 
 def test_tools_table_matches_the_spec_names() -> None:
-    assert set(TOOLS) == {f"protocolith_{n}" for n in ("freeze", "record", "deviation", "verify", "issue", "log", "show", "summary", "capture", "atlas", "schema")}
+    assert set(TOOLS) == {f"protocolith_{n}" for n in ("freeze", "record", "deviation", "verify", "issue", "log", "show", "summary", "capture", "atlas", "schema", "claim_check", "anchor")}
 
 
 def test_stdio_subprocess(tmp_path: Any) -> None:
@@ -277,3 +279,57 @@ def test_atlas_tool_reports_a_failing_ledger(recorded: Store, tmp_path: Any, mon
     recorded.ledger_path.write_text("\n".join(lines) + "\n")
     is_error, data = tool(recorded, "protocolith_atlas", {"out": "bad.html"})
     assert is_error and data["ok"] is False and (tmp_path / "bad.html").is_file()
+
+
+def test_prompts_list_and_get(store: Store) -> None:
+    listing = rpc(store, "prompts/list")["result"]["prompts"]
+    assert [p["name"] for p in listing] == ["research-agent-protocol"] and listing[0]["arguments"] == []
+    got = rpc(store, "prompts/get", {"name": "research-agent-protocol"})["result"]
+    text = got["messages"][0]["content"]["text"]
+    assert got["messages"][0]["role"] == "user" and got["description"] == listing[0]["description"]
+    for needle in ("protocolith_freeze", "protocolith_record", "protocolith_claim_check", "may_say", "must_not_say", "protocolith_anchor", "BLOCKED_SOURCE"):
+        assert needle in text
+    assert text.index("Freeze before any run") < text.index("Record every run") < text.index("Check before you claim") < text.index("Anchor at the end")
+    assert rpc(store, "prompts/get", {"name": "nope"})["error"]["code"] == -32602
+    assert rpc(store, "prompts/get", {"name": 5})["error"]["code"] == -32602
+    assert rpc(store, "prompts/get", {})["error"]["code"] == -32602
+
+
+def test_claim_check_and_anchor_tools(store: Store) -> None:
+    freeze(store, protocol(), clock=clock(NOW))
+    tool(store, "protocolith_record", {"body": record_body()})
+    is_error, found = tool(store, "protocolith_claim_check", {"seq": 1})
+    assert not is_error and found["supported"] is True and found["anchored"] is False
+    assert tool(store, "protocolith_claim_check", {"protocol": "DEMO_D001"})[1]["seq"] == 1
+    assert tool(store, "protocolith_claim_check", {})[1]["error"]["code"] == "BAD_ENTRY"
+    is_error, anchored = tool(store, "protocolith_anchor", {})
+    assert not is_error and anchored["methods"] == [] and len(anchored["anchor_id"]) == 64
+    assert tool(store, "protocolith_claim_check", {"seq": 1})[1]["anchored"] is True
+    assert tool(store, "protocolith_anchor", {"git_tag": True})[1]["error"]["code"] == "BAD_ENTRY"
+    assert tool(store, "protocolith_anchor", {"write_head": "x"})[1]["error"]["code"] == "BAD_ENTRY"
+    assert tool(store, "protocolith_anchor", {"tsa": "ftp://x"})[1]["error"]["code"] == "BAD_URL"
+    is_error, verdict = tool(store, "protocolith_verify", {"anchors": True})
+    assert not is_error and verdict["anchors"] == 1
+    assert "anchors" not in tool(store, "protocolith_verify", {})[1]
+    store.ledger_path.write_bytes(store.ledger_path.read_bytes().splitlines(keepends=True)[0])
+    is_error, verdict = tool(store, "protocolith_verify", {"anchors": True})
+    assert is_error and verdict["codes"] == ["ANCHOR_AHEAD"]
+    assert not tool(store, "protocolith_verify", {"anchors": False})[0]
+
+
+def test_anchor_tool_uses_the_network_only_with_tsa(store: Store, monkeypatch: pytest.MonkeyPatch) -> None:
+    import urllib.error
+
+    from protocolith.core import anchor as anchor_module
+
+    seen: list[str] = []
+
+    def refuse(request: Any, timeout: float) -> Any:
+        seen.append(request.full_url)
+        raise urllib.error.URLError("offline")
+
+    monkeypatch.setattr(anchor_module.urllib.request, "urlopen", refuse)
+    freeze(store, protocol(), clock=clock(NOW))
+    assert not tool(store, "protocolith_anchor", {})[0] and seen == []
+    is_error, error = tool(store, "protocolith_anchor", {"tsa": "https://tsa.example/"})
+    assert is_error and error["error"]["code"] == "ANCHOR_FAILED" and seen == ["https://tsa.example/"]

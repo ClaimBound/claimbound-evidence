@@ -18,6 +18,9 @@ protocolith head --json
 The hash of the last entry covers every earlier entry through the chain. One short value therefore stands for the
 whole history up to `seq`.
 
+`protocolith anchor` automates this: it writes a statement of the head, can time-stamp, archive or tag it, and
+`verify-ledger --anchors` checks every anchor later. See [Anchor your results](anchor-your-results.md).
+
 ## Where to put it
 
 | Anchor | What it gives you |
